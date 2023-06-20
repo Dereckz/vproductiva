@@ -1,19 +1,14 @@
-<?php 
-header( 'Content-Type: text/html;charset=utf-8' );
-function ejecutarSQLCommand($commando){
-  $mysqli = new mysqli("localhost", "root", "", "vproductivabd");
-
-/* check connection */
-if ($mysqli->connect_errno) {
-    printf("Connect failed: %s
-", $mysqli->connect_error);
-    exit();
+<?php
+$servername = "localhost";
+$database = "vproductiviabd";
+$username = "root";
+$password = "";
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $database);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
 }
-
-if ( $mysqli->multi_query($commando)) {
-     if ($resultset = $mysqli->store_result()) {
-    	while ($row = $resultset->fetch_array(MYSQLI_BOTH)) {
-    	}
-    	$resultset->free();
-     }   
-}
+echo "Connected successfully";
+mysqli_close($conn);
+?>

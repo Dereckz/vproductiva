@@ -25,34 +25,37 @@ menu_item.forEach((item) => {
 });
 
 //REGISTER JS
-var $loginMsg = $('.loginMsg'),
-  $login = $('.login'),
-  $signupMsg = $('.signupMsg'),
-  $signup = $('.signup'),
-  $frontbox = $('.frontbox');
-
-$('#switch1').on('click', function() {
-  $loginMsg.toggleClass("visibility");
-  $frontbox.addClass("moving");
-  $signupMsg.toggleClass("visibility");
-
-  $signup.toggleClass('hide');
-  $login.toggleClass('hide');
-})
-
-$('#switch2').on('click', function() {
-  $loginMsg.toggleClass("visibility");
-  $frontbox.removeClass("moving");
-  $signupMsg.toggleClass("visibility");
-
-  $signup.toggleClass('hide');
-  $login.toggleClass('hide');
-})
-
-setTimeout(function(){
-  $('#switch1').click()
-},1000)
-
-setTimeout(function(){
-  $('#switch2').click()
-},3000)
+$(document).ready(() => {
+  /*------- button with class register -------*/
+  var reg_btn = $('.container .register');
+  /*------- button with class sign in --------*/
+  var sig_btn = $('.container .signin');
+  /*------- back button ----------------------*/
+  var back_btn = $('.container .back');
+  reg_btn.click(function (e) {
+      e.preventDefault();
+      $(this).siblings('.reg').css({
+          'transform': 'translateY(40%) scale(5)',
+          'border-radius': '0',
+          'width': '100%',
+          'height': '100%'
+      }).end();
+      reg_btn.siblings('.container h3:nth-of-type(1)').css({
+          'top': '40%',
+          'z-index': '8',
+      }).end().end();
+  });
+  sig_btn.on('click', function (e) {
+      e.preventDefault();
+      $(this).siblings('.sig').css({
+          'transform': 'translateY(40%) scale(5)',
+          'border-radius': '0',
+          'width': '100%',
+          'height': '100%'
+      }).end();
+      sig_btn.siblings('.container h3:nth-of-type(2)').css({
+          'top': '40%',
+          'z-index': '8',
+      }).end().end();
+  });
+});
