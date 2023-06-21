@@ -19,8 +19,8 @@ $nr = mysqli_num_rows($query);
 
 if($nr == 1)
 {
-	header("Location: /content/curso.html")
-	echo "Bienvenido:" .$nombre;
+	header("Location: ../content/index.html");
+	//echo "Bienvenido:" .$nombre;
 }
 else if ($nr == 0) 
 {
