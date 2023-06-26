@@ -6,17 +6,19 @@ html,body, body * {
     padding:0;
     color:inherit;
     background-color:inherit;
+    box-sizing: border-box;
  }
  body {
     background-image: url(pic4.jpg);
     background-size:  cover;
     background-position:center center;
     display: block;
-    
+    background-color: #CDCBCE;
+	opacity: 0.7;
   }
   .container {
       width: 100%;
-      padding-top: 60px;
+      padding-top: 120px;
       padding-bottom: 100px;
   }
 
@@ -29,7 +31,7 @@ html,body, body * {
       border-radius: 5px;
       box-shadow: 0px 2px 7px rgba(0,0,0,0.2);
       overflow: hidden; 
-      background: linear-gradient(180deg, rgba(65,4,119,1) 0%, rgba(22,147,198,1) 58%, rgba(255,255,255,0.1407913507199755) 82%);
+      background: linear-gradient(180deg, rgba(65,4,119,1) 40%, rgba(22,147,198,1) 80%, rgba(22,147,198,1) 85%);
       color:#ffffff;
   }
 
@@ -39,14 +41,12 @@ html,body, body * {
     height: 100px;
     padding-top: 40px;
     opacity: 1;
-    margin-bottom: 3em;
   }
   button {
-      font-size: 1.5em;
+      font-size: 2.5em;
       margin-right:1em;
       border:0px;
       cursor: pointer;
-   
   }
   button:focus {
       outline: 0px;
@@ -83,7 +83,7 @@ html,body, body * {
     input.submit {
         font-weight: 700;
         text-transform: uppercase;
-        font-size: 1em;
+        font-size: 2em;
         text-align: center;
         color: rgba(255,255,255, 1);
         padding: 8px 0px;
@@ -115,6 +115,5 @@ html,body, body * {
     opacity: 0;;
    } 
 
-    
     
 
