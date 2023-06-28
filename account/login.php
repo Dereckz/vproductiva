@@ -19,7 +19,7 @@ $nr = mysqli_num_rows($query);
 
 if($nr == 1)
 {
-	header("Location: ../content/index.html");
+	header("Location: ../content/index.htm	l");
 	//echo "Bienvenido:" .$nombre;
 }
 else if ($nr == 0) 
