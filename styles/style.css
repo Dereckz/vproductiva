@@ -22,7 +22,7 @@ a {
 img {
 	height: 100%;
 	width: 100%;
-	object-fit: cover;
+	/*object-fit: scale-down;*/
 }
 p {
 	color: black;
@@ -276,7 +276,7 @@ p {
 	padding: 100px 0;
 }
 #services .service-top {
-	max-width: 500px;
+	max-width: 60%;
 	margin: 0 auto;
 }
 #services .service-bottom {
@@ -284,7 +284,7 @@ p {
 	align-items: center;
 	justify-content: center;
 	flex-wrap: wrap;
-	margin-top: 50px;
+	margin-top: 20px;
 }
 #services .service-item {
 	flex-basis: 80%;
@@ -327,6 +327,14 @@ p {
 	color: white;
 	text-align: left;
 }
+#services h1 {
+	margin-bottom: 1em;
+	font-size: 2.7em;
+	color: #4720b7;
+}
+#services h2 {
+	font-size: 1.8em;
+}
 /* End Services Section */
 
 /* Projects section */
@@ -357,10 +365,10 @@ p {
 }
 #projects .project-info {
 	padding: 30px;
-	flex-basis: 50%;
+	/*flex-basis: 50%;*/
 	height: 100%;
 	display: flex;
-	align-items: flex-start;
+	/*align-items: flex-start;*/
 	justify-content: center;
 	flex-direction: column;
 	background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
@@ -369,11 +377,14 @@ p {
 #projects .project-info h1 {
 	font-size: 4rem;
 	font-weight: 500;
+	text-align: center;
+	padding-bottom: 0.5em;
 }
-#projects .project-info h2 {
-	font-size: 1.8rem;
+#projects .project-info li {
+	font-size: 1.5rem;
 	font-weight: 500;
 	margin-top: 10px;
+	margin-left: 2em;
 }
 #projects .project-info p {
 	color: white;
@@ -400,14 +411,14 @@ p {
 #projects .project-item:hover .project-img img {
 	transform: scale(1.1);
 }
+
 /* End Projects section */
 
 /* About Section */
 #about .about {
 	flex-direction: column-reverse;
 	text-align: center;
-	max-width: 1200px;
-	margin: 0 auto;
+	margin-right: 20px;
 	padding: 100px 20px;
 }
 #about .col-left {
@@ -433,8 +444,8 @@ p {
 	font-size: 2rem;
 }
 #about .col-left .about-img {
-	height: 100%;
-	width: 100%;
+	
+	width: 120%;
 	position: relative;
 	border: 10px solid white;
 }
@@ -576,7 +587,7 @@ p {
 		padding: 20px 60px;
 	}
 	h1.section-title {
-		font-size: 6rem;
+		font-size: 4rem;
 	}
 
 	/* Hero */
@@ -600,7 +611,7 @@ p {
 		flex-direction: row-reverse;
 	}
 	#projects .project-item {
-		height: 400px;
+		height: 350px;
 		margin: 0;
 		width: 100%;
 		border-radius: 0;
@@ -616,6 +627,9 @@ p {
 	/* About */
 	#about .about {
 		flex-direction: row;
+		margin-left: 0px;
+		margin-right: 20px;
+		padding-right: 5em;
 	}
 	#about .col-left {
 		width: 600px;
@@ -624,14 +638,14 @@ p {
 	}
 	#about .about .col-left .about-img::after {
 		left: -45px;
-		top: 34px;
+		top: 15px;
 		height: 98%;
 		width: 98%;
 		border: 10px solid #4720b7;
 	}
 	#about .col-right {
 		text-align: left;
-		padding: 30px;
+		padding-left: 8%;
 	}
 	#about .col-right h1 {
 		text-align: left;
@@ -710,20 +724,4 @@ p {
 	width: 220px;
 }
 
-.imgcursos{
-    position: relative;
-    display: inline-block;
-    text-align: center;
-}
-.texto-encima{
-    position: absolute;
-    top: 10px;
-    left: 10px;
-}
-.centrado{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
 
