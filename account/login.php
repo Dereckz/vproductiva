@@ -11,8 +11,8 @@ if (!$conn)
 	die("No hay conexión: ".mysqli_connect_error());
 }
 
-$nombre = $_POST["txtusuario"];
-$pass = $_POST["txtpassword"];
+$nombre = $_POST["username"];
+$pass = $_POST["password"];
 
 $query = mysqli_query($conn,"SELECT * FROM usuario WHERE cUsuario = '".$nombre."' and cPassword = '".$pass."'");
 $nr = mysqli_num_rows($query);
