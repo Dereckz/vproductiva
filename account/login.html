@@ -25,11 +25,11 @@
           <ul>
             <li><a href="../index.html" data-after="Home">Inicio</a></li>
            <!-- <li><a href="#services" data-after="Service">Servicios</a></li>-->
-            <li><a href="../index.html" data-after="Projects">Cursos</a></li>
-            <li><a href="#about" data-after="About">Acerca de nosotros</a></li>
-            <li><a href="#contact" data-after="Contact">Contacto</a></li>
+            <li><a href="../index.html#projects" data-after="Projects">Cursos</a></li>
+            <li><a href="../index.html#about" data-after="About">Acerca de nosotros</a></li>
+            <li><a href="../index.html#contact" data-after="Contact">Contacto</a></li>
             <!--<li><a href="account/register.html" data-after="Login">Login</a></li> -->
-            <li><a href="account/login.html" data-after="Login">Login</a></li>
+            <li><a href="login.html" data-after="Login">Login</a></li>
           </ul>
         </div>
       </div>
@@ -48,7 +48,6 @@
             </div>
             <div class="form-group">
 
-
                 <form method="post" action="login.php" id="loginform">
                     <label for="username">Usuario</label>
                     <input type="text" id="username" name="username">
@@ -56,17 +55,21 @@
                     <input type="text" id="password" name="password">
                     <input type="submit" value="Submit" class="submit">
                 </form>
+<<<<<<< HEAD
                 <form method="post" action="daralta.php" id="registerform">
                     <label for="fullname">Nombre </label>
                     <input type="text" id="fullname" name="fullname">
+=======
+                <form action="" id="registerform">
+                    <label for="fullname">Nombre completo</label>
+                    <input type="text" id="fullname">
+>>>>>>> origin/master
                     <label for="email">Email</label>
-                    <input type="text" id="email" name="email">
-                    <label for="passwword">password</label>
-                    <input type="password" id="password" name="password">
-                    <label for="confirmpassword">Confirmar password</label>
-                    <input type="password" id="confirmpassword">
-                    <label for="codigomaestro">Matricula</label>
-                    <input type="text" id="codigomaestro" name="codigomaestro" >
+                    <input type="text" id="email">
+                    <label for="passwword">Contraseña</label>
+                    <input type="text" id="password">
+                    <label for="confirmpassword">Confirmar contraseña</label>
+                    <input type="text" id="confirmpassword">
                     <input type="submit" value="Submit" class="submit">
                 </form>
             </div>
