@@ -1,72 +1,5 @@
 <?php
-include("..\dev\conectar.php");
- 
-$fullname = ($_POST["fullname"]);
-$correo = ($_POST["email"]);
-$contrasena = password_hash(($_POST["password"]), PASSWORD_DEFAULT);   
-$matricula = ($_POST["codigomaestro"]);
-$fecha_actual = date("d-m-Y");
-$codigomaestro=$_POST["codigomaestro"];
-
-//Separar Nombres
-$nombres=namess::getNombreSplit($fullname)["Nombres"];
-$paternos=namess::getNombreSplit($fullname)["Paterno"];
-$maternos=namess::getNombreSplit($fullname)["Materno"];
-
-if (!empty($fullname))
-{
-	
-	if(empty($codigomaestro))
-	{		
-		$query = mysqli_query($conn,"INSERT INTO `usuarios`(`iIdUsuario`, `cNombre`, `cApellidoP`, `cApellidoM`, `cNombreLargo`, `cUsuario`, `cPassword`, `cTelefono`, `iTipoUsuario`, `cCodigo`, `dFechaAlta`, `iEstatus`)
-									 VALUES ('0','$nombres','$paternos','$maternos','$fullname','$nombres','$contrasena','','2','$codigomaestro','$fecha_actual','1')");
-		if($query){
-
-            $queryA = mysqli_query($conn,"INSERT INTO `usuario`(`iIdUsuario`, `cUsuario`, `cPassword`, `iTipoUsuario`, `dAlta`, `cKey`, `iEstatus`)
-                                 VALUES('0','$correo','$contrasena','2','$fecha_actual','$codigomaestro','1');");
-
-                                 if($queryA){
-                                    header("Location: ../panel/index.html");
-                                 }
-                                 else{		
-                                    header("Location: ../index.html");
-                                }	
-
-           
-		}
-		else{		
-            header("Location: ../index.html");
-        }	
-	}
- 	else{
-        $query = mysqli_query($conn,"INSERT INTO `usuarios`(`iIdUsuario`, `cNombre`, `cApellidoP`, `cApellidoM`, `cNombreLargo`, `cUsuario`, `cPassword`, `cTelefono`, `iTipoUsuario`, `cCodigo`, `dFechaAlta`, `iEstatus`)
-									 VALUES ('0','$nombres','$paternos','$maternos','$fullname','$nombres','$contrasena','','3','$codigomaestro','$fecha_actual','1')");
-		if($query){
-            $queryA = mysqli_query($conn,"INSERT INTO `usuario`(`iIdUsuario`, `cUsuario`, `cPassword`, `iTipoUsuario`, `dAlta`, `cKey`, `iEstatus`)
-            VALUES('0','$correo','$contrasena','2','$fecha_actual','$codigomaestro','1');");
-            
-            if($queryA){
-               header("Location: ../panel/index.html");
-            }
-            else{		
-               header("Location: ../index.html");
-           }	
-            
-		}
-		else{		
-            header("Location: ../index.html");
-        }	
-		
-	}
-}
- else{
-    echo "<script> alert('Validar Información');window.location= 'login.html' </script>";
-	header("Location: login.html");
-}
-
-
-//Separa Nombres
-class namess{
+class nono{
     public static  function getNombreSplit($nombreCompleto, $apellido_primero = false){
         $chunks = ($apellido_primero)
             ? explode(" ", strtoupper($nombreCompleto))
@@ -167,6 +100,5 @@ class namess{
     }
 }
 
-	
 
 ?>
