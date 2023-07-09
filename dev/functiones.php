@@ -2,7 +2,7 @@
 $servername = "localhost";
 $database = "vproductiviabd";
 $username = "root";
-$password = "";
+$password = "x";
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $database);
 // Check connection
