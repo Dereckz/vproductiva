@@ -22,10 +22,10 @@ if (!empty($fullname))
 									 VALUES ('0','$nombres','$paternos','$maternos','$fullname','$nombres','$contrasena','','2','$codigomaestro','$fecha_actual','1')");
 		if($query){
 
-            $queryA = mysqli_query($conn,"INSERT INTO `usuario`(`iIdUsuario`, `cUsuario`, `cPassword`, `iTipoUsuario`, `dAlta`, `cKey`, `iEstatus`)
-                                 VALUES('0','$correo','$contrasena','2','$fecha_actual','$codigomaestro','1');");
+            // $queryA = mysqli_query($conn,"INSERT INTO `usuario`(`iIdUsuario`, `cUsuario`, `cPassword`, `iTipoUsuario`, `dAlta`, `cKey`, `iEstatus`)
+            //                      VALUES('0','$correo','$contrasena','2','$fecha_actual','$codigomaestro','1');");
 
-                                 if($queryA){
+                                 if($query){
                                     header("Location: ../panel/index.html");
                                  }
                                  else{		
@@ -42,10 +42,10 @@ if (!empty($fullname))
         $query = mysqli_query($conn,"INSERT INTO `usuarios`(`iIdUsuario`, `cNombre`, `cApellidoP`, `cApellidoM`, `cNombreLargo`, `cUsuario`, `cPassword`, `cTelefono`, `iTipoUsuario`, `cCodigo`, `dFechaAlta`, `iEstatus`)
 									 VALUES ('0','$nombres','$paternos','$maternos','$fullname','$nombres','$contrasena','','3','$codigomaestro','$fecha_actual','1')");
 		if($query){
-            $queryA = mysqli_query($conn,"INSERT INTO `usuario`(`iIdUsuario`, `cUsuario`, `cPassword`, `iTipoUsuario`, `dAlta`, `cKey`, `iEstatus`)
-            VALUES('0','$correo','$contrasena','2','$fecha_actual','$codigomaestro','1');");
+            // $queryA = mysqli_query($conn,"INSERT INTO `usuario`(`iIdUsuario`, `cUsuario`, `cPassword`, `iTipoUsuario`, `dAlta`, `cKey`, `iEstatus`)
+            // VALUES('0','$correo','$contrasena','2','$fecha_actual','$codigomaestro','1');");
             
-            if($queryA){
+            if($query){
                header("Location: ../panel/index.html");
             }
             else{		
