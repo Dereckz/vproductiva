@@ -27,7 +27,7 @@ $Sql_Query = "select cusuario, cPassword from usuarios where cUsuario = '$nombre
         }
 
  
-if ($stmt = $conn->prepare("SELECT cusuario, cPassword FROM usuarios WHERE cUsuario= ? LIMIT 1")) {
+if ($stmt = $conn->prepare("SELECT cusuario, cPassword, cnombre, cnombrelargo, itipousuario FROM usuarios WHERE cUsuario= ? LIMIT 1")) {
 
 //     /* ligar parámetros para marcadores */
 // en este caso el nombre de usuario
@@ -42,12 +42,15 @@ if ($stmt = $conn->prepare("SELECT cusuario, cPassword FROM usuarios WHERE cUsua
 
     // Verificar si la contraseña coincide
      if ($fila && password_verify($pass, $fila['cPassword'])) {
-        header("Location: ../panel/index.html");
-        echo '¡La contraseña es válida! ' ;
+        $_SESSION["usuario"] = "cusuario";
+        $_SESSION["Nombre"]="cNombre";
+        $_SESSION["NombreLargo"]="cnombrelargo";
+       header("Location: ../panel/index.html");
+       // echo '¡La contraseña es válida! ' ;
     // hacer lo que corresponda
      } else {
         header("Location: login.html");
-         echo 'La contraseña no es válida!'.password_verify($pass, $fila['cPassword']).'' ;
+         echo 'La contraseña no es válida!' ;
      //   hacer lo que corresponda
      }
 
