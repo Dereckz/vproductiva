@@ -5,7 +5,7 @@ $fullname = ($_POST["fullname"]);
 $correo = ($_POST["email"]);
 $contrasena = password_hash(($_POST["password"]), PASSWORD_DEFAULT);   
 $matricula = ($_POST["codigomaestro"]);
-$fecha_actual = date("d-m-Y");
+$fecha_actual = getdate();
 $codigomaestro=$_POST["codigomaestro"];
 
 //Separar Nombres
@@ -13,42 +13,55 @@ $nombres=namess::getNombreSplit($fullname)["Nombres"];
 $paternos=namess::getNombreSplit($fullname)["Paterno"];
 $maternos=namess::getNombreSplit($fullname)["Materno"];
 
-echo "<script> alert('.$fullname.');window.location= 'login.html' </script>";	
+$sqlquery="Select cusuario, cPassword from Usuarios where cCorreo ='$correo'";
+$result=mysqli_query($conn,$sqlquery);
+     $row = mysqli_fetch_array($result);
+     
+if(mysqli_num_rows($result) > 0){
+    echo "<script> alert('.$correo.' Ya se encuentra registrado en nuestro sistema, comuniquese con el Adnistrador);window.location= 'login.html' </script>";	
+}else{
 
-if (!empty($fullname))
+    if (!empty($fullname))
 {
 	
-	if(empty($codigomaestro))
-	{		
-		$queryM = mysqli_query($conn,"INSERT INTO `usuarios`(`iIdUsuario`, `cNombre`, `cApellidoP`, `cApellidoM`, `cNombreLargo`, `cUsuario`, `cPassword`, `cTelefono`, `iTipoUsuario`, `cCodigo`, `dFechaAlta`, `iEstatus`)
-									 VALUES ('0','$nombres','$paternos','$maternos','$fullname','$nombres','$contrasena','','2','$codigomaestro','$fecha_actual','1')");
+	if(!empty($codigomaestro))
+	{		            
+     
+		$queryM = mysqli_query($conn,"INSERT INTO `usuarios`(`iIdUsuario`, `fkidTipoUsuario`, `cNombre`, `cApellidoP`, `cApellidoM`, `cNombreLargo`, `cCorreo`, `cUsuario`, `cPassword`, `cTelefono`, `cCodigo`, `dFechaAlta`, `iEstatus`)
+									 VALUES ('0','2','$nombres','$paternos','$maternos','$fullname','$correo','$correo','$contrasena','','$codigomaestro','$fecha_actual','1')");
 		if($queryM){
               header("Location: ../panel/index.html");            
-		}
+	}
 		else{	
-            echo "<script> alert('No se pudo regustra el Maestro');window.location= 'login.html' </script>";		
+            echo "<script> alert('No se pudo regustra el Maestro');window.location= 'index.html' </script>";		
             header("Location: ../index.html");
         }	
 	}
  	else{
-        $queryA = mysqli_query($conn,"INSERT INTO `usuarios`(`iIdUsuario`, `cNombre`, `cApellidoP`, `cApellidoM`, `cNombreLargo`, `cUsuario`, `cPassword`, `cTelefono`, `iTipoUsuario`, `cCodigo`, `dFechaAlta`, `iEstatus`)
-									 VALUES ('0','$nombres','$paternos','$maternos','$fullname','$nombres','$contrasena','','3','$codigomaestro','$fecha_actual','1')");
+        $queryA = mysqli_query($conn,"INSERT INTO `usuarios`(`iIdUsuario`, `fkidTipoUsuario`, `cNombre`, `cApellidoP`, `cApellidoM`, `cNombreLargo`, `cCorreo`, `cUsuario`, `cPassword`, `cTelefono`, `cCodigo`, `dFechaAlta`, `iEstatus`)
+        VALUES ('0','3','$nombres','$paternos','$maternos','$fullname','$correo','$correo','$contrasena','','','$fecha_actual','1')");
 		if($queryA){
            
-               header("Location: ../vistaalumnos/index.html");
+               header("Location: ../VistaAlumnos/index.html");
                       
 		}
 		else{	
-            echo "<script> alert('No se pudo regustra el Alumno');window.location= 'login.html' </script>";	
-            header("Location: ../index.html");
+            echo "<script> alert('No se pudo regustra el Alumno');window.location= 'login.html#registerform' </script>";	
+        
+            //header("Location: ../index.html");
         }	
 		
 	}
 }
  else{
     echo "<script> alert('Validar Información');window.location= 'login.html' </script>";
-	header("Location: login.html");
+	//header("Location: login.html");
 }
+
+
+
+}
+
 
 
 
