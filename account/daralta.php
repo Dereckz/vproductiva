@@ -1,6 +1,6 @@
 <?php
 include("..\dev\conectar.php");
- 
+
 $fullname = ($_POST["fullname"]);
 $correo = ($_POST["email"]);
 $contrasena = password_hash(($_POST["password"]), PASSWORD_DEFAULT);   
@@ -13,47 +13,33 @@ $nombres=namess::getNombreSplit($fullname)["Nombres"];
 $paternos=namess::getNombreSplit($fullname)["Paterno"];
 $maternos=namess::getNombreSplit($fullname)["Materno"];
 
+echo "<script> alert('.$fullname.');window.location= 'login.html' </script>";	
+
 if (!empty($fullname))
 {
 	
 	if(empty($codigomaestro))
 	{		
-		$query = mysqli_query($conn,"INSERT INTO `usuarios`(`iIdUsuario`, `cNombre`, `cApellidoP`, `cApellidoM`, `cNombreLargo`, `cUsuario`, `cPassword`, `cTelefono`, `iTipoUsuario`, `cCodigo`, `dFechaAlta`, `iEstatus`)
+		$queryM = mysqli_query($conn,"INSERT INTO `usuarios`(`iIdUsuario`, `cNombre`, `cApellidoP`, `cApellidoM`, `cNombreLargo`, `cUsuario`, `cPassword`, `cTelefono`, `iTipoUsuario`, `cCodigo`, `dFechaAlta`, `iEstatus`)
 									 VALUES ('0','$nombres','$paternos','$maternos','$fullname','$nombres','$contrasena','','2','$codigomaestro','$fecha_actual','1')");
-		if($query){
-
-            // $queryA = mysqli_query($conn,"INSERT INTO `usuario`(`iIdUsuario`, `cUsuario`, `cPassword`, `iTipoUsuario`, `dAlta`, `cKey`, `iEstatus`)
-            //                      VALUES('0','$correo','$contrasena','2','$fecha_actual','$codigomaestro','1');");
-
-                                 if($query){
-                                    header("Location: ../panel/index.html");
-                                 }
-                                 else{		
-                                    header("Location: ../index.html");
-                                }	
-
-           
+		if($queryM){
+              header("Location: ../panel/index.html");            
 		}
-		else{		
+		else{	
+            echo "<script> alert('No se pudo regustra el Maestro');window.location= 'login.html' </script>";		
             header("Location: ../index.html");
         }	
 	}
  	else{
-        $query = mysqli_query($conn,"INSERT INTO `usuarios`(`iIdUsuario`, `cNombre`, `cApellidoP`, `cApellidoM`, `cNombreLargo`, `cUsuario`, `cPassword`, `cTelefono`, `iTipoUsuario`, `cCodigo`, `dFechaAlta`, `iEstatus`)
+        $queryA = mysqli_query($conn,"INSERT INTO `usuarios`(`iIdUsuario`, `cNombre`, `cApellidoP`, `cApellidoM`, `cNombreLargo`, `cUsuario`, `cPassword`, `cTelefono`, `iTipoUsuario`, `cCodigo`, `dFechaAlta`, `iEstatus`)
 									 VALUES ('0','$nombres','$paternos','$maternos','$fullname','$nombres','$contrasena','','3','$codigomaestro','$fecha_actual','1')");
-		if($query){
-            // $queryA = mysqli_query($conn,"INSERT INTO `usuario`(`iIdUsuario`, `cUsuario`, `cPassword`, `iTipoUsuario`, `dAlta`, `cKey`, `iEstatus`)
-            // VALUES('0','$correo','$contrasena','2','$fecha_actual','$codigomaestro','1');");
-            
-            if($query){
-               header("Location: ../panel/index.html");
-            }
-            else{		
-               header("Location: ../index.html");
-           }	
-            
+		if($queryA){
+           
+               header("Location: ../vistaalumnos/index.html");
+                      
 		}
-		else{		
+		else{	
+            echo "<script> alert('No se pudo regustra el Alumno');window.location= 'login.html' </script>";	
             header("Location: ../index.html");
         }	
 		
