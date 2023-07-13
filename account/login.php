@@ -43,9 +43,14 @@ if ($stmt = $conn->prepare("SELECT cusuario, cPassword, cnombre, cnombrelargo, i
     // Verificar si la contraseña coincide
      if ($fila && password_verify($pass, $fila['cPassword'])) {
         $_SESSION["usuario"] = "cusuario";
+        $_SESSION["Tipo"]="iTipoUsuario";
         $_SESSION["Nombre"]="cNombre";
         $_SESSION["NombreLargo"]="cnombrelargo";
-       header("Location: ../panel/index.html");
+        if ($fila['iTipoUsuario']=2){
+               header("Location: ../panel/index.html");
+        }else if ($fila['iTipoUsuario']=3){
+         header("Location: ../vistalumnos/index.html");
+        }
        // echo '¡La contraseña es válida! ' ;
     // hacer lo que corresponda
      } else {
