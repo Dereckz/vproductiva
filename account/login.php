@@ -10,7 +10,7 @@ $pass = $_POST["password"];
 
 
 
-$Sql_Query = "select cusuario, cPassword from usuarios where cUsuario = '$nombre'";
+/* $Sql_Query = "select cusuario, cPassword from usuarios where cUsuario = '$nombre'";
      
      $result = mysqli_query($conn,$Sql_Query);
      $row = mysqli_fetch_array($result);
@@ -24,10 +24,10 @@ $Sql_Query = "select cusuario, cPassword from usuarios where cUsuario = '$nombre
            }
         }else{
            echo "No hay usuarios registrado con ese nombre ";
-        }
+        } */
 
  
-if ($stmt = $conn->prepare("SELECT cusuario, cPassword, cnombre, cnombrelargo, itipousuario FROM usuarios WHERE cUsuario= ? LIMIT 1")) {
+if ($stmt = $conn->prepare("SELECT cUsuario, cPassword, cNombre, cnombrelargo, fkidTipoUsuario FROM usuarios WHERE cUsuario= ? LIMIT 1")) {
 
 //     /* ligar parámetros para marcadores */
 // en este caso el nombre de usuario
@@ -42,17 +42,21 @@ if ($stmt = $conn->prepare("SELECT cusuario, cPassword, cnombre, cnombrelargo, i
 
     // Verificar si la contraseña coincide
      if ($fila && password_verify($pass, $fila['cPassword'])) {
+
         $_SESSION["usuario"] = "cusuario";
-        $_SESSION["Tipo"]="iTipoUsuario";
+        $_SESSION["Tipo"]="fkidTipoUsuario";
         $_SESSION["Nombre"]="cNombre";
         $_SESSION["NombreLargo"]="cnombrelargo";
-        if ($fila['iTipoUsuario']=2){
-               header("Location: ../panel/index.html");
-        }else if ($fila['iTipoUsuario']=3){
-         header("Location: ../vistalumnos/index.html");
-        }
-       // echo '¡La contraseña es válida! ' ;
-    // hacer lo que corresponda
+$tipo=$fila['fkidTipoUsuario'];
+
+        if ($fila['fkidTipoUsuario']==2){
+
+              header("Location: ../panel/index.html");
+
+        }else if ($fila['fkidTipoUsuario']==3){
+
+         header("Location: ../alumno/indexalumnos.php");
+        }      
      } else {
         header("Location: login.html");
          echo 'La contraseña no es válida!' ;
@@ -62,7 +66,8 @@ if ($stmt = $conn->prepare("SELECT cusuario, cPassword, cnombre, cnombrelargo, i
 
 
  } else {
-     echo "<script> alert('Error');window.location= 'login.html' </script>";
+     echo "<script> alert('Error al logarse');window.location= '../index.html' </script>";
+    header("Location:  ../index.html");
 }
  /* if($nr == 1)
 {
