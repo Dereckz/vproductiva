@@ -383,10 +383,6 @@
       <div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
         
         <h4 class="u-text u-text-1 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" style="will-change: transform, opacity; animation-duration: 1500ms;">Cursos</h4>
-        <!--<p class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;"> Correo: jessica@gmail.com</p>
-        <p class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;"> Telefono: 2214053116</p>
-        <p class="u-text u-text-4 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;">Imagen de <a href="https://www.freepik.com/photos/people" class="u-border-1 u-border-active-palette-2-base u-border-black u-border-hover-palette-2-base u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-link u-button-style u-none u-radius-0 u-text-body-color u-top-left-radius-0 u-top-right-radius-0 u-btn-1" target="_blank">Freepik</a>
-        </p>-->
         <div class="u-expanded-width u-list u-list-1">
           <div class="u-repeater u-repeater-1">
           <?=curso();?>
