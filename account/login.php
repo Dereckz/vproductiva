@@ -39,19 +39,19 @@ if ($stmt = $conn->prepare("SELECT cUsuario, cPassword, cNombre, cnombrelargo, f
 //     /* recuperamos la fila como un array asociativo */
      $fila = $result->fetch_assoc();
 
-
     // Verificar si la contraseña coincide
      if ($fila && password_verify($pass, $fila['cPassword'])) {
 
+         session_start();
         $_SESSION["usuario"] = "cusuario";
         $_SESSION["Tipo"]="fkidTipoUsuario";
         $_SESSION["Nombre"]="cNombre";
         $_SESSION["NombreLargo"]="cnombrelargo";
-$tipo=$fila['fkidTipoUsuario'];
+         $tipo=$fila['fkidTipoUsuario'];
 
         if ($fila['fkidTipoUsuario']==2){
 
-              header("Location: ../panel/index.html");
+              header("Location: ../panel/index.php");
 
         }else if ($fila['fkidTipoUsuario']==3){
 

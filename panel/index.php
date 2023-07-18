@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
-  <meta name="author" content="">
+  <meta name="author" content="dt">
   <link href="../img/LOGOVP.jpg" rel="icon">
   <title>VP - Dashboard</title>
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -20,15 +20,15 @@
     <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon">
-          <img src="img/logo/logo2.png">
+          <img src="img/logo/LOGOVP.ico">
         </div>
-        <div class="sidebar-brand-text mx-3">RuangAdmin</div>
+        <div class="sidebar-brand-text mx-3">Panel</div>
       </a>
       <hr class="sidebar-divider my-0">
       <li class="nav-item active">
         <a class="nav-link" href="index.html">
           <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Dashboard</span></a>
+          <span>Incio</span></a>
       </li>
       <hr class="sidebar-divider">
       <div class="sidebar-heading">
@@ -274,11 +274,14 @@
                 <a class="dropdown-item text-center small text-gray-500" href="#">View All Taks</a>
               </div>
             </li>
+
+            <!--Sliderbar name user-->
             <div class="topbar-divider d-none d-sm-block"></div>
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
-                <img class="img-profile rounded-circle" src="img/boy.png" style="max-width: 60px">
+               
+                <img class="img-profile rounded-circle" src="img/girl.png" style="max-width: 60px">              
                 <span class="ml-2 d-none d-lg-inline text-white small" id="name_nav">User</span>
               </a>
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -402,7 +405,7 @@
             </div>
 
             <!-- Area Chart -->
-            <div class="col-xl-8 col-lg-7">
+            <!-- <div class="col-xl-8 col-lg-7">
               <div class="card mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                   <h6 class="m-0 font-weight-bold text-primary">Monthly Recap Report</h6>
@@ -427,7 +430,7 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
             <!-- Pie Chart -->
             <div class="col-xl-4 col-lg-5">
               <div class="card mb-4">
@@ -563,7 +566,7 @@
               </div>
             </div>
             <!-- Message From Customer-->
-            <div class="col-xl-4 col-lg-5 ">
+            <!-- <div class="col-xl-4 col-lg-5 ">
               <div class="card">
                 <div class="card-header py-4 bg-primary d-flex flex-row align-items-center justify-content-between">
                   <h6 class="m-0 font-weight-bold text-light">Message From Customer</h6>
@@ -605,7 +608,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
           <!--Row-->
 
           <div class="row">
@@ -627,11 +630,11 @@
                   </button>
                 </div>
                 <div class="modal-body">
-                  <p>Are you sure you want to logout?</p>
+                  <p>Esta Seguro que deseas Salir?</p>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancel</button>
-                  <a href="login.html" class="btn btn-primary">Logout</a>
+                  <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancelar</button>
+                  <a href="../account/login.html" class="btn btn-primary">Cerrar Sesión</a>
                 </div>
               </div>
             </div>
