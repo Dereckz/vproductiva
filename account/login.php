@@ -1,5 +1,5 @@
 <?php
-
+ session_start();
 include("..\dev\conectar.php");
 
 
@@ -28,8 +28,10 @@ $pass = $_POST["password"];
 
  
 if ($stmt = $conn->prepare("SELECT cUsuario, cPassword, cNombre, cnombrelargo, fkidTipoUsuario FROM usuarios WHERE cUsuario= ? LIMIT 1")) {
+// Start the session
 
-//     /* ligar parámetros para marcadores */
+
+///* ligar parámetros para marcadores */
 // en este caso el nombre de usuario
      $stmt->bind_param("s", $nombre);
 //     /* ejecutamos la query */
@@ -42,11 +44,11 @@ if ($stmt = $conn->prepare("SELECT cUsuario, cPassword, cNombre, cnombrelargo, f
     // Verificar si la contraseña coincide
      if ($fila && password_verify($pass, $fila['cPassword'])) {
 
-         session_start();
-        $_SESSION["usuario"] = "cusuario";
-        $_SESSION["Tipo"]="fkidTipoUsuario";
-        $_SESSION["Nombre"]="cNombre";
-        $_SESSION["NombreLargo"]="cnombrelargo";
+      $_SESSION["id"] =$fila["iIdUsuario"];
+        $_SESSION["usuario"] = $fila["cusuario"];
+        $_SESSION["Tipo"]=$fila["fkidTipoUsuario"];
+        $_SESSION["Nombre"]=$fila['cNombre'];
+        $_SESSION["NombreLargo"]=$fila["cnombrelargo"];
          $tipo=$fila['fkidTipoUsuario'];
 
         if ($fila['fkidTipoUsuario']==2){
