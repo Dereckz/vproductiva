@@ -15,9 +15,7 @@ if ($result = $mysqli->query($query)) {
     while ($row = $result->fetch_assoc()) {
         $curso = $row["Nombre"];
         $modulo = $row["Nivel"];
-        
     }
-
     /* free result set */
     $result->free();
 }else if ($nr == 0)  {
