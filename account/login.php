@@ -27,7 +27,7 @@ $pass = $_POST["password"];
         } */
 
  
-if ($stmt = $conn->prepare("SELECT cUsuario, cPassword, cNombre, cnombrelargo, fkidTipoUsuario FROM usuarios WHERE cUsuario= ? LIMIT 1")) {
+if ($stmt = $conn->prepare("SELECT iIdUsuario, cUsuario, cPassword, cNombre, cnombrelargo, fkidTipoUsuario FROM usuarios WHERE cUsuario= ? LIMIT 1")) {
 // Start the session
 
 
