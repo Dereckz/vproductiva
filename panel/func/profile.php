@@ -37,12 +37,12 @@ function curseactive()
                       <div class="text-xs font-weight-bold text-uppercase mb-1">'.$consulta["cNombreCurso"].'</div>
                       <div class="h5 mb-0 font-weight-bold text-gray-800" >'.$consulta["cDescripcion"].'</div>
                       <div class="mt-2 mb-0 text-muted text-xs">
-                        <span class="text-success mr-2"><i class="fa fa-arrow-up"></i>Activo</span>
+                        <span class="text-success mr-2"><i class="fas fa-apple-alt"></i></i> Activo</span>
                         <span>Instructor:</span>
                       </div>
                     </div>
                     <div class="col-auto">
-                    <i class="fas fa-users fa-2x text-info"></i>
+                    <i ><img width="50" height="50" src="'.$consulta["ricono"].'"></i>
                     </div>
                   </div>
                 </div>
@@ -53,7 +53,36 @@ function curseactive()
 }
 function registercurso()
 {
+    include "..\dev\conectar.php";
+    $resultado = mysqli_query($conn, "SELECT * FROM `detallecurso` INNER JOIN usuarios on fkiIdUsuario=iIdUsuario where usuarios.fkidTipoUsuario=2;");
     
+    while ($consulta = mysqli_fetch_array($resultado)) {
+        $IdCurso=$consulta["iIdCurso"];
+
+        if ($consulta["iEstatus"]=="1")
+        {
+            echo 
+            '<tr>
+            <td><a href="#">'.$consulta["iIdUsuario"].'</a></td>
+            <td>'.$consulta["cNombreLargo"].'</td>
+            <td>'.$IdCurso.'</td>
+            <td><span class="badge badge-success">'.$consulta["iEstatus"].'</span></td>
+            <td><a href="#" class="btn btn-sm btn-primary">Detalle</a></td>
+            </tr>';
+        }else{
+            echo 
+            '<tr>
+            <td><a href="#">'.$consulta["iIdUsuario"].'</a></td>
+            <td>'.$consulta["cNombreLargo"].'</td>
+            <td>'.$IdCurso.'</td>
+            <td><span class="badge badge-danger">'.$consulta["iEstatus"].'</span></td>
+            <td><a href="#" class="btn btn-sm btn-primary">Detalle</a></td>
+            </tr>';
+
+        }
+        
+    }
+   
 }
 
 ?>
