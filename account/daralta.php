@@ -6,7 +6,7 @@ $fullname = ($_POST["fullname"]);
 $correo = ($_POST["email"]);
 $contrasena = password_hash(($_POST["password"]), PASSWORD_DEFAULT);   
 $matricula = ($_POST["codigomaestro"]);
-$fecha_actual = date("d-m-Y");
+$fecha_actual = date("d-m-Y h:i:s");
 $codigomaestro=$_POST["codigomaestro"];
 
 //Separar Nombres

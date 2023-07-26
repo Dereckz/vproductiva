@@ -21,9 +21,9 @@
     <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon">
-          <img src="img/logo/logovproductiva2.png">
+          <img src="img/logo/logovp.ico">
         </div>
-        <div class="sidebar-brand-text mx-3">Maestro</div>
+        <div class="sidebar-brand-text mx-3"></div>
       </a>
       <hr class="sidebar-divider my-0">
       <li class="nav-item active">
@@ -152,7 +152,7 @@
               <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-bell fa-fw"></i>
-                <span class="badge badge-danger badge-counter">3+</span>
+                <span class="badge badge-danger badge-counter">2+</span>
               </a>
               <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                 aria-labelledby="alertsDropdown">
@@ -314,7 +314,7 @@
         <!-- Container Fluid-->
         <div class="container-fluid" id="container-wrapper">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+            <h1 class="h3 mb-0 text-gray-800">Inicio</h1>
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="./">Home</a></li>
               <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
@@ -322,32 +322,12 @@
           </div>
 
           <div class="row mb-3">
-            <!-- Earnings (Monthly) Card Example -->
+            <!-- Cursos Card Example -->
            
-            <div class="col-xl-3 col-md-6 mb-4" >
-              <div class="card h-100">
-                <div class="card-body">
-                  <div class="row align-items-center">
-                    <div class="col mr-2">
-                      <form  action="usr.php" method="post">
-                      <div class="text-xs font-weight-bold text-uppercase mb-1" name ="curso">Earnings (Monthly)</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800" name ="modulo">$40,000</div>
-                      <div class="mt-2 mb-0 text-muted text-xs">
-                        <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
-                        <span>Since last month</span>
-                      </div>
-                    </form>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-calendar fa-2x text-primary"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <?php curseactive();?>
          
             <!-- Earnings (Annual) Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
+            <!-- <div class="col-xl-3 col-md-6 mb-4">
               <div class="card h-100">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
@@ -365,8 +345,8 @@
                   </div>
                 </div>
               </div>
-            </div>
-            <!-- New User Card Example -->
+            </div> -->
+           <!--  New User Card Example
             <div class="col-xl-3 col-md-6 mb-4">
               <div class="card h-100">
                 <div class="card-body">
@@ -385,9 +365,9 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div>-->
             <!-- Pending Requests Card Example -->
-            <div class="col-xl-3 col-md-6 mb-4">
+           <!--  <div class="col-xl-3 col-md-6 mb-4">
               <div class="card h-100">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
@@ -406,7 +386,7 @@
                 </div>
               </div>
             </div>
-
+  -->
             <!-- Area Chart -->
             <!-- <div class="col-xl-8 col-lg-7">
               <div class="card mb-4">
@@ -434,8 +414,9 @@
                 </div>
               </div>
             </div> -->
+
             <!-- Pie Chart -->
-            <div class="col-xl-4 col-lg-5">
+<!--             <div class="col-xl-4 col-lg-5">
               <div class="card mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                   <h6 class="m-0 font-weight-bold text-primary">Products Sold</h6>
@@ -506,7 +487,7 @@
                       class="fas fa-chevron-right"></i></a>
                 </div>
               </div>
-            </div>
+            </div> -->
             <!-- Invoice Example -->
             <div class="col-xl-8 col-lg-7 mb-4">
               <div class="card">
@@ -519,11 +500,11 @@
                   <table class="table align-items-center table-flush">
                     <thead class="thead-light">
                       <tr>
-                        <th>Order ID</th>
-                        <th>Customer</th>
-                        <th>Item</th>
-                        <th>Status</th>
-                        <th>Action</th>
+                        <th>ID</th>
+                        <th>Alumno</th>
+                        <th>Curso</th>
+                        <th>Estatus</th>
+                        <th>Accion</th>
                       </tr>
                     </thead>
                     <tbody>
