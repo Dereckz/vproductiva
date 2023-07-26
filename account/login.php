@@ -27,7 +27,7 @@ $pass = $_POST["password"];
         } */
 
  
-if ($stmt = $conn->prepare("SELECT iIdUsuario, cUsuario, cPassword, cNombre, cnombrelargo, fkidTipoUsuario FROM usuarios WHERE cUsuario= ? LIMIT 1")) {
+if ($stmt = $conn->prepare("SELECT iIdUsuario, cUsuario, cPassword, cNombre, cnombrelargo, fkidTipoUsuario,iGenero FROM usuarios WHERE cUsuario= ? LIMIT 1")) {
 // Start the session
 
 
@@ -44,14 +44,15 @@ if ($stmt = $conn->prepare("SELECT iIdUsuario, cUsuario, cPassword, cNombre, cno
     // Verificar si la contraseña coincide
      if ($fila && password_verify($pass, $fila['cPassword'])) {
 
-      $_SESSION["id"] =$fila["iIdUsuario"];
-        $_SESSION["usuario"] = $fila["cusuario"];
+        $_SESSION["id"] =$fila["iIdUsuario"];
+        $_SESSION["usuario"] = $fila["cUsuario"];
         $_SESSION["Tipo"]=$fila["fkidTipoUsuario"];
         $_SESSION["Nombre"]=$fila['cNombre'];
         $_SESSION["NombreLargo"]=$fila["cnombrelargo"];
-         $tipo=$fila['fkidTipoUsuario'];
+        $_SESSION["iGenero"]=$fila["iGenero"];
+        $tipo=$fila['fkidTipoUsuario'];
 
-        if ($fila['fkidTipoUsuario']==2){
+        if ($fila['fkidTipoUsuario']==1){
 
               header("Location: ../panel/index.php");
 
