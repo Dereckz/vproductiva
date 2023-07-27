@@ -5,9 +5,10 @@ date_default_timezone_set('America/Mexico_City');
 $fullname = ($_POST["fullname"]);
 $correo = ($_POST["email"]);
 $contrasena = password_hash(($_POST["password"]), PASSWORD_DEFAULT);   
-$matricula = ($_POST["codigomaestro"]);
+//$confirmcontrasena =password_hash(($_POST["confirmpassword"]), PASSWORD_DEFAULT);  
+
 $fecha_actual = date("d-m-Y h:i:s");
-$codigomaestro=$_POST["codigomaestro"];
+//$codigomaestro=$_POST["codigomaestro"];
 
 //Separar Nombres
 $nombres=namess::getNombreSplit($fullname)["Nombres"];
@@ -20,56 +21,44 @@ if ($stmt = $conn->prepare("SELECT cUsuario FROM usuarios WHERE cUsuario= ? LIMI
     $stmt->bind_param("s", $correo);
     $stmt->execute();
     $result = $stmt->get_result();
-   $fila = $result->fetch_assoc();
+    $fila = $result->fetch_assoc();
 
     if ($fila> 0)  {
        
       echo "<script> alert('$correo Ya se encuentra registrado, verificalo') </script>";	
-       //header("Location: login.html");
-      
+       header("Location: login.html");
 
    } else {
-      if (!empty($fullname)){
-       
-       /* if(!empty($codigomaestro))
-           {		            
-        
-           $queryM = mysqli_query($conn,"INSERT INTO `usuarios`(`iIdUsuario`, `fkidTipoUsuario`, `cNombre`, `cApellidoP`, `cApellidoM`, `cNombreLargo`, `cCorreo`, `cUsuario`, `cPassword`, `cTelefono`, `cCodigo`, `dFechaAlta`, `iGenero`,`iEstatus`)
-                                        VALUES ('0','2','$nombres','$paternos','$maternos','$fullname','$correo','$correo','$contrasena','','$codigomaestro','$fecha_actual','1','1')");
-           if($queryM){
-                 header("Location: ../panel/index.html");            
+        if (!empty($fullname)){
+            if ($_POST["password"]==$_POST["confirmpassword"])
+            {
+                
+                    $queryA = mysqli_query($conn,"INSERT INTO `usuarios`(`iIdUsuario`, `fkidTipoUsuario`, `cNombre`, `cApellidoP`, `cApellidoM`, `cNombreLargo`, `cCorreo`, `cUsuario`, `cPassword`, `cTelefono`, `cCodigo`, `dFechaAlta`, `iGenero`,`iEstatus`)
+                    VALUES ('0','3','$nombres','$paternos','$maternos','$fullname','$correo','$correo','$contrasena','','','$fecha_actual','1','1')");
+                        if($queryA){
+                        
+                            header("Location: ../alumno/index.php");     
+                                    
+                        }
+                        else{	
+                            echo "<script> alert('No se pudo regustra el Alumno') </script>";	
+                            header("Location: login.html");
+                        
+                        }	 
             }
-           else{	
-               echo "<script> alert('No se pudo registrar el Maestro') </script>";		
-               header("Location: ../index.html");
-           }	
-       }
-        else{  */
-           $queryA = mysqli_query($conn,"INSERT INTO `usuarios`(`iIdUsuario`, `fkidTipoUsuario`, `cNombre`, `cApellidoP`, `cApellidoM`, `cNombreLargo`, `cCorreo`, `cUsuario`, `cPassword`, `cTelefono`, `cCodigo`, `dFechaAlta`, `iGenero`,`iEstatus`)
-           VALUES ('0','3','$nombres','$paternos','$maternos','$fullname','$correo','$correo','$contrasena','','','$fecha_actual','1','1')");
-           if($queryA){
-              
-               header("Location: ../alumno/index.php");     
-                         
-           }
-           else{	
-               echo "<script> alert('No se pudo regustra el Alumno') </script>";	
-               header("Location: login.html");
-               //header("Location: ../index.html");
-           }	 
-           
-       //}
-   }
-    else{
-       echo "<script> alert('Validar Información') </script>";
-       header("Location: login.html");
-   }
+            else{
+                echo "<script> alert('No coinciden las contraseñas') </script>";	
+                header("Location: login.html");
+            }   
+        }else{
+            echo "<script> alert('Validar Información') </script>";
+            header("Location: login.html");
+        }
    
    }
     
 }else{
-echo "<script> alert('Error en la base de datos, consulta al admin') </script>";	
-   
+echo "<script> alert('Error en la base de datos, consulta al admin') </script>";	  
 }    
 //Separa Nombres
 class namess{
