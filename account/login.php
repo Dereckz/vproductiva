@@ -61,9 +61,10 @@ if ($stmt = $conn->prepare("SELECT iIdUsuario, cUsuario, cPassword, cNombre, cno
          header("Location: ../alumno/indexalumnos.php");
         }      
      } else {
-        header("Location: login.html");
-         echo 'La contraseña no es válida!' ;
-     //   hacer lo que corresponda
+       //header("Location: login.html");
+         //echo 'La contraseña no es válida!' ;
+         echo "<script> alert('La contraseña no es válida!');window.location= '../account/login.html' </script>";
+          
      }
 
 

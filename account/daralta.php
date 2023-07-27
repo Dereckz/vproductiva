@@ -24,12 +24,14 @@ if ($stmt = $conn->prepare("SELECT cUsuario FROM usuarios WHERE cUsuario= ? LIMI
 
     if ($fila> 0)  {
        
-       echo "<script> alert('$correo Ya se encuentra registrado, verificalo') </script>";	
-       header("Location: login.html");
+      echo "<script> alert('$correo Ya se encuentra registrado, verificalo') </script>";	
+       //header("Location: login.html");
+      
+
    } else {
       if (!empty($fullname)){
        
-       if(!empty($codigomaestro))
+       /* if(!empty($codigomaestro))
            {		            
         
            $queryM = mysqli_query($conn,"INSERT INTO `usuarios`(`iIdUsuario`, `fkidTipoUsuario`, `cNombre`, `cApellidoP`, `cApellidoM`, `cNombreLargo`, `cCorreo`, `cUsuario`, `cPassword`, `cTelefono`, `cCodigo`, `dFechaAlta`, `iGenero`,`iEstatus`)
@@ -42,21 +44,21 @@ if ($stmt = $conn->prepare("SELECT cUsuario FROM usuarios WHERE cUsuario= ? LIMI
                header("Location: ../index.html");
            }	
        }
-        else{
+        else{  */
            $queryA = mysqli_query($conn,"INSERT INTO `usuarios`(`iIdUsuario`, `fkidTipoUsuario`, `cNombre`, `cApellidoP`, `cApellidoM`, `cNombreLargo`, `cCorreo`, `cUsuario`, `cPassword`, `cTelefono`, `cCodigo`, `dFechaAlta`, `iGenero`,`iEstatus`)
            VALUES ('0','3','$nombres','$paternos','$maternos','$fullname','$correo','$correo','$contrasena','','','$fecha_actual','1','1')");
            if($queryA){
               
-               header("Location: ../content/main.html");     
+               header("Location: ../alumno/index.php");     
                          
            }
            else{	
                echo "<script> alert('No se pudo regustra el Alumno') </script>";	
                header("Location: login.html");
                //header("Location: ../index.html");
-           }	
+           }	 
            
-       }
+       //}
    }
     else{
        echo "<script> alert('Validar Información') </script>";
@@ -171,6 +173,6 @@ class namess{
     }
 }
 
-	
+
 
 ?>
