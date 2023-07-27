@@ -304,7 +304,7 @@
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="javascript:void(0);" data-toggle="modal" data-target="#logoutModal">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Logout
+                  Cerrar Sesión
                 </a>
               </div>
             </li>
@@ -355,58 +355,12 @@
                 <div class="card-footer"></div>
               </div>
             </div>
-            <!-- Message From Customer-->
-           <!--  <div class="col-xl-4 col-lg-5 ">
-              <div class="card">
-                <div class="card-header py-4 bg-primary d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-light">Message From Customer</h6>
-                </div>
-                <div>
-                  <div class="customer-message align-items-center">
-                    <a class="font-weight-bold" href="#">
-                      <div class="text-truncate message-title">Hi there! I am wondering if you can help me with a
-                        problem I've been having.</div>
-                      <div class="small text-gray-500 message-time font-weight-bold">Udin Cilok · 58m</div>
-                    </a>
-                  </div>
-                  <div class="customer-message align-items-center">
-                    <a href="#">
-                      <div class="text-truncate message-title">But I must explain to you how all this mistaken idea
-                      </div>
-                      <div class="small text-gray-500 message-time">Nana Haminah · 58m</div>
-                    </a>
-                  </div>
-                  <div class="customer-message align-items-center">
-                    <a class="font-weight-bold" href="#">
-                      <div class="text-truncate message-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit
-                      </div>
-                      <div class="small text-gray-500 message-time font-weight-bold">Jajang Cincau · 25m</div>
-                    </a>
-                  </div>
-                  <div class="customer-message align-items-center">
-                    <a class="font-weight-bold" href="#">
-                      <div class="text-truncate message-title">At vero eos et accusamus et iusto odio dignissimos
-                        ducimus qui blanditiis
-                      </div>
-                      <div class="small text-gray-500 message-time font-weight-bold">Udin Wayang · 54m</div>
-                    </a>
-                  </div>
-                  <div class="card-footer text-center">
-                    <a class="m-0 small text-primary card-link" href="#">View More <i
-                        class="fas fa-chevron-right"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> -->
-          <!--Row-->
-
-          <div class="row">
+      <!--     <div class="row">
             <div class="col-lg-12 text-center">
               <p>Do you like this template ? you can download from <a href="https://github.com/indrijunanda/RuangAdmin"
                   class="btn btn-primary btn-sm" target="_blank"><i class="fab fa-fw fa-github"></i>&nbsp;GitHub</a></p>
             </div>
-          </div>
+          </div> -->
 
           
         <!---Container Fluid-->
@@ -415,8 +369,8 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>copyright &copy; <script> document.write(new Date().getFullYear()); </script> - developed by
-              <b><a href="https://indrijunanda.gitlab.io/" target="_blank">indrijunanda</a></b>
+            <span>copyright &copy; <script> document.write(new Date().getFullYear()); </script> - Valoracion Productva
+              <b><a href="https://indrijunanda.gitlab.io/" target="_blank">©</a></b>
             </span>
           </div>
         </div>
@@ -450,8 +404,8 @@
               </div>
             </div>
           </div>
-
-        </div>
+  </div>
+  
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
