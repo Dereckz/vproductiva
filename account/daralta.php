@@ -22,7 +22,7 @@ if ($stmt = $conn->prepare("SELECT cUsuario FROM usuarios WHERE cUsuario= ? LIMI
     $stmt->execute();
     $result = $stmt->get_result();
     $fila = $result->fetch_assoc();
-
+//@Dereckz13
     if ($fila> 0)  {
        
       echo "<script> alert('$correo Ya se encuentra registrado, verificalo') </script>";	
