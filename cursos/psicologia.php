@@ -10,6 +10,19 @@ if (!isset($_SESSION)) {
   INNER JOIN modulo m ON c.iIdCurso = m.fkiIdCurso
   INNER JOIN recurso r ON  m.iIdModulo = r.fkiIdModulo
   WHERE c.iIdCurso=4 and u.iIdUsuario=".$_SESSION["id"]);
+
+$resultadoVisto = mysqli_query($conn, "SELECT r.iIdRecurso,c.cNombreCurso, m.cNombreModulo,r.cRuta FROM usuarios u
+INNER JOIN inscripcion i ON u.iIdUsuario = i.fkiIdUsuario
+  INNER JOIN curso c ON i.fkiIdeCurso = c.iIdCurso
+INNER JOIN modulo m ON c.iIdCurso = m.fkiIdCurso
+INNER JOIN recurso r ON  m.iIdModulo = r.fkiIdModulo
+INNER JOIN visto v ON r.iIdRecurso = v.idRecurso
+WHERE c.iIdCurso=4 and u.iIdUsuario=" . $_SESSION["id"]);
+
+$numMudulo= mysqli_num_rows($resultado);
+$numVisto = mysqli_num_rows($resultadoVisto);
+
+
 while ($consulta = mysqli_fetch_array($resultado))
 {
  
@@ -45,7 +58,7 @@ $info =mysqli_fetch_array($check);
     // Ejecutamos AJAX
     $.post("visto.php",{"recurso":recurso,"alumno": alumno},function(respuesta){
             alert(respuesta);
-           // location.reload();
+            location.reload();
         });
         });
     }
@@ -56,4 +69,12 @@ $info =mysqli_fetch_array($check);
 
     
 }
+
+if($numMudulo==$numVisto){
+    $constancia='<a href="../alumno/reconocimiento.php" id="" target="_blank" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">Generar constancia<br></a>';
+}
+else{
+    $constancia="";
+}
+echo $constancia;
 ?>
