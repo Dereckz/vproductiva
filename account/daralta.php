@@ -24,10 +24,9 @@ if ($stmt = $conn->prepare("SELECT cUsuario FROM usuarios WHERE cUsuario= ? LIMI
     $fila = $result->fetch_assoc();
 //@Dereckz13
     if ($fila> 0)  {
-       
-      echo "<script> alert('$correo Ya se encuentra registrado, verificalo') </script>";	
-       header("Location: login.html");
-
+        echo "<script> alert('$correo Ya se encuentra registrado, verificalo') ;window.location= '../account/login.html' </script>";
+                    
+   
    } else {
         if (!empty($fullname)){
             if ($_POST["password"]==$_POST["confirmpassword"])
@@ -41,18 +40,19 @@ if ($stmt = $conn->prepare("SELECT cUsuario FROM usuarios WHERE cUsuario= ? LIMI
                                     
                         }
                         else{	
-                            echo "<script> alert('No se pudo regustra el Alumno') </script>";	
-                            header("Location: login.html");
+                            echo "<script> alert('No se pudo regustra el Alumno');window.location= '../account/login.html' </script>";
+                          
                         
                         }	 
             }
             else{
-                echo "<script> alert('No coinciden las contraseñas') </script>";	
-                header("Location: login.html");
+                echo "<script> alert('No coinciden las contraseñas');window.location= '../account/login.html' </script>";
+                          
+                
             }   
         }else{
-            echo "<script> alert('Validar Información') </script>";
-            header("Location: login.html");
+            echo "<script> alert('Validar Información');window.location= '../account/login.html' </script>";
+                   
         }
    
    }
