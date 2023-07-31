@@ -5,7 +5,7 @@ date_default_timezone_set('America/Mexico_City');
 $fullname = ($_POST["fullname"]);
 $correo = ($_POST["email"]);
 $contrasena = password_hash(($_POST["password"]), PASSWORD_DEFAULT);   
-//$confirmcontrasena =password_hash(($_POST["confirmpassword"]), PASSWORD_DEFAULT);  
+$confirmcontrasena =password_hash(($_POST["confirmpassword"]), PASSWORD_DEFAULT);  
 
 $fecha_actual = date("d-m-Y h:i:s");
 //$codigomaestro=$_POST["codigomaestro"];
@@ -29,10 +29,14 @@ if ($stmt = $conn->prepare("SELECT cUsuario FROM usuarios WHERE cUsuario= ? LIMI
    
    } else {
         if (!empty($fullname)){
-            if ($_POST["password"]==$_POST["confirmpassword"])
+            if ($_POST["password"] != $_POST["confirmpassword"]) 
+           
             {
-                
-                    $queryA = mysqli_query($conn,"INSERT INTO `usuarios`(`iIdUsuario`, `fkidTipoUsuario`, `cNombre`, `cApellidoP`, `cApellidoM`, `cNombreLargo`, `cCorreo`, `cUsuario`, `cPassword`, `cTelefono`, `cCodigo`, `dFechaAlta`, `iGenero`,`iEstatus`)
+                echo "<script> alert('No coinciden las contraseñas');window.location= '../account/login.html' </script>";
+                                            
+            }
+            else{
+                $queryA = mysqli_query($conn,"INSERT INTO `usuarios`(`iIdUsuario`, `fkidTipoUsuario`, `cNombre`, `cApellidoP`, `cApellidoM`, `cNombreLargo`, `cCorreo`, `cUsuario`, `cPassword`, `cTelefono`, `cCodigo`, `dFechaAlta`, `iGenero`,`iEstatus`)
                     VALUES ('0','3','$nombres','$paternos','$maternos','$fullname','$correo','$correo','$contrasena','','','$fecha_actual','1','1')");
                         if($queryA){
                         
@@ -44,10 +48,6 @@ if ($stmt = $conn->prepare("SELECT cUsuario FROM usuarios WHERE cUsuario= ? LIMI
                           
                         
                         }	 
-            }
-            else{
-                echo "<script> alert('No coinciden las contraseñas');window.location= '../account/login.html' </script>";
-                          
                 
             }   
         }else{
