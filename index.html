@@ -7,6 +7,7 @@ session_start();
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="stylesheet" href="styles/style.css">
   <title>Valuación Productiva</title>
 </head>
@@ -18,7 +19,7 @@ session_start();
       <div class="nav-bar">
         <div class="brand">
           <a href="#hero">
-           <img src="img/logovproductiva2.png" id="logoinicio" alt="VProductiva Logo">
+           <img src="img/logob.png" id="logoinicio" alt="VProductiva Logo">
            <!-- <h1>Valuación Productiva</h1>-->
           </a>
         </div>
@@ -100,7 +101,7 @@ session_start();
         <h1 class="section-title">Cursos<span>Disponibles</span></h1>
       </div>
       <div class="all-projects">
-        <div class="project-item">
+        <div class="project-item" id="curso1">
           <div class="project-info">
             <a href="#services" class="titlescursos" onMouseover="this.style.color='#7930D1'" onMouseout="this.style.color='white'">
               <h1><u>Productividad Laboral</u></h1></a>
@@ -114,7 +115,7 @@ session_start();
             <img src="./img/productividad.webp" alt="img">
           </div>
         </div>
-        <div class="project-item">
+        <div class="project-item" id="curso2">
           <div class="project-info">
             <a href="#services" class="titlescursos" onMouseover="this.style.color='#7930D1'" onMouseout="this.style.color='white'">
               <h1><u>Salud, Higiene y Seguridad</u></h1></a>
@@ -128,7 +129,7 @@ session_start();
             <img src="./img/saludehigiene.webp" alt="img">
           </div>
         </div>
-        <div class="project-item">
+        <div class="project-item" id="curso3">
           <div class="project-info">
             <a href="#services" class="titlescursos" onMouseover="this.style.color='#7930D1'" onMouseout="this.style.color='white'">
               <h1><u>Habilidades Blandas</u></h1></a>
@@ -142,7 +143,7 @@ session_start();
             <img src="./img/seguridad.webp" alt="img">
           </div>
         </div>
-        <div class="project-item">
+        <div class="project-item" id="curso4">
           <div class="project-info">
             <a href="#services" class="titlescursos" onMouseover="this.style.color='#7930D1'" onMouseout="this.style.color='white'">
               <h1><u> Habilidades Digitales </u></h1></a>
@@ -156,7 +157,7 @@ session_start();
             <img src="./img/social.webp" alt="img">
           </div>
         </div>
-        <div class="project-item">
+        <div class="project-item" id="curso5">
           <div class="project-info">
             <a href="#services" class="titlescursos" onMouseover="this.style.color='#7930D1'" onMouseout="this.style.color='white'">
               <h1><u>Psicología</u></h1></a>
@@ -170,10 +171,24 @@ session_start();
             <img src="./img/psicologia.webp" alt="img">
           </div>
         </div>
-        <div class="project-item">
+        <div class="project-item" id="curso6">
           <div class="project-info">
             <a href="#services" class="titlescursos" onMouseover="this.style.color='#7930D1'" onMouseout="this.style.color='white'">
               <h1><u>Cultura Jurídica</u></h1></a>
+            <!--<h2>Coding is Love</h2>-->
+            <ul>
+              <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad, iusto cupiditate.</li>
+              <li>En este espacio encontrarás las herramientas necesarias para cuidar del aspecto más esencial de nuestra persona, nuestro cuerpo.</li>
+            </ul>
+          </div>
+          <div class="project-img">
+            <img src="./img/psicologia.webp" alt="img">
+          </div>
+        </div>
+        <div class="project-item" id="curso7">
+          <div class="project-info">
+            <a href="#services" class="titlescursos" onMouseover="this.style.color='#7930D1'" onMouseout="this.style.color='white'">
+              <h1><u>Finanzas</u></h1></a>
             <!--<h2>Coding is Love</h2>-->
             <ul>
               <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ad, iusto cupiditate.</li>
@@ -211,10 +226,57 @@ session_start();
           de un México más justo, libre, próspero y respetuoso de la persona humana, 
           de la verdad y del derecho y, por tanto, más apto para la consecución del bien 
           común y el combate a la pobreza.</p>
-        <a href="#" class="cta">Download Resume</a>
       </div>
     </div>
   </section>
+
+  <div class="projects-header" id="conocecapacitores">
+    <h1 class="section-title" id="capacitorestitle">Conoce a nuestros <span> capacitores </span></h1>
+  </div>
+  <div class="slidercapacitores">
+    <div class="slide-container">
+      <span class="slider-span" id="slider-span1"></span>
+      <span class="slider-span" id="slider-span2"></span>
+      <span class="slider-span" id="slider-span3"></span>
+      <span class="slider-span" id="slider-span4"></span>
+      <span class="slider-span" id="slider-span5"></span>
+      <span class="slider-span" id="slider-span6"></span>
+      <span class="slider-span" id="slider-span7"></span>
+
+      <div class="image-slider">
+          <div class="slides-div" id="slide-1">
+              <a href="#slider-span1" class="button" id="button-1">
+              <video src="img/LORENAVP.mp4"  poster="img/sliderlore.PNG" controls id="img1" class="img"></video></a>
+          </div>
+          <div class="slides-div" id="slide-2">
+              <a href="#slider-span2" class="button" id="button-2">
+              <video src="img/MIGUELVP.mp4"  poster="img/slidermiguel.PNG" controls id="img2" class="img"></video></a>
+          </div>
+          <div class="slides-div" id="slide-3">
+              <a href="#slider-span3" class="button" id="button-3">
+              <video src="img/JESSVP.mp4"  poster="img/sliderjess.PNG" controls id="img3" class="img"></video></a>
+          </div>
+          <div class="slides-div" id="slide-4">
+              <a href="#slider-span4" class="button" id="button-4">
+              <video src="img/ALFREDOVP.mp4"  poster="img/slideralfredo.PNG" controls id="img4" class="img"></video></a>
+          </div>
+          <div class="slides-div" id="slide-5">
+              <a href="#slider-span5" class="button" id="button-5">
+              <video src="img/MARISOLVP.mp4"  poster="img/slidermarisol.PNG" controls id="img5" class="img"></video></a>
+          </div>
+          <div class="slides-div" id="slide-6">
+              <a href="#slider-span6" class="button" id="button-6">
+              <video src="img/ADRIANVP.mp4"  poster="img/slideradrian.PNG" controls id="img6" class="img"></video></a>
+          </div>
+          <div class="slides-div" id="slide-7">
+              <a href="#slider-span7" class="button" id="button-7">
+              <video src="img/WENDYVP.mp4"  poster="img/sliderwendi.PNG" controls id="img7" class="img"></video></a>
+          </div>
+      </div>
+  </div>
+</div>
+
+
   <!-- End About Section -->
 
   <!-- Contact Section -->
