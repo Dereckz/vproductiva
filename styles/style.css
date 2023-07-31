@@ -4,6 +4,9 @@
 	margin: 0;
 	box-sizing: border-box;
 }
+::-webkit-scrollbar {
+    display: none;
+}
 html {
 	font-size: 10px;
 	font-family: 'Montserrat', sans-serif;
@@ -83,7 +86,7 @@ p {
 }
 #header .header {
 	min-height: 8vh;
-	background-color: rgba(31, 30, 30, 0.24);
+	background-color: rgba(37, 23, 187, 0.948);
 	transition: 0.3s ease background-color;
 }
 #header .nav-bar {
@@ -201,7 +204,7 @@ p {
 
 /* Hero Section */
 #hero {
-	background-image: url(inicio2.jpg);
+	background-image: url(inicio7.jpg);
 	background-size: cover;
 	background-position: top left;
 	position: relative;
@@ -371,7 +374,7 @@ p {
 	/*align-items: flex-start;*/
 	justify-content: center;
 	flex-direction: column;
-	background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+	/*background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);*/
 	color: white;
 }
 #projects .project-info h1 {
@@ -390,7 +393,7 @@ p {
 	color: white;
 }
 #projects .project-img {
-	flex-basis: 50%;
+	flex-basis: 45%;
 	height: 300px;
 	overflow: hidden;
 	position: relative;
@@ -403,7 +406,7 @@ p {
 	height: 100%;
 	width: 100%;
 	background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
-	opacity: 0.7;
+	opacity: 0.5;
 }
 #projects .project-img img {
 	transition: 0.3s ease transform;
@@ -464,13 +467,14 @@ p {
 /* contact Section */
 #contact .contact {
 	flex-direction: column;
-	max-width: 1200px;
 	margin: 0 auto;
 	width: 90%;
+	padding: 100px 0;
 }
 #contact .contact-items {
 	/* max-width: 400px; */
 	width: 100%;
+	padding-top: 5em;
 }
 #contact .contact-item {
 	width: 80%;
@@ -611,7 +615,7 @@ p {
 		flex-direction: row-reverse;
 	}
 	#projects .project-item {
-		height: 350px;
+		height: 300px;
 		margin: 0;
 		width: 100%;
 		border-radius: 0;
@@ -655,9 +659,7 @@ p {
 	/* contact  */
 	#contact .contact {
 		flex-direction: column;
-		padding: 100px 0;
 		align-items: center;
-		justify-content: center;
 		min-width: 20vh;
 	}
 	#contact .contact-items {
@@ -724,4 +726,153 @@ p {
 	width: 220px;
 }
 
+/* Inicia estilo para slider de videos de capactiroes*/
 
+.slidercapacitores{
+	display: flex;
+	align-items: center;
+	width: auto;
+	height: 55vh;
+}
+
+.slide-container {
+	width: auto;
+	height:45vh;
+	align-items: center;
+	overflow: visible;
+}
+
+.image-slider{
+	width: 100%;
+	position: absolute;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: 3s;
+	margin-left:1em;
+}
+
+.slides-div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0 30px;
+}
+
+.img{
+	position: relative;
+	width: 40em;
+	transition: 0.5s;
+	padding-top: 10em;
+}
+
+.button {
+	width: 40em;
+	transition: 0.5s;
+}
+
+#slider-span1:target ~ .image-slider #img1,
+#slider-span1:target ~.image-slider #button-1{
+	width:43em;
+	
+	background-color: transparent;
+}
+#slider-span2:target ~ .image-slider #img2,
+#slider-span2:target ~.image-slider #button-2{
+	width:43em;
+	
+	background-color: transparent;
+}
+#slider-span3:target ~ .image-slider #img3,
+#slider-span3:target ~.image-slider #button-3{
+	width:43em;
+	
+	background-color: transparent;
+}
+
+#slider-span4:target ~ .image-slider #img4,
+#slider-span4:target ~.image-slider #button-4{
+	width:43em;
+	
+	background-color: transparent;
+}
+
+#slider-span5:target ~ .image-slider #img5,
+#slider-span5:target ~.image-slider #button-5{
+	width:43em;
+	
+	background-color: transparent;
+}
+
+#slider-span6:target ~ .image-slider #img6,
+#slider-span6:target ~.image-slider #button-6{
+	width:43em;
+	
+	background-color: transparent;
+}
+
+#slider-span7:target ~ .image-slider #img7,
+#slider-span7:target ~.image-slider #button-7{
+	width:43em;
+	
+	background-color: transparent;
+}
+
+#slider-span1:target ~.image-slider{
+	left:70%;
+}
+#slider-span2:target ~.image-slider{
+	left:45%;
+}
+#slider-span3:target ~.image-slider{
+	left:20%;
+}
+#slider-span4:target ~.image-slider{
+	left:0%;
+}
+#slider-span5:target ~.image-slider{
+	left:-20%;
+}
+#slider-span6:target ~.image-slider{
+	left:-45%;
+}
+#slider-span7:target ~.image-slider{
+	left: -70%;
+}
+
+#conocecapacitores{
+	background-color: #3da8e2;
+	height: 20em;
+}
+
+#capacitorestitle{
+	color: white;
+	padding-top: 5%;
+}
+
+/*Finaliza estilo para slider de videos de capacitores*/
+
+/*Empieza colores de fondo para cursos Inicio*/
+#curso1{
+	background-color: #381e85;
+}
+#curso2{
+	background-color: #3da8e2;
+}
+#curso3{
+	background-color: #381e85;
+}
+#curso4{
+	background-color: #3da8e2;
+}
+#curso5{
+	background-color: #381e85;
+}
+#curso6{
+	background-color: #3da8e2;
+}
+#curso7{
+	background-color: #381e85;
+}
+/*Finaliza colores de fondo para cursos Inicio*/
