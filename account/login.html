@@ -68,21 +68,19 @@
                   <!-- <label for="codigomaestro">Matricula</label>
                   <input type="text" id="codigomaestro" name ="codigomaestro"> -->
                   <input type="submit" value="Registrar" class="submit">
-                  
               </form>
-              <form method="post" id="recuperarpass">
-                <label for="email">Email</label>
-                <input type="text" id="email" name="email">
-                <input type="submit" value="Recuperar" class="submit">
-              </form>
-            </div>
-            <div id="forgot">
-                <a href="">Olvido contraseña?</a>
+              
+              
+             <div id="forgot">
+                <a href="forgot.php" >Olvido contraseña?</a>
             </div>
         </div>
 
     </div>
 </section>
+
+
+</script>
 <!-- End formulario -->
 
     <script >
@@ -90,9 +88,7 @@
         var registerBtn = document.getElementById("registerBtn");
         var loginform = document.getElementById("loginform");
         var registerform = document.getElementById("registerform");
-        var forgot = document.getElementById("forgot");
-        var forgotform=document.getElementById("forgotform");
-
+      
         registerBtn.onclick= function() {
             registerform.style.left='0px';
             registerform.style.opacity='1';
@@ -115,16 +111,8 @@
             registerBtn.classList.remove('active');
             registerform.style.opacity='0';
         }
-        forgot.onclick=function(){
-            forgotform.style.left='0px';
-            forgotform.style.opacity='1';
-            
-            registerform.style='500px';
-            loginBtn.classList.add('active');
-            registerBtn.classList.remove('active');
-            registerform.style.opacity='0';
-        }
-
+        
+        
     </script>
 </body>
 </html>
