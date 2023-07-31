@@ -58,8 +58,11 @@ if ($stmt = $conn->prepare("SELECT iIdUsuario, cUsuario, cPassword, cNombre, cno
 
         }else if ($fila['fkidTipoUsuario']==3){
 
-         header("Location: ../alumno/indexalumnos.php");
-        }      
+         header("Location: ../alumno/index.php");
+
+        }else  if ($fila['fkidTipoUsuario']==2){
+         header("Location: ../alumno/index.php");
+        }         
      } else {
        //header("Location: login.html");
          //echo 'La contraseña no es válida!' ;
