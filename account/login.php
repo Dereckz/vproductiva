@@ -67,24 +67,9 @@ if ($stmt = $conn->prepare("SELECT iIdUsuario, cUsuario, cPassword, cNombre, cno
           
      }
 
-
-
  } else {
      echo "<script> alert('Error al logarse');window.location= '../index.html' </script>";
     header("Location:  ../index.html");
 }
- /* if($nr == 1)
-{
-	header("Location: ../panel/index.html");
-	//echo "Bienvenido:" .$nombre;
-}
-else if ($nr == 0) 
-{
-	//header("Location: login.html");
-	//echo "No ingreso"; 
-	echo "<script> alert('Error');window.location= 'login.html' </script>";
-} 
-	
- */
-
+ 
 ?>
