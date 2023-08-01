@@ -11,9 +11,16 @@ $fecha_actual = date("d-m-Y h:i:s");
 //$codigomaestro=$_POST["codigomaestro"];
 
 //Separar Nombres
+if (strpos($fullname, " ")){
 $nombres=namess::getNombreSplit($fullname)["Nombres"];
 $paternos=namess::getNombreSplit($fullname)["Paterno"];
 $maternos=namess::getNombreSplit($fullname)["Materno"];
+}else{
+$nombres=$fullname;
+$paternos="";
+$maternos="";
+}
+
 
 
 if ($stmt = $conn->prepare("SELECT cUsuario FROM usuarios WHERE cUsuario= ? LIMIT 1")) {
@@ -28,33 +35,29 @@ if ($stmt = $conn->prepare("SELECT cUsuario FROM usuarios WHERE cUsuario= ? LIMI
                     
    
    } else {
-        if (!empty($fullname)){
-            if ($_POST["password"] != $_POST["confirmpassword"]) 
-           
+         if (!empty($fullname)){
+
+       
+            if ($_POST["password"] == $_POST["confirmpassword"]) 
             {
-                echo "<script> alert('No coinciden las contraseñas');window.location= '../account/login.html' </script>";
-                                            
-            }
-            else{
                 $queryA = mysqli_query($conn,"INSERT INTO `usuarios`(`iIdUsuario`, `fkidTipoUsuario`, `cNombre`, `cApellidoP`, `cApellidoM`, `cNombreLargo`, `cCorreo`, `cUsuario`, `cPassword`, `cTelefono`, `cCodigo`, `dFechaAlta`, `iGenero`,`iEstatus`)
-                    VALUES ('0','3','$nombres','$paternos','$maternos','$fullname','$correo','$correo','$contrasena','','','$fecha_actual','1','1')");
-                        if($queryA){
-                        
-                            header("Location: ../alumno/index.php");     
-                                    
-                        }
-                        else{	
-                            echo "<script> alert('No se pudo regustra el Alumno');window.location= '../account/login.html' </script>";
-                          
-                        
-                        }	 
-                
+                VALUES ('0','3','$nombres','$paternos','$maternos','$fullname','$correo','$correo','$contrasena','','','$fecha_actual','1','1')");
+                    if($queryA){
+                    
+                        header("Location: ../alumno/index.php");     
+                                
+                    }
+                    else{	
+                        echo "<script> alert('No se pudo regustra el Alumno');window.location= '../account/login.html' </script>";
+                                        
+                    }                            
+            }
+            else{ 
+                echo "<script> alert('No coinciden las contraseñas');window.location= 'http://localhost/vproductivam/account/login.html' </script>";
             }   
         }else{
-            echo "<script> alert('Validar Información');window.location= '../account/login.html' </script>";
-                   
+            echo "<script> alert('Ingrese su nombre para continuar');window.location= '../account/login.html' </script>";                
         }
-   
    }
     
 }else{

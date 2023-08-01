@@ -1,3 +1,5 @@
+
+<?php include 'func/profile.php';?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,87 +8,84 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
-  <meta name="author" content="">
-  <link href="img/logo/logo.png" rel="icon">
-  <title>RuangAdmin - Alerts</title>
+  <meta name="author" content="dt">
+  <link href="../img/LOGOVP.ico" rel="icon">
+  <title>VP - Panel</title>
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css">
-  <link href="css/ruang-admin.css" rel="stylesheet">
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <link href="css/ruang-admin.min.css" rel="stylesheet">
 </head>
+
 
 <body id="page-top">
   <div id="wrapper">
     <!-- Sidebar -->
     <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
         <div class="sidebar-brand-icon">
-          <img src="img/logo/logo2.png">
+          <img src="../img/logovproductiva_text.png">
         </div>
-        <div class="sidebar-brand-text mx-3">RuangAdmin</div>
+        <div class="sidebar-brand-text mx-3"></div>
       </a>
       <hr class="sidebar-divider my-0">
-      <li class="nav-item">
-        <a class="nav-link" href="index.html">
+      <li class="nav-item active">
+        <a class="nav-link" href="index.php">
           <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Dashboard</span></a>
+          <span>Incio</span></a>
       </li>
       <hr class="sidebar-divider">
       <div class="sidebar-heading">
-        Features
+        Instructor
       </div>
-      <li class="nav-item  active">
+      <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap"
           aria-expanded="true" aria-controls="collapseBootstrap">
           <i class="far fa-fw fa-window-maximize"></i>
-          <span>Bootstrap UI</span>
+          <span>Instructor</span>
         </a>
-        <div id="collapseBootstrap" class="collapse show" aria-labelledby="headingBootstrap"
-          data-parent="#accordionSidebar">
+        <div id="collapseBootstrap" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Bootstrap UI</h6>
-            <a class="collapse-item  active" href="alerts.html">Alerts</a>
-            <a class="collapse-item" href="buttons.html">Buttons</a>
-            <a class="collapse-item" href="dropdowns.html">Dropdowns</a>
+            <h6 class="collapse-header">Instructor</h6>
+            <a class="collapse-item" href="instructor.php">Agregar</a>
+           <!-- a class="collapse-item" href="buttons.html">Listar</a> -->
+          <!--   <a class="collapse-item" href="dropdowns.html">Dropdowns</a>
             <a class="collapse-item" href="modals.html">Modals</a>
             <a class="collapse-item" href="popovers.html">Popovers</a>
-            <a class="collapse-item" href="progress-bar.html">Progress Bars</a>
+            <a class="collapse-item" href="progress-bar.html">Progress Bars</a> -->
           </div>
         </div>
       </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap2"
+          aria-expanded="true" aria-controls="collapseBootstrap2">
+          <i class="far fa-fw fa-window-maximize"></i>
+          <span> Alumnos</span>
+        </a>
+        <div id="collapseBootstrap2" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Alumnos</h6>
+            <a class="collapse-item" href="alumnos.php">Agregar</a>
+          </div>
+        </div>
+      </li>
+
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseForm" aria-expanded="true"
           aria-controls="collapseForm">
           <i class="fab fa-fw fa-wpforms"></i>
-          <span>Forms</span>
+          <span>Encuestas</span>
         </a>
         <div id="collapseForm" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Forms</h6>
-            <a class="collapse-item" href="form_basics.html">Form Basics</a>
-            <a class="collapse-item" href="form_advanceds.html">Form Advanceds</a>
+            <h6 class="collapse-header">Encuestas</h6>
+            <a class="collapse-item" href="form_basics.html">Crear Encuesta</a>
+            <a class="collapse-item" href="form_advanceds.html">Administrar Encuestas</a>
           </div>
         </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTable" aria-expanded="true"
-          aria-controls="collapseTable">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Tables</span>
-        </a>
-        <div id="collapseTable" class="collapse" aria-labelledby="headingTable" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Tables</h6>
-            <a class="collapse-item" href="simple-tables.html">Simple Tables</a>
-            <a class="collapse-item" href="datatables.html">DataTables</a>
-          </div>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="ui-colors.html">
-          <i class="fas fa-fw fa-palette"></i>
-          <span>UI Colors</span>
-        </a>
-      </li>
+
+
       <hr class="sidebar-divider">
       <div class="sidebar-heading">
         Examples
@@ -107,12 +106,7 @@
           </div>
         </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Charts</span>
-        </a>
-      </li>
+      
       <hr class="sidebar-divider">
       <div class="version" id="version-ruangadmin"></div>
     </ul>
@@ -145,160 +139,28 @@
                 </form>
               </div>
             </li>
-            <li class="nav-item dropdown no-arrow mx-1">
-              <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-bell fa-fw"></i>
-                <span class="badge badge-danger badge-counter">3+</span>
-              </a>
-              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                aria-labelledby="alertsDropdown">
-                <h6 class="dropdown-header">
-                  Alerts Center
-                </h6>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-primary">
-                      <i class="fas fa-file-alt text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">December 12, 2019</div>
-                    <span class="font-weight-bold">A new monthly report is ready to download!</span>
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-success">
-                      <i class="fas fa-donate text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">December 7, 2019</div>
-                    $290.29 has been deposited into your account!
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="mr-3">
-                    <div class="icon-circle bg-warning">
-                      <i class="fas fa-exclamation-triangle text-white"></i>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="small text-gray-500">December 2, 2019</div>
-                    Spending Alert: We've noticed unusually high spending for your account.
-                  </div>
-                </a>
-                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
-              </div>
-            </li>
-            <li class="nav-item dropdown no-arrow mx-1">
-              <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-envelope fa-fw"></i>
-                <span class="badge badge-warning badge-counter">2</span>
-              </a>
-              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                aria-labelledby="messagesDropdown">
-                <h6 class="dropdown-header">
-                  Message Center
-                </h6>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="img/man.png" style="max-width: 60px" alt="">
-                    <div class="status-indicator bg-success"></div>
-                  </div>
-                  <div class="font-weight-bold">
-                    <div class="text-truncate">Hi there! I am wondering if you can help me with a problem I've been
-                      having.</div>
-                    <div class="small text-gray-500">Udin Cilok · 58m</div>
-                  </div>
-                </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
-                  <div class="dropdown-list-image mr-3">
-                    <img class="rounded-circle" src="img/girl.png" style="max-width: 60px" alt="">
-                    <div class="status-indicator bg-default"></div>
-                  </div>
-                  <div>
-                    <div class="text-truncate">Am I a good boy? The reason I ask is because someone told me that people
-                      say this to all dogs, even if they aren't good...</div>
-                    <div class="small text-gray-500">Jaenab · 2w</div>
-                  </div>
-                </a>
-                <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
-              </div>
-            </li>
-            <li class="nav-item dropdown no-arrow mx-1">
-              <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-tasks fa-fw"></i>
-                <span class="badge badge-success badge-counter">3</span>
-              </a>
-              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                aria-labelledby="messagesDropdown">
-                <h6 class="dropdown-header">
-                  Task
-                </h6>
-                <a class="dropdown-item align-items-center" href="#">
-                  <div class="mb-3">
-                    <div class="small text-gray-500">Design Button
-                      <div class="small float-right"><b>50%</b></div>
-                    </div>
-                    <div class="progress" style="height: 12px;">
-                      <div class="progress-bar bg-success" role="progressbar" style="width: 50%" aria-valuenow="50"
-                        aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </div>
-                </a>
-                <a class="dropdown-item align-items-center" href="#">
-                  <div class="mb-3">
-                    <div class="small text-gray-500">Make Beautiful Transitions
-                      <div class="small float-right"><b>30%</b></div>
-                    </div>
-                    <div class="progress" style="height: 12px;">
-                      <div class="progress-bar bg-warning" role="progressbar" style="width: 30%" aria-valuenow="30"
-                        aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </div>
-                </a>
-                <a class="dropdown-item align-items-center" href="#">
-                  <div class="mb-3">
-                    <div class="small text-gray-500">Create Pie Chart
-                      <div class="small float-right"><b>75%</b></div>
-                    </div>
-                    <div class="progress" style="height: 12px;">
-                      <div class="progress-bar bg-danger" role="progressbar" style="width: 75%" aria-valuenow="75"
-                        aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                  </div>
-                </a>
-                <a class="dropdown-item text-center small text-gray-500" href="#">View All Taks</a>
-              </div>
-            </li>
-            <div class="topbar-divider d-none d-sm-block"></div>
+ <!--Sliderbar name user-->
+ <div class="topbar-divider d-none d-sm-block"></div>
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
-                <img class="img-profile rounded-circle" src="img/boy.png" style="max-width: 60px">
-                <span class="ml-2 d-none d-lg-inline text-white small">Maman Ketoprak</span>
+               
+            <?php sessionuser()?>
               </a>
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="#">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Profile
+                  Perfil
                 </a>
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="profile.php">
                   <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Settings
+                  Ajustes
                 </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Activity Log
-                </a>
+                
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="javascript:void(0);" data-toggle="modal" data-target="#logoutModal">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Logout
+                  Cerrar Sesión
                 </a>
               </div>
             </li>
@@ -309,7 +171,7 @@
         <!-- Container Fluid-->
         <div class="container-fluid" id="container-wrapper">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Alerts</h1>
+            <h1 class="h3 mb-0 text-gray-800">Instrcutores</h1>
             <ol class="breadcrumb">
               <li class="breadcrumb-item">
                 <a href="./">Home</a>
@@ -319,41 +181,27 @@
             </ol>
           </div>
           <div class="row">
-            <!-- Alerts Basic -->
-            <div class="col-lg-6">
-              <div class="card shadow-sm mb-4">
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Alerts Basic</h6>
+          <div class="table-responsive">
+                  <table class="table align-items-center table-flush">
+                    <thead class="thead-light">
+                      <tr>
+                        <th>ID</th>
+                        <th>Instructor</th>
+                        <th>Curso</th>
+                        <th>Estatus</th>
+                        <th>Accion</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                     <?php  registercurso(); ?>;
+                    </tbody>
+                  </table>
                 </div>
-                <div class="card-body">
-                  <div class="alert alert-primary" role="alert">
-                    A simple primary alert—check it out!
-                  </div>
-                  <div class="alert alert-secondary" role="alert">
-                    A simple secondary alert—check it out!</div>
-                  <div class="alert alert-success" role="alert">
-                    A simple success alert—check it out!
-                  </div>
-                  <div class="alert alert-danger" role="alert">
-                    A simple danger alert—check it out!
-                  </div>
-                  <div class="alert alert-warning" role="alert">
-                    A simple warning alert—check it out!
-                  </div>
-                  <div class="alert alert-info" role="alert">
-                    A simple info alert—check it out!
-                  </div>
-                  <div class="alert alert-light" role="alert">
-                    A simple light alert—check it out!
-                  </div>
-                  <div class="alert alert-dark" role="alert">
-                    A simple dark alert—check it out!
-                  </div>
-                </div>
+                <div class="card-footer"></div>
               </div>
             </div>
             <!-- Alerts with Dismissing -->
-            <div class="col-lg-6">
+            <!-- <div class="col-lg-6">
               <div class="card mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                   <h6 class="m-0 font-weight-bold text-primary">Alerts with Dismissing</h6>
@@ -410,10 +258,10 @@
                 </div>
               </div>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-6">-->
               <!-- Alerts with Icon -->
-              <div class="card mb-4">
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+              <!-- <div class="card mb-4"> -->
+                <!-- <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                   <h6 class="m-0 font-weight-bold text-primary">Alert with icon</h6>
                 </div>
                 <div class="card-body">
@@ -446,10 +294,10 @@
                     A simple info alert—check it out!
                   </div>
                 </div>
-              </div>
+              </div> -->
               <!-- Additional Content -->
-              <div class="card mb-4">
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+              <!-- <div class="card mb-4"> -->
+                <!-- <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                   <h6 class="m-0 font-weight-bold text-primary">Additional Content</h6>
                 </div>
                 <div class="card-body">
@@ -467,10 +315,10 @@
                     </p>
                   </div>
                 </div>
-              </div>
+              </div> -->
             </div>
-            <div class="col-lg-6">
-              <div class="card mb-4">
+           <!--  <div class="col-lg-6"> -->
+              <<!-- div class="card mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                   <h6 class="m-0 font-weight-bold text-primary">Alert with link</h6>
                 </div>
@@ -510,17 +358,17 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
           <!-- Row -->
           <!-- More Documentations Link -->
-          <div class="row">
+         <!--  <div class="row">
             <div class="col-lg-12 text-center">
               <p>
                 For more documentations you can visit<a href="https://getbootstrap.com/docs/4.3/components/alerts/"
                   target="_blank"> bootstrap alert documentations.</a>
               </p>
             </div>
-          </div>
+          </div> -->
           <!-- More Documentations Link -->
 
           <!-- Modal Logout -->
@@ -543,8 +391,8 @@
                 </div>
               </div>
             </div>
-          </div>
-
+          </div> 
+ 
         </div>
         <!---Container Fluid-->
       </div>
