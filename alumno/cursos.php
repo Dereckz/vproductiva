@@ -387,7 +387,7 @@
     	<ul id="menu">
       <li class="logo"><img src="img/logovproductiva2.png" id="logo"></li>
       <li class="menus"></li>
-    	<li class="menus"><a href="indexalumnos.php">Mi perfil</a></li>
+    	<li class="menus"><a href="index.php">Mi perfil</a></li>
     	<li class="menus"><a href="cursos.php">Catalogo de Cursos</a></li>
       <li class="menus"><a href="../account/login.html">Salir</a></li>
     	</ul>
