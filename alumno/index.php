@@ -27,7 +27,6 @@
   --animation-custom_in-translate_y: -300px;
   /*margin: 90px 405px 0 0;*/
   color: blue;
-  font-family: Open Sans;
 }
 .u-section-2 .u-text-2 {
   font-size: 3rem;
@@ -387,7 +386,7 @@
     	<ul id="menu">
       <li class="logo"><img src="img/logovproductiva2.png" id="logo"></li>
       <li class="menus"></li>
-    	<li class="menus"><a href="indexalumnos.php">Mi perfil</a></li>
+    	<li class="menus"><a href="index.php">Mi perfil</a></li>
     	<li class="menus"><a href="cursos.php">Catalogo de Cursos</a></li>
       <li class="menus"><a href="../account/login.html">Salir</a></li>
     	</ul>
@@ -395,11 +394,10 @@
 
     <section class="u-align-left u-clearfix u-grey-5 u-section-2" id="carousel_0852">
       <div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
-        <h4 class="u-text u-text-1 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" style="will-change: transform, opacity; animation-duration: 1500ms;">Perfil
-        </h4>
+        
         <?=informacion();?>
 
-        <h4 class="u-text u-text-1 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" style="will-change: transform, opacity; animation-duration: 1500ms;">Mis Cursos</h4>
+        <h4 class="u-text u-text-1 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" style="will-change: transform, opacity; animation-duration: 1500ms;" style="font-family: sans-serif;">Mis Cursos</h4>
         <div class="u-expanded-width u-list u-list-1">
         <div class="u-repeater u-repeater-1">
         <?=miCurso();?>
