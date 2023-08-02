@@ -34,14 +34,14 @@ if ($stmt = $conn->prepare("SELECT cUsuario FROM usuarios WHERE cUsuario= ? LIMI
    } else {
          if (!empty($fullname)){
 
-           
+           session_abort();
             if ($_POST["password"] == $_POST["confirmpassword"]) 
              {
                 $queryA = mysqli_query($conn,"INSERT INTO `usuarios`(`iIdUsuario`, `fkidTipoUsuario`, `cNombre`, `cApellidoP`, `cApellidoM`, `cNombreLargo`, `cCorreo`, `cUsuario`, `cPassword`, `cTelefono`, `cCodigo`, `dFechaAlta`, `iGenero`,`iEstatus`)
                 VALUES ('0','3','$nombres','$paternos','$maternos','$fullname','$correo','$correo','$contrasena','','','$fecha_actual','1','1')");
                     if($queryA){
-                    
-                        header("Location: http://localhost/vproductivam/alumno/index.php");     
+
+                        header("Location: http://localhost/vproductivam/account/login.html");     
                                 
                      }
                      else{	
@@ -50,8 +50,8 @@ if ($stmt = $conn->prepare("SELECT cUsuario FROM usuarios WHERE cUsuario= ? LIMI
                      }                            
             }
             else{ 
-                //echo "<script> alert('No coinciden las contraseñas');window.location= 'http://localhost/vproductivam/account/login.html' </script>";
-                echo "<script> alert('pass1".$_POST["password"]. "=".$_POST["confirmpassword"]."');window.location= 'http://localhost/vproductivam/account/login.html' </script>";    
+                echo "<script> alert('No coinciden las contraseñas');window.location= 'http://localhost/vproductivam/account/login.html' </script>";
+                //echo "<script> alert('pass1-".$_POST["password"]. "=".$_POST["confirmpassword"]."');window.location= 'http://localhost/vproductivam/account/login.html' </script>";    
             }   
         }else{
             echo "<script> alert('Ingrese su nombre para continuar');window.location= 'http://localhost/vproductivam/account/login.html' </script>";                
