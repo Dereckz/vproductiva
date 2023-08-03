@@ -58,8 +58,11 @@ if ($stmt = $conn->prepare("SELECT iIdUsuario, cUsuario, cPassword, cNombre, cno
 
         }else if ($fila['fkidTipoUsuario']==3){
 
-         header("Location: ../alumno/indexalumnos.php");
-        }      
+         header("Location: ../alumno/index.php");
+
+        }else  if ($fila['fkidTipoUsuario']==2){
+         header("Location: ../instructor/instructor.php");
+        }         
      } else {
        //header("Location: login.html");
          //echo 'La contraseña no es válida!' ;
@@ -67,24 +70,9 @@ if ($stmt = $conn->prepare("SELECT iIdUsuario, cUsuario, cPassword, cNombre, cno
           
      }
 
-
-
  } else {
      echo "<script> alert('Error al logarse');window.location= '../index.html' </script>";
     header("Location:  ../index.html");
 }
- /* if($nr == 1)
-{
-	header("Location: ../panel/index.html");
-	//echo "Bienvenido:" .$nombre;
-}
-else if ($nr == 0) 
-{
-	//header("Location: login.html");
-	//echo "No ingreso"; 
-	echo "<script> alert('Error');window.location= 'login.html' </script>";
-} 
-	
- */
-
+ 
 ?>

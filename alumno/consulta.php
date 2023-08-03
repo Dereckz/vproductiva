@@ -12,12 +12,26 @@ function informacion()
     while ($consulta = mysqli_fetch_array($resultado)) {
 
         echo '<h3 class="u-text u-text-2 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;">' . $consulta['cNombreLargo'] . '</h3>
+        <p class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;"> Correo: ' . $consulta['cCorreo'] . '</p>
         <table class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;">
-        <tr><td>Nombre: </td><td>' . $consulta['cNombre'] . '</td></tr>
-        <tr><td>Apellido paterno: </td><td>' . $consulta['cApellidoP'] . '</td></tr>
-        <tr><td>Apellido materno: </td><td>' . $consulta['cApellidoM'] . '</td></tr>
+        <tr><td width="25%">Cursos Inscritos: </td><td>2</td> <td width="53%"></td><td rowspan=6 style="text-align: center;"> <img id=fotoperfil src="img/fotoperfil.png" width="75%"> </td></tr>
+        <tr><td colspan=2 style="border-top:2px double blue"></td></tr>
+        <tr><td>Cursos Finalizados: </td><td>0</td></tr>
+        <tr><td colspan=2 style="border-top:2px double blue"></td></tr>
+        <tr><td>Horas de aprendizaje realizadas: </td><td>2.3</td></tr>
+        <tr><td colspan=2 style="border-top:2px double blue"></td></tr>        
         </table>
         ';
+
+        /*echo '<h3 class="u-text u-text-2 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;">' . $consulta['cNombreLargo'] . '</h3>
+        <table class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;">
+        <tr><td td width="25%">Cursos Inscritos: </td><td>' . $consulta['cNombre'] . '</td> <td width="50%"></td><td rowspan=5> <img src="img/fotoperfil.png" width="80%"> </td></tr>
+        <tr><td>Cursos Finalizados: </td><td>' . $consulta['cApellidoP'] . '</td></tr>
+        <tr><td>Horas de aprendizaje realizadas: </td><td>' . $consulta['cApellidoM'] . '</td></tr>
+        <tr><td></td> <td></td></tr>
+        <tr><td colspan=2> ' . $consulta['cNombre'] . ' qué quieres aprender hoy?</td></tr>
+        </table>
+        ';*/
     }
 }
 
