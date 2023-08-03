@@ -1,0 +1,55 @@
+/* inicia el estilo para el encabezado*/
+#planmarketing{
+	margin-left: 20px;
+}
+
+#logotipo{
+	text-align: left;
+}
+#logo{
+	position: relative;
+	width: 80%;
+	padding-top: 3%;
+}
+
+#encabezado{
+	background-color: #19bdf8;
+	position: sticky;
+	top: 0px;
+	margin: 0%;
+	width: 100%;
+	text-align: center;
+}
+#tituloprincipal{
+	margin: 0%;
+	color: #000000;
+}
+#menu{
+	background-color: #3ac1f3;
+	margin-top: 0%;
+	margin-left: 0%;
+	font-family: sans-serif;
+	margin-bottom: 0%;
+	height: 4.7em;
+}
+.menus{
+	display: inline-block;
+	font-size: 1.3em;
+	text-align: center;
+	width: 20%;
+	vertical-align: top;
+	padding-top: 1em;
+}
+.logo{
+	display: inline-block;
+	font-size: 1.3em;
+	text-align: left;
+	width: 17%;
+}
+a{
+	color: #ffffff;
+}
+
+h1{
+	color: #000000;
+}

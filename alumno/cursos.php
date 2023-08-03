@@ -375,9 +375,24 @@
     <meta property="og:title" content="1234">
     <meta property="og:type" content="website">
     <link rel="canonical" href="https://website529400.nicepage.io/1234.html">
+    <link rel="stylesheet" href="estiloencabezado.css">
   
 </head>
   <body class="u-body u-xl-mode" data-lang="en">
+  <header id="encabezado">
+    	<!--<div id="logotipo">
+    	<img src="img/logovproductiva2.png" id="logo"> 
+    	</div>-->
+    	<!--<h1 id="tituloprincipal">Valuacion Productiva</h1>-->
+    	<ul id="menu">
+      <li class="logo"><img src="img/logovproductiva2.png" id="logo"></li>
+      <li class="menus"></li>
+    	<li class="menus"><a href="index.php">Mi perfil</a></li>
+    	<li class="menus"><a href="cursos.php">Catalogo de Cursos</a></li>
+      <li class="menus"><a href="../account/login.html">Salir</a></li>
+    	</ul>
+  </header>
+
     
     <section class="u-align-left u-clearfix u-grey-5 u-section-2" id="carousel_0852">
       <div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
