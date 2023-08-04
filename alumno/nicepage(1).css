@@ -7717,7 +7717,7 @@ li.active > a.u-button-style.u-button-style.u-border-active-palette-2-light-3 {
 }
 .u-border-palette-2-base,
 .u-separator-palette-2-base:after {
-  border-color: #e37218;
+  border-color: #7510bd;
   stroke: #e37218;
 }
 .u-button-style.u-border-palette-2-base {
@@ -7997,7 +7997,7 @@ li.active > a.u-button-style.u-button-style.u-border-active-palette-3-light-3 {
 }
 .u-border-palette-3-base,
 .u-separator-palette-3-base:after {
-  border-color: #e73d71;
+  border-color: #7510bd;
   stroke: #e73d71;
 }
 .u-button-style.u-border-palette-3-base {
@@ -15179,7 +15179,7 @@ a.u-link.u-text-hover-grey-90:hover {
         font-weight: 400;
         font-size: 3rem;
         line-height: 1.1;
-        margin-top: 20px;
+        margin-top: 1em;
         margin-bottom: 20px;
         }
         h2:not(.u-subtitle)
@@ -15194,11 +15194,12 @@ a.u-link.u-text-hover-grey-90:hover {
         }
         h3
         {
-        font-weight: 400;
+        /*font-weight: 400;*/
         font-size: 1.875rem;
         line-height: 1.2;
         margin-top: 20px;
         margin-bottom: 20px;
+        color: purple;
         }
         h4
         {

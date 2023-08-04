@@ -1,4 +1,7 @@
 /* inicia el estilo para el encabezado*/
+body{
+	margin: 0;
+}
 #planmarketing{
 	margin-left: 20px;
 }
@@ -46,8 +49,9 @@
 	text-align: left;
 	width: 17%;
 }
-a{
+.enlacemenu{
 	color: #ffffff;
+	text-decoration: none;
 }
 a:hover {
 	color: #630ba3;
