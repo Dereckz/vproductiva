@@ -1,3 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="estiloencabezado.css">
+        <title>Productividad Laboral</title>
+    </head>
+    <body>
+    <header id="encabezado">
+    	<!--<div id="logotipo">
+    	<img src="img/logovproductiva2.png" id="logo"> 
+    	</div>-->
+    	<!--<h1 id="tituloprincipal">Valuacion Productiva</h1>-->
+    	<ul id="menu">
+            <li class="logo"><img src="img/logob.png" id="logo"></li>
+            <li class="menus"></li>
+    	    <li class="menus"><a href="../alumno/index.php" class="enlacemenu">Mi perfil</a></li>
+    	    <li class="menus"><a href="../alumno/cursos.php" class="enlacemenu">Catalogo de Cursos</a></li>
+            <li class="menus"><a href="../account/login.html" class="enlacemenu">Salir</a></li>
+    	</ul>
+  </header>
+    </body>
+</html>
+
+
 <?php
 include "..\dev\conectar.php";
 include "../panel/func/profile.php";
@@ -6,7 +31,7 @@ if (!isset($_SESSION)) {
 }
 $resultado = mysqli_query($conn, "SELECT r.iIdRecurso,c.cNombreCurso, m.cNombreModulo,r.cRuta FROM usuarios u
     INNER JOIN inscripcion i ON u.iIdUsuario = i.fkiIdUsuario
-      INNER JOIN curso c ON i.fkiIdeCurso = c.iIdCurso
+    INNER JOIN curso c ON i.fkiIdeCurso = c.iIdCurso
   INNER JOIN modulo m ON c.iIdCurso = m.fkiIdCurso
   INNER JOIN recurso r ON  m.iIdModulo = r.fkiIdModulo
   WHERE c.iIdCurso=1 and u.iIdUsuario=" . $_SESSION["id"]);
