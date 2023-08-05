@@ -396,7 +396,7 @@
       <div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
         
         <?=informacion();?>
-
+        
         <h4 class="u-text u-text-1 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" style="will-change: transform, opacity; animation-duration: 1500ms;" style="font-family: sans-serif;">Mis Cursos</h4>
         <div class="u-expanded-width u-list u-list-1">
         <div class="u-repeater u-repeater-1">
