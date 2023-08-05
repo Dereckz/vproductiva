@@ -25,7 +25,7 @@
   --animation-custom_in-scale: 1;
   --animation-custom_in-translate_x: 0px;
   --animation-custom_in-translate_y: -300px;
-  /*margin: 90px 405px 0 0;*/
+  margin: 1.5em 405px 0 0;
   color: blue;
 }
 .u-section-2 .u-text-2 {
@@ -59,7 +59,7 @@
   padding: 0;
 }
 .u-section-2 .u-list-1 {
-  margin-top: 52px;
+  margin-top: 2em;
   margin-bottom: 0;
 }
 .u-section-2 .u-repeater-1 {
@@ -384,7 +384,7 @@
     	</div>-->
     	<!--<h1 id="tituloprincipal">Valuacion Productiva</h1>-->
     	<ul id="menu">
-      <li class="logo"><img src="img/logovproductiva2.png" id="logo"></li>
+      <li class="logo"><img src="img/logob.png" id="logo"></li>
       <li class="menus"></li>
     	<li class="menus"><a href="index.php">Mi perfil</a></li>
     	<li class="menus"><a href="cursos.php">Catalogo de Cursos</a></li>
@@ -396,8 +396,8 @@
       <div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
         
         <?=informacion();?>
-        
-        <h4 class="u-text u-text-1 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" style="will-change: transform, opacity; animation-duration: 1500ms;" style="font-family: sans-serif;">Mis Cursos</h4>
+
+        <h3 class="u-text u-text-4 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" style="will-change: transform, opacity; animation-duration: 1500ms;" style="font-family: sans-serif;"> Mis Cursos </h3>
         <div class="u-expanded-width u-list u-list-1">
         <div class="u-repeater u-repeater-1">
         <?=miCurso();?>
@@ -405,7 +405,7 @@
         </div>
         <div class="u-align-left u-container-style u-expanded-width u-group u-palette-1-base u-group-1 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1750" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1750ms;">
           <div class="u-container-layout u-valign-middle u-container-layout-5">
-            <h3 class="u-text u-text-default u-text-9"> Si quieres aprender más, consulta nuestro catalogo de cursos he inscribete.</h3>
+            <h4 class="u-text u-text-default u-text-9"> Si quieres aprender más, consulta nuestro catalogo de cursos he inscribete.</h4>
             <a href="cursos.php" class="u-active-white u-align-center u-border-1 u-border-active-white u-border-hover-white u-border-white u-btn u-button-style u-hover-white u-none u-text-active-palette-1-base u-text-hover-palette-1-base u-btn-6" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Catálogo de cursos</a>
           </div>
         </div>
