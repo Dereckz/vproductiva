@@ -8,16 +8,72 @@ if (!isset($_SESSION)) {
 function informacion()
 {
     include "..\dev\conectar.php";
+
+    // para saber los cursos terminados
+    $final=0;
+    for ($i=1; $i<=7; $i++){
+        $terminado = mysqli_query($conn, "SELECT r.iIdRecurso,c.cNombreCurso, m.cNombreModulo,r.cRuta FROM usuarios u
+    INNER JOIN inscripcion i ON u.iIdUsuario = i.fkiIdUsuario
+      INNER JOIN curso c ON i.fkiIdeCurso = c.iIdCurso
+     INNER JOIN modulo m ON c.iIdCurso = m.fkiIdCurso
+     INNER JOIN recurso r ON  m.iIdModulo = r.fkiIdModulo
+    WHERE c.iIdCurso=".$i." and u.iIdUsuario=" . $_SESSION["id"]);
+
+    $nterminado = mysqli_query($conn, "SELECT r.iIdRecurso,c.cNombreCurso, m.cNombreModulo,r.cRuta FROM usuarios u
+    INNER JOIN inscripcion i ON u.iIdUsuario = i.fkiIdUsuario
+    INNER JOIN curso c ON i.fkiIdeCurso = c.iIdCurso
+    INNER JOIN modulo m ON c.iIdCurso = m.fkiIdCurso
+    INNER JOIN recurso r ON  m.iIdModulo = r.fkiIdModulo
+    INNER JOIN visto v ON r.iIdRecurso = v.idRecurso
+    WHERE c.iIdCurso=".$i." and u.iIdUsuario=" . $_SESSION["id"]);
+
+    $numMudulo= mysqli_num_rows($terminado);
+    $numTerminado = mysqli_num_rows($nterminado);
+
+        if ($numMudulo==$numTerminado && $numMudulo>0 && $numTerminado>0){
+            $final=$final+1;
+        }
+    }
+    
+
+    $cInscrito= mysqli_query($conn,"SELECT * FROM inscripcion i
+    INNER JOIN usuarios u ON I.fkiIdUsuario = U.iIdUsuario
+    INNER JOIN curso c ON i.fkiIdeCurso = c.iIdCurso
+    WHERE i.fkiIdUsuario=". $_SESSION["id"]);
+    
+    $nInscrito= mysqli_num_rows($cInscrito);
+    
     $resultado = mysqli_query($conn, "SELECT * FROM usuarios WHERE iIdUsuario=" . $_SESSION["id"]);
     while ($consulta = mysqli_fetch_array($resultado)) {
 
         echo '<h3 class="u-text u-text-2 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;">' . $consulta['cNombreLargo'] . '</h3>
+        <p class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;"> Correo: ' . $consulta['cCorreo'] . '</p>
         <table class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;">
-        <tr><td>Nombre: </td><td>' . $consulta['cNombre'] . '</td></tr>
-        <tr><td>Apellido paterno: </td><td>' . $consulta['cApellidoP'] . '</td></tr>
-        <tr><td>Apellido materno: </td><td>' . $consulta['cApellidoM'] . '</td></tr>
+        <tr><td width="25%">Cursos Inscritos: </td><td>'.$nInscrito.'</td> <td width="53%"></td>
+        
+        <form action="subir.php" method="POST" enctype="multipart/form-data">
+        <td rowspan=6 style="text-align: center;"> <img id=fotoperfil src="'.$consulta['imagen'].'" width="75%"> </td></tr>
+        <input type="file" name="file1" id="file1">
+        <button type=""submit>Guardar</button>
+        </form>
+        
+        <tr><td colspan=2 style="border-top:2px double blue"></td></tr>
+        <tr><td>Cursos Finalizados: </td><td>'.$final.'</td></tr>
+        <tr><td colspan=2 style="border-top:2px double blue"></td></tr>
+        <tr><td>Horas de aprendizaje realizadas: </td><td>2.3</td></tr>
+        <tr><td colspan=2 style="border-top:2px double blue"></td></tr>        
         </table>
         ';
+
+        /*echo '<h3 class="u-text u-text-2 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;">' . $consulta['cNombreLargo'] . '</h3>
+        <table class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;">
+        <tr><td td width="25%">Cursos Inscritos: </td><td>' . $consulta['cNombre'] . '</td> <td width="50%"></td><td rowspan=5> <img src="img/fotoperfil.png" width="80%"> </td></tr>
+        <tr><td>Cursos Finalizados: </td><td>' . $consulta['cApellidoP'] . '</td></tr>
+        <tr><td>Horas de aprendizaje realizadas: </td><td>' . $consulta['cApellidoM'] . '</td></tr>
+        <tr><td></td> <td></td></tr>
+        <tr><td colspan=2> ' . $consulta['cNombre'] . ' qué quieres aprender hoy?</td></tr>
+        </table>
+        ';*/
     }
 }
 
