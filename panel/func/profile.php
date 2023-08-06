@@ -54,29 +54,31 @@ function curseactive()
 function registercurso()
 {
     include "..\dev\conectar.php";
-    $resultado = mysqli_query($conn, "SELECT * FROM `detallecurso` INNER JOIN usuarios on fkiIdUsuario=iIdUsuario where usuarios.fkidTipoUsuario=2;");
+    //$resultado = mysqli_query($conn, "SELECT * FROM `detallecurso` INNER JOIN usuarios on fkiIdUsuario=iIdUsuario where usuarios.fkidTipoUsuario=2;");
+    $resultado = mysqli_query($conn, "SELECT * FROM usuarios where usuarios.fkidTipoUsuario=2;");
     
     while ($consulta = mysqli_fetch_array($resultado)) {
-        $IdCurso=$consulta["iIdCurso"];
+        //$IdCurso=$consulta["iIdCurso"];
 
         if ($consulta["iEstatus"]=="1")
         {
+
             echo 
             '<tr>
             <td><a href="#">'.$consulta["iIdUsuario"].'</a></td>
-            <td>'.$consulta["cNombreLargo"].'</td>
-            <td>'.$IdCurso.'</td>
-            <td><span class="badge badge-success">'.$consulta["iEstatus"].'</span></td>
-            <td><a href="#" class="btn btn-sm btn-primary">Detalle</a></td>
-            </tr>';
+            <td>'.strtoupper($consulta["cNombreLargo"]).'</td>
+            <td>'.'$IdCurso'.'</td>
+            <td><span class="badge badge-success">Activo</span></td>
+            <td><a class="btn btn-sm btn-primary" href="javascript:void(0);" data-toggle="modal" data-target="#cursomodal" >Detalle</a></td>
+           </tr>';
         }else{
             echo 
             '<tr>
             <td><a href="#">'.$consulta["iIdUsuario"].'</a></td>
-            <td>'.$consulta["cNombreLargo"].'</td>
+            <td>'.strtoupper($consulta["cNombreLargo"]).'</td>
             <td>'.$IdCurso.'</td>
-            <td><span class="badge badge-danger">'.$consulta["iEstatus"].'</span></td>
-            <td><a href="#" class="btn btn-sm btn-primary">Detalle</a></td>
+            <td><span class="badge badge-danger">Inactivo</span></td>
+            <td><a href="javascript:void(0);" data-toggle="modal" data-target="#cursomodal" class="btn btn-sm btn-primary">Detalle</a></td>
             </tr>';
 
         }

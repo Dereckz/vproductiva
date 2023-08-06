@@ -46,11 +46,11 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Instructor</h6>
             <a class="collapse-item" href="instructor.php">Agregar</a>
-           <!-- a class="collapse-item" href="buttons.html">Listar</a> -->
+           <!--  <a class="collapse-item" href="buttons.html">Asignar Curso</a> -->
           <!--   <a class="collapse-item" href="dropdowns.html">Dropdowns</a>
             <a class="collapse-item" href="modals.html">Modals</a>
             <a class="collapse-item" href="popovers.html">Popovers</a>
-            <a class="collapse-item" href="progress-bar.html">Progress Bars</a> -->
+            <a class="collapse-item" href="progress-bar.html">Progress Bars</a>S -->
           </div>
         </div>
       </li>
@@ -206,26 +206,26 @@
             </div>
                <!-- Modal Logout -->
                <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabelLogout">Ohh No!</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <p>¿Estas seguro que deseas cerrar sesion?</p>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancelar</button>
-                  <a href="http://localhost/vproductivam/account/login.html" class="btn btn-primary">Cerrar Sesión</a>
-                </div>
-              </div>
-            </div>
-          </div> 
-}
+                  aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabelLogout">Ohh No!</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <p>¿Estas seguro que deseas cerrar sesion?</p>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancelar</button>
+                        <a href="http://localhost/vproductivam/account/login.html" class="btn btn-primary">Cerrar Sesión</a>
+                      </div>
+                    </div>
+                  </div>
+                </div> 
+
       <!---Container Fluid-->
       </div>
 
