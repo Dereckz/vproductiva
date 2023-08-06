@@ -1,5 +1,6 @@
 
 <?php include 'func/profile.php';?>
+<?php include 'func/cursos.php';?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -193,132 +194,17 @@
                       </tr>
                     </thead>
                     <tbody>
-                     <?php  registercurso(); ?>;
+                     <?php  registercurso(); ?>
                     </tbody>
                   </table>
                 </div>
                 <div class="card-footer"></div>
               </div>
             </div>
-            <!-- Alerts with Dismissing -->
-            <!-- <div class="col-lg-6">
-              <div class="card mb-4">
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Alerts with Dismissing</h6>
-                </div>
-                <div class="card-body">
-                  <div class="alert alert-primary alert-dismissible" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                    A simple primary alert—check it out!
-                  </div>
-                  <div class="alert alert-secondary alert-dismissible" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                    A simple secondary alert—check it out!
-                  </div>
-                  <div class="alert alert-success alert-dismissible" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                    A simple success alert—check it out!
-                  </div>
-                  <div class="alert alert-danger alert-dismissible" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                    A simple danger alert—check it out!
-                  </div>
-                  <div class="alert alert-warning alert-dismissible" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                    A simple warning alert—check it out!
-                  </div>
-                  <div class="alert alert-info alert-dismissible" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                    A simple info alert—check it out!
-                  </div>
-                  <div class="alert alert-light alert-dismissible" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                    A simple light alert—check it out!
-                  </div>
-                  <div class="alert alert-dark alert-dismissible" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                    A simple dark alert—check it out!
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6">-->
-              <!-- Alerts with Icon -->
-              <!-- <div class="card mb-4"> -->
-                <!-- <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Alert with icon</h6>
-                </div>
-                <div class="card-body">
-                  <div class="alert alert-success alert-dismissible" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                    <h6><i class="fas fa-check"></i><b> Success!</b></h6>
-                    A simple success alert—check it out!
-                  </div>
-                  <div class="alert alert-danger alert-dismissible" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                    <h6><i class="fas fa-ban"></i><b> Stop!</b></h6>
-                    A simple danger alert—check it out!
-                  </div>
-                  <div class="alert alert-warning alert-dismissible" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                    <h6><i class="fas fa-exclamation-triangle"></i><b> Warning!</b></h6>
-                    A simple warning alert—check it out!
-                  </div>
-                  <div class="alert alert-info alert-dismissible" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                    <h6><i class="fas fa-info"></i><b> Information</b></h6>
-                    A simple info alert—check it out!
-                  </div>
-                </div>
-              </div> -->
-              <!-- Additional Content -->
-              <!-- <div class="card mb-4"> -->
-                <!-- <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Additional Content</h6>
-                </div>
-                <div class="card-body">
-                  <div class="alert alert-success" role="alert">
-                    <h4 class="alert-heading">Well done!</h4>
-                    <p>
-                      Aww yeah, you successfully read this important alert message. This example
-                      text is going to run a bit longer so that you can see how spacing within an
-                      alert works with this kind of content.
-                    </p>
-                    <hr>
-                    <p class="mb-0">
-                      Whenever you need to, be sure to use margin utilities to keep things nice
-                      and tidy.
-                    </p>
-                  </div>
-                </div>
-              </div> -->
+           
             </div>
            <!--  <div class="col-lg-6"> -->
-              <<!-- div class="card mb-4">
+              <!-- div class="card mb-4">
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                   <h6 class="m-0 font-weight-bold text-primary">Alert with link</h6>
                 </div>
@@ -392,7 +278,33 @@
               </div>
             </div>
           </div> 
- 
+
+          <!--modal agregar curso-->
+          <form name="frmAgregar" method="post" action="cursos.php">
+          <div class="modal fade" id="cursomodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabelLogout">Asignar Curso</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                <label for="curso-names">Seleccione curso a Asignar:</label> 
+                <select name="curso" id="curso">
+                  <?php listcurso()?>
+                </select>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancelar</button>
+                  <a  class="btn btn-primary" id ="btnAsignar" name ="btnAsingar">Asignar</a>
+                </div>
+              </div>
+            </div>
+          </div> 
+          </form>
         </div>
         <!---Container Fluid-->
       </div>
@@ -420,4 +332,12 @@
   <script src="js/ruang-admin.min.js"></script>
 </body>
 
+<script>
+var select = document.getElementById('btnAsignar');
+    select.addEventListener('change',
+            function(){
+              var selectedOption = this.options[select.selectedIndex];
+              console.log(selectedOption.value + ': ' + selectedOption.text);
+            });
+</script>
 </html>
