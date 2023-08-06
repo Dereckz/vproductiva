@@ -8,12 +8,12 @@
 }
 #logo{
 	position: relative;
-	width: 80%;
-	padding-top: 3%;
+	width: 98%;
+	padding-top: 1%;
 }
 
 #encabezado{
-	background-color: #19bdf8;
+	background-color: rgb(216, 210, 227);
 	position: sticky;
 	top: 0px;
 	margin: 0%;
@@ -25,12 +25,12 @@
 	color: #000000;
 }
 #menu{
-	background-color: #19bdf8;
+	background-color: #2411f1;
 	margin-top: 0%;
 	margin-left: 0%;
 	font-family: sans-serif;
 	margin-bottom: 0%;
-	height: 4.7em;
+	height: 4.9em;
 }
 .menus{
 	display: inline-block;
@@ -49,7 +49,24 @@
 a{
 	color: #ffffff;
 }
+a:hover {
+	color: #630ba3;
+	cursor: pointer;
+  }
 
 h1{
 	color: #000000;
+}
+
+.section-title {
+	font-size: 4rem;
+	font-weight: 300;
+	color: rgb(146, 26, 201);
+	margin-bottom: 10px;
+	text-transform: uppercase;
+	letter-spacing: 0.2rem;
+	text-align: center;
+}
+.section-title span {
+	color: #4720b7;
 }

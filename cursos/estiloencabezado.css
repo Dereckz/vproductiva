@@ -1,0 +1,76 @@
+/* inicia el estilo para el encabezado*/
+body{
+	margin: 0;
+}
+#planmarketing{
+	margin-left: 20px;
+}
+
+#logotipo{
+	text-align: left;
+}
+#logo{
+	position: relative;
+	width: 98%;
+	padding-top: 1%;
+}
+
+#encabezado{
+	background-color: rgb(216, 210, 227);
+	position: sticky;
+	top: 0px;
+	margin: 0%;
+	width: 100%;
+	text-align: center;
+}
+#tituloprincipal{
+	margin: 0%;
+	color: #000000;
+}
+#menu{
+	background-color: #2411f1;
+	margin-top: 0%;
+	margin-left: 0%;
+	font-family: sans-serif;
+	margin-bottom: 0%;
+	height: 4.9em;
+}
+.menus{
+	display: inline-block;
+	font-size: 1.3em;
+	text-align: center;
+	width: 20%;
+	vertical-align: top;
+	padding-top: 1em;
+}
+.logo{
+	display: inline-block;
+	font-size: 1.3em;
+	text-align: left;
+	width: 17%;
+}
+.enlacemenu{
+	color: #ffffff;
+	text-decoration: none;
+}
+a:hover {
+	color: #630ba3;
+	cursor: pointer;
+  }
+
+h1{
+	color: #000000;
+}
+
+.section-title {
+	font-size: 4rem;
+	font-weight: 300;
+	color: rgb(146, 26, 201);
+	margin-bottom: 10px;
+	text-transform: uppercase;
+	letter-spacing: 0.2rem;
+	text-align: center;
+}
+.section-title span {
+	color: #4720b7;
+}

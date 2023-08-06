@@ -114,6 +114,7 @@ p {
 	overflow-x: hidden;
 	transition: 0.5s ease left;
 }
+
 #header .nav-list ul.active {
 	left: 0%;
 }
@@ -144,7 +145,7 @@ p {
 	letter-spacing: initial;
 }
 #header .nav-list ul li:hover a {
-	color: #4720b7;
+	color: #630ba3;
 }
 #header .hamburger {
 	height: 60px;
