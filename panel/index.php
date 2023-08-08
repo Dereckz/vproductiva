@@ -1,4 +1,5 @@
 <?php include 'func/profile.php';?>
+<?php include 'func/cursos.php';?>
 <!DOCTYPE html>
 <html lang="en">
 
