@@ -1,6 +1,7 @@
 
 <?php include 'func/profile.php';?>
 <?php include 'func/cursos.php';?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -177,8 +178,8 @@
               <li class="breadcrumb-item">
                 <a href="./">Home</a>
               </li>
-              <li class="breadcrumb-item">Bootstrap UI</li>
-              <li class="breadcrumb-item active" aria-current="page">Alerts</li>
+              <li class="breadcrumb-item">Instructor</li>
+              <li class="breadcrumb-item active" aria-current="page">Agregar</li>
             </ol>
           </div>
           <div class="row">
@@ -217,7 +218,7 @@
                         </button>
                       </div>
                       <div class="modal-body">
-                        <p>¿Estas seguro que desea  s cerrar sesion?</p>
+                        <p>¿Estas seguro que deseas cerrar sesion?</p>
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancelar</button>
@@ -243,11 +244,18 @@
                 <div class="modal-body">
                 <label for="curso-names">Seleccione curso a Asignar:</label> 
                 <select name="cursoselect" id="cursoselect">
-                      <?php listcurso()?> 
+                      <!--?php listcurso()?--> 
+                      <option value='1'>Productividad Laboral</option>
+                      <option value='2'>Habilidades Blandas</option>
+                      <option value='3'>Habilidades Digitales</option>
+                      <option value='4'>Psicología</option>
+                      <option value='5'>Salud, Higiene y Seguridad</option>
+                      <option value='6'>Cultura Jurídica / derecho empresarial y corporativo</option>
+                      <option value='7'>Finanzas</option>
                   </select>
                 </div>
                 <div class="modal-footer">
-                  <button type="submit" class="btn btn-outline-primary"  id ="btnAsignar" name ="btnAsignar" >Agregar</button>
+                  <button type="submit" class="btn btn-outline-primary"  id ="btnAsignar" name ="btnAsignar" onclick="clickMe();" >Agregar</button>
                   <a  class="btn btn-outline-primary" data-dismiss="modal">Salir</a>
                 </div>
             </form>    
@@ -255,7 +263,25 @@
             </div>
           </div>    
         </div>
-       
+       <!-- Modal Exitosamente-->
+       <div class="modal" tabindex="-1" role="dialog" id="modalMensaje">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title badge badge-success">MENSAJE</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p id="mensaje"></p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" href="http://localhost/vproductivam/panel/instructor.php" data-dismiss="modal">SALIR</button>
+              </div>
+            </div>
+          </div>
+        </div>
         <!---Container Fluid-->
       </div>
 
@@ -280,13 +306,8 @@
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
   <script src="js/ruang-admin.min.js"></script>
-  <script>     
-            function clickMe(){
-              
-              var result ="<?php agregarcurso(); ?>"
-              document.write(result);
-              }
-        </script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  
 </body>
 
 </html>
