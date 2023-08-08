@@ -5,21 +5,25 @@ session_start();
 $btnAsginar=isset($_POST["btnAsignar"]);
 
 if (!$btnAsginar) {
-    $_SESSION["curso"]=array();
-    echo "estas aqui";
+   // $_SESSION["curso"]=array();
+   // echo "estas aqui";
 }
     if ($btnAsginar) {
-    $producto=$_REQUEST['cursoselect'];
-    $idusuario=$_SESSION["id"];
-    $idcurso= $_SESSION["curso"];
+        //$producto=$_GET['cursoselect'];
+        $idusuario=$_SESSION["id"];
+        $idcurso=$_REQUEST['cursoselect'];;
 
-    $queryA = mysqli_query($conn,"INSERT INTO `detallecurso`(`iIdDetalleCurso`, `fkiIdUsuario`, `fkiIdCurso`, `cObservaciones`) 
-                                   VALUES ('0','$idusuario','$idcurso','')");
-                    if($queryA){
-                        header("Location: http://localhost/vproductivam/panel/instructor.php");
-                    }
-    }
+        $queryA = mysqli_query($conn,"INSERT INTO `detallecurso`(`iIdDetalleCurso`, `fkiIdUsuario`, `fkiIdCurso`, `cObservaciones`) 
+                                    VALUES ('0','$idusuario','$idcurso', '')");
+                        if($queryA){
+                            echo "<script>";
+                            echo "MiFuncionJS();";
+                            echo "</script>";
+                             header("Location: http://localhost/vproductivam/panel/instructor.php");
+                          
+                        }
+        }
 
-
+    
  
 ?>

@@ -42,21 +42,37 @@ function registercurso()
 
         if ($consulta["iEstatus"]=="1")
         {
+          $result = mysqli_query($conn, "SELECT * FROM detallecurso  where fkiIdUsuario=".$consulta["iIdUsuario"].";");
+          mysqli_data_seek ($result, 0);
+          $extraido= mysqli_fetch_array($result);
+          if (is_null($extraido)){
+              echo 
+              '<tr>
+              <td><a href="#">'.$consulta["iIdUsuario"].'</a></td>
+              <td>'.strtoupper($consulta["cNombreLargo"]).'</td>
+              <td>N/A</td>
+              <td><span class="badge badge-success">Activo</span></td>
+              <td><a class="btn btn-sm btn-primary" href="javascript:void(0);" data-toggle="modal" data-target="#cursomodal" >Detalle</a></td>
+            </tr>';
 
-            echo 
-            '<tr>
-            <td><a href="#">'.$consulta["iIdUsuario"].'</a></td>
-            <td>'.strtoupper($consulta["cNombreLargo"]).'</td>
-            <td>'.'$IdCurso'.'</td>
-            <td><span class="badge badge-success">Activo</span></td>
-            <td><a class="btn btn-sm btn-primary" href="javascript:void(0);" data-toggle="modal" data-target="#cursomodal" >Detalle</a></td>
-           </tr>';
+          }else{
+            
+              echo 
+              '<tr>
+              <td><a href="#">'.$consulta["iIdUsuario"].'</a></td>
+              <td>'.strtoupper($consulta["cNombreLargo"]).'</td>
+              <td>'.$extraido["fkiIdCurso"].'</td>
+              <td><span class="badge badge-success">Activo</span></td>
+              <td><a class="btn btn-sm btn-primary" href="javascript:void(0);" data-toggle="modal" data-target="#cursomodal" >Detalle</a></td>
+              </tr>';
+          }
+
         }else{
             echo 
             '<tr>
             <td><a href="#">'.$consulta["iIdUsuario"].'</a></td>
             <td>'.strtoupper($consulta["cNombreLargo"]).'</td>
-            <td>'.$IdCurso.'</td>
+            <td>S/N</td>
             <td><span class="badge badge-danger">Inactivo</span></td>
             <td><a href="javascript:void(0);" data-toggle="modal" data-target="#cursomodal" class="btn btn-sm btn-primary">Detalle</a></td>
             </tr>';
@@ -70,7 +86,7 @@ function listcurso()
 {   session_start();
     include "..\dev\conectar.php";
     $resultado = mysqli_query($conn, "SELECT * FROM Curso");
-    
+
     
     while ($consulta = mysqli_fetch_array($resultado)) {
         $IdCurso=$consulta["iIdCurso"];
