@@ -203,84 +203,32 @@
             </div>
            
             </div>
-           <!--  <div class="col-lg-6"> -->
-              <!-- div class="card mb-4">
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                  <h6 class="m-0 font-weight-bold text-primary">Alert with link</h6>
-                </div>
-                <div class="card-body">
-                  <div class="alert alert-primary" role="alert">
-                    A simple primary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if
-                    you like.
-                  </div>
-                  <div class="alert alert-secondary" role="alert">
-                    A simple secondary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if
-                    you like.
-                  </div>
-                  <div class="alert alert-success" role="alert">
-                    A simple success alert with <a href="#" class="alert-link">an example link</a>. Give it a click if
-                    you like.
-                  </div>
-                  <div class="alert alert-danger" role="alert">
-                    A simple danger alert with <a href="#" class="alert-link">an example link</a>. Give it a click if
-                    you like.
-                  </div>
-                  <div class="alert alert-warning" role="alert">
-                    A simple warning alert with <a href="#" class="alert-link">an example link</a>. Give it a click if
-                    you like.
-                  </div>
-                  <div class="alert alert-info" role="alert">
-                    A simple info alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you
-                    like.
-                  </div>
-                  <div class="alert alert-light" role="alert">
-                    A simple light alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you
-                    like.
-                  </div>
-                  <div class="alert alert-dark" role="alert">
-                    A simple dark alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you
-                    like.
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> -->
-          <!-- Row -->
-          <!-- More Documentations Link -->
-         <!--  <div class="row">
-            <div class="col-lg-12 text-center">
-              <p>
-                For more documentations you can visit<a href="https://getbootstrap.com/docs/4.3/components/alerts/"
-                  target="_blank"> bootstrap alert documentations.</a>
-              </p>
-            </div>
-          </div> -->
-          <!-- More Documentations Link -->
+          
 
           <!-- Modal Logout -->
           <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabelLogout">Ohh No!</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <p>Are you sure you want to logout?</p>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancel</button>
-                  <a href="login.html" class="btn btn-primary">Logout</a>
-                </div>
-              </div>
-            </div>
-          </div> 
+                  aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabelLogout">Ohh No!</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <p>¿Estas seguro que desea  s cerrar sesion?</p>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancelar</button>
+                        <a href="http://localhost/vproductivam/account/login.html" class="btn btn-primary">Cerrar Sesión</a>
+                      </div>
+                    </div>
+                  </div>
+                </div> 
 
           <!--modal agregar curso-->
-          <form name="frmAgregar" method="post" action="cursos.php">
+         
           <div class="modal fade" id="cursomodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
             aria-hidden="true">
             <div class="modal-dialog" role="document">
@@ -291,21 +239,23 @@
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
+            <form name="frmAgregar" method="post" action="http://localhost/vproductivam/panel/func/agregarcurso.php">  
                 <div class="modal-body">
                 <label for="curso-names">Seleccione curso a Asignar:</label> 
-                <select name="curso" id="curso">
-                  <?php listcurso()?>
-                </select>
+                <select name="cursoselect" id="cursoselect">
+                      <?php listcurso()?> 
+                  </select>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancelar</button>
-                  <a  class="btn btn-primary" id ="btnAsignar" name ="btnAsingar">Asignar</a>
+                  <button type="submit" class="btn btn-outline-primary"  id ="btnAsignar" name ="btnAsignar" >Agregar</button>
+                  <a  class="btn btn-outline-primary" data-dismiss="modal">Salir</a>
                 </div>
+            </form>    
               </div>
             </div>
-          </div> 
-          </form>
+          </div>    
         </div>
+       
         <!---Container Fluid-->
       </div>
 
@@ -330,14 +280,13 @@
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
   <script src="js/ruang-admin.min.js"></script>
+  <script>     
+            function clickMe(){
+              
+              var result ="<?php agregarcurso(); ?>"
+              document.write(result);
+              }
+        </script>
 </body>
 
-<script>
-var select = document.getElementById('btnAsignar');
-    select.addEventListener('change',
-            function(){
-              var selectedOption = this.options[select.selectedIndex];
-              console.log(selectedOption.value + ': ' + selectedOption.text);
-            });
-</script>
 </html>
