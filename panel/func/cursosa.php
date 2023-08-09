@@ -36,7 +36,7 @@ function registercurso()
 {
     include "..\dev\conectar.php";
     
-    $resultado = mysqli_query($conn, "SELECT * FROM usuarios where usuarios.fkidTipoUsuario=2;");
+    $resultado = mysqli_query($conn, "SELECT * FROM usuarios where usuarios.fkidTipoUsuario=3;");
     
     while ($consulta = mysqli_fetch_array($resultado)) {
       

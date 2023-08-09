@@ -1,6 +1,6 @@
 
 <?php include 'func/profile.php';?>
-<?php include 'func/cursos.php';?>
+<?php include 'func/cursosa.php';?>
 
 <!DOCTYPE html>
 <html lang="en">
