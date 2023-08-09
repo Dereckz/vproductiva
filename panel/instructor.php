@@ -49,25 +49,25 @@
         <div id="collapseBootstrap" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Instructor</h6>
-            <a class="collapse-item" href="instructor.php">Agregar</a>
-           <!-- a class="collapse-item" href="buttons.html">Listar</a> -->
+            <a class="collapse-item" href="instructor.php">Administrar</a>
+           <!--  <a class="collapse-item" href="buttons.html">Asignar Curso</a> -->
           <!--   <a class="collapse-item" href="dropdowns.html">Dropdowns</a>
             <a class="collapse-item" href="modals.html">Modals</a>
             <a class="collapse-item" href="popovers.html">Popovers</a>
-            <a class="collapse-item" href="progress-bar.html">Progress Bars</a> -->
+            <a class="collapse-item" href="progress-bar.html">Progress Bars</a>S -->
           </div>
         </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap2"
-          aria-expanded="true" aria-controls="collapseBootstrap2">
+      <li class="nav-item" >
+        <a  class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBootstrap2"
+          aria-expanded="true" aria-controls="collapseBootstrap2" >
           <i class="far fa-fw fa-window-maximize"></i>
-          <span> Alumnos</span>
+          <span > Alumnos</span>
         </a>
-        <div id="collapseBootstrap2" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
+          <div id="collapseBootstrap2" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Alumnos</h6>
-            <a class="collapse-item" href="alumnos.php">Agregar</a>
+            <h6 class="collapse-header" >Alumnos</h6>
+           <a class="collapse-item" href="alumnos.php">Administrar</a> 
           </div>
         </div>
       </li>
@@ -81,14 +81,14 @@
         <div id="collapseForm" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Encuestas</h6>
-            <a class="collapse-item" href="form_basics.html">Crear Encuesta</a>
-            <a class="collapse-item" href="form_advanceds.html">Administrar Encuestas</a>
+            <!-- <a class="collapse-item" href="form_basics.html">Crear Encuesta</a> -->
+            <a class="collapse-item" href="encuestas.php">Administrar Encuestas</a>
           </div>
         </div>
       </li>
 
-
-      <hr class="sidebar-divider">
+   <!--extras utilies>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>--->
+      <!-- <hr class="sidebar-divider">
       <div class="sidebar-heading">
         Examples
       </div>
@@ -97,8 +97,8 @@
           aria-controls="collapsePage">
           <i class="fas fa-fw fa-columns"></i>
           <span>Pages</span>
-        </a>
-        <div id="collapsePage" class="collapse" aria-labelledby="headingPage" data-parent="#accordionSidebar">
+        </a> -->
+     <!--    <div id="collapsePage" class="collapse" aria-labelledby="headingPage" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Example Pages</h6>
             <a class="collapse-item" href="login.html">Login</a>
@@ -106,7 +106,7 @@
             <a class="collapse-item" href="404.html">404 Page</a>
             <a class="collapse-item" href="blank.html">Blank Page</a>
           </div>
-        </div>
+        </div> -->
       </li>
       
       <hr class="sidebar-divider">
@@ -179,7 +179,7 @@
                 <a href="./">Home</a>
               </li>
               <li class="breadcrumb-item">Instructor</li>
-              <li class="breadcrumb-item active" aria-current="page">Agregar</li>
+              <li class="breadcrumb-item active" aria-current="page">Administrar</li>
             </ol>
           </div>
           <div class="row">
