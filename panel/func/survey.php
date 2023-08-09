@@ -1,7 +1,6 @@
 <?php
 
 
-
 function encuestaslist()
 {
    
@@ -12,7 +11,7 @@ function encuestaslist()
 
 
         echo '<td>'.$result->id.'</td>
-              <td><a href="survey.php?id='.$result->id.'">'.$result->titulo.'</a></td>
+              <td><a href="surveys.php?id='.$result->id.'">'.$result->titulo.'</a></td>
               <td>'.$result->fecha.'</td>';
         //echo '<li><a href="encuesta.php?id='.$result->id.'">'.$result->titulo.'</a></li>';
     }
