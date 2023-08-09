@@ -1,6 +1,6 @@
 <?php
  // session_start();
- $a='0';
+ 
 function curseactive()
 {
     include "..\dev\conectar.php";
