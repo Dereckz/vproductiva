@@ -1,5 +1,6 @@
 <?php
  // session_start();
+ $a='0';
 function curseactive()
 {
     include "..\dev\conectar.php";
@@ -34,48 +35,33 @@ function curseactive()
 function registercurso()
 {
     include "..\dev\conectar.php";
-    //$resultado = mysqli_query($conn, "SELECT * FROM `detallecurso` INNER JOIN usuarios on fkiIdUsuario=iIdUsuario where usuarios.fkidTipoUsuario=2;");
+    
     $resultado = mysqli_query($conn, "SELECT * FROM usuarios where usuarios.fkidTipoUsuario=2;");
     
     while ($consulta = mysqli_fetch_array($resultado)) {
-        //$IdCurso=$consulta["iIdCurso"];
-
+      
         if ($consulta["iEstatus"]=="1")
         {
-          $result = mysqli_query($conn, "SELECT * FROM detallecurso  where fkiIdUsuario=".$consulta["iIdUsuario"].";");
-          mysqli_data_seek ($result, 0);
-          $extraido= mysqli_fetch_array($result);
-          if (is_null($extraido)){
               echo 
               '<tr>
-              <td><a href="#">'.$consulta["iIdUsuario"].'</a></td>
-              <td>'.strtoupper($consulta["cNombreLargo"]).'</td>
-              <td>N/A</td>
-              <td><span class="badge badge-success">Activo</span></td>
-              <td><a class="btn btn-sm btn-primary" href="javascript:void(0);" data-toggle="modal" data-target="#cursomodal" >Detalle</a></td>
-            </tr>';
-
-          }else{
-            
-              echo 
-              '<tr>
-              <td><a href="#">'.$consulta["iIdUsuario"].'</a></td>
-              <td>'.strtoupper($consulta["cNombreLargo"]).'</td>
-              <td>'.$extraido["fkiIdCurso"].'</td>
-              <td><span class="badge badge-success">Activo</span></td>
-              <td><a class="btn btn-sm btn-primary" href="javascript:void(0);" data-toggle="modal" data-target="#cursomodal" >Detalle</a></td>
-              </tr>';
-          }
+                <td><a href="javascript:void(0);" data-toggle="modal" data-target="#cantidadcurso">'.$consulta["iIdUsuario"].'</a></td>
+                <td>'.strtoupper($consulta["cNombreLargo"]).'</td>
+                <td><span class="badge badge-success">Activo</span></td>
+                <td><a class="btn btn-sm btn-primary" href="javascript:void(0);" data-toggle="modal" data-target="#cursomodal" >Agregar Curso</a></td>           
+               </tr>'
+              ;
+              echo '<tr>'.cursodeusuario($consulta["iIdUsuario"]).'</tr>';
 
         }else{
+         
             echo 
             '<tr>
-            <td><a href="#">'.$consulta["iIdUsuario"].'</a></td>
-            <td>'.strtoupper($consulta["cNombreLargo"]).'</td>
-            <td>S/N</td>
+            <td><a href="javascript:void(0);" data-toggle="modal" data-target="#cantidadcurso">'.$consulta["iIdUsuario"].'</a></td>
+             <td>'.strtoupper($consulta["cNombreLargo"]).'</td>
             <td><span class="badge badge-danger">Inactivo</span></td>
-            <td><a href="javascript:void(0);" data-toggle="modal" data-target="#cursomodal" class="btn btn-sm btn-primary">Detalle</a></td>
-            </tr>';
+            <td><a href="javascript:void(0);" data-toggle="modal" data-target="#cursomodal" class="btn btn-sm btn-primary">Agregar Curso</a></td>
+            </tr>'
+            ;
 
         }
         
@@ -85,10 +71,10 @@ function registercurso()
 function listcurso()
 {   session_start();
     include "..\dev\conectar.php";
-    $resultado = mysqli_query($conn, "SELECT * FROM Curso");
+    $resultado2 = mysqli_query($conn, "SELECT * FROM Curso");
 
     
-    while ($consulta = mysqli_fetch_array($resultado)) {
+    while ($consulta = mysqli_fetch_array($resultado2)) {
         $IdCurso=$consulta["iIdCurso"];
         echo ' <option value='.$IdCurso.'>'.$consulta["cNombreCurso"].'</option> ';
 
@@ -98,6 +84,28 @@ function listcurso()
     
 }
 
+
+function cursodeusuario($parametro1){
+  include "..\dev\conectar.php";
+
+  $result = mysqli_query($conn, 
+          "SELECT u.iIdUsuario,dc.iIdDetalleCurso,c.iIdCurso, u.cNombreLargo,c.cNombreCurso,c.cDescripcion
+          FROM detallecurso as dc INNER JOIN usuarios as u 
+          on dc.fkiIdUsuario=u.iIdUsuario 
+          INNER JOIN curso c
+          on c.iIdCurso=dc.fkiIdCurso
+          where u.iIdUsuario=".$parametro1.";");
+
+      //mysqli_data_seek ($result, 0);
+      //$extraido= mysqli_fetch_array($result);
+
+      while ($consulta = mysqli_fetch_array($result)) {
+      
+        echo
+        ''.($consulta["cNombreCurso"]).' ';
+      }
+
+}
     function agregarcurso(){
         if (!isset($_POST["btnAsignar"])) {
  

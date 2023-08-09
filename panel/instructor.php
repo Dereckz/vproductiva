@@ -142,7 +142,7 @@
               </div>
             </li>
  <!--Sliderbar name user-->
- <div class="topbar-divider d-none d-sm-block"></div>
+    <div class="topbar-divider d-none d-sm-block"></div>
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
@@ -173,7 +173,7 @@
         <!-- Container Fluid-->
         <div class="container-fluid" id="container-wrapper">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Instrcutores</h1>
+            <h1 class="h3 mb-0 text-gray-800">Instructores</h1>
             <ol class="breadcrumb">
               <li class="breadcrumb-item">
                 <a href="./">Home</a>
@@ -189,7 +189,7 @@
                       <tr>
                         <th>ID</th>
                         <th>Instructor</th>
-                        <th>Curso</th>
+                        <!-- <th>Cursos Activos</th> -->
                         <th>Estatus</th>
                         <th>Accion</th>
                       </tr>
@@ -263,25 +263,7 @@
             </div>
           </div>    
         </div>
-       <!-- Modal Exitosamente-->
-       <div class="modal" tabindex="-1" role="dialog" id="modalMensaje">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title badge badge-success">MENSAJE</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <p id="mensaje"></p>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-danger" href="http://localhost/vproductivam/panel/instructor.php" data-dismiss="modal">SALIR</button>
-              </div>
-            </div>
-          </div>
-        </div>
+       
         <!---Container Fluid-->
       </div>
 
