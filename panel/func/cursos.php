@@ -48,9 +48,9 @@ function registercurso()
                 <td>'.strtoupper($consulta["cNombreLargo"]).'</td>
                 <td><span class="badge badge-success">Activo</span></td>
                 <td><a class="btn btn-sm btn-primary" href="javascript:void(0);" data-toggle="modal" data-target="#cursomodal" >Agregar Curso</a></td>           
-               </tr>'
+               </tr><tr>'
               ;
-              echo '<tr>'.cursodeusuario($consulta["iIdUsuario"]).'</tr>';
+              echo ''.cursodeusuario($consulta["iIdUsuario"]).'</tr>';
 
         }else{
          
@@ -98,11 +98,14 @@ function cursodeusuario($parametro1){
 
       //mysqli_data_seek ($result, 0);
       //$extraido= mysqli_fetch_array($result);
-
+      $row_cnt = mysqli_num_rows($result);
+      if ($row_cnt>0){
+        echo '<td>curso</td>';
+      }
       while ($consulta = mysqli_fetch_array($result)) {
       
-        echo
-        ''.($consulta["cNombreCurso"]).' ';
+      echo
+      '<td>'.($consulta["cNombreCurso"]).' </td>';
       }
 
 }
