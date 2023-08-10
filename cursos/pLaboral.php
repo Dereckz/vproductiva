@@ -18,7 +18,18 @@
     	    <li class="menus"><a href="../alumno/cursos.php" class="enlacemenu">Catalogo de Cursos</a></li>
             <li class="menus"><a href="../account/login.html" class="enlacemenu">Salir</a></li>
     	</ul>
-  </header>
+    </header>
+  <div>
+   
+    
+    <table id=tablarecursos>
+        <tr> <td colspan=3 id=filatitulo> <h2>Curso de Productividad Laboral</h2> </td></tr>    
+        <tr> <td colspan=3 id=filainstrucciones> <h4> En este curso aprenderas las habilidades necesarias para optimizar al máximo tus labores diarias.</h4> </td></tr>    
+        <tr> <td class=iconosrec><img class=iconorecurso src="img/recursovideo.png"></td> <td width=70% class=temario>Código de ética </td> <td class=temario><img src="img/checkcompleto.png" style="width: 2.4em;"></td> </tr>         
+        <tr> <td class=iconosrec><img class=iconorecurso src="img/recursovideo.png"></td> <td width=70% class=temario>Evaluación del rendimiento </td> <td class=temario><img src="img/checkcompleto.png" style="width: 2.4em;"></td> </tr>
+        <tr> <td class=iconosrec><img class=iconorecurso src="img/recursovideo.png"></td> <td width=70% class=temario>Integracion y Productividad Laboral </td> <td class=temario><img src="img/checkvacio.png" style="width: 1.9em;"></td> </tr>       
+        </table>
+  </div>
     </body>
 </html>
 
@@ -32,13 +43,13 @@ if (!isset($_SESSION)) {
 $resultado = mysqli_query($conn, "SELECT r.iIdRecurso,c.cNombreCurso, m.cNombreModulo,r.cRuta FROM usuarios u
     INNER JOIN inscripcion i ON u.iIdUsuario = i.fkiIdUsuario
     INNER JOIN curso c ON i.fkiIdeCurso = c.iIdCurso
-  INNER JOIN modulo m ON c.iIdCurso = m.fkiIdCurso
-  INNER JOIN recurso r ON  m.iIdModulo = r.fkiIdModulo
-  WHERE c.iIdCurso=1 and u.iIdUsuario=" . $_SESSION["id"]);
+    INNER JOIN modulo m ON c.iIdCurso = m.fkiIdCurso
+    INNER JOIN recurso r ON  m.iIdModulo = r.fkiIdModulo
+    WHERE c.iIdCurso=1 and u.iIdUsuario=" . $_SESSION["id"]);
 
 $resultadoVisto = mysqli_query($conn, "SELECT r.iIdRecurso,c.cNombreCurso, m.cNombreModulo,r.cRuta FROM usuarios u
 INNER JOIN inscripcion i ON u.iIdUsuario = i.fkiIdUsuario
-  INNER JOIN curso c ON i.fkiIdeCurso = c.iIdCurso
+INNER JOIN curso c ON i.fkiIdeCurso = c.iIdCurso
 INNER JOIN modulo m ON c.iIdCurso = m.fkiIdCurso
 INNER JOIN recurso r ON  m.iIdModulo = r.fkiIdModulo
 INNER JOIN visto v ON r.iIdRecurso = v.idRecurso

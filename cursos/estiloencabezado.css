@@ -1,6 +1,7 @@
 /* inicia el estilo para el encabezado*/
 body{
 	margin: 0;
+	background-color: #dcedf8;
 }
 #planmarketing{
 	margin-left: 20px;
@@ -73,4 +74,40 @@ h1{
 }
 .section-title span {
 	color: #4720b7;
+}
+
+.iconorecurso{
+	width: 3.5em;
+}
+
+#tablarecursos{
+	margin-left: 20%;
+	margin-top: 1.5em;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	width: 60%;
+}
+
+.iconosrec{
+	text-align: center;
+	background-color: #dcedf8;
+}
+
+#filatitulo{
+	background-color: #b77add;
+	padding-bottom: 0%;
+}
+#filainstrucciones{
+	background-color: #79b3ce;
+	padding-top: 0%;
+}
+.temario{
+	background-color: #dcedf8;
+}
+h2{
+	color: #360cb5;
+	text-indent: 1.2em;
+}
+h4{
+	color: #360cb5;
+	text-indent: 1.7em;
 }
