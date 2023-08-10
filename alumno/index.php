@@ -40,7 +40,7 @@
   color: purple;
 }
 .u-section-2 .u-text-3 {
-  line-height: 2;
+  line-height: 1;
   --animation-custom_in-translate_x: 0px;
   --animation-custom_in-translate_y: 300px;
   --animation-custom_in-opacity: 0;

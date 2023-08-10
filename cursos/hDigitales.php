@@ -1,3 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="estiloencabezado.css">
+        <title>Productividad Laboral</title>
+    </head>
+    <body>
+    <header id="encabezado">
+    	<!--<div id="logotipo">
+    	<img src="img/logovproductiva2.png" id="logo"> 
+    	</div>-->
+    	<!--<h1 id="tituloprincipal">Valuacion Productiva</h1>-->
+    	<ul id="menu">
+            <li class="logo"><img src="img/logob.png" id="logo"></li>
+            <li class="menus"></li>
+    	    <li class="menus"><a href="../alumno/index.php" class="enlacemenu">Mi perfil</a></li>
+    	    <li class="menus"><a href="../alumno/cursos.php" class="enlacemenu">Catalogo de Cursos</a></li>
+            <li class="menus"><a href="../account/login.html" class="enlacemenu">Salir</a></li>
+    	</ul>
+    </header>
+  <div>
+   
+    
+    <table id=tablarecursos>
+        <tr> <td colspan=3 id=filatitulo> <h2>Habilidades Digitales</h2> </td></tr>    
+        <tr> <td colspan=3 id=filainstrucciones> <h4> En este curso aprenderas las habilidades digitales necesarias para tus labores diarias.</h4> </td></tr>    
+        <tr> <td class=iconosrec><img class=iconorecurso src="img/recursovideo.png"></td> <td width=70% class=temario>Word </td> <td class=temario><img src="img/checkcompleto.png" style="width: 2.4em;"></td> </tr>         
+        <tr> <td class=iconosrec><img class=iconorecurso src="img/recursovideo.png"></td> <td width=70% class=temario>Excel </td> <td class=temario><img src="img/checkcompleto.png" style="width: 2.4em;"></td> </tr>
+        <tr> <td class=iconosrec><img class=iconorecurso src="img/recursovideo.png"></td> <td width=70% class=temario>Power Point </td> <td class=temario><img src="img/checkvacio.png" style="width: 1.9em;"></td> </tr>       
+        </table>
+  </div>
+    </body>
+</html>
+
+
 <?php
     include("..\dev\conectar.php");
     include "../panel/func/profile.php";

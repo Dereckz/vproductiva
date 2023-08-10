@@ -52,9 +52,8 @@ function informacion()
         <tr><td width="25%">Cursos Inscritos: </td><td>'.$nInscrito.'</td> <td width="53%"></td>
         
         <form action="subir.php" method="POST" enctype="multipart/form-data">
-        <td rowspan=6 style="text-align: center;"> <img id=fotoperfil src="'.$consulta['imagen'].'" width="75%"> </td></tr>
-        <input type="file" name="file1" id="file1">
-        <button type=""submit>Guardar</button>
+        <td rowspan=6 style="text-align: center; font-size: 0.8em;"><img id=fotoperfil src="'.$consulta['cProfile'].'" width="65%"><input type="file" name="file1" id="file1"> 
+        <button type=""submit>Guardar</button> </td></tr>
         </form>
         
         <tr><td colspan=2 style="border-top:2px double blue"></td></tr>
@@ -101,7 +100,7 @@ function miCurso()
             <div class="u-container-layout u-similar-container u-valign-top u-container-layout-4"><span class="u-custom-item u-file-icon u-icon u-text-palette-3-base u-icon-4 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="750" style="will-change: transform, opacity; animation-duration: 1500ms;"><img src="' . $consulta['ricono'] . '" alt=""></span>
               <h4 class="u-text u-text-8"> ' . $consulta['cNombreCurso'] . '</h4>
               <a href="' . $consulta['ruta'] . '" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-3-base u-text-body-color u-text-hover-palette-3-base u-top-left-radius-0 u-top-right-radius-0 u-btn-5">Entrar</a>
-              <a href="#" id="' . $consulta["iIdCurso"] . '" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-3-base u-text-body-color u-text-hover-palette-3-base u-top-left-radius-0 u-top-right-radius-0 u-btn-5">Salir del curso</a>
+              <a href="#" id="' . $consulta["iIdCurso"] . '" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-3-base u-text-body-color u-text-hover-palette-3-base u-top-left-radius-0 u-top-right-radius-0 u-btn-5">Eliminar curso</a>
             </div>
           </div>
 
@@ -612,7 +611,7 @@ function infoCurso()
     $ruta3="../cursos/infohDigitales.php";
     $ruta4="../cursos/infopsicologia.php";
     $ruta5="../cursos/infosahase.php";
-    $ruta6="../cursos/infocJuridica.6php";
+    $ruta6="../cursos/infocJuridica.php";
     $ruta7="../cursos/infofinanzas.php";
 
     $contador = 1;
@@ -635,6 +634,7 @@ function infoCurso()
         }
 
         //validar si esta inscrito en el curso
+        $link ='<a href="#" id="' . $consulta["iIdCurso"] . '" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">Inscribirse</a>';
         $i=0;
         while($i<count($arreglo)){
             if ($arreglo[$i]== $consulta['iIdCurso']){
