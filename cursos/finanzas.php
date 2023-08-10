@@ -1,4 +1,32 @@
-<?php
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="estiloencabezado.css">
+        <title>Finanzas</title>
+    </head>
+    <body>
+    <header id="encabezado">
+    	<!--<div id="logotipo">
+    	<img src="img/logovproductiva2.png" id="logo"> 
+    	</div>-->
+    	<!--<h1 id="tituloprincipal">Valuacion Productiva</h1>-->
+    	<ul id="menu">
+            <li class="logo"><img src="img/logob.png" id="logo"></li>
+            <li class="menus"></li>
+    	    <li class="menus"><a href="../alumno/index.php" class="enlacemenu">Mi perfil</a></li>
+    	    <li class="menus"><a href="../alumno/cursos.php" class="enlacemenu">Catalogo de Cursos</a></li>
+            <li class="menus"><a href="../account/login.html" class="enlacemenu">Salir</a></li>
+    	</ul>
+    </header>
+  <div>
+   
+    
+    <table id=tablarecursos>
+        <tr> <td colspan=3 id=filatitulo> <h2>Curso de Finanzas</h2> </td></tr>    
+        <tr> <td colspan=3 id=filainstrucciones> <h4> En este curso aprenderas las habilidades necesarias para optimizar al máximo tus labores diarias.</h4> </td></tr>    
+    
+        <?php
     include("..\dev\conectar.php");
     include "../panel/func/profile.php";
 if (!isset($_SESSION)) {
@@ -30,13 +58,13 @@ WHERE idRecurso= ".$consulta['iIdRecurso']." and idAlumno=".$_SESSION["id"]." an
 $info =mysqli_fetch_array($check);
 
      if($info['num'] > 0){
-        $visto= '<input type="checkbox" name="cb-html5" checked disabled="disabled">';
+        $visto= '<td class=temario><img src="img/checkcompleto.png" style="width: 2.4em;"></td>';
      }
      else{
-        $visto='';
+        $visto='<td class=temario><img src="img/checkvacio.png" style="width: 2.4em;"></td>';
      }
 
-    echo $visto.'<a href="'.$consulta['cRuta'].'" id="'.$consulta['iIdRecurso'].'" target="_blank" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">'.$consulta['cNombreModulo'].'<br></a>
+    echo '<tr> <td class=iconosrec><a href="'.$consulta['cRuta'].'" id="'.$consulta['iIdRecurso'].'" target="_blank" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2"><img class=iconorecurso src="img/recursovideo.png"></a></td> <td width=70% class=temario>'.$consulta['cNombreModulo'].' </td> '.$visto.' </tr>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
@@ -69,10 +97,17 @@ $info =mysqli_fetch_array($check);
     
 }
 if($numMudulo==$numVisto){
-    $constancia='<a href="../alumno/reconocimiento.php?curso=FINANZAS" id="" target="_blank" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">Generar constancia<br></a>';
+    $constancia='<tr><td><a href="../alumno/reconocimiento.php?curso=FINANZAS" id="" target="_blank" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">Generar constancia<br></a></td></tr>';
 }
 else{
     $constancia="";
 }
 echo $constancia;
 ?>
+    
+    </table>
+  </div>
+    </body>
+</html>
+
+
