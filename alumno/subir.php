@@ -12,7 +12,7 @@ if (!isset($_SESSION)) {
     $archivo = $_FILES['file1']['tmp_name'];
     $subir= move_uploaded_file($archivo,$ruta);
 
-    $sql= "UPDATE usuarios SET imagen='".$ruta."' WHERE iIdUsuario=". $_SESSION["id"];
+    $sql= "UPDATE usuarios SET cProfile='".$ruta."' WHERE iIdUsuario=". $_SESSION["id"];
     if (mysqli_query($conn, $sql)) {
         echo "Se inserto correctamente el registro";
     } else {
