@@ -16,4 +16,9 @@ function encuestaslist()
         //echo '<li><a href="encuesta.php?id='.$result->id.'">'.$result->titulo.'</a></li>';
     }
 }
+
+
+
+
+
 ?>
