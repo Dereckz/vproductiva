@@ -81,7 +81,7 @@
         <div id="collapseForm" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Encuestas</h6>
-            <!-- <a class="collapse-item" href="form_basics.html">Crear Encuesta</a> -->
+            <a class="collapse-item" href="listsurvey.php">Listar Encuesta</a>
             <a class="collapse-item" href="encuestas.php">Administrar Encuestas</a>
           </div>
         </div>
