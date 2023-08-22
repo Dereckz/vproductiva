@@ -1,3 +1,7 @@
+<script src="sweetalert2.all.min.js"></script>
+<link href="sweetalert2.min.css" rel="stylesheet">
+
+
 <?php
 include("..\dev\conectar.php");
 
@@ -49,7 +53,9 @@ if ($stmt = $conn->prepare("SELECT cUsuario FROM usuarios WHERE cUsuario= ? LIMI
                      }                            
             }
             else{ 
-                echo "<script> alert('No coinciden las contraseñas');window.location= 'http://localhost/vproductivam/account/login.html' </script>";
+               
+                echo "<script> Swal.fire('Any fool can use a computer');window.location= 'http://localhost/vproductivam/account/login.html' </script>";
+               // echo "<script> alert('No coinciden las contraseñas');window.location= 'http://localhost/vproductivam/account/login.html' </script>";
                 //echo "<script> alert('pass1-".$_POST["password"]. "=".$_POST["confirmpassword"]."');window.location= 'http://localhost/vproductivam/account/login.html' </script>";    
             }   
         }else{

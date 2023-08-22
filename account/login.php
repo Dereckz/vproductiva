@@ -61,7 +61,7 @@ if ($stmt = $conn->prepare("SELECT iIdUsuario, cUsuario, cPassword, cNombre, cno
          header("Location: ../alumno/index.php");
 
         }else  if ($fila['fkidTipoUsuario']==2){
-         header("Location: ../instructor/instructor.php");
+         header("Location: ../instructor/index.php");
         }         
      } else {
        //header("Location: login.html");
