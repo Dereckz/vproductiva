@@ -25,7 +25,7 @@ function informacion()
     INNER JOIN modulo m ON c.iIdCurso = m.fkiIdCurso
     INNER JOIN recurso r ON  m.iIdModulo = r.fkiIdModulo
     INNER JOIN visto v ON r.iIdRecurso = v.idRecurso
-    WHERE c.iIdCurso=".$i." and u.iIdUsuario=" . $_SESSION["id"]);
+    WHERE c.iIdCurso=".$i." and v.idAlumno=" . $_SESSION["id"]." GROUP BY iIdRecurso");
 
     $numMudulo= mysqli_num_rows($terminado);
     $numTerminado = mysqli_num_rows($nterminado);

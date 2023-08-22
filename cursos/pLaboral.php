@@ -45,7 +45,7 @@ INNER JOIN curso c ON i.fkiIdeCurso = c.iIdCurso
 INNER JOIN modulo m ON c.iIdCurso = m.fkiIdCurso
 INNER JOIN recurso r ON  m.iIdModulo = r.fkiIdModulo
 INNER JOIN visto v ON r.iIdRecurso = v.idRecurso
-WHERE c.iIdCurso=1 and u.iIdUsuario=" . $_SESSION["id"]);
+WHERE c.iIdCurso=1 and v.idAlumno=" . $_SESSION["id"]." GROUP BY iIdRecurso");
 
 $numMudulo= mysqli_num_rows($resultado);
 $numVisto = mysqli_num_rows($resultadoVisto);
