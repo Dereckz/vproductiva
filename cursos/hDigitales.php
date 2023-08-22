@@ -4,7 +4,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="estiloencabezado.css">
         
-        <title>Productividad Laboral</title>
+        <title>Habilidades Digitales</title>
     </head>
     <body>
     <header id="encabezado">
@@ -21,6 +21,7 @@
     	</ul>
     </header>
   <div>
+    
   <table id=tablarecursos>
   <tr> <td colspan=3 id=filatitulo> <h2>Habilidades Digitales</h2> </td></tr>
   <tr> <td colspan=3 id=filainstrucciones> <h4> En este curso aprenderas las habilidades digitales necesarias para tus labores diarias.</h4> </td></tr>    
@@ -62,7 +63,7 @@ $info =mysqli_fetch_array($check);
      else{
         $visto='<td class=temario><img src="img/checkvacio.png" style="width: 2.4em;"></td>';
      }
-    echo '<tr> <td class=iconosrec><a href="'.$consulta['cRuta'].'" id="'.$consulta['iIdRecurso'].'" target="_blank" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2"><img class=iconorecurso src="img/recursovideo.png"></a></td> <td width=70% class=temario>'.$consulta['cNombreModulo'].' </td> '.$visto.' </tr>
+     echo '<tr> <td class=iconosrec><a href="'.$consulta['cRuta'].'" id="'.$consulta['iIdRecurso'].'" target="_blank" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2"><img class=iconorecurso src="img/recursovideo.png"></a></td> <td width=70% class=temario><a href="'.$consulta['cRuta'].'" id="'.$consulta['iIdRecurso'].'" target="_blank">'.$consulta['cNombreModulo'].'</a> </td> '.$visto.' </tr>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
