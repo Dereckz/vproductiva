@@ -168,7 +168,7 @@
                 <div class="card card-outline card-primary">
                   <div class="card-header">
                     <div class="card-tools">
-                      <a class="btn btn-block btn-sm btn-default btn-flat border-primary" href="./new_survey2.php?page=new_survey"><i class="fa fa-plus"></i> Add New Survey</a>
+                      <a class="btn btn-block btn-sm btn-default btn-flat border-primary" href="./new_survey2.php?page=new_survey"><i class="fa fa-plus"></i> Agregar Nueva Encuesta</a>
                     </div>
                   </div>
                   <div class="card-body">
@@ -184,11 +184,11 @@
                       <thead>
                         <tr>
                           <th class="text-center">#</th>
-                          <th>Title</th>
-                          <th>Description</th>
-                          <th>Start</th>
-                          <th>End</th>
-                          <th>Action</th>
+                          <th>Titulo</th>
+                          <th>Descripción</th>
+                          <th>Fecha Inicio</th>
+                          <th>Fecha Fin</th>
+                          <th>Acción</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -202,8 +202,8 @@
                           <th class="text-center"><?php echo $i++ ?></th>
                           <td><b><?php echo ucwords($row['title']) ?></b></td>
                           <td><b class="truncate"><?php echo $row['description'] ?></b></td>
-                          <td><b><?php echo date("M d, Y",strtotime($row['start_date'])) ?></b></td>
-                          <td><b><?php echo date("M d, Y",strtotime($row['end_date'])) ?></b></td>
+                          <td><b><?php echo date("d/m/Y",strtotime($row['start_date'])) ?></b></td>
+                          <td><b><?php echo date("d/m/Y",strtotime($row['end_date'])) ?></b></td>
                           <td class="text-center">
                                 <!-- <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
                                         Action

@@ -179,16 +179,16 @@ $answers = $conn->query("SELECT distinct(user_id) from answers where survey_id =
 		<div class="col-md-4">
 			<div class="card card-outline card-primary">
 				<div class="card-header">
-					<h3 class="card-title">Survey Details</h3>
+					<h3 class="card-title">Detalles de Encuesta</h3>
 				</div>
 				<div class="card-body p-0 py-2">
 					<div class="container-fluid">
 						<p>Title: <b><?php echo $stitle ?></b></p>
-						<p class="mb-0">Description:</p>
+						<p class="mb-0">Descripción:</p>
 						<small><?php echo $description; ?></small>
-						<p>Start: <b><?php echo date("M d, Y",strtotime($start_date)) ?></b></p>
-						<p>End: <b><?php echo date("M d, Y",strtotime($end_date)) ?></b></p>
-						<p>Have Taken: <b><?php echo number_format($answers) ?></b></p>
+						<p>Inicio: <b><?php echo date("M d, Y",strtotime($start_date)) ?></b></p>
+						<p>Fin: <b><?php echo date("M d, Y",strtotime($end_date)) ?></b></p>
+						<p>Quien la tomo: <b><?php echo number_format($answers) ?></b></p>
 
 					</div>
 					<hr class="border-primary">
@@ -198,9 +198,9 @@ $answers = $conn->query("SELECT distinct(user_id) from answers where survey_id =
 		<div class="col-md-8">
 			<div class="card card-outline card-success">
 				<div class="card-header">
-					<h3 class="card-title"><b>Survey Questionaire</b></h3>
+					<h3 class="card-title"><b>Preguntas de la entrevista</b></h3>
 					<div class="card-tools">
-					<a  href="manage_question.php?id=<?php echo $id?>">   	<button class="btn btn-block btn-sm btn-default btn-flat border-success new_question" type="button" ><i class="fa fa-plus"></i>  Agregar New Question</button></a>
+					<a  href="manage_question.php?id=<?php echo $id?>">   	<button class="btn btn-block btn-sm btn-default btn-flat border-success new_question" type="button" ><i class="fa fa-plus"></i>  Agregar Nueva Pregunta</button></a>
 					</div>
 				</div>
 				<form action="" id="manage-sort">
