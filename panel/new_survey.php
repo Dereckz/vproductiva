@@ -186,29 +186,29 @@
                             <div class="row">
                                 <div class="col-md-6 border-right">
                                     <div class="form-group">
-                                        <label for="" class="control-label">Title</label>
+                                        <label for="" class="control-label">Titulo</label>
                                         <input type="text" name="title" id="title" class="form-control form-control-sm" required value="<?php echo isset($stitle) ? $stitle : '' ?>">
                                     </div>
                                     <div class="form-group">
-                                        <label for="" class="control-label">Start</label>
+                                        <label for="" class="control-label">Fecha Inicio</label>
                                         <input type="date" name="start_date" id="start_date" class="form-control form-control-sm" required value="<?php echo isset($start_date) ? $start_date : '' ?>">
                                     </div>
                                     <div class="form-group">
-                                        <label for="" class="control-label">End</label>
+                                        <label for="" class="control-label">Fecha Fin</label>
                                         <input type="date" name="end_date" id="end_date" class="form-control form-control-sm" required value="<?php echo isset($end_date) ? $end_date : '' ?>">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="control-label">Description</label>
+                                        <label class="control-label">Descripción</label>
                                         <textarea name="description" id="description" cols="30" rows="4" class="form-control" required><?php echo isset($description) ? $description : '' ?></textarea>
                                     </div>
                                 </div>
                             </div>
                             <hr>
                             <div class="col-lg-12 text-right justify-content-center d-flex">
-                                <button class="btn btn-primary mr-2" id="saved" >Save</button>
-                                <button class="btn btn-secondary" type="button" onclick="location.href = 'listsurvey.php'">Cancel</button>
+                                <button class="btn btn-primary mr-2" id="saved" >Guardar</button>
+                                <button class="btn btn-secondary" type="button" onclick="location.href = 'listsurvey.php'">Cancelar</button>
                             </div>
                         </form>
                     </div>

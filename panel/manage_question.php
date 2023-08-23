@@ -184,27 +184,27 @@ if(isset($_GET['id'])){
 						<input type="hidden" name="id" value="<?php echo isset($id) ? $id : '' ?>">
 						<input type="hidden" name="sid" value="<?php echo isset($_GET['sid']) ? $_GET['sid'] : '' ?>">
 						<div class="form-group">
-							<label for="" class="control-label">Question</label>
+							<label for="" class="control-label">Preguntas</label>
 							<textarea name="question" id="" cols="30" rows="4" class="form-control"><?php echo isset($question)? $question: '' ?></textarea>
 						</div>
 						<div class="form-group">
-							<label for="" class="control-label">Question Answer Type</label>
+							<label for="" class="control-label">Tipo de respuesta a la pregunta</label>
 							<select name="type" id="type" class="custom-select custom-select-sm">
 								<?php if(isset($id)): ?>
 								<option value="" disabled="" selected="">Please Select here</option>
 								<?php endif; ?>
-								<option value="radio_opt" <?php echo isset($type) && $type == 'radio_opt' ? 'selected':'' ?>>Single Answer/Radio Button</option>
-								<option value="check_opt" <?php echo isset($type) && $type == 'check_opt' ? 'selected':'' ?>>Multiple Answer/Check Boxes</option>
-								<option value="textfield_s" <?php echo isset($type) && $type == 'textfield_s' ? 'selected':'' ?>>Text Field/ Text Area</option>
+								<option value="radio_opt" <?php echo isset($type) && $type == 'radio_opt' ? 'selected':'' ?>>Botón de respuesta única/Radio</option>
+								<option value="check_opt" <?php echo isset($type) && $type == 'check_opt' ? 'selected':'' ?>>Múltiples casillas de respuesta/Check</option>
+								<option value="textfield_s" <?php echo isset($type) && $type == 'textfield_s' ? 'selected':'' ?>>Campo de texto/Área de texto</option>
 							</select>
 						</div>
 						
 				</div>
 				<div class="col-sm-6">
-					<b>Preview</b>
+					<b>Previsualización</b>
 					<div class="preview">
 						<?php if(!isset($id)): ?>
-						<center><b>Select Question Answer type first.</b></center>
+						<b style="text-align:center">Seleccione primero el tipo de respuesta de pregunta.</b>
 						<?php else: ?>
 							<div class="callout callout-info">
 							<?php if($type != 'textfield_s'): 
