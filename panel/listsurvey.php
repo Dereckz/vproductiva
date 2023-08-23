@@ -81,7 +81,7 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Encuestas</h6>
             <a class="collapse-item" href="listsurvey.php">Listar Encuesta</a>
-            <a class="collapse-item" href="encuestas.php">Administrar Encuestas</a>
+            <a class="collapse-item" href="new_survey.php" >Administrar Encuestas</a>
           </div>
         </div>
       </li>
@@ -142,7 +142,8 @@
                 
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="javascript:void(0);" data-toggle="modal" data-target="#logoutModal">
-                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                  <i class="fas fa-
+                  sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                   Cerrar Sesión
                 </a>
               </div>
@@ -167,7 +168,7 @@
                 <div class="card card-outline card-primary">
                   <div class="card-header">
                     <div class="card-tools">
-                      <a class="btn btn-block btn-sm btn-default btn-flat border-primary" href="./index.php?page=new_survey"><i class="fa fa-plus"></i> Add New Survey</a>
+                      <a class="btn btn-block btn-sm btn-default btn-flat border-primary" href="./new_survey2.php?page=new_survey"><i class="fa fa-plus"></i> Add New Survey</a>
                     </div>
                   </div>
                   <div class="card-body">
@@ -191,6 +192,7 @@
                         </tr>
                       </thead>
                       <tbody>
+
                         <?php
                         $i = 1;
                         $qry = $conn->query("SELECT * FROM survey_set order by date(start_date) asc,date(end_date) asc ");
@@ -203,7 +205,7 @@
                           <td><b><?php echo date("M d, Y",strtotime($row['start_date'])) ?></b></td>
                           <td><b><?php echo date("M d, Y",strtotime($row['end_date'])) ?></b></td>
                           <td class="text-center">
-                            <!-- <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                                <!-- <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
                                         Action
                                       </button>
                                       <div class="dropdown-menu" style="">
@@ -212,10 +214,11 @@
                                         <a class="dropdown-item delete_survey" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>">Delete</a>
                                       </div> -->
                                       <div class="btn-group">
-                                          <a href="./listsurvey.php?page=edit_survey&id=<?php echo $row['id'] ?>" class="btn btn-primary btn-flat">
-                                            <i class="fas fa-edit"></i>
+                                         <!--  <a href="edit_survey.php?id=<?php echo $row['id'] ?>" class="btn btn-primary btn-flat"> -->
+                                         <a href="new_survey.php?id=<?php echo $row['id'] ?>" class="btn btn-primary btn-flat">   
+                                         <i class="fas fa-edit"></i>
                                           </a>
-                                          <a  href="./listsurvey.php?page=view_survey&id=<?php echo $row['id'] ?>" class="btn btn-info btn-flat">
+                                          <a  href="./view_survey.php?id=<?php echo $row['id'] ?>" class="btn btn-info btn-flat">
                                             <i class="fas fa-eye"></i>
                                           </a>
                                           <button type="button" class="btn btn-danger btn-flat delete_survey" data-id="<?php echo $row['id'] ?>">
@@ -231,29 +234,29 @@
                 </div>
               </div>
               <script>
-                $(document).ready(function(){
-                  $('#list').dataTable()
-                $('.delete_survey').click(function(){
-                _conf("Are you sure to delete this survey?","delete_survey",[$(this).attr('data-id')])
-                })
-                })
-                function delete_survey($id){
-                  start_load()
-                  $.ajax({
-                    url:'ajax.php?action=delete_survey',
-                    method:'POST',
-                    data:{id:$id},
-                    success:function(resp){
-                      if(resp==1){
-                        alert_toast("Data successfully deleted",'success')
-                        setTimeout(function(){
-                          location.reload()
-                        },1500)
-
-                      }
-                    }
+                  $(document).ready(function(){
+                    $('#list').dataTable()
+                  $('.delete_survey').click(function(){
+                  _conf("Are you sure to delete this survey?","delete_survey",[$(this).attr('data-id')])
                   })
-                }
+                  })
+                  function delete_survey($id){
+                    start_load()
+                    $.ajax({
+                      url:'ajax.php?action=delete_survey',
+                      method:'POST',
+                      data:{id:$id},
+                      success:function(resp){
+                        if(resp==1){
+                          alert_toast("Data successfully deleted",'success')
+                          setTimeout(function(){
+                            location.reload()
+                          },1500)
+
+                        }
+                      }
+                    })
+                  }
               </script>
 
                     <!-- Modal Logout -->
