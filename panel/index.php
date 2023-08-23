@@ -221,7 +221,7 @@
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancelar</button>
-                        <a href="http://localhost/vproductivam/account/login.html" class="btn btn-primary">Cerrar Sesión</a>
+                        <a href="http://localhost/vproductiva2/vproductiva/account/login.html" class="btn btn-primary">Cerrar Sesión</a>
                       </div>
                     </div>
                   </div>
