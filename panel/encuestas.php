@@ -81,31 +81,12 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Encuestas</h6>
             <a class="collapse-item" href="listsurvey.php">Listar Encuesta</a>
-            <a class="collapse-item" href="encuestas.php">Administrar Encuestas</a>
+            <a class="collapse-item" href="new_survey.php">Administrar Encuestas</a>
           </div>
         </div>
       </li>
 
-   <!--extras utilies>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>--->
-      <!-- <hr class="sidebar-divider">
-      <div class="sidebar-heading">
-        Examples
-      </div>
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePage" aria-expanded="true"
-          aria-controls="collapsePage">
-          <i class="fas fa-fw fa-columns"></i>
-          <span>Pages</span>
-        </a> -->
-     <!--    <div id="collapsePage" class="collapse" aria-labelledby="headingPage" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Example Pages</h6>
-            <a class="collapse-item" href="login.html">Login</a>
-            <a class="collapse-item" href="register.html">Register</a>
-            <a class="collapse-item" href="404.html">404 Page</a>
-            <a class="collapse-item" href="blank.html">Blank Page</a>
-          </div>
-        </div> -->
+
       </li>
       <hr class="sidebar-divider">
       <div class="version" id="version-ruangadmin"></div>
@@ -181,9 +162,10 @@
           </div>
 
           <!-- Row -->
+            
           <?php
 if(!isset($conn)){
-  include "..\dev\conectar.php";
+	include '../dev/conectar.php' ;
 }
 ?>
 <div class="col-lg-12">
@@ -247,15 +229,6 @@ if(!isset($conn)){
 		})
 	})
 </script>
-
-          <!-- Documentation Link -->
-          <!--<div class="row">
-            <div class="col-lg-12">
-               <p>DataTables is a third party plugin that is used to generate the demo table below. For more information
-                about DataTables, please visit the official <a href="https://datatables.net/" target="_blank">DataTables
-                  documentation.</a></p>
-            </div> 
-          </div>-->
 
                     <!-- Modal Logout -->
                     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
@@ -332,13 +305,7 @@ if(!isset($conn)){
   <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
   <!-- Page level custom scripts -->
-  <script>
-    $(document).ready(function () {
-      $('#dataTable').DataTable(); // ID From dataTable 
-      $('#dataTableHover').DataTable(); // ID From dataTable with Hover
-    });
-  </script>
-
+  
 </body>
 
 </html>

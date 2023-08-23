@@ -47,8 +47,8 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Instructor</h6>
             <a class="collapse-item" href="instructor.php">Administrar</a>
-           <!--  <a class="collapse-item" href="buttons.html">Asignar Curso</a> -->
-          <!--   <a class="collapse-item" href="dropdowns.html">Dropdowns</a>
+            <!--<a class="collapse-item" href="buttons.html">Asignar Curso</a> -->
+            <!--<a class="collapse-item" href="dropdowns.html">Dropdowns</a>
             <a class="collapse-item" href="modals.html">Modals</a>
             <a class="collapse-item" href="popovers.html">Popovers</a>
             <a class="collapse-item" href="progress-bar.html">Progress Bars</a>S -->
@@ -77,10 +77,10 @@
         </a>
         <div id="collapseForm" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Encuestas</h6>
-            <!-- <a class="collapse-item" href="form_basics.html">Crear Encuesta</a> -->
-            <a class="collapse-item" href="encuestas.php">Administrar Encuestas</a>
-          </div>
+          <h6 class="collapse-header">Encuestas</h6>
+            <a class="collapse-item" href="listsurvey.php">Listar Encuesta</a>
+            <a class="collapse-item" href="new_survey.php" >Administrar Encuestas</a>
+    
         </div>
       </li>
 
