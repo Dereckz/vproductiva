@@ -13,7 +13,35 @@
     <script class="u-script" type="text/javascript" src="./nicepage.js.descarga" defer=""></script>
     <meta name="generator" content="Nicepage 4.18.8, nicepage.com">
     <link id="u-theme-google-font" rel="stylesheet" href="./css">
-    <style class="u-style"> .u-section-2 {
+    <style class="u-style"> 
+    
+    p#texto{
+    text-align: center;
+    color: white;
+  }
+  div#div_file{
+    position: relative;
+    padding: 10px;
+    width: 150px;
+    height: 50px;
+    background-color: #2499e3;
+    -webkit-border-radius:5px;
+    -webkit-box-shadow:0px 3px 0px #1a71a9;
+  }
+
+  input#file1{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+
+
+  }
+    .u-section-2 {
   background-image: none;
 }
 .u-section-2 .u-sheet-1 {
@@ -362,6 +390,8 @@
   .u-section-2 .u-text-9 {
     font-size: 1.875rem;
   }
+
+  
 }</style>
 
     <script type="application/ld+json">{
