@@ -52,8 +52,15 @@ function informacion()
         <tr><td width="25%">Cursos Inscritos: </td><td>'.$nInscrito.'</td> <td width="53%"></td>
         
         <form action="subir.php" method="POST" enctype="multipart/form-data">
-        <td rowspan=6 style="text-align: center; font-size: 0.8em;"><img id=fotoperfil src="'.$consulta['cProfile'].'" width="65%"><input type="file" name="file1" id="file1"> 
-        <button type=""submit>Guardar</button> </td></tr>
+        
+        <td rowspan=6 style="text-align: center; font-size: 0.8em;"><img id=fotoperfil src="'.$consulta['cProfile'].'" width="65%"><div id="div_file"><input type="file" name="file1" id="file1"> 
+        <p id="texto">
+        Subir foto</p>
+        </div>
+        <br>
+        <button type="submit">Guardar</button>
+        </td></tr>
+        
         </form>
         
         <tr><td colspan=2 style="border-top:2px double blue"></td></tr>
