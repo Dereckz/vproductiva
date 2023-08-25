@@ -96,7 +96,7 @@ $info =mysqli_fetch_array($check);
     
 }
 if($numMudulo==$numVisto){
-    $constancia='<tr><td><a href="../alumno/reconocimiento.php?curso=HABILIDADES DIGITALES" id="" target="_blank" class="btn btn-primary">Generar constancia<br></a></td></tr>';
+    $constancia='<tr><td><a href="../alumno/reconocimiento.php?curso=HABILIDADES DIGITALES&idCurso=3" id="" target="_blank" class="btn btn-primary">Generar constancia<br></a></td></tr>';
 
     $consCur = mysqli_query($conn, "SELECT * FROM  inscripcion WHERE fkiIdeCurso = 3 and fkiIdUsuario =".$_SESSION["id"]);
     $idIns= mysqli_fetch_array($consCur);

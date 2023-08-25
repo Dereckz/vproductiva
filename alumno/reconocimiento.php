@@ -8,10 +8,13 @@ date_default_timezone_set('America/Mexico_City');
 if (!isset($_SESSION)) {
     session_start();
 }
-$fecha = date("d-m-y");
+//$fecha = date("d-m-y");
 
 $curso =$_GET['curso'];
+$idCur =$_GET['idCurso'];
 
+$consCurs = mysqli_query($conn, "SELECT * FROM  inscripcion WHERE fkiIdeCurso =".$idCur." and fkiIdUsuario =".$_SESSION["id"]);
+$fecha = mysqli_fetch_array($consCurs);
 $resultado = mysqli_query($conn, "SELECT * FROM usuarios WHERE iIdUsuario=" . $_SESSION["id"]);
 $consulta = mysqli_fetch_array($resultado);
 
@@ -62,7 +65,7 @@ $pdf->Cell(160,15,utf8_decode('_________________________________________________
 $pdf->SetFont('Arial','B',16);
 $pdf->SetY(159);
 $pdf->SetX(90);
-$pdf->Cell(50,15,utf8_decode($fecha),0,0,'C');
+$pdf->Cell(50,15,utf8_decode($fecha['cDescripcion']),0,0,'C');
 
 $pdf->SetFont('Arial','B',16);
 $pdf->SetY(162);
