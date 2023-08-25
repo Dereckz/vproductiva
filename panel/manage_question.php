@@ -163,146 +163,297 @@
             </ol>
           </div>
 
-     <!-- Row -->   
-     <?php include "..\dev\conectar.php"; ?>
-<?php 
-$qry = $conn->query("SELECT * FROM survey_set where id = ".$_GET['id'])->fetch_array();
-foreach($qry as $k => $v){
-	if($k == 'title')
-		$k = 'stitle';
-	$$k = $v;
-}
-$answers = $conn->query("SELECT distinct(user_id) from answers where survey_id ={$id}")->num_rows;
-?>
-<div class="col-lg-12">
-	<div class="row">
-		<div class="col-md-4">
-			<div class="card card-outline card-primary">
-				<div class="card-header">
-					<h3 class="card-title">Detalles de Encuesta</h3>
-				</div>
-				<div class="card-body p-0 py-2">
-					<div class="container-fluid">
-						<p>Title: <b><?php echo $stitle ?></b></p>
-						<p class="mb-0">Descripción:</p>
-						<small><?php echo $description; ?></small>
-						<p>Inicio: <b><?php echo date("M d, Y",strtotime($start_date)) ?></b></p>
-						<p>Fin: <b><?php echo date("M d, Y",strtotime($end_date)) ?></b></p>
-						<p>Quien la tomo: <b><?php echo number_format($answers) ?></b></p>
+      <!-- Row -->   
 
-					</div>
-					<hr class="border-primary">
+      <?php include '..\dev\conectar.php' ?>
+<?php
+if(isset($_GET['id'])){
+	$qry = $conn->query("SELECT * FROM questions where id = ".$_GET['id'])->fetch_array();
+	if  (!is_null($qry)){
+		foreach($qry as $k => $v){
+			$$k = $v;
+		}			
+	}
+}
+?>
+<div class="container-fluid">
+	<form action="" id="manage-question">
+		<div class="col-lg-12">
+			<div class="row">
+				<div class="col-sm-6 border-right">
+						<input type="hidden" name="id" value="<?php echo isset($id) ? $id : '' ?>">
+						<input type="hidden" name="sid" value="<?php echo isset($_GET['sid']) ? $_GET['sid'] : '' ?>">
+						<div class="form-group">
+							<label for="" class="control-label">Preguntas</label>
+							<textarea name="question" id="" cols="30" rows="4" class="form-control"><?php echo isset($question)? $question: '' ?></textarea>
+						</div>
+						<div class="form-group">
+							<label for="" class="control-label">Tipo de respuesta a la pregunta</label>
+							<select name="type" id="type" class="custom-select custom-select-sm">
+								<?php if(isset($id)): ?>
+								<option value="" disabled="" selected="">Please Select here</option>
+								<?php endif; ?>
+								<option value="radio_opt" <?php echo isset($type) && $type == 'radio_opt' ? 'selected':'' ?>>Botón de respuesta única/Radio</option>
+								<option value="check_opt" <?php echo isset($type) && $type == 'check_opt' ? 'selected':'' ?>>Múltiples casillas de respuesta/Check</option>
+								<option value="textfield_s" <?php echo isset($type) && $type == 'textfield_s' ? 'selected':'' ?>>Campo de texto/Área de texto</option>
+							</select>
+						</div>
+						
 				</div>
-			</div>
-		</div>
-		<div class="col-md-8">
-			<div class="card card-outline card-success">
-				<div class="card-header">
-					<h3 class="card-title"><b>Preguntas de la entrevista</b></h3>
-					<div class="card-tools">
-					<a  href="manage_question.php?id=<?php echo $id?>">   	<button class="btn btn-block btn-sm btn-default btn-flat border-success new_question" type="button" ><i class="fa fa-plus"></i>  Agregar Nueva Pregunta</button></a>
-					</div>
-				</div>
-				<form action="" id="manage-sort">
-				<div class="card-body ui-sortable">
-					<?php 
-					$question = $conn->query("SELECT * FROM questions where survey_id = $id order by abs(order_by) asc,abs(id) asc");
-					while($row=$question->fetch_assoc()):	
-					?>
-					<div class="callout callout-info">
-						<div class="row">
-							<div class="col-md-12">	
-								<span class="dropleft float-right">
-									<a class="fa fa-ellipsis-v text-dark" href="javascript:void(0)" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
-									<div class="dropdown-menu" style="">
-								        <a class="dropdown-item edit_question text-dark" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>">Edit</a>
-								        <div class="dropdown-divider"></div>
-								        <a class="dropdown-item delete_question text-dark" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>">Delete</a>
-								     </div>
-								</span>	
-							</div>	
-						</div>	
-						<h5><?php echo $row['question'] ?></h5>	
-						<div class="col-md-12">
-						<input type="hidden" name="qid[]" value="<?php echo $row['id'] ?>">	
-							<?php
-								if($row['type'] == 'radio_opt'):
-									foreach(json_decode($row['frm_option']) as $k => $v):
-							?>
-							<div class="icheck-primary">
-		                        <input type="radio" id="option_<?php echo $k ?>" name="answer[<?php echo $row['id'] ?>]" value="<?php echo $k ?>" checked="">
-		                        <label for="option_<?php echo $k ?>"><?php echo $v ?></label>
-		                     </div>
-								<?php endforeach; ?>
-						<?php elseif($row['type'] == 'check_opt'): 
-									foreach(json_decode($row['frm_option']) as $k => $v):
-							?>
-							<div class="icheck-primary">
-		                        <input type="checkbox" id="option_<?php echo $k ?>" name="answer[<?php echo $row['id'] ?>][]" value="<?php echo $k ?>" >
-		                        <label for="option_<?php echo $k ?>"><?php echo $v ?></label>
-		          </div>
-						<?php endforeach; ?>
+				<div class="col-sm-6">
+					<b>Previsualización</b>
+					<div class="preview">
+						<?php if(!isset($id)): ?>
+						<b style="text-align:center">Seleccione primero el tipo de respuesta de pregunta.</b>
 						<?php else: ?>
-							<div class="form-group">
-								<textarea name="answer[<?php echo $row['id'] ?>]" id="" cols="30" rows="4" class="form-control" placeholder="Write Something Here..."></textarea>
-							</div>
+							<div class="callout callout-info">
+							<?php if($type != 'textfield_s'): 
+								$opt= $type =='radio_opt' ? 'radio': 'checkbox';
+							?>
+						      <table width="100%" class="table">
+						      	<colgroup>
+						      		<col width="10%">
+						      		<col width="80%">
+						      		<col width="10%">
+						      	</colgroup>
+						      	<thead>
+							      	<tr class="">
+								      	<th class="text-center"></th>
+
+								      	<th class="text-center">
+								      		<label for="" class="control-label">Label</label>
+								      	</th>
+								      	<th class="text-center"></th>
+							     	</tr>
+						     	</thead>
+						     	<tbody>
+						     		<?php  
+						     		$i = 0;
+						     		foreach(json_decode($frm_option) as $k => $v):
+						     			$i++;
+						     		?>
+						     		<tr class="">
+								      	<td class="text-center">
+								      		<div class="icheck-primary d-inline" data-count = '<?php echo $i ?>'>
+									        	<input type="<?php echo $opt ?>" id="<?php echo $opt ?>Primary<?php echo $i ?>" name="<?php echo $opt ?>" checked="">
+									        	<label for="<?php echo $opt ?>Primary<?php echo $i ?>">
+									        	</label>
+									        </div>
+								      	</td>
+
+								      	<td class="text-center">
+								      		<input type="text" class="form-control form-control-sm check_inp"  name="label[]" value="<?php echo $v ?>">
+								      	</td>
+								      	<td class="text-center"></td>
+							     	</tr>
+						     		<?php  endforeach; ?>
+
+						     	</tbody>
+						      </table>
+						      <div class="row">
+						      <div class="col-sm-12 text-center">
+						      	<button class="btn btn-sm btn-flat btn-default" type="button" onclick="<?php echo $type ?>($(this))"><i class="fa fa-plus"></i> Add</button>
+						      </div>
+						      </div>
+						    </div>
+						</div>
+
+						<?php else: ?>
+								<textarea name="frm_opt" id="" cols="30" rows="10" class="form-control" disabled="" placeholder="Write Something here..."></textarea>
 						<?php endif; ?>
-						</div>	
+						<?php endif; ?>
 					</div>
-					<?php endwhile; ?>
 				</div>
-				</form>
 			</div>
 		</div>
+	</form>
+</div>
+<div id="check_opt_clone"  style="display: none">
+	<div class="callout callout-info">
+      <table width="100%" class="table">
+      	<colgroup>
+      		<col width="10%">
+      		<col width="80%">
+      		<col width="10%">
+      	</colgroup>
+      	<thead>
+	      	<tr class="">
+		      	<th class="text-center"></th>
+
+		      	<th class="text-center">
+		      		<label for="" class="control-label">Label</label>
+		      	</th>
+		      	<th class="text-center"></th>
+	     	</tr>
+     	</thead>
+     	<tbody>
+     		<tr class="">
+		      	<td class="text-center">
+		      		<div class="icheck-primary d-inline" data-count = '1'>
+			        	<input type="checkbox" id="checkboxPrimary1" checked="">
+			        	<label for="checkboxPrimary1">
+			        	</label>
+			        </div>
+		      	</td>
+
+		      	<td class="text-center">
+		      		<input type="text" class="form-control form-control-sm check_inp" name="label[]">
+		      	</td>
+		      	<td class="text-center"></td>
+	     	</tr>
+	     	<tr class="">
+		      	<td class="text-center">
+		      		<div class="icheck-primary d-inline" data-count = '2'>
+			        	<input type="checkbox" id="checkboxPrimary2" >
+			        	<label for="checkboxPrimary2">
+			        	</label>
+			        </div>
+		      	</td>
+
+		      	<td class="text-center">
+		      		<input type="text" class="form-control form-control-sm check_inp" name="label[]">
+		      	</td>
+		      	<td class="text-center"></td>
+	     	</tr>
+     	</tbody>
+      </table>
+      <div class="row">
+      <div class="col-sm-12 text-center">
+      	<button class="btn btn-sm btn-flat btn-default" type="button" onclick="new_check($(this))"><i class="fa fa-plus"></i> Add</button>
+      </div>
+      </div>
+    </div>
+</div>
+<div id="radio_opt_clone" style="display: none">
+	<div class="callout callout-info">
+      <table width="100%" class="table">
+      	<colgroup>
+      		<col width="10%">
+      		<col width="80%">
+      		<col width="10%">
+      	</colgroup>
+      	<thead>
+	      	<tr class="">
+		      	<th class="text-center"></th>
+
+		      	<th class="text-center">
+		      		<label for="" class="control-label">Label</label>
+		      	</th>
+		      	<th class="text-center"></th>
+	     	</tr>
+     	</thead>
+     	<tbody>
+     		<tr class="">
+		      	<td class="text-center">
+		      		<div class="icheck-primary d-inline" data-count = '1'>
+			        	<input type="radio" id="radioPrimary1" name="radio" checked="">
+			        	<label for="radioPrimary1">
+			        	</label>
+			        </div>
+		      	</td>
+
+		      	<td class="text-center">
+		      		<input type="text" class="form-control form-control-sm check_inp"  name="label[]">
+		      	</td>
+		      	<td class="text-center"></td>
+	     	</tr>
+	     	<tr class="">
+		      	<td class="text-center">
+		      		<div class="icheck-primary d-inline" data-count = '2'>
+			        	<input type="radio" id="radioPrimary2" name="radio" >
+			        	<label for="radioPrimary2">
+			        	</label>
+			        </div>
+		      	</td>
+
+		      	<td class="text-center">
+		      		<input type="text" class="form-control form-control-sm check_inp"  name="label[]">
+		      	</td>
+		      	<td class="text-center"></td>
+	     	</tr>
+     	</tbody>
+      </table>
+      <div class="row">
+      <div class="col-sm-12 text-center">
+      	<button class="btn btn-sm btn-flat btn-default" type="button" onclick="new_radio($(this))"><i class="fa fa-plus"></i> Add</button>
+      </div>
+      </div>
+    </div>
+</div>
+<div id="textfield_s_clone" style="display: none">
+	<div class="callout callout-info">
+		<textarea name="frm_opt" id="" cols="30" rows="10" class="form-control" disabled=""  placeholder="Write Something here..."></textarea>
 	</div>
 </div>
 <script>
-	/* $(document).ready(function(){
-		$('.ui-sortable').sortable({
-			placeholder: "ui-state-highlight",
-			 update: function( ) {
-			 	alert_toast("Saving question sort order.","info")
-		        $.ajax({
-		        	url:"ajax.php?action=action_update_qsort",
-		        	method:'POST',
-		        	data:$('#manage-sort').serialize(),
-		        	success:function(resp){
-		        		if(resp == 1){
-			 				alert_toast("Question order sort successfully saved.","success")
-		        		}
-		        	}
-		        })
-		    }
-		})
+	function new_check(_this){
+		var tbody=_this.closest('.row').siblings('table').find('tbody')
+		var count = tbody.find('tr').last().find('.icheck-primary').attr('data-count')
+			count++;
+		console.log(count)
+		var opt = '';
+			opt +='<td class="text-center pt-1"><div class="icheck-primary d-inline" data-count = "'+count+'"><input type="checkbox" id="checkboxPrimary'+count+'"><label for="checkboxPrimary'+count+'"> </label></div></td>';
+			opt +='<td class="text-center"><input type="text" class="form-control form-control-sm check_inp" name="label[]"></td>';
+			opt +='<td class="text-center"><a href="javascript:void(0)" onclick="$(this).closest(\'tr\').remove()"><span class="fa fa-times" ></span></a></td>';
+		var tr = $('<tr></tr>')
+		tr.append(opt)
+		tbody.append(tr)
+	}
+	function new_radio(_this){
+		var tbody=_this.closest('.row').siblings('table').find('tbody')
+		var count = tbody.find('tr').last().find('.icheck-primary').attr('data-count')
+			count++;
+		console.log(count)
+		var opt = '';
+			opt +='<td class="text-center pt-1"><div class="icheck-primary d-inline" data-count = "'+count+'"><input type="radio" id="radioPrimary'+count+'" name="radio"><label for="radioPrimary'+count+'"> </label></div></td>';
+			opt +='<td class="text-center"><input type="text" class="form-control form-control-sm check_inp" name="label[]"></td>';
+			opt +='<td class="text-center"><a href="javascript:void(0)" onclick="$(this).closest(\'tr\').remove()"><span class="fa fa-times" ></span></a></td>';
+		var tr = $('<tr></tr>')
+		tr.append(opt)
+		tbody.append(tr)
+	}
+	function check_opt(){
+		var check_opt_clone = $('#check_opt_clone').clone()
+		$('.preview').html(check_opt_clone.html())
+	}
+	function radio_opt(){
+		var radio_opt_clone = $('#radio_opt_clone').clone()
+		$('.preview').html(radio_opt_clone.html())
+	}
+	function textfield_s(){
+		var textfield_s_clone = $('#textfield_s_clone').clone()
+		$('.preview').html(textfield_s_clone.html())
+	}
+	$('[name="type"]').change(function(){
+		window[$(this).val()]()
 	})
-	$('.new_question').click(function(){
-		uni_modal("New Question","manage_question.php?sid=<?php echo $id ?>","large")
-	})
-	$('.edit_question').click(function(){
-		uni_modal("New Question","manage_question.php?sid=<?php echo $id ?>&id="+$(this).attr('data-id'),"large")
-	})
-	
-	$('.delete_question').click(function(){
-	_conf("Are you sure to delete this question?","delete_question",[$(this).attr('data-id')])
-	})
-	function delete_question($id){
+	$(function () {
+	$('#manage-question').submit(function(e){
+		e.preventDefault()
 		start_load()
+		// $('#msg').html('')
 		$.ajax({
-			url:'ajax.php?action=delete_question',
-			method:'POST',
-			data:{id:$id},
+			url:'ajax.php?action=save_question',
+			data: new FormData($(this)[0]),
+		    cache: false,
+		    contentType: false,
+		    processData: false,
+		    method: 'POST',
+		    type: 'POST',
 			success:function(resp){
-				if(resp==1){
-					alert_toast("Data successfully deleted",'success')
+				if(resp == 1){
+					alert_toast('Data successfully saved.',"success");
 					setTimeout(function(){
 						location.reload()
 					},1500)
 				}
 			}
 		})
-	} */
+	})
+
+  })
 </script>
-        
+   
       <!-- Modal Logout -->
                 <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
                   aria-hidden="true">
