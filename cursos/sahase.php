@@ -106,12 +106,13 @@ if($numMudulo==$numVisto){
     date_default_timezone_set('America/Mexico_City');
     $fecha = date("Y-m-d");
     $fechafor = strval($fecha);
-     $fechafor;
+    if($idIns['iIdInscripcion'] ==''){
     $act = "UPDATE inscripcion SET cDescripcion = '".$fechafor."' WHERE iIdInscripcion =".$idIns['iIdInscripcion'];
     if (mysqli_query($conn, $act)) {
         //echo "Se actualizo correctamente el registro";
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    }
     }
 
 }
