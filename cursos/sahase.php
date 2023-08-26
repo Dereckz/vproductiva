@@ -103,6 +103,8 @@ if($numMudulo==$numVisto){
     $consCur = mysqli_query($conn, "SELECT * FROM  inscripcion WHERE fkiIdeCurso = 5 and fkiIdUsuario =".$_SESSION["id"]);
     $idIns= mysqli_fetch_array($consCur);
 
+    $masDedos=$idIns['finalizado'];
+
     date_default_timezone_set('America/Mexico_City');
     $fecha = date("Y-m-d");
     $fechafor = strval($fecha);
@@ -119,7 +121,11 @@ if($numMudulo==$numVisto){
 else{
     $constancia="";
 }
+if($masDedos==3){
+    $mensaje= '<tr><td>Curso anteriormente cursado</td></tr>';
+}
 echo $constancia;
+echo $mensaje;
 ?>
     
     </table>
