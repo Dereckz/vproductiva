@@ -121,6 +121,9 @@ else{
 if($masDedos==3){
     $mensaje= '<tr><td>Curso anteriormente cursado</td></tr>';
 }
+else{
+    $mensaje='';
+}
 echo $constancia;
 echo $mensaje;
 
