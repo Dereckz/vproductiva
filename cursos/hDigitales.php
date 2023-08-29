@@ -63,7 +63,7 @@ $info =mysqli_fetch_array($check);
      else{
         $visto='<td class=temario><img src="img/checkvacio.png" style="width: 2.4em;"></td>';
      }
-     echo '<tr> <td class=iconosrec><a href="'.$consulta['cRuta'].'" id="'.$consulta['iIdRecurso'].'" target="_blank" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2"><img class=iconorecurso src="img/recursovideo.png"></a></td> <td width=70% class=temario><a href="'.$consulta['cRuta'].'" id="'.$consulta['iIdRecurso'].'" target="_blank">'.$consulta['cNombreModulo'].'</a> </td> '.$visto.' </tr>
+     echo '<tr> <td><a href="'.$consulta['cRuta'].'" id="'.$consulta['iIdRecurso'].'" target="_blank" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2"><img class=iconorecurso src="img/recursovideo.png">&nbsp;&nbsp;&nbsp;'.$consulta['cNombreModulo'].'</a></td>'.$visto.' </tr>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
@@ -96,12 +96,36 @@ $info =mysqli_fetch_array($check);
     
 }
 if($numMudulo==$numVisto){
-    $constancia='<tr><td><a href="../alumno/reconocimiento.php?curso=HABILIDADES DIGITALES" id="" target="_blank" class="btn btn-primary">Generar constancia<br></a></td></tr>';
+    $constancia='<tr><td><a href="../alumno/reconocimiento.php?curso=HABILIDADES DIGITALES&idCurso=3" id="" target="_blank" class="btn btn-primary">Generar constancia<br></a></td></tr>';
+
+    $consCur = mysqli_query($conn, "SELECT * FROM  inscripcion WHERE fkiIdeCurso = 3 and fkiIdUsuario =".$_SESSION["id"]);
+    $idIns= mysqli_fetch_array($consCur);
+
+    $masDedos=$idIns['finalizado'];
+
+    date_default_timezone_set('America/Mexico_City');
+    $fecha = date("Y-m-d");
+    $fechafor = strval($fecha);
+    if($idIns['iIdInscripcion'] ==''){
+    $act = "UPDATE inscripcion SET cDescripcion = '".$fechafor."' WHERE iIdInscripcion =".$idIns['iIdInscripcion'];
+    if (mysqli_query($conn, $act)) {
+        //echo "Se actualizo correctamente el registro";
+    } else {
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    }
+    }
 }
 else{
     $constancia="";
 }
+if($masDedos==3){
+    $mensaje= '<tr><td>Curso anteriormente cursado</td></tr>';
+}
+else{
+    $mensaje='';
+}
 echo $constancia;
+echo $mensaje;
 ?>  
 </table>
   </div>
