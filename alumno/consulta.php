@@ -39,7 +39,7 @@ function informacion()
     $cInscrito= mysqli_query($conn,"SELECT * FROM inscripcion i
     INNER JOIN usuarios u ON I.fkiIdUsuario = U.iIdUsuario
     INNER JOIN curso c ON i.fkiIdeCurso = c.iIdCurso
-    WHERE i.fkiIdUsuario=". $_SESSION["id"]);
+    WHERE  i.fkiIdUsuario=". $_SESSION["id"]." AND i.finalizado=1 OR i.finalizado=3");
     
     $nInscrito= mysqli_num_rows($cInscrito);
     
@@ -52,8 +52,15 @@ function informacion()
         <tr><td width="25%">Cursos Inscritos: </td><td>'.$nInscrito.'</td> <td width="53%"></td>
         
         <form action="subir.php" method="POST" enctype="multipart/form-data">
-        <td rowspan=6 style="text-align: center; font-size: 0.8em;"><img id=fotoperfil src="'.$consulta['cProfile'].'" width="65%"><input type="file" name="file1" id="file1"> 
-        <button type=""submit>Guardar</button> </td></tr>
+        
+        <td rowspan=6 style="text-align: center; font-size: 0.8em;"><img id=fotoperfil src="'.$consulta['cProfile'].'" width="65%"><div id="div_file"><input type="file" name="file1" id="file1"> 
+        <p id="texto">
+        Subir foto</p>
+        </div>
+        <br>
+        <button type="submit">Guardar</button>
+        </td></tr>
+        
         </form>
         
         <tr><td colspan=2 style="border-top:2px double blue"></td></tr>
@@ -83,7 +90,7 @@ function miCurso()
     $resultado = mysqli_query($conn, "SELECT c.iIdCurso, c.cNombreCurso, c.ruta, c.ricono FROM inscripcion i
     INNER JOIN usuarios u ON I.fkiIdUsuario = U.iIdUsuario
     INNER JOIN curso c ON i.fkiIdeCurso = c.iIdCurso
-    WHERE i.fkiIdUsuario=" . $_SESSION["id"]);
+    WHERE i.fkiIdUsuario=" . $_SESSION["id"]." AND i.finalizado=1 OR i.finalizado=3");
     $info = "";
     $cur1 = "";
     $cur2 = "";
@@ -583,7 +590,7 @@ function infoCurso()
     $inscrito = mysqli_query($conn, "SELECT c.iIdCurso FROM inscripcion i
     INNER JOIN usuarios u ON I.fkiIdUsuario = U.iIdUsuario
     INNER JOIN curso c ON i.fkiIdeCurso = c.iIdCurso
-    WHERE i.fkiIdUsuario=" . $_SESSION["id"]);
+    WHERE i.fkiIdUsuario=" . $_SESSION["id"]." AND i.finalizado=1 OR i.finalizado=3");
  
     //$ci=mysqli_num_rows($inscrito);
     // arreglo para recorrer los cursos donde el usuario ya esta inscrito
