@@ -191,7 +191,7 @@ if(isset($_GET['id'])){
 							<label for="" class="control-label">Tipo de respuesta a la pregunta</label>
 							<select name="type" id="type" class="custom-select custom-select-sm">
 								<?php if(isset($id)): ?>
-								<option value="" disabled="" selected="">Please Select here</option>
+								<option value="" disabled="" selected="">Porfavor seleccione</option>
 								<?php endif; ?>
 								<option value="radio_opt" <?php echo isset($type) && $type == 'radio_opt' ? 'selected':'' ?>>Botón de respuesta única/Radio</option>
 								<option value="check_opt" <?php echo isset($type) && $type == 'check_opt' ? 'selected':'' ?>>Múltiples casillas de respuesta/Check</option>
@@ -204,7 +204,8 @@ if(isset($_GET['id'])){
 					<b>Previsualización</b>
 					<div class="preview">
 						<?php if(!isset($id)): ?>
-						<b style="text-align:center">Seleccione primero el tipo de respuesta de pregunta.</b>
+						<b style="text-align:center">Seleccione primero el tipo de respuesta de pregunta.<?php echo ($id) ;?> </b>
+						
 						<?php else: ?>
 							<div class="callout callout-info">
 							<?php if($type != 'textfield_s'): 
