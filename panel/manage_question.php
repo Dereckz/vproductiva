@@ -16,6 +16,7 @@
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
   <link href="css/ruang-admin.min.css" rel="stylesheet">
+  <link href="https://harvesthq.github.io/chosen/chosen.css" rel="stylesheet"/>
 </head>
 
 <body id="page-top">
@@ -189,87 +190,53 @@ if(isset($_GET['id'])){
 						</div>
 						<div class="form-group">
 							<label for="" class="control-label">Tipo de respuesta a la pregunta</label>
-							<select name="type" id="type" class="custom-select custom-select-sm">
+							<select name="type" id="type" class="custom-select custom-select-sm" onchange="mostrarInputs(this.value)">
 								<?php if(isset($id)): ?>
-								<option value="" disabled="" selected="">Porfavor seleccione</option>
+								<option value="" disabled="" selected="">Please Select here</option>
 								<?php endif; ?>
-								<option value="radio_opt" <?php echo isset($type) && $type == 'radio_opt' ? 'selected':'' ?>>Botón de respuesta única/Radio</option>
-								<option value="check_opt" <?php echo isset($type) && $type == 'check_opt' ? 'selected':'' ?>>Múltiples casillas de respuesta/Check</option>
-								<option value="textfield_s" <?php echo isset($type) && $type == 'textfield_s' ? 'selected':'' ?>>Campo de texto/Área de texto</option>
+								<option value="radio_opt" <?php echo isset($type) && $type == 'radio_opt' ? 'selected':'' ?>> Respuesta Única /Radio Button</option>
+								<option value="check_opt" <?php echo isset($type) && $type == 'check_opt' ? 'selected':'' ?>> Multiple Respuesta/Check Boxes</option>
+								<option value="textfield_s" <?php echo isset($type) && $type == 'textfield_s' ? 'selected':'' ?>> Campo de Texto/ Text Area</option>
 							</select>
 						</div>
-						
 				</div>
+					
 				<div class="col-sm-6">
-					<b>Previsualización</b>
+						<b>Preview</b>
 					<div class="preview">
-						<?php if(!isset($id)): ?>
-						<b style="text-align:center">Seleccione primero el tipo de respuesta de pregunta.<?php echo ($id) ;?> </b>
 						
-						<?php else: ?>
-							<div class="callout callout-info">
-							<?php if($type != 'textfield_s'): 
-								$opt= $type =='radio_opt' ? 'radio': 'checkbox';
-							?>
-						      <table width="100%" class="table">
-						      	<colgroup>
-						      		<col width="10%">
-						      		<col width="80%">
-						      		<col width="10%">
-						      	</colgroup>
-						      	<thead>
-							      	<tr class="">
-								      	<th class="text-center"></th>
+							<p><b>Selecciona la pregunta para las respuestas primero.</b></p>
 
-								      	<th class="text-center">
-								      		<label for="" class="control-label">Label</label>
-								      	</th>
-								      	<th class="text-center"></th>
-							     	</tr>
-						     	</thead>
-						     	<tbody>
-						     		<?php  
-						     		$i = 0;
-						     		foreach(json_decode($frm_option) as $k => $v):
-						     			$i++;
-						     		?>
-						     		<tr class="">
-								      	<td class="text-center">
-								      		<div class="icheck-primary d-inline" data-count = '<?php echo $i ?>'>
-									        	<input type="<?php echo $opt ?>" id="<?php echo $opt ?>Primary<?php echo $i ?>" name="<?php echo $opt ?>" checked="">
-									        	<label for="<?php echo $opt ?>Primary<?php echo $i ?>">
-									        	</label>
-									        </div>
-								      	</td>
+            
+              <script>
 
-								      	<td class="text-center">
-								      		<input type="text" class="form-control form-control-sm check_inp"  name="label[]" value="<?php echo $v ?>">
-								      	</td>
-								      	<td class="text-center"></td>
-							     	</tr>
-						     		<?php  endforeach; ?>
+								function mostrarInputs(dato) {
+									
+										if (dato == 'radio_opt') {
+                      $("#radio_opt_clone").show();
+                      $("#textfield_s_clone").hide();
+                      $("#check_opt_clone").hide();
+		 										 
+										}
+										 if	(dato == 'check_opt')
+										{
+                      $("#radio_opt_clone").hide();
+                      $("#textfield_s_clone").hide();
+                      $("#check_opt_clone").show();
+										}
+										 if (dato == 'textfield_s')
+										{
+                      $("#radio_opt_clone").hide();
+                      $("#textfield_s_clone").show();
+                      $("#check_opt_clone").hide();
+										
+										}
 
-						     	</tbody>
-						      </table>
-						      <div class="row">
-						      <div class="col-sm-12 text-center">
-						      	<button class="btn btn-sm btn-flat btn-default" type="button" onclick="<?php echo $type ?>($(this))"><i class="fa fa-plus"></i> Add</button>
-						      </div>
-						      </div>
-						    </div>
-						</div>
-
-						<?php else: ?>
-								<textarea name="frm_opt" id="" cols="30" rows="10" class="form-control" disabled="" placeholder="Write Something here..."></textarea>
-						<?php endif; ?>
-						<?php endif; ?>
-					</div>
-				</div>
-			</div>
-		</div>
-	</form>
-</div>
-<div id="check_opt_clone"  style="display: none">
+										
+									}
+								</script>
+                
+                <div id="check_opt_clone"  style="display:none">
 	<div class="callout callout-info">
       <table width="100%" class="table">
       	<colgroup>
@@ -386,6 +353,21 @@ if(isset($_GET['id'])){
 		<textarea name="frm_opt" id="" cols="30" rows="10" class="form-control" disabled=""  placeholder="Write Something here..."></textarea>
 	</div>
 </div>
+						
+							
+					</div>
+				</div>
+			</div>
+					
+			</div>
+			
+		</div>
+	</form>
+</div>
+
+
+
+
 <script>
 	function new_check(_this){
 		var tbody=_this.closest('.row').siblings('table').find('tbody')
@@ -454,7 +436,6 @@ if(isset($_GET['id'])){
 
   })
 </script>
-   
       <!-- Modal Logout -->
                 <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
                   aria-hidden="true">
@@ -609,7 +590,8 @@ if(isset($_GET['id'])){
   <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  
+  <script src="https://harvesthq.github.io/chosen/docsupport/jquery-3.2.1.min.js"></script>
+<script src="https://harvesthq.github.io/chosen/chosen.jquery.js"></script>
 
   <!-- Page level custom scripts -->
   <!-- <script>
