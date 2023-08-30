@@ -166,7 +166,7 @@
      <!-- Row -->   
      <?php
       include "..\dev\conectar.php";
-      $sql ="SELECT * FROM `survey_set` WHERE id=".$_GET['id'];
+      $sql ="SELECT * FROM survey_set WHERE id=".$_GET['id'];
       $result = mysqli_query($conn, $sql);
       if($result->num_rows>0){
         while($fila=$result->fetch_assoc()){

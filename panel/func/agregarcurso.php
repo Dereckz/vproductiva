@@ -11,7 +11,7 @@ if (!$btnAsginar) {
     if ($btnAsginar) {
         //$producto=$_GET['cursoselect'];
         $idusuario=$_SESSION["id"];
-        $idcurso=$_REQUEST['cursoselect'];;
+        $idcurso=$_REQUEST['cursoselect'];
 
         $queryA = mysqli_query($conn,"INSERT INTO `detallecurso`(`iIdDetalleCurso`, `fkiIdUsuario`, `fkiIdCurso`, `cObservaciones`) 
                                     VALUES ('0','$idusuario','$idcurso', '')");
