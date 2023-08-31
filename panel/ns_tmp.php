@@ -165,9 +165,9 @@
 
           <!-- Row -->
           <?php
-if(!isset($conn)){
-	include '..\dev\conectar.php' ;
-}
+    if(!isset($conn)){
+      include '..\dev\conectar.php' ;
+    }
 ?>
 <div class="col-lg-12">
 	<div class="card">
