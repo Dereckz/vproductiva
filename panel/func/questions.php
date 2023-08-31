@@ -1,61 +1,29 @@
 <?php
+include("..\..\dev\conectar.php");
+session_start();
 
-echo '
-<div id="radio_opt_clone" style="">
-								<div class="callout callout-info">
-								<table width="100%" class="table">
-									<colgroup>
-										<col width="10%">
-										<col width="80%">
-										<col width="10%">
-									</colgroup>
-									<thead>
-										<tr class="">
-											<th class="text-center"></th>
 
-											<th class="text-center">
-												<label for="" class="control-label">Label</label>
-											</th>
-											<th class="text-center"></th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr class="">
-											<td class="text-center">
-												<div class="icheck-primary d-inline" data-count = "1">
-													<input type="radio" id="radioPrimary1" name="radio" checked="">
-													<label for="radioPrimary1">
-													</label>
-												</div>
-											</td>
 
-											<td class="text-center">
-												<input type="text" class="form-control form-control-sm check_inp"  name="label[]">
-											</td>
-											<td class="text-center"></td>
-										</tr>
-										<tr class="">
-											<td class="text-center">
-												<div class="icheck-primary d-inline" data-count = "2">
-													<input type="radio" id="radioPrimary2" name="radio" >
-													<label for="radioPrimary2">
-													</label>
-												</div>
-											</td>
+/* if (!$btnAsginar) {
+   // $_SESSION["curso"]=array();
+   // echo "estas aqui";
+} */
+    if ($btnAsginar) {
+        //$producto=$_GET['cursoselect'];
+        $idusuario=$_SESSION["id"];
+        $idcurso=$_REQUEST['cursoselect'];
 
-											<td class="text-center">
-												<input type="text" class="form-control form-control-sm check_inp"  name="label[]">
-											</td>
-											<td class="text-center"></td>
-										</tr>
-									</tbody>
-								</table>
-								<div class="row">
-								<div class="col-sm-12 text-center">
-									<button class="btn btn-sm btn-flat btn-default" type="button" onclick="new_radio($(this))"><i class="fa fa-plus"></i> Add</button>
-								</div>
-								</div>
-								</div>
-							</div>
-'
+        $queryA = mysqli_query($conn,"INSERT INTO `survey_set`(`id`, `title`, `description`, `user_id`, `start_date`, `end_date`, `date_created`)
+									   VALUES ('[value-1]','[value-2]','[value-3]','[value-4]','[value-5]','[value-6]','[value-7]')");
+                        if($queryA){
+                            echo "<script>";
+                            echo "MiFuncionJS();";
+                            echo "</script>";
+                             header("Location: http://localhost/vproductivam/panel/instructor.php");
+                          
+                        }
+        }
+
+    
+ 
 ?>

@@ -1,12 +1,11 @@
 
 <?php include 'func/profile.php';?>
-<?php include 'func/cursos.php';?>
-
+<?php include 'func/survey.php';?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
+<meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
@@ -19,11 +18,13 @@
   <link href="css/ruang-admin.min.css" rel="stylesheet">
 </head>
 
-
 <body id="page-top">
+
   <div id="wrapper">
     <!-- Sidebar -->
-    <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
+   
+     <!-- Sidebar -->
+     <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
         <div class="sidebar-brand-icon">
           <img src="../img/logovproductiva_text.png">
@@ -81,35 +82,14 @@
         <div id="collapseForm" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Encuestas</h6>
-            <h6 class="collapse-header">Encuestas</h6>
             <a class="collapse-item" href="listsurvey.php">Listar Encuesta</a>
-            <a class="collapse-item" href="add_survey.php" >Administrar Encuestas</a>
+            <a class="collapse-item" href="encuestas.php">Administrar Encuestas</a>
           </div>
         </div>
       </li>
 
-   <!--extras utilies>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>--->
-      <!-- <hr class="sidebar-divider">
-      <div class="sidebar-heading">
-        Examples
-      </div>
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePage" aria-expanded="true"
-          aria-controls="collapsePage">
-          <i class="fas fa-fw fa-columns"></i>
-          <span>Pages</span>
-        </a> -->
-     <!--    <div id="collapsePage" class="collapse" aria-labelledby="headingPage" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Example Pages</h6>
-            <a class="collapse-item" href="login.html">Login</a>
-            <a class="collapse-item" href="register.html">Register</a>
-            <a class="collapse-item" href="404.html">404 Page</a>
-            <a class="collapse-item" href="blank.html">Blank Page</a>
-          </div>
-        </div> -->
+
       </li>
-      
       <hr class="sidebar-divider">
       <div class="version" id="version-ruangadmin"></div>
     </ul>
@@ -142,8 +122,10 @@
                 </form>
               </div>
             </li>
- <!--Sliderbar name user-->
-    <div class="topbar-divider d-none d-sm-block"></div>
+        
+
+            <!--Sliderbar name user-->
+            <div class="topbar-divider d-none d-sm-block"></div>
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
@@ -170,45 +152,74 @@
           </ul>
         </nav>
         <!-- Topbar -->
-
         <!-- Container Fluid-->
         <div class="container-fluid" id="container-wrapper">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Instructores</h1>
+            <h1 class="h3 mb-0 text-gray-800">Encuestas</h1>
             <ol class="breadcrumb">
-              <li class="breadcrumb-item">
-                <a href="./">Home</a>
-              </li>
-              <li class="breadcrumb-item">Instructor</li>
+              <li class="breadcrumb-item"><a href="./">Home</a></li>
+              <li class="breadcrumb-item">Encuestas</li>
               <li class="breadcrumb-item active" aria-current="page">Administrar</li>
             </ol>
           </div>
-          <div class="row">
-          <div class="table-responsive">
-                  <table class="table align-items-center table-flush">
-                    <thead class="thead-light">
-                      <tr>
-                        <th>ID</th>
-                        <th>Instructor</th>
-                        <!-- <th>Cursos Activos</th> -->
-                        <th>Estatus</th>
-                        <th>Accion</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                     <?php  registercurso(); ?>
-                    </tbody>
-                  </table>
-                </div>
-                <div class="card-footer"></div>
-              </div>
-            </div>
-           
-            </div>
-          
 
-          <!-- Modal Logout -->
-          <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
+     <!-- Row -->   
+     <?php
+  /*     include "..\dev\conectar.php";
+      
+        $sql ="SELECT * FROM survey_set WHERE id=".$_GET['id'];
+        $result = mysqli_query($conn, $sql);
+        if($result->num_rows>0){
+          while($fila=$result->fetch_assoc()){
+                $id = $fila['id'];
+                $stitle = $fila['title'];
+                $description = $fila['description'];
+                $start_date = $fila['start_date'];
+                $end_date = $fila['end_date'];
+          }
+     
+    
+     } */
+     ?>
+                <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <form method="post"  action="insert_survey.php" id="manage_survey">
+                            <input type="hidden" name="id" id= "id" value="<?php echo isset($id) ? $id : '' ?>">
+                            <div class="row">
+                                <div class="col-md-6 border-right">
+                                    <div class="form-group">
+                                        <label for="" class="control-label">Titulo</label>
+                                        <input type="text" name="title" id="title" class="form-control form-control-sm" required value="<?php echo isset($stitle) ? $stitle : '' ?>">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="" class="control-label">Fecha Inicio</label>
+                                        <input type="date" name="start_date" id="start_date" class="form-control form-control-sm" required value="<?php echo isset($start_date) ? $start_date : '' ?>">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="" class="control-label">Fecha Fin</label>
+                                        <input type="date" name="end_date" id="end_date" class="form-control form-control-sm" required value="<?php echo isset($end_date) ? $end_date : '' ?>">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Descripción</label>
+                                        <textarea name="description" id="description" cols="30" rows="4" class="form-control" required><?php echo isset($description) ? $description : '' ?></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="col-lg-12 text-right justify-content-center d-flex">
+                                <button class="btn btn-primary mr-2" id="saved" >Guardar</button>
+                                <button class="btn btn-secondary" type="button" onclick="location.href = 'listsurvey.php'">Cancelar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        
+      <!-- Modal Logout -->
+                <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
                   aria-hidden="true">
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
@@ -229,45 +240,30 @@
                   </div>
                 </div> 
 
-          <!--modal agregar curso-->
+                    <!--modal agregar encuesta-->
          
-          <div class="modal fade" id="cursomodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
+          <div class="modal fade" id="surveyaddModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
             aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabelLogout">Asignar Curso</h5>
+                  <h5 class="modal-title" id="exampleModalLabelLogout">Agregar</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
-            <form name="frmAgregar" method="post" action="http://localhost/vproductivam/panel/func/agregarcurso.php">  
-                <div class="modal-body">
-                <label for="curso-names">Seleccione curso a Asignar:</label> 
-                <select name="cursoselect" id="cursoselect">
-                      <!--?php listcurso()?--> 
-                      <option value='1'>Productividad Laboral</option>
-                      <option value='2'>Habilidades Blandas</option>
-                      <option value='3'>Habilidades Digitales</option>
-                      <option value='4'>Psicología</option>
-                      <option value='5'>Salud, Higiene y Seguridad</option>
-                      <option value='6'>Cultura Jurídica / derecho empresarial y corporativo</option>
-                      <option value='7'>Finanzas</option>
-                  </select>
+                <div class="fl titulo">
+                  <label>Titulo:</label>
+                  <input name="titulo" type="text" size="26">
                 </div>
-                <div class="modal-footer">
-                  <button type="submit" class="btn btn-outline-primary"  id ="btnAsignar" name ="btnAsignar"  >Agregar</button>
-                  <a  class="btn btn-outline-primary" data-dismiss="modal">Salir</a>
-                </div>
-            </form>    
               </div>
             </div>
-          </div>    
-        </div>
-       
+          </div> 
+        
         <!---Container Fluid-->
       </div>
-
+            
+      
       <!-- Footer -->
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
@@ -279,37 +275,47 @@
         </div>
       </footer>
       <!-- Footer -->
-
     </div>
   </div>
-  <!-- Scrollto to top -->
+
+  <!-- Scroll to top -->
   <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>
   </a>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
   <script src="js/ruang-admin.min.js"></script>
+  <!-- Page level plugins -->
+  <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+  <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script>
-    function actualizarStatus(){
-      const id=document.getElementById('aIdu');
-      var result ="<?php updatestatus($id); ?>"
-      document.write(result);
-
-    }
-
-    ocument.addEventListener('DOMContentLoaded', function() {
-    const smapbtn=document.getElementById('spanbtn');
-    const id=document.getElementById('aIdu');
-    smapbtn.addEventListener('click', updateinfo, false);
-    function updateinfo() {
-      var result ="<?php updatestatus(id); ?>"
-      document.write(result);
-  }
-  });
-  </script>
   
+
+  <!-- Page level custom scripts -->
+  <!-- <script>
+  $(document).ready(function(){
+	$('#manage_survey').submit(function(e){
+    e.preventDefault();
+        Swal.fire({
+        title: 'Informacion Guardada',
+        icon: 'success',
+        width: 600,
+        timer: 1500,
+        padding: '3em',
+        color: '#716add',
+        backdrop: `
+          rgba(0,0,123,0.4)
+          left top
+          no-repeat ` 
+         }); 
+    
+	});
+});
+  </script> -->
+
 </body>
 
 </html>

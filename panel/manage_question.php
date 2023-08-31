@@ -192,8 +192,9 @@ if(isset($_GET['id'])){
 							<label for="" class="control-label">Tipo de respuesta a la pregunta</label>
 							<select name="type" id="type" class="custom-select custom-select-sm" onchange="mostrarInputs(this.value)">
 								<?php if(isset($id)): ?>
-								<option value="" disabled="" selected="">Please Select here</option>
+								<option value="" disabled="" selected="">Porfavor selecciona aqui</option>
 								<?php endif; ?>
+                <option value="" disabled="" selected="">Porfavor selecciona aqui</option>
 								<option value="radio_opt" <?php echo isset($type) && $type == 'radio_opt' ? 'selected':'' ?>> Respuesta Única /Radio Button</option>
 								<option value="check_opt" <?php echo isset($type) && $type == 'check_opt' ? 'selected':'' ?>> Multiple Respuesta/Check Boxes</option>
 								<option value="textfield_s" <?php echo isset($type) && $type == 'textfield_s' ? 'selected':'' ?>> Campo de Texto/ Text Area</option>
@@ -204,15 +205,17 @@ if(isset($_GET['id'])){
 				<div class="col-sm-6">
 						<b>Preview</b>
 					<div class="preview">
+						<div id="tituloinicio">
+            <p ><b>Selecciona la pregunta para las respuestas primero.</b></p>
+            </div>
 						
-							<p><b>Selecciona la pregunta para las respuestas primero.</b></p>
 
-            
               <script>
 
 								function mostrarInputs(dato) {
 									
 										if (dato == 'radio_opt') {
+                      $('#tituloinicio').hide()
                       $("#radio_opt_clone").show();
                       $("#textfield_s_clone").hide();
                       $("#check_opt_clone").hide();
@@ -220,12 +223,14 @@ if(isset($_GET['id'])){
 										}
 										 if	(dato == 'check_opt')
 										{
+                      $('#tituloinicio').hide()
                       $("#radio_opt_clone").hide();
                       $("#textfield_s_clone").hide();
                       $("#check_opt_clone").show();
 										}
 										 if (dato == 'textfield_s')
 										{
+                      $('#tituloinicio').hide()
                       $("#radio_opt_clone").hide();
                       $("#textfield_s_clone").show();
                       $("#check_opt_clone").hide();
@@ -235,135 +240,157 @@ if(isset($_GET['id'])){
 										
 									}
 								</script>
-                
+                 
                 <div id="check_opt_clone"  style="display:none">
-	<div class="callout callout-info">
-      <table width="100%" class="table">
-      	<colgroup>
-      		<col width="10%">
-      		<col width="80%">
-      		<col width="10%">
-      	</colgroup>
-      	<thead>
-	      	<tr class="">
-		      	<th class="text-center"></th>
+                <div class="callout callout-info">
+                    <table width="100%" class="table">
+                      <colgroup>
+                        <col width="10%">
+                        <col width="80%">
+                        <col width="10%">
+                      </colgroup>
+                      <thead>
+                        <tr class="">
+                          <th class="text-center"></th>
 
-		      	<th class="text-center">
-		      		<label for="" class="control-label">Label</label>
-		      	</th>
-		      	<th class="text-center"></th>
-	     	</tr>
-     	</thead>
-     	<tbody>
-     		<tr class="">
-		      	<td class="text-center">
-		      		<div class="icheck-primary d-inline" data-count = '1'>
-			        	<input type="checkbox" id="checkboxPrimary1" checked="">
-			        	<label for="checkboxPrimary1">
-			        	</label>
-			        </div>
-		      	</td>
+                          <th class="text-center">
+                            <label for="" class="control-label">Etiqueta</label>
+                          </th>
+                          <th class="text-center"></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="">
+                          <td class="text-center">
+                            <div class="icheck-primary d-inline" data-count = '1'>
+                              <input type="checkbox" id="checkboxPrimary1" checked="">
+                              <label for="checkboxPrimary1">
+                              </label>
+                            </div>
+                          </td>
 
-		      	<td class="text-center">
-		      		<input type="text" class="form-control form-control-sm check_inp" name="label[]">
-		      	</td>
-		      	<td class="text-center"></td>
-	     	</tr>
-	     	<tr class="">
-		      	<td class="text-center">
-		      		<div class="icheck-primary d-inline" data-count = '2'>
-			        	<input type="checkbox" id="checkboxPrimary2" >
-			        	<label for="checkboxPrimary2">
-			        	</label>
-			        </div>
-		      	</td>
+                          <td class="text-center">
+                            <input type="text" class="form-control form-control-sm check_inp" name="label[]">
+                          </td>
+                          <td class="text-center"></td>
+                      </tr>
+                      <tr class="">
+                          <td class="text-center">
+                            <div class="icheck-primary d-inline" data-count = '2'>
+                              <input type="checkbox" id="checkboxPrimary2" >
+                              <label for="checkboxPrimary2">
+                              </label>
+                            </div>
+                          </td>
 
-		      	<td class="text-center">
-		      		<input type="text" class="form-control form-control-sm check_inp" name="label[]">
-		      	</td>
-		      	<td class="text-center"></td>
-	     	</tr>
-     	</tbody>
-      </table>
-      <div class="row">
-      <div class="col-sm-12 text-center">
-      	<button class="btn btn-sm btn-flat btn-default" type="button" onclick="new_check($(this))"><i class="fa fa-plus"></i> Add</button>
-      </div>
-      </div>
-    </div>
-</div>
-<div id="radio_opt_clone" style="display: none">
-	<div class="callout callout-info">
-      <table width="100%" class="table">
-      	<colgroup>
-      		<col width="10%">
-      		<col width="80%">
-      		<col width="10%">
-      	</colgroup>
-      	<thead>
-	      	<tr class="">
-		      	<th class="text-center"></th>
+                          <td class="text-center">
+                            <input type="text" class="form-control form-control-sm check_inp" name="label[]">
+                          </td>
+                          <td class="text-center"></td>
+                      </tr>
+                    </tbody>
+                    </table>
+                    <div class="row">
+                    <div class="col-sm-12 text-center">
+                      <button class="btn btn-sm btn-flat btn-default" type="button" onclick="new_check($(this))"><i class="fa fa-plus"></i> Add</button>
+                    </div>
+                    </div>
+                  </div>
+              </div>
+              <div id="radio_opt_clone" style="display: none">
+                <div class="callout callout-info">
+                    <table width="100%" class="table">
+                      <colgroup>
+                        <col width="10%">
+                        <col width="80%">
+                        <col width="10%">
+                      </colgroup>
+                      <thead>
+                        <tr class="">
+                          <th class="text-center"></th>
 
-		      	<th class="text-center">
-		      		<label for="" class="control-label">Label</label>
-		      	</th>
-		      	<th class="text-center"></th>
-	     	</tr>
-     	</thead>
-     	<tbody>
-     		<tr class="">
-		      	<td class="text-center">
-		      		<div class="icheck-primary d-inline" data-count = '1'>
-			        	<input type="radio" id="radioPrimary1" name="radio" checked="">
-			        	<label for="radioPrimary1">
-			        	</label>
-			        </div>
-		      	</td>
+                          <th class="text-center">
+                            <label for="" class="control-label">Etiqueta</label>
+                          </th>
+                          <th class="text-center"></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="">
+                          <td class="text-center">
+                            <div class="icheck-primary d-inline" data-count = '1'>
+                              <input type="radio" id="radioPrimary1" name="radio" checked="">
+                              <label for="radioPrimary1">
+                              </label>
+                            </div>
+                          </td>
 
-		      	<td class="text-center">
-		      		<input type="text" class="form-control form-control-sm check_inp"  name="label[]">
-		      	</td>
-		      	<td class="text-center"></td>
-	     	</tr>
-	     	<tr class="">
-		      	<td class="text-center">
-		      		<div class="icheck-primary d-inline" data-count = '2'>
-			        	<input type="radio" id="radioPrimary2" name="radio" >
-			        	<label for="radioPrimary2">
-			        	</label>
-			        </div>
-		      	</td>
+                          <td class="text-center">
+                            <input type="text" class="form-control form-control-sm check_inp"  name="label[]">
+                          </td>
+                          <td class="text-center"></td>
+                      </tr>
+                      <tr class="">
+                          <td class="text-center">
+                            <div class="icheck-primary d-inline" data-count = '2'>
+                              <input type="radio" id="radioPrimary2" name="radio" >
+                              <label for="radioPrimary2">
+                              </label>
+                            </div>
+                          </td>
 
-		      	<td class="text-center">
-		      		<input type="text" class="form-control form-control-sm check_inp"  name="label[]">
-		      	</td>
-		      	<td class="text-center"></td>
-	     	</tr>
-     	</tbody>
-      </table>
-      <div class="row">
-      <div class="col-sm-12 text-center">
-      	<button class="btn btn-sm btn-flat btn-default" type="button" onclick="new_radio($(this))"><i class="fa fa-plus"></i> Add</button>
-      </div>
-      </div>
-    </div>
-</div>
-<div id="textfield_s_clone" style="display: none">
-	<div class="callout callout-info">
-		<textarea name="frm_opt" id="" cols="30" rows="10" class="form-control" disabled=""  placeholder="Write Something here..."></textarea>
-	</div>
-</div>
-						
-							
-					</div>
-				</div>
+                          <td class="text-center">
+                            <input type="text" class="form-control form-control-sm check_inp"  name="label[]">
+                          </td>
+                          <td class="text-center"></td>
+                      </tr>
+                    </tbody>
+                    </table>
+                    <div class="row">
+                    <div class="col-sm-12 text-center">
+                      <button class="btn btn-sm btn-flat btn-default" type="button" onclick="new_radio($(this))"><i class="fa fa-plus"></i> Agregar</button>
+                    </div>
+                    </div>
+                  </div>
+              </div>
+              <div id="textfield_s_clone" style="display: none">
+                <div class="callout callout-info">
+                  <textarea name="frm_opt" id="" cols="30" rows="10" class="form-control" disabled=""  placeholder="Escribe algo aqui..."></textarea>
+                </div>
+              </div>
+
+                  <div>
+                  <a href="" id="add_question" onclick="add_question()" data-toggle="modal" class="btn btn-sm btn-primary">Agregar pregunta</a>
+                  </div>
+              </div>
+            </div>
+			   </div>
 			</div>
-					
-			</div>
-			
 		</div>
 	</form>
 </div>
+<script>
+  $(function add_question(){
+    const type=document.querySelector("#type")
+    $.ajax({
+			url:'ajax.php?action=save_question',
+			data: new FormData($(this)[0]),
+		    cache: false,
+		    contentType: false,
+		    processData: false,
+		    method: 'POST',
+		    type: 'POST',
+			success:function(resp){
+				if(resp == 1){
+					alert_toast('Data successfully saved.',"success");
+					setTimeout(function(){
+						location.reload()
+					},1500)
+				}
+			}
+		})
+  })
+</script>
 
 
 
@@ -435,6 +462,8 @@ if(isset($_GET['id'])){
 	})
 
   })
+
+
 </script>
       <!-- Modal Logout -->
                 <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
