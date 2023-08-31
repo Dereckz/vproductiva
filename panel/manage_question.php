@@ -208,8 +208,6 @@ if(isset($_GET['id'])){
 						<div id="tituloinicio">
             <p ><b>Selecciona la pregunta para las respuestas primero.</b></p>
             </div>
-						
-
               <script>
 
 								function mostrarInputs(dato) {
