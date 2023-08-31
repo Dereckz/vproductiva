@@ -81,7 +81,7 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Encuestas</h6>
             <a class="collapse-item" href="listsurvey.php">Listar Encuesta</a>
-            <a class="collapse-item" href="new_survey.php" >Administrar Encuestas</a>
+            <a class="collapse-item" href="add_survey.php">Administrar Encuestas</a>
           </div>
         </div>
       </li>
