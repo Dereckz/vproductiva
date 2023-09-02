@@ -34,7 +34,7 @@
           <!-- /.col -->
       </div>
 
-<?php else: ?>
+  <?php else: ?>
 	 <div class="col-12">
           <div class="card">
           	<div class="card-body">

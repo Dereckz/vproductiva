@@ -3,7 +3,7 @@
 	<div class="card card-outline card-primary">
 		<div class="card-header">
 			<div class="card-tools">
-				<a class="btn btn-block btn-sm btn-default btn-flat border-primary" href="./index.php?page=new_survey"><i class="fa fa-plus"></i> Add New Survey</a>
+				<a class="btn btn-block btn-sm btn-default btn-flat border-primary" href="./panel.php?page=new_survey"><i class="fa fa-plus"></i> Agregar Nueva Encuesta</a>
 			</div>
 		</div>
 		<div class="card-body">
@@ -19,11 +19,11 @@
 				<thead>
 					<tr>
 						<th class="text-center">#</th>
-						<th>Title</th>
-						<th>Description</th>
-						<th>Start</th>
-						<th>End</th>
-						<th>Action</th>
+						<th>Titulo</th>
+						<th>Descripción</th>
+						<th>Inicio</th>
+						<th>Fin</th>
+						<th>Acción</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -70,7 +70,7 @@
 	$(document).ready(function(){
 		$('#list').dataTable()
 	$('.delete_survey').click(function(){
-	_conf("Are you sure to delete this survey?","delete_survey",[$(this).attr('data-id')])
+	_conf("Estas Seguro que deseas eliminar la encuesta?","delete_survey",[$(this).attr('data-id')])
 	})
 	})
 	function delete_survey($id){

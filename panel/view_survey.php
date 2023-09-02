@@ -17,12 +17,12 @@ $answers = $conn->query("SELECT distinct(user_id) from answers where survey_id =
 				</div>
 				<div class="card-body p-0 py-2">
 					<div class="container-fluid">
-						<p>Title: <b><?php echo $stitle ?></b></p>
-						<p class="mb-0">Description:</p>
+						<p>Titulo: <b><?php echo $stitle ?></b></p>
+						<p class="mb-0">Descripción:</p>
 						<small><?php echo $description; ?></small>
-						<p>Start: <b><?php echo date("M d, Y",strtotime($start_date)) ?></b></p>
-						<p>End: <b><?php echo date("M d, Y",strtotime($end_date)) ?></b></p>
-						<p>Have Taken: <b><?php echo number_format($answers) ?></b></p>
+						<p>Inicio:: <b><?php echo date("M d, Y",strtotime($start_date)) ?></b></p>
+						<p>Fin: <b><?php echo date("M d, Y",strtotime($end_date)) ?></b></p>
+						<p>Han tomado: <b><?php echo number_format($answers) ?></b></p>
 
 					</div>
 					<hr class="border-primary">
@@ -32,9 +32,9 @@ $answers = $conn->query("SELECT distinct(user_id) from answers where survey_id =
 		<div class="col-md-8">
 			<div class="card card-outline card-success">
 				<div class="card-header">
-					<h3 class="card-title"><b>Survey Questionaire</b></h3>
+					<h3 class="card-title"><b>Cuestionario de encuesta</b></h3>
 					<div class="card-tools">
-						<button class="btn btn-block btn-sm btn-default btn-flat border-success new_question" type="button"><i class="fa fa-plus"></i> Add New Question</button>
+						<button class="btn btn-block btn-sm btn-default btn-flat border-success new_question" type="button"><i class="fa fa-plus"></i> Agregar nueva pregunta</button>
 					</div>
 				</div>
 				<form action="" id="manage-sort">
@@ -49,9 +49,9 @@ $answers = $conn->query("SELECT distinct(user_id) from answers where survey_id =
 								<span class="dropleft float-right">
 									<a class="fa fa-ellipsis-v text-dark" href="javascript:void(0)" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
 									<div class="dropdown-menu" style="">
-								        <a class="dropdown-item edit_question text-dark" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>">Edit</a>
+								        <a class="dropdown-item edit_question text-dark" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>">Editar</a>
 								        <div class="dropdown-divider"></div>
-								        <a class="dropdown-item delete_question text-dark" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>">Delete</a>
+								        <a class="dropdown-item delete_question text-dark" href="javascript:void(0)" data-id="<?php echo $row['id'] ?>">Borrar</a>
 								     </div>
 								</span>	
 							</div>	

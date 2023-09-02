@@ -58,7 +58,7 @@
                       <tr>
                         <th>ID</th>
                         <th>Instructor</th>
-                        <th>Curso</th>
+                      
                         <th>Estatus</th>
                         <th>Accion</th>
                       </tr>
@@ -87,7 +87,7 @@
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancelar</button>
-                        <a href="http://localhost/vproductiva2/vproductiva/account/login.html" class="btn btn-primary">Cerrar Sesión</a>
+                        <a href="http://localhost/vproductivam/account/login.html" class="btn btn-primary">Cerrar Sesión</a>
                       </div>
                     </div>
                   </div>
@@ -156,13 +156,15 @@
   <!-- /.control-sidebar -->
 
   <!-- Main Footer -->
-  <footer class="main-footer">
-    <strong>Copyright &copy; 2020 <a href="https://www.sourcecodester.com/">sourcecodester.com</a>.</strong>
-    All rights reserved.
-    <div class="float-right d-none d-sm-inline-block">
-      <b>Online Survey System</b>
-    </div>
-  </footer>
+  <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>copyright &copy; <script> document.write(new Date().getFullYear()); </script> - developed by
+              <b><a href="https://desetecnologias.net/" target="_blank">Dese Tecnologias</a></b>
+            </span>
+          </div>
+        </div>
+    </footer>
 </div>
 <!-- ./wrapper -->
 
