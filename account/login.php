@@ -48,6 +48,7 @@ if ($stmt = $conn->prepare("SELECT iIdUsuario, cUsuario, cPassword, cNombre, cno
         $_SESSION["usuario"] = $fila["cUsuario"];
         $_SESSION["Tipo"]=$fila["fkidTipoUsuario"];
         $_SESSION["Nombre"]=$fila['cNombre'];
+        $_SESSION["ApellidoP"]=$fila['cApellidoP'];
         $_SESSION["NombreLargo"]=$fila["cnombrelargo"];
         $_SESSION["iGenero"]=$fila["iGenero"];
         $tipo=$fila['fkidTipoUsuario'];

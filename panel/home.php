@@ -1,6 +1,6 @@
 <?php include('db_connect.php') ?>
 <!-- Info boxes -->
-<?php if($_SESSION['login_type'] == 1): ?>
+<?php if($_SESSION['tipo'] == 1): ?>
         <div class="row">
           <div class="col-12 col-sm-6 col-md-3">
             <div class="info-box">
