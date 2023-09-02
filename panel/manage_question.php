@@ -15,18 +15,18 @@ foreach($qry as $k => $v){
 						<input type="hidden" name="id" value="<?php echo isset($id) ? $id : '' ?>">
 						<input type="hidden" name="sid" value="<?php echo isset($_GET['sid']) ? $_GET['sid'] : '' ?>">
 						<div class="form-group">
-							<label for="" class="control-label">Question</label>
+							<label for="" class="control-label">Preguntas</label>
 							<textarea name="question" id="" cols="30" rows="4" class="form-control"><?php echo isset($question)? $question: '' ?></textarea>
 						</div>
 						<div class="form-group">
-							<label for="" class="control-label">Question Answer Type</label>
+							<label for="" class="control-label">Tipo de Respuesta</label>
 							<select name="type" id="type" class="custom-select custom-select-sm">
 								<?php if(isset($id)): ?>
-								<option value="" disabled="" selected="">Please Select here</option>
+								<option value="" disabled="" selected="">Porfavor Seleccione aqui</option>
 								<?php endif; ?>
-								<option value="radio_opt" <?php echo isset($type) && $type == 'radio_opt' ? 'selected':'' ?>>Single Answer/Radio Button</option>
-								<option value="check_opt" <?php echo isset($type) && $type == 'check_opt' ? 'selected':'' ?>>Multiple Answer/Check Boxes</option>
-								<option value="textfield_s" <?php echo isset($type) && $type == 'textfield_s' ? 'selected':'' ?>>Text Field/ Text Area</option>
+								<option value="radio_opt" <?php echo isset($type) && $type == 'radio_opt' ? 'selected':'' ?>>Respuesta Unica/Radio Button</option>
+								<option value="check_opt" <?php echo isset($type) && $type == 'check_opt' ? 'selected':'' ?>>Multiple Respuesta/Check Boxes</option>
+								<option value="textfield_s" <?php echo isset($type) && $type == 'textfield_s' ? 'selected':'' ?>>Campo de Texto/ Text Area</option>
 							</select>
 						</div>
 						
@@ -35,7 +35,7 @@ foreach($qry as $k => $v){
 					<b>Preview</b>
 					<div class="preview">
 						<?php if(!isset($id)): ?>
-						<center><b>Select Question Answer type first.</b></center>
+						<center><b>Porfavor Selecciona el tipo de pregunta</b></center>
 						<?php else: ?>
 							<div class="callout callout-info">
 							
@@ -53,7 +53,7 @@ foreach($qry as $k => $v){
 								      	<th class="text-center"></th>
 
 								      	<th class="text-center">
-								      		<label for="" class="control-label">Label</label>
+								      		<label for="" class="control-label">Etiqueta</label>
 								      	</th>
 								      	<th class="text-center"></th>
 							     	</tr>
@@ -84,14 +84,14 @@ foreach($qry as $k => $v){
 						      </table>
 						      <div class="row">
 						      <div class="col-sm-12 text-center">
-						      	<button class="btn btn-sm btn-flat btn-default" type="button" onclick="<?php echo $type ?>($(this))"><i class="fa fa-plus"></i> Add</button>
+						      	<button class="btn btn-sm btn-flat btn-default" type="button" onclick="<?php echo $type ?>($(this))"><i class="fa fa-plus"></i> Agregar</button>
 						      </div>
 						      </div>
 						    </div>
 						</div>
 
 						<?php else: ?>
-								<textarea name="frm_opt" id="" cols="30" rows="10" class="form-control" disabled="" placeholder="Write Something here..."></textarea>
+								<textarea name="frm_opt" id="" cols="30" rows="10" class="form-control" disabled="" placeholder="Escribe algo aquis..."></textarea>
 						<?php endif; ?>
 						<?php endif; ?>
 					</div>

@@ -13,15 +13,15 @@ foreach($qry as $k => $v){
 		<div class="col-md-4">
 			<div class="card card-outline card-primary">
 				<div class="card-header">
-					<h3 class="card-title"><b>Survey Details</b></h3>
+					<h3 class="card-title"><b>Detalles de Encuesta</b></h3>
 				</div>
 				<div class="card-body p-0 py-2">
 					<div class="container-fluid">
-						<p>Title: <b><?php echo $stitle ?></b></p>
-						<p class="mb-0">Description:</p>
+						<p>Titulo: <b><?php echo $stitle ?></b></p>
+						<p class="mb-0">Descripción:</p>
 						<small><?php echo $description; ?></small>
-						<p>Start: <b><?php echo date("M d, Y",strtotime($start_date)) ?></b></p>
-						<p>End: <b><?php echo date("M d, Y",strtotime($end_date)) ?></b></p>
+						<p>Inicio: <b><?php echo date("M d, Y",strtotime($start_date)) ?></b></p>
+						<p>Fin: <b><?php echo date("M d, Y",strtotime($end_date)) ?></b></p>
 
 					</div>
 					<hr class="border-primary">
@@ -31,7 +31,7 @@ foreach($qry as $k => $v){
 		<div class="col-md-8">
 			<div class="card card-outline card-success">
 				<div class="card-header">
-					<h3 class="card-title"><b>Survey Questionaire</b></h3>
+					<h3 class="card-title"><b>Cuestionario de encuesta</b></h3>
 				</div>
 				<form action="" id="manage-survey">
 					<input type="hidden" name="survey_id" value="<?php echo $id ?>">
@@ -74,8 +74,8 @@ foreach($qry as $k => $v){
 				</form>
 				<div class="card-footer border-top border-success">
 					<div class="d-flex w-100 justify-content-center">
-						<button class="btn btn-sm btn-flat bg-gradient-primary mx-1" form="manage-survey">Submit Answer</button>
-						<button class="btn btn-sm btn-flat bg-gradient-secondary mx-1" type="button" onclick="location.href = 'index.php?page=survey_widget'">Cancel</button>
+						<button class="btn btn-sm btn-flat bg-gradient-primary mx-1" form="manage-survey">Enviar respuesta</button>
+						<button class="btn btn-sm btn-flat bg-gradient-secondary mx-1" type="button" onclick="location.href = 'index.php?page=survey_widget'">Cancelar</button>
 					</div>
 				</div>
 			</div>
@@ -94,7 +94,7 @@ foreach($qry as $k => $v){
 				if(resp == 1){
 					alert_toast("Thank You.",'success')
 					setTimeout(function(){
-						location.href = 'index.php?page=survey_widget'
+						location.href = 'panel.php?page=survey_widget'
 					},2000)
 				}
 			}
