@@ -36,7 +36,7 @@
     <!-- /.content-header -->
 
     <!-- Main content -->
-    <?php include 'func/profile.php';?>
+ 
     <?php include 'func/cursos.php';?>
    
 <div class="container-fluid" id="container-wrapper">

@@ -36,8 +36,8 @@
     <!-- /.content-header -->
 
     <!-- Main content -->
-    <?php include 'func/profile.php';?>
-<?php include 'func/cursosa.php';?>
+
+  <?php include 'func/cursosa.php';?>
    
     <div class="container-fluid" id="container-wrapper">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">

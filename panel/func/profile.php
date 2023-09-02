@@ -8,7 +8,7 @@ function sessionuser()
     //1 Man
     //2 Woman
 
-    $NombreUsuario=$_SESSION["Nombre"];
+    $NombreUsuario=$_SESSION["usuario"];
     if ($_SESSION["iGenero"]=="1"){
        
         echo '<img class="img-profile rounded-circle" src="img/boy.png" style="max-width: 40px">              

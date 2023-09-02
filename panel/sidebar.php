@@ -2,7 +2,7 @@
     <div class="dropdown">
    	<a href="javascript:void(0)" class="brand-link dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
         <span class="brand-image img-circle elevation-3 d-flex justify-content-center align-items-center bg-primary text-white font-weight-500" style="width: 38px;height:50px"><?php echo strtoupper(substr($_SESSION['login_firstname'], 0,1).substr($_SESSION['login_lastname'], 0,1)) ?></span>
-        <span class="brand-text font-weight-light"><?php echo ucwords($_SESSION['login_firstname'].' '.$_SESSION['login_lastname']) ?></span>
+        <span class="brand-text font-weight-light"><?php echo ucwords($_SESSION['Nombre'].' '.$_SESSION['ApellidoP']) ?></span>
 
       </a>
       <div class="dropdown-menu" style="">
@@ -36,7 +36,7 @@
               <li class="nav-item">
                 <a href="http://localhost/vproductivam/panel/instructor.php" class="nav-link nav-new_user tree-item">
                   <i class="fas fa-angle-right nav-icon"></i>
-                  <p>instructor </p>
+                  <p>Instructor </p>
                 </a>
               </li>
               <li class="nav-item">
