@@ -308,6 +308,15 @@
       document.write(result);
   }
   });
+
+
+  MiFuncionJS(){
+    Swal.fire(
+            'Operacion Exitosa',
+            '¡Se mando encuesta Correctamente!',
+            'success'
+          )
+    }
   </script>
   
 </body>

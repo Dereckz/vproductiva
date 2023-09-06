@@ -5,7 +5,7 @@
 <html lang="en">
 <?php session_start() ?>
 <?php 
-	if(!isset($_SESSION['login_id']))
+	if(!isset($_SESSION['id']))
 	    header('location:login.php');
 	include 'header.php' 
 ?>
@@ -57,9 +57,9 @@
                       <tr>
                         <th>ID</th>
                         <th>Instructor</th>
-                        <!-- <th>Cursos Activos</th> -->
                         <th>Estatus</th>
                         <th>Accion</th>
+                        <th>Encuesta</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -131,6 +131,34 @@
             </div>
           </div>    
         </div>
+
+        <!--Modal añadir Entrevista -->
+        <div class="modal fade" id="surveymodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabelLogout">Mandar Encuesta</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                    <form name="frmSurveySet" method="post" action="http://localhost/vproductivam/panel/func/agregarsurvey.php">  
+                        <div class="modal-body">
+                        <label for="curso-names">Marque encuesta(s):</label> 
+                       <div>
+                         <?php showAllSurvey() ?> 
+                       </div>  
+                        </div>
+                        <div class="modal-footer">
+                          <button type="submit" class="btn btn-outline-primary"  id ="btnSurvey" name ="btnSurvey"  >Agregar</button>
+                          <a  class="btn btn-outline-primary" data-dismiss="modal">Salir</a>
+                        </div>
+                    </form>    
+              </div>
+            </div>
+          </div>    
+        </div>
        
     <!-- /.content -->
     <div class="modal fade" id="confirm_modal" role='dialog'>
@@ -143,8 +171,8 @@
         <div id="delete_content"></div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" id='confirm' onclick="">Continue</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id='confirm' onclick="">Continuar</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
       </div>
       </div>
     </div>
@@ -208,6 +236,15 @@
 
 <!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->
+<script> 
+MiFuncionJS(){
+    Swal.fire(
+            'Operacion Exitosa',
+            '¡Se mando encuesta Correctamente!',
+            'success'
+          )
+    }
+  </script>
 <!-- Bootstrap -->
 <?php include 'footer.php' ?>
 </body>

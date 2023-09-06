@@ -30,24 +30,6 @@ if(!isset($conn)){
 						</div>
 					</div>
 
-					
-					<div class="form-group">
-							<label for="" class="control-label">Asignar Usuario</label>
-							<select name="asignaruser" id="asignaruser" class="custom-select custom-select-sm" onchange="mostrarInputs(this.value)">
-								
-                			<option value="" disabled="" selected="">Porfavor selecciona aqui</option>
-								<?php 
-										$resultado = mysqli_query($conn, "SELECT * FROM usuarios where fkidTipoUsuario=2");
-
-											
-										while ($consulta = mysqli_fetch_array($resultado)) {
-											$idUser=$consulta["iIdUsuario"];
-											echo ' <option value='.$idUser.'>'.strtoupper($consulta["cNombreLargo"]).'</option> ';
-
-										}
-								?>
-							</select>
-						</div>
 				</div>
 				<hr>
 				<div class="col-lg-12 text-right justify-content-center d-flex">
