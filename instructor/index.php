@@ -13,8 +13,42 @@
     <script class="u-script" type="text/javascript" src="./nicepage.js.descarga" defer=""></script>
     <meta name="generator" content="Nicepage 4.18.8, nicepage.com">
     <link id="u-theme-google-font" rel="stylesheet" href="./css">
-    <style class="u-style"> .u-section-2 {
+    <style class="u-style"> 
+    
+    p#texto{
+    text-align: center;
+    color: white;
+  }
+  div#div_file{
+    position: relative;
+    padding: 0.5em;
+    width: 9em;
+    height: 2em;
+    background-color: #2499e3;
+    -webkit-border-radius:5px;
+    -webkit-box-shadow:0px 3px 0px #1a71a9;
+    margin-left: 9em;
+  }
+
+  input#file1{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+
+
+  }
+    .u-section-2 {
   background-image: none;
+  padding-top: 2.8em;
+}
+@font-face {
+    font-family: Acumin;
+    src: url(AcuminVariableConcept.ttf);
 }
 .u-section-2 .u-sheet-1 {
   min-height: 1108px;
@@ -29,7 +63,8 @@
   color: blue;
 }
 .u-section-2 .u-text-2 {
-  font-size: 3rem;
+  font-size: 3.3rem;
+  font-family: 'Open Sans';
   --animation-custom_in-translate_x: 0px;
   --animation-custom_in-translate_y: -300px;
   --animation-custom_in-opacity: 0;
@@ -37,10 +72,13 @@
   --animation-custom_in-scale: 1;
   font-weight: 500;
   /*margin: 42px 335px 0 0;*/
-  color: purple;
+  color: #35363a;
 }
 .u-section-2 .u-text-3 {
   line-height: 1;
+  font-size: 1.1rem;
+  font-family: 'Open Sans';
+  color: #35363a;
   --animation-custom_in-translate_x: 0px;
   --animation-custom_in-translate_y: 300px;
   --animation-custom_in-opacity: 0;
@@ -59,7 +97,7 @@
   padding: 0;
 }
 .u-section-2 .u-list-1 {
-  margin-top: 2em;
+  margin-top: 2.8em;
   margin-bottom: 0;
 }
 .u-section-2 .u-repeater-1 {
@@ -179,12 +217,15 @@
   padding: 0;
 }
 .u-section-2 .u-list-item-4 {
+  background-image: url(img/carpetablanca.png);
   --animation-custom_in-translate_x: 0px;
   --animation-custom_in-translate_y: 300px;
   --animation-custom_in-opacity: 0;
   --animation-custom_in-rotate: 0deg;
   --animation-custom_in-scale: 1;
-  box-shadow: 5px 5px 29px 0px rgba(0,0,0,0.15);
+  /*box-shadow: 5px 5px 29px 0 rgba(0,0,0,0.15);*/
+  height: 15.4em;
+  text-align: center;
 }
 .u-section-2 .u-container-layout-4 {
   padding: 50px 30px 30px;
@@ -200,11 +241,12 @@
   --animation-custom_in-scale: 1;
   margin: 0 auto 0 0;
   padding: 0;
+  margin-left: 4.5em;
 }
 .u-section-2 .u-text-8 {
   font-size: 1.5rem;
   font-weight: 400;
-  margin: 31px 0 0;
+  margin-bottom: 0.5em;
 }
 .u-section-2 .u-btn-5 {
   font-size: 0.875rem;
@@ -362,6 +404,8 @@
   .u-section-2 .u-text-9 {
     font-size: 1.875rem;
   }
+
+  
 }</style>
 
     <script type="application/ld+json">{
@@ -396,8 +440,6 @@
       <div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
         
         <?=informacion();?>
-
-        <h3 class="u-text u-text-4 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" style="will-change: transform, opacity; animation-duration: 1500ms;" style="font-family: sans-serif;"> Mis Cursos </h3>
         <div class="u-expanded-width u-list u-list-1">
         <div class="u-repeater u-repeater-1">
         <?=miCurso();?>

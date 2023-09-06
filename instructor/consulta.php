@@ -25,7 +25,7 @@ function informacion()
     INNER JOIN modulo m ON c.iIdCurso = m.fkiIdCurso
     INNER JOIN recurso r ON  m.iIdModulo = r.fkiIdModulo
     INNER JOIN visto v ON r.iIdRecurso = v.idRecurso
-    WHERE c.iIdCurso=".$i." and u.iIdUsuario=" . $_SESSION["id"]);
+    WHERE c.iIdCurso=".$i." and v.idAlumno=" . $_SESSION["id"]." GROUP BY iIdRecurso");
 
     $numMudulo= mysqli_num_rows($terminado);
     $numTerminado = mysqli_num_rows($nterminado);
@@ -39,28 +39,32 @@ function informacion()
     $cInscrito= mysqli_query($conn,"SELECT * FROM inscripcion i
     INNER JOIN usuarios u ON I.fkiIdUsuario = U.iIdUsuario
     INNER JOIN curso c ON i.fkiIdeCurso = c.iIdCurso
-    WHERE i.fkiIdUsuario=". $_SESSION["id"]);
+    WHERE  i.fkiIdUsuario=". $_SESSION["id"]." AND i.finalizado=1 OR i.finalizado=3");
     
     $nInscrito= mysqli_num_rows($cInscrito);
     
     $resultado = mysqli_query($conn, "SELECT * FROM usuarios WHERE iIdUsuario=" . $_SESSION["id"]);
     while ($consulta = mysqli_fetch_array($resultado)) {
 
-        echo '<h3 class="u-text u-text-2 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;">' . $consulta['cNombreLargo'] . '</h3>
-        <p class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;"> Correo: ' . $consulta['cCorreo'] . '</p>
+        echo '
+        
         <table class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;">
-        <tr><td width="25%">Cursos Inscritos: </td><td>'.$nInscrito.'</td> <td width="53%"></td>
-        
+        <tr>        
         <form action="subir.php" method="POST" enctype="multipart/form-data">
-        <td rowspan=6 style="text-align: center; font-size: 0.8em;"><img id=fotoperfil src="'.$consulta['cProfile'].'" width="65%"><input type="file" name="file1" id="file1"> 
-        <button type=""submit>Guardar</button> </td></tr>
-        </form>
+        <td rowspan=6 style="text-align: center; font-size: 0.8em;"><img id=fotoperfil src="'.$consulta['cProfile'].'" width="42%"><div id="div_file"><input type="file" name="file1" id="file1"> 
+        <p id="texto">
+        Subir foto</p>
+        </div>
+        <br>
+        <button type="submit">Guardar</button>
+        </td>
+        <td width="65%" colspan=2><h3 class="u-text u-text-2 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;">' . $consulta['cNombreLargo'] . '</h3></td>
+        </tr>
         
-        <tr><td colspan=2 style="border-top:2px double blue"></td></tr>
-        <tr><td>Cursos Finalizados: </td><td>'.$final.'</td></tr>
-        <tr><td colspan=2 style="border-top:2px double blue"></td></tr>
-        <tr><td>Horas de aprendizaje realizadas: </td><td>2.3</td></tr>
-        <tr><td colspan=2 style="border-top:2px double blue"></td></tr>        
+        </form>
+        <tr><td colspan=2><p class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;"> Correo: ' . $consulta['cCorreo'] . '</p></td></tr>
+        <tr><td width="3%"><img src="img/docusin.png" width="90%"></td><td><p class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;"> Cursos Inscritos: '.$nInscrito.'</p></td></tr>
+        <tr><td width="3%"><img src="img/docu.png" width="90%"></td><td><p class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;">Cursos Finalizados: '.$final.'</p></td></tr>    
         </table>
         ';
 
@@ -83,7 +87,7 @@ function miCurso()
     $resultado = mysqli_query($conn, "SELECT c.iIdCurso, c.cNombreCurso, c.ruta, c.ricono FROM inscripcion i
     INNER JOIN usuarios u ON I.fkiIdUsuario = U.iIdUsuario
     INNER JOIN curso c ON i.fkiIdeCurso = c.iIdCurso
-    WHERE i.fkiIdUsuario=" . $_SESSION["id"]);
+    WHERE i.fkiIdUsuario=" . $_SESSION["id"]." AND i.finalizado=1 OR i.finalizado=3");
     $info = "";
     $cur1 = "";
     $cur2 = "";
@@ -100,7 +104,7 @@ function miCurso()
             <div class="u-container-layout u-similar-container u-valign-top u-container-layout-4"><span class="u-custom-item u-file-icon u-icon u-text-palette-3-base u-icon-4 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="750" style="will-change: transform, opacity; animation-duration: 1500ms;"><img src="' . $consulta['ricono'] . '" alt=""></span>
               <h4 class="u-text u-text-8"> ' . $consulta['cNombreCurso'] . '</h4>
               <a href="' . $consulta['ruta'] . '" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-3-base u-text-body-color u-text-hover-palette-3-base u-top-left-radius-0 u-top-right-radius-0 u-btn-5">Entrar</a>
-              <a href="#" id="' . $consulta["iIdCurso"] . '" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-3-base u-text-body-color u-text-hover-palette-3-base u-top-left-radius-0 u-top-right-radius-0 u-btn-5">Eliminar curso</a>
+              <a href="#" id="' . $consulta["iIdCurso"] . '" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-3-base u-text-body-color u-text-hover-palette-3-base u-top-left-radius-0 u-top-right-radius-0 u-btn-5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Eliminar</a>
             </div>
           </div>
 
@@ -583,7 +587,7 @@ function infoCurso()
     $inscrito = mysqli_query($conn, "SELECT c.iIdCurso FROM inscripcion i
     INNER JOIN usuarios u ON I.fkiIdUsuario = U.iIdUsuario
     INNER JOIN curso c ON i.fkiIdeCurso = c.iIdCurso
-    WHERE i.fkiIdUsuario=" . $_SESSION["id"]);
+    WHERE i.fkiIdUsuario=" . $_SESSION["id"]." AND i.finalizado=1 OR i.finalizado=3");
  
     //$ci=mysqli_num_rows($inscrito);
     // arreglo para recorrer los cursos donde el usuario ya esta inscrito
@@ -634,15 +638,15 @@ function infoCurso()
         }
 
         //validar si esta inscrito en el curso
-        $link ='<a href="#" id="' . $consulta["iIdCurso"] . '" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">Inscribirse</a>';
+        $link ='<a href="#" id="' . $consulta["iIdCurso"] . '" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Inscribirse</a>';
         $i=0;
         while($i<count($arreglo)){
             if ($arreglo[$i]== $consulta['iIdCurso']){
-                $link ='<a href="#" id="" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">Inscrito</a>';  
+                $link ='<a href="#" id="" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Inscrito</a>';  
                 $i=count($arreglo);
             }
             else{
-            $link ='<a href="#" id="' . $consulta["iIdCurso"] . '" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">Inscribirse</a>';
+            $link ='<a href="#" id="' . $consulta["iIdCurso"] . '" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Inscribirse</a>';
             } 
             $i++;       
         }

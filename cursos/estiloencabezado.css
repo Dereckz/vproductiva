@@ -1,7 +1,11 @@
 /* inicia el estilo para el encabezado*/
+@font-face {
+	font-family: Acumin;
+	src: url(AcuminVariableConcept.ttf);
+}
 body{
 	margin: 0;
-	background-color: #dcedf8;
+	background-color: #ffffff;
 }
 #planmarketing{
 	margin-left: 20px;
@@ -29,26 +33,26 @@ body{
 	color: #000000;
 }
 #menu{
-	background-color: #2411f1;
+	background-color: #40bff2;
 	margin-top: 0%;
 	margin-left: 0%;
 	font-family: sans-serif;
 	margin-bottom: 0%;
-	height: 4.9em;
+	height: 6.5em;
 }
 .menus{
 	display: inline-block;
-	font-size: 1.3em;
+	font-size: 1.4em;
 	text-align: center;
 	width: 20%;
 	vertical-align: top;
-	padding-top: 1em;
+	padding-top: 1.8em;
 }
 .logo{
 	display: inline-block;
 	font-size: 1.3em;
 	text-align: left;
-	width: 17%;
+	width: 7.5%;
 }
 .enlacemenu{
 	color: #ffffff;
@@ -77,23 +81,30 @@ h1{
 }
 
 .iconorecurso{
-	width: 3.5em;
+	width: 3.6em;
+	margin-top: 0.2em;
+	margin-left: 0.6em;
+}
+.iconorecursocelda{
+	background-color: #ebebec;
+	border-radius: 0.7em 0px 0px 0.7em;
 }
 
 #tablarecursos{
-	margin-left: 20%;
-	margin-top: 1.5em;
+	margin-left: 27%;
+	margin-bottom: 2em;
+	/*margin-top: 1.5em;*/
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-	width: 60%;
+	width: 45%;
 }
 
 .iconosrec{
 	text-align: center;
-	background-color: #dcedf8;
+	background-color: #ebebec;
 }
 
 #filatitulo{
-	background-color: #b77add;
+	/*background-color: #b77add;*/
 	padding-bottom: 0%;
 }
 #filainstrucciones{
@@ -101,13 +112,73 @@ h1{
 	padding-top: 0%;
 }
 .temario{
-	background-color: #dcedf8;
+	background-color: #ebebec;
+    border-radius: 0px 0.7em 0.7em 0px;
+	width: 4em;
 }
 h2{
 	color: #360cb5;
-	text-indent: 1.2em;
+	text-indent: 8em;
+	font-size: 2em;
+	margin-top: 0;
+	font-family: Acumin;
 }
 h4{
 	color: #360cb5;
 	text-indent: 1.7em;
+}
+
+.tituloscursos{
+	width: 46em;
+
+}
+
+.titulostemario{
+	text-decoration:none; 
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-size: 1.15em;
+	width: 60%;
+	color: #000000;
+}
+
+.fondotemario{
+	background-color: #ebebec;
+	border: inset 0pt;
+	border-spacing: 0px;
+	padding: 0%;
+}
+
+.celdasvacias{
+	height: 1.5em;
+}
+
+.constancia{
+	background-color: #4720b7;
+    border-radius: 5em;
+	height: 3em;
+	text-align: center;
+}
+
+#texconstancia{
+color: #ffffff;
+font-family: Acumin;
+font-size: 1.2em;
+text-decoration: none;
+}
+
+.notacurso{
+	text-align: center;
+	font-family: Acumin;
+}
+
+.titulostemario2{
+	font-size: 1.15em;
+	color: #000000;
+	background-color: #ebebec;
+    border-radius: 1em 1em 1em 1em;
+	height: 2.5em;
+	padding-left: 1em;
+}
+.celdasvacias2{
+	height: 0.4em;
 }

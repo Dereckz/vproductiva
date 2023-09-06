@@ -1,4 +1,8 @@
 /*begin-variables font-family*/
+@font-face {
+  font-family: Acumin;
+  src: url(AcuminVariableConcept.ttf);
+}
 .u-body {
   font-family: 'Open Sans',sans-serif;
 }
@@ -8,7 +12,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: Montserrat,sans-serif;
+  font-family: Acumin;
 }
 /*end-variables font-family*/
 /*begin-variables color*/
@@ -4864,7 +4868,7 @@ section.u-white:before,
 .u-container-layout.u-container-layout.u-white:before,
 .u-table-alt-white tr:nth-child(even) {
   color: #111111;
-  background-color: #ffffff;
+  /*background-color: #ffffff;*/
 }
 .u-button-style.u-white,
 .u-button-style.u-white[class*="u-border-"] {
@@ -5139,7 +5143,7 @@ section.u-grey-5:before,
 .u-container-layout.u-container-layout.u-grey-5:before,
 .u-table-alt-grey-5 tr:nth-child(even) {
   color: #111111;
-  background-color: #f2f2f2;
+  background-color: #ffffff;
 }
 .u-button-style.u-grey-5,
 .u-button-style.u-grey-5[class*="u-border-"] {
@@ -7717,7 +7721,7 @@ li.active > a.u-button-style.u-button-style.u-border-active-palette-2-light-3 {
 }
 .u-border-palette-2-base,
 .u-separator-palette-2-base:after {
-  border-color: #7510bd;
+  /*border-color: #7510bd;*/
   stroke: #e37218;
 }
 .u-button-style.u-border-palette-2-base {
@@ -10940,7 +10944,7 @@ a.u-button-style.u-button-style.active > .u-text-active-color-4[class*="u-border
   color: #cc6716 !important;
 }
 a.u-link.u-text-hover-color-4:hover {
-  color: #e37218 !important;
+  color: #4720b7 !important;
 }
 .u-text-color-4-light-1,
 li.active > a.u-button-style.u-text-color-4-light-1,
@@ -11156,7 +11160,7 @@ a.u-button-style.u-button-style.active > .u-text-active-color-4-base[class*="u-b
   color: #cc6716 !important;
 }
 a.u-link.u-text-hover-color-4-base:hover {
-  color: #e37218 !important;
+  color: #4720b7 !important;
 }
 .u-text-color-5-dark-3,
 li.active > a.u-button-style.u-text-color-5-dark-3,
@@ -12236,7 +12240,7 @@ a.u-button-style.u-button-style.active > .u-text-active-palette-2[class*="u-bord
   color: #cc6716 !important;
 }
 a.u-link.u-text-hover-palette-2:hover {
-  color: #e37218 !important;
+  color: #4720b7 !important;
 }
 .u-text-palette-2-light-1,
 li.active > a.u-button-style.u-text-palette-2-light-1,
@@ -12452,7 +12456,7 @@ a.u-button-style.u-button-style.active > .u-text-active-palette-2-base[class*="u
   color: #cc6716 !important;
 }
 a.u-link.u-text-hover-palette-2-base:hover {
-  color: #e37218 !important;
+  color: #4720b7 !important;
 }
 .u-text-palette-3-dark-3,
 li.active > a.u-button-style.u-text-palette-3-dark-3,
@@ -14241,7 +14245,9 @@ li.active > a.u-button-style.u-text-body-color,
 li.active > a.u-button-style.u-text-body-color[class*="u-border-"],
 a.u-button-style.u-text-body-color,
 a.u-button-style.u-text-body-color[class*="u-border-"] {
-  color: #111111 !important;
+  color: #4720b7 !important;
+  margin-top: 0%;
+  display: contents;
 }
 a.u-button-style.u-text-body-color:hover,
 a.u-button-style.u-text-body-color[class*="u-border-"]:hover,
@@ -15207,7 +15213,7 @@ a.u-link.u-text-hover-grey-90:hover {
         font-size: 1.5rem;
         line-height: 1.2;
         margin-top: 20px;
-        margin-bottom: 20px;
+        margin-bottom: 0.4em;
         }
         h5
         {
@@ -15239,7 +15245,7 @@ a.u-link.u-text-hover-grey-90:hover {
         }
         p:not(.u-text-variant)
         {
-        margin-top: 20px;
+        /*margin-top: 20px;*/
         margin-bottom: 20px;
         }
         .u-btn

@@ -41,7 +41,7 @@
    
     <div class="container-fluid" id="container-wrapper">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Instructores</h1>
+            <h1 class="h3 mb-0 text-gray-800">Alumnos</h1>
             <ol class="breadcrumb">
               <li class="breadcrumb-item">
                 <a href="./">Home</a>
@@ -56,7 +56,7 @@
                     <thead class="thead-light">
                       <tr>
                         <th>ID</th>
-                        <th>Instructor</th>
+                        <th>Alumno</th>
                         <!-- <th>Cursos Activos</th> -->
                         <th>Estatus</th>
                         <th>Accion</th>
