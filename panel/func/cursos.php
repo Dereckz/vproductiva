@@ -48,7 +48,8 @@ function registercurso()
                 <td>'.strtoupper($consulta["cNombreLargo"]).'</td>
                 <td><span  class="badge badge-success"><a onclick="actualizarStatus();">Activo</a></span></td>
                 <td><a class="btn btn-sm btn-primary" href="javascript:void(0);" data-toggle="modal" data-target="#cursomodal" >Agregar Curso</a></td>           
-               </tr><tr>'
+                <td><a class="btn btn-sm btn-primary" href="javascript:void(0);" data-toggle="modal" data-target="#surveymodal" >Agregar Encuesta</a><td>
+                </tr><tr>'
               ;
               echo ''.cursodeusuario($consulta["iIdUsuario"]).'</tr>';
 
@@ -60,7 +61,8 @@ function registercurso()
              <td>'.strtoupper($consulta["cNombreLargo"]).'</td>
             <td><span class="badge badge-danger" onclick="actualizarStatus()">Inactivo</span></td>
             <td><a href="javascript:void(0);" data-toggle="modal" data-target="#cursomodal" class="btn btn-sm btn-primary">Agregar Curso</a></td>
-            </tr>'
+            <td><a class="btn btn-sm btn-primary" href="javascript:void(0);" data-toggle="modal" data-target="#surveymodal" >Agregar Encuesta</a><td>
+            <tr>'
             ;
 
         }
@@ -139,5 +141,36 @@ function updatestatus($id){
   //                 header("Location: http://localhost/vproductivam/panel/instructor.php");
   //               }
   echo 'ide--'.$id;
+}
+
+function showSurvey($id)
+{
+  include "..\dev\conectar.php";
+    //idSurvey
+  $resultado = mysqli_query($conn, "SELECT * FROM survey_set where fkiIdUsuario=".$id.";");
+  while ($consulta = mysqli_fetch_array($resultado)) {
+    $idSurvey=$consulta["id"];
+    echo ' <option value='.$idSurvey.'>'.$consulta["title"].'</option> ';
+
+}
+}
+function showAllSurvey()
+{
+  include "..\dev\conectar.php";
+    //idSurvey
+  $resultado = mysqli_query($conn, "SELECT * FROM survey_set ;");
+  while ($consulta = mysqli_fetch_array($resultado)) {
+    $idSurvey=$consulta["id"];
+    echo ' <div>
+    <label>
+      <input type="checkbox" id="'.$idSurvey.'"  value="'.$consulta["title"].'" /> 
+      '.$consulta["title"].'
+    </label>
+    </div>';
+
+}
+}
+function addsurveyset(){
+
 }
 ?>
