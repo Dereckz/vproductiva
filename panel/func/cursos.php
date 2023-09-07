@@ -163,7 +163,7 @@ function showAllSurvey()
     $idSurvey=$consulta["id"];
     echo ' <div>
     <label>
-      <input type="checkbox" id="'.$idSurvey.'"  value="'.$consulta["title"].'" /> 
+      <input type="checkbox" id="'.$idSurvey.'" name="'.$idSurvey.'" value="'.$consulta["title"].'" /> 
       '.$consulta["title"].'
     </label>
     </div>';
