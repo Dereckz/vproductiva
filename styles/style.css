@@ -281,7 +281,7 @@ p {
 	text-align: center;
 	max-width: 1500px;
 	margin: 0 auto;
-	padding: 50px 0;
+	padding: 12em 0;
 	background-color: #4720b7;
 }
 #services .service-top {
@@ -327,8 +327,8 @@ p {
 	margin-bottom: 20px;
 }
 #services .service-item h2 {
-	font-size: 2rem;
-	color: #0a0a0a;
+	font-size: 2em;
+	color: #4720b7;
 	margin-bottom: 10px;
 	text-transform: uppercase;
 }
@@ -340,12 +340,17 @@ p {
 	margin-bottom: 1em;
 	font-size: 2.7em;
 	color: white;
+	font-family: Acumin;
+	border-bottom: solid;
+    width: 10em;
+    text-align: center;
+    margin-left: 4em;
 }
 #services h2 {
 	font-size: 1.8em;
 }
 #services h3 {
-	font-size: 1.3em;
+	font-size: 1.7em;
 	color: white;
 }
 /* End Services Section */
@@ -355,10 +360,11 @@ p {
 	flex-direction: column;
 	max-width: 1200px;
 	margin: 0 auto;
-	padding: 100px 0;
+	padding: 20px 0;
 }
 #projects .projects-header h1 {
 	margin-bottom: 30px;
+	font-family: Acumin;
 }
 #projects .all-projects {
 	display: flex;
@@ -392,6 +398,7 @@ p {
 	font-weight: 500;
 	text-align: center;
 	padding-bottom: 0.5em;
+	font-family: Acumin;
 }
 #projects .project-info li {
 	font-size: 1.5rem;
@@ -512,9 +519,10 @@ p {
 	font-size: 2.5rem;
 	font-weight: 500;
 	margin-bottom: 5px;
+	font-family: Acumin;
 }
 #contact .contact-info h2 {
-	font-size: 1.3rem;
+	font-size: 1.5rem;
 	line-height: 2rem;
 	font-weight: 500;
 }
@@ -602,11 +610,13 @@ p {
 	}
 	h1.section-title {
 		font-size: 4rem;
+		font-family: Acumin;
 	}
 
 	/* Hero */
 	#hero h1 {
 		font-size: 7rem;
+		font-family: Acumin;
 	}
 	/* End Hero */
 
@@ -663,6 +673,7 @@ p {
 	}
 	#about .col-right h1 {
 		text-align: left;
+		font-family: Acumin;
 	}
 	/* End About */
 
@@ -727,6 +738,7 @@ p {
 	#services .service-bottom .service-item {
 		flex-basis: 22%;
 		margin: 1.5%;
+		height: 38em;
 	}
 }
 /* End  Media Query For Desktop */
@@ -774,7 +786,7 @@ p {
 	position: relative;
 	width: 40em;
 	transition: 0.5s;
-	padding-top: 10em;
+	padding-top: 6em;
 }
 
 .button {
@@ -852,7 +864,7 @@ p {
 }
 
 #conocecapacitores{
-	background-color: #3da8e2;
+	background-color: #40bff2;
 	height: 20em;
 }
 
@@ -908,10 +920,10 @@ p {
 }
 
 .misionvision{
-	font-size: 4rem;
+	/*font-size: 4rem;*/
 	font-weight: 300;
 	color: black;
-	margin-bottom: 10px;
+	/*margin-bottom: 10px;*/
 	letter-spacing: 0.2rem;
 	text-align: center;
 }
@@ -950,4 +962,18 @@ p {
 
 #imagenconocenos{
 	height: 10em;
+}
+
+.listageneralcursos{
+	text-align: justify;
+    font-size: 1.4em;
+    margin-bottom: 0.5em;
+}
+
+.listaporcurso{
+	margin-bottom: 0.3em;
+}
+
+.imgiconoscursos{
+	margin-left: 8em;
 }

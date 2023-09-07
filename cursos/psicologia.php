@@ -22,10 +22,9 @@
   <div>
    
     
+    <img class="tituloscursos" src="img/Psicologia.png" >
     <table id=tablarecursos>
-        <tr> <td colspan=3 id=filatitulo> <h2>Psicología</h2> </td></tr>    
-        <tr> <td colspan=3 id=filainstrucciones> <h4> En este curso aprenderas las habilidades digitales necesarias para tus labores diarias.</h4> </td></tr>    
-        
+
         <?php
     include("..\dev\conectar.php");
     include "../panel/func/profile.php";
@@ -59,13 +58,14 @@ WHERE idRecurso= ".$consulta['iIdRecurso']." and idAlumno=".$_SESSION["id"]." an
 $info =mysqli_fetch_array($check);
 
      if($info['num'] > 0){
-        $visto= '<td class=temario><img src="img/checkcompleto.png" style="width: 2.4em;"></td>';
+        $visto= '<td class=temario><img src="img/checkcompleto.png" style="width: 2.4em; margin-left: 0.6em;"></td>';
      }
      else{
         $visto='<td class=temario><img src="img/checkvacio.png" style="width: 2.4em;"></td>';
      }
 
-     echo '<tr> <td><a href="'.$consulta['cRuta'].'" id="'.$consulta['iIdRecurso'].'" target="_blank" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2"><img class=iconorecurso src="img/recursovideo.png">&nbsp;&nbsp;&nbsp;'.$consulta['cNombreModulo'].'</a></td>'.$visto.' </tr>
+     echo '<tr> <td class=iconorecursocelda><img class=iconorecurso src="img/recursovideo.png"></td> <td class=fondotemario><a class=titulostemario  href="'.$consulta['cRuta'].'" id="'.$consulta['iIdRecurso'].'" target="_blank" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">&nbsp;&nbsp;&nbsp;'.$consulta['cNombreModulo'].'</a></td> '.$visto.' </tr>
+        <tr><td colspan=3 class=celdasvacias></td></tr>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
@@ -97,9 +97,13 @@ $info =mysqli_fetch_array($check);
 
     
 }
+if ($masDedos=""){
+    $masDedos=-1;
+}
 
 if($numMudulo==$numVisto){
-    $constancia='<tr><td><a href="../alumno/reconocimiento.php?curso=PSICOLOGÍA&idCurso=4" id="" target="_blank" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">Generar constancia<br></a></td></tr>';
+    $constancia='<tr><td></td><td class=constancia><a href="../alumno/reconocimiento.php?curso=PRODUCTIVIDAD LABORAL&idCurso=1" id="texconstancia" target="_blank" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">Obtén tu constancia<br></a></td></tr>
+                 <tr><td colspan=3 class=celdasvacias></td></tr>';
 
     $consCur = mysqli_query($conn, "SELECT * FROM  inscripcion WHERE fkiIdeCurso = 4 and fkiIdUsuario =".$_SESSION["id"]);
     $idIns= mysqli_fetch_array($consCur);
@@ -122,7 +126,7 @@ else{
     $constancia="";
 }
 if($masDedos==3){
-    $mensaje= '<tr><td>Curso anteriormente cursado</td></tr>';
+    $mensaje= '<tr><td></td><td class=notacurso>Nota: Este curso ya fue tomado anteriormente.</td></tr>';
 }
 else{
     $mensaje='';

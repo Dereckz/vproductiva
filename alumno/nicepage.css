@@ -20704,7 +20704,7 @@ section.u-dialog-block:not(.u-dialog-open) {
 }
 [class*="u-border-"],
 .u-link[class*="u-border-"] {
-  border-style: solid;
+ /* border-style: solid;*/
 }
 .u-border-0,
 .u-separator-0:after,
@@ -20829,7 +20829,7 @@ a.u-button-style.u-border-9 {
 .u-border-10,
 .u-separator-10:after,
 .u-text.u-border-10,
-a.u-button-style.u-border-10 {
+/*a.u-button-style.u-border-10 */{
   border-width: 10px;
 }
 .u-shape-svg.u-border-10 {

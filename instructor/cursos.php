@@ -17,7 +17,7 @@
   background-image: none;
 }
 .u-section-2 .u-sheet-1 {
-  min-height: 1108px;
+  min-height: 50em;
 }
 .u-section-2 .u-text-1 {
   text-transform: uppercase;
@@ -69,13 +69,14 @@
   grid-gap: 30px;
 }
 .u-section-2 .u-list-item-1 {
-  background-image: none;
+  background-image: url(img/carpetablanca.png);
   --animation-custom_in-translate_x: 0px;
   --animation-custom_in-translate_y: 300px;
   --animation-custom_in-opacity: 0;
   --animation-custom_in-rotate: 0deg;
   --animation-custom_in-scale: 1;
-  box-shadow: 5px 5px 29px 0 rgba(0,0,0,0.15);
+  /*box-shadow: 5px 5px 29px 0 rgba(0,0,0,0.15);*/
+  height: 15.4em;
 }
 .u-section-2 .u-container-layout-1 {
   padding: 50px 30px 30px;
@@ -89,13 +90,13 @@
   --animation-custom_in-opacity: 0;
   --animation-custom_in-rotate: 180deg;
   --animation-custom_in-scale: 1;
-  margin: 0 auto 0 0;
   padding: 0;
+  margin-left: 4.5em;
 }
 .u-section-2 .u-text-5 {
   font-size: 1.5rem;
   font-weight: 400;
-  margin: 31px 0 0;
+  text-align: center;
 }
 .u-section-2 .u-btn-2 {
   font-size: 0.875rem;
