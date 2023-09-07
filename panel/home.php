@@ -1,4 +1,5 @@
 <?php include('db_connect.php') ?>
+
 <!-- Info boxes -->
 <?php if($_SESSION['tipo'] == 1): ?>
         <div class="row">

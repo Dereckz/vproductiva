@@ -151,7 +151,7 @@ foreach($qry as $k => $v){
       </table>
       <div class="row">
       <div class="col-sm-12 text-center">
-      	<button class="btn btn-sm btn-flat btn-default" type="button" onclick="new_check($(this))"><i class="fa fa-plus"></i> Add</button>
+      	<button class="btn btn-sm btn-flat btn-default" type="button" onclick="new_check($(this))"><i class="fa fa-plus"></i> Agregar</button>
       </div>
       </div>
     </div>
