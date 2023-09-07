@@ -57,7 +57,7 @@
                     <thead class="thead-light">
                       <tr>
                         <th>ID</th>
-                        <th>Instructor</th>
+                        <th>Capacitador</th>
                       
                         <th>Estatus</th>
                         <th>Accion</th>
