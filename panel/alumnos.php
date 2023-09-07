@@ -3,6 +3,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+<link href="../img/LOGOVP.ico" rel="icon">
 <?php session_start() ?>
 <?php 
 	if(!isset($_SESSION['id']))
