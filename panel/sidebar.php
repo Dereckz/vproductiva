@@ -32,7 +32,7 @@
               <li class="nav-item">
                 <a href="http://localhost/vproductivam/panel/instructor.php" class="nav-link nav-new_user tree-item">
                   <i class="fas fa-angle-right nav-icon"></i>
-                  <p>Instructor </p>
+                  <p>Capacitador </p>
                 </a>
               </li>
               <li class="nav-item">

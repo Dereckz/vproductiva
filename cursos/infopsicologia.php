@@ -23,8 +23,9 @@
 
     <div>
     
+    <img class="tituloscursos" src="img/Psicologia.png" >
     <table id=tablarecursos>
-        <tr> <td id=filatitulo> <h2>Temario del curso de Psicología</h2> </td></tr>
+        <tr> <td id=filatitulo> <h2>Temario</h2> </td></tr>
       <!--  <tr> <td id=filainstrucciones> <h4> En este curso aprenderas las habilidades necesarias para optimizar tus actividades diarias.</h4> </td></tr>    -->
     
 
@@ -34,7 +35,8 @@ $resultado = mysqli_query($conn,"SELECT c.cNombreCurso, m.cNombreModulo FROM cur
 INNER JOIN modulo m ON c.iIdCurso = m.fkiIdCurso WHERE c.iIdCurso=4");
 while ($consulta = mysqli_fetch_array($resultado))
 {
-    echo '<tr> <td>'.$consulta['cNombreModulo'] .'<br></td></tr>';
+    echo '<tr> <td class=titulostemario2>'.$consulta['cNombreModulo'] .'<br></td></tr>
+            <tr><td class=celdasvacias2></td></tr>';
 
 }
 ?>
