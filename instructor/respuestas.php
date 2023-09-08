@@ -1,6 +1,6 @@
 
 <script>
-
+echo "esto es qid".$get['qid']
 $('#manage-survey').submit(function(e){
   e.preventDefault()
  // start_load()
