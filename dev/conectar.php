@@ -2,7 +2,7 @@
 
 $dbhost = "localhost";
 $dbuser = "root";
-$dbpass = "";
+$dbpass = "@rupe2021";
 $dbname = "vproductivabd";
 
 $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);

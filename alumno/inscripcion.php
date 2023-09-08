@@ -10,8 +10,13 @@ $idUsuario = $_POST['usuario'];
 $consCur = mysqli_query($conn, "SELECT * FROM  inscripcion WHERE fkiIdeCurso = ".$idCurso." and fkiIdUsuario =".$idUsuario);
 $consulta= mysqli_fetch_array($consCur);
 $idIns= mysqli_num_rows($consCur);
-
-if ($idIns>0 || $consulta['finalizado']==2 ){
+if(isset ($consulta['finalizado'])){
+$final=  $consulta['finalizado'];
+}
+else{
+    $final=0;
+}
+if ($idIns>1 || $final==2 ){
     
         $act = "UPDATE inscripcion SET finalizado = 3 WHERE fkiIdeCurso = ".$idCurso." and fkiIdUsuario =".$idUsuario;
     if (mysqli_query($conn, $act)) {
@@ -22,8 +27,8 @@ if ($idIns>0 || $consulta['finalizado']==2 ){
     
 }
 else {
-    $sql = "INSERT INTO inscripcion(fkiIdUsuario, fkiIdeCurso)
-VALUES ($idUsuario,$idCurso)";
+    $sql = "INSERT INTO inscripcion(fkiIdUsuario, fkiIdeCurso,finalizado)
+VALUES ($idUsuario,$idCurso,1)";
 
 if (mysqli_query($conn, $sql)) {
     echo "Se inserto correctamente el registro";
