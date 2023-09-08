@@ -75,7 +75,7 @@ WHERE idRecurso= " . $consulta['iIdRecurso'] . " and idAlumno=" . $_SESSION["id"
 
         idRecurso = "' . $consulta['iIdRecurso'] . '";
         idAlumno = "' . $_SESSION["id"] . '";
-        alert("Hey me tocaste");
+        //alert("Hey me tocaste");
 
        //Convertimos las variables de javascript en variables de PHP
         $( document ).ready(function() {
@@ -95,6 +95,7 @@ WHERE idRecurso= " . $consulta['iIdRecurso'] . " and idAlumno=" . $_SESSION["id"
     ';
 
 }
+$masDedos='';
 if($numMudulo==$numVisto){
     $constancia='<tr><td></td><td class=constancia><a href="../alumno/reconocimiento.php?curso=PRODUCTIVIDAD LABORAL&idCurso=1" id="texconstancia" target="_blank" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">Obtén tu constancia<br></a></td></tr>
                  <tr><td colspan=3 class=celdasvacias></td></tr>';
@@ -108,7 +109,7 @@ if($numMudulo==$numVisto){
     $fecha = date("Y-m-d");
     $fechafor = strval($fecha);
 
-    if($idIns['iIdInscripcion'] ==''){
+    if($idIns['cDescripcion'] ==''){
     $act = "UPDATE inscripcion SET cDescripcion = '".$fechafor."' WHERE iIdInscripcion =".$idIns['iIdInscripcion'];
     if (mysqli_query($conn, $act)) {
         //echo "Se actualizo correctamente el registro";
