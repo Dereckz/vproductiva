@@ -75,7 +75,9 @@ while($row=$answers->fetch_assoc()){
 							<?php if($row['type'] != 'textfield_s'):?>
 								<ul>
 							<?php foreach(json_decode($row['frm_option']) as $k => $v): 
-								$prog = ((isset($ans[$row['id']][$k]) ? count($ans[$row['id']][$k]) : 0) / $taken) * 100;
+							
+								$prog = ((isset($ans[$row['id']][$k]) ? 
+								count($ans[$row['id']][$k])/ ($taken) : 0) ) * 100;
 								$prog = round($prog,2);
 								?>
 								<li>
@@ -84,7 +86,7 @@ while($row=$answers->fetch_assoc()){
 									</div>
 									<div class="d-flex w-100">
 									<span class=""><?php echo isset($ans[$row['id']][$k]) ? count($ans[$row['id']][$k]) : 0 ?>/<?php echo $taken ?></span>
-									<div class="mx-1 col-sm-8"">
+									<div class="mx-1 col-sm-8">
 									<div class="progress w-100" >
 					                  <div class="progress-bar bg-primary progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $prog ?>%">
 					                    <span class="sr-only"><?php echo $prog ?>%</span>

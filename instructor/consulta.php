@@ -39,7 +39,7 @@ function informacion()
     $cInscrito= mysqli_query($conn,"SELECT * FROM inscripcion i
     INNER JOIN usuarios u ON I.fkiIdUsuario = U.iIdUsuario
     INNER JOIN curso c ON i.fkiIdeCurso = c.iIdCurso
-    WHERE  i.fkiIdUsuario=". $_SESSION["id"]." AND i.finalizado=1 OR i.finalizado=3");
+    WHERE  i.finalizado !=2 AND i.fkiIdUsuario=". $_SESSION["id"]);
     
     $nInscrito= mysqli_num_rows($cInscrito);
     
@@ -87,7 +87,7 @@ function miCurso()
     $resultado = mysqli_query($conn, "SELECT c.iIdCurso, c.cNombreCurso, c.ruta, c.ricono FROM inscripcion i
     INNER JOIN usuarios u ON I.fkiIdUsuario = U.iIdUsuario
     INNER JOIN curso c ON i.fkiIdeCurso = c.iIdCurso
-    WHERE i.fkiIdUsuario=" . $_SESSION["id"]." AND i.finalizado=1 OR i.finalizado=3");
+    WHERE i.finalizado !=2 AND i.fkiIdUsuario=" . $_SESSION["id"]);
     $info = "";
     $cur1 = "";
     $cur2 = "";
@@ -587,7 +587,7 @@ function infoCurso()
     $inscrito = mysqli_query($conn, "SELECT c.iIdCurso FROM inscripcion i
     INNER JOIN usuarios u ON I.fkiIdUsuario = U.iIdUsuario
     INNER JOIN curso c ON i.fkiIdeCurso = c.iIdCurso
-    WHERE i.fkiIdUsuario=" . $_SESSION["id"]." AND i.finalizado=1 OR i.finalizado=3");
+    WHERE i.finalizado !=2 AND i.fkiIdUsuario=" . $_SESSION["id"]);
  
     //$ci=mysqli_num_rows($inscrito);
     // arreglo para recorrer los cursos donde el usuario ya esta inscrito
