@@ -46,10 +46,21 @@ function registercurso()
               '<tr>
                 <td><a  id="aIdu" href="javascript:void(0);" data-toggle="modal" data-target="#cantidadcurso">'.$consulta["iIdUsuario"].'</a></td>
                 <td>'.strtoupper($consulta["cNombreLargo"]).'</td>
-                <td><span  class="badge badge-success"><a onclick="actualizarStatus();">Activo</a></span></td>
-                <td><a class="btn btn-sm btn-primary" href="javascript:void(0);" data-toggle="modal" data-target="#cursomodal" >Agregar Curso</a></td>           
-                <td><a class="btn btn-sm btn-primary" href="javascript:void(0);" data-toggle="modal" data-target="#surveymodal" >Agregar Encuesta</a><td>
-                </tr><tr>'
+                <td><span  class="badge badge-success"><a  href="func/actualizarStatus.php?id='.$consulta["iIdUsuario"].'&status=1"> Activo</a></span></td>
+               <td>						
+               <div class="row" >
+               <div class="col-md-12">	
+                 <span class="dropleft float-left">
+                      <a class="	fas fa-wrench" href="javascript:void(0)" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">   Seleccion </a>  <div class="dropdown-menu" style="">
+                      <a class="dropdown-item edit_question text-dark" href="javascript:void(0);" data-toggle="modal" data-target="#cursomodal" >Agregar Curso</a>
+                      <div class="dropdown-divider"></div>
+                      <a  class="dropdown-item edit_question text-dark" href="javascript:void(0);" data-toggle="modal" data-target="#surveymodal" >Agregar Encuesta</a>
+                    </div>
+                 </span>	
+               </div>	
+             </div>
+             </td> 
+               </tr><tr>'
               ;
               echo ''.cursodeusuario($consulta["iIdUsuario"]).'</tr>';
 
@@ -59,9 +70,21 @@ function registercurso()
             '<tr>
             <td><a href="javascript:void(0);" data-toggle="modal" data-target="#cantidadcurso">'.$consulta["iIdUsuario"].'</a></td>
              <td>'.strtoupper($consulta["cNombreLargo"]).'</td>
-            <td><span class="badge badge-danger" onclick="actualizarStatus()">Inactivo</span></td>
-            <td><a href="javascript:void(0);" data-toggle="modal" data-target="#cursomodal" class="btn btn-sm btn-primary">Agregar Curso</a></td>
-            <td><a class="btn btn-sm btn-primary" href="javascript:void(0);" data-toggle="modal" data-target="#surveymodal" >Agregar Encuesta</a><td>
+            <td><span class="badge badge-danger" ><a  href="func/actualizarStatus.php?id='.$consulta["iIdUsuario"].'&status=0">Inactivo</a></span></td>
+            <td>						
+            <div class="row">
+            <div class="col-md-12">	
+              <span class="dropleft float-left">
+              <a class="	fas fa-wrench" href="javascript:void(0)" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">   Seleccion </a>  <div class="dropdown-menu" style="">
+                <div class="dropdown-menu" >
+                   <a class="dropdown-item edit_question text-dark" href="javascript:void(0);" data-toggle="modal" data-target="#cursomodal" >Agregar Curso</a>
+                   <div class="dropdown-divider"></div>
+                   <a  class="dropdown-item edit_question text-dark" href="javascript:void(0);" data-toggle="modal" data-target="#surveymodal" >Agregar Encuesta</a>
+                 </div>
+              </span>	
+            </div>	
+          </div>
+          </td> 
             <tr>'
             ;
 
@@ -111,25 +134,7 @@ function cursodeusuario($parametro1){
       }
 
 }
-function agregarcurso(){
-    if (!isset($_POST["btnAsignar"])) {
 
-  $_SESSION["curso"]=array();
-
-  echo "estas aqui";
-
-}
-
-if (isset($_POST["btnAsignar"])) {
-
-  $producto=$_REQUEST['mi_select'];
-
-  echo "estas aca";
-
-
-
-}
-}
 function updatestatus($id){
   // include "..\dev\conectar.php";
 
