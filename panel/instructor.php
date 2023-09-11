@@ -57,12 +57,7 @@
                     <thead class="thead-light">
                       <tr>
                         <th>ID</th>
-<<<<<<< HEAD
-                        <th>Capacitador</th>
-                        <!-- <th>Cursos Activos</th> -->
-=======
                         <th>Instructor</th>
->>>>>>> origin/master
                         <th>Estatus</th>
                         <th>Accion</th>
                         <th>Encuesta</th>
