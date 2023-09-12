@@ -32,11 +32,7 @@
     <?php include 'func/detalleuser.php';?>
     <div class="container-fluid" id="container-wrapper">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-<<<<<<< HEAD
-            <h1 class="h3 ">Instructores</h1>
-=======
             <h1 class="h3 mb-0 text-gray-800">Capacitadores</h1>
->>>>>>> origin/master
             <ol class="breadcrumb">
               <li class="breadcrumb-item">
                 <a href="./">Home</a>
