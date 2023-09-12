@@ -35,8 +35,8 @@ function detalleinstructor()
          
             echo 
             '<tr>
-            <td><a href="javascript:void(0);" data-toggle="modal" data-target="#cantidadcurso">'.$consulta["iIdUsuario"].'</a></td>
-             <td>'.strtoupper($consulta["cNombreLargo"]).'</td>
+            <td><a  id="aIdu" href="instructor_edit.php?idu='.$consulta["iIdUsuario"].'" >'.$consulta["iIdUsuario"].'</a></td>
+            <td>'.strtoupper($consulta["cNombreLargo"]).'</td>
             <td><span class="badge badge-danger" ><a  href="func/actualizarStatus.php?id='.$consulta["iIdUsuario"].'&status=0">Inactivo</a></span></td>
             <td>						
             <div class="row">
