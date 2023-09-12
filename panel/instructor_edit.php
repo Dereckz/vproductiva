@@ -227,46 +227,29 @@ form .button input::hover{
 
        
               <div>
-                  
+              
                   <?php 
+                  
                     if ($consulta["iGenero"]==0){
-                      echo ' <label>
-                            <input type="radio"  name="radio" checked=true value="0">
-                            Masculino</label>  <span class="checkmark"></span>
-                            ';
-                    }else
-                    {
-                      echo '<label> <input type="radio"  name="radio" value="0">Masculino</label>  <span class="checkmark"></span>';
-                    }
+                      echo ' 
+                      <input type="radio" name="radio" value="0" checked=true> Masculino<br>
+                      <input type="radio" name="radio" value="1"> Femenino<br>
+                      <input type="radio" name="radio" value="2"> No especificar<br>';
+                    }elseif($consulta["iGenero"]==1){
+                        echo ' 
+                        <input type="radio" name="radio" value="0" > Masculino<br>
+                        <input type="radio" name="radio" value="1"checked=true> Femenino<br>
+                        <input type="radio" name="radio" value="2"> No especificar<br>';
+                      }else{
+                        echo ' 
+                        <input type="radio" name="radio" value="0" > Masculino<br>
+                        <input type="radio" name="radio" value="1"> Femenino<br>
+                        <input type="radio" name="radio" value="2" checked=true> No especificar<br>';
+                      }
+                    
                     ?>
-              
-             
-                  
-          
-              <?php 
-                    if ($consulta["iGenero"]==1){
-                      echo ' <label> <input type="radio"  name="radio" checked=true value="1"> Femenino</label> <span class="checkmark"></span>';
-                    }else
-                    {
-                      echo '  <label><input type="radio" name="radio value="1"> Femenino</label><span class="checkmark"></span>';
-                    }
-                    ?>
-                
-              
-               
-                  <?php 
-                   if ($consulta["iGenero"]==2){
-                      echo '    <label> <input type="radio"  name="radio" checked=true value=2>No especificar  </label>  <span class="checkmark"></span>';
-                    }else
-                    {
-                      echo '  <label> <input type="radio" name="radio" value="2">No especificar  </label>  <span class="checkmark"></span>';
-                    }
-                    ?>
-               
-              
-             
               </div>
-
+              <br>
         <div class="form-group">
         <label class="form-title" for="">Fecha de alta</label>
           <?php
