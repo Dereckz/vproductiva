@@ -44,9 +44,9 @@ function registercurso()
         {
               echo 
               '<tr>
-                <td><a  id="aIdu" href="javascript:void(0);" data-toggle="modal" data-target="#cantidadcurso">'.$consulta["iIdUsuario"].'</a></td>
+              <td><a  id="aIdu" href="instructor_edit.php?idu='.$consulta["iIdUsuario"].'" >'.$consulta["iIdUsuario"].'</a></td>
                 <td>'.strtoupper($consulta["cNombreLargo"]).'</td>
-                <td><span  class="badge badge-success"><a onclick="actualizarStatus();">Activo</a></span></td>
+                <td><span  class="badge badge-success text-dark"><a  href="func/updatestatus.php?id='.$consulta["iIdUsuario"].'&status=1"> Activo</a></span></td>
                 <td><a class="btn btn-sm btn-primary" href="javascript:void(0);" data-toggle="modal" data-target="#cursomodal" >Agregar Curso</a></td>           
                </tr><tr>'
               ;
@@ -56,9 +56,9 @@ function registercurso()
          
             echo 
             '<tr>
-            <td><a href="javascript:void(0);" data-toggle="modal" data-target="#cantidadcurso">'.$consulta["iIdUsuario"].'</a></td>
+            <td><a  id="aIdu" href="instructor_edit.php?idu='.$consulta["iIdUsuario"].'" >'.$consulta["iIdUsuario"].'</a></td>
              <td>'.strtoupper($consulta["cNombreLargo"]).'</td>
-            <td><span class="badge badge-danger" onclick="actualizarStatus()">Inactivo</span></td>
+             <td><span class="badge badge-danger" ><a  href="func/updatestatus.php?id='.$consulta["iIdUsuario"].'&status=0">Inactivo</a></span></td>
             <td><a href="javascript:void(0);" data-toggle="modal" data-target="#cursomodal" class="btn btn-sm btn-primary">Agregar Curso</a></td>
             </tr>'
             ;
