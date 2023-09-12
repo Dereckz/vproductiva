@@ -194,9 +194,10 @@ form .button input::hover{
 
           <div class="container" id="container">
             <div class="title">Editar</div>
-            <form action="" id="users">
+            <form method="post" action="func/actualizaruser.php" id="frmusers">
               
               <div class="account-details">
+              <?php  echo '  <input  type="hidden" value="'.$consulta["iIdUsuario"].'" name="idusuario" > ' ?>
                 <div class="form-group">
                   <label class="form-title" for="">Email</label>
                   <?php  echo '  <input type="email" value="'.$consulta["cCorreo"].'" name="email" required> ' ?>
@@ -204,7 +205,7 @@ form .button input::hover{
                 </div>
                 <div class="form-group">
                   <label class="form-title" for="">Password</label>
-                  <input type="password"  name="password" placeholder="Enter your password" required>
+                  <input type="password"  name="password" placeholder="Enter your password">
                 </div>
             
               </div>
@@ -226,34 +227,52 @@ form .button input::hover{
 
        
               <div>
-                  <label class="gender">Masculino  &nbsp;
+                  
                   <?php 
                     if ($consulta["iGenero"]==0){
-                      echo ' <input type="radio"  name="radio" checked=true>';
+                      echo ' <label>
+                            <input type="radio"  name="radio" checked=true value="0">
+                            Masculino</label>  <span class="checkmark"></span>
+                            ';
                     }else
                     {
-                      echo ' <input type="radio"  name="radio" >';
+                      echo '<label> <input type="radio"  name="radio" value="0">Masculino</label>  <span class="checkmark"></span>';
+                    }
+                    ?>
+              
+             
+                  
+          
+              <?php 
+                    if ($consulta["iGenero"]==1){
+                      echo ' <label> <input type="radio"  name="radio" checked=true value="1"> Femenino</label> <span class="checkmark"></span>';
+                    }else
+                    {
+                      echo '  <label><input type="radio" name="radio value="1"> Femenino</label><span class="checkmark"></span>';
+                    }
+                    ?>
+                
+              
+               
+                  <?php 
+                   if ($consulta["iGenero"]==2){
+                      echo '    <label> <input type="radio"  name="radio" checked=true value=2>No especificar  </label>  <span class="checkmark"></span>';
+                    }else
+                    {
+                      echo '  <label> <input type="radio" name="radio" value="2">No especificar  </label>  <span class="checkmark"></span>';
                     }
                     ?>
                
-                <span class="checkmark"></span>
-              </label>
-                  
-              <label class="gender">Femenino  &nbsp;
-                <input type="radio" name="radio">
-                <span class="checkmark"></span>
-              </label>
-                  <label class="gender">No especificar
-                <input type="radio" name="radio">
-                <span class="checkmark"></span>
-              </label>
+              
+             
               </div>
 
         <div class="form-group">
-            <label class="form-title" for="">Fecha de alta</label>
-            <input type="date" >
+        <label class="form-title" for="">Fecha de alta</label>
+          <?php
+          echo '  <input type="date" name="fechaalta" value="'.$consulta["dFechaAlta"].'">';
+          ?>
           </div>
-
           <?php 
               }
             ?>
@@ -313,8 +332,16 @@ form .button input::hover{
     </footer>
 </div>
 <!-- ./wrapper -->
+<script>
+function alerta(){
+  Swal.fire(
+  '¡Operación exitoso!',
+  'Actualizado Correctamente.',
+  'success'
+)
+}
+</script>
 
-<
 <!-- Bootstrap -->
 <?php include 'footer.php' ?>
 </body>
