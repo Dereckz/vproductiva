@@ -6,7 +6,7 @@
 <link href="../img/LOGOVP.ico" rel="icon">
 <?php session_start() ?>
 <?php 
-	if(!isset($_SESSION['login_id']))
+	if(!isset($_SESSION['id']))
 	    header('location:login.php');
 	include 'header.php' 
 ?>
