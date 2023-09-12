@@ -29,10 +29,10 @@
     <!-- Main content -->
  
     <?php include 'func/cursos.php';?>
-   
-<div class="container-fluid" id="container-wrapper">
+    <?php include 'func/detalleuser.php';?>
+    <div class="container-fluid" id="container-wrapper">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Instructores</h1>
+            <h1 class="h3 ">Instructores</h1>
             <ol class="breadcrumb">
               <li class="breadcrumb-item">
                 <a href="./">Home</a>
@@ -43,7 +43,7 @@
           </div>
           <div class="row">
           <div class="table-responsive">
-                  <table class="table align-items-center table-flush">
+                  <table id="idinstructor"class="table align-items-center table-flush">
                     <thead class="thead-light">
                       <tr>
                         <th>ID</th>
@@ -53,7 +53,7 @@
                       </tr>
                     </thead>
                     <tbody>
-                     <?php  registercurso(); ?>
+                     <?php  detalleinstructor(); ?>
                     </tbody>
                   </table>
                 </div>
@@ -147,9 +147,56 @@
                     </form>    
               </div>
             </div>
-          </div>    
+          </div>
+          
+                <!--Modal editar trabajador -->
+        <div class="modal fade" id="usermodal" tabindex="-1" role="dialog"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabelLogout">Editar Usuario</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <form action="" id="manage-user">	
+                <div class="modal-body">
+                          <input type="hidden" name="id" value="<?php echo isset($meta['id']) ? $meta['id']: '' ?>">
+                          <div class="form-group">
+                            <label for="name">First Name</label>
+                            <input type="text" name="firstname" id="firstname" class="form-control" value="<?php echo isset($meta['firstname']) ? $meta['firstname']: '' ?>" required>
+                          </div>
+                          <div class="form-group">
+                            <label for="name">Middle Name</label>
+                            <input type="text" name="middlename" id="middlename" class="form-control" value="<?php echo isset($meta['middlename']) ? $meta['middlename']: '' ?>">
+                          </div>
+                          <div class="form-group">
+                            <label for="name">Last Name</label>
+                            <input type="text" name="lastname" id="lastname" class="form-control" value="<?php echo isset($meta['lastname']) ? $meta['lastname']: '' ?>" required>
+                          </div>
+                          <div class="form-group">
+                            <label for="username">Email</label>
+                            <input type="text" name="email" id="email" class="form-control" value="<?php echo isset($meta['email']) ? $meta['email']: '' ?>" required  autocomplete="off">
+                          </div>
+                          <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" name="password" id="password" class="form-control" value="" autocomplete="off">
+                            <small><i>Leave this blank if you dont want to change the password.</i></small>
+                          </div>
+                      <div>
+
+                      <div class="modal-footer">
+                          <button type="submit" class="btn btn-outline-primary"  id ="btnSurvey" name ="btnSurvey"  >Agregar</button>
+                          <a  class="btn btn-outline-primary" data-dismiss="modal">Salir</a>
+                        </div>
+	              </form>  
+              </div>
+            </div>
+          </div>   
+
         </div>
-       
+         
     <!-- /.content -->
     <div class="modal fade" id="confirm_modal" role='dialog'>
     <div class="modal-dialog modal-md" role="document">
@@ -199,8 +246,8 @@
   <div class="modal fade" id="viewer_modal" role='dialog'>
     <div class="modal-dialog modal-md" role="document">
       <div class="modal-content">
-              <button type="button" class="btn-close" data-dismiss="modal"><span class="fa fa-times"></span></button>
-              <img src="" alt="">
+            <button type="button" class="btn-close" data-dismiss="modal"><span class="fa fa-times"></span></button>
+            <img src="" alt="">
       </div>
     </div>
   </div>
@@ -214,30 +261,36 @@
   <!-- /.control-sidebar -->
 
   <!-- Main Footer -->
-  <footer class="main-footer">
-    <strong>Copyright &copy; 2020 <a href="https://www.sourcecodester.com/">sourcecodester.com</a>.</strong>
-    All rights reserved.
-    <div class="float-right d-none d-sm-inline-block">
-      <b>Online Survey System</b>
-    </div>
-  </footer>
+  <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>copyright &copy; <script> document.write(new Date().getFullYear()); </script> - developed by
+              <b><a href="https://desetecnologias.net/" target="_blank">Dese Tecnologias</a></b>
+            </span>
+          </div>
+        </div>
+    </footer>
 </div>
 <!-- ./wrapper -->
 
 <!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->
 <script> 
-MiFuncionJS(){
-    Swal.fire(
-            'Operacion Exitosa',
-            '¡Se mando encuesta Correctamente!',
-            'success'
-          )
-    }
+// MiFuncionJS(){
+//     Swal.fire(
+//             'Operacion Exitosa',
+//             '¡Se mando encuesta Correctamente!',
+//             'success'
+//           );
+// }
+      const table = document.getElementById("idinstructor");
+      const modal = document.getElementById("manage-user");
+      window.addEventListener("click", (e) => {
+        console.log(e.target)
+      });
+    
 
-    function actualizarStatus($iduser) {
-    <?php   include "..\func\actualizarstatus.php?id=".$iduser; ?>
-  }
+    
   </script>
 <!-- Bootstrap -->
 <?php include 'footer.php' ?>
