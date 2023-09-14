@@ -9,9 +9,11 @@ function detalleinstructor()
       
         if ($consulta["iEstatus"]=="1")
         {
+        
               echo 
-              '<tr>
-                  <td><a  id="aIdu" href="instructor_edit.php?idu='.$consulta["iIdUsuario"].'" >'.$consulta["iIdUsuario"].'</a></td>
+              '
+              <tr class="miclase" data-id="'.$consulta["iIdUsuario"].'">
+                  <td><a  id="aIdu name="aIdu" href="instructor_edit.php?idu='.$consulta["iIdUsuario"].'" >'.$consulta["iIdUsuario"].'</a></td>
                   <td>'.strtoupper($consulta["cNombreLargo"]).'</td>
                   <td><span  class="badge badge-success text-dark"><a  href="func/actualizarStatus.php?id='.$consulta["iIdUsuario"].'&status=1"> Activo</a></span></td>
                 <td>						
@@ -27,14 +29,24 @@ function detalleinstructor()
                 </div>	
               </div>
               </td> 
-            </tr><tr>'
+            </tr>
+            <tr>'
               ;
               echo ''.cursodeusuario($consulta["iIdUsuario"]).'</tr>';
+
+              echo 
+              '
+              <script>
+              $( "table" ).on( "click", ".miclase", function() {
+                console.log( $( this ).data("id") );
+                });
+               </script>
+              ';
 
         }else if (($consulta["iEstatus"]=="0")){
          
             echo 
-            '<tr>
+            '<tr class="miclase" data-id="'.$consulta["iIdUsuario"].'">
             <td><a  id="aIdu" href="instructor_edit.php?idu='.$consulta["iIdUsuario"].'" >'.$consulta["iIdUsuario"].'</a></td>
             <td>'.strtoupper($consulta["cNombreLargo"]).'</td>
             <td><span class="badge badge-danger" ><a  href="func/actualizarStatus.php?id='.$consulta["iIdUsuario"].'&status=0">Inactivo</a></span></td>

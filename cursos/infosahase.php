@@ -21,7 +21,7 @@
     	</ul>
     </header>
 
-    <div>
+    <div id="fondotemario">
     
     <img class="tituloscursos" src="img/Salud.png" >
     <table id=tablarecursos>
