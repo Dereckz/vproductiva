@@ -43,7 +43,7 @@ foreach($qry as $k => $v){
 					<div class="callout callout-info">
 						<h5><?php echo $row['question'] ?></h5>	
 						<div class="col-md-12">
-						<input type="hidden" name="qid[<?php echo $row['id'] ?>]" value="<?php echo $row['id'] ?>">	
+						<input type="" name="qid[<?php echo $row['id'] ?>]" value="<?php echo $row['id'] ?>">	
 						<input type="hidden" name="type[<?php echo $row['id'] ?>]" value="<?php echo $row['type'] ?>">	
 							<?php
 								if($row['type'] == 'radio_opt'):
