@@ -64,7 +64,7 @@
             </div>
            
             </div>
-          
+       
 
           <!-- Modal Logout -->
           <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
@@ -135,10 +135,11 @@
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
-                    <form name="frmSurveySet" method="post" action="http://localhost/vproductivam/panel/func/agregarsurvey.php">  
+                    <form name="frmSurveySet" method="post" action="func/agregarsurvey.php">  
                         <div class="modal-body">
                         <label for="curso-names">Marque encuesta(s):</label> 
                        <div>
+
                          <?php showAllSurvey() ?> 
                        </div>  
                         </div>
