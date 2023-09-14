@@ -9,7 +9,7 @@ $contadorlist=0;
     if ($btnSurvey) {
        
         
-         $idusuario=$_SESSION["id"];
+         $idusuario=$_POST["idinstructor"];
      
           
         $resultado = mysqli_query($conn, "SELECT * FROM survey_set ;");

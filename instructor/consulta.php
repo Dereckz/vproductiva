@@ -36,7 +36,7 @@ function informacion()
     }
     
 
-    $cInscrito= mysqli_query($conn,"SELECT * FROM inscripcion i
+    $cInscrito= mysqli_query($conn,"SELECT * FROM survey_set i
     INNER JOIN usuarios u ON I.fkiIdUsuario = U.iIdUsuario
     INNER JOIN curso c ON i.fkiIdeCurso = c.iIdCurso
     WHERE  i.finalizado !=2 AND i.fkiIdUsuario=". $_SESSION["id"]);
@@ -63,18 +63,30 @@ function informacion()
         
         </form>
         <tr><td colspan=2><p class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;"> Correo: ' . $consulta['cCorreo'] . '</p></td></tr>
-        <tr><td width="3%"><img src="img/docusin.png" width="90%"></td><td><p class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;"> Cursos Inscritos: '.$nInscrito.'</p></td></tr>
-        <tr><td width="3%"><img src="img/docu.png" width="90%"></td><td><p class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;">Cursos Finalizados: '.$final.'</p></td></tr>    
+        <tr><td><p class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;"> Encuestas asignadas: '.$nInscrito.'</p></td></tr>
+        <tr><td><p class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;">Encuestas finalizadas: '.$final.'</p></td></tr>    
         </table>
         ';
-
-        /*echo '<h3 class="u-text u-text-2 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;">' . $consulta['cNombreLargo'] . '</h3>
+        
+        /*echo '
+        
         <table class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;">
-        <tr><td td width="25%">Cursos Inscritos: </td><td>' . $consulta['cNombre'] . '</td> <td width="50%"></td><td rowspan=5> <img src="img/fotoperfil.png" width="80%"> </td></tr>
-        <tr><td>Cursos Finalizados: </td><td>' . $consulta['cApellidoP'] . '</td></tr>
-        <tr><td>Horas de aprendizaje realizadas: </td><td>' . $consulta['cApellidoM'] . '</td></tr>
-        <tr><td></td> <td></td></tr>
-        <tr><td colspan=2> ' . $consulta['cNombre'] . ' qué quieres aprender hoy?</td></tr>
+        <tr>        
+        <form action="subir.php" method="POST" enctype="multipart/form-data">
+        <td rowspan=6 style="text-align: center; font-size: 0.8em;"><img id=fotoperfil src="'.$consulta['cProfile'].'" width="42%"><div id="div_file"><input type="file" name="file1" id="file1"> 
+        <p id="texto">
+        Subir foto</p>
+        </div>
+        <br>
+        <button type="submit">Guardar</button>
+        </td>
+        <td width="65%" colspan=2><h3 class="u-text u-text-2 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;">' . $consulta['cNombreLargo'] . '</h3></td>
+        </tr>
+        
+        </form>
+        <tr><td colspan=2><p class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;"> Correo: ' . $consulta['cCorreo'] . '</p></td></tr>
+        <tr><td width="3%"><img src="img/docusin.png" width="90%"></td><td><p class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;"> Encuestas asignadas: '.$nInscrito.'</p></td></tr>
+        <tr><td width="3%"><img src="img/docu.png" width="90%"></td><td><p class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;">Encuestas finalizadas: '.$final.'</p></td></tr>    
         </table>
         ';*/
     }

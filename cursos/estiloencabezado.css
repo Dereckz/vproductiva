@@ -174,11 +174,15 @@ text-decoration: none;
 .titulostemario2{
 	font-size: 1.15em;
 	color: #000000;
-	background-color: #ebebec;
+	background-color: #cbc7ed;
     border-radius: 1em 1em 1em 1em;
 	height: 2.5em;
 	padding-left: 1em;
 }
 .celdasvacias2{
 	height: 0.4em;
+}
+
+#fondotemario{
+	background-image: url(img/fondotemarios.gif)
 }
