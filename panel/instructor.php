@@ -10,6 +10,46 @@
 	    header('location:login.php');
 	include 'header.php' 
 ?>
+<style>
+  :root {
+    --color-green: #00a878;
+    --color-red: #fe5e41;
+    --color-button: #fdffff;
+    --color-black: #000;
+}
+.switch-button {
+    display: inline-block;
+}
+.switch-button .switch-button__checkbox {
+    display: none;
+}
+.switch-button .switch-button__label {
+    background-color: var(--color-red);
+    width: 2rem;
+    height: 1rem;
+    border-radius: 1rem;
+    display: inline-block;
+    position: relative;
+}
+.switch-button .switch-button__label:before {
+    transition: .2s;
+    display: block;
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    background-color: var(--color-button);
+    content: '';
+    border-radius: 50%;
+    box-shadow: inset 0px 0px 0px 1px var(--color-black);
+}
+.switch-button .switch-button__checkbox:checked + .switch-button__label {
+    background-color: var(--color-green);
+}
+.switch-button .switch-button__checkbox:checked + .switch-button__label:before {
+    transform: translateX(2rem);
+}
+</style>
+
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
   <?php include 'topbar.php' ?>
@@ -29,7 +69,17 @@
     <!-- Main content -->
  
     <?php include 'func/cursos.php';?>
-    <?php include 'func/detalleuser.php';?>
+    <?php include 'func/surveyset.php';?>
+
+    <?php
+    include( "..\dev\conectar.php");
+
+    $sqlCliente   = ("SELECT * FROM usuarios where usuarios.fkidTipoUsuario=2; ");
+    $queryCliente = mysqli_query($conn, $sqlCliente);
+    $cantidad     = mysqli_num_rows($queryCliente);
+    ?>
+
+
     <div class="container-fluid" id="container-wrapper">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
 
@@ -44,22 +94,63 @@
             </ol>
           </div>
           <div class="row">
-          <div class="table-responsive">
-                  <table id="idinstructor"class="table align-items-center table-flush">
-                    <thead class="thead-light">
-                      <tr>
-                        <th>ID</th>
-                        <th>Instructor</th>
-                        <th>Estatus</th>
-                        <th>Accion</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                     <?php  detalleinstructor(); ?>
-                    </tbody>
-                  </table>
+                <div class="col-md-12 p-2">
+
+
+                  <div class="table-responsive">
+                    <table class="table table-bordered table-striped table-hover">
+                      <thead>
+                        <tr>
+                          <th scope="col">Nombre</th>
+                          <th scope="col">Email</th>
+                          <th scope="col">Estatus</th>
+                          <th scope="col">Acción</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <?php
+                        while ($dataCliente = mysqli_fetch_array($queryCliente)) { ?>
+                          <tr>
+                            <td><?php echo $dataCliente['cNombreLargo']; ?></td>
+                            <td><?php echo $dataCliente['cCorreo']; ?></td>
+                            <?php if($dataCliente['iEstatus']==1) {?> 
+                              <td><span  class="badge badge-success" > <a class="text-white" href="func/actualizarStatus.php?id='<?php echo $dataCliente['iIdUsuario']; ?>'&status=1">Activo<a></span></td> 
+                            <?php }?> 
+                            <?php if($dataCliente['iEstatus']==0) {?> 
+                              <td><span  class="badge badge-danger"><a class="text-white" href="func/actualizarStatus.php?id='<?php echo $dataCliente['iIdUsuario']; ?>'&status=0">Inactivo</a></span></td> 
+                            <?php }?> 
+                            <td>
+                              <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteChildresn<?php echo $dataCliente['iIdUsuario']; ?>">
+                                Eliminar
+                              </button>
+
+                              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editChildresn<?php echo $dataCliente['iIdUsuario']; ?>">
+                                Modificar
+                              </button>
+                              <button type="button" class=" btn btn-warning " data-toggle="modal" data-target="#editChildresn<?php echo $dataCliente['iIdUsuario']; ?>">
+                                Agregar Curso
+                              </button>
+                              <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editChildresn<?php echo $dataCliente['iIdUsuario']; ?>">
+                                Agregar Encuesta
+                              </button>
+                            </td>
+                          </tr>
+
+
+                          <!--Ventana Modal para Actualizar--->
+                          <?php include('ModalEditar.php'); ?>
+
+                          <!--Ventana Modal para la Alerta de Eliminar--->
+                          <?php include('ModalEliminar.php'); ?>
+
+
+                        <?php } ?>
+
+                    </table>
+                  </div>
+
+
                 </div>
-                <div class="card-footer"></div>
               </div>
             </div>
            
@@ -139,6 +230,7 @@
                         <div class="modal-body">
                         <label for="curso-names">Marque encuesta(s):</label> 
                        <div>
+                        
 
                          <?php showAllSurvey() ?> 
                        </div>  
@@ -279,13 +371,7 @@
 <!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->
 <script> 
-// MiFuncionJS(){
-//     Swal.fire(
-//             'Operacion Exitosa',
-//             '¡Se mando encuesta Correctamente!',
-//             'success'
-//           );
-// }
+
       const table = document.getElementById("idinstructor");
       const modal = document.getElementById("manage-user");
       window.addEventListener("click", (e) => {

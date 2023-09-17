@@ -99,22 +99,7 @@ function showSurvey($id)
 
 }
 }
-function showAllSurvey()
-{
-  include "..\dev\conectar.php";
-    //idSurvey
-  $resultado = mysqli_query($conn, "SELECT * FROM survey_set ;");
-  while ($consulta = mysqli_fetch_array($resultado)) {
-    $idSurvey=$consulta["id"];
-    echo ' <div>
-    <label>
-      <input type="checkbox" id="'.$idSurvey.'" name="'.$idSurvey.'" value="'.$consulta["title"].'" /> 
-      '.$consulta["title"].'
-    </label>
-    </div>';
 
-}
-}
 function addsurveyset(){
 
 }

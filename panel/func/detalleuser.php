@@ -12,7 +12,7 @@ function detalleinstructor()
         
               echo 
               '
-              <tr class="miclase" data-id="'.$consulta["iIdUsuario"].'">
+              <tr>
                   <td><a  id="aIdu name="aIdu" href="instructor_edit.php?idu='.$consulta["iIdUsuario"].'" >'.$consulta["iIdUsuario"].'</a></td>
                   <td>'.strtoupper($consulta["cNombreLargo"]).'</td>
                   <td><span  class="badge badge-success text-dark"><a  href="func/actualizarStatus.php?id='.$consulta["iIdUsuario"].'&status=1"> Activo</a></span></td>
@@ -23,7 +23,7 @@ function detalleinstructor()
                         <a class="	fas fa-wrench" href="javascript:void(0)" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">   Seleccion </a>  <div class="dropdown-menu" style="">
                         <a class="dropdown-item edit_question text-dark" href="javascript:void(0);" data-toggle="modal" data-target="#cursomodal" >Agregar Curso</a>
                         <div class="dropdown-divider"></div>
-                        <a  class="dropdown-item edit_question text-dark" href="javascript:void(0);" data-toggle="modal" data-target="#surveymodal" >Agregar Encuesta</a>
+                        <a  class="dropdown-item edit_question text-dark" href="javascript:void(0);" data-toggle="modal"  data-target="#surveymodal'.$consulta["iIdUsuario"].'" >Agregar Encuesta</a>
                       </div>
                   </span>	
                 </div>	
@@ -34,14 +34,7 @@ function detalleinstructor()
               ;
               echo ''.cursodeusuario($consulta["iIdUsuario"]).'</tr>';
 
-              echo 
-              '
-              <script>
-              $( "table" ).on( "click", ".miclase", function() {
-                console.log( $( this ).data("id") );
-                });
-               </script>
-              ';
+             
 
         }else if (($consulta["iEstatus"]=="0")){
          
