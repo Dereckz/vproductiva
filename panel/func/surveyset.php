@@ -4,7 +4,7 @@
 function showAllSurvey(){
   include "..\dev\conectar.php";
   
-  $resultado = mysqli_query($conn, "SELECT * FROM survey_set ;");
+  $resultado = mysqli_query($conn, "SELECT * FROM survey_set;");
 
 
   while ($consulta = mysqli_fetch_array($resultado)) {
