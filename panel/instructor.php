@@ -96,7 +96,7 @@
                 <div class="col-md-12 p-2">
 
 
-                  <div class="table-responsive">
+                <div class="table-responsive">
                     <table class="table table-bordered table-striped table-hover">
                       <thead>
                         <tr>
@@ -122,7 +122,6 @@
                               <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteChildresn<?php echo $dataCliente['iIdUsuario']; ?>">
                                 Eliminar
                               </button>
- 
                               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editChildresn<?php echo $dataCliente['iIdUsuario']; ?>">
                                 Modificar
                               </button>
@@ -133,20 +132,21 @@
                                 Agregar Encuesta
                               </button>
                             </td>
+                           <!--  <tr>
+                            <?php   echo ''.cursodeusuario($dataCliente["iIdUsuario"]).'';?>
+                            </tr> -->
 
                           </tr>
            
 
                               <!--Ventana Modal para Actualizar--->
                               <?php include('ModalEditar.php'); ?>
-
                               <!--Ventana Modal para la Alerta de Eliminar--->
                               <?php include('ModalEliminar.php'); ?>
                               <!--Ventana Modal para Agregar Encuesta--->
                               <?php include('ModalSurvey.php'); ?>
-
-                          <!--Ventana Modal para Agregar Curso--->
-                          <?php include('ModalCurso.php'); ?>
+                              <!--Ventana Modal para Agregar Curso--->
+                              <?php include('ModalCurso.php'); ?>
 
                          
 

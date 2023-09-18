@@ -8,11 +8,29 @@
             </h4>
         </div>
          
+                <?php 
+                 include "..\dev\conectar.php";
+  
+                 $resultado = mysqli_query($conn, "SELECT * FROM survey_set;");
+                ?>
                   <form name="frmSurveySet" method="post" action="func/agregarsurvey.php">  
                     <div class="modal-body">
                             <label for="curso-names">Marque encuesta(s):</label> 
                             <div>
-                                <?php showAllSurvey() ?> 
+                            <input type="hidden" name="idmaestro" value=<?php echo $dataCliente['iIdUsuario']; ?> />
+                                <?php   while ($datasurvey = mysqli_fetch_array($resultado)) { 
+                                    $idSurvey=$datasurvey["id"];
+                                    $title=$datasurvey["title"];
+                                    ?>
+                                <div>
+                                    <label>
+                                    <input type="checkbox" id="<?php echo $idSurvey ;?>" name="<?php echo $idSurvey ;?>"  /> 
+                                    <?php echo $idSurvey.'.-'.$title; ?>
+                                    </label>
+                                </div>
+
+                                <?php }?>
+                                
                             </div>  
                         </div>
                         <div class="modal-footer">
