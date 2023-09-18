@@ -119,37 +119,36 @@
                               <td><span  class="badge badge-danger"><a class="text-white" href="func/actualizarStatus.php?id='<?php echo $dataCliente['iIdUsuario']; ?>'&status=0">Inactivo</a></span></td> 
                             <?php }?> 
                             <td>
-<!--                          <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteChildresn<?php echo $dataCliente['iIdUsuario']; ?>">
+                              <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteChildresn<?php echo $dataCliente['iIdUsuario']; ?>">
                                 Eliminar
                               </button>
- -->
+ 
                               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editChildresn<?php echo $dataCliente['iIdUsuario']; ?>">
                                 Modificar
                               </button>
                               <button type="button" class="btn btn-warning" data-toggle="modal"  data-target="#cursomodal<?php echo $dataCliente['iIdUsuario']; ?>">
                                 Agregar Curso
                               </button>
-                              <button type="button" class="btn btn-success" data-toggle="modal" data-target="#surveymodal<?php echo $dataCliente['iIdUsuario']; ?>">
+                              <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalsurvey<?php echo $dataCliente['iIdUsuario']; ?>">
                                 Agregar Encuesta
                               </button>
                             </td>
-                            <td>
-                              <?php echo''.cursodeusuario($dataCliente['iIdUsuario'])?>
-                            </td>
+
                           </tr>
+           
 
+                              <!--Ventana Modal para Actualizar--->
+                              <?php include('ModalEditar.php'); ?>
 
-                          <!--Ventana Modal para Actualizar--->
-                          <?php include('ModalEditar.php'); ?>
-
-                          <!--Ventana Modal para la Alerta de Eliminar--->
-                          <?php include('ModalEliminar.php'); ?>
+                              <!--Ventana Modal para la Alerta de Eliminar--->
+                              <?php include('ModalEliminar.php'); ?>
+                              <!--Ventana Modal para Agregar Encuesta--->
+                              <?php include('ModalSurvey.php'); ?>
 
                           <!--Ventana Modal para Agregar Curso--->
                           <?php include('ModalCurso.php'); ?>
 
-                          <!--Ventana Modal para Agregar Encuesta--->
-                          <?php include('ModalEncuesta.php'); ?>
+                         
 
                         <?php } ?>
 
