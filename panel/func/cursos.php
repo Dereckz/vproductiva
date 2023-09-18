@@ -69,8 +69,9 @@ function cursodeusuario($parametro1){
       }
       while ($consulta = mysqli_fetch_array($result)) {
       
-      echo
-      '<td>'.($consulta["cNombreCurso"]).' </td>';
+      echo'<td>'.
+      ($consulta["cNombreCurso"]) .
+      '</td>';
       }
 
 }

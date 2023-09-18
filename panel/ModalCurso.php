@@ -7,9 +7,10 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                     </div>
-                <form name="frmAgregar" method="post" action="/panel/func/agregarcurso.php">  
+                <form name="frmAgregar" method="post" action="func/agregarcurso.php">  
                     <div class="modal-body">
                     <label for="curso-names">Seleccione curso a Asignar:</label> 
+                    <input type="hidden" name="idmaestro" value=<?php echo $dataCliente['iIdUsuario']; ?> />
                     <select name="cursoselect" id="cursoselect">
                         <!--?php listcurso()?--> 
                         <option value='1'>Productividad Laboral</option>

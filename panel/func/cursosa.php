@@ -1,6 +1,5 @@
 <?php
- // session_start();
- $a='0';
+
 function curseactive()
 {
     include "..\dev\conectar.php";
@@ -85,30 +84,6 @@ function listcurso()
 }
 
 
-function cursodeusuario($parametro1){
-  include "..\dev\conectar.php";
-
-  $result = mysqli_query($conn, 
-          "SELECT u.iIdUsuario,dc.iIdDetalleCurso,c.iIdCurso, u.cNombreLargo,c.cNombreCurso,c.cDescripcion
-          FROM detallecurso as dc INNER JOIN usuarios as u 
-          on dc.fkiIdUsuario=u.iIdUsuario 
-          INNER JOIN curso c
-          on c.iIdCurso=dc.fkiIdCurso
-          where u.iIdUsuario=".$parametro1.";");
-
-      //mysqli_data_seek ($result, 0);
-      //$extraido= mysqli_fetch_array($result);
-      $row_cnt = mysqli_num_rows($result);
-      if ($row_cnt>0){
-        echo '<td>Profesor de:</td>';
-      }
-      while ($consulta = mysqli_fetch_array($result)) {
-      
-      echo
-      '<td>'.($consulta["cNombreCurso"]).' </td><br>';
-      }
-
-}
 function agregarcurso(){
     if (!isset($_POST["btnAsignar"])) {
 
