@@ -83,9 +83,9 @@
                               <td><span  class="badge badge-danger"><a class="text-white" href="func/updatestatus.php?id='<?php echo $dataCliente['iIdUsuario']; ?>'&status=0">Inactivo</a></span></td> 
                             <?php }?> 
                             <td>
-                              <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteChildresn<?php echo $dataCliente['iIdUsuario']; ?>">
+<!--                               <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteChildresn<?php echo $dataCliente['iIdUsuario']; ?>">
                                 Eliminar
-                              </button>
+                              </button> -->
                               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editChildresn<?php echo $dataCliente['iIdUsuario']; ?>">
                                 Modificar
                               </button>
@@ -221,6 +221,41 @@
 
 <!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+      $(document).ready(function() {
+        //Ocultar mensaje
+        setTimeout(function() {
+          $("#contenMsjs").fadeOut(1000);
+        }, 3000);
+
+        $('.btnBorrar').click(function(e) {
+          e.preventDefault();
+          var id = $(this).attr("id");
+
+          var dataString = 'id=' + id;
+          url = "func/deleteusers.php";
+          $.ajax({
+            type: "POST",
+            url: url,
+            data: dataString,
+            success: function(data) {
+              window.location.href = "alumnos.php";
+             $('#respuesta').html(data);
+             alert (‘ mensaje de texto‘)
+            }
+          });
+          return false;
+
+        });
+
+
+      });
+    </script>
+
 <!-- Bootstrap -->
 <?php include 'footer.php' ?>
 </body>

@@ -119,9 +119,9 @@
                               <td><span  class="badge badge-danger"><a class="text-white" href="func/actualizarStatus.php?id='<?php echo $dataCliente['iIdUsuario']; ?>'&status=0">Inactivo</a></span></td> 
                             <?php }?> 
                             <td>
-                              <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteChildresn<?php echo $dataCliente['iIdUsuario']; ?>">
+                              <!-- <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteChildresn<?php echo $dataCliente['iIdUsuario']; ?>">
                                 Eliminar
-                              </button>
+                              </button> -->
                               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editChildresn<?php echo $dataCliente['iIdUsuario']; ?>">
                                 Modificar
                               </button>
@@ -132,9 +132,9 @@
                                 Agregar Encuesta
                               </button>
                             </td>
-                           <!--  <tr>
+                           <tr>
                             <?php   echo ''.cursodeusuario($dataCliente["iIdUsuario"]).'';?>
-                            </tr> -->
+                            </tr> 
 
                           </tr>
            
@@ -263,17 +263,7 @@
 
 <!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->
-<script> 
 
-      const table = document.getElementById("idinstructor");
-      const modal = document.getElementById("manage-user");
-      window.addEventListener("click", (e) => {
-        console.log(e.target)
-      });
-    
-
-    
-  </script>
 <!-- Bootstrap -->
 <?php include 'footer.php' ?>
 </body>
