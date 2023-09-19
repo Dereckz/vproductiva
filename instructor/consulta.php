@@ -35,13 +35,24 @@ function informacion()
         }
     }
     
+<<<<<<< HEAD
     
     $cInscrito= mysqli_query($conn,"SELECT * FROM inscripcion i
     INNER JOIN usuarios u ON I.fkiIdUsuario = U.iIdUsuario
     INNER JOIN curso c ON i.fkiIdeCurso = c.iIdCurso
     WHERE  i.finalizado !=2 AND i.fkiIdUsuario=". $_SESSION["id"]);
+=======
+
+     $cInscrito= mysqli_query($conn,
+     "SELECT * FROM detallesurvey ds
+     inner join survey_set st
+     on ds.idSurvey=st.id
+     INNER JOIN usuarios us
+     on ds.idUsuario=us.iIdUsuario
+     where us.iIdUsuario=". $_SESSION["id"]);
+>>>>>>> origin/master
     
-    $nInscrito= mysqli_num_rows($cInscrito);
+    $nInscrito= mysqli_num_rows($cInscrito); 
     
     $resultado = mysqli_query($conn, "SELECT * FROM usuarios WHERE iIdUsuario=" . $_SESSION["id"]);
     while ($consulta = mysqli_fetch_array($resultado)) {
