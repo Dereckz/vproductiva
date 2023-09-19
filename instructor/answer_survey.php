@@ -367,12 +367,7 @@
   }
 }</style>
     
-   <!--  <script type="application/ld+json">{
-		"@context": "http://schema.org",
-		"@type": "Organization",
-		"name": "",
-		"url": "https://website529400.nicepage.io/1234.html"
-}</script> -->
+  
     <meta name="theme-color" content="#0066ff">
     <meta property="og:title" content="1234">
     <meta property="og:type" content="website">
@@ -382,10 +377,6 @@
 </head>
   <body class="u-body u-xl-mode" data-lang="en">
   <header id="encabezado">
-    	<!--<div id="logotipo">
-    	<img src="img/logovproductiva2.png" id="logo"> 
-    	</div>-->
-    	<!--<h1 id="tituloprincipal">Valuacion Productiva</h1>-->
     	<ul id="menu">
       <li class="logo"><img src="img/logob.png" id="logo"></li>
       <li class="menus"></li>
@@ -431,82 +422,62 @@
                           <div class="card-header">
                             <h3 class="card-title"><b>Cuestionario de encuesta</b></h3>
                           </div>
-                        <!--   <form action="http://localhost/vproductivam/panel/ajax.php" method="get"  id="manage-survey"> -->
-                          <form action="respuestas.php" method="get"  name="manage-survey" >  
-                          <input type="hidden" name="action" value="save_answer">	
+                       
+                          <form action="respuestas.php" method="get"  name="manage_survey" id ="manage_survey" >  
+                            <input type="hidden" name="action" value="save_answer">	
                             <input type="hidden" name="survey_id" value="<?php echo $id ?>">
-                          <div class="card-body ui-sortable">
-                          
-                            <?php
-                                 
-                            $question = $conn->query("SELECT * FROM questions where survey_id = $id order by abs(order_by) asc,abs(id) asc");
-                            while($row=$question->fetch_assoc()):	
-                            ?>
-                            <div class="callout callout-info">
-                              <h5><?php echo $row['question'] ?></h5>	
-                              <div class="col-md-12">
-                             
-                              <input type="TEXT" name="qid[<?php echo $row['id'] ?>]" value="<?php echo $row['id'] ?>">	
-                              <input type="TEXT" name="type[<?php echo $row['id'] ?>]" value="<?php echo $row['type'] ?>">	
-                                <?php
-                                  if($row['type'] == 'radio_opt'):
-                                    foreach(json_decode($row['frm_option']) as $k => $v):
-                                ?>
-                                <div class="icheck-primary">
-                                              <input type="radio" id="option_<?php echo $k ?>" name="answer[<?php echo $row['id'] ?>]" value="<?php echo $k ?>" checked="">
-                                              <label for="option_<?php echo $k ?>"><?php echo $v ?></label>
-                                          </div>
-                                  <?php endforeach; ?>
-                              <?php elseif($row['type'] == 'check_opt'): 
-                                    foreach(json_decode($row['frm_option']) as $k => $v):
-                                ?>
-                                <div class="icheck-primary">
-                                              <input type="checkbox" id="option_<?php echo $k ?>" name="answer[<?php echo $row['id'] ?>][]" value="<?php echo $k ?>" >
-                                              <label for="option_<?php echo $k ?>"><?php echo $v ?></label>
-                                          </div>
-                                  <?php endforeach; ?>
-                              <?php else: ?>
-                                <div class="form-group">
-                                  <textarea name="answer[<?php echo $row['id'] ?>]" id="" cols="30" rows="4" class="form-control" placeholder="Write Something Here..." ></textarea>
-                                </div>
-                              <?php endif; ?>
-                              </div>	
+                            <div class="card-body ui-sortable">
+                            
+                              <?php
+                                  
+                              $question = $conn->query("SELECT * FROM questions where survey_id = $id order by abs(order_by) asc,abs(id) asc");
+                              while($row=$question->fetch_assoc()):	  
+                              ?>
+                              <div class="callout callout-info">
+                                <h5><?php echo $row['question'] ?></h5>	
+                                <div class="col-md-12">
+                              
+                                <input type="hidden" name="qid[<?php echo $row['id'] ?>]" value="<?php echo $row['id'] ?>">	
+                                <input type="hidden" name="type[<?php echo $row['id'] ?>]" value="<?php echo $row['type'] ?>">	
+                                  <?php
+                                    if($row['type'] == 'radio_opt'):
+                                      foreach(json_decode($row['frm_option']) as $k => $v):
+                                  ?>
+                                  <div class="icheck-primary">
+                                                <input type="radio" id="option_<?php echo $k ?>" name="answer[<?php echo $row['id'] ?>]" value="<?php echo $k ?>" checked="">
+                                                <label for="option_<?php echo $k ?>"><?php echo $v ?></label>
+                                            </div>
+                                    <?php endforeach; ?>
+                                <?php elseif($row['type'] == 'check_opt'): 
+                                      foreach(json_decode($row['frm_option']) as $k => $v):
+                                  ?>
+                                  <div class="icheck-primary">
+                                                <input type="checkbox" id="option_<?php echo $k ?>" name="answer[<?php echo $row['id'] ?>][]" value="<?php echo $k ?>" >
+                                                <label for="option_<?php echo $k ?>"><?php echo $v ?></label>
+                                            </div>
+                                    <?php endforeach; ?>
+                                <?php else: ?>
+                                  <div class="form-group">
+                                    <textarea name="answer[<?php echo $row['id'] ?>]" id="" cols="30" rows="4" class="form-control" placeholder="Write Something Here..." ></textarea>
+                                  </div>
+                                <?php endif; ?>
+                                </div>	
+                              </div>
+                              <?php endwhile; ?>
                             </div>
-                            <?php endwhile; ?>
-                          </div>
                           </form>
-                          <div class="card-footer border-top border-success">
-                            <div class="d-flex w-100 justify-content-center">
-                              <button class="btn btn-sm btn-flat bg-gradient-primary mx-1" form="manage-survey"  >Enviar respuesta</button>
-                              <button class="btn btn-sm btn-flat bg-gradient-secondary mx-1" type="button" onclick="location.href = 'survey.php'">Cancelar</button>
+                            <div class="card-footer border-top border-success">
+                              <div class="d-flex w-100 justify-content-center">
+                                <button class="btn btn-sm btn-flat bg-gradient-primary mx-1" form="manage_survey"  >Enviar respuesta</button>
+                                <button class="btn btn-sm btn-flat bg-gradient-secondary mx-1" type="button" onclick="location.href = 'survey.php'">Cancelar</button>
+                              </div>
                             </div>
-                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                   
-                <!--   <script>
-
-                    $('#manage-survey').submit(function(e){
-                      e.preventDefault()
-                      start_load()
-                      alert_toast("Thank You.",'success') 
-                     $.ajax({
-                        url:'http://localhost/vproductivam/panel/ajax.php?action=save_answer',
-                        method:'POST',
-                        data:$(this).serialize(),
-                        success:function(resp){s
-                          if(resp == 1){
-                            alert_toast("Thank You.",'success')
-                            setTimeout(function(){
-                              location.href = 'http://localhost/vproductivam/instructor/'
-                            },2000)
-                          }
-                        }
-                      }) 
-                    })
-                  </script> -->
+                 
           </div>
   </body>
 </html>
