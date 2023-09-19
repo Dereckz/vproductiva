@@ -442,6 +442,7 @@
         <?=informacion();?>
         <div class="u-expanded-width u-list u-list-1">
         <div class="u-repeater u-repeater-1">
+        <?php include 'survey.php' ?>
         <?=miCurso();?>
         </div>
         </div>
