@@ -67,7 +67,7 @@ if ($stmt = $conn->prepare("SELECT iIdUsuario, cUsuario, cPassword, cNombre, cno
      } else {
        //header("Location: login.html");
          //echo 'La contraseña no es válida!' ;
-         echo "<script> alert('La contraseña no es válida!');window.location= '../account/login.html' </script>";
+         echo "<script> alert('La contraseña no es válida!');window.location= 'https://desetecnologias.net/account/login.html' </script>";
           
      }
 
