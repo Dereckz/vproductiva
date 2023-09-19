@@ -397,7 +397,7 @@
   </header>
 
    
-          <?php include '../dev/conectar.php' ?>
+                  <?php include '../dev/conectar.php' ?>
                   <?php 
                   $answers = $conn->query("SELECT distinct(survey_id) from answers where user_id ={$_SESSION['id']}");
                   $ans = array();

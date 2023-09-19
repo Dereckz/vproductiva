@@ -431,8 +431,9 @@
                           <div class="card-header">
                             <h3 class="card-title"><b>Cuestionario de encuesta</b></h3>
                           </div>
-                          <form action="http://localhost/vproductivam/panel/ajax.php" method="get"  id="manage-survey">
-                            <input type="hidden" name="action" value="save_answer">	
+                        <!--   <form action="http://localhost/vproductivam/panel/ajax.php" method="get"  id="manage-survey"> -->
+                          <form action="respuestas.php" method="get"  name="manage-survey" >  
+                          <input type="hidden" name="action" value="save_answer">	
                             <input type="hidden" name="survey_id" value="<?php echo $id ?>">
                           <div class="card-body ui-sortable">
                           
@@ -445,8 +446,8 @@
                               <h5><?php echo $row['question'] ?></h5>	
                               <div class="col-md-12">
                              
-                              <input type="hidden" name="qid[<?php echo $row['id'] ?>]" value="<?php echo $row['id'] ?>">	
-                              <input type="hidden" name="type[<?php echo $row['id'] ?>]" value="<?php echo $row['type'] ?>">	
+                              <input type="TEXT" name="qid[<?php echo $row['id'] ?>]" value="<?php echo $row['id'] ?>">	
+                              <input type="TEXT" name="type[<?php echo $row['id'] ?>]" value="<?php echo $row['type'] ?>">	
                                 <?php
                                   if($row['type'] == 'radio_opt'):
                                     foreach(json_decode($row['frm_option']) as $k => $v):
@@ -485,11 +486,11 @@
                     </div>
                   </div>
                   
-                  <script>
+                <!--   <script>
 
                     $('#manage-survey').submit(function(e){
                       e.preventDefault()
-                     // start_load()
+                      start_load()
                       alert_toast("Thank You.",'success') 
                      $.ajax({
                         url:'http://localhost/vproductivam/panel/ajax.php?action=save_answer',
@@ -505,7 +506,7 @@
                         }
                       }) 
                     })
-                  </script>
+                  </script> -->
           </div>
   </body>
 </html>
