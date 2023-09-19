@@ -2,21 +2,32 @@
 <?php
  include "..\dev\conectar.php";
 
-$idencuesta=$_GET["survey_id"];
-$idrespuesta=$_GET["qid"];
+session_start();
+$survey_id=$_GET["survey_id"];
+$qid=$_GET["qid"];
+$type=$_GET["type"];
+$answer=$_GET["answer"];
 
-foreach($qid as $k => $v){
+ foreach($qid as $k => $v){
   $data = " survey_id=$survey_id ";
 				$data .= ", question_id='$qid[$k]' ";
-				$data .= ", user_id='{$_SESSION['login_id']}' ";
+				$data .= ", user_id='{$_SESSION['id']}' ";
 				if($type[$k] == 'check_opt'){
 					$data .= ", answer='[".implode("],[",$answer[$k])."]' ";
 				}else{
 					$data .= ", answer='$answer[$k]' ";
 				}
-			//	$save[] = $this->db->query("INSERT INTO answers set $data");
+				$save[] = $conn->query("INSERT INTO answers set $data");
 }
-echo 'Survey Id='.$idencuesta;
-echo 'Aswerd Id='.$idrespuesta;
+
+if(isset($save)){
+  header("Location:instructor.php");
+}else
+{
+  header("Location: survey.php");
+}
+
+
+ 
 
 ?>
