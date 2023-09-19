@@ -35,8 +35,8 @@ function informacion()
         }
     }
     
-
-    $cInscrito= mysqli_query($conn,"SELECT * FROM survey_set i
+    
+    $cInscrito= mysqli_query($conn,"SELECT * FROM inscripcion i
     INNER JOIN usuarios u ON I.fkiIdUsuario = U.iIdUsuario
     INNER JOIN curso c ON i.fkiIdeCurso = c.iIdCurso
     WHERE  i.finalizado !=2 AND i.fkiIdUsuario=". $_SESSION["id"]);
