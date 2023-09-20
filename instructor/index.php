@@ -6,7 +6,7 @@
 
     <meta name="keywords" content="​Hello!">
     <meta name="description" content="">
-    <title>1234</title>
+    <title>VProductivaPerfil</title>
     <link rel="stylesheet" href="./nicepage.css" media="screen" class="u-static-style">
     <link rel="stylesheet" href="./nicepage(1).css" media="screen">
     <script class="u-script" type="text/javascript" src="./jquery-1.9.1.min.js.descarga" defer=""></script>
@@ -39,12 +39,10 @@
     width: 100%;
     height: 100%;
     opacity: 0;
-
-
   }
     .u-section-2 {
   background-image: none;
-  padding-top: 2.8em;
+  padding-top: 2em;
 }
 @font-face {
     font-family: Acumin;
@@ -436,7 +434,7 @@
     	</ul>
   </header>
 
-    <section class="u-align-left u-clearfix u-grey-5 u-section-2" id="carousel_0852">
+    <section class="u-align-left u-clearfix u-grey-5 u-section-2" id="carousel_0852" class="margenesencuesta">
       <div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
         
         <?=informacion();?>

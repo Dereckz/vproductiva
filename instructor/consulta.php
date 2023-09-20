@@ -1,5 +1,6 @@
 <?php
-//include "../panel/func/profile.php";
+include "../dev/conectar.php";
+include "../panel/func/profile.php";
 if (!isset($_SESSION)) {
     session_start();
 }
@@ -73,12 +74,12 @@ function informacion()
         
         </form>
         <tr><td colspan=2><p class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;"> Correo: ' . $consulta['cCorreo'] . '</p></td></tr>
-        <tr><td><p class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;"> Encuestas asignadas: '.$nInscrito.'</p></td></tr>
+        <tr><td><p class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;"> Encuestas asignadas: '.$nSurvey.'</p></td></tr>
         <tr><td><p class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;">Encuestas finalizadas: '.$final.'</p></td></tr>    
         </table>
         ';
         
-      /*   echo '
+       /* echo '
         
         <table class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;">
               
@@ -87,7 +88,7 @@ function informacion()
         <tr><td width="3%"><img src="img/docusin.png" width="90%"></td><td><p class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;"> Encuestas asignadas: '.$nSurvey.'</p></td></tr>
         <tr><td width="3%"><img src="img/docu.png" width="90%"></td><td><p class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;">Encuestas finalizadas: '.$final.'</p></td></tr>    
         </table>
-        '; */
+        ';*/
     }
 }
 
