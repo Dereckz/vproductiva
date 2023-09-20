@@ -386,7 +386,7 @@
     	</ul>
   </header>
   <body>
-    <div>
+    <div class="margenesencuesta">
                   <?php include '../dev/conectar.php' ?>
                   <?php 
                         $qry = $conn->query("SELECT * FROM survey_set where id = ".$_GET['id'])->fetch_array();
@@ -402,13 +402,12 @@
                       <div class="col-md-4">
                         <div class="card card-outline card-primary">
                           <div class="card-header">
-                            <h3 class="card-title"><b>Detalles de Encuesta</b></h3>
+                            <h3 class="card-title" id="titulodetalle"><b>Detalles de la encuesta</b></h3>
                           </div>
                           <div class="card-body p-0 py-2">
                             <div class="container-fluid">
                               <p>Titulo: <b><?php echo $stitle ?></b></p>
-                              <p class="mb-0">Descripción:</p>
-                              <small><?php echo $description; ?></small>
+                              <p class="mb-0">Descripción: <b><?php echo $description; ?></b></p>
                               <p>Inicio: <b><?php echo date("M d, Y",strtotime($start_date)) ?></b></p>
                               <p>Fin: <b><?php echo date("M d, Y",strtotime($end_date)) ?></b></p>
 
@@ -419,8 +418,8 @@
                       </div>
                       <div class="col-md-8">
                         <div class="card card-outline card-success">
-                          <div class="card-header">
-                            <h3 class="card-title"><b>Cuestionario de encuesta</b></h3>
+                          <div class="card-header" id="tituloencuesta">
+                            <h3 class="card-title"><b><?php echo $stitle ?></b></h3>
                           </div>
                        
                           <form action="respuestas.php" method="get"  name="manage_survey" id ="manage_survey" >  
@@ -444,15 +443,15 @@
                                       foreach(json_decode($row['frm_option']) as $k => $v):
                                   ?>
                                   <div class="icheck-primary">
-                                                <input type="radio" id="option_<?php echo $k ?>" name="answer[<?php echo $row['id'] ?>]" value="<?php echo $k ?>" checked="">
-                                                <label for="option_<?php echo $k ?>"><?php echo $v ?></label>
+                                                <input class="opcionrespuesta" type="radio" id="option_<?php echo $k ?>" name="answer[<?php echo $row['id'] ?>]" value="<?php echo $k ?>" checked="">
+                                                <label for="option_<?php echo $k ?>"> <?php echo $v ?></label>
                                             </div>
                                     <?php endforeach; ?>
                                 <?php elseif($row['type'] == 'check_opt'): 
                                       foreach(json_decode($row['frm_option']) as $k => $v):
                                   ?>
                                   <div class="icheck-primary">
-                                                <input type="checkbox" id="option_<?php echo $k ?>" name="answer[<?php echo $row['id'] ?>][]" value="<?php echo $k ?>" >
+                                                <input class="opcionrespuesta" type="checkbox" id="option_<?php echo $k ?>" name="answer[<?php echo $row['id'] ?>][]" value="<?php echo $k ?>" >
                                                 <label for="option_<?php echo $k ?>"><?php echo $v ?></label>
                                             </div>
                                     <?php endforeach; ?>
@@ -469,7 +468,7 @@
                             <div class="card-footer border-top border-success">
                               <div class="d-flex w-100 justify-content-center">
                                 <button class="btn btn-sm btn-flat bg-gradient-primary mx-1" form="manage_survey"  >Enviar respuesta</button>
-                                <button class="btn btn-sm btn-flat bg-gradient-secondary mx-1" type="button" onclick="location.href = 'survey.php'">Cancelar</button>
+                                <button class="btn btn-sm btn-flat bg-gradient-secondary mx-1" type="button" onclick="location.href = 'index.php'">Cancelar</button>
                               </div>
                             </div>
                         </div>
