@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+ <body class="u-body u-xl-mode" data-lang="en">
+          <?php include '../dev/conectar.php' ?>
+=======
 <?php include ('consulta.php'); ?>
 <!DOCTYPE html>
 <!-- saved from url=(0091)https://website529400.nicepage.io/es/1234.html?version=56a80d83-e130-4c50-b76e-7bfc4c0ea516 -->
@@ -398,6 +402,7 @@
 
    
                   <?php include '../dev/conectar.php' ?>
+>>>>>>> origin/master
                   <?php 
                   $answers = $conn->query("SELECT distinct(survey_id) from answers where user_id ={$_SESSION['id']}");
                   $ans = array();

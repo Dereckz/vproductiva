@@ -2,6 +2,7 @@
 
 $dbhost = "localhost";
 $dbuser = "root";
+<<<<<<< HEAD
 $dbpass = "@rupe2021";
 $dbname = "vproductivabd"; 
 
@@ -10,6 +11,10 @@ $dbuser = "desetec2_elchingon";
 $dbpass = "VlzqrY1aP7D)";
 $dbname = "desetec2_vproductivabd";
  */
+=======
+$dbpass = "";
+$dbname = "vproductivabd";
+>>>>>>> origin/master
 
 $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 if (!$conn) 
