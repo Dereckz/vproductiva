@@ -38,14 +38,15 @@
     <?php include 'func/detalleuser.php';?>
     <div class="container-fluid" id="container-wrapper">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Inicio</h1>
+            <h1 class="h3 mb-0 text-gray-800">Informacion General</h1>
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="./">Home</a></li>
               <li class="breadcrumb-item active" aria-current="page">Panel</li>
             </ol>
           </div>
-
+        
           <div class="row">
+           
           <?php curseactive();?>
                 <div class="col-md-12 p-2">
          
@@ -64,16 +65,24 @@
                         <?php
                         while ($dataCliente = mysqli_fetch_array($queryCliente)) { ?>
                           <tr>
-                            <td><?php echo $dataCliente['cNombreLargo']; ?></td>
+                            <td><?php echo strtoupper($dataCliente['cNombreLargo']); ?></td>
                             <td><?php echo $dataCliente['cCorreo']; ?></td>
                             <?php if($dataCliente['iEstatus']==1) {?> 
-                              <td><span  class="badge badge-success" > <a class="text-white" href="func/actualizarStatus.php?id='<?php echo $dataCliente['iIdUsuario']; ?>'&status=1">Activo<a></span></td> 
+                              <td><span  class="badge badge-success" > <a class="text-white" href="/vprodutivam/func/actualizarStatus.php?id='<?php echo $dataCliente['iIdUsuario']; ?>'&status=1">Activo<a></span></td> 
                             <?php }?> 
                             <?php if($dataCliente['iEstatus']==0) {?> 
-                              <td><span  class="badge badge-danger"><a class="text-white" href="func/actualizarStatus.php?id='<?php echo $dataCliente['iIdUsuario']; ?>'&status=0">Inactivo</a></span></td> 
+                              <td><span  class="badge badge-danger"><a class="text-white" href="/vprodutivam/func/actualizarStatus.php?id='<?php echo $dataCliente['iIdUsuario']; ?>'&status=0">Inactivo</a></span></td> 
                             <?php }?> 
                             <td><?php echo $dataCliente['cTelefono']; ?></td>
-                            <td><?php echo $dataCliente['iGenero']; ?></td>
+                            <?php if($dataCliente['iGenero']==0) {?> 
+                            <td>Femenino</td>
+                            <?php }?> 
+                            <?php if($dataCliente['iGenero']==1) {?> 
+                            <td>Masculino</td>
+                            <?php }?> 
+                            <?php if($dataCliente['iGenero']>=2) {?> 
+                            <td>No definido</td>
+                            <?php }?> 
                            <tr>
                             <?php   echo ''.cursodeusuario($dataCliente["iIdUsuario"]).'';?>
                             </tr> 
@@ -104,7 +113,7 @@
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancelar</button>
-                        <a href="/account/login.html" class="btn btn-primary">Cerrar Sesión</a>
+                        <a href="/vproductivam/account/login.html" class="btn btn-primary">Cerrar Sesión</a>
                       </div>
                     </div>
                   </div>

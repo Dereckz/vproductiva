@@ -4,7 +4,7 @@ session_start();
 require("../dev/conectar.php");
 $nombre =$_POST["username"];
 $pass = $_POST["password"];
-if ($stmt = $conn->prepare("SELECT iIdUsuario, cUsuario, cPassword, cNombre, cnombrelargo, fkidTipoUsuario,iGenero FROM usuarios WHERE cUsuario= ? LIMIT 1")) {
+if ($stmt = $conn->prepare("SELECT iIdUsuario, cUsuario, cPassword, cNombre, cApellidoP, cnombrelargo, fkidTipoUsuario,iGenero FROM usuarios WHERE cUsuario= ? LIMIT 1")) {
 // Start the session
 
 
@@ -28,6 +28,7 @@ if ($stmt = $conn->prepare("SELECT iIdUsuario, cUsuario, cPassword, cNombre, cno
         $_SESSION["ApellidoP"]=$fila['cApellidoP'];
         $_SESSION["NombreLargo"]=$fila["cnombrelargo"];
         $_SESSION["iGenero"]=$fila["iGenero"];
+        $_SESSION["img"]=$fila["cProfile"];
         $tipo=$fila['fkidTipoUsuario'];
 
         if ($fila['fkidTipoUsuario']==1){

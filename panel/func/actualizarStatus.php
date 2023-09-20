@@ -14,7 +14,7 @@
 
     }
         if($queryA){
-            header("Location: /panel/instructor.php");
+            header("Location: ../instructor.php");
         }
                 
  ?>
