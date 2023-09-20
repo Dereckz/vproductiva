@@ -3,10 +3,6 @@
 /* session_start(); */
 function sessionuser()
 {
-    
-
-    //1 Man
-    //2 Woman
 
     $NombreUsuario=$_SESSION["usuario"];
     if ($_SESSION["iGenero"]=="1"){

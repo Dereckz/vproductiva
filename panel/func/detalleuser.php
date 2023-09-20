@@ -1,7 +1,7 @@
 <?php
 function detalleinstructor()
 {
-    include "..\dev\conectar.php";
+  require("../dev/conectar.php");
     
     $resultado = mysqli_query($conn, "SELECT * FROM usuarios where usuarios.fkidTipoUsuario=2;");
     

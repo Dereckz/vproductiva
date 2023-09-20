@@ -3,8 +3,8 @@
  
 function curseactive()
 {
-    include "..\dev\conectar.php";
-    $resultado = mysqli_query($conn, "SELECT * FROM Curso");
+  require("../dev/conectar.php");
+    $resultado = mysqli_query($conn, "SELECT * FROM curso");
     
     while ($consulta = mysqli_fetch_array($resultado)) {
         $IdCurso=$consulta["iIdCurso"];
@@ -35,7 +35,7 @@ function curseactive()
 
 function listcurso()
 {   session_start();
-    include "..\dev\conectar.php";
+  require("../dev/conectar.php");
     $resultado2 = mysqli_query($conn, "SELECT * FROM Curso");
 
     
@@ -51,7 +51,7 @@ function listcurso()
 
 
 function cursodeusuario($parametro1){
-  include "..\dev\conectar.php";
+  require("../dev/conectar.php");
 
   $result = mysqli_query($conn, 
           "SELECT u.iIdUsuario,dc.iIdDetalleCurso,c.iIdCurso, u.cNombreLargo,c.cNombreCurso,c.cDescripcion
@@ -91,7 +91,7 @@ function updatestatus($id){
 
 function showSurvey($id)
 {
-  include "..\dev\conectar.php";
+  require("../dev/conectar.php");
     //idSurvey
   $resultado = mysqli_query($conn, "SELECT * FROM survey_set where fkiIdUsuario=".$id.";");
   while ($consulta = mysqli_fetch_array($resultado)) {

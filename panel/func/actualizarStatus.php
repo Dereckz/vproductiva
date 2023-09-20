@@ -1,5 +1,5 @@
 <?php 
-    include("..\..\dev\conectar.php");
+    require("../../dev/conectar.php");
     session_start();
     $idu=$_GET['id'];
     $iEstatus=$_GET['status'];
@@ -14,7 +14,7 @@
 
     }
         if($queryA){
-            header("Location: http://localhost/vproductivam/panel/instructor.php");
+            header("Location: /panel/instructor.php");
         }
                 
  ?>

@@ -71,7 +71,8 @@
     <?php include 'func/cursos.php';?>
     <?php include 'func/surveyset.php';?>
     <?php
-    include( "..\dev\conectar.php");
+       require("../dev/conectar.php");
+   
 
     $sqlCliente   = ("SELECT * FROM usuarios where usuarios.fkidTipoUsuario=2; ");
     $queryCliente = mysqli_query($conn, $sqlCliente);

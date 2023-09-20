@@ -3,7 +3,13 @@
 $dbhost = "localhost";
 $dbuser = "root";
 $dbpass = "@rupe2021";
-$dbname = "vproductivabd";
+$dbname = "vproductivabd"; 
+
+ /* $dbhost = "localhost";
+$dbuser = "desetec2_elchingon";
+$dbpass = "VlzqrY1aP7D)";
+$dbname = "desetec2_vproductivabd";
+ */
 
 $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 if (!$conn) 

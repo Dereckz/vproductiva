@@ -1,5 +1,5 @@
 <?php
-include("..\..\dev\conectar.php");
+require("../../dev/conectar.php");
 $idusuario=$_POST["idusuario"];
 $email=$_POST["email"];  
 $nombre=$_POST["nombre"];
@@ -44,7 +44,7 @@ if (($_POST["password"])==""){
                 'Actualizado Correctamente.',
                 'success'";
             echo "</script>";
-            header("Location: http://localhost/vproductivam/panel/instructor.php");
+            header("Location: /panel/instructor.php");
 
             }
 

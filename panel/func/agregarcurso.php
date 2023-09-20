@@ -1,5 +1,5 @@
 <?php
-include("..\..\dev\conectar.php");
+require("../../dev/conectar.php");
 session_start();
 
 $btnAsginar=isset($_POST["btnAsignar"]);

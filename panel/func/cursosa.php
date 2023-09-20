@@ -2,7 +2,7 @@
 
 function curseactive()
 {
-    include "..\dev\conectar.php";
+  require("../dev/conectar.php");
     $resultado = mysqli_query($conn, "SELECT * FROM Curso");
     
     while ($consulta = mysqli_fetch_array($resultado)) {
@@ -33,7 +33,7 @@ function curseactive()
 }
 function registercurso()
 {
-    include "..\dev\conectar.php";
+  require("../dev/conectar.php");
     
     $resultado = mysqli_query($conn, "SELECT * FROM usuarios where usuarios.fkidTipoUsuario=3;");
     
@@ -69,7 +69,7 @@ function registercurso()
 }
 function listcurso()
 {   session_start();
-    include "..\dev\conectar.php";
+  require("../dev/conectar.php");
     $resultado2 = mysqli_query($conn, "SELECT * FROM Curso");
 
     

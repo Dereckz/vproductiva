@@ -30,13 +30,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="http://localhost/vproductivam/panel/instructor.php" class="nav-link nav-new_user tree-item">
+                <a href="instructor.php" class="nav-link nav-new_user tree-item">
                   <i class="fas fa-angle-right nav-icon"></i>
                   <p>Capacitador </p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="http://localhost/vproductivam/panel/alumnos.php" class="nav-link nav-user_list tree-item">
+                <a href="alumnos.php" class="nav-link nav-user_list tree-item">
                   <i class="fas fa-angle-right nav-icon"></i>
                   <p>Alumnos</p>
                 </a>

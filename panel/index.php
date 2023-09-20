@@ -23,6 +23,14 @@
     <!-- Content Header (Page header) -->
     
     <!-- /.content-header -->
+    <?php
+     require("../dev/conectar.php");
+   
+
+    $sqlCliente   = ("SELECT * FROM usuarios where usuarios.fkidTipoUsuario=2; ");
+    $queryCliente = mysqli_query($conn, $sqlCliente);
+    $cantidad     = mysqli_num_rows($queryCliente);
+    ?>
 
     <!-- Main content -->
 
@@ -37,30 +45,47 @@
             </ol>
           </div>
 
-          <div class="row mb-3">
-            <!-- Cursos Card Example -->
-           
-            <?php curseactive();?>
+          <div class="row">
+          <?php curseactive();?>
+                <div class="col-md-12 p-2">
          
-            
-          
                 <div class="table-responsive">
-                  <table class="table align-items-center table-flush">
-                    <thead class="thead-light">
-                      <tr>
-                        <th>ID</th>
-                        <th>Capacitador</th>
-                      
-                        <th>Estatus</th>
-                        <th>Accion</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                     <?php  detalleinstructor(); ?>;
-                    </tbody>
-                  </table>
+                    <table class="table table-bordered table-striped table-hover">
+                      <thead>
+                        <tr>
+                          <th scope="col">Nombre</th>
+                          <th scope="col">Email</th>
+                          <th scope="col">Estatus</th>
+                          <th scope="col">Telefono</th>
+                          <th scope="col">Genero</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <?php
+                        while ($dataCliente = mysqli_fetch_array($queryCliente)) { ?>
+                          <tr>
+                            <td><?php echo $dataCliente['cNombreLargo']; ?></td>
+                            <td><?php echo $dataCliente['cCorreo']; ?></td>
+                            <?php if($dataCliente['iEstatus']==1) {?> 
+                              <td><span  class="badge badge-success" > <a class="text-white" href="func/actualizarStatus.php?id='<?php echo $dataCliente['iIdUsuario']; ?>'&status=1">Activo<a></span></td> 
+                            <?php }?> 
+                            <?php if($dataCliente['iEstatus']==0) {?> 
+                              <td><span  class="badge badge-danger"><a class="text-white" href="func/actualizarStatus.php?id='<?php echo $dataCliente['iIdUsuario']; ?>'&status=0">Inactivo</a></span></td> 
+                            <?php }?> 
+                            <td><?php echo $dataCliente['cTelefono']; ?></td>
+                            <td><?php echo $dataCliente['iGenero']; ?></td>
+                           <tr>
+                            <?php   echo ''.cursodeusuario($dataCliente["iIdUsuario"]).'';?>
+                            </tr> 
+
+                          </tr>
+
+                           
+                        <?php } ?>
+
+                    </table>
+                  </div>
                 </div>
-                <div class="card-footer"></div>
               </div>
             </div>
                <!-- Modal Logout -->
@@ -79,7 +104,7 @@
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancelar</button>
-                        <a href="http://localhost/vproductivam/account/login.html" class="btn btn-primary">Cerrar Sesión</a>
+                        <a href="/account/login.html" class="btn btn-primary">Cerrar Sesión</a>
                       </div>
                     </div>
                   </div>
