@@ -61,7 +61,7 @@
               <li class="nav-item">
                 <a href="./panel.php?page=survey_list" class="nav-link nav-survey_list tree-item">
                   <i class="fas fa-angle-right nav-icon"></i>
-                  <p>Admninistar</p>
+                  <p>Administrar</p>
                 </a>
               </li>
             </ul>

@@ -44,7 +44,7 @@ if (($_POST["password"])==""){
                 'Actualizado Correctamente.',
                 'success'";
             echo "</script>";
-            header("Location: /panel/instructor.php");
+            header("Location: ../instructor.php");
 
             }
 
