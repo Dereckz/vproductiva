@@ -23,7 +23,7 @@
     <!-- Content Header (Page header) -->
     
     <!-- /.content-header -->
-<<<<<<< HEAD
+
     <?php
      require("../dev/conectar.php");
    
@@ -32,8 +32,7 @@
     $queryCliente = mysqli_query($conn, $sqlCliente);
     $cantidad     = mysqli_num_rows($queryCliente);
     ?>
-=======
->>>>>>> origin/master
+
 
     <!-- Main content -->
 

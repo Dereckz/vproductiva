@@ -13,7 +13,7 @@ $answers = $conn->query("SELECT distinct(user_id) from answers where survey_id =
 		<div class="col-md-4">
 			<div class="card card-outline card-primary">
 				<div class="card-header">
-					<h3 class="card-title">Survey Details</h3>
+					<h3 class="card-title">Detalles de Encuestas</h3>
 				</div>
 				<div class="card-body p-0 py-2">
 					<div class="container-fluid">
@@ -78,7 +78,7 @@ $answers = $conn->query("SELECT distinct(user_id) from answers where survey_id =
 								<?php endforeach; ?>
 						<?php else: ?>
 							<div class="form-group">
-								<textarea name="answer[<?php echo $row['id'] ?>]" id="" cols="30" rows="4" class="form-control" placeholder="Write Something Here..."></textarea>
+								<textarea name="answer[<?php echo $row['id'] ?>]" id="" cols="30" rows="4" class="form-control" placeholder="Escribe algo aqui.."></textarea>
 							</div>
 						<?php endif; ?>
 						</div>	
@@ -95,14 +95,14 @@ $answers = $conn->query("SELECT distinct(user_id) from answers where survey_id =
 		$('.ui-sortable').sortable({
 			placeholder: "ui-state-highlight",
 			 update: function( ) {
-			 	alert_toast("Saving question sort order.","info")
+			 	alert_toast("Guardar Pregunta","info")
 		        $.ajax({
 		        	url:"ajax.php?action=action_update_qsort",
 		        	method:'POST',
-		        	data:$('#manage-sort').serialize(),
+		        	data:$('#manage-sort').serialize(),	
 		        	success:function(resp){
 		        		if(resp == 1){
-			 				alert_toast("Question order sort successfully saved.","success")
+			 				alert_toast("El orden de las preguntas se guardó correctamente.","success")
 		        		}
 		        	}
 		        })
@@ -110,7 +110,7 @@ $answers = $conn->query("SELECT distinct(user_id) from answers where survey_id =
 		})
 	})
 	$('.new_question').click(function(){
-		uni_modal("New Question","manage_question.php?sid=<?php echo $id ?>","large")
+		uni_modal("Nueva Pregunta","manage_question.php?sid=<?php echo $id ?>","large")
 	})
 	$('.edit_question').click(function(){
 		uni_modal("New Question","manage_question.php?sid=<?php echo $id ?>&id="+$(this).attr('data-id'),"large")
