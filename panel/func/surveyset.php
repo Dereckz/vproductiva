@@ -40,7 +40,7 @@ function surveyactive($parametro1){
     
       $row_cnt = mysqli_num_rows($result);
       if ($row_cnt>0){
-        echo '<td> Cursos:</td>';
+        echo '<td> Encuestas:</td>';
       }
       while ($consulta = mysqli_fetch_array($result)) {
       

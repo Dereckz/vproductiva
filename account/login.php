@@ -40,17 +40,17 @@ if ($stmt = $conn->prepare("SELECT iIdUsuario, cUsuario, cPassword, cNombre, cAp
 
               header("Location: ../panel/index.php");
 
-        }else if ($fila['fkidTipoUsuario']==3){
+        }else if ($fila['fkidTipoUsuario']==2){
 
-         header("Location: ../alumno/index.php");
-
-        }else  if ($fila['fkidTipoUsuario']==2){
          header("Location: ../instructor/index.php");
+
+        }else  if ($fila['fkidTipoUsuario']==3){
+         header("Location: ../alumnos/index.php");
         }         
      } else {
        //header("Location: login.html");
          //echo 'La contraseña no es válida!' ;
-         echo "<script> alert('La contraseña no es válida!');window.location= 'https://desetecnologias.net/account/login.html' </script>";
+         echo "<script> alert('La contraseña no es válida!');window.location= '../account/login.html' </script>";
 
           
      }

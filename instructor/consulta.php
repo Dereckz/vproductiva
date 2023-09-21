@@ -1,5 +1,5 @@
 <?php
-include "../dev/conectar.php";
+    require("../dev/conectar.php");
 include "../panel/func/profile.php";
 if (!isset($_SESSION)) {
     session_start();
@@ -9,7 +9,7 @@ if (!isset($_SESSION)) {
 function informacion()
 {
 
-    include "..\dev\conectar.php";
+    require("../dev/conectar.php");
     // para saber los cursos terminados
     $final=0;
     for ($i=1; $i<=7; $i++){

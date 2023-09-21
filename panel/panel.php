@@ -78,7 +78,7 @@
         <div id="delete_content"></div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" id='confirm' onclick="">Conitnuar</button>
+        <button type="button" class="btn btn-primary" id='confirm' onclick="">Continuar</button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
 
       </div>

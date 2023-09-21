@@ -23,6 +23,19 @@
     <!-- Content Header (Page header) -->
     
     <!-- /.content-header -->
+<<<<<<< HEAD
+=======
+
+    <?php
+     require("../dev/conectar.php");
+   
+
+    $sqlCliente   = ("SELECT * FROM usuarios where usuarios.fkidTipoUsuario=2; ");
+    $queryCliente = mysqli_query($conn, $sqlCliente);
+    $cantidad     = mysqli_num_rows($queryCliente);
+    ?>
+
+>>>>>>> origin/master
 
     <!-- Main content -->
 
