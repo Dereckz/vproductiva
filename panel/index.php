@@ -23,6 +23,7 @@
     <!-- Content Header (Page header) -->
     
     <!-- /.content-header -->
+<<<<<<< HEAD
     <?php
      require("../dev/conectar.php");
    
@@ -31,6 +32,8 @@
     $queryCliente = mysqli_query($conn, $sqlCliente);
     $cantidad     = mysqli_num_rows($queryCliente);
     ?>
+=======
+>>>>>>> origin/master
 
     <!-- Main content -->
 
@@ -38,7 +41,9 @@
     <?php include 'func/detalleuser.php';?>
     <div class="container-fluid" id="container-wrapper">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
+
             <h1 class="h3 mb-0 text-gray-800">Informacion General</h1>
+
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="./">Home</a></li>
               <li class="breadcrumb-item active" aria-current="page">Panel</li>
@@ -95,6 +100,7 @@
                     </table>
                   </div>
                 </div>
+
               </div>
             </div>
                <!-- Modal Logout -->
@@ -114,6 +120,7 @@
                       <div class="modal-footer">
                         <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancelar</button>
                         <a href="/vproductivam/account/login.html" class="btn btn-primary">Cerrar Sesión</a>
+
                       </div>
                     </div>
                   </div>

@@ -5,6 +5,7 @@ function encuestaslist()
 {
    
     require("../dev/conectar.php");
+
    
     $req = mysqli_query($conn, "SELECT * FROM encuestas ORDER BY id DESC");
     while($result = mysqli_fetch_object($req)){

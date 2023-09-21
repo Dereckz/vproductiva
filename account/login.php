@@ -1,16 +1,20 @@
 <?php
+
 session_start();
 
 require("../dev/conectar.php");
 $nombre =$_POST["username"];
 $pass = $_POST["password"];
 if ($stmt = $conn->prepare("SELECT iIdUsuario, cUsuario, cPassword, cNombre, cApellidoP, cnombrelargo, fkidTipoUsuario,iGenero FROM usuarios WHERE cUsuario= ? LIMIT 1")) {
+ 
 // Start the session
 
 
 ///* ligar parámetros para marcadores */
 // en este caso el nombre de usuario
+
      $stmt->bind_Param("s", $nombre);
+
 //     /* ejecutamos la query */
      $stmt->execute();
 //     /* recuperamos los resultados */
@@ -29,6 +33,7 @@ if ($stmt = $conn->prepare("SELECT iIdUsuario, cUsuario, cPassword, cNombre, cAp
         $_SESSION["NombreLargo"]=$fila["cnombrelargo"];
         $_SESSION["iGenero"]=$fila["iGenero"];
         $_SESSION["img"]=$fila["cProfile"];
+
         $tipo=$fila['fkidTipoUsuario'];
 
         if ($fila['fkidTipoUsuario']==1){
@@ -46,6 +51,7 @@ if ($stmt = $conn->prepare("SELECT iIdUsuario, cUsuario, cPassword, cNombre, cAp
        //header("Location: login.html");
          //echo 'La contraseña no es válida!' ;
          echo "<script> alert('La contraseña no es válida!');window.location= 'https://desetecnologias.net/account/login.html' </script>";
+
           
      }
 

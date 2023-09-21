@@ -4,6 +4,7 @@
 function sessionuser()
 {
 
+
     $NombreUsuario=$_SESSION["usuario"];
     $imgprofile=$_SESSION["img"];
     if (($imgprofile)==""){
@@ -19,6 +20,8 @@ function sessionuser()
         echo '<img class="img-profile rounded-circle" src="'.$imgprofile.'" style="max-width: 40px">              
         <span class="ml-2 d-none d-lg-inline text-white small" id="name_nav">'.$NombreUsuario.'</span>';
      }
+
+    
 
 }
 

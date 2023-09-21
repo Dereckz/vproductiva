@@ -1,5 +1,7 @@
 <?php 
+
 require("../../dev/conectar.php");
+
     session_start();
     $idu=$_GET['id'];
     $iEstatus=$_GET['status'];

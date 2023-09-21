@@ -1,7 +1,6 @@
 <?php 
 require("../../dev/conectar.php");
 
-
 session_start();
 
 $btnSurvey=isset($_POST["btnSurvey"]);
@@ -37,7 +36,7 @@ $contadorlist=0;
                                 }
                 }
                 unset($val); 
-                           
+
                         echo "<script>";
                         echo "MiFuncionJS();";
                         echo "</script>";

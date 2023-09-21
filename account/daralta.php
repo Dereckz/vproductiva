@@ -3,7 +3,9 @@
 
 
 <?php
+
 require("../dev/conectar.php");
+
 $fechaActual = date('Y-m-d');
 
 $fullname = ($_POST["fullname"]);
