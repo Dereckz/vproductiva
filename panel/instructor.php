@@ -113,11 +113,8 @@
                         <?php
                         while ($dataCliente = mysqli_fetch_array($queryCliente)) { ?>
                           <tr>
-<<<<<<< HEAD
+
                             <td><?php echo strtoupper($dataCliente['cNombreLargo']); ?></td>
-=======
-                            <td><?php echo $dataCliente['cNombreLargo']; ?></td>
->>>>>>> origin/master
                             <td><?php echo $dataCliente['cCorreo']; ?></td>
                             <?php if($dataCliente['iEstatus']==1) {?> 
                               <td><span  class="badge badge-success" > <a class="text-white" href="func/actualizarStatus.php?id='<?php echo $dataCliente['iIdUsuario']; ?>'&status=1">Activo<a></span></td> 
@@ -141,6 +138,9 @@
                             </td>
                            <tr>
                             <?php   echo ''.cursodeusuario($dataCliente["iIdUsuario"]).'';?>
+                            </tr> 
+                            <tr>
+                            <?php   echo ''.surveyactive($dataCliente["iIdUsuario"]).'';?>
                             </tr> 
 
                           </tr>
