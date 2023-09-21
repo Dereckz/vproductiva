@@ -159,13 +159,21 @@ sup {
 }
 
 a {
+<<<<<<< HEAD
   color: #563d7c;
+=======
+  color: #007bff;
+>>>>>>> origin/master
   text-decoration: none;
   background-color: transparent;
 }
 
 a:hover {
+<<<<<<< HEAD
   color: #563d7c;
+=======
+  color: #0056b3;
+>>>>>>> origin/master
   text-decoration: none;
 }
 
@@ -2561,15 +2569,19 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #fff;
+
   background-color: #563d7c;
   border-color: #563d7c;
+
   box-shadow: none;
 }
 
 .btn-primary:hover {
   color: #fff;
+
   background-color: #563d7c;
   border-color: #563d7c;
+
 }
 
 .btn-primary:focus, .btn-primary.focus {
@@ -2583,6 +2595,7 @@ fieldset:disabled a.btn {
   color: #fff;
   background-color: #563d7c;
   border-color: #563d7c;
+
 }
 
 .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
@@ -2590,6 +2603,7 @@ fieldset:disabled a.btn {
   color: #fff;
   background-color: #563d7c;
   border-color: #563d7c;
+
 }
 
 .btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus,
@@ -2864,8 +2878,13 @@ fieldset:disabled a.btn {
 }
 
 .btn-outline-primary {
+<<<<<<< HEAD
   color: #563d7c;
   border-color: #563d7c;
+=======
+  color: #007bff;
+  border-color: #007bff;
+>>>>>>> origin/master
 }
 
 .btn-outline-primary:hover {

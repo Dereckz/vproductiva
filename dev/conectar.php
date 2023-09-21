@@ -11,6 +11,8 @@ $dbpass = "VlzqrY1aP7D)";
 $dbname = "desetec2_vproductivabd";
  */
 
+
+
 $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 if (!$conn) 
 {

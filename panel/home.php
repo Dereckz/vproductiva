@@ -8,7 +8,9 @@
               <span class="info-box-icon bg-info elevation-1"><i class="fas fa-users"></i></span>
 
               <div class="info-box-content">
+
                 <span class="info-box-text">Total Suscriptores</span>
+
                 <span class="info-box-number">
                   <?php echo $conn->query("SELECT * FROM users where type = 3")->num_rows; ?>
                 </span>
@@ -24,6 +26,7 @@
 
               <div class="info-box-content">
                 <span class="info-box-text">Total de Encuestas</span>
+
                  <span class="info-box-number">
                   <?php echo $conn->query("SELECT * FROM survey_set")->num_rows; ?>
                 </span>
@@ -49,7 +52,7 @@
               <span class="info-box-icon bg-primary elevation-1"><i class="fas fa-poll-h"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">Total Surveys Taken</span>
+                <span class="info-box-text">Encuestas Tomadas</span>
                 <span class="info-box-number">
                   <?php echo $conn->query("SELECT distinct(survey_id) FROM answers  where user_id = {$_SESSION['login_id']}")->num_rows; ?>
                 </span>
