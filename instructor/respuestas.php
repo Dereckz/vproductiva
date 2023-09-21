@@ -18,6 +18,7 @@ $answer=$_GET["answer"];
 					$data .= ", answer='$answer[$k]' ";
 				}
 				$save[] = $conn->query("INSERT INTO answers set $data");
+				
 }
 
 if(isset($save)){
@@ -25,6 +26,7 @@ if(isset($save)){
 }else
 {
   header("Location: survey.php");
+  
 }
 
 

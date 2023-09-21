@@ -457,7 +457,7 @@
                                     <?php endforeach; ?>
                                 <?php else: ?>
                                   <div class="form-group">
-                                    <textarea name="answer[<?php echo $row['id'] ?>]" id="" cols="30" rows="4" class="form-control" placeholder="Write Something Here..." ></textarea>
+                                    <textarea name="answer[<?php echo $row['id'] ?>]" id="" cols="30" rows="4" class="form-control" placeholder="Escriba su respuesta aquí..." ></textarea>
                                   </div>
                                 <?php endif; ?>
                                 </div>	
