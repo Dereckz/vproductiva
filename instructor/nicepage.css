@@ -37561,9 +37561,9 @@ a.u-link.u-text-hover-grey-90:hover {
   margin-top: 0.6em;
 }
 
-#tomarencuesta{
+/*#tomarencuesta{
   margin-left: 12em;
-}
+}*/
 
 #descripcion{
   padding-bottom: 0.8em;
@@ -37620,7 +37620,8 @@ a.u-link.u-text-hover-grey-90:hover {
   background-color: #f6f5f7;
 }
 #tituloencuesta{
-  text-align: center;
+  /*text-align: center;*/
+  width: 65%;
 }
 
 #titulodetalle{
