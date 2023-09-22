@@ -33,7 +33,8 @@ if ($stmt = $conn->prepare("SELECT iIdUsuario, cUsuario, cPassword, cNombre, cAp
         $_SESSION["NombreLargo"]=$fila["cnombrelargo"];
         $_SESSION["iGenero"]=$fila["iGenero"];
         $_SESSION["img"]=$fila["cProfile"];
-
+        $_SESSION['tiempo']=time();
+       
         $tipo=$fila['fkidTipoUsuario'];
 
         if ($fila['fkidTipoUsuario']==1){
