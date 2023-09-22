@@ -1,4 +1,6 @@
-
+<script src="sweetalert2.all.min.js"></script>
+<script src="sweetalert2.min.js"></script>
+<link rel="stylesheet" href="sweetalert2.min.css">
 <!--ventana para Update--->
 <div class="modal fade" id="editChildresn<?php echo $dataCliente['iIdUsuario']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -82,3 +84,13 @@
   </div>
 </div>
 <!---fin ventana Update --->
+<script>
+  function guardado_correctamente() {
+    Swal.fire(
+  'Good job!',
+  'You clicked the button!',
+  'success'
+)
+  }
+
+  </script>
