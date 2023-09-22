@@ -2,11 +2,14 @@
 <html lang="en">
 <link href="../img/LOGOVP.ico" rel="icon">
 <?php session_start() ?>
-<!-- <?php 
+<?php 
 	if(!isset($_SESSION['id']))
 	    header('location:http://localhost/vproductivam/account/login.html');
 	include 'header.php' 
-?> -->
+?> 
+<script src="sweetalert2.all.min.js"></script>
+<script src="sweetalert2.min.js"></script>
+<link rel="stylesheet" href="sweetalert2.min.css">
 
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
@@ -26,7 +29,6 @@
 
     <?php
      require("../dev/conectar.php");
-   
 
     $sqlCliente   = ("SELECT * FROM usuarios where usuarios.fkidTipoUsuario=2; ");
     $queryCliente = mysqli_query($conn, $sqlCliente);
@@ -92,7 +94,6 @@
                             </tr> 
 
                           </tr>
-
                            
                         <?php } ?>
 
@@ -202,6 +203,8 @@
 
 <!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->
+<
+
 <!-- Bootstrap -->
 <?php include 'footer.php' ?>
 </body>

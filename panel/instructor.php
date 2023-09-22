@@ -10,6 +10,9 @@
 	    header('location:login.php');
 	include 'header.php' 
 ?>
+<script src="sweetalert2.all.min.js"></script>
+<script src="sweetalert2.min.js"></script>
+<link rel="stylesheet" href="sweetalert2.min.css">
 <style>
   :root {
     --color-green: #00a878;
@@ -270,7 +273,16 @@
 
 <!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->
+<script>
+  function guardado_correctamente() {
+    Swal.fire(
+  'Good job!',
+  'You clicked the button!',
+  'success'
+)
+  }
 
+  </script>
 <!-- Bootstrap -->
 <?php include 'footer.php' ?>
 </body>
