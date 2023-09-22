@@ -226,6 +226,10 @@
   /*box-shadow: 5px 5px 29px 0 rgba(0,0,0,0.15);*/
   height: 15.4em;
   text-align: center;
+  display: inline-flex;
+  width: 17em;
+  margin-top: 3em;
+  margin-right: 1.8em;
 }
 .u-section-2 .u-container-layout-4 {
   padding: 50px 30px 30px;
@@ -431,12 +435,12 @@
       <li class="logo"><img src="img/logob.png" id="logo"></li>
       <li class="menus"></li>
     	<li class="menus"><a href="index.php">Mi perfil</a></li>
-    	<li class="menus"><a href="cursos.php">Catalogo de Cursos</a></li>
+    	<li class="menus"><a href="cursos.php">Catálogo de Cursos</a></li>
       <li class="menus"><a href="../account/login.html">Salir</a></li>
     	</ul>
   </header>
 
-    <section class="u-align-left u-clearfix u-grey-5 u-section-2" id="carousel_0852" class="margenesencuesta">
+    <section class="u-align-left u-clearfix u-grey-5 u-section-2" id="carousel_0852">
       <div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
         
         <?=informacion();?>
@@ -451,7 +455,7 @@
         </div>
         <div class="u-align-left u-container-style u-expanded-width u-group u-palette-1-base u-group-1 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1750" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1750ms;">
           <div class="u-container-layout u-valign-middle u-container-layout-5">
-            <h4 class="u-text u-text-default u-text-9"> Si quieres aprender más, consulta nuestro catalogo de cursos he inscribete.</h4>
+            <h4 class="u-text u-text-default u-text-9"> Quieres tomar alguno de nuestros cursos, inscribete.</h4>
             <a href="cursos.php" class="u-active-white u-align-center u-border-1 u-border-active-white u-border-hover-white u-border-white u-btn u-button-style u-hover-white u-none u-text-active-palette-1-base u-text-hover-palette-1-base u-btn-6" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Catálogo de cursos</a>
           </div>
         </div>
