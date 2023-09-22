@@ -10,9 +10,7 @@
 	    header('location:login.php');
 	include 'header.php' 
 ?>
-<script src="sweetalert2.all.min.js"></script>
-<script src="sweetalert2.min.js"></script>
-<link rel="stylesheet" href="sweetalert2.min.css">
+
 <style>
   :root {
     --color-green: #00a878;
@@ -116,12 +114,9 @@
                         <?php
                         while ($dataCliente = mysqli_fetch_array($queryCliente)) { ?>
                           <tr>
-<<<<<<< HEAD
-                            <td><?php echo $dataCliente['cNombreLargo']; ?></td>
-=======
 
-                            <td><?php echo strtoupper($dataCliente['cNombreLargo']); ?></td>
->>>>>>> origin/master
+                            <td><?php echo $dataCliente['cNombreLargo']; ?></td>
+
                             <td><?php echo $dataCliente['cCorreo']; ?></td>
                             <?php if($dataCliente['iEstatus']==1) {?> 
                               <td><span  class="badge badge-success" > <a class="text-white" href="func/actualizarStatus.php?id='<?php echo $dataCliente['iIdUsuario']; ?>'&status=1">Activo<a></span></td> 
@@ -277,16 +272,7 @@
 
 <!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->
-<script>
-  function guardado_correctamente() {
-    Swal.fire(
-  'Good job!',
-  'You clicked the button!',
-  'success'
-)
-  }
 
-  </script>
 <!-- Bootstrap -->
 <?php include 'footer.php' ?>
 </body>
