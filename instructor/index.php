@@ -224,6 +224,10 @@
   /*box-shadow: 5px 5px 29px 0 rgba(0,0,0,0.15);*/
   height: 15.4em;
   text-align: center;
+  display: inline-flex;
+  width: 17em;
+  margin-top: 3em;
+  margin-right: 1.8em;
 }
 .u-section-2 .u-container-layout-4 {
   padding: 50px 30px 30px;
