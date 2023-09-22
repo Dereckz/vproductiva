@@ -1,4 +1,6 @@
 <?php include 'consulta.php';?>
+<?php include 'sesiontime.php';?>
+
 <!DOCTYPE html>
 <!-- saved from url=(0091)https://website529400.nicepage.io/es/1234.html?version=56a80d83-e130-4c50-b76e-7bfc4c0ea516 -->
 <html style="font-size: 16px;" lang="en" class="u-responsive-xl"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -438,10 +440,13 @@
       <div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
         
         <?=informacion();?>
+
         <div class="u-expanded-width u-list u-list-1">
         <div class="u-repeater u-repeater-1">
         <?php include 'survey.php' ?>
+
         <?=miCurso();?>
+        
         </div>
         </div>
         <div class="u-align-left u-container-style u-expanded-width u-group u-palette-1-base u-group-1 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1750" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1750ms;">
