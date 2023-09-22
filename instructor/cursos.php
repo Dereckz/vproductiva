@@ -94,7 +94,7 @@
   margin-left: 4.5em;
 }
 .u-section-2 .u-text-5 {
-  font-size: 1.5rem;
+  font-size: 1.37rem;
   font-weight: 400;
   text-align: center;
 }
@@ -402,10 +402,7 @@
           <div class="u-expanded-width u-list u-list-1">
           <div class="u-repeater u-repeater-1">
           <?=infoCurso();?>
-            
-            
-            
-            
+
         </div>
       </div>
     </section>
