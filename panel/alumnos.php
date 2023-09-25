@@ -41,7 +41,7 @@
   <?php include 'func/cursosa.php';?>
   <?php include 'func/surveyset.php';?>
   <?php
-    include( "..\dev\conectar.php");
+  require("../dev/conectar.php");
 
     $sqlCliente   = ("SELECT * FROM usuarios where usuarios.fkidTipoUsuario=3; ");
     $queryCliente = mysqli_query($conn, $sqlCliente);
