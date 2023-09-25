@@ -7,29 +7,40 @@ if (!isset($_SESSION)) {
 // Función para obterner la información de los datos personales del alumno.
 function informacion()
 {
-    include "..\dev\conectar.php";
+    require("../dev/conectar.php");
 
     // para saber los cursos terminados
     $final=0;
     for ($i=1; $i<=7; $i++){
-        $terminado = mysqli_query($conn, "SELECT r.iIdRecurso,c.cNombreCurso, m.cNombreModulo,r.cRuta FROM usuarios u
-    INNER JOIN inscripcion i ON u.iIdUsuario = i.fkiIdUsuario
-      INNER JOIN curso c ON i.fkiIdeCurso = c.iIdCurso
-     INNER JOIN modulo m ON c.iIdCurso = m.fkiIdCurso
-     INNER JOIN recurso r ON  m.iIdModulo = r.fkiIdModulo
-    WHERE c.iIdCurso=".$i." and u.iIdUsuario=" . $_SESSION["id"]);
+        $terminadov= mysqli_query($conn,"SELECT count(*) FROM inscripcion");
+        $nterminadov= mysqli_num_rows($terminadov); 
+        if ($nterminadov>1){
 
-    $nterminado = mysqli_query($conn, "SELECT r.iIdRecurso,c.cNombreCurso, m.cNombreModulo,r.cRuta FROM usuarios u
-    INNER JOIN inscripcion i ON u.iIdUsuario = i.fkiIdUsuario
-    INNER JOIN curso c ON i.fkiIdeCurso = c.iIdCurso
-    INNER JOIN modulo m ON c.iIdCurso = m.fkiIdCurso
-    INNER JOIN recurso r ON  m.iIdModulo = r.fkiIdModulo
-    INNER JOIN visto v ON r.iIdRecurso = v.idRecurso
-    WHERE c.iIdCurso=".$i." and v.idAlumno=" . $_SESSION["id"]." GROUP BY iIdRecurso");
+            $terminado = mysqli_query($conn, "SELECT r.iIdRecurso,c.cNombreCurso, m.cNombreModulo,r.cRuta FROM usuarios u
+            INNER JOIN inscripcion i ON u.iIdUsuario = i.fkiIdUsuario
+            INNER JOIN curso c ON i.fkiIdeCurso = c.iIdCurso
+            INNER JOIN modulo m ON c.iIdCurso = m.fkiIdCurso
+            INNER JOIN recurso r ON  m.iIdModulo = r.fkiIdModulo
+            WHERE c.iIdCurso=".$i." and u.iIdUsuario=" . $_SESSION["id"]);
+        
+            $nterminado = mysqli_query($conn, "SELECT r.iIdRecurso,c.cNombreCurso, m.cNombreModulo,r.cRuta FROM usuarios u
+            INNER JOIN inscripcion i ON u.iIdUsuario = i.fkiIdUsuario
+            INNER JOIN curso c ON i.fkiIdeCurso = c.iIdCurso
+            INNER JOIN modulo m ON c.iIdCurso = m.fkiIdCurso
+            INNER JOIN recurso r ON  m.iIdModulo = r.fkiIdModulo
+            INNER JOIN visto v ON r.iIdRecurso = v.idRecurso
+            WHERE c.iIdCurso=".$i." and v.idAlumno=" . $_SESSION["id"]." GROUP BY iIdRecurso");
+             $numMudulo= mysqli_num_rows($terminado);
+             $numTerminado = mysqli_num_rows($nterminado);
+            
+        }else
+        { 
+            $numMudulo=0;
+            $numTerminado =0;
+        }
 
-    $numMudulo= mysqli_num_rows($terminado);
-    $numTerminado = mysqli_num_rows($nterminado);
 
+   
         if ($numMudulo==$numTerminado && $numMudulo>0 && $numTerminado>0){
             $final=$final+1;
         }
