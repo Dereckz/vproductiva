@@ -46,7 +46,7 @@ if ($stmt = $conn->prepare("SELECT iIdUsuario, cUsuario, cPassword, cNombre, cAp
          header("Location: ../instructor/index.php");
 
         }else  if ($fila['fkidTipoUsuario']==3){
-         header("Location: ../alumnos/index.php");
+         header("Location: ../alumno/index.php");
         }         
      } else {
        //header("Location: login.html");

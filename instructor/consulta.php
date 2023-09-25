@@ -36,23 +36,39 @@ function informacion()
         }
     }
     
-    
-    $cInscrito= mysqli_query($conn,"SELECT * FROM inscripcion i
-    INNER JOIN usuarios u ON I.fkiIdUsuario = U.iIdUsuario
-    INNER JOIN curso c ON i.fkiIdeCurso = c.iIdCurso
-    WHERE  i.finalizado !=2 AND i.fkiIdUsuario=". $_SESSION["id"]);
+    $cInscritov= mysqli_query($conn, "SELECT count( * ) FROM inscripcion");
+    $nInscritov= mysqli_num_rows($cInscritov); 
+    if ($nInscritov>1){
+        $cInscrito= mysqli_query($conn,"SELECT * FROM inscripcion i
+        INNER JOIN usuarios u ON I.fkiIdUsuario = U.iIdUsuario
+        INNER JOIN curso c ON i.fkiIdeCurso = c.iIdCurso
+        WHERE  i.finalizado !=2 AND i.fkiIdUsuario=". $_SESSION["id"]);
+          $nInscrito= mysqli_num_rows($cInscrito); 
+    }else{
+        $nInscrito=0;
+    }
+   
 
-
-     $cSurvey= mysqli_query($conn,
-     "SELECT * FROM detallesurvey ds
-     inner join survey_set st
-     on ds.idSurvey=st.id
-     INNER JOIN usuarios us
-     on ds.idUsuario=us.iIdUsuario
-     where us.iIdUsuario=". $_SESSION["id"]);
-
-    $nInscrito= mysqli_num_rows($cInscrito); 
+    $cSurveyv= mysqli_query($conn, "SELECT count( * ) FROM detallesurvey");
+    $nSurveyv= mysqli_num_rows($cInscritov); 
+    if ($nSurveyv>1){
+        
+        $cSurvey= mysqli_query($conn,
+        "SELECT * FROM detallesurvey ds
+        inner join survey_set st
+        on ds.idSurvey=st.id
+        INNER JOIN usuarios us
+        on ds.idUsuario=us.iIdUsuario
+        where us.iIdUsuario=". $_SESSION["id"]);
+          
     $nSurvey=mysqli_num_rows($cSurvey);
+
+    }else
+    {
+        $nSurvey=0;
+    }
+   
+
 
     $resultado = mysqli_query($conn, "SELECT * FROM usuarios WHERE iIdUsuario=" . $_SESSION["id"]);
     while ($consulta = mysqli_fetch_array($resultado)) {
@@ -95,11 +111,11 @@ function informacion()
 function miCurso()
 {
 
-    include "..\dev\conectar.php";
-    $resultado = mysqli_query($conn, "SELECT c.iIdCurso, c.cNombreCurso, c.ruta, c.ricono FROM inscripcion i
-    INNER JOIN usuarios u ON I.fkiIdUsuario = U.iIdUsuario
-    INNER JOIN curso c ON i.fkiIdeCurso = c.iIdCurso
-    WHERE i.finalizado !=2 AND i.fkiIdUsuario=" . $_SESSION["id"]);
+    require("../dev/conectar.php");
+    $cInscritov= mysqli_query($conn, "SELECT count( * ) FROM inscripcion");
+    $nInscritov= mysqli_num_rows($cInscritov); 
+
+     
     $info = "";
     $cur1 = "";
     $cur2 = "";
@@ -110,234 +126,249 @@ function miCurso()
     $cur7 = "";
     $contador = 1;
 
-    while ($consulta = mysqli_fetch_array($resultado)) {
-        $info = '
-         <div class="u-align-left u-border-10 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-base u-container-style u-custom-item u-list-item u-repeater-item u-shape-rectangle u-video-cover u-white u-list-item-4 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="250" style="will-change: transform, opacity; animation-duration: 1500ms;">
-            <div class="u-container-layout u-similar-container u-valign-top u-container-layout-4"><span class="u-custom-item u-file-icon u-icon u-text-palette-3-base u-icon-4 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="750" style="will-change: transform, opacity; animation-duration: 1500ms;"><img src="' . $consulta['ricono'] . '" alt=""></span>
-              <h4 class="u-text u-text-8"> ' . $consulta['cNombreCurso'] . '</h4>
-              <a href="' . $consulta['ruta'] . '" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-3-base u-text-body-color u-text-hover-palette-3-base u-top-left-radius-0 u-top-right-radius-0 u-btn-5">Entrar</a>
-              <a href="#" id="' . $consulta["iIdCurso"] . '" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-3-base u-text-body-color u-text-hover-palette-3-base u-top-left-radius-0 u-top-right-radius-0 u-btn-5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Eliminar</a>
-            </div>
-          </div>
+    if ($nInscritov>1){
+        $resultado = mysqli_query($conn, "SELECT c.iIdCurso, c.cNombreCurso, c.ruta, c.ricono FROM inscripcion i
+        INNER JOIN usuarios u ON I.fkiIdUsuario = U.iIdUsuario
+        INNER JOIN curso c ON i.fkiIdeCurso = c.iIdCurso
+        WHERE i.finalizado !=2 AND i.fkiIdUsuario=" . $_SESSION["id"]);
 
-          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+while ($consulta = mysqli_fetch_array($resultado)) {
+    $info = '
+     <div class="u-align-left u-border-10 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-base u-container-style u-custom-item u-list-item u-repeater-item u-shape-rectangle u-video-cover u-white u-list-item-4 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="250" style="will-change: transform, opacity; animation-duration: 1500ms;">
+        <div class="u-container-layout u-similar-container u-valign-top u-container-layout-4"><span class="u-custom-item u-file-icon u-icon u-text-palette-3-base u-icon-4 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="750" style="will-change: transform, opacity; animation-duration: 1500ms;"><img src="' . $consulta['ricono'] . '" alt=""></span>
+          <h4 class="u-text u-text-8"> ' . $consulta['cNombreCurso'] . '</h4>
+          <a href="' . $consulta['ruta'] . '" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-3-base u-text-body-color u-text-hover-palette-3-base u-top-left-radius-0 u-top-right-radius-0 u-btn-5">Entrar</a>
+          <a href="#" id="' . $consulta["iIdCurso"] . '" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-3-base u-text-body-color u-text-hover-palette-3-base u-top-left-radius-0 u-top-right-radius-0 u-btn-5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Eliminar</a>
+        </div>
+      </div>
 
-    <script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 
-    document.getElementById("1").onclick = function() {
-      if (confirm("Favor de confirmar que desea salir del curso")) {
+<script>
 
-        idfCurso = "1";
-        idfUsuario = "' . $_SESSION["id"] . '";
+document.getElementById("1").onclick = function() {
+  if (confirm("Favor de confirmar que desea salir del curso")) {
 
-    //Convertimos las variables de javascript en variables de PHP
-        $( document ).ready(function() {
-    // Definimos las variables de javascrpt
-        var curso = idfCurso;
-        var alumn = idfUsuario;
+    idfCurso = "1";
+    idfUsuario = "' . $_SESSION["id"] . '";
 
-    // Ejecutamos AJAX
-    $.post("salirCurso.php",{"curso":curso,"usuario": alumn},function(respuesta){
-            alert(respuesta);
-            location.reload();
-        });
-        });
+//Convertimos las variables de javascript en variables de PHP
+    $( document ).ready(function() {
+// Definimos las variables de javascrpt
+    var curso = idfCurso;
+    var alumn = idfUsuario;
 
-        } else {
-        urlNuevo = "#";
+// Ejecutamos AJAX
+$.post("salirCurso.php",{"curso":curso,"usuario": alumn},function(respuesta){
+        alert(respuesta);
+        location.reload();
+    });
+    });
+
+    } else {
+    urlNuevo = "#";
+}
+}
+</script>
+
+<script>
+
+document.getElementById("2").onclick = function() {
+  if (confirm("Favor de confirmar que desea salir del curso")) {
+
+    idfCurso = "2";
+    idfUsuario = "' . $_SESSION["id"] . '";
+
+//Convertimos las variables de javascript en variables de PHP
+    $( document ).ready(function() {
+// Definimos las variables de javascrpt
+    var curso = idfCurso;
+    var alumn = idfUsuario;
+
+// Ejecutamos AJAX
+$.post("salirCurso.php",{"curso":curso,"usuario": alumn},function(respuesta){
+        alert(respuesta);
+        location.reload();
+    });
+    });
+
+    } else {
+    urlNuevo = "#";
+}
+}
+
+</script>
+
+<script>
+
+document.getElementById("3").onclick = function() {
+  if (confirm("Favor de confirmar que desea salir del curso")) {
+
+    idfCurso = "3";
+    idfUsuario = "' . $_SESSION["id"] . '";
+
+//Convertimos las variables de javascript en variables de PHP
+    $( document ).ready(function() {
+// Definimos las variables de javascrpt
+    var curso = idfCurso;
+    var alumn = idfUsuario;
+
+// Ejecutamos AJAX
+$.post("salirCurso.php",{"curso":curso,"usuario": alumn},function(respuesta){
+        alert(respuesta);
+        location.reload();
+    });
+    });
+
+    } else {
+    urlNuevo = "#";
+}
+}
+
+</script>
+
+<script>
+
+document.getElementById("4").onclick = function() {
+  if (confirm("Favor de confirmar que desea salir del curso")) {
+
+    idfCurso = "4";
+    idfUsuario = "' . $_SESSION["id"] . '";
+
+//Convertimos las variables de javascript en variables de PHP
+    $( document ).ready(function() {
+// Definimos las variables de javascrpt
+    var curso = idfCurso;
+    var alumn = idfUsuario;
+
+// Ejecutamos AJAX
+$.post("salirCurso.php",{"curso":curso,"usuario": alumn},function(respuesta){
+        alert(respuesta);
+        location.reload();
+    });
+    });
+
+    } else {
+    urlNuevo = "#";
+}
+}
+
+</script>
+
+<script>
+
+document.getElementById("5").onclick = function() {
+  if (confirm("Favor de confirmar que desea salir del curso")) {
+
+    idfCurso = "5";
+    idfUsuario = "' . $_SESSION["id"] . '";
+
+//Convertimos las variables de javascript en variables de PHP
+    $( document ).ready(function() {
+// Definimos las variables de javascrpt
+    var curso = idfCurso;
+    var alumn = idfUsuario;
+
+// Ejecutamos AJAX
+$.post("salirCurso.php",{"curso":curso,"usuario": alumn},function(respuesta){
+        alert(respuesta);
+        location.reload();
+    });
+    });
+
+    } else {
+    urlNuevo = "#";
+}
+}
+
+</script>
+
+<script>
+
+document.getElementById("6").onclick = function() {
+  if (confirm("Favor de confirmar que desea salir del curso")) {
+
+    idfCurso = "6";
+    idfUsuario = "' . $_SESSION["id"] . '";
+
+//Convertimos las variables de javascript en variables de PHP
+    $( document ).ready(function() {
+// Definimos las variables de javascrpt
+    var curso = idfCurso;
+    var alumn = idfUsuario;
+
+// Ejecutamos AJAX
+$.post("salirCurso.php",{"curso":curso,"usuario": alumn},function(respuesta){
+        alert(respuesta);
+        location.reload();
+    });
+    });
+
+    } else {
+    urlNuevo = "#";
+}
+
+}
+
+</script>
+
+<script>
+
+document.getElementById("7").onclick = function() {
+  if (confirm("Favor de confirmar que desea salir del curso")) {
+
+    idfCurso = "7";
+    idfUsuario = "' . $_SESSION["id"] . '";
+
+//Convertimos las variables de javascript en variables de PHP
+    $( document ).ready(function() {
+// Definimos las variables de javascrpt
+    var curso = idfCurso;
+    var alumn = idfUsuario;
+
+// Ejecutamos AJAX
+$.post("salirCurso.php",{"curso":curso,"usuario": alumn},function(respuesta){
+        alert(respuesta);
+        location.reload();
+    });
+    });
+
+    } else {
+    urlNuevo = "#";
+}
+}
+
+</script>
+      ';
+
+    if ($contador == 1) {
+        $cur1 = $info;
+    } elseif ($contador == 2) {
+        $cur2 = $info;
+    } elseif ($contador == 3) {
+        $cur3 = $info;
+    } elseif ($contador == 4) {
+        $cur4 = $info;
+    } elseif ($contador == 5) {
+        $cur5 = $info;
+    } elseif ($contador == 6) {
+        $cur6 = $info;
+    } elseif ($contador == 7) {
+        $cur7 = $info;
     }
+
+    $contador = $contador + 1;
+}
+
+
+    }else{
+        $resultado=0;
+        $cur1="No hay cursos aun";
     }
-    </script>
+   
 
-    <script>
-
-    document.getElementById("2").onclick = function() {
-      if (confirm("Favor de confirmar que desea salir del curso")) {
-
-        idfCurso = "2";
-        idfUsuario = "' . $_SESSION["id"] . '";
-
-    //Convertimos las variables de javascript en variables de PHP
-        $( document ).ready(function() {
-    // Definimos las variables de javascrpt
-        var curso = idfCurso;
-        var alumn = idfUsuario;
-
-    // Ejecutamos AJAX
-    $.post("salirCurso.php",{"curso":curso,"usuario": alumn},function(respuesta){
-            alert(respuesta);
-            location.reload();
-        });
-        });
-
-        } else {
-        urlNuevo = "#";
-    }
-    }
-
-    </script>
-
-    <script>
-
-    document.getElementById("3").onclick = function() {
-      if (confirm("Favor de confirmar que desea salir del curso")) {
-
-        idfCurso = "3";
-        idfUsuario = "' . $_SESSION["id"] . '";
-
-    //Convertimos las variables de javascript en variables de PHP
-        $( document ).ready(function() {
-    // Definimos las variables de javascrpt
-        var curso = idfCurso;
-        var alumn = idfUsuario;
-
-    // Ejecutamos AJAX
-    $.post("salirCurso.php",{"curso":curso,"usuario": alumn},function(respuesta){
-            alert(respuesta);
-            location.reload();
-        });
-        });
-
-        } else {
-        urlNuevo = "#";
-    }
-    }
-
-    </script>
-
-    <script>
-
-    document.getElementById("4").onclick = function() {
-      if (confirm("Favor de confirmar que desea salir del curso")) {
-
-        idfCurso = "4";
-        idfUsuario = "' . $_SESSION["id"] . '";
-
-    //Convertimos las variables de javascript en variables de PHP
-        $( document ).ready(function() {
-    // Definimos las variables de javascrpt
-        var curso = idfCurso;
-        var alumn = idfUsuario;
-
-    // Ejecutamos AJAX
-    $.post("salirCurso.php",{"curso":curso,"usuario": alumn},function(respuesta){
-            alert(respuesta);
-            location.reload();
-        });
-        });
-
-        } else {
-        urlNuevo = "#";
-    }
-    }
-
-    </script>
-
-    <script>
-
-    document.getElementById("5").onclick = function() {
-      if (confirm("Favor de confirmar que desea salir del curso")) {
-
-        idfCurso = "5";
-        idfUsuario = "' . $_SESSION["id"] . '";
-
-    //Convertimos las variables de javascript en variables de PHP
-        $( document ).ready(function() {
-    // Definimos las variables de javascrpt
-        var curso = idfCurso;
-        var alumn = idfUsuario;
-
-    // Ejecutamos AJAX
-    $.post("salirCurso.php",{"curso":curso,"usuario": alumn},function(respuesta){
-            alert(respuesta);
-            location.reload();
-        });
-        });
-
-        } else {
-        urlNuevo = "#";
-    }
-    }
-
-    </script>
-
-    <script>
-
-    document.getElementById("6").onclick = function() {
-      if (confirm("Favor de confirmar que desea salir del curso")) {
-
-        idfCurso = "6";
-        idfUsuario = "' . $_SESSION["id"] . '";
-
-    //Convertimos las variables de javascript en variables de PHP
-        $( document ).ready(function() {
-    // Definimos las variables de javascrpt
-        var curso = idfCurso;
-        var alumn = idfUsuario;
-
-    // Ejecutamos AJAX
-    $.post("salirCurso.php",{"curso":curso,"usuario": alumn},function(respuesta){
-            alert(respuesta);
-            location.reload();
-        });
-        });
-
-        } else {
-        urlNuevo = "#";
-    }
-
-    }
-
-    </script>
-
-    <script>
-
-    document.getElementById("7").onclick = function() {
-      if (confirm("Favor de confirmar que desea salir del curso")) {
-
-        idfCurso = "7";
-        idfUsuario = "' . $_SESSION["id"] . '";
-
-    //Convertimos las variables de javascript en variables de PHP
-        $( document ).ready(function() {
-    // Definimos las variables de javascrpt
-        var curso = idfCurso;
-        var alumn = idfUsuario;
-
-    // Ejecutamos AJAX
-    $.post("salirCurso.php",{"curso":curso,"usuario": alumn},function(respuesta){
-            alert(respuesta);
-            location.reload();
-        });
-        });
-
-        } else {
-        urlNuevo = "#";
-    }
-    }
-
-    </script>
-          ';
-
-        if ($contador == 1) {
-            $cur1 = $info;
-        } elseif ($contador == 2) {
-            $cur2 = $info;
-        } elseif ($contador == 3) {
-            $cur3 = $info;
-        } elseif ($contador == 4) {
-            $cur4 = $info;
-        } elseif ($contador == 5) {
-            $cur5 = $info;
-        } elseif ($contador == 6) {
-            $cur6 = $info;
-        } elseif ($contador == 7) {
-            $cur7 = $info;
-        }
-
-        $contador = $contador + 1;
-    }
+    
     echo $cur1;
     echo $cur2;
     echo $cur3;
@@ -594,7 +625,7 @@ function miCurso()
 */
 function infoCurso()
 {
-    include "..\dev\conectar.php";
+    require("../dev/conectar.php");
     
     $inscrito = mysqli_query($conn, "SELECT c.iIdCurso FROM inscripcion i
     INNER JOIN usuarios u ON I.fkiIdUsuario = U.iIdUsuario
