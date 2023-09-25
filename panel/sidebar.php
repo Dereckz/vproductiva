@@ -52,7 +52,7 @@
             <a href="#" class="nav-link nav-is-tree nav-edit_survey nav-view_survey">
               <i class="nav-icon fa fa-poll-h"></i>
               <p>
-                Entrevistas
+                Encuestas
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
@@ -60,7 +60,7 @@
               <li class="nav-item">
                 <a href="./panel.php?page=new_survey" class="nav-link nav-new_survey tree-item">
                   <i class="fas fa-angle-right nav-icon"></i>
-                  <p>Agregar Nueva Entrevista</p>
+                  <p>Agregar Nueva Encuesta</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -76,7 +76,7 @@
             <a href="./panel.php?page=survey_report" class="nav-link nav-survey_report">
               <i class="nav-icon fas fa-poll"></i>
               <p>
-                Reporte de entrevista
+                Reporte de Encuesta
               </p>
             </a>
           </li>     
@@ -85,7 +85,7 @@
             <a href="./panel.php?page=survey_widget" class="nav-link nav-survey_widget nav-answer_survey">
               <i class="nav-icon fas fa-poll-h"></i>
               <p>
-                Survey List
+                Lista de Encuestas
               </p>
             </a>
           </li>  
