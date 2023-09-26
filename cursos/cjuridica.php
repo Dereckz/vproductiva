@@ -26,11 +26,8 @@
     <table id=tablarecursos>
 
         <?php
-<<<<<<< HEAD
-   require("../dev/conectar.php");
-=======
+
     require("../dev/conectar.php");
->>>>>>> origin/master
     include "../panel/func/profile.php";
 if (!isset($_SESSION)) {
     session_start();

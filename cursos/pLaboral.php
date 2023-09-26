@@ -54,7 +54,7 @@ $numVisto = mysqli_num_rows($resultadoVisto);
 while ($consulta = mysqli_fetch_array($resultado)) {
 
     $check = mysqli_query($conn, "SELECT COUNT(*) as num FROM visto
-WHERE idRecurso= " . $consulta['iIdRecurso'] . " and idAlumno=" . $_SESSION["id"] . " and estatus=1");
+    WHERE idRecurso= " . $consulta['iIdRecurso'] . " and idAlumno=" . $_SESSION["id"] . " and estatus=1");
     $info = mysqli_fetch_array($check);
 
     if ($info['num'] > 0) {

@@ -34,7 +34,7 @@
                             </div>  
                         </div>
                         <div class="modal-footer">
-                          <button type="submit" class="btn btn-outline-primary"  id ="btnSurvey" name ="btnSurvey"  >Agregar</button>
+                          <button type="submit" class="btn btn-outline-primary"  id ="btnSurvey" name ="btnSurvey"  onclick="guardado_correctamente()" >Agregar</button>
                           <a  class="btn btn-outline-primary" data-dismiss="modal">Salir</a>
                         </div>
                     </form> 
@@ -43,3 +43,13 @@
       </div>
 </div>
 <!---fin ventana eliminar--->
+<script>
+  function guardado_correctamente() {
+    Swal.fire(
+  '¡Operación Exitosa!',
+  'Se a agregado correctamente.',
+  'success'
+)
+  }
+
+  </script>
