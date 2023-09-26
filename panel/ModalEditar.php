@@ -49,13 +49,13 @@
                     
                     if ($dataCliente["iGenero"]==0){
                       echo ' 
-                      <input type="radio" name="radio" value="0" checked=true> Masculino<br>
-                      <input type="radio" name="radio" value="1"> Femenino<br>
+                      <input type="radio" name="radio" value="0" > Masculino<br>
+                      <input type="radio" name="radio" value="1" checked=true> Femenino<br>
                       <input type="radio" name="radio" value="2"> No especificar<br>';
                     }elseif($dataCliente["iGenero"]==1){
                         echo ' 
-                        <input type="radio" name="radio" value="0" > Masculino<br>
-                        <input type="radio" name="radio" value="1"checked=true> Femenino<br>
+                        <input type="radio" name="radio" value="0" checked=true> Masculino<br>
+                        <input type="radio" name="radio" value="1"> Femenino<br>
                         <input type="radio" name="radio" value="2"> No especificar<br>';
                       }else{
                         echo ' 
