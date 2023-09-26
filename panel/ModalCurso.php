@@ -23,10 +23,21 @@
                     </select>
                     </div>
                     <div class="modal-footer">
-                    <button type="submit" class="btn btn-outline-primary"  id ="btnAsignar" name ="btnAsignar"  >Agregar</button>
+                    <button type="submit" class="btn btn-outline-primary"  id ="btnAsignar" name ="btnAsignar" onclick="guardado_correctamente()" >Agregar</button>
                     <a  class="btn btn-outline-primary" data-dismiss="modal">Salir</a>
                     </div>
                 </form>    
             </div>
     </div>
 <div>
+
+<script>
+  function guardado_correctamente() {
+    Swal.fire(
+  '¡Operación Exitosa!',
+  'Se a agregado correctamente.',
+  'success'
+)
+  }
+
+  </script>
