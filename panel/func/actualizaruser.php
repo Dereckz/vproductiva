@@ -12,7 +12,7 @@ $telefono=$_POST["celular"];
 $fechaalta=$_POST["fechaalta"];
 
 if (($_POST["password"])==""){
-    $consulta="UPDATE Usuarios
+    $consulta="UPDATE usuarios
         SET cNombre='".$nombre."'".
         ", cApellidoP='".$apellidoparterno."'".
         ", cApellidoM='".$apellidomaterno."'".
@@ -23,7 +23,7 @@ if (($_POST["password"])==""){
         " where iIdUsuario=".$idusuario;
 }elseif(($_POST["password"])<>""){
         $pass=password_hash(($_POST["password"]), PASSWORD_DEFAULT); 
-        $consulta="UPDATE Usuarios
+        $consulta="UPDATE usuarios
                 SET cNombre='".$nombre."'".
                 ", cApellidoP='".$apellidoparterno."'".
                 ", cApellidoM='".$apellidomaterno."'".

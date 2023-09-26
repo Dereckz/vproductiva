@@ -346,7 +346,7 @@ function miCurso()
         $contador = $contador + 1;
     }
     }else{
-        $cur1="no hay curso aun";
+        $cur1="Aun no se ha inscrito a ningun curso";
     }
 
    
