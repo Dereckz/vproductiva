@@ -13,7 +13,8 @@ function informacion()
     // para saber los cursos terminados
     $final=0;
     for ($i=1; $i<=7; $i++){
-    $terminado = mysqli_query($conn, "SELECT r.iIdRecurso,c.cNombreCurso, m.cNombreModulo,r.cRuta FROM usuarios u
+    $terminado = mysqli_query($conn, "SELECT r.iIdRecurso,c.cNombreCurso, m.cNombreModulo,r.cRuta 
+    FROM usuarios u
     INNER JOIN inscripcion i ON u.iIdUsuario = i.fkiIdUsuario
     INNER JOIN curso c ON i.fkiIdeCurso = c.iIdCurso
     INNER JOIN modulo m ON c.iIdCurso = m.fkiIdCurso
@@ -36,23 +37,13 @@ function informacion()
         }
     }
     
-    $cInscritov= mysqli_query($conn, "SELECT count( * ) FROM inscripcion");
-    $nInscritov= mysqli_num_rows($cInscritov); 
-    if ($nInscritov>1){
-        $cInscrito= mysqli_query($conn,"SELECT * FROM inscripcion i
-        INNER JOIN usuarios u ON I.fkiIdUsuario = U.iIdUsuario
-        INNER JOIN curso c ON i.fkiIdeCurso = c.iIdCurso
+  
+        $cInscrito= mysqli_query($conn,"SELECT * FROM curso c
+        INNER JOIN inscripcion i ON i.fkiIdeCurso = c.iIdCurso
+        INNER JOIN usuarios u ON u.iIdUsuario = i.fkiIdUsuario
         WHERE  i.finalizado !=2 AND i.fkiIdUsuario=". $_SESSION["id"]);
           $nInscrito= mysqli_num_rows($cInscrito); 
-    }else{
-        $nInscrito=0;
-    }
-   
-
-    $cSurveyv= mysqli_query($conn, "SELECT count( * ) FROM detallesurvey");
-    $nSurveyv= mysqli_num_rows($cInscritov); 
-    if ($nSurveyv>1){
-        
+  
         $cSurvey= mysqli_query($conn,
         "SELECT * FROM detallesurvey ds
         inner join survey_set st
@@ -63,10 +54,6 @@ function informacion()
           
     $nSurvey=mysqli_num_rows($cSurvey);
 
-    }else
-    {
-        $nSurvey=0;
-    }
    
 
 
@@ -112,8 +99,7 @@ function miCurso()
 {
 
     require("../dev/conectar.php");
-    $cInscritov= mysqli_query($conn, "SELECT count( * ) FROM inscripcion");
-    $nInscritov= mysqli_num_rows($cInscritov); 
+
 
      
     $info = "";
@@ -126,10 +112,11 @@ function miCurso()
     $cur7 = "";
     $contador = 1;
 
-    if ($nInscritov>1){
-        $resultado = mysqli_query($conn, "SELECT c.iIdCurso, c.cNombreCurso, c.ruta, c.ricono FROM inscripcion i
-        INNER JOIN usuarios u ON I.fkiIdUsuario = U.iIdUsuario
-        INNER JOIN curso c ON i.fkiIdeCurso = c.iIdCurso
+   
+        $resultado = mysqli_query($conn, "SELECT c.iIdCurso, c.cNombreCurso, c.ruta, c.ricono 
+        FROM curso c
+        INNER JOIN inscripcion i ON i.fkiIdeCurso = c.iIdCurso
+        INNER JOIN usuarios u ON u.iIdUsuario = i.fkiIdUsuario
         WHERE i.finalizado !=2 AND i.fkiIdUsuario=" . $_SESSION["id"]);
 
 while ($consulta = mysqli_fetch_array($resultado)) {
@@ -362,10 +349,7 @@ $.post("salirCurso.php",{"curso":curso,"usuario": alumn},function(respuesta){
 }
 
 
-    }else{
-        $resultado=0;
-        $cur1="No hay cursos aun";
-    }
+   
    
 
     
@@ -627,10 +611,11 @@ function infoCurso()
 {
     require("../dev/conectar.php");
     
-    $inscrito = mysqli_query($conn, "SELECT c.iIdCurso FROM inscripcion i
-    INNER JOIN usuarios u ON I.fkiIdUsuario = U.iIdUsuario
-    INNER JOIN curso c ON i.fkiIdeCurso = c.iIdCurso
-    WHERE i.finalizado !=2 AND i.fkiIdUsuario=" . $_SESSION["id"]);
+    $inscrito = mysqli_query($conn, "SELECT c.iIdCurso 
+        FROM curso c
+        INNER JOIN inscripcion i ON i.fkiIdeCurso = c.iIdCurso
+        INNER JOIN usuarios u ON u.iIdUsuario = i.fkiIdUsuario
+        WHERE i.finalizado !=2 AND i.fkiIdUsuario=" . $_SESSION["id"]);
  
     //$ci=mysqli_num_rows($inscrito);
     // arreglo para recorrer los cursos donde el usuario ya esta inscrito
