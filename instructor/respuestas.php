@@ -1,6 +1,6 @@
 
 <?php
- include "..\dev\conectar.php";
+ require("../dev/conectar.php");
 
 session_start();
 $survey_id=$_GET["survey_id"];
