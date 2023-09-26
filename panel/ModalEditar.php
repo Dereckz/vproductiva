@@ -87,8 +87,8 @@
 <script>
   function guardado_correctamente() {
     Swal.fire(
-  'Good job!',
-  'You clicked the button!',
+  '¡Operación Exitosa!',
+  'Se a actualizado correctamente.',
   'success'
 )
   }
