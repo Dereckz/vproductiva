@@ -1,5 +1,5 @@
 <?php
-include("..\dev\conectar.php");
+require("../dev/conectar.php");
 
 $idCurso = $_POST['curso'];
 $idUsuario = $_POST['usuario'];
