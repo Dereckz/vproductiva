@@ -387,7 +387,7 @@
   </header>
   <body>
     <div class="margenesencuesta">
-                  <?php include '../dev/conectar.php' ?>
+                  <?php require("../dev/conectar.php"); ?>
                   <?php 
                         $qry = $conn->query("SELECT * FROM survey_set where id = ".$_GET['id'])->fetch_array();
                         foreach($qry as $k => $v){
