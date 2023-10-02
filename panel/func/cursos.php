@@ -49,7 +49,6 @@ function listcurso()
         echo ' <option value='.$IdCurso.'>'.$consulta["cNombreCurso"].'</option> ';
 
     }
-
     
 }
 
@@ -60,7 +59,7 @@ function cursodeusuario($parametro1){
 
 
   $result = mysqli_query($conn, 
-          "SELECT u.iIdUsuario,dc.iIdDetalleCurso,c.iIdCurso, u.cNombreLargo,c.cNombreCurso,c.cDescripcion
+         "SELECT u.iIdUsuario,dc.iIdDetalleCurso,c.iIdCurso, u.cNombreLargo,c.cNombreCurso,c.cDescripcion
           FROM detallecurso as dc INNER JOIN usuarios as u 
           on dc.fkiIdUsuario=u.iIdUsuario 
           INNER JOIN curso c
@@ -73,14 +72,16 @@ function cursodeusuario($parametro1){
       if ($row_cnt>0){
         echo '<td> Profesor de:</td>';
 
+        echo  '<td>';
       }
       while ($consulta = mysqli_fetch_array($result)) {
       
-      echo'<td>'.
-      ($consulta["cNombreCurso"]) .
-      '</td>';
+      echo
+      ''
+      .($consulta["cNombreCurso"]).' -- ';
+      
       }
-
+echo '</td>';
 }
 
 

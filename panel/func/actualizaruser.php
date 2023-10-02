@@ -16,6 +16,7 @@ if (($_POST["password"])==""){
         SET cNombre='".$nombre."'".
         ", cApellidoP='".$apellidoparterno."'".
         ", cApellidoM='".$apellidomaterno."'".
+        ", cNombreLargo='".$nombre."' ' ".$apellidoparterno." ' '".$apellidomaterno."'".
         ", cCorreo='".$email."'".
         ", iGenero='".$genero."'".
         ", cTelefono='".$telefono."'" .
@@ -27,25 +28,19 @@ if (($_POST["password"])==""){
                 SET cNombre='".$nombre."'".
                 ", cApellidoP='".$apellidoparterno."'".
                 ", cApellidoM='".$apellidomaterno."'".
+                ", cNombreLargo='".$nombre."' ' ".$apellidoparterno." ' '".$apellidomaterno."'".
                 ", cCorreo='".$email."'".
                 ", iGenero='".$genero."'".
                 ", dFechaAlta='".$fechaalta."'" .
                 ", cTelefono='".$telefono."'" .
                 ", cPassword='".$pass."'" .
-            " where iIdUsuario=".$idusuario;
+                 " where iIdUsuario=".$idusuario;
 }
     $query = mysqli_query($conn,$consulta);
 
 
             if($query){
-            echo '<script src="sweetalert2.all.min.js"></script>';
-            echo'  <link href="sweetalert2.min.css" rel="stylesheet">';
-            echo '<script type="text/javascript">';
-            echo "Swal.fire(
-                '¡Operación exitoso!',
-                'Actualizado Correctamente.',
-                'success'";
-            echo "</script>";
+     
             header("Location: ../instructor.php");
 
 

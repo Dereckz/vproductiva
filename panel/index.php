@@ -4,7 +4,7 @@
 <?php session_start() ?>
 <?php 
 	if(!isset($_SESSION['id']))
-	    header('location:http://localhost/vproductivam/account/login.html');
+  header('location:../account/login.html');
 	include 'header.php' 
 ?> 
 <script src="sweetalert2.all.min.js"></script>

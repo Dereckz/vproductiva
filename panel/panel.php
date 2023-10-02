@@ -3,7 +3,7 @@
 <?php session_start() ?>
 <?php 
 	if(!isset($_SESSION['id']))
-	    header('location:login.php');
+	    header('location:../account/login.html');
 	include 'header.php' 
 ?>
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
