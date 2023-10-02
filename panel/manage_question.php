@@ -32,7 +32,7 @@ foreach($qry as $k => $v){
 						
 				</div>
 				<div class="col-sm-6">
-					<b>Preview</b>
+					<b>Vista Previa</b>
 					<div class="preview">
 						<?php if(!isset($id)): ?>
 						<center><b>Porfavor Selecciona el tipo de pregunta</b></center>
@@ -91,7 +91,7 @@ foreach($qry as $k => $v){
 						</div>
 
 						<?php else: ?>
-								<textarea name="frm_opt" id="" cols="30" rows="10" class="form-control" disabled="" placeholder="Escribe algo aquis..."></textarea>
+								<textarea name="frm_opt" id="" cols="30" rows="10" class="form-control"  placeholder="Escribe algo aqui.d.."></textarea>
 						<?php endif; ?>
 						<?php endif; ?>
 					</div>
@@ -113,7 +113,7 @@ foreach($qry as $k => $v){
 		      	<th class="text-center"></th>
 
 		      	<th class="text-center">
-		      		<label for="" class="control-label">Label</label>
+		      		<label for="" class="control-label">Etiqueta</label>
 		      	</th>
 		      	<th class="text-center"></th>
 	     	</tr>
@@ -169,7 +169,7 @@ foreach($qry as $k => $v){
 		      	<th class="text-center"></th>
 
 		      	<th class="text-center">
-		      		<label for="" class="control-label">Label</label>
+		      		<label for="" class="control-label">Etiqueta</label>
 		      	</th>
 		      	<th class="text-center"></th>
 	     	</tr>
@@ -207,14 +207,14 @@ foreach($qry as $k => $v){
       </table>
       <div class="row">
       <div class="col-sm-12 text-center">
-      	<button class="btn btn-sm btn-flat btn-default" type="button" onclick="new_radio($(this))"><i class="fa fa-plus"></i> Add</button>
+      	<button class="btn btn-sm btn-flat btn-default" type="button" onclick="new_radio($(this))"><i class="fa fa-plus"></i> Agregar</button>
       </div>
       </div>
     </div>
 </div>
 <div id="textfield_s_clone" style="display: none">
 	<div class="callout callout-info">
-		<textarea name="frm_opt" id="" cols="30" rows="10" class="form-control" disabled=""  placeholder="Write Something here..."></textarea>
+		<textarea name="frm_opt" id="" cols="30" rows="10" class="form-control" disabled=""  placeholder="Escriba algo.."></textarea>
 	</div>
 </div>
 <script>
@@ -274,7 +274,7 @@ foreach($qry as $k => $v){
 		    type: 'POST',
 			success:function(resp){
 				if(resp == 1){
-					alert_toast('Data successfully saved.',"success");
+					alert_toast('Guardado Correctamente.',"success");
 					setTimeout(function(){
 						location.reload()
 					},1500)
@@ -285,3 +285,24 @@ foreach($qry as $k => $v){
 
   })
 </script>
+<!-- Modal Logout -->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
+                  aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabelLogout">Ohh No!</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <p>¿Estas seguro que deseas cerrar sesion?</p>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancelar</button>
+                        <a href="http://localhost/vproductivam/account/login.html" class="btn btn-primary">Cerrar Sesión</a>
+                      </div>
+                    </div>
+                  </div>
+                </div> 

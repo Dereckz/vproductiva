@@ -30,7 +30,9 @@
   position: fixed;
   top: calc(50% - 30px);
   left: calc(50% - 30px);
-  border: 6px solid #1977cc;
+
+  border: 6px solid #563d7c;
+
   border-top-color: #d1e6f9;
   border-radius: 50%;
   width: 60px;

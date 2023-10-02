@@ -27,7 +27,7 @@
         <tr> <td colspan=3 id=filainstrucciones> <h4> En este curso aprenderas las habilidades necesarias para optimizar al máximo tus labores diarias.</h4> </td></tr> -->  
     
         <?php
-include "..\dev\conectar.php";
+require("../dev/conectar.php");
 include "../panel/func/profile.php";
 if (!isset($_SESSION)) {
     session_start();
@@ -54,7 +54,7 @@ $numVisto = mysqli_num_rows($resultadoVisto);
 while ($consulta = mysqli_fetch_array($resultado)) {
 
     $check = mysqli_query($conn, "SELECT COUNT(*) as num FROM visto
-WHERE idRecurso= " . $consulta['iIdRecurso'] . " and idAlumno=" . $_SESSION["id"] . " and estatus=1");
+    WHERE idRecurso= " . $consulta['iIdRecurso'] . " and idAlumno=" . $_SESSION["id"] . " and estatus=1");
     $info = mysqli_fetch_array($check);
 
     if ($info['num'] > 0) {

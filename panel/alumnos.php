@@ -6,7 +6,7 @@
 <link href="../img/LOGOVP.ico" rel="icon">
 <?php session_start() ?>
 <?php 
-	if(!isset($_SESSION['login_id']))
+	if(!isset($_SESSION['id']))
 	    header('location:login.php');
 	include 'header.php' 
 ?>
@@ -39,7 +39,15 @@
     <!-- Main content -->
 
   <?php include 'func/cursosa.php';?>
-   
+  <?php include 'func/surveyset.php';?>
+  <?php
+  require("../dev/conectar.php");
+
+    $sqlCliente   = ("SELECT * FROM usuarios where usuarios.fkidTipoUsuario=3; ");
+    $queryCliente = mysqli_query($conn, $sqlCliente);
+    $cantidad     = mysqli_num_rows($queryCliente);
+    ?>
+
     <div class="container-fluid" id="container-wrapper">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Alumnos</h1>
@@ -52,22 +60,60 @@
             </ol>
           </div>
           <div class="row">
-          <div class="table-responsive">
-                  <table class="table align-items-center table-flush">
-                    <thead class="thead-light">
-                      <tr>
-                        <th>ID</th>
-                        <th>Alumno</th>
-                        <!-- <th>Cursos Activos</th> -->
-                        <th>Estatus</th>
-                        <th>Accion</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                     <?php  registercurso(); ?>
-                    </tbody>
-                  </table>
-                </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped table-hover">
+                      <thead>
+                        <tr>
+                          <th scope="col">Nombre</th>
+                          <th scope="col">Email</th>
+                          <th scope="col">Estatus</th>
+                          <th scope="col">Acción</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <?php
+                        while ($dataCliente = mysqli_fetch_array($queryCliente)) { ?>
+                          <tr>
+
+                            <td><?php echo strtoupper($dataCliente['cNombreLargo']); ?></td>
+
+                            <td><?php echo $dataCliente['cCorreo']; ?></td>
+                            <?php if($dataCliente['iEstatus']==1) {?> 
+                              <td><span  class="badge badge-success" > <a class="text-white" href="func/updatestatus.php?id='<?php echo $dataCliente['iIdUsuario']; ?>'&status=1">Activo<a></span></td> 
+                            <?php }?> 
+                            <?php if($dataCliente['iEstatus']==0) {?> 
+                              <td><span  class="badge badge-danger"><a class="text-white" href="func/updatestatus.php?id='<?php echo $dataCliente['iIdUsuario']; ?>'&status=0">Inactivo</a></span></td> 
+                            <?php }?> 
+                            <td>
+<!--                               <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteChildresn<?php echo $dataCliente['iIdUsuario']; ?>">
+                                Eliminar
+                              </button> -->
+                              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editChildresn<?php echo $dataCliente['iIdUsuario']; ?>">
+                                Modificar
+                              </button>
+                              <button type="button" class="btn btn-warning" data-toggle="modal"  data-target="#cursomodal<?php echo $dataCliente['iIdUsuario']; ?>">
+                                Agregar Curso
+                              </button>
+                              
+                            </td>
+                           
+
+                          </tr>
+           
+
+                              <!--Ventana Modal para Actualizar--->
+                              <?php include('ModalEditar.php'); ?>
+                              <!--Ventana Modal para la Alerta de Eliminar--->
+                              <?php include('ModalEliminar.php'); ?>
+                              <!--Ventana Modal para Agregar Curso--->
+                              <?php include('ModalCurso.php'); ?>
+
+                         
+
+                        <?php } ?>
+
+                    </table>
+                  </div>
                 <div class="card-footer"></div>
               </div>
             </div>
@@ -91,46 +137,12 @@
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancelar</button>
-                        <a href="http://localhost/vproductivam/account/login.html" class="btn btn-primary">Cerrar Sesión</a>
+                        <a href="../account/login.html" class="btn btn-primary">Cerrar Sesión</a>
                       </div>
                     </div>
                   </div>
                 </div> 
-
-          <!--modal agregar curso-->
-         
-          <div class="modal fade" id="cursomodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabelLogout">Asignar Curso</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-            <form name="frmAgregar" method="post" action="http://localhost/vproductivam/panel/func/agregarcurso.php">  
-                <div class="modal-body">
-                <label for="curso-names">Seleccione curso a Asignar:</label> 
-                <select name="cursoselect" id="cursoselect">
-                      <!--?php listcurso()?--> 
-                      <option value='1'>Productividad Laboral</option>
-                      <option value='2'>Habilidades Blandas</option>
-                      <option value='3'>Habilidades Digitales</option>
-                      <option value='4'>Psicología</option>
-                      <option value='5'>Salud, Higiene y Seguridad</option>
-                      <option value='6'>Cultura Jurídica / derecho empresarial y corporativo</option>
-                      <option value='7'>Finanzas</option>
-                  </select>
-                </div>
-                <div class="modal-footer">
-                  <button type="submit" class="btn btn-outline-primary"  id ="btnAsignar" name ="btnAsignar"  >Agregar</button>
-                  <a  class="btn btn-outline-primary" data-dismiss="modal">Salir</a>
-                </div>
-            </form>    
-              </div>
-            </div>
-          </div>    
+       
         </div>
        
     <!-- /.content -->
@@ -197,18 +209,55 @@
   <!-- /.control-sidebar -->
 
   <!-- Main Footer -->
-  <footer class="main-footer">
-    <strong>Copyright &copy; 2020 <a href="https://www.sourcecodester.com/">sourcecodester.com</a>.</strong>
-    All rights reserved.
-    <div class="float-right d-none d-sm-inline-block">
-      <b>Online Survey System</b>
-    </div>
-  </footer>
+  <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>copyright &copy; <script> document.write(new Date().getFullYear()); </script> - developed by
+              <b><a href="https://desetecnologias.net/" target="_blank">Dese Tecnologias</a></b>
+            </span>
+          </div>
+        </div>
+    </footer>
 </div>
 <!-- ./wrapper -->
 
 <!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+      $(document).ready(function() {
+        //Ocultar mensaje
+        setTimeout(function() {
+          $("#contenMsjs").fadeOut(1000);
+        }, 3000);
+
+        $('.btnBorrar').click(function(e) {
+          e.preventDefault();
+          var id = $(this).attr("id");
+
+          var dataString = 'id=' + id;
+          url = "func/deleteusers.php";
+          $.ajax({
+            type: "POST",
+            url: url,
+            data: dataString,
+            success: function(data) {
+              window.location.href = "alumnos.php";
+             $('#respuesta').html(data);
+             alert (‘ mensaje de texto‘)
+            }
+          });
+          return false;
+
+        });
+
+
+      });
+    </script>
+
 <!-- Bootstrap -->
 <?php include 'footer.php' ?>
 </body>

@@ -1,4 +1,6 @@
 <?php include 'consulta.php';?>
+<?php include 'sesiontime.php';?>
+
 <!DOCTYPE html>
 <!-- saved from url=(0091)https://website529400.nicepage.io/es/1234.html?version=56a80d83-e130-4c50-b76e-7bfc4c0ea516 -->
 <html style="font-size: 16px;" lang="en" class="u-responsive-xl"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -6,7 +8,7 @@
 
     <meta name="keywords" content="​Hello!">
     <meta name="description" content="">
-    <title>1234</title>
+    <title>VProductivaPerfil</title>
     <link rel="stylesheet" href="./nicepage.css" media="screen" class="u-static-style">
     <link rel="stylesheet" href="./nicepage(1).css" media="screen">
     <script class="u-script" type="text/javascript" src="./jquery-1.9.1.min.js.descarga" defer=""></script>
@@ -39,12 +41,10 @@
     width: 100%;
     height: 100%;
     opacity: 0;
-
-
   }
     .u-section-2 {
   background-image: none;
-  padding-top: 2.8em;
+  padding-top: 2em;
 }
 @font-face {
     font-family: Acumin;
@@ -226,6 +226,10 @@
   /*box-shadow: 5px 5px 29px 0 rgba(0,0,0,0.15);*/
   height: 15.4em;
   text-align: center;
+  display: inline-flex;
+  width: 17em;
+  margin-top: 3em;
+  margin-right: 1.8em;
 }
 .u-section-2 .u-container-layout-4 {
   padding: 50px 30px 30px;
@@ -431,7 +435,7 @@
       <li class="logo"><img src="img/logob.png" id="logo"></li>
       <li class="menus"></li>
     	<li class="menus"><a href="index.php">Mi perfil</a></li>
-    	<li class="menus"><a href="cursos.php">Catalogo de Cursos</a></li>
+    	<li class="menus"><a href="cursos.php">Catálogo de Cursos</a></li>
       <li class="menus"><a href="../account/login.html">Salir</a></li>
     	</ul>
   </header>
@@ -440,14 +444,18 @@
       <div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
         
         <?=informacion();?>
+
         <div class="u-expanded-width u-list u-list-1">
         <div class="u-repeater u-repeater-1">
+        <?php include 'survey.php' ?>
+
         <?=miCurso();?>
+        
         </div>
         </div>
         <div class="u-align-left u-container-style u-expanded-width u-group u-palette-1-base u-group-1 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1750" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1750ms;">
           <div class="u-container-layout u-valign-middle u-container-layout-5">
-            <h4 class="u-text u-text-default u-text-9"> Si quieres aprender más, consulta nuestro catalogo de cursos he inscribete.</h4>
+            <h4 class="u-text u-text-default u-text-9"> Quieres tomar alguno de nuestros cursos, inscribete.</h4>
             <a href="cursos.php" class="u-active-white u-align-center u-border-1 u-border-active-white u-border-hover-white u-border-white u-btn u-button-style u-hover-white u-none u-text-active-palette-1-base u-text-hover-palette-1-base u-btn-6" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Catálogo de cursos</a>
           </div>
         </div>

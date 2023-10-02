@@ -2,11 +2,14 @@
 <html lang="en">
 <link href="../img/LOGOVP.ico" rel="icon">
 <?php session_start() ?>
-<!-- <?php 
+<?php 
 	if(!isset($_SESSION['id']))
 	    header('location:http://localhost/vproductivam/account/login.html');
 	include 'header.php' 
-?> -->
+?> 
+<script src="sweetalert2.all.min.js"></script>
+<script src="sweetalert2.min.js"></script>
+<link rel="stylesheet" href="sweetalert2.min.css">
 
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
@@ -21,55 +24,83 @@
 	  </div>
     <div id="toastsContainerTopRight" class="toasts-top-right fixed"></div>
     <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0"><?php echo $title ?></h1>
-          </div><!-- /.col -->
-
-        </div><!-- /.row -->
-            <hr class="border-primary">
-      </div><!-- /.container-fluid -->
-    </div>
+    
     <!-- /.content-header -->
+
+    <?php
+     require("../dev/conectar.php");
+
+    $sqlCliente   = ("SELECT * FROM usuarios where usuarios.fkidTipoUsuario=2; ");
+    $queryCliente = mysqli_query($conn, $sqlCliente);
+    $cantidad     = mysqli_num_rows($queryCliente);
+    ?>
+
 
     <!-- Main content -->
 
     <?php include 'func/cursos.php';?>
+    <?php include 'func/detalleuser.php';?>
     <div class="container-fluid" id="container-wrapper">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Inicio</h1>
+
+            <h1 class="h3 mb-0 text-gray-800">Informacion General</h1>
+
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="./">Home</a></li>
               <li class="breadcrumb-item active" aria-current="page">Panel</li>
             </ol>
           </div>
-
-          <div class="row mb-3">
-            <!-- Cursos Card Example -->
+        
+          <div class="row">
            
-            <?php curseactive();?>
+          <?php curseactive();?>
+                <div class="col-md-12 p-2">
          
-            
-          
                 <div class="table-responsive">
-                  <table class="table align-items-center table-flush">
-                    <thead class="thead-light">
-                      <tr>
-                        <th>ID</th>
-                        <th>Instructor</th>
-                      
-                        <th>Estatus</th>
-                        <th>Accion</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                     <?php  registercurso(); ?>;
-                    </tbody>
-                  </table>
+                    <table class="table table-bordered table-striped table-hover">
+                      <thead>
+                        <tr>
+                          <th scope="col">Nombre</th>
+                          <th scope="col">Email</th>
+                          <th scope="col">Estatus</th>
+                          <th scope="col">Telefono</th>
+                          <th scope="col">Genero</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <?php
+                        while ($dataCliente = mysqli_fetch_array($queryCliente)) { ?>
+                          <tr>
+                            <td><?php echo strtoupper($dataCliente['cNombreLargo']); ?></td>
+                            <td><?php echo $dataCliente['cCorreo']; ?></td>
+                            <?php if($dataCliente['iEstatus']==1) {?> 
+                              <td><span  class="badge badge-success" > <a class="text-white" href="/func/actualizarStatus.php?id='<?php echo $dataCliente['iIdUsuario']; ?>'&status=1">Activo<a></span></td> 
+                            <?php }?> 
+                            <?php if($dataCliente['iEstatus']==0) {?> 
+                              <td><span  class="badge badge-danger"><a class="text-white" href="/func/actualizarStatus.php?id='<?php echo $dataCliente['iIdUsuario']; ?>'&status=0">Inactivo</a></span></td> 
+                            <?php }?> 
+                            <td><?php echo $dataCliente['cTelefono']; ?></td>
+                            <?php if($dataCliente['iGenero']==0) {?> 
+                            <td>Femenino</td>
+                            <?php }?> 
+                            <?php if($dataCliente['iGenero']==1) {?> 
+                            <td>Masculino</td>
+                            <?php }?> 
+                            <?php if($dataCliente['iGenero']>=2) {?> 
+                            <td>No definido</td>
+                            <?php }?> 
+                           <tr>
+                            <?php   echo ''.cursodeusuario($dataCliente["iIdUsuario"]).'';?>
+                            </tr> 
+
+                          </tr>
+                           
+                        <?php } ?>
+
+                    </table>
+                  </div>
                 </div>
-                <div class="card-footer"></div>
+
               </div>
             </div>
                <!-- Modal Logout -->
@@ -88,7 +119,8 @@
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancelar</button>
-                        <a href="http://localhost/vproductivam/account/login.html" class="btn btn-primary">Cerrar Sesión</a>
+                        <a href="../account/login.html" class="btn btn-primary">Cerrar Sesión</a>
+
                       </div>
                     </div>
                   </div>
@@ -171,6 +203,8 @@
 
 <!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->
+<
+
 <!-- Bootstrap -->
 <?php include 'footer.php' ?>
 </body>

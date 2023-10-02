@@ -1,16 +1,18 @@
 <?php
-include("..\..\dev\conectar.php");
+
+require("../../dev/conectar.php");
+
 session_start();
 
 $btnAsginar=isset($_POST["btnAsignar"]);
 
-if (!$btnAsginar) {
-   // $_SESSION["curso"]=array();
-   // echo "estas aqui";
-}
+// if (!$btnAsginar) {
+//    // $_SESSION["curso"]=array();
+//    // echo "estas aqui";
+// }
     if ($btnAsginar) {
         //$producto=$_GET['cursoselect'];
-        $idusuario=$_SESSION["id"];
+        $idusuario=$_POST["idmaestro"];
         $idcurso=$_REQUEST['cursoselect'];
 
         $queryA = mysqli_query($conn,"INSERT INTO `detallecurso`(`iIdDetalleCurso`, `fkiIdUsuario`, `fkiIdCurso`, `cObservaciones`) 

@@ -27,7 +27,7 @@
     <table id=tablarecursos>
 
         <?php
-    include("..\dev\conectar.php");
+    require("../dev/conectar.php");
     include "../panel/func/profile.php";
 if (!isset($_SESSION)) {
     session_start();

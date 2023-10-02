@@ -3,7 +3,9 @@
 
 
 <?php
-include("..\dev\conectar.php");
+
+require("../dev/conectar.php");
+
 $fechaActual = date('Y-m-d');
 
 $fullname = ($_POST["fullname"]);
@@ -45,7 +47,7 @@ if ($stmt = $conn->prepare("SELECT cUsuario FROM usuarios WHERE cUsuario= ? LIMI
                 VALUES ('0','3','$nombres','$paternos','$maternos','$fullname','$correo','$correo','$contrasena','','','$fecha_actual','1','1')");
                     if($queryA){
 
-                        header("Location: http://localhost/vproductiva2/vproductiva/account/login.html");     
+                        header("Location: http://localhost/vproductivam/account/login.html");     
                      }
                      else{	
                          echo "<script> alert('No se pudo regustra el Alumno');window.location= '../account/login.html' </script>";
