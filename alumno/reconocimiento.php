@@ -21,73 +21,31 @@ $consulta = mysqli_fetch_array($resultado);
 $pdf = new FPDF('L','mm','Letter');
 $pdf->AddPage();
 $pdf->SetFont('Arial','B',70);
-$pdf->Image('1.png',0,0,299,218,'PNG');
-$pdf->Image('2.png',190,20,85,28,'PNG');
-$pdf->Image('3.png',210,155,15,15,'PNG');
-$pdf->Image('4.png',60,55,170,15,'PNG');
+$pdf->Image('certificado.png',0,0,280,218,'PNG');
+//$pdf->Image('1.png',0,0,299,218,'PNG');
+//$pdf->Image('2.png',190,20,85,28,'PNG');
+//$pdf->Image('3.png',210,155,15,15,'PNG');
+//$pdf->Image('4.png',60,55,170,15,'PNG');
 
 //$pdf->SetY(50);
 //$pdf->SetX(60);
 //$pdf->Cell(40,35,utf8_decode('CERTIFICADO'),1);
 
-$pdf->SetFont('Arial','B',16);
-$pdf->SetY(75);
-$pdf->SetX(98);
-$pdf->Cell(50,15,utf8_decode('D E   P A R T I C I P A C I Ó N   P A R A :'),0);
-
-$pdf->SetFont('Arial','B',16);
-$pdf->SetY(90);
-$pdf->SetX(75);
+$pdf->SetFont('Times','I',25);
+$pdf->SetY(105);
+$pdf->SetX(105);
 $pdf->Cell(160,15,utf8_decode( $consulta['cNombre'].' '.$consulta['cApellidoP'].' '.$consulta['cApellidoM']),0,0,'C');
 
-$pdf->SetFont('Arial','B',16);
-$pdf->SetY(95);
-$pdf->SetX(75);
-$pdf->Cell(160,15,utf8_decode('______________________________________________________'),0,0,'C');
-
-
-$pdf->SetFont('Arial','B',16);
-$pdf->SetY(110);
-$pdf->SetX(75);
-$pdf->Cell(160,15,utf8_decode('POR HABER CONCLUIDO EXITOSAMENTE EL CURSO DE'),0,0,'C');
-
-$pdf->SetFont('Arial','B',16);
-$pdf->SetY(130);
-$pdf->SetX(75);
+$pdf->SetFont('Times','I',20);
+$pdf->SetY(135);
+$pdf->SetX(100);
 $pdf->Cell(160,15,utf8_decode($curso),0,0,'C');
 
-$pdf->SetFont('Arial','B',16);
-$pdf->SetY(134);
-$pdf->SetX(75);
-$pdf->Cell(160,15,utf8_decode('______________________________________________________'),0,0,'C');
 
-
-$pdf->SetFont('Arial','B',16);
+$pdf->SetFont('Times','I',15);
 $pdf->SetY(159);
-$pdf->SetX(90);
-$pdf->Cell(50,15,utf8_decode($fecha['cDescripcion']),0,0,'C');
-
-$pdf->SetFont('Arial','B',16);
-$pdf->SetY(162);
-$pdf->SetX(90);
-$pdf->Cell(50,15,utf8_decode('______________'),0,0,'C');
-
-$pdf->SetFont('Arial','B',10);
-$pdf->SetY(170);
-$pdf->SetX(105);
-$pdf->Cell(50,15,utf8_decode('FECHA'),0);
-
-$pdf->SetFont('Arial','B',16);
-$pdf->SetY(162);
-$pdf->SetX(190);
-$pdf->Cell(50,15,utf8_decode('______________'),0,0,'C');
-
-
-$pdf->SetFont('Arial','B',10);
-$pdf->SetY(170);
-$pdf->SetX(210);
-$pdf->Cell(50,15,utf8_decode('FIRMA'),0);
-
+$pdf->SetX(170);
+$pdf->Cell(50,15,utf8_decode(date("d/m/Y",strtotime($fecha['cDescripcion']))),0,0,'C');
 
 $pdf->Output();
 ?>
