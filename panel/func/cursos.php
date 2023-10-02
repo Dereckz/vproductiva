@@ -3,9 +3,11 @@
  
 function curseactive()
 {
-    include "..\dev\conectar.php";
-    $resultado = mysqli_query($conn, "SELECT * FROM Curso");
-    
+
+  require("../dev/conectar.php");
+    $resultado = mysqli_query($conn, "SELECT * FROM curso");
+   
+
     while ($consulta = mysqli_fetch_array($resultado)) {
         $IdCurso=$consulta["iIdCurso"];
 
@@ -14,16 +16,18 @@ function curseactive()
                 <div class="card-body">
                   <div class="row align-items-center">
                     <div class="col mr-2">
-                     
-                      <div class="text-xs font-weight-bold text-uppercase mb-1">'.$consulta["cNombreCurso"].'</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800" >'.$consulta["cDescripcion"].'</div>
+
+                    <div class="h5 mb-0 font-weight-bold text-gray-800" >'.$consulta["cNombreCurso"].'</div>
+                      <div class="text-xs font-weight-bold text-uppercase mb-1">'.$consulta["cDescripcion"].'</div>
+
                       <div class="mt-2 mb-0 text-muted text-xs">
                         <span class="text-success mr-2"><i class="fas fa-apple-alt"></i></i> Activo</span>
                         <span>Instructor:</span>
                       </div>
                     </div>
                     <div class="col-auto">
-                    <i ><img width="50" height="50" src="'.$consulta["ricono"].'"></i>
+                    <i ><img width="60" height="60" src="'.$consulta["ricono"].'"></i>
+
                     </div>
                   </div>
                 </div>
@@ -32,63 +36,28 @@ function curseactive()
 
     } 
 }
-function registercurso()
-{
-    include "..\dev\conectar.php";
-    
-    $resultado = mysqli_query($conn, "SELECT * FROM usuarios where usuarios.fkidTipoUsuario=2;");
-    
-    while ($consulta = mysqli_fetch_array($resultado)) {
-      
-        if ($consulta["iEstatus"]=="1")
-        {
-              echo 
-              '<tr>
-                <td><a  id="aIdu" href="javascript:void(0);" data-toggle="modal" data-target="#cantidadcurso">'.$consulta["iIdUsuario"].'</a></td>
-                <td>'.strtoupper($consulta["cNombreLargo"]).'</td>
-                <td><span  class="badge badge-success"><a onclick="actualizarStatus();">Activo</a></span></td>
-                <td><a class="btn btn-sm btn-primary" href="javascript:void(0);" data-toggle="modal" data-target="#cursomodal" >Agregar Curso</a></td>           
-                <td><a class="btn btn-sm btn-primary" href="javascript:void(0);" data-toggle="modal" data-target="#surveymodal" >Agregar Encuesta</a><td>
-                </tr><tr>'
-              ;
-              echo ''.cursodeusuario($consulta["iIdUsuario"]).'</tr>';
 
-        }else{
-         
-            echo 
-            '<tr>
-            <td><a href="javascript:void(0);" data-toggle="modal" data-target="#cantidadcurso">'.$consulta["iIdUsuario"].'</a></td>
-             <td>'.strtoupper($consulta["cNombreLargo"]).'</td>
-            <td><span class="badge badge-danger" onclick="actualizarStatus()">Inactivo</span></td>
-            <td><a href="javascript:void(0);" data-toggle="modal" data-target="#cursomodal" class="btn btn-sm btn-primary">Agregar Curso</a></td>
-            <td><a class="btn btn-sm btn-primary" href="javascript:void(0);" data-toggle="modal" data-target="#surveymodal" >Agregar Encuesta</a><td>
-            <tr>'
-            ;
-
-        }
-        
-    }
-   
-}
 function listcurso()
 {   session_start();
-    include "..\dev\conectar.php";
+
+  require("../dev/conectar.php");
     $resultado2 = mysqli_query($conn, "SELECT * FROM Curso");
 
-    
+
     while ($consulta = mysqli_fetch_array($resultado2)) {
         $IdCurso=$consulta["iIdCurso"];
         echo ' <option value='.$IdCurso.'>'.$consulta["cNombreCurso"].'</option> ';
 
     }
-  
 
     
 }
 
 
 function cursodeusuario($parametro1){
-  include "..\dev\conectar.php";
+
+  require("../dev/conectar.php");
+
 
   $result = mysqli_query($conn, 
           "SELECT u.iIdUsuario,dc.iIdDetalleCurso,c.iIdCurso, u.cNombreLargo,c.cNombreCurso,c.cDescripcion
@@ -102,34 +71,19 @@ function cursodeusuario($parametro1){
       //$extraido= mysqli_fetch_array($result);
       $row_cnt = mysqli_num_rows($result);
       if ($row_cnt>0){
-        echo '<td>Profesor de:</td>';
+        echo '<td> Profesor de:</td>';
+
       }
       while ($consulta = mysqli_fetch_array($result)) {
       
-      echo
-      '<td>'.($consulta["cNombreCurso"]).' </td>';
+      echo'<td>'.
+      ($consulta["cNombreCurso"]) .
+      '</td>';
       }
 
 }
-function agregarcurso(){
-    if (!isset($_POST["btnAsignar"])) {
-
-  $_SESSION["curso"]=array();
-
-  echo "estas aqui";
-
-}
-
-if (isset($_POST["btnAsignar"])) {
-
-  $producto=$_REQUEST['mi_select'];
-
-  echo "estas aca";
 
 
-
-}
-}
 function updatestatus($id){
   // include "..\dev\conectar.php";
 
@@ -145,7 +99,8 @@ function updatestatus($id){
 
 function showSurvey($id)
 {
-  include "..\dev\conectar.php";
+  require("../dev/conectar.php");
+
     //idSurvey
   $resultado = mysqli_query($conn, "SELECT * FROM survey_set where fkiIdUsuario=".$id.";");
   while ($consulta = mysqli_fetch_array($resultado)) {
@@ -154,23 +109,6 @@ function showSurvey($id)
 
 }
 }
-function showAllSurvey()
-{
-  include "..\dev\conectar.php";
-    //idSurvey
-  $resultado = mysqli_query($conn, "SELECT * FROM survey_set ;");
-  while ($consulta = mysqli_fetch_array($resultado)) {
-    $idSurvey=$consulta["id"];
-    echo ' <div>
-    <label>
-      <input type="checkbox" id="'.$idSurvey.'" name="'.$idSurvey.'" value="'.$consulta["title"].'" /> 
-      '.$consulta["title"].'
-    </label>
-    </div>';
 
-}
-}
-function addsurveyset(){
 
-}
 ?>

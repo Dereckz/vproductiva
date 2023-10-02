@@ -6,7 +6,7 @@ if (!isset($_SESSION)) {
 }
 
 
-    include "..\dev\conectar.php";
+    require("../dev/conectar.php");
     $nom_archivo = $_FILES['file1']['name'];
     $ruta ="../alumno/imagenes/".$nom_archivo;
     $archivo = $_FILES['file1']['tmp_name'];

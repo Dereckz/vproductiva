@@ -4,6 +4,11 @@
  * Copyright 2014-2021 Froala Labs
  */
 
+ @font-face {
+	font-family: Acumin;
+	src: url(AcuminVariableConcept.ttf);
+}
+
 .fr-clearfix::after {
   clear: both;
   display: block;
@@ -19560,7 +19565,7 @@ a.pswp__share--download:hover {
   pointer-events: none;
 }
 .u-repeater {
-  display: grid;
+  /*display: grid;*/
   grid-template-columns: repeat(3, 33.33333333%);
 }
 .u-repeater-item {
@@ -37537,3 +37542,105 @@ a.u-link.u-text-hover-grey-90:hover {
   color: var(--grey-90) !important;
 }
 /*end-variables colors*/
+
+/*style tabla*/
+#tablaencuestas{
+  width: 100%;
+  padding-left: 5em;
+}
+
+#encuestarealizada{
+  background-color: rgb(100, 13, 241);
+  text-align: center;
+  font-family: Acumin;
+  height: 2em;
+  width: 13.5em;
+  font-size: 1.2em;
+  padding-top: 0.45em;
+  padding-right: 0;
+  color: white;
+  margin-top: 0.6em;
+}
+
+/*#tomarencuesta{
+  margin-left: 12em;
+}*/
+
+#descripcion{
+  padding-bottom: 0.8em;
+}
+#tituloencuesta{
+  margin-top: 0.4em;
+}
+
+/*======= Button 2 =======*/
+.buttonen{
+  background:#0f83ca;
+  color:#fff;
+  border:none;
+  position:relative;
+  height:60px;
+  font-size:1.2em;
+  padding:0.48em 3.2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+  font-family: Acumin;
+}
+.buttonen:hover{
+  background:#fff;
+  color:#1f6bce;
+}
+.buttonen:before,.buttonen:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #1c6ad1;
+  transition:400ms ease all;
+  font-family: Acumin;
+}
+.buttonen:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+.buttonen:hover:before,.buttonen:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
+
+/*======= END Button 2 =======*/
+
+/*======= Formato encuestas =======*/
+.margenesencuesta{
+  padding: 0 2em;
+  background-color: #f6f5f7;
+}
+#tituloencuesta{
+  /*text-align: center;*/
+  width: 65%;
+}
+
+#titulodetalle{
+  margin-top: 0;
+  padding-top: 0.8em;
+}
+
+.col-md-12{
+  text-align: center;
+}
+
+.icheck-primary{
+  display: inline-flex;
+  padding: 0 3em;
+}
+
+.opcionrespuesta{
+  margin-right: 0.5em;
+}
+
+/*======= END formato encuestas =======*/

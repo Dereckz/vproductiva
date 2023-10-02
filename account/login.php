@@ -1,39 +1,20 @@
 <?php
- session_start();
-include("..\dev\conectar.php");
 
+session_start();
 
+require("../dev/conectar.php");
 $nombre =$_POST["username"];
 $pass = $_POST["password"];
-//$query = mysqli_query($conn,"SELECT * FROM usuarios WHERE cUsuario = '".$nombre."' and cPassword = '".$pass."'");
-//$nr = mysqli_num_rows($query);
-
-
-
-/* $Sql_Query = "select cusuario, cPassword from usuarios where cUsuario = '$nombre'";
-     
-     $result = mysqli_query($conn,$Sql_Query);
-     $row = mysqli_fetch_array($result);
-     
-        if(mysqli_num_rows($result) > 0){
-           if(password_verify($pass, $row['cPassword'])==1){
-              echo "Logeado exitosamente";
-              //procedes a asignar cookies o sesiones dependiendo de tu proyecto
-           }else{
-              echo "Error de inicio de sesion, contraseña invalida->";
-           }
-        }else{
-           echo "No hay usuarios registrado con ese nombre ";
-        } */
-
+if ($stmt = $conn->prepare("SELECT iIdUsuario, cUsuario, cPassword, cNombre, cApellidoP, cnombrelargo, fkidTipoUsuario,iGenero FROM usuarios WHERE cUsuario= ? LIMIT 1")) {
  
-if ($stmt = $conn->prepare("SELECT iIdUsuario, cUsuario, cPassword, cNombre, cnombrelargo, fkidTipoUsuario,iGenero FROM usuarios WHERE cUsuario= ? LIMIT 1")) {
 // Start the session
 
 
 ///* ligar parámetros para marcadores */
 // en este caso el nombre de usuario
-     $stmt->bind_param("s", $nombre);
+
+     $stmt->bind_Param("s", $nombre);
+
 //     /* ejecutamos la query */
      $stmt->execute();
 //     /* recuperamos los resultados */
@@ -51,23 +32,27 @@ if ($stmt = $conn->prepare("SELECT iIdUsuario, cUsuario, cPassword, cNombre, cno
         $_SESSION["ApellidoP"]=$fila['cApellidoP'];
         $_SESSION["NombreLargo"]=$fila["cnombrelargo"];
         $_SESSION["iGenero"]=$fila["iGenero"];
+        $_SESSION["img"]=$fila["cProfile"];
+        $_SESSION['tiempo']=time();
+       
         $tipo=$fila['fkidTipoUsuario'];
 
         if ($fila['fkidTipoUsuario']==1){
 
               header("Location: ../panel/index.php");
 
-        }else if ($fila['fkidTipoUsuario']==3){
+        }else if ($fila['fkidTipoUsuario']==2){
 
-         header("Location: ../alumno/index.php");
-
-        }else  if ($fila['fkidTipoUsuario']==2){
          header("Location: ../instructor/index.php");
+
+        }else  if ($fila['fkidTipoUsuario']==3){
+         header("Location: ../alumno/index.php");
         }         
      } else {
        //header("Location: login.html");
          //echo 'La contraseña no es válida!' ;
          echo "<script> alert('La contraseña no es válida!');window.location= '../account/login.html' </script>";
+
           
      }
 

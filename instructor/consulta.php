@@ -1,4 +1,5 @@
 <?php
+    require("../dev/conectar.php");
 include "../panel/func/profile.php";
 if (!isset($_SESSION)) {
     session_start();
@@ -7,15 +8,16 @@ if (!isset($_SESSION)) {
 // Función para obterner la información de los datos personales del alumno.
 function informacion()
 {
-    include "..\dev\conectar.php";
 
+    require("../dev/conectar.php");
     // para saber los cursos terminados
     $final=0;
     for ($i=1; $i<=7; $i++){
-        $terminado = mysqli_query($conn, "SELECT r.iIdRecurso,c.cNombreCurso, m.cNombreModulo,r.cRuta FROM usuarios u
+    $terminado = mysqli_query($conn, "SELECT r.iIdRecurso,c.cNombreCurso, m.cNombreModulo,r.cRuta 
+    FROM usuarios u
     INNER JOIN inscripcion i ON u.iIdUsuario = i.fkiIdUsuario
-      INNER JOIN curso c ON i.fkiIdeCurso = c.iIdCurso
-     INNER JOIN modulo m ON c.iIdCurso = m.fkiIdCurso
+    INNER JOIN curso c ON i.fkiIdeCurso = c.iIdCurso
+    INNER JOIN modulo m ON c.iIdCurso = m.fkiIdCurso
      INNER JOIN recurso r ON  m.iIdModulo = r.fkiIdModulo
     WHERE c.iIdCurso=".$i." and u.iIdUsuario=" . $_SESSION["id"]);
 
@@ -35,14 +37,26 @@ function informacion()
         }
     }
     
+  
+        $cInscrito= mysqli_query($conn,"SELECT * FROM curso c
+        INNER JOIN inscripcion i ON i.fkiIdeCurso = c.iIdCurso
+        INNER JOIN usuarios u ON u.iIdUsuario = i.fkiIdUsuario
+        WHERE  i.finalizado !=2 AND i.fkiIdUsuario=". $_SESSION["id"]);
+          $nInscrito= mysqli_num_rows($cInscrito); 
+  
+        $cSurvey= mysqli_query($conn,
+        "SELECT * FROM detallesurvey ds
+        inner join survey_set st
+        on ds.idSurvey=st.id
+        INNER JOIN usuarios us
+        on ds.idUsuario=us.iIdUsuario
+        where us.iIdUsuario=". $_SESSION["id"]);
+          
+    $nSurvey=mysqli_num_rows($cSurvey);
 
-    $cInscrito= mysqli_query($conn,"SELECT * FROM inscripcion i
-    INNER JOIN usuarios u ON I.fkiIdUsuario = U.iIdUsuario
-    INNER JOIN curso c ON i.fkiIdeCurso = c.iIdCurso
-    WHERE  i.finalizado !=2 AND i.fkiIdUsuario=". $_SESSION["id"]);
-    
-    $nInscrito= mysqli_num_rows($cInscrito);
-    
+   
+
+
     $resultado = mysqli_query($conn, "SELECT * FROM usuarios WHERE iIdUsuario=" . $_SESSION["id"]);
     while ($consulta = mysqli_fetch_array($resultado)) {
 
@@ -63,18 +77,19 @@ function informacion()
         
         </form>
         <tr><td colspan=2><p class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;"> Correo: ' . $consulta['cCorreo'] . '</p></td></tr>
-        <tr><td width="3%"><img src="img/docusin.png" width="90%"></td><td><p class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;"> Cursos Inscritos: '.$nInscrito.'</p></td></tr>
-        <tr><td width="3%"><img src="img/docu.png" width="90%"></td><td><p class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;">Cursos Finalizados: '.$final.'</p></td></tr>    
+        <tr><td><p class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;"> Encuestas asignadas: '.$nSurvey.'</p></td></tr>
+        <tr><td><p class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;">Encuestas finalizadas: '.$final.'</p></td></tr>    
         </table>
         ';
-
-        /*echo '<h3 class="u-text u-text-2 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;">' . $consulta['cNombreLargo'] . '</h3>
+        
+       /* echo '
+        
         <table class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;">
-        <tr><td td width="25%">Cursos Inscritos: </td><td>' . $consulta['cNombre'] . '</td> <td width="50%"></td><td rowspan=5> <img src="img/fotoperfil.png" width="80%"> </td></tr>
-        <tr><td>Cursos Finalizados: </td><td>' . $consulta['cApellidoP'] . '</td></tr>
-        <tr><td>Horas de aprendizaje realizadas: </td><td>' . $consulta['cApellidoM'] . '</td></tr>
-        <tr><td></td> <td></td></tr>
-        <tr><td colspan=2> ' . $consulta['cNombre'] . ' qué quieres aprender hoy?</td></tr>
+              
+
+        <tr><td colspan=2><p class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;"> Correo: ' . $consulta['cCorreo'] . '</p></td></tr>
+        <tr><td width="3%"><img src="img/docusin.png" width="90%"></td><td><p class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;"> Encuestas asignadas: '.$nSurvey.'</p></td></tr>
+        <tr><td width="3%"><img src="img/docu.png" width="90%"></td><td><p class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;">Encuestas finalizadas: '.$final.'</p></td></tr>    
         </table>
         ';*/
     }
@@ -83,11 +98,10 @@ function informacion()
 function miCurso()
 {
 
-    include "..\dev\conectar.php";
-    $resultado = mysqli_query($conn, "SELECT c.iIdCurso, c.cNombreCurso, c.ruta, c.ricono FROM inscripcion i
-    INNER JOIN usuarios u ON I.fkiIdUsuario = U.iIdUsuario
-    INNER JOIN curso c ON i.fkiIdeCurso = c.iIdCurso
-    WHERE i.finalizado !=2 AND i.fkiIdUsuario=" . $_SESSION["id"]);
+    require("../dev/conectar.php");
+
+
+     
     $info = "";
     $cur1 = "";
     $cur2 = "";
@@ -98,234 +112,247 @@ function miCurso()
     $cur7 = "";
     $contador = 1;
 
-    while ($consulta = mysqli_fetch_array($resultado)) {
-        $info = '
-         <div class="u-align-left u-border-10 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-base u-container-style u-custom-item u-list-item u-repeater-item u-shape-rectangle u-video-cover u-white u-list-item-4 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="250" style="will-change: transform, opacity; animation-duration: 1500ms;">
-            <div class="u-container-layout u-similar-container u-valign-top u-container-layout-4"><span class="u-custom-item u-file-icon u-icon u-text-palette-3-base u-icon-4 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="750" style="will-change: transform, opacity; animation-duration: 1500ms;"><img src="' . $consulta['ricono'] . '" alt=""></span>
-              <h4 class="u-text u-text-8"> ' . $consulta['cNombreCurso'] . '</h4>
-              <a href="' . $consulta['ruta'] . '" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-3-base u-text-body-color u-text-hover-palette-3-base u-top-left-radius-0 u-top-right-radius-0 u-btn-5">Entrar</a>
-              <a href="#" id="' . $consulta["iIdCurso"] . '" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-3-base u-text-body-color u-text-hover-palette-3-base u-top-left-radius-0 u-top-right-radius-0 u-btn-5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Eliminar</a>
-            </div>
-          </div>
+   
+        $resultado = mysqli_query($conn, "SELECT c.iIdCurso, c.cNombreCurso, c.ruta, c.ricono 
+        FROM curso c
+        INNER JOIN inscripcion i ON i.fkiIdeCurso = c.iIdCurso
+        INNER JOIN usuarios u ON u.iIdUsuario = i.fkiIdUsuario
+        WHERE i.finalizado !=2 AND i.fkiIdUsuario=" . $_SESSION["id"]);
 
-          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+while ($consulta = mysqli_fetch_array($resultado)) {
+    $info = '
+     <div class="u-align-left u-border-10 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-base u-container-style u-custom-item u-list-item u-repeater-item u-shape-rectangle u-video-cover u-white u-list-item-4 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="250" style="will-change: transform, opacity; animation-duration: 1500ms;">
+        <div class="u-container-layout u-similar-container u-valign-top u-container-layout-4"><span class="u-custom-item u-file-icon u-icon u-text-palette-3-base u-icon-4 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="750" style="will-change: transform, opacity; animation-duration: 1500ms;"><img src="' . $consulta['ricono'] . '" alt=""></span>
+          <h4 class="u-text u-text-8"> ' . $consulta['cNombreCurso'] . '</h4>
+          <a href="' . $consulta['ruta'] . '" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-3-base u-text-body-color u-text-hover-palette-3-base u-top-left-radius-0 u-top-right-radius-0 u-btn-5">Entrar</a>
+          <a href="#" id="' . $consulta["iIdCurso"] . '" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-3-base u-text-body-color u-text-hover-palette-3-base u-top-left-radius-0 u-top-right-radius-0 u-btn-5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Eliminar</a>
+        </div>
+      </div>
 
-    <script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 
-    document.getElementById("1").onclick = function() {
-      if (confirm("Favor de confirmar que desea salir del curso")) {
+<script>
 
-        idfCurso = "1";
-        idfUsuario = "' . $_SESSION["id"] . '";
+document.getElementById("1").onclick = function() {
+  if (confirm("Favor de confirmar que desea salir del curso")) {
 
-    //Convertimos las variables de javascript en variables de PHP
-        $( document ).ready(function() {
-    // Definimos las variables de javascrpt
-        var curso = idfCurso;
-        var alumn = idfUsuario;
+    idfCurso = "1";
+    idfUsuario = "' . $_SESSION["id"] . '";
 
-    // Ejecutamos AJAX
-    $.post("salirCurso.php",{"curso":curso,"usuario": alumn},function(respuesta){
-            alert(respuesta);
-            location.reload();
-        });
-        });
+//Convertimos las variables de javascript en variables de PHP
+    $( document ).ready(function() {
+// Definimos las variables de javascrpt
+    var curso = idfCurso;
+    var alumn = idfUsuario;
 
-        } else {
-        urlNuevo = "#";
+// Ejecutamos AJAX
+$.post("salirCurso.php",{"curso":curso,"usuario": alumn},function(respuesta){
+        alert(respuesta);
+        location.reload();
+    });
+    });
+
+    } else {
+    urlNuevo = "#";
+}
+}
+</script>
+
+<script>
+
+document.getElementById("2").onclick = function() {
+  if (confirm("Favor de confirmar que desea salir del curso")) {
+
+    idfCurso = "2";
+    idfUsuario = "' . $_SESSION["id"] . '";
+
+//Convertimos las variables de javascript en variables de PHP
+    $( document ).ready(function() {
+// Definimos las variables de javascrpt
+    var curso = idfCurso;
+    var alumn = idfUsuario;
+
+// Ejecutamos AJAX
+$.post("salirCurso.php",{"curso":curso,"usuario": alumn},function(respuesta){
+        alert(respuesta);
+        location.reload();
+    });
+    });
+
+    } else {
+    urlNuevo = "#";
+}
+}
+
+</script>
+
+<script>
+
+document.getElementById("3").onclick = function() {
+  if (confirm("Favor de confirmar que desea salir del curso")) {
+
+    idfCurso = "3";
+    idfUsuario = "' . $_SESSION["id"] . '";
+
+//Convertimos las variables de javascript en variables de PHP
+    $( document ).ready(function() {
+// Definimos las variables de javascrpt
+    var curso = idfCurso;
+    var alumn = idfUsuario;
+
+// Ejecutamos AJAX
+$.post("salirCurso.php",{"curso":curso,"usuario": alumn},function(respuesta){
+        alert(respuesta);
+        location.reload();
+    });
+    });
+
+    } else {
+    urlNuevo = "#";
+}
+}
+
+</script>
+
+<script>
+
+document.getElementById("4").onclick = function() {
+  if (confirm("Favor de confirmar que desea salir del curso")) {
+
+    idfCurso = "4";
+    idfUsuario = "' . $_SESSION["id"] . '";
+
+//Convertimos las variables de javascript en variables de PHP
+    $( document ).ready(function() {
+// Definimos las variables de javascrpt
+    var curso = idfCurso;
+    var alumn = idfUsuario;
+
+// Ejecutamos AJAX
+$.post("salirCurso.php",{"curso":curso,"usuario": alumn},function(respuesta){
+        alert(respuesta);
+        location.reload();
+    });
+    });
+
+    } else {
+    urlNuevo = "#";
+}
+}
+
+</script>
+
+<script>
+
+document.getElementById("5").onclick = function() {
+  if (confirm("Favor de confirmar que desea salir del curso")) {
+
+    idfCurso = "5";
+    idfUsuario = "' . $_SESSION["id"] . '";
+
+//Convertimos las variables de javascript en variables de PHP
+    $( document ).ready(function() {
+// Definimos las variables de javascrpt
+    var curso = idfCurso;
+    var alumn = idfUsuario;
+
+// Ejecutamos AJAX
+$.post("salirCurso.php",{"curso":curso,"usuario": alumn},function(respuesta){
+        alert(respuesta);
+        location.reload();
+    });
+    });
+
+    } else {
+    urlNuevo = "#";
+}
+}
+
+</script>
+
+<script>
+
+document.getElementById("6").onclick = function() {
+  if (confirm("Favor de confirmar que desea salir del curso")) {
+
+    idfCurso = "6";
+    idfUsuario = "' . $_SESSION["id"] . '";
+
+//Convertimos las variables de javascript en variables de PHP
+    $( document ).ready(function() {
+// Definimos las variables de javascrpt
+    var curso = idfCurso;
+    var alumn = idfUsuario;
+
+// Ejecutamos AJAX
+$.post("salirCurso.php",{"curso":curso,"usuario": alumn},function(respuesta){
+        alert(respuesta);
+        location.reload();
+    });
+    });
+
+    } else {
+    urlNuevo = "#";
+}
+
+}
+
+</script>
+
+<script>
+
+document.getElementById("7").onclick = function() {
+  if (confirm("Favor de confirmar que desea salir del curso")) {
+
+    idfCurso = "7";
+    idfUsuario = "' . $_SESSION["id"] . '";
+
+//Convertimos las variables de javascript en variables de PHP
+    $( document ).ready(function() {
+// Definimos las variables de javascrpt
+    var curso = idfCurso;
+    var alumn = idfUsuario;
+
+// Ejecutamos AJAX
+$.post("salirCurso.php",{"curso":curso,"usuario": alumn},function(respuesta){
+        alert(respuesta);
+        location.reload();
+    });
+    });
+
+    } else {
+    urlNuevo = "#";
+}
+}
+
+</script>
+      ';
+
+    if ($contador == 1) {
+        $cur1 = $info;
+    } elseif ($contador == 2) {
+        $cur2 = $info;
+    } elseif ($contador == 3) {
+        $cur3 = $info;
+    } elseif ($contador == 4) {
+        $cur4 = $info;
+    } elseif ($contador == 5) {
+        $cur5 = $info;
+    } elseif ($contador == 6) {
+        $cur6 = $info;
+    } elseif ($contador == 7) {
+        $cur7 = $info;
     }
-    }
-    </script>
 
-    <script>
+    $contador = $contador + 1;
+}
 
-    document.getElementById("2").onclick = function() {
-      if (confirm("Favor de confirmar que desea salir del curso")) {
 
-        idfCurso = "2";
-        idfUsuario = "' . $_SESSION["id"] . '";
+   
+   
 
-    //Convertimos las variables de javascript en variables de PHP
-        $( document ).ready(function() {
-    // Definimos las variables de javascrpt
-        var curso = idfCurso;
-        var alumn = idfUsuario;
-
-    // Ejecutamos AJAX
-    $.post("salirCurso.php",{"curso":curso,"usuario": alumn},function(respuesta){
-            alert(respuesta);
-            location.reload();
-        });
-        });
-
-        } else {
-        urlNuevo = "#";
-    }
-    }
-
-    </script>
-
-    <script>
-
-    document.getElementById("3").onclick = function() {
-      if (confirm("Favor de confirmar que desea salir del curso")) {
-
-        idfCurso = "3";
-        idfUsuario = "' . $_SESSION["id"] . '";
-
-    //Convertimos las variables de javascript en variables de PHP
-        $( document ).ready(function() {
-    // Definimos las variables de javascrpt
-        var curso = idfCurso;
-        var alumn = idfUsuario;
-
-    // Ejecutamos AJAX
-    $.post("salirCurso.php",{"curso":curso,"usuario": alumn},function(respuesta){
-            alert(respuesta);
-            location.reload();
-        });
-        });
-
-        } else {
-        urlNuevo = "#";
-    }
-    }
-
-    </script>
-
-    <script>
-
-    document.getElementById("4").onclick = function() {
-      if (confirm("Favor de confirmar que desea salir del curso")) {
-
-        idfCurso = "4";
-        idfUsuario = "' . $_SESSION["id"] . '";
-
-    //Convertimos las variables de javascript en variables de PHP
-        $( document ).ready(function() {
-    // Definimos las variables de javascrpt
-        var curso = idfCurso;
-        var alumn = idfUsuario;
-
-    // Ejecutamos AJAX
-    $.post("salirCurso.php",{"curso":curso,"usuario": alumn},function(respuesta){
-            alert(respuesta);
-            location.reload();
-        });
-        });
-
-        } else {
-        urlNuevo = "#";
-    }
-    }
-
-    </script>
-
-    <script>
-
-    document.getElementById("5").onclick = function() {
-      if (confirm("Favor de confirmar que desea salir del curso")) {
-
-        idfCurso = "5";
-        idfUsuario = "' . $_SESSION["id"] . '";
-
-    //Convertimos las variables de javascript en variables de PHP
-        $( document ).ready(function() {
-    // Definimos las variables de javascrpt
-        var curso = idfCurso;
-        var alumn = idfUsuario;
-
-    // Ejecutamos AJAX
-    $.post("salirCurso.php",{"curso":curso,"usuario": alumn},function(respuesta){
-            alert(respuesta);
-            location.reload();
-        });
-        });
-
-        } else {
-        urlNuevo = "#";
-    }
-    }
-
-    </script>
-
-    <script>
-
-    document.getElementById("6").onclick = function() {
-      if (confirm("Favor de confirmar que desea salir del curso")) {
-
-        idfCurso = "6";
-        idfUsuario = "' . $_SESSION["id"] . '";
-
-    //Convertimos las variables de javascript en variables de PHP
-        $( document ).ready(function() {
-    // Definimos las variables de javascrpt
-        var curso = idfCurso;
-        var alumn = idfUsuario;
-
-    // Ejecutamos AJAX
-    $.post("salirCurso.php",{"curso":curso,"usuario": alumn},function(respuesta){
-            alert(respuesta);
-            location.reload();
-        });
-        });
-
-        } else {
-        urlNuevo = "#";
-    }
-
-    }
-
-    </script>
-
-    <script>
-
-    document.getElementById("7").onclick = function() {
-      if (confirm("Favor de confirmar que desea salir del curso")) {
-
-        idfCurso = "7";
-        idfUsuario = "' . $_SESSION["id"] . '";
-
-    //Convertimos las variables de javascript en variables de PHP
-        $( document ).ready(function() {
-    // Definimos las variables de javascrpt
-        var curso = idfCurso;
-        var alumn = idfUsuario;
-
-    // Ejecutamos AJAX
-    $.post("salirCurso.php",{"curso":curso,"usuario": alumn},function(respuesta){
-            alert(respuesta);
-            location.reload();
-        });
-        });
-
-        } else {
-        urlNuevo = "#";
-    }
-    }
-
-    </script>
-          ';
-
-        if ($contador == 1) {
-            $cur1 = $info;
-        } elseif ($contador == 2) {
-            $cur2 = $info;
-        } elseif ($contador == 3) {
-            $cur3 = $info;
-        } elseif ($contador == 4) {
-            $cur4 = $info;
-        } elseif ($contador == 5) {
-            $cur5 = $info;
-        } elseif ($contador == 6) {
-            $cur6 = $info;
-        } elseif ($contador == 7) {
-            $cur7 = $info;
-        }
-
-        $contador = $contador + 1;
-    }
+    
     echo $cur1;
     echo $cur2;
     echo $cur3;
@@ -582,12 +609,13 @@ function miCurso()
 */
 function infoCurso()
 {
-    include "..\dev\conectar.php";
+    require("../dev/conectar.php");
     
-    $inscrito = mysqli_query($conn, "SELECT c.iIdCurso FROM inscripcion i
-    INNER JOIN usuarios u ON I.fkiIdUsuario = U.iIdUsuario
-    INNER JOIN curso c ON i.fkiIdeCurso = c.iIdCurso
-    WHERE i.finalizado !=2 AND i.fkiIdUsuario=" . $_SESSION["id"]);
+    $inscrito = mysqli_query($conn, "SELECT c.iIdCurso 
+        FROM curso c
+        INNER JOIN inscripcion i ON i.fkiIdeCurso = c.iIdCurso
+        INNER JOIN usuarios u ON u.iIdUsuario = i.fkiIdUsuario
+        WHERE i.finalizado !=2 AND i.fkiIdUsuario=" . $_SESSION["id"]);
  
     //$ci=mysqli_num_rows($inscrito);
     // arreglo para recorrer los cursos donde el usuario ya esta inscrito
@@ -638,20 +666,20 @@ function infoCurso()
         }
 
         //validar si esta inscrito en el curso
-        $link ='<a href="#" id="' . $consulta["iIdCurso"] . '" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Inscribirse</a>';
+        $link ='<a href="#" id="' . $consulta["iIdCurso"] . '" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">&nbsp;Inscribirse</a>';
         $i=0;
         while($i<count($arreglo)){
             if ($arreglo[$i]== $consulta['iIdCurso']){
-                $link ='<a href="#" id="" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Inscrito</a>';  
+                $link ='<a href="#" id="" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">&nbsp;&nbsp;&nbsp;Inscrito</a>';  
                 $i=count($arreglo);
             }
             else{
-            $link ='<a href="#" id="' . $consulta["iIdCurso"] . '" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Inscribirse</a>';
+            $link ='<a href="#" id="' . $consulta["iIdCurso"] . '" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">&nbsp;Inscribirse</a>';
             } 
             $i++;       
         }
 
-        $info = '<div class="u-align-left u-border-10 u-border-no-left u-border-no-right u-border-no-top u-border-palette-2-base u-container-style u-custom-item u-list-item u-repeater-item u-shape-rectangle u-white u-list-item-1 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="250" style="will-change: transform, opacity; animation-duration: 1500ms;">
+        $info = '<div class="u-align-left u-border-10 u-border-no-left u-border-no-right u-border-no-top u-border-palette-2-base u-container-style u-custom-item u-list-item u-repeater-item u-shape-rectangle u-white u-list-item-1 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="250" style="will-change: transform, opacity; animation-duration: 1500ms; display: inline-flex; width: 16em; margin: 1.4em;">
         <div class="u-container-layout u-similar-container u-valign-top u-container-layout-1"><span class="u-custom-item u-file-icon u-icon u-text-palette-2-base u-icon-1 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="750" style="will-change: transform, opacity; animation-duration: 1500ms;"><img src="' . $consulta['ricono'] . '" alt=""></span>
         <h4 class="u-text u-text-5">' . $consulta['cNombreCurso'] . '</h4> <a href="' . $ruta. '" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">Ver curso</a>
         '.$link.'

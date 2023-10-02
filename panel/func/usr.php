@@ -1,5 +1,7 @@
 <?php
-include("..\dev\conectar.php");
+
+require("../dev/conectar.php");
+
 
 $nombreusuario=($_POST["name_nav"]);
 $curso= $mysqli->real_escape_string($_POST["curso"]);

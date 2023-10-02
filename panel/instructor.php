@@ -10,6 +10,47 @@
 	    header('location:login.php');
 	include 'header.php' 
 ?>
+
+<style>
+  :root {
+    --color-green: #00a878;
+    --color-red: #fe5e41;
+    --color-button: #fdffff;
+    --color-black: #000;
+}
+.switch-button {
+    display: inline-block;
+}
+.switch-button .switch-button__checkbox {
+    display: none;
+}
+.switch-button .switch-button__label {
+    background-color: var(--color-red);
+    width: 2rem;
+    height: 1rem;
+    border-radius: 1rem;
+    display: inline-block;
+    position: relative;
+}
+.switch-button .switch-button__label:before {
+    transition: .2s;
+    display: block;
+    position: absolute;
+    width: 1rem;
+    height: 1rem;
+    background-color: var(--color-button);
+    content: '';
+    border-radius: 50%;
+    box-shadow: inset 0px 0px 0px 1px var(--color-black);
+}
+.switch-button .switch-button__checkbox:checked + .switch-button__label {
+    background-color: var(--color-green);
+}
+.switch-button .switch-button__checkbox:checked + .switch-button__label:before {
+    transform: translateX(2rem);
+}
+</style>
+
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
   <?php include 'topbar.php' ?>
@@ -23,58 +64,112 @@
 	  </div>
     <div id="toastsContainerTopRight" class="toasts-top-right fixed"></div>
     <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0"><?php echo $title ?></h1>
-          </div><!-- /.col -->
 
-        </div><!-- /.row -->
-            <hr class="border-primary">
-      </div><!-- /.container-fluid -->
-    </div>
     <!-- /.content-header -->
 
     <!-- Main content -->
  
     <?php include 'func/cursos.php';?>
+    <?php include 'func/surveyset.php';?>
+    <?php
+
+       require("../dev/conectar.php");
    
-<div class="container-fluid" id="container-wrapper">
+
+
+    $sqlCliente   = ("SELECT * FROM usuarios where usuarios.fkidTipoUsuario=2; ");
+    $queryCliente = mysqli_query($conn, $sqlCliente);
+    $cantidad     = mysqli_num_rows($queryCliente);
+    ?>
+
+
+    <div class="container-fluid" id="container-wrapper">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Instructores</h1>
+
+            <h1 class="h3 mb-0 text-gray-800">Capacitadores</h1>
+
             <ol class="breadcrumb">
               <li class="breadcrumb-item">
                 <a href="./">Home</a>
               </li>
-              <li class="breadcrumb-item">Instructor</li>
+              <li class="breadcrumb-item">Capacitadores</li>
               <li class="breadcrumb-item active" aria-current="page">Administrar</li>
             </ol>
           </div>
           <div class="row">
-          <div class="table-responsive">
-                  <table class="table align-items-center table-flush">
-                    <thead class="thead-light">
-                      <tr>
-                        <th>ID</th>
-                        <th>Instructor</th>
-                        <th>Estatus</th>
-                        <th>Accion</th>
-                        <th>Encuesta</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                     <?php  registercurso(); ?>
-                    </tbody>
-                  </table>
+                <div class="col-md-12 p-2">
+
+
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped table-hover">
+                      <thead>
+                        <tr>
+                          <th scope="col">Nombre</th>
+                          <th scope="col">Email</th>
+                          <th scope="col">Estatus</th>
+                          <th scope="col">Acción</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <?php
+                        while ($dataCliente = mysqli_fetch_array($queryCliente)) { ?>
+                          <tr>
+
+                            <td><?php echo $dataCliente['cNombreLargo']; ?></td>
+
+                            <td><?php echo $dataCliente['cCorreo']; ?></td>
+                            <?php if($dataCliente['iEstatus']==1) {?> 
+                              <td><span  class="badge badge-success" > <a class="text-white" href="func/actualizarStatus.php?id='<?php echo $dataCliente['iIdUsuario']; ?>'&status=1">Activo<a></span></td> 
+                            <?php }?> 
+                            <?php if($dataCliente['iEstatus']==0) {?> 
+                              <td><span  class="badge badge-danger"><a class="text-white" href="func/actualizarStatus.php?id='<?php echo $dataCliente['iIdUsuario']; ?>'&status=0">Inactivo</a></span></td> 
+                            <?php }?> 
+                            <td>
+                              <!-- <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteChildresn<?php echo $dataCliente['iIdUsuario']; ?>">
+                                Eliminar
+                              </button> -->
+                              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editChildresn<?php echo $dataCliente['iIdUsuario']; ?>">
+                                Modificar
+                              </button>
+                              <button type="button" class="btn btn-warning" data-toggle="modal"  data-target="#cursomodal<?php echo $dataCliente['iIdUsuario']; ?>">
+                                Agregar Curso
+                              </button>
+                              <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalsurvey<?php echo $dataCliente['iIdUsuario']; ?>">
+                                Agregar Encuesta
+                              </button>
+                            </td>
+                           <tr>
+                            <?php   echo ''.cursodeusuario($dataCliente["iIdUsuario"]).'';?>
+                            </tr> 
+                            <tr>
+                            <?php   echo ''.surveyactive($dataCliente["iIdUsuario"]).'';?>
+                            </tr> 
+
+                          </tr>
+           
+
+                              <!--Ventana Modal para Actualizar--->
+                              <?php include('ModalEditar.php'); ?>
+                              <!--Ventana Modal para la Alerta de Eliminar--->
+                              <?php include('ModalEliminar.php'); ?>
+                              <!--Ventana Modal para Agregar Encuesta--->
+                              <?php include('ModalSurvey.php'); ?>
+                              <!--Ventana Modal para Agregar Curso--->
+                              <?php include('ModalCurso.php'); ?>
+
+                         
+
+                        <?php } ?>
+
+                    </table>
+                  </div>
+
+
                 </div>
-                <div class="card-footer"></div>
               </div>
             </div>
-           
-            </div>
-          
-
+          </div>
+       
           <!-- Modal Logout -->
           <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
                   aria-hidden="true">
@@ -91,76 +186,14 @@
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancelar</button>
-                        <a href="http://localhost/vproductivam/account/login.html" class="btn btn-primary">Cerrar Sesión</a>
+                        <a href="../account/login.html" class="btn btn-primary">Cerrar Sesión</a>
                       </div>
                     </div>
                   </div>
-                </div> 
-
-          <!--modal agregar curso-->
+          </div> 
+                            
+        </div>
          
-          <div class="modal fade" id="cursomodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabelLogout">Asignar Curso</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-            <form name="frmAgregar" method="post" action="http://localhost/vproductivam/panel/func/agregarcurso.php">  
-                <div class="modal-body">
-                <label for="curso-names">Seleccione curso a Asignar:</label> 
-                <select name="cursoselect" id="cursoselect">
-                      <!--?php listcurso()?--> 
-                      <option value='1'>Productividad Laboral</option>
-                      <option value='2'>Habilidades Blandas</option>
-                      <option value='3'>Habilidades Digitales</option>
-                      <option value='4'>Psicología</option>
-                      <option value='5'>Salud, Higiene y Seguridad</option>
-                      <option value='6'>Cultura Jurídica / derecho empresarial y corporativo</option>
-                      <option value='7'>Finanzas</option>
-                  </select>
-                </div>
-                <div class="modal-footer">
-                  <button type="submit" class="btn btn-outline-primary"  id ="btnAsignar" name ="btnAsignar"  >Agregar</button>
-                  <a  class="btn btn-outline-primary" data-dismiss="modal">Salir</a>
-                </div>
-            </form>    
-              </div>
-            </div>
-          </div>    
-        </div>
-
-        <!--Modal añadir Entrevista -->
-        <div class="modal fade" id="surveymodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabelLogout"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabelLogout">Mandar Encuesta</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                    <form name="frmSurveySet" method="post" action="http://localhost/vproductivam/panel/func/agregarsurvey.php">  
-                        <div class="modal-body">
-                        <label for="curso-names">Marque encuesta(s):</label> 
-                       <div>
-                         <?php showAllSurvey() ?> 
-                       </div>  
-                        </div>
-                        <div class="modal-footer">
-                          <button type="submit" class="btn btn-outline-primary"  id ="btnSurvey" name ="btnSurvey"  >Agregar</button>
-                          <a  class="btn btn-outline-primary" data-dismiss="modal">Salir</a>
-                        </div>
-                    </form>    
-              </div>
-            </div>
-          </div>    
-        </div>
-       
     <!-- /.content -->
     <div class="modal fade" id="confirm_modal" role='dialog'>
     <div class="modal-dialog modal-md" role="document">
@@ -210,8 +243,8 @@
   <div class="modal fade" id="viewer_modal" role='dialog'>
     <div class="modal-dialog modal-md" role="document">
       <div class="modal-content">
-              <button type="button" class="btn-close" data-dismiss="modal"><span class="fa fa-times"></span></button>
-              <img src="" alt="">
+            <button type="button" class="btn-close" data-dismiss="modal"><span class="fa fa-times"></span></button>
+            <img src="" alt="">
       </div>
     </div>
   </div>
@@ -225,27 +258,21 @@
   <!-- /.control-sidebar -->
 
   <!-- Main Footer -->
-  <footer class="main-footer">
-    <strong>Copyright &copy; 2020 <a href="https://www.sourcecodester.com/">sourcecodester.com</a>.</strong>
-    All rights reserved.
-    <div class="float-right d-none d-sm-inline-block">
-      <b>Online Survey System</b>
-    </div>
-  </footer>
+  <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>copyright &copy; <script> document.write(new Date().getFullYear()); </script> - developed by
+              <b><a href="https://desetecnologias.net/" target="_blank">Dese Tecnologias</a></b>
+            </span>
+          </div>
+        </div>
+    </footer>
 </div>
 <!-- ./wrapper -->
 
 <!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->
-<script> 
-MiFuncionJS(){
-    Swal.fire(
-            'Operacion Exitosa',
-            '¡Se mando encuesta Correctamente!',
-            'success'
-          )
-    }
-  </script>
+
 <!-- Bootstrap -->
 <?php include 'footer.php' ?>
 </body>

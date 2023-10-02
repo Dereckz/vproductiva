@@ -1,9 +1,10 @@
 <?php
- // session_start();
- $a='0';
+
 function curseactive()
 {
-    include "..\dev\conectar.php";
+
+  require("../dev/conectar.php");
+
     $resultado = mysqli_query($conn, "SELECT * FROM Curso");
     
     while ($consulta = mysqli_fetch_array($resultado)) {
@@ -34,7 +35,9 @@ function curseactive()
 }
 function registercurso()
 {
-    include "..\dev\conectar.php";
+
+  require("../dev/conectar.php");
+
     
     $resultado = mysqli_query($conn, "SELECT * FROM usuarios where usuarios.fkidTipoUsuario=3;");
     
@@ -44,9 +47,9 @@ function registercurso()
         {
               echo 
               '<tr>
-                <td><a  id="aIdu" href="javascript:void(0);" data-toggle="modal" data-target="#cantidadcurso">'.$consulta["iIdUsuario"].'</a></td>
+              <td><a  id="aIdu" href="instructor_edit.php?idu='.$consulta["iIdUsuario"].'" >'.$consulta["iIdUsuario"].'</a></td>
                 <td>'.strtoupper($consulta["cNombreLargo"]).'</td>
-                <td><span  class="badge badge-success"><a onclick="actualizarStatus();">Activo</a></span></td>
+                <td><span  class="badge badge-success text-dark"><a  href="func/updatestatus.php?id='.$consulta["iIdUsuario"].'&status=1"> Activo</a></span></td>
                 <td><a class="btn btn-sm btn-primary" href="javascript:void(0);" data-toggle="modal" data-target="#cursomodal" >Agregar Curso</a></td>           
                </tr><tr>'
               ;
@@ -56,9 +59,9 @@ function registercurso()
          
             echo 
             '<tr>
-            <td><a href="javascript:void(0);" data-toggle="modal" data-target="#cantidadcurso">'.$consulta["iIdUsuario"].'</a></td>
+            <td><a  id="aIdu" href="instructor_edit.php?idu='.$consulta["iIdUsuario"].'" >'.$consulta["iIdUsuario"].'</a></td>
              <td>'.strtoupper($consulta["cNombreLargo"]).'</td>
-            <td><span class="badge badge-danger" onclick="actualizarStatus()">Inactivo</span></td>
+             <td><span class="badge badge-danger" ><a  href="func/updatestatus.php?id='.$consulta["iIdUsuario"].'&status=0">Inactivo</a></span></td>
             <td><a href="javascript:void(0);" data-toggle="modal" data-target="#cursomodal" class="btn btn-sm btn-primary">Agregar Curso</a></td>
             </tr>'
             ;
@@ -70,7 +73,9 @@ function registercurso()
 }
 function listcurso()
 {   session_start();
-    include "..\dev\conectar.php";
+
+  require("../dev/conectar.php");
+
     $resultado2 = mysqli_query($conn, "SELECT * FROM Curso");
 
     
@@ -85,30 +90,6 @@ function listcurso()
 }
 
 
-function cursodeusuario($parametro1){
-  include "..\dev\conectar.php";
-
-  $result = mysqli_query($conn, 
-          "SELECT u.iIdUsuario,dc.iIdDetalleCurso,c.iIdCurso, u.cNombreLargo,c.cNombreCurso,c.cDescripcion
-          FROM detallecurso as dc INNER JOIN usuarios as u 
-          on dc.fkiIdUsuario=u.iIdUsuario 
-          INNER JOIN curso c
-          on c.iIdCurso=dc.fkiIdCurso
-          where u.iIdUsuario=".$parametro1.";");
-
-      //mysqli_data_seek ($result, 0);
-      //$extraido= mysqli_fetch_array($result);
-      $row_cnt = mysqli_num_rows($result);
-      if ($row_cnt>0){
-        echo '<td>Profesor de:</td>';
-      }
-      while ($consulta = mysqli_fetch_array($result)) {
-      
-      echo
-      '<td>'.($consulta["cNombreCurso"]).' </td>';
-      }
-
-}
 function agregarcurso(){
     if (!isset($_POST["btnAsignar"])) {
 
