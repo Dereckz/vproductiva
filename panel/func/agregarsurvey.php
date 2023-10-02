@@ -40,7 +40,7 @@ $contadorlist=0;
                         echo "<script>";
                         echo "MiFuncionJS();";
                         echo "</script>";
-                        header("Location: http://localhost/vproductivam/panel/instructor.php");  
+                        header("Location: ../panel/instructor.php");  
                        
         } 
  ?>

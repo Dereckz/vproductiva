@@ -12,7 +12,7 @@ $answers = $conn->query("SELECT distinct(survey_id) from answers where user_id =
           </span>
         </div>
 	</div>
-	<div class=" w-100" id='ns' style="display: none"><center><b>No Result.</b></center></div>
+	<div class=" w-100" id='ns' style="display: none"><center><b>Sin resultados.</b></center></div>
 	<div class="row">
 		<?php 
 		$survey = $conn->query("SELECT * FROM survey_set order by rand() ");
