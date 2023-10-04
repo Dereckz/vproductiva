@@ -16,7 +16,7 @@ while($row=$answers->fetch_assoc()){
           </span>
         </div>
 	</div>
-	<div class=" w-100" id='ns' style="display: none"><center><b>No Result.</b></center></div>
+	<div class=" w-100" id='ns' style="display: none"><center><b>Sin resultados</b></center></div>
 	<div class="row">
 		<?php 
 		$survey = $conn->query("SELECT * FROM survey_set where '".date('Y-m-d')."' between date(start_date) and date(end_date) order by rand() ");
@@ -41,7 +41,11 @@ while($row=$answers->fetch_assoc()){
                		<?php if(!isset($ans[$row['id']])): ?>
                			<a href="index.php?page=answer_survey&id=<?php echo $row['id'] ?>" class="btn btn-sm bg-gradient-primary"><i class="fa fa-pen-square"></i> Tomar Encuesta</a>
                		<?php else: ?>
+<<<<<<< HEAD
                			<p class="text-primary border-top border-primary">Echo</p>
+=======
+               			<p class="text-primary border-top border-primary">Hecho</p>
+>>>>>>> origin/master
                		<?php endif; ?>
                	</div>
                </div>

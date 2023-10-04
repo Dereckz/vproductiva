@@ -7,7 +7,7 @@
     <div class="modal-content">
       <div class="modal-header" style="background-color: #563d7c !important;">
         <h6 class="modal-title" style="color: #fff; text-align: center;">
-            Actualizar Información
+            Actualizar Información.
         </h6>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
@@ -45,17 +45,20 @@
                   <input type="number" name="celular" class="form-control" value="<?php echo $dataCliente['cTelefono']; ?>" >
                 </div>
                 <div>
+       
                   <?php 
                     
                     if ($dataCliente["iGenero"]==0){
+                    
                       echo ' 
-                      <input type="radio" name="radio" value="0" > Masculino<br>
-                      <input type="radio" name="radio" value="1" checked=true> Femenino<br>
+                      
+                      <input type="radio" name="radio" value="0" checked=true> Femenino<br>
+                      <input type="radio" name="radio" value="1" > Masculino<br>
                       <input type="radio" name="radio" value="2"> No especificar<br>';
                     }elseif($dataCliente["iGenero"]==1){
                         echo ' 
-                        <input type="radio" name="radio" value="0" checked=true> Masculino<br>
-                        <input type="radio" name="radio" value="1"> Femenino<br>
+                        <input type="radio" name="radio" value="0"> Femenino<br>
+                        <input type="radio" name="radio" value="1" checked=true> Masculino<br>
                         <input type="radio" name="radio" value="2"> No especificar<br>';
                       }else{
                         echo ' 
@@ -76,7 +79,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-              <button type="submit" class="btn btn-primary" onclick="guardado_correctamente()">Guardar Cambios</button>
+              <button type="submit" class="btn btn-primary"   onclick="guardado_correctamente()">Guardar Cambios</button>
             </div>
        </form>
 
@@ -88,7 +91,7 @@
   function guardado_correctamente() {
     Swal.fire(
   '¡Operación Exitosa!',
-  'Se a actualizado correctamente.',
+  'Se a agregado correctamente.',
   'success'
 )
   }
