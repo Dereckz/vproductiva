@@ -18,6 +18,14 @@
         if($queryA){
 
             header("Location: ../instructor.php");
+            echo'
+            <script>
+                Swal.fire(
+                "¡Operación Exitosa!",
+                "Se a actualizado correctamente.",
+                "success"
+                )
+          </script>';
 
         }
                 

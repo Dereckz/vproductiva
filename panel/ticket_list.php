@@ -15,12 +15,12 @@
 				<thead>
 					<tr>
 						<th>#</th>
-						<th>Date Created</th>
+						<th>Fecha de Creacion</th>
 						<th>Ticket</th>
 						<th>Subject</th>
-						<th>Description</th>
-						<th>Status</th>
-						<th>Action</th>
+						<th>Descripción</th>
+						<th>Estatus</th>
+						<th>Accion</th>
 					</tr>
 				</thead>
 				<tbody>
