@@ -113,11 +113,11 @@ $answers = $conn->query("SELECT distinct(user_id) from answers where survey_id =
 		uni_modal("Nueva Pregunta","manage_question.php?sid=<?php echo $id ?>","large")
 	})
 	$('.edit_question').click(function(){
-		uni_modal("New Question","manage_question.php?sid=<?php echo $id ?>&id="+$(this).attr('data-id'),"large")
+		uni_modal("Nueva Pregunta","manage_question.php?sid=<?php echo $id ?>&id="+$(this).attr('data-id'),"large")
 	})
 	
 	$('.delete_question').click(function(){
-	_conf("Are you sure to delete this question?","delete_question",[$(this).attr('data-id')])
+	_conf("Estas seguro de eliminar esta pregunta?","delete_question",[$(this).attr('data-id')])
 	})
 	function delete_question($id){
 		start_load()

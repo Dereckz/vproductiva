@@ -35,7 +35,7 @@ while($row=$answers->fetch_assoc()){
 		<div class="col-md-4">
 			<div class="card card-outline card-primary">
 				<div class="card-header">
-					<h3 class="card-title"><b>Survey Details</b></h3>
+					<h3 class="card-title"><b>Detalle de Encuestas</b></h3>
 					
 				</div>
 				<div class="card-body p-0 py-2">

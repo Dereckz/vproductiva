@@ -409,14 +409,14 @@
     
     
     <section class="u-backlink u-clearfix u-grey-80">
-      <a class="u-link" href="https://nicepage.com/website-templates" target="_blank">
-        <span>Website Templates</span>
+      <a class="u-link">
+        <span>Copyright © 2023</span>
       </a>
       <p class="u-text">
-        <span>creado con</span>
+        <span>- developed by</span>
       </p>
-      <a class="u-link" href="https://nicepage.com/" target="_blank">
-        <span>Website Builder Software</span>
+      <a class="u-link" href="https://desetecnologias.net" target="_blank">
+        <span>Dese Tecnologias</span>
       </a>. 
     </section>
   
