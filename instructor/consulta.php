@@ -640,11 +640,11 @@ function infoCurso()
 
     $ruta1="../cursos/infopLaboral.php";
     $ruta2="../cursos/infohBlandas.php";
-    $ruta3="../cursos/infohDigitales.php";
-    $ruta4="../cursos/infopsicologia.php";
-    $ruta5="../cursos/infosahase.php";
-    $ruta6="../cursos/infocJuridica.php";
-    $ruta7="../cursos/infofinanzas.php";
+    $ruta3="../cursos/infopsicologia.php";
+    $ruta4="../cursos/infosahase.php";
+    $ruta5="../cursos/infocJuridica.php";
+    $ruta6="../cursos/infofinanzas.php";
+    $ruta7="../cursos/infohDigitales.php";
 
     $contador = 1;
 
