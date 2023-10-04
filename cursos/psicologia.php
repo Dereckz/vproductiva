@@ -36,7 +36,7 @@ if (!isset($_SESSION)) {
       INNER JOIN curso c ON i.fkiIdeCurso = c.iIdCurso 
   INNER JOIN modulo m ON c.iIdCurso = m.fkiIdCurso
   INNER JOIN recurso r ON  m.iIdModulo = r.fkiIdModulo
-  WHERE c.iIdCurso=4 and u.iIdUsuario=".$_SESSION["id"]);
+  WHERE c.iIdCurso=3 and u.iIdUsuario=".$_SESSION["id"]);
 
 $resultadoVisto = mysqli_query($conn, "SELECT r.iIdRecurso,c.cNombreCurso, m.cNombreModulo,r.cRuta FROM usuarios u
 INNER JOIN inscripcion i ON u.iIdUsuario = i.fkiIdUsuario
@@ -44,7 +44,7 @@ INNER JOIN inscripcion i ON u.iIdUsuario = i.fkiIdUsuario
 INNER JOIN modulo m ON c.iIdCurso = m.fkiIdCurso
 INNER JOIN recurso r ON  m.iIdModulo = r.fkiIdModulo
 INNER JOIN visto v ON r.iIdRecurso = v.idRecurso
-WHERE c.iIdCurso=4 and v.idAlumno=" . $_SESSION["id"]." GROUP BY iIdRecurso");
+WHERE c.iIdCurso=3 and v.idAlumno=" . $_SESSION["id"]." GROUP BY iIdRecurso");
 
 $numMudulo= mysqli_num_rows($resultado);
 $numVisto = mysqli_num_rows($resultadoVisto);
@@ -103,7 +103,7 @@ if($numMudulo==$numVisto){
     $constancia='<tr><td></td><td class=constancia><a href="../alumno/reconocimiento.php?curso=PSICOLOGÍA&idCurso=3" id="texconstancia" target="_blank" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">Obtén tu constancia<br></a></td></tr>
                  <tr><td colspan=3 class=celdasvacias></td></tr>';
 
-    $consCur = mysqli_query($conn, "SELECT * FROM  inscripcion WHERE fkiIdeCurso = 4 and fkiIdUsuario =".$_SESSION["id"]);
+    $consCur = mysqli_query($conn, "SELECT * FROM  inscripcion WHERE fkiIdeCurso = 3 and fkiIdUsuario =".$_SESSION["id"]);
     $idIns= mysqli_fetch_array($consCur);
 
     $masDedos=$idIns['finalizado'];
