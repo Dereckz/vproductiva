@@ -1,7 +1,7 @@
 <?php
 require('../fpdf/fpdf.php');
 include "../panel/func/profile.php";
-include "..\dev\conectar.php";
+require("../dev/conectar.php");
 
 date_default_timezone_set('America/Mexico_City');
 
