@@ -21,7 +21,7 @@ $btnAsginar=isset($_POST["btnAsignar"]);
                             echo "<script>";
                             echo "MiFuncionJS();";
                             echo "</script>";
-                             header("Location: http://localhost/vproductivam/panel/instructor.php");
+                             header("Location: /instructor.php");
                           
                         }
         }
