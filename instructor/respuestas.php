@@ -22,10 +22,10 @@ $answer=$_GET["answer"];
 }
 
 if(isset($save)){
-  header("Location:instructor.php");
+  header("Location:index.php");
 }else
 {
-  header("Location: survey.php");
+  header("Location: index.php");
   
 }
 
