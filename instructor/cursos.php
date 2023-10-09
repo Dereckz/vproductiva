@@ -1,7 +1,7 @@
 <?php include ('consulta.php'); ?>
 <!DOCTYPE html>
 <!-- saved from url=(0091)https://website529400.nicepage.io/es/1234.html?version=56a80d83-e130-4c50-b76e-7bfc4c0ea516 -->
-<html style="font-size: 16px;" lang="en" class="u-responsive-xl"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html style="font-size: 16px;" lang="es" class="u-responsive-xl"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <meta name="keywords" content="​Hello!">
@@ -379,7 +379,7 @@
     <link rel="stylesheet" href="estiloencabezado.css">
   
 </head>
-  <body class="u-body u-xl-mode" data-lang="en">
+  <body class="u-body u-xl-mode" data-lang="es">
   <header id="encabezado">
     	<!--<div id="logotipo">
     	<img src="img/logovproductiva2.png" id="logo"> 
@@ -389,7 +389,7 @@
       <li class="logo"><img src="img/logob.png" id="logo"></li>
       <li class="menus"></li>
     	<li class="menus"><a href="index.php">Mi perfil</a></li>
-    	<li class="menus"><a href="cursos.php">Catalogo de Cursos</a></li>
+    	<li class="menus"><a href="cursos.php">Catálogo de Cursos</a></li>
       <li class="menus"><a href="../account/login.html">Salir</a></li>
     	</ul>
   </header>

@@ -467,7 +467,7 @@
                           </form>
                             <div class="card-footer border-top border-success">
                               <div class="d-flex w-100 justify-content-center">
-                                <button class="btn btn-sm btn-flat bg-gradient-primary mx-1" form="manage_survey"  >Enviar respuesta</button>
+                                <button class="btn btn-sm btn-flat bg-gradient-primary mx-1" form="manage_survey"  onclick="location.href = 'index.php'">Enviar respuesta</button>
                                 <button class="btn btn-sm btn-flat bg-gradient-secondary mx-1" type="button" onclick="location.href = 'index.php'">Cancelar</button>
                               </div>
                             </div>
