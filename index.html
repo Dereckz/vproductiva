@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
   <title>Valuación Productiva</title>
 </head>
 
@@ -287,90 +288,97 @@
 
   <!-- Side Video -->
   <style>
-    .wrapper{
-  display: flex;
-  max-width: 2200px;
-  position: relative;
-}
-.wrapper i{
-  top: 50%;
-  height: 44px;
-  width: 44px;
-  color: #343F4F;
-  cursor: pointer;
-  font-size: 1.15rem;
-  position: absolute;
-  text-align: center;
-  line-height: 44px;
-  background: #fff;
-  border-radius: 50%;
-  transform: translateY(-50%);
-  transition: transform 0.1s linear;
-}
-.wrapper i:active{
-  transform: translateY(-50%) scale(0.9);
-}
-.wrapper i:hover{
-  background: #f2f2f2;
-}
-.wrapper i:first-child{
-  left: -22px;
-  display: none;
-}
-.wrapper i:last-child{
-  right: -22px;
-}
-.wrapper .carousel{
-  font-size: 0px;
-  cursor: pointer;
-  overflow: hidden;
-  white-space: nowrap;
-  scroll-behavior: smooth;
-}
-.carousel.dragging{
-  cursor: grab;
-  scroll-behavior: auto;
-}
-.carousel.dragging video{
-  pointer-events: none;
-}
-.carousel video{
-  height: 340px;
-  object-fit: cover;
-  user-select: none;
-  margin-left: 14px;
-  width: calc(100% / 3);
-}
-.carousel video:first-child{
-  margin-left: 0px;
-}
+    .divbody{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  .wrapper{
+      display: flex;
+      max-width: 1800px;
+      position: relative;
+    }
+    .wrapper i{
+    top: 50%;
+    height: 44px;
+    width: 44px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.15rem;
+    position: absolute;
+    text-align: center;
+    line-height: 44px;
+    background: #343F4F;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.1s linear;
+    }
+    .wrapper i:active{
+    transform: translateY(-50%) scale(0.9);
+    }
+    .wrapper i:hover{
+    background: #343F4F
+    }
+    .wrapper i:first-child{
+    left: -22px;
+    display: none;
+    }
+    .wrapper i:last-child{
+    right: -22px;
+    }
+    .wrapper .carousel{
+    font-size: 0px;
+    cursor: pointer;
+    overflow: hidden;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+    }
+    .carousel.dragging{
+    cursor: grab;
+    scroll-behavior: auto;
+    }
+    .carousel.dragging video{
+    pointer-events: none;
+    }
+    .carousel video{
+    height: 340px;
+    object-fit: cover;
+    user-select: none;
+    margin-left: 14px;
+    width: calc(100% / 3);
+    }
+    .carousel video:first-child{
+    margin-left: 0px;
+    }
 
-@media screen and (max-width: 900px) {
-  .carousel video{
+    @media screen and (max-width: 900px) {
+    .carousel video{
     width: calc(100% / 2);
-  }
-}
+    }
+    }
 
-@media screen and (max-width: 550px) {
-  .carousel video{
+    @media screen and (max-width: 550px) {
+    .carousel video{
     width: 100%;
-  }
-}
+    }
+    }
   </style>
-  <div class="wrapper">
-    <i id="left" class="fa-solid fa-angle-left"></i>
-    <div class="carousel">
-      |<video src="img/LORENAVP.mp4"  poster="img/sliderlore.PNG"  alt="img" draggable="false"></video>
-        <video src="img/MIGUELVP.mp4"  poster="img/slidermiguel.PNG"  alt="img" draggable="false"></video>
-        <video src="img/JESSVP.mp4"  poster="img/sliderjess.PNG" alt="img" draggable="false"></video>
-        <video src="img/ALFREDOVP.mp4"  poster="img/slideralfredo.PNG" alt="img" draggable="false"></video>
-        <video src="img/MARISOLVP.mp4"  poster="img/slidermarisol.PNG" alt="img" draggable="false"></video>
-        <video src="img/ADRIANVP.mp4"  poster="img/slideradrian.PNG" alt="img" draggable="false"></video>
-        <video src="img/WENDYVP.mp4"  poster="img/sliderwendi.PNG" controls id="img7" alt="img" draggable="false"></video>
+  <div class="divbody">
+    <div class="wrapper">
+      <i id="left" class="fa-solid fa-angle-left"></i>
+      <div class="carousel">
+        |<video src="/img/LORENAVP.mp4"  poster="img/sliderlore.PNG"  controls type=video/mp4 draggable="false" ></video>
+          <video src="img/MIGUELVP.mp4"  poster="img/slidermiguel.PNG" controls   alt="img" draggable="false"></video>
+          <video src="img/JESSVP.mp4"  poster="img/sliderjess.PNG"   controls  alt="img"  draggable="false"></video>
+          <video src="img/ALFREDOVP.mp4"  poster="img/slideralfredo.PNG"  controls  alt="img" draggable="false"></video>
+          <video src="img/MARISOLVP.mp4"  poster="img/slidermarisol.PNG" controls   alt="img" draggable="false"></video>
+          <video src="img/ADRIANVP.mp4"  poster="img/slideradrian.PNG"  controls  alt="img" draggable="false"></video>
+          <video src="img/WENDYVP.mp4"  poster="img/sliderwendi.PNG" controls alt="img" draggable="false"></video>
 
+      </div>
+      <i id="right" class="fa-solid fa-angle-right"></i>
     </div>
-    <i id="right" class="fa-solid fa-angle-right"></i>
-  </div>
+</div>
   <script>
     const carousel = document.querySelector(".carousel"),
     firstImg = carousel.querySelectorAll("video")[0],
