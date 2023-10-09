@@ -9,7 +9,7 @@
 	box-sizing: border-box;
 }
 ::-webkit-scrollbar {
-    display: none;
+    display: 10px;
 }
 html {
 	font-size: 10px;
