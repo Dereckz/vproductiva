@@ -642,7 +642,7 @@ function infoCurso()
     $ruta2="../cursos/infohBlandas.php";
     $ruta3="../cursos/infopsicologia.php";
     $ruta4="../cursos/infosahase.php";
-    $ruta5="../cursos/infocJuridica.php";
+    $ruta5="../cursos/infocjuridica.php";
     $ruta6="../cursos/infofinanzas.php";
     $ruta7="../cursos/infohDigitales.php";
 

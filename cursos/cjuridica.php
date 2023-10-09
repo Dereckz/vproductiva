@@ -15,7 +15,7 @@
             <li class="logo"><img src="img/logob.png" id="logo"></li>
             <li class="menus"></li>
     	    <li class="menus"><a href="../alumno/index.php" class="enlacemenu">Mi perfil</a></li>
-    	    <li class="menus"><a href="../alumno/cursos.php" class="enlacemenu">Catalogo de Cursos</a></li>
+    	    <li class="menus"><a href="../alumno/cursos.php" class="enlacemenu">Catálogo de Cursos</a></li>
             <li class="menus"><a href="../account/login.html" class="enlacemenu">Salir</a></li>
     	</ul>
     </header>
@@ -65,7 +65,7 @@ $info =mysqli_fetch_array($check);
         $visto='<td class=temario><img src="img/checkvacio.png" style="width: 2.4em;"></td>';
      }
 
-     echo '<tr> <td class=iconorecursocelda><img class=iconorecurso src="img/recursovideo.png"></td> <td class=fondotemario><a class=titulostemario  href="'.$consulta['cRuta'].'" id="'.$consulta['iIdRecurso'].'" target="_blank" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">&nbsp;&nbsp;&nbsp;'.$consulta['cNombreModulo'].'</a></td> '.$visto.' </tr>
+     echo '<tr> <td class=iconorecursocelda><img class=iconorecurso src="img/recursovideo.png"></td> <td class=fondotemario><a class=titulostemario  href="'.$consulta['cRuta'].'" id="'.$consulta['iIdRecurso'].'" target="_blank" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">'.$consulta['cNombreModulo'].'</a></td> '.$visto.' </tr>
         <tr><td colspan=3 class=celdasvacias></td></tr>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
