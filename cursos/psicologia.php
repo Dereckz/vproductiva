@@ -100,7 +100,7 @@ $info =mysqli_fetch_array($check);
 $masDedos='';
 
 if($numMudulo==$numVisto){
-    $constancia='<tr><td></td><td class=constancia><a href="../alumno/reconocimiento.php?curso=PSICOLOGÍA&idCurso=3" id="texconstancia" target="_blank" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">Obtén tu constancia<br></a></td></tr>
+    $constancia='<tr><td></td><td class=constancia><a href="../alumno/recopsicologia.php?curso=PSICOLOGÍA&idCurso=3" id="texconstancia" target="_blank" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">Obtén tu constancia<br></a></td></tr>
                  <tr><td colspan=3 class=celdasvacias></td></tr>';
 
     $consCur = mysqli_query($conn, "SELECT * FROM  inscripcion WHERE fkiIdeCurso = 3 and fkiIdUsuario =".$_SESSION["id"]);
