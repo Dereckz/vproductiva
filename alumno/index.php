@@ -449,7 +449,7 @@
         </div>
         <div class="u-align-left u-container-style u-expanded-width u-group u-palette-1-base u-group-1 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1750" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1750ms;">
           <div class="u-container-layout u-valign-middle u-container-layout-5">
-            <h4 class="u-text u-text-default u-text-9"> Si quieres aprender más, consulta nuestro catalogo de cursos he inscribete.</h4>
+            <h4 class="u-text u-text-default u-text-9"> Si quieres aprender más, consulta nuestro catálogo de cursos he inscribete.</h4>
             <a href="cursos.php" class="u-active-white u-align-center u-border-1 u-border-active-white u-border-hover-white u-border-white u-btn u-button-style u-hover-white u-none u-text-active-palette-1-base u-text-hover-palette-1-base u-btn-6" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Catálogo de cursos</a>
           </div>
         </div>
