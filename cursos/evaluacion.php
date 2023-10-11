@@ -1,33 +1,189 @@
-
+<?php  session_start();?>
 <!DOCTYPE html>
+<link href="../img/LOGOVP.ico" rel="icon">
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="estiloencabezado.css">
         <title>Cultura Jurídica / derecho empresarial y corporativo</title>
         <style>
-                #customers {
-                font-family: Arial, Helvetica, sans-serif;
-                border-collapse: collapse;
-                width: 100%;
+             html {
+                    -webkit-box-sizing: border-box;
+                    -moz-box-sizing: border-box;
+                    box-sizing: border-box;
+                    }
+            *, *:before, *:after {
+            -webkit-box-sizing: inherit;
+            -moz-box-sizing: inherit;
+            box-sizing: inherit;
+            /*border: 1px solid black;*/
+            }
+
+
+
+                header #title {
+                font-size: 1.5em;
+                text-align: center;
+                font-family: 'Bangers', cursive;
+                color: white;
+                letter-spacing: 0.10em;
                 }
 
-                #customers td, #customers th {
-                border: 1px solid #ddd;
+                .container {
+                    
+                width: 75%;
+                align-self: center;
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+                margin-top: 10px;
+                padding: 50px;
+                border: 5px solid #0E7FC5;
+                border-radius: 50px;
+                margin-bottom: 20px;
+                background-color: rgba(255,255,255,0.95);
+                }
+
+                .container p {
+                font-family: 'Bangers', cursive;
+                text-align: center;
+                border: 2px solid #0E7FC5;
+                border-radius: 10px;
+                padding: 10px;
+                }
+
+                #description {
+                align-self: center;
+                }
+
+                #survey-form {
+                    padding-top: 2%;
+                    padding-left: 10%;
+                    padding-right: 10%;
+                    padding-bottom: 10%;
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+                align-content: space-between;
+                font-family: 'Aldrich', sans-serif;
+                }
+
+                #survey-form #about-you{
+                display: grid;
+                grid-template-columns: 1fr 4fr;
+                grid-template-rows: auto auto auto;
+                grid-row-gap: 10px;
+                justify-items: stretch;
+                align-items: stretch;
+                }
+
+                #survey-form #about-you label {
                 padding: 8px;
                 }
 
-                #customers tr:nth-child(even){background-color: #f2f2f2;}
+                .required {
+                color: red;
+                }
 
-                #customers tr:hover {background-color: #ddd;}
+                fieldset {
+                    
+                border: 2px solid #0E7FC5;
+                }
 
-                #customers th {
-                padding-top: 12px;
-                padding-bottom: 12px;
-                text-align: left;
-                background-color: #04AA6D;
+                #survey-form #favorite-movie-options div {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                }
+
+                #survey-form #favorite-movie-options div label {
+                margin: 4px;
+                }
+
+                #survey-form #favorite-avenger-options div{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: repeat(6, auto);
+                }
+
+                #survey-form #favorite-avenger-options div label {
+                margin: 4px;
+                }
+
+                #survey-form #dropdown {
+                display: grid;
+                grid-template-columns: 1fr 2fr;
+                grid-template-rows: 1fr;
+                }
+
+                .form-item-margin {
+                margin: 10px;
+                }
+
+                #textarea {
+                display: grid;
+                grid-template-columns: 1fr 2fr;
+                grid-template-rows: 1fr;
+                }
+
+                #submit {
+                padding: 10px;
+                font-family: 'Aldrich', sans-serif;
+                font-size: 1.25em;
+                font-weight: bold;
+                border: 1px solid #0E7FC5;
+                background-color: #0E7FC5;
+                border-radius: 5px;
                 color: white;
                 }
+
+                #submit:hover {
+                background-color: #0f73c4;
+                }
+
+                footer {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                background-color: red;
+                color: white;
+                font-family: 'Aldrich', sans-serif;
+                padding-top: 10px;
+                }
+
+                footer p {
+                font-weight: bold;
+                }
+
+                .footer-link {
+                padding: 0 15px 0 15px;
+                }
+
+                .footer-link:link,
+                .footer-link:active,
+                .footer-link:visited {
+                text-decoration: none;
+                color: #f9f9f9;
+                }
+
+                .footer-link:hover {
+                color: #0f73c4;
+                }
+
+                @media only screen and (max-width: 500px) {
+                #survey-form #about-you{
+                    display: flex;
+                    flex-direction: column;
+                }
+                }
+
+                @media only screen and (max-width: 365px) {
+                #survey-form #favorite-avenger-options div{
+                    display: flex;
+                    flex-direction: column;
+                }
+                }
+
         </style>
     </head>
     <body>
@@ -44,88 +200,112 @@
     <img class="tituloscursos" src="img/CJuridica.png" >
     </div>   
     <?php
+   
         $idCurso =$_GET['idC'];
          require("../dev/conectar.php");
          include "../panel/func/profile.php";
+        ?>
 
+
+
+<?php
          $query="SELECT * FROM examen WHERE idcurso=".$idCurso. " and iEstatus=1" ;
          $resultado = mysqli_query($conn,$query);
          while ($consulta = mysqli_fetch_array($resultado))
-            { ?>
+            { 
+                $q2="SELECT * FROM preguntas p             
+                where p.idexamen=".$consulta["idExamen"]." order by p.orden ASC;";
+                $examen=mysqli_query($conn,$q2);
+                $nPreguntas = mysqli_num_rows($examen);
+                $contadorpreguntas=0;
+               
+                $letrarespuesta;
+                ?>
    
             <section class="u-align-left u-clearfix u-grey-5 u-section-2" id="carousel_0852">
                 <div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
                    
-                    <h1 class="section-title"> <span><?php echo $consulta['nombre'] ?> </span></h1>
-                   <table>
-                        
-                   </table>
-                   <h1>A Fancy Table</h1>
-                    <?php echo ''?>
-                    </div>
-
-                    <table id="customers">
-                            <tr>
-                                <th>Company</th>
-                                <th>Contact</th>
-                                <th>Country</th>
-                            </tr>
-                            <tr>
-                                <td>Alfreds Futterkiste</td>
-                                <td>Maria Anders</td>
-                                <td>Germany</td>
-                            </tr>
-                            <tr>
-                                <td>Berglunds snabbköp</td>
-                                <td>Christina Berglund</td>
-                                <td>Sweden</td>
-                            </tr>
-                            <tr>
-                                <td>Centro comercial Moctezuma</td>
-                                <td>Francisco Chang</td>
-                                <td>Mexico</td>
-                            </tr>
-                            <tr>
-                                <td>Ernst Handel</td>
-                                <td>Roland Mendel</td>
-                                <td>Austria</td>
-                            </tr>
-                            <tr>
-                                <td>Island Trading</td>
-                                <td>Helen Bennett</td>
-                                <td>UK</td>
-                            </tr>
-                            <tr>
-                                <td>Königlich Essen</td>
-                                <td>Philip Cramer</td>
-                                <td>Germany</td>
-                            </tr>
-                            <tr>
-                                <td>Laughing Bacchus Winecellars</td>
-                                <td>Yoshi Tannamuri</td>
-                                <td>Canada</td>
-                            </tr>
-                            <tr>
-                                <td>Magazzini Alimentari Riuniti</td>
-                                <td>Giovanni Rovelli</td>
-                                <td>Italy</td>
-                            </tr>
-                            <tr>
-                                <td>North/South</td>
-                                <td>Simon Crowther</td>
-                                <td>UK</td>
-                            </tr>
-                            <tr>
-                                <td>Paris spécialités</td>
-                                <td>Marie Bertrand</td>
-                                <td>France</td>
-                            </tr>
-                        </table>
-                </div>
-                </section>
+                   
+                    
+                    <form id="survey-form" name = "survey-form" action="exam_aswer.php">
+                    <H2 > <span><?php echo $consulta['nombre'] ?> </span></H2>
+                    <input id="idcurso" type="hidden" name="idC" value= <?php echo $idCurso ?>>
+                    <input id="idusuario" type="hidden" name="idU" value= <?php  echo $_SESSION["id"] ?>>
+                        <?php  while ($preguntas = mysqli_fetch_array($examen)){  ?>
+                            <?php $contadorpreguntas=$contadorpreguntas+1 ?>  
+                            <?php $q3="SELECT * FROM respuesta r where r.idpregunta=".$preguntas["idpreguntas"].";";?>
+                            <?php  $examen2=mysqli_query($conn,$q3);?>
+                            <?php  $contadorespuestas=0;?>    
+                                    <!-- begin radio buttons-->
+                                    <fieldset class="form-item-margin" id="favorite-movie-options">
+                                        <legend><?php  echo $contadorpreguntas.'.- '. $preguntas['pregunta']?></legend>
+                                        <?php while ($respuesta = mysqli_fetch_array($examen2)){ ?> 
+                                            <?php $contadorespuestas=$contadorespuestas+1 ?>
+                                            <?php switch ($contadorespuestas) {
+                                                case 1:
+                                                    $letrarespuesta="A)";
+                                                    break;
+                                                case 2:
+                                                    $letrarespuesta="B)";
+                                                    break;
+                                                case 3:
+                                                    $letrarespuesta="C)";
+                                                    break;
+                                                case 4:
+                                                    $letrarespuesta="D)";
+                                                    break;
+                                            }?> 
+                                            <?php if ($preguntas['tipo']=='radio'){?>
+                                                <div>
+                                                    <label for="the-avengers">
+                                                    <input id="the-avengers" type="radio" name=<?php echo $respuesta['idpregunta'] ?> value=<?php echo $respuesta['respuesta'] ?> >
+                                                    <?php echo $letrarespuesta. $respuesta['respuesta'] ?>
+                                                    </label>
+                                                </div>
+                                            <?php }elseif($preguntas['tipo']=='checkbox'){?>
+                                                    <div>
+                                                        <label for="black-panther">
+                                                            <input id="black-panther" type="checkbox" name=<?php echo $respuesta['idrespuesta'] ?> value=<?php echo $respuesta['respuesta'] ?>>
+                                                            <?php echo $letrarespuesta. $respuesta['respuesta'] ?>
+                                                        </label>
+                                                    </div>
+                                            <?php }?>
+                                        <?php }?>
+                                    </fieldset>
+                                    <!-- enalign-items: center;d radio buttons -->
+            
+                        <?php }?>
                 
-        
-            <?php }?>
+                        <button class="form-item-margin" id="submit" type="submit"  onclick="confirmar_examen()">Responder</button>
+                    </form>
+                </div>
+            </section>
+            
+        <?php }?>
     </body>
 </html>
+<script  type="text/javascript">
+  function confirmar_examen() {
+        Swal.fire({
+        title: '¿Desea mandar respuesta?',
+        text: 'Una vez aceptado, ya no puede volver a cambiar las respuesas.',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Mandar Respuestas'
+        }).then((result) => {
+        if (result.isConfirmed) {
+            //window.location.href="exam_aswer.php";
+            Swal.fire(
+      'Deleted!',
+      'Your file has been deleted.',
+      'success'
+    )
+        }
+        })
+   
+  }
+
+  </script>
 
