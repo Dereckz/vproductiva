@@ -5,14 +5,14 @@
 <?php
 
 require("../dev/conectar.php");
-
+date_default_timezone_set('America/Mexico_City');
 $fechaActual = date('Y-m-d');
 
 $fullname = ($_POST["fullname"]);
 $correo = ($_POST["email"]);
 $contrasena = password_hash(($_POST["password"]), PASSWORD_DEFAULT);   
 $confirmcontrasena =password_hash(($_POST["confirmpassword"]), PASSWORD_DEFAULT);  
-date_default_timezone_set('America/Mexico_City');
+
 
 //$codigomaestro=$_POST["codigomaestro"];
 
