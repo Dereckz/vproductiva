@@ -398,11 +398,27 @@
     <section class="u-align-left u-clearfix u-grey-5 u-section-2" id="carousel_0852">
       <div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
         
-          <h1 class="section-title"> <span>Cursos Disponibles</span></h1>
-          <div class="u-expanded-width u-list u-list-1">
-          <div class="u-repeater u-repeater-1">
-          <?=infoCurso();?>
-        </div>
+          <h1 class="section-title"> <span>Áreas Disponibles</span></h1>
+          <!--<div class="u-expanded-width u-list u-list-1">
+          <div class="u-repeater u-repeater-1">-->
+          <div>
+            <table>
+              <tr class="filacentrada">
+                <td><a href=""><img src="img/areaplaboral.png" class="imagenesareas"></a></td>
+                <td><a href=""><img src="img/areahblandas.png" class="imagenesareas"></a></td>
+                <td><a href=""><img src="img/areapsicologia.png" class="imagenesareas"></a></td>
+                <td><a href=""><img src="img/areasalud.png" class="imagenesareasfinal"></a></td>
+              </tr>
+              <tr class="filacentrada">
+                <td><a href=""><img src="img/areacjuridica.png" class="imagenesareas"></a></td>
+                <td><a href=""><img src="img/areafinanzas.png" class="imagenesareas"></a></td>
+                <td><a href=""><img src="img/areahdigitales.png" class="imagenesareas"></a></td>
+                <td><a href=""><img src="img/areaotro.png" class="imagenesareasfinal"></a></td>
+              </tr>
+            </table>
+          </div>
+          <!--?=infoCurso();?>-->
+        <!--</div>-->
       </div>
     </section>
     

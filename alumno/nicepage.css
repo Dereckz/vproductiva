@@ -4,6 +4,16 @@
  * Copyright 2014-2021 Froala Labs
  */
 
+.imagenesareas{
+  width: 90%;
+}
+.imagenesareasfinal{
+  width: 88%;
+}
+.filacentrada{
+  text-align: center;
+}
+
 .fr-clearfix::after {
   clear: both;
   display: block;
