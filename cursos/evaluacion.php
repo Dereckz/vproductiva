@@ -1,3 +1,6 @@
+
+
+<meta charset='utf-8'>
 <?php  session_start();?>
 <!DOCTYPE html>
 <link href="../img/LOGOVP.ico" rel="icon">
@@ -5,7 +8,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="estiloencabezado.css">
-        <title>Cultura Jurídica / derecho empresarial y corporativo</title>
+        <title>Evaluación</title>
         <style>
              html {
                     -webkit-box-sizing: border-box;
@@ -197,16 +200,25 @@
     	</ul>
     </header>
     <div>
-    <img class="tituloscursos" src="img/CJuridica.png" >
-    </div>   
+        <img class="tituloscursos" src="img/CJuridica.png" >
+    </div> 
+
     <?php
    
         $idCurso =$_GET['idC'];
          require("../dev/conectar.php");
          include "../panel/func/profile.php";
+
+         $intentos="";
+
+        /*  $examen = $conn->query("SELECT * FROM resuelto
+         WHERE idexamen=$idexamen
+         and idcurso=$idcurso
+         and idusuario=$idusuario; ");
+         $numpreguntas= mysqli_num_rows($examen); */
         ?>
 
-
+            }+
 
 <?php
          $query="SELECT * FROM examen WHERE idcurso=".$idCurso. " and iEstatus=1" ;
@@ -227,10 +239,17 @@
                    
                    
                     
-                    <form id="survey-form" name = "survey-form" action="exam_aswer.php">
+                    <form id="survey-form" action="exam_aswer.php" method="get" >
                     <H2 > <span><?php echo $consulta['nombre'] ?> </span></H2>
+
                     <input id="idcurso" type="hidden" name="idC" value= <?php echo $idCurso ?>>
                     <input id="idusuario" type="hidden" name="idU" value= <?php  echo $_SESSION["id"] ?>>
+                    <input id="idexamen" type="hidden" name="idEx" value= <?php  echo $consulta['idExamen'] ?>>
+                    <div style="text-align: right">
+                            <label>Fecha:</label>
+                            <input type="datetime" name="fecha" id="fecha" disabled 
+                            value="<?php $formatter = new IntlDateFormatter('es_ES', IntlDateFormatter::LONG, IntlDateFormatter::NONE); echo $formatter->format(time());?>">
+                    </div>                 
                         <?php  while ($preguntas = mysqli_fetch_array($examen)){  ?>
                             <?php $contadorpreguntas=$contadorpreguntas+1 ?>  
                             <?php $q3="SELECT * FROM respuesta r where r.idpregunta=".$preguntas["idpreguntas"].";";?>
@@ -238,7 +257,10 @@
                             <?php  $contadorespuestas=0;?>    
                                     <!-- begin radio buttons-->
                                     <fieldset class="form-item-margin" id="favorite-movie-options">
-                                        <legend><?php  echo $contadorpreguntas.'.- '. $preguntas['pregunta']?></legend>
+                                        <legend> <?php  echo $contadorpreguntas.'.- '. $preguntas['pregunta']?></legend>
+
+                                        <input type="hidden" name="idpregunta[<?php  echo $preguntas["idpreguntas"]?>]" value=<?php echo $preguntas["idpreguntas"]?>>
+
                                         <?php while ($respuesta = mysqli_fetch_array($examen2)){ ?> 
                                             <?php $contadorespuestas=$contadorespuestas+1 ?>
                                             <?php switch ($contadorespuestas) {
@@ -258,25 +280,26 @@
                                             <?php if ($preguntas['tipo']=='radio'){?>
                                                 <div>
                                                     <label for="the-avengers">
-                                                    <input id="the-avengers" type="radio" name=<?php echo $respuesta['idpregunta'] ?> value=<?php echo $respuesta['respuesta'] ?> >
+                                                    <input id="the-avengers" type="radio" name="idrespuesta[<?php echo $contadorpreguntas?>]" value=<?php echo $respuesta['idrespuesta'] ?> required>
                                                     <?php echo $letrarespuesta. $respuesta['respuesta'] ?>
                                                     </label>
                                                 </div>
                                             <?php }elseif($preguntas['tipo']=='checkbox'){?>
                                                     <div>
                                                         <label for="black-panther">
-                                                            <input id="black-panther" type="checkbox" name=<?php echo $respuesta['idrespuesta'] ?> value=<?php echo $respuesta['respuesta'] ?>>
+                                                            <input id="black-panther" type="checkbox" name=<?php echo $respuesta['idrespuesta'] ?> value=<?php echo $respuesta['respuesta'] ?> required>
                                                             <?php echo $letrarespuesta. $respuesta['respuesta'] ?>
                                                         </label>
                                                     </div>
                                             <?php }?>
                                         <?php }?>
+
                                     </fieldset>
                                     <!-- enalign-items: center;d radio buttons -->
             
                         <?php }?>
                 
-                        <button class="form-item-margin" id="submit" type="submit"  onclick="confirmar_examen()">Responder</button>
+                        <button class="form-item-margin" id="submit" type="submit"  form="survey-form">Responder</button>
                     </form>
                 </div>
             </section>
