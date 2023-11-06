@@ -1,8 +1,8 @@
 <?php
 require("../dev/conectar.php");
 
-$idCurso = $_POST['curso'];
-$idUsuario = $_POST['usuario'];
+$idCurso = $_GET['curso'];
+$idUsuario = $_GET['usuario'];
 
 //Se manejaran 3 valores para saber si ya estuvo inscrito en el curso se salio y nuevamente se volvio a inscribir
 //1 inscrito, 2 salir, 3 inscrito por segunda ves.
