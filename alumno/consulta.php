@@ -587,7 +587,7 @@ function miCurso()
     echo $cur7;
 }
 */
-function infoCurso()
+function infoCursoPLaboral()
 {
     require("../dev/conectar.php");
     
@@ -606,10 +606,6 @@ function infoCurso()
         array_push($arreglo, $infoinscrito['iIdCurso']);
         //echo $infoinscrito['iIdCurso'];
     }
- 
-   
- 
-   
 
     $resultado = mysqli_query($conn, "SELECT * FROM curso");
     //$datos = mysqli_fetch_all($resultado);
@@ -620,7 +616,6 @@ function infoCurso()
     $cur4 = "";
     $cur5 = "";
     $cur6 = "";
-    $cur7 = "";
 
     $ruta1="../cursos/infopLaboral.php";
     $ruta2="../cursos/infohBlandas.php";
@@ -628,7 +623,6 @@ function infoCurso()
     $ruta4="../cursos/infosahase.php";
     $ruta5="../cursos/infocjuridica.php";
     $ruta6="../cursos/infofinanzas.php";
-    $ruta7="../cursos/infohDigitales.php";
     
     $contador = 1;
 
@@ -645,8 +639,6 @@ function infoCurso()
             $ruta = $ruta5;
         } elseif ($contador == 6) {
             $ruta = $ruta6;
-        } elseif ($contador == 7) {
-            $ruta = $ruta7;
         }
 
         //validar si esta inscrito en el curso
@@ -842,6 +834,111 @@ function infoCurso()
 
     </script>
 
+    ';
+
+        if ($contador == 1) {
+            $cur1 = $info;
+        } elseif ($contador == 2) {
+            $cur2 = $info;
+        } elseif ($contador == 3) {
+            $cur3 = $info;
+        } elseif ($contador == 4) {
+            $cur4 = $info;
+        } elseif ($contador == 5) {
+            $cur5 = $info;
+        } elseif ($contador == 6) {
+            $cur6 = $info;
+        }
+
+        $contador = $contador + 1;
+
+    }
+    echo $cur1;
+    echo $cur2;
+    echo $cur3;
+    echo $cur4;
+    echo $cur5;
+    echo $cur6;
+}
+
+function infoCursoHBlandas()
+{
+    require("../dev/conectar.php");
+    
+    
+        $inscrito = mysqli_query($conn, "SELECT c.iIdCurso
+        FROM curso c
+        INNER JOIN inscripcion i ON i.fkiIdeCurso = c.iIdCurso
+        INNER JOIN usuarios u ON u.iIdUsuario = i.fkiIdUsuario
+        WHERE i.finalizado !=2 AND i.fkiIdUsuario=" . $_SESSION["id"]);
+
+        //$ci=mysqli_num_rows($inscrito);
+        // arreglo para recorrer los cursos donde el usuario ya esta inscrito
+        $arreglo= array();
+      $contador=1;  
+        while ($infoinscrito = mysqli_fetch_array($inscrito)) {
+        
+        array_push($arreglo, $infoinscrito['iIdCurso']);
+        //echo $infoinscrito['iIdCurso'];
+    }
+
+    $resultado = mysqli_query($conn, "SELECT * FROM curso");
+    //$datos = mysqli_fetch_all($resultado);
+    $info = "";
+    $cur1 = "";
+    $cur2 = "";
+    $cur3 = "";
+    $cur4 = "";
+    $cur5 = "";
+    $ruta="";
+
+     $ruta1="../cursos/infopLaboral.php";
+     $ruta2="../cursos/infohBlandas.php";
+     $ruta3="../cursos/infopsicologia.php";
+     $ruta4="../cursos/infosahase.php";
+     $ruta5="../cursos/infocjuridica.php";
+    
+    
+
+    while ($consulta = mysqli_fetch_array($resultado)) {
+        
+        if ($contador == 1) {
+            $ruta =  $ruta1;
+        } elseif ($contador == 2) {
+            $ruta =  $ruta2;
+        } elseif ($contador == 3) {
+            $ruta = $ruta3;
+        } elseif ($contador == 4) {
+            $ruta = $ruta4;
+        } elseif ($contador == 5) {
+            $ruta = $ruta5;
+        } 
+
+        //validar si esta inscrito en el curso
+        $link ='<a href="#" id="' . $consulta["iIdCurso"] . '" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">&nbsp;&nbsp;&nbsp;&nbsp;Inscribirse</a>';
+        $i=0;
+        while($i<count($arreglo)){
+            if ($arreglo[$i]== $consulta['iIdCurso']){
+                $link ='<a href="#" id="" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Inscrito</a>';  
+                $i=count($arreglo);
+            }
+            else{
+            $link ='<a href="#" id="' . $consulta["iIdCurso"] . '" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">&nbsp;&nbsp;&nbsp;&nbsp;Inscribirse</a>';
+            } 
+            $i++;       
+        }
+
+        $info = '<div class="u-align-left u-border-10 u-border-no-left u-border-no-right u-border-no-top u-border-palette-2-base u-container-style u-custom-item u-list-item u-repeater-item u-shape-rectangle u-white u-list-item-1 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="250" style="will-change: transform, opacity; animation-duration: 1500ms;">
+        <div class="u-container-layout u-similar-container u-valign-top u-container-layout-1"><span class="u-custom-item u-file-icon u-icon u-text-palette-2-base u-icon-1 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="750" style="will-change: transform, opacity; animation-duration: 1500ms;"><img src="' . $consulta['ricono'] . '" alt=""></span>
+        <h4 class="u-text u-text-5">' . $consulta['cNombreCurso'] . '</h4> <a href="' . $ruta. '" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">Ver curso</a>
+        '.$link.'
+        
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
     <script>
 
     document.getElementById("7").onclick = function() {
@@ -869,23 +966,132 @@ function infoCurso()
     }
 
     </script>
+
+    <script>
+
+    document.getElementById("8").onclick = function() {
+      if (confirm("Favor de confirmar la inscripción al curso")) {
+
+        idfCurso = "8";
+        idfUsuario = "' . $_SESSION["id"] . '";
+
+    //Convertimos las variables de javascript en variables de PHP
+        $( document ).ready(function() {
+    // Definimos las variables de javascrpt
+        var curso = idfCurso;
+        var alumn = idfUsuario;
+
+    // Ejecutamos AJAX
+    $.post("inscripcion.php",{"curso":curso,"usuario": alumn},function(respuesta){
+            alert(respuesta);
+            location.reload();
+        });
+        });
+
+        } else {
+        urlNuevo = "#";
+    }
+    }
+
+    </script>
+
+    <script>
+
+    document.getElementById("9").onclick = function() {
+      if (confirm("Favor de confirmar la inscripción al curso")) {
+
+        idfCurso = "9";
+        idfUsuario = "' . $_SESSION["id"] . '";
+
+    //Convertimos las variables de javascript en variables de PHP
+        $( document ).ready(function() {
+    // Definimos las variables de javascrpt
+        var curso = idfCurso;
+        var alumn = idfUsuario;
+
+    // Ejecutamos AJAX
+    $.post("inscripcion.php",{"curso":curso,"usuario": alumn},function(respuesta){
+            alert(respuesta);
+            location.reload();
+        });
+        });
+
+        } else {
+        urlNuevo = "#";
+    }
+    }
+
+    </script>
+
+    <script>
+
+    document.getElementById("10").onclick = function() {
+      if (confirm("Favor de confirmar la inscripción al curso")) {
+
+        idfCurso = "10";
+        idfUsuario = "' . $_SESSION["id"] . '";
+
+    //Convertimos las variables de javascript en variables de PHP
+        $( document ).ready(function() {
+    // Definimos las variables de javascrpt
+        var curso = idfCurso;
+        var alumn = idfUsuario;
+
+    // Ejecutamos AJAX
+    $.post("inscripcion.php",{"curso":curso,"usuario": alumn},function(respuesta){
+            alert(respuesta);
+            location.reload();
+        });
+        });
+
+        } else {
+        urlNuevo = "#";
+    }
+    }
+
+    </script>
+
+    <script>
+
+    document.getElementById("11").onclick = function() {
+      if (confirm("Favor de confirmar la inscripción al curso")) {
+
+        idfCurso = "11";
+        idfUsuario = "' . $_SESSION["id"] . '";
+
+    //Convertimos las variables de javascript en variables de PHP
+        $( document ).ready(function() {
+    // Definimos las variables de javascrpt
+        var curso = idfCurso;
+        var alumn = idfUsuario;
+
+    // Ejecutamos AJAX
+    $.post("inscripcion.php",{"curso":curso,"usuario": alumn},function(respuesta){
+            alert(respuesta);
+            location.reload();
+        });
+        });
+
+        } else {
+        urlNuevo = "#";
+    }
+    }
+
+    </script>
+
     ';
 
-        if ($contador == 1) {
+        if ($contador == 7) {
             $cur1 = $info;
-        } elseif ($contador == 2) {
+        } elseif ($contador == 8) {
             $cur2 = $info;
-        } elseif ($contador == 3) {
+        } elseif ($contador == 9) {
             $cur3 = $info;
-        } elseif ($contador == 4) {
+        } elseif ($contador == 10) {
             $cur4 = $info;
-        } elseif ($contador == 5) {
+        } elseif ($contador == 11) {
             $cur5 = $info;
-        } elseif ($contador == 6) {
-            $cur6 = $info;
-        } elseif ($contador == 7) {
-            $cur7 = $info;
-        }
+        } 
 
         $contador = $contador + 1;
 
@@ -895,6 +1101,4 @@ function infoCurso()
     echo $cur3;
     echo $cur4;
     echo $cur5;
-    echo $cur6;
-    echo $cur7;
 }
