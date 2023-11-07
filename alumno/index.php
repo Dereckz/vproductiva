@@ -444,6 +444,7 @@
         <?=informacion();?>
         <div class="u-expanded-width u-list u-list-1">
         <div class="u-repeater u-repeater-1">
+        <h4 class="u-text u-text-default u-text-4"> Mis Cursos</h4>
         <?=miCurso();?>
         </div>
         </div>
