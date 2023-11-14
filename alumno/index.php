@@ -415,7 +415,8 @@
 		"@type": "Organization",
 		"name": "",
 		"url": "https://website529400.nicepage.io/1234.html"
-}</script>
+}
+</script>
     <meta name="theme-color" content="#0066ff">
     <meta property="og:title" content="1234">
     <meta property="og:type" content="website">
@@ -469,5 +470,5 @@
         <span>Dese Tecnologias</span>
       </a>. 
     </section>
-
+    <script src="../js/time.js"></script>
 <style>.u-disable-duration * {transition-duration: 0s !important;}</style></body></html>

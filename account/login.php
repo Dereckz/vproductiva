@@ -1,11 +1,13 @@
 <?php
-
+date_default_timezone_set('America/Mexico_City');
+$fechaActual = date('Y-m-d');
 session_start();
 
 require("../dev/conectar.php");
+require("../function/sesion.php");
 $nombre =$_POST["username"];
 $pass = $_POST["password"];
-if ($stmt = $conn->prepare("SELECT iIdUsuario, cUsuario, cPassword, cNombre, cApellidoP, cnombrelargo, fkidTipoUsuario,iGenero FROM usuarios WHERE cUsuario= ? LIMIT 1")) {
+if ($stmt = $conn->prepare("SELECT iIdUsuario, cUsuario, cPassword, cNombre, cApellidoP, cnombrelargo, fkidTipoUsuario,iGenero, cProfile FROM usuarios WHERE cUsuario= ? LIMIT 1")) {
  
 // Start the session
 
@@ -34,8 +36,11 @@ if ($stmt = $conn->prepare("SELECT iIdUsuario, cUsuario, cPassword, cNombre, cAp
         $_SESSION["iGenero"]=$fila["iGenero"];
         $_SESSION["img"]=$fila["cProfile"];
         $_SESSION['tiempo']=time();
+        $_SESSION['acceso']=$fechaActual;
        
         $tipo=$fila['fkidTipoUsuario'];
+        
+        
 
         if ($fila['fkidTipoUsuario']==1){
 
@@ -46,6 +51,7 @@ if ($stmt = $conn->prepare("SELECT iIdUsuario, cUsuario, cPassword, cNombre, cAp
          header("Location: ../instructor/index.php");
 
         }else  if ($fila['fkidTipoUsuario']==3){
+          acceso($fila["iIdUsuario"]);
          header("Location: ../alumno/index.php");
         }         
      } else {
