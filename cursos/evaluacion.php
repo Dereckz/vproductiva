@@ -218,7 +218,7 @@
          $numpreguntas= mysqli_num_rows($examen); */
         ?>
 
-            }+
+            
 
 <?php
          $query="SELECT * FROM examen WHERE idcurso=".$idCurso. " and iEstatus=1" ;

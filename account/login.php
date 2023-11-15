@@ -1,6 +1,7 @@
 <?php
-date_default_timezone_set('America/Mexico_City');
-$fechaActual = date('Y-m-d');
+ date_default_timezone_set('America/Mexico_City');
+ 
+ $fechaActual = date("d-m-Y h:i:s");
 session_start();
 
 require("../dev/conectar.php");
@@ -52,7 +53,7 @@ if ($stmt = $conn->prepare("SELECT iIdUsuario, cUsuario, cPassword, cNombre, cAp
 
         }else  if ($fila['fkidTipoUsuario']==3){
           acceso($fila["iIdUsuario"]);
-         header("Location: ../alumno/index.php");
+         
         }         
      } else {
        //header("Location: login.html");

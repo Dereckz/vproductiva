@@ -68,6 +68,8 @@
                           <th scope="col">Email</th>
                           <th scope="col">Estatus</th>
                           <th scope="col">Acción</th>
+                          <th scope="col">Tiempo de Conexión</th>
+                          <th scope="col">Ultima de Conexión</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -85,7 +87,7 @@
                               <td><span  class="badge badge-danger"><a class="text-white" href="func/updatestatus.php?id='<?php echo $dataCliente['iIdUsuario']; ?>'&status=0">Inactivo</a></span></td> 
                             <?php }?> 
                             <td>
-<!--                               <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteChildresn<?php echo $dataCliente['iIdUsuario']; ?>">
+                          <!--    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteChildresn<?php echo $dataCliente['iIdUsuario']; ?>">
                                 Eliminar
                               </button> -->
                               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editChildresn<?php echo $dataCliente['iIdUsuario']; ?>">
@@ -96,8 +98,20 @@
                               </button>
                               
                             </td>
-                           
+                          
+                            <?php 
+                            $sqlacceso   = ("SELECT idaccesos, max(dfechaacceso) as dfechaacceso, dfechacierre,idusuario FROM accesos WHERE idusuario=".$dataCliente['iIdUsuario'].";");
+                            $queryacceso = mysqli_query($conn, $sqlacceso);
+                            while ($dataacceso = mysqli_fetch_array($queryacceso)) {
+                              $fechaInicio = new DateTime($dataacceso['dfechaacceso']);
+                              $fechaFin = new DateTime($dataacceso['dfechacierre']);
+                              $intervalo = $fechaInicio->diff($fechaFin);
+                              ?>
 
+                            <td><?php echo $intervalo->h . " horas, " . $intervalo->i . " minutos y " . $intervalo->s . " segundos"; ?></td>
+                            <td><?php echo $dataacceso['dfechaacceso']; ?></td>
+                           <?php }?>
+                           
                           </tr>
            
 

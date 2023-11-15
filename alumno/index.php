@@ -435,7 +435,7 @@
       <li class="menus"></li>
     	<li class="menus"><a href="index.php" class="letramenus">Mi perfil</a></li>
     	<li class="menus"><a href="cursos.php">Catálogo de Cursos</a></li>
-      <li class="menus"><a href="../account/login.html">Salir</a></li>
+      <li class="menus"><a href="../function/finacceso.php">Salir</a></li>
     	</ul>
   </header>
 
