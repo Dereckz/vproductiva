@@ -6,7 +6,8 @@
 
 require("../dev/conectar.php");
 date_default_timezone_set('America/Mexico_City');
-$fechaActual = date('Y-m-d');
+ 
+$fechaActual = date("d-m-Y h:i:s");
 
 $fullname = ($_POST["fullname"]);
 $correo = ($_POST["email"]);

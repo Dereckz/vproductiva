@@ -16,7 +16,7 @@ require("../../dev/conectar.php");
 
     }
         if($queryA){
-            header("Location: http://localhost/vproductivam/panel/alumnos.php");
+            header("Location: ../alumnos.php");
         }
                 
  ?>
