@@ -247,7 +247,7 @@
                     <input id="idexamen" type="hidden" name="idEx" value= <?php  echo $consulta['idExamen'] ?>>
                     <div style="text-align: right">
                             <label>Fecha:</label>
-                            <input type="datetime" name="fecha" id="fecha" disabled 
+                            <input id="fecha" name="fecha" type="datetime"  disabled 
                             value="<?php $formatter = new IntlDateFormatter('es_ES', IntlDateFormatter::LONG, IntlDateFormatter::NONE); echo $formatter->format(time());?>">
                     </div>                 
                         <?php  while ($preguntas = mysqli_fetch_array($examen)){  ?>

@@ -23,7 +23,7 @@ $fecha= date("d/m/Y", strtotime($originalDate));
             $data="idexamen=".$idexamen;
             $data.=", idcurso=".$idcurso;
             $data.=", idusuario=".$idusuario;
-            $data.=", fecha=".$fecha;
+            $data.=", fecha='".$fecha. "'";
             $question = $conn->query("SELECT * FROM respuesta where idpregunta = $pid");
             $data .=", idpregunta=".$pid;
             while($row=$question->fetch_assoc())	:  
