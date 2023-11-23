@@ -1,3 +1,10 @@
+<?php
+    require("../dev/conectar.php");
+    include "../panel/func/profile.php";
+    if (!isset($_SESSION)) {
+        session_start();
+    }
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -27,11 +34,7 @@
         <tr> <td colspan=3 id=filainstrucciones> <h4> En este curso aprenderas las habilidades necesarias para optimizar al máximo tus labores diarias.</h4> </td></tr> -->  
     
         <?php
-require("../dev/conectar.php");
-include "../panel/func/profile.php";
-if (!isset($_SESSION)) {
-    session_start();
-}
+
 $resultado = mysqli_query($conn, "SELECT r.iIdRecurso,c.cNombreCurso, m.cNombreModulo,r.cRuta FROM usuarios u
     INNER JOIN inscripcion i ON u.iIdUsuario = i.fkiIdUsuario
     INNER JOIN curso c ON i.fkiIdeCurso = c.iIdCurso
