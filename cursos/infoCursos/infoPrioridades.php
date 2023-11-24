@@ -24,22 +24,30 @@
     <div id="fondotemario">
     
     <img class="tituloscursos" src="../img/NameCurso.png" >
-    <table id=tablarecursos>
-        <tr> <td id=filatitulo> <h2>Temario</h2> </td></tr>
-        <!--<tr> <td id=filainstrucciones> <h4> En este curso aprenderas las habilidades necesarias para optimizar tus actividades diarias.</h4> </td></tr>  -->  
+    <table  id=tablarecursos>
+        <tr>
+            <td><img src="img/etica.jpg" ></td>
+            <td class="celdatop">
+            <table id=tablacontenido>
+                <tr> <td id=filatitulo colspan="2"> <h2>Contenido</h2> </td></tr>
+                
+                <!--<tr> <td id=filainstrucciones> <h4> En este curso aprenderas las habilidades necesarias para optimizar tus actividades diarias.</h4> </td></tr>  -->  
     
-<?php
- require("../../dev/conectar.php");
- $resultado = mysqli_query($conn,"SELECT c.cNombreCurso, m.cNombreModulo FROM curso c
- INNER JOIN modulo m ON c.iIdCurso = m.fkiIdCurso WHERE c.iIdCurso=5");
-while ($consulta = mysqli_fetch_array($resultado))
-{
-    echo '<tr> <td class=titulostemario2>'.$consulta['cNombreModulo'] .'<br></td></tr>
-    <tr><td class=celdasvacias2></td></tr>';
+                <?php
+                 require("../../dev/conectar.php");
+                $resultado = mysqli_query($conn,"SELECT c.cNombreCurso, m.cNombreModulo FROM curso c
+                INNER JOIN modulo m ON c.iIdCurso = m.fkiIdCurso WHERE c.iIdCurso=5");
+                while ($consulta = mysqli_fetch_array($resultado))
+                {
+                    echo '<tr> <td class=sangriavinetas><img src="img/vineta.png" style= "width: 0.5em;"></td> <td class=titulostemario2>'.$consulta['cNombreModulo'] .'</td></tr>
+                    <tr><td></td><td class=celdasvacias2></td></tr>';
 
-}
-?>
-
-    </table> 
+                }
+                ?>
+                
+            </table> 
+            </td>
+        </tr>
+    </table>
     </body>
 </html> 

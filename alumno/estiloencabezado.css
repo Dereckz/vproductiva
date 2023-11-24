@@ -13,12 +13,12 @@
 }
 #logo{
 	position: relative;
-	width: 40%;
+	width: 75%;
 	padding-top: 2%;
 }
 
 #encabezado{
-	background-color: rgb(216, 210, 227);
+	/*background-color: rgb(216, 210, 227);*/
 	position: sticky;
 	top: 0px;
 	margin: 0%;
@@ -30,12 +30,12 @@
 	color: #000000;
 }
 #menu{
-	background-color: #40bff2;
+	/*background-color: #40bff2;*/
 	margin-top: 0%;
 	margin-left: 0%;
 	font-family: sans-serif;
 	margin-bottom: 0%;
-	height: 6.5em;
+	/*height: 6.5em;*/
 }
 .menus{
 	display: inline-block;
@@ -43,7 +43,7 @@
 	text-align: center;
 	width: 20%;
 	vertical-align: top;
-	padding-top: 1.8em;
+	padding: 1em;
 }
 .logo{
 	display: inline-block;
@@ -52,8 +52,14 @@
 	width: 17%;
 }
 a{
-	color: #ffffff;
+	color: #000000;
 	font-family: Acumin;
+}
+#miperfil{
+	color: white;
+}
+#miperfilfondo{
+	background-color: #630ba3;
 }
 a:hover {
 	color: #630ba3;
@@ -69,12 +75,13 @@ h1{
 	font-weight: 300;
 	color: rgb(146, 26, 201);
 	margin-bottom: 10px;
-	text-transform: uppercase;
+	/*text-transform: uppercase;
 	letter-spacing: 0.2rem;
-	text-align: center;
+	text-align: center;*/
+	margin-left: 1.3rem;
 }
 .section-title span {
-	color: #4720b7;
+	/*color: #4720b7;*/
 	
 }
 

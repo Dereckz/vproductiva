@@ -63,30 +63,28 @@
   padding: 0;
 }
 .u-section-2 .u-list-1 {
-  margin-top: 52px;
+  margin-top: 2.3em;
   margin-bottom: 0;
 }
 .u-section-2 .u-repeater-1 {
-  grid-template-columns: repeat(3, calc(31%));
+  grid-template-columns: repeat(4, calc(23%));
   min-height: 553px;
-  grid-gap: 5%;
+  grid-gap: 3%;
 }
 .u-section-2 .u-list-item-1 {
-  background-image: url(img/carpetablanca.png);
+  /*background-image: url(img/carpetablanca.png);*/
   --animation-custom_in-translate_x: 0px;
   --animation-custom_in-translate_y: 300px;
   --animation-custom_in-opacity: 0;
   --animation-custom_in-rotate: 0deg;
   --animation-custom_in-scale: 1;
-  /*box-shadow: 5px 5px 29px 0 rgba(0,0,0,0.15);*/
-  height: 15.4em;
+  box-shadow: 5px 5px 29px 0 rgba(0,0,0,0.15);
+  height: 20.2em;
 }
 .u-section-2 .u-container-layout-1 {
-  padding: 50px 30px 30px;
+  /*padding: 50px 30px 30px;*/
 }
 .u-section-2 .u-icon-1 {
-  height: 59px;
-  width: 59px;
   background-image: none;
   --animation-custom_in-translate_x: 0px;
   --animation-custom_in-translate_y: 0px;
@@ -94,12 +92,15 @@
   --animation-custom_in-rotate: 180deg;
   --animation-custom_in-scale: 1;
   padding: 0;
-  margin-left: 4.5em;
+  /*margin-left: 4.5em;
+  height: 59px;
+  width: 59px;*/
 }
 .u-section-2 .u-text-5 {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 400;
-  text-align: center;
+  height: 3.7em;
+  /*text-align: center;*/
 }
 .u-section-2 .u-btn-2 {
   font-size: 0.875rem;
@@ -392,7 +393,7 @@
       <li class="logo"><img src="img/logob.png" id="logo"></li>
       <li class="menus"></li>
     	<li class="menus"><a href="index.php">Mi perfil</a></li>
-    	<li class="menus"><a href="cursos.php">Catálogo de Cursos</a></li>
+    	<li id="miperfilfondo" class="menus"><a href="cursos.php" id="miperfil">Catálogo de Cursos</a></li>
       <li class="menus"><a href="../account/login.html">Salir</a></li>
     	</ul>
   </header>
@@ -410,7 +411,7 @@
       </div>
     </section>
     
-    
+    <!--
     <section class="u-backlink u-clearfix u-grey-80">
       <a class="u-link">
         <span>Copyright © 2023</span>
@@ -421,6 +422,6 @@
       <a class="u-link" href="https://desetecnologias.net" target="_blank">
         <span>Dese Tecnologias</span>
       </a>. 
-    </section>
+    </section>-->
   
 <style>.u-disable-duration * {transition-duration: 0s !important;}</style></body></html>
