@@ -1,3 +1,11 @@
+<?php
+    require("../dev/conectar.php");
+    include "../panel/func/profile.php";
+    if (!isset($_SESSION)) {
+        session_start();
+    }
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -25,12 +33,8 @@
     <img class="tituloscursos" src="img/Psicologia.png" >
     <table id=tablarecursos>
 
-        <?php
-    require("../dev/conectar.php");
-    include "../panel/func/profile.php";
-if (!isset($_SESSION)) {
-    session_start();
-}
+<?php
+  
     $resultado = mysqli_query($conn,"SELECT r.iIdRecurso,c.cNombreCurso, m.cNombreModulo,r.cRuta FROM usuarios u
     INNER JOIN inscripcion i ON u.iIdUsuario = i.fkiIdUsuario
       INNER JOIN curso c ON i.fkiIdeCurso = c.iIdCurso 

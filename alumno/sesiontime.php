@@ -1,4 +1,5 @@
 <?php
+
 //Comprobamos si esta definida la sesión 'tiempo'.
 if(isset($_SESSION['tiempo']) ) {
 
@@ -10,13 +11,10 @@ if(isset($_SESSION['tiempo']) ) {
 
         //Compraración para redirigir página, si la vida de sesión sea mayor a el tiempo insertado en inactivo.
         if($vida_session > $inactivo)
-        {
-            //Removemos sesión.
-            session_unset();
-            //Destruimos sesión.
-            session_destroy();              
-            //Redirigimos pagina.
-            header("Location: ../index.php");
+        {echo '<script type="text/JavaScript"> location.reload(); </script>';
+           
+            
+            header("Location: ../function/finacceso.php");
 
             exit();
         } else {  // si no ha caducado la sesion, actualizamos
