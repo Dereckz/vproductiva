@@ -12,6 +12,16 @@
 ?>
 
 <style>
+  
+table{
+    table-layout: fixed;
+    width: 250px;
+}
+
+th, td {
+    width: 100px;
+    word-wrap: break-word;
+}
   :root {
     --color-green: #00a878;
     --color-red: #fe5e41;
@@ -114,8 +124,8 @@
                         <?php
                         while ($dataCliente = mysqli_fetch_array($queryCliente)) { ?>
                           <tr>
-
-                            <td><?php echo $dataCliente['cNombreLargo']; ?></td>
+<!--'meri<<'-->
+                            <td><b><?php echo $dataCliente['cNombreLargo']; ?><b></td>
 
                             <td><?php echo $dataCliente['cCorreo']; ?></td>
                             <?php if($dataCliente['iEstatus']==1) {?> 
