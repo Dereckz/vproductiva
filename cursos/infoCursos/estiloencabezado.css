@@ -21,7 +21,7 @@ body{
 }
 
 #encabezado{
-	background-color: rgb(216, 210, 227);
+	/*background-color: rgb(216, 210, 227);*/
 	position: sticky;
 	top: 0px;
 	margin: 0%;
@@ -33,7 +33,7 @@ body{
 	color: #000000;
 }
 #menu{
-	background-color: #40bff2;
+	/*background-color: #40bff2;*/
 	margin-top: 0%;
 	margin-left: 0%;
 	font-family: sans-serif;
