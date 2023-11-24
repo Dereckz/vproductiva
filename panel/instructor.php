@@ -124,7 +124,7 @@ th, td {
                         <?php
                         while ($dataCliente = mysqli_fetch_array($queryCliente)) { ?>
                           <tr>
-
+<!--'meri<<'-->
                             <td><b><?php echo $dataCliente['cNombreLargo']; ?><b></td>
 
                             <td><?php echo $dataCliente['cCorreo']; ?></td>
