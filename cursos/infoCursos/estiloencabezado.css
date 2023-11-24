@@ -16,8 +16,9 @@ body{
 }
 #logo{
 	position: relative;
-	width: 98%;
+	/*width: 98%;*/
 	padding-top: 1%;
+	height: 3em;
 }
 
 #encabezado{
@@ -38,15 +39,15 @@ body{
 	margin-left: 0%;
 	font-family: sans-serif;
 	margin-bottom: 0%;
-	height: 6.5em;
+	/*height: 6.5em;*/
 }
 .menus{
 	display: inline-block;
 	font-size: 1.4em;
 	text-align: center;
-	width: 20%;
+	width: 18%;
 	vertical-align: top;
-	padding-top: 1.8em;
+	padding: 1em;
 }
 .logo{
 	display: inline-block;
@@ -55,8 +56,14 @@ body{
 	width: 7.5%;
 }
 .enlacemenu{
-	color: #ffffff;
+	color: #000000;
 	text-decoration: none;
+}
+#miperfil{
+	color: white;
+}
+#miperfilfondo{
+	background-color: #630ba3;
 }
 a:hover {
 	color: #630ba3;
@@ -106,7 +113,7 @@ h1{
 #filatitulo{
 	/*background-color: #b77add;*/
 	padding-bottom: 0%;
-	text-align: center;
+	text-align: left;
 }
 #filainstrucciones{
 	background-color: #79b3ce;
@@ -118,9 +125,9 @@ h1{
 	width: 4em;
 }
 h2{
-	color: #360cb5;
+	color: #6e0cb5;
 	/*text-indent: 8em;*/
-	font-size: 2em;
+	font-size: 1.8em;
 	margin-top: 0;
 	font-family: Acumin;
 }

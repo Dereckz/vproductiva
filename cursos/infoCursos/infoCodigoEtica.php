@@ -16,20 +16,21 @@
             <li class="logo"><img src="../img/logob.png" id="logo"></li>
             <li class="menus"></li>
     	    <li class="menus"><a href="../../alumno/index.php" class="enlacemenu">Mi perfil</a></li>
-    	    <li class="menus"><a href="../../alumno/cursos.php" class="enlacemenu">Catálogo de Cursos</a></li>
+    	    <li id="miperfilfondo" class="menus"><a href="../../alumno/cursos.php" id="miperfil" class="enlacemenu">Catálogo de Cursos</a></li>
             <li class="menus"><a href="../../account/login.html" class="enlacemenu">Salir</a></li>
     	</ul>
     </header>
 
     <div id="fondotemario">
     
-    <img class="tituloscursos" src="../img/etica.png" >
+    <!--<img class="tituloscursos" src="../img/etica.png" >-->
     <table  id=tablarecursos>
         <tr>
-        <td><img src="img/etica.jpg" ></td>
+            <td><img src="img/etica.jpg" ></td>
             <td class="celdatop">
             <table id=tablacontenido>
-                <tr> <td></td><td id=filatitulo> <h2>Contenido</h2> </td></tr>
+                <tr> <td></td><td> <h3>Curso inspirado en manejar un código de ética en tu empresa.</h3> </td></tr>
+                <tr> <td></td><td id=filatitulo> <h2>Temario</h2> </td></tr>
                 
                 <!--<tr> <td id=filainstrucciones> <h4> En este curso aprenderas las habilidades necesarias para optimizar tus actividades diarias.</h4> </td></tr>  -->  
     
@@ -45,7 +46,6 @@
                 }
                 ?>
                 
-
             </table> 
             </td>
         </tr>

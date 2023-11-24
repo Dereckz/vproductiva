@@ -29,7 +29,7 @@
             <td><img src="img/etica.jpg" ></td>
             <td class="celdatop">
             <table id=tablacontenido>
-                <tr> <td></td><td id=filatitulo> <h2>Contenido</h2> </td></tr>
+                <tr> <td id=filatitulo colspan="2"> <h2>Contenido</h2> </td></tr>
                 
                 <!--<tr> <td id=filainstrucciones> <h4> En este curso aprenderas las habilidades necesarias para optimizar tus actividades diarias.</h4> </td></tr>  -->  
     
@@ -45,7 +45,6 @@
                 }
                 ?>
                 
-
             </table> 
             </td>
         </tr>

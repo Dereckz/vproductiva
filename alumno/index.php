@@ -103,7 +103,7 @@
   margin-bottom: 0;
 }
 .u-section-2 .u-repeater-1 {
-  grid-template-columns: repeat(4, calc(25% - 22.5px));
+  /*grid-template-columns: repeat(4, calc(25% - 22.5px));*/
   min-height: 273px;
   grid-gap: 30px;
 }
@@ -219,13 +219,13 @@
   padding: 0;
 }
 .u-section-2 .u-list-item-4 {
-  background-image: url(img/carpetablanca.png);
+  /*background-image: url(img/carpetablanca.png);*/
   --animation-custom_in-translate_x: 0px;
   --animation-custom_in-translate_y: 300px;
   --animation-custom_in-opacity: 0;
   --animation-custom_in-rotate: 0deg;
   --animation-custom_in-scale: 1;
-  /*box-shadow: 5px 5px 29px 0 rgba(0,0,0,0.15);*/
+  box-shadow: 5px 5px 29px 0 rgba(0,0,0,0.15);
   height: 15.4em;
   text-align: center;
 }
@@ -433,7 +433,7 @@
     	<ul id="menu">
       <li class="logo"><img src="img/logob.png" id="logo"></li>
       <li class="menus"></li>
-    	<li class="menus"><a href="index.php" class="letramenus">Mi perfil</a></li>
+    	<li id="miperfilfondo" class="menus"><a href="index.php" id="miperfil" class="letramenus">Mi perfil</a></li>
     	<li class="menus"><a href="cursos.php">Catálogo de Cursos</a></li>
       <li class="menus"><a href="../function/finacceso.php">Salir</a></li>
     	</ul>
