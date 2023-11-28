@@ -10,6 +10,17 @@
   header('location:../account/login.html');
 	include 'header.php' 
 ?>
+<style>
+  table{
+    table-layout: fixed;
+    width: 250px;
+}
+
+th, td {
+    width: 200px;
+    word-wrap: break-word;
+}
+</style>
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
   <?php include 'topbar.php' ?>
@@ -100,16 +111,16 @@
                             </td>
                           
                             <?php 
-                            $sqlacceso   = ("SELECT idaccesos, max(dfechaacceso) as dfechaacceso, dfechacierre,idusuario FROM accesos WHERE idusuario=".$dataCliente['iIdUsuario'].";");
+                            $sqlacceso   = ("SELECT * FROM accesos where idUsuario=".$dataCliente['iIdUsuario']." ORDER BY dFechaAcceso DESC LIMIT 1;");
                             $queryacceso = mysqli_query($conn, $sqlacceso);
                             while ($dataacceso = mysqli_fetch_array($queryacceso)) {
-                              $fechaInicio = new DateTime($dataacceso['dfechaacceso']);
-                              $fechaFin = new DateTime($dataacceso['dfechacierre']);
+                              $fechaInicio = new DateTime($dataacceso['dFechaAcceso']);
+                              $fechaFin = new DateTime($dataacceso['dFechaCierre']);
                               $intervalo = $fechaInicio->diff($fechaFin);
                               ?>
 
                             <td><?php echo $intervalo->h . " horas, " . $intervalo->i . " minutos y " . $intervalo->s . " segundos"; ?></td>
-                            <td><?php echo $dataacceso['dfechaacceso']; ?></td>
+                            <td><?php echo $dataacceso['dFechaAcceso']; ?></td>
                            <?php }?>
                            
                           </tr>
