@@ -16,10 +16,9 @@
     $cantidad     = mysqli_num_rows($queryCliente);
     while ($dataCliente = mysqli_fetch_array($queryCliente)) { 
         $idCliente = $dataCliente["id"];
-        $queryA = mysqli_query($conn,"UPDATE accesos SET dFechaCierre ='".$fechaactual."' 
+        $queryA = mysqli_query($conn,"UPDATE accesos SET dFechaCierre = NOW() 
         WHERE idusuario=".$_SESSION["id"]."
-        and dfechaacceso = SELECT MAX(dfechaacceso)
-        FROM accesos;");
+        ORDER BY dFechaAcceso DESC LIMIT 1; ");
     }
  
   
