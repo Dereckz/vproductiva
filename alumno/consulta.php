@@ -104,11 +104,13 @@ function miCurso()
        while ($consulta = mysqli_fetch_array($resultado)) {
         $info = '
          <div class="u-align-left u-border-10 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-base u-container-style u-custom-item u-list-item u-repeater-item u-shape-rectangle u-video-cover u-white u-list-item-4 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="250" style="will-change: transform, opacity; animation-duration: 1500ms;">
-            <div class="u-container-layout u-similar-container u-valign-top u-container-layout-4"><span class="u-custom-item u-file-icon u-icon u-text-palette-3-base u-icon-4 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="750" style="will-change: transform, opacity; animation-duration: 1500ms;"><img src="' . $consulta['ricono'] . '" alt=""></span>
-              <h4 class="u-text u-text-8"> ' . $consulta['cNombreCurso'] . '</h4>
-              <a href="' . $consulta['ruta2'] . '" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-3-base u-text-body-color u-text-hover-palette-3-base u-top-left-radius-0 u-top-right-radius-0 u-btn-5">Entrar</a>
+            <div class="u-container-layout u-similar-container u-valign-top u-container-layout-4" style="flex-direction: row;"><span class="u-custom-item u-file-icon u-icon u-text-palette-3-base u-icon-4 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="750" style="will-change: transform, opacity; animation-duration: 1500ms;"><img src="' . $consulta['ricono'] . '" alt=""></span>
+            <div>  
+              <h4 id="titulocursoinscrito" class="u-text u-text-8"> ' . $consulta['cNombreCurso'] . '</h4>
+              <span id="btncontinuarcurso"><a href="' . $consulta['ruta2'] . '" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-3-base u-text-body-color u-text-hover-palette-3-base u-top-left-radius-0 u-top-right-radius-0 u-btn-5">Continuar</a></span>
               <a href="#" id="' . $consulta["iIdCurso"] . '" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-3-base u-text-body-color u-text-hover-palette-3-base u-top-left-radius-0 u-top-right-radius-0 u-btn-5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Eliminar</a>
             </div>
+              </div>
           </div>
 
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>

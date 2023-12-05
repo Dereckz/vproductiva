@@ -66,7 +66,7 @@
 }
 .u-section-2 .u-text-2 {
   font-size: 3.3rem;
-  font-family: 'Open Sans';
+  font-family: 'Montserrat';
   --animation-custom_in-translate_x: 0px;
   --animation-custom_in-translate_y: -300px;
   --animation-custom_in-opacity: 0;
@@ -225,16 +225,17 @@
   --animation-custom_in-opacity: 0;
   --animation-custom_in-rotate: 0deg;
   --animation-custom_in-scale: 1;
-  box-shadow: 5px 5px 29px 0 rgba(0,0,0,0.15);
+  /*box-shadow: 5px 5px 29px 0 rgba(0,0,0,0.15);*/
   height: 15.4em;
   text-align: center;
+  background-color: #f6f6f6;
 }
 .u-section-2 .u-container-layout-4 {
-  padding: 50px 30px 30px;
+  padding: 30px 30px 30px;
 }
 .u-section-2 .u-icon-4 {
-  height: 59px;
-  width: 59px;
+  height: 100%;
+  /*width: 59px;*/
   background-image: none;
   --animation-custom_in-translate_x: 0px;
   --animation-custom_in-translate_y: 0px;
@@ -243,7 +244,7 @@
   --animation-custom_in-scale: 1;
   margin: 0 auto 0 0;
   padding: 0;
-  margin-left: 4.5em;
+  margin-left: 4em;
 }
 .u-section-2 .u-text-8 {
   font-size: 1.5rem;
@@ -288,6 +289,19 @@
   margin: 15px auto 0 0;
   padding: 14px 46px 16px 44px;
 }
+
+#titulocursoinscrito{
+margin-left: 3em;
+margin-bottom: 3em;
+font-weight: 500;
+}
+
+#btncontinuarcurso{
+  background-color: #00b0ff;
+  border-radius: 25em;
+  padding: 0.5em 2em;
+}
+
 @media (max-width: 1199px) {
   .u-section-2 .u-text-1 {
     margin-right: 205px;
@@ -445,20 +459,21 @@
         <?=informacion();?>
         <div class="u-expanded-width u-list u-list-1">
         <div class="u-repeater u-repeater-1">
+        <h1 class="section-title" id="titulomiscursos"> <span>Mis cursos:</span></h1>
         
         <?=miCurso();?>
         </div>
-        </div>
+        </div><!--
         <div class="u-align-left u-container-style u-expanded-width u-group u-palette-1-base u-group-1 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1750" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1750ms;">
           <div class="u-container-layout u-valign-middle u-container-layout-5">
             <h4 class="u-text u-text-default u-text-9"> Si quieres aprender más, consulta nuestro catálogo de cursos he inscribete.</h4>
             <a href="cursos.php" class="u-active-white u-align-center u-border-1 u-border-active-white u-border-hover-white u-border-white u-btn u-button-style u-hover-white u-none u-text-active-palette-1-base u-text-hover-palette-1-base u-btn-6" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Catálogo de cursos</a>
           </div>
-        </div>
+        </div>-->
       </div>
     </section>
 
-
+<!--
     <section class="u-backlink u-clearfix u-grey-80">
       <a class="u-link">
         <span>Copyright © 2023</span>
@@ -470,5 +485,5 @@
         <span>Dese Tecnologias</span>
       </a>. 
     </section>
-    
+-->  
 <style>.u-disable-duration * {transition-duration: 0s !important;}</style></body></html>
