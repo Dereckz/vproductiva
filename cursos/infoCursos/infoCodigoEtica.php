@@ -24,13 +24,17 @@
     <div id="fondotemario">
     
     <!--<img class="tituloscursos" src="../img/etica.png" >-->
+    <h1 id="tituloprincipal">CÓDIGO DE ÉTICA EN LA EMPRESA</h1>
     <table  id=tablarecursos>
         <tr>
-            <td><img src="img/etica.jpg" ></td>
+            <td id="imagentemario"><img src="img/etica.png" id="imagentemar"></td>
             <td class="celdatop">
             <table id=tablacontenido>
-                <tr> <td></td><td> <h3>Curso inspirado en manejar un código de ética en tu empresa.</h3> </td></tr>
-                <tr> <td></td><td id=filatitulo> <h2>Temario</h2> </td></tr>
+                <tr> <td></td><td> <h3 id="descricpiontemario">
+                    En un mundo empresarial que valora la integridad y la ética, nuestro curso de Código de Ética en las Empresas se rige como la guía esencial para construir una cultura organizacional sólida y ética. Este curso está diseñado para líderes, empresarios y profesionales comprometidos con la construcción de empresas que no solo prosperen financieramente, sino que también sean respetadas y admiradas por su ética y responsabilidad social.  
+</br>"La ética no solo mejora tu empresa, mejora tu legado.”  
+                </h3> </td></tr>
+                <tr> <td></td><td id=filatitulo> <h2>TEMARIO</h2> </td></tr>
                 
                 <!--<tr> <td id=filainstrucciones> <h4> En este curso aprenderas las habilidades necesarias para optimizar tus actividades diarias.</h4> </td></tr>  -->  
     

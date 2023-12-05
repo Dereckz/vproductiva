@@ -12,7 +12,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: Acumin;
+  font-family: Montserrat;
 }
 /*end-variables font-family*/
 /*begin-variables color*/
@@ -14245,9 +14245,10 @@ li.active > a.u-button-style.u-text-body-color,
 li.active > a.u-button-style.u-text-body-color[class*="u-border-"],
 a.u-button-style.u-text-body-color,
 a.u-button-style.u-text-body-color[class*="u-border-"] {
-  color: #4720b7 !important;
+  /*color: #4720b7 !important;*/
   margin-top: 0%;
   display: contents;
+  font-family: Montserrat;
 }
 a.u-button-style.u-text-body-color:hover,
 a.u-button-style.u-text-body-color[class*="u-border-"]:hover,
@@ -15053,6 +15054,12 @@ a.u-link.u-text-hover-grey-90:hover {
   color: #1a1a1a !important;
 }
 /*end-variables colors*/
+#titulomiscursos{
+  font-size: 2.3em;
+  margin: 0;
+  margin-left: 2.6em;
+}
+
 
 /*begin-variables sitestylecss*/
 
@@ -15182,8 +15189,8 @@ a.u-link.u-text-hover-grey-90:hover {
         }
         h1:not(.u-title)
         {
-        font-weight: 400;
-        font-size: 3rem;
+        font-weight: 550;
+        font-size: 2.6rem;
         line-height: 1.1;
         margin-top: 0.7em;
         margin-bottom: 20px;

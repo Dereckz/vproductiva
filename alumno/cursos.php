@@ -404,16 +404,24 @@
           <div>
             <table>
               <tr class="filacentrada">
-                <td><a href="cursoxarea.php?ida=1"><img src="img/areaplaboral.png" class="imagenesareas"></a></td>
-                <td><a href="cursoxarea.php?ida=2"><img src="img/areahblandas.png" class="imagenesareas"></a></td>
-                <td><a href="cursoxarea.php?ida=3"><img src="img/areapsicologia.png" class="imagenesareas"></a></td>
-                <td><a href="cursoxarea.php?ida=4"><img src="img/areasalud.png" class="imagenesareas"></a></td>
+                <td><a href="cursoxarea.php?ida=1"><img src="img/areaplaboral.png" class="imagenesareas" 
+                onmouseover="this.src='img/areaplaboral2.png'" onmouseout="this.src='img/areaplaboral.png'"></a></td>
+                <td><a href="cursoxarea.php?ida=2"><img src="img/areahblandas.png" class="imagenesareas" 
+                onmouseover="this.src='img/areahblandas2.png'" onmouseout="this.src='img/areahblandas.png'"></a></td>
+                <td><a href="cursoxarea.php?ida=3"><img src="img/areapsicologia.png" class="imagenesareas" 
+                onmouseover="this.src='img/areapsicologia2.png'" onmouseout="this.src='img/areapsicologia.png'"></a></td>
+                <td><a href="cursoxarea.php?ida=4"><img src="img/areasalud.png" class="imagenesareas" 
+                onmouseover="this.src='img/areasalud2.png'" onmouseout="this.src='img/areasalud.png'"></a></td>
               </tr>
               <tr class="filacentrada">
-                <td><a href="cursoxarea.php?ida=5"><img src="img/areacjuridica.png" class="imagenesareas2"></a></td>
-                <td><a href="cursoxarea.php?ida=6"><img src="img/areafinanzas.png" class="imagenesareas2"></a></td>
-                <td><a href="cursoxarea.php?ida=7"><img src="img/areahdigitales.png" class="imagenesareas2"></a></td>
-                <td><a href=""><img src="img/areaotro.png" class="imagenesareas2"></a></td>
+                <td><a href="cursoxarea.php?ida=5"><img src="img/areacjuridica.png" class="imagenesareas2" 
+                onmouseover="this.src='img/areacjuridica2.png'" onmouseout="this.src='img/areacjuridica.png'"></a></td>
+                <td><a href="cursoxarea.php?ida=6"><img src="img/areafinanzas.png" class="imagenesareas2" 
+                onmouseover="this.src='img/areafinanzas2.png'" onmouseout="this.src='img/areafinanzas.png'"></a></td>
+                <td><a href="cursoxarea.php?ida=7"><img src="img/areahdigitales.png" class="imagenesareas2" 
+                onmouseover="this.src='img/areahdigitales2.png'" onmouseout="this.src='img/areahdigitales.png'"></a></td>
+                <td><a href=""><img src="img/areaotro.png" class="imagenesareas2" 
+                onmouseover="this.src='img/areaotro2.png'" onmouseout="this.src='img/areaotro.png'"></a></td>
               </tr>
             </table>
           </div>

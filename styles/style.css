@@ -292,7 +292,7 @@ p {
 	justify-content: center;
 	flex-wrap: wrap;
 	margin-top: 20px;
-	background-image: url(fondotem.gif);
+	background-image: url(fondologin.png);
 }
 #services .service-item {
 	flex-basis: 80%;
@@ -621,7 +621,7 @@ p {
 	/* Hero */
 	#hero h1 {
 		font-size: 7rem;
-		font-family: Acumin;
+		/*font-family: Acumin;*/
 	}
 	/* End Hero */
 

@@ -78,7 +78,8 @@
   --animation-custom_in-opacity: 0;
   --animation-custom_in-rotate: 0deg;
   --animation-custom_in-scale: 1;
-  box-shadow: 5px 5px 29px 0 rgba(0,0,0,0.15);
+  /*box-shadow: 5px 5px 29px 0 rgba(0,0,0,0.15);*/
+  background-color: #f6f6f6;
   height: 20.2em;
 }
 .u-section-2 .u-container-layout-1 {
@@ -97,16 +98,17 @@
   width: 59px;*/
 }
 .u-section-2 .u-text-5 {
-  font-size: 1.3rem;
-  font-weight: 400;
+  font-size: 1.1rem;
+  font-weight: 550;
   height: 3.7em;
   /*text-align: center;*/
+  padding: 0em 1em;
 }
 .u-section-2 .u-btn-2 {
   font-size: 0.875rem;
   background-image: none;
   letter-spacing: 1px;
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
   font-weight: 600;
   margin: 20px 0 0;
   padding: 0;
