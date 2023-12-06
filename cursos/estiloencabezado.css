@@ -15,47 +15,47 @@ body{
 	text-align: left;
 }
 #logo{
-	position: relative;
-	width: 98%;
-	padding-top: 1%;
+	display: inline-block;
+    font-size: 1.3em;
+    text-align: left;
+    width: 78%;
 }
 
 #encabezado{
-	background-color: rgb(216, 210, 227);
-	position: sticky;
-	top: 0px;
-	margin: 0%;
-	width: 100%;
-	text-align: center;
+	/*background-color: rgb(216, 210, 227); */
+    position: sticky;
+    /*top: 1em;*/
+    margin: 0%;
+    width: 100%;
+    text-align: center;
+	height: 4.5em;
 }
 #tituloprincipal{
 	margin: 0%;
 	color: #000000;
 }
 #menu{
-	background-color: #40bff2;
 	margin-top: 0%;
-	margin-left: 0%;
-	font-family: sans-serif;
-	margin-bottom: 0%;
-	height: 6.5em;
+    margin-left: 0%;
+    font-family: sans-serif;
+    margin-bottom: 0%;
 }
 .menus{
 	display: inline-block;
-	font-size: 1.4em;
-	text-align: center;
-	width: 20%;
-	vertical-align: top;
-	padding-top: 1.8em;
+    font-size: 1.4em;
+    text-align: center;
+    width: 16%;
+    vertical-align: top;
+    padding: 1em;
 }
 .logo{
 	display: inline-block;
-	font-size: 1.3em;
-	text-align: left;
-	width: 7.5%;
+    font-size: 1.3em;
+    text-align: left;
+    width: 17%;
 }
 .enlacemenu{
-	color: #ffffff;
+	color: #000000;
 	text-decoration: none;
 }
 a:hover {
@@ -86,14 +86,14 @@ h1{
 	margin-left: 0.6em;
 }
 .iconorecursocelda{
-	background-color: #ebebec;
+	/*background-color: #ebebec;*/
 	border-radius: 0.7em 0px 0px 0.7em;
 }
 
 #tablarecursos{
-	margin-left: 27%;
+	margin-left: 14%;
 	margin-bottom: 2em;
-	/*margin-top: 1.5em;*/
+	margin-top: 6em;
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	width: 45%;
 }
@@ -112,16 +112,16 @@ h1{
 	padding-top: 0%;
 }
 .temario{
-	background-color: #ebebec;
+	/*background-color: #ebebec;*/
     border-radius: 0px 0.7em 0.7em 0px;
 	width: 4em;
 }
 h2{
 	color: #360cb5;
-	text-indent: 8em;
+	/*text-indent: 8em;*/
 	font-size: 2em;
 	margin-top: 0;
-	font-family: Acumin;
+	font-family: sans-serif;
 }
 h4{
 	color: #360cb5;
@@ -136,13 +136,13 @@ h4{
 .titulostemario{
 	text-decoration:none; 
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-	font-size: 1.15em;
+	font-size: 1.45em;
 	width: 60%;
 	color: #000000;
 }
 
 .fondotemario{
-	background-color: #ebebec;
+	/*background-color: #ebebec;*/
 	border: inset 0pt;
 	border-spacing: 0px;
 	padding: 1em;
@@ -153,7 +153,7 @@ h4{
 }
 
 .constancia{
-	background-color: #4720b7;
+	background-color: #2E49E1;
     border-radius: 5em;
 	height: 3em;
 	text-align: center;

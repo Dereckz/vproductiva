@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -32,28 +34,37 @@
             <table id=tablacontenido>
                 <tr> <td></td><td> <h3 id="descricpiontemario">
                     En un mundo empresarial que valora la integridad y la ética, nuestro curso de Código de Ética en las Empresas se rige como la guía esencial para construir una cultura organizacional sólida y ética. Este curso está diseñado para líderes, empresarios y profesionales comprometidos con la construcción de empresas que no solo prosperen financieramente, sino que también sean respetadas y admiradas por su ética y responsabilidad social.  
-</br>"La ética no solo mejora tu empresa, mejora tu legado.”  
+                </br>"La ética no solo mejora tu empresa, mejora tu legado.”  
                 </h3> </td></tr>
                 <tr> <td></td><td id=filatitulo> <h2>TEMARIO</h2> </td></tr>
                 
-                <!--<tr> <td id=filainstrucciones> <h4> En este curso aprenderas las habilidades necesarias para optimizar tus actividades diarias.</h4> </td></tr>  -->  
-    
+                <!--<tr> <td id=filainstrucciones> <h4> En este curso aprenderas las habilidades necesarias para optimizar tus actividades diarias.</h4> </td></tr>  -->
                 <?php
                  require("../../dev/conectar.php");
                 $resultado = mysqli_query($conn,"SELECT c.cNombreCurso, m.cNombreModulo FROM curso c
                 INNER JOIN modulo m ON c.iIdCurso = m.fkiIdCurso WHERE c.iIdCurso=1");
                 while ($consulta = mysqli_fetch_array($resultado))
                 {
-                    echo '<tr> <td class=sangriavinetas><img src="img/vineta.png" style= "width: 0.5em;"></td> <td class=titulostemario2>'.$consulta['cNombreModulo'] .'</td></tr>
+                    echo '<tr> <td class=sangriavinetas></td> <td class=titulostemario2>'.$consulta['cNombreModulo'] .'</td></tr>
                     <tr><td></td><td class=celdasvacias2></td></tr>';
-
                 }
-                ?>
                 
+                ?>  
+                <tr> 
+                    <td>
+                    </td>
+                    <td >
+                    <?php include("functiones.php"); 
+                    ?>
+                   
+                    </td>
+                </tr>       
+                
+           
             </table> 
             </td>
         </tr>
     </table>
-    
+                
     </body>
 </html> 
