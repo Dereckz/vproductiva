@@ -430,7 +430,7 @@
       </div>
     </section>
     
-    
+    <!--
     <section class="u-backlink u-clearfix u-grey-80">
       <a class="u-link">
         <span>Copyright © 2023</span>
@@ -441,6 +441,6 @@
       <a class="u-link" href="https://desetecnologias.net" target="_blank">
         <span>Dese Tecnologias</span>
       </a>. 
-    </section>
+    </section>-->
   
 <style>.u-disable-duration * {transition-duration: 0s !important;}</style></body></html>

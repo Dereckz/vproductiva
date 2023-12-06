@@ -293,13 +293,14 @@
 #titulocursoinscrito{
 margin-left: 3em;
 margin-bottom: 3em;
-font-weight: 500;
+font-weight: 550;
 }
 
 #btncontinuarcurso{
   background-color: #00b0ff;
   border-radius: 25em;
   padding: 0.5em 2em;
+  color: white;
 }
 
 @media (max-width: 1199px) {
