@@ -54,7 +54,7 @@
                     <td>
                     </td>
                     <td >
-                    <?php include("functiones.php"); 
+                    <?php include('..\funct\functiones.php'); 
                     ?>
                    
                     </td>
