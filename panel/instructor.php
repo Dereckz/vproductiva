@@ -107,9 +107,9 @@ th, td {
             </ol>
           </div>
           <div class="row">
+            
                 <div class="col-md-12 p-2">
-
-
+              
                 <div class="table-responsive">
                     <table class="table table-bordered table-striped table-hover">
                       <thead>
@@ -124,15 +124,15 @@ th, td {
                         <?php
                         while ($dataCliente = mysqli_fetch_array($queryCliente)) { ?>
                           <tr>
-<!--'meri<<'-->
+
                             <td><b><?php echo $dataCliente['cNombreLargo']; ?><b></td>
 
                             <td><?php echo $dataCliente['cCorreo']; ?></td>
                             <?php if($dataCliente['iEstatus']==1) {?> 
-                              <td><span  class="badge badge-success" > <a class="text-white" href="func/actualizarStatus.php?id='<?php echo $dataCliente['iIdUsuario']; ?>'&status=1">Activo<a></span></td> 
+                              <td style="width: 150px;"><span  class="badge badge-success" > <a class="text-white" href="func/actualizarStatus.php?id='<?php echo $dataCliente['iIdUsuario']; ?>'&status=1">Activo<a></span></td> 
                             <?php }?> 
                             <?php if($dataCliente['iEstatus']==0) {?> 
-                              <td><span  class="badge badge-danger"><a class="text-white" href="func/actualizarStatus.php?id='<?php echo $dataCliente['iIdUsuario']; ?>'&status=0">Inactivo</a></span></td> 
+                              <td style="width: 150px;"><span  class="badge badge-danger"><a class="text-white" href="func/actualizarStatus.php?id='<?php echo $dataCliente['iIdUsuario']; ?>'&status=0">Inactivo</a></span></td> 
                             <?php }?> 
                             <td>
                               <!-- <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteChildresn<?php echo $dataCliente['iIdUsuario']; ?>">
