@@ -5,11 +5,13 @@ function curseactive()
 {
 
   require("../dev/conectar.php");
-    $resultado = mysqli_query($conn, "SELECT * FROM curso");
+    
    
 
     while ($consulta = mysqli_fetch_array($resultado)) {
         $IdCurso=$consulta["iIdCurso"];
+
+        
 
       echo'  <div class="col-xl-3 col-md-6 mb-4" >
               <div class="card h-100">
