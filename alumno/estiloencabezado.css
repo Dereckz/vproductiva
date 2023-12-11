@@ -13,7 +13,7 @@
 }
 #logo{
 	position: relative;
-	width: 75%;
+	width: 53%;
 	padding-top: 2%;
 }
 
@@ -39,7 +39,7 @@
 }
 .menus{
 	display: inline-block;
-	font-size: 1.4em;
+	font-size: 1.1em;
 	text-align: center;
 	width: 20%;
 	vertical-align: top;
