@@ -7,10 +7,29 @@
   header('location:../account/login.html');
 	include 'header.php' 
 ?> 
+<style>
+  div.cardgroup{
+    padding-top: 50px;
+    padding-right: 30px;
+    padding-bottom: 50px;
+    padding-left: 50px;
+  }
+
+  table{
+      table-layout: fixed;
+      width: 250px;
+  }
+  
+  th, td {
+      width: 100px;
+      word-wrap: break-word;
+  }
+  </style>
 <script src="sweetalert2.all.min.js"></script>
 <script src="sweetalert2.min.js"></script>
 <link rel="stylesheet" href="sweetalert2.min.css">
 
+  
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
   <?php include 'topbar.php' ?>
@@ -30,9 +49,9 @@
     <?php
      require("../dev/conectar.php");
 
-    $sqlCliente   = ("SELECT * FROM usuarios where usuarios.fkidTipoUsuario=2; ");
-    $queryCliente = mysqli_query($conn, $sqlCliente);
-    $cantidad     = mysqli_num_rows($queryCliente);
+      $sqlCliente   = ("SELECT * FROM usuarios where usuarios.fkidTipoUsuario=2; ");
+      $queryCliente = mysqli_query($conn, $sqlCliente);
+      $cantidad     = mysqli_num_rows($queryCliente);
     ?>
 
 
@@ -51,9 +70,30 @@
             </ol>
           </div>
         
-          <div class="row">
-           
-          <?php curseactive();?>
+          <div class="row" style="padding-left: 50px;">
+            
+            
+           <?php  $resultado = mysqli_query($conn, "SELECT * FROM curso"); ?>
+
+          
+              <?php  while ($consulta = mysqli_fetch_array($resultado)) {
+                    $IdCurso=$consulta["iIdCurso"]; ?>
+
+              <div class="card" style="width: 15rem; padding-right: 1%">
+                <img width="300" height="200"  src="<?php echo $consulta["ricono"]?>"class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title"><?php echo $consulta["cNombreCurso"]?></h5>
+                  <p class="card-text"><?php echo $consulta["cDescripcion"]?></p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+          
+     
+            <?php } ?>
+                 
+          </div>
+          <!-- ?php curseactive();?-->
+
                 <div class="col-md-12 p-2">
          
                 <div class="table-responsive">
