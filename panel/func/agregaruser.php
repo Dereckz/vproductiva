@@ -1,7 +1,7 @@
 <?php
 
 require("../../dev/conectar.php");
-
+$tipousuario=$_POST["tiposuario"];
 $idusuario=$_POST["idusuario"];
 $email=$_POST["email"];  
 $nombre=$_POST["nombre"];
@@ -15,7 +15,7 @@ $fechaalta=$_POST["fechaalta"];
 
         $pass=password_hash(($_POST["password"]), PASSWORD_DEFAULT); 
         $consulta="INSERT INTO usuarios (`iIdUsuario`, `fkidTipoUsuario`, `cNombre`, `cApellidoP`, `cApellidoM`, `cNombreLargo`, `cCorreo`, `cUsuario`, `cPassword`, `cTelefono`, `cCodigo`, `dFechaAlta`, `iGenero`, `cProfile`, `iEstatus`)
-                VALUES (0,2,'".$nombre."'".
+                VALUES (0,".$tipousuario.",'".$nombre."'".
                 ", '".$apellidoparterno."'".
                 ", '".$apellidomaterno."'".
                 ", '".$nombre."' ' ".$apellidoparterno." ' '".$apellidomaterno."'".
@@ -33,9 +33,17 @@ $fechaalta=$_POST["fechaalta"];
 
 
             if($query){
-     
-            header("Location: ../instructor.php");
+                if ($tipousuario==2){
+                        header("Location: ../instructor.php");
 
+                }
+                else if($tipousuario==3){
+                        header("Location: ../alumnos.php");
+
+                }
+
+                
+           
 
             }
 
