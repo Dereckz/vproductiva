@@ -107,7 +107,8 @@ th, td {
             </ol>
           </div>
           <div>
-          <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#addInstructor">
+            <?php $tipousuario =2?>
+          <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#addInstructor<?php echo $tipousuario ?>">
             Agregar Nuevo
           </button>
           </div>

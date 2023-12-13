@@ -70,6 +70,13 @@ th, td {
               <li class="breadcrumb-item active" aria-current="page">Administrar</li>
             </ol>
           </div>
+
+          <div>
+          <?php $tipousuario =3?>
+          <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#addInstructor<?php echo $tipousuario ?>">
+            Agregar Nuevo
+          </button>
+          </div>
           <div class="row">
                 <div class="table-responsive">
                     <table class="table table-bordered table-striped table-hover">
@@ -125,7 +132,8 @@ th, td {
                            
                           </tr>
            
-
+                          <!--Ventana Modal para Actualizar--->
+                              <?php include('ModalAgregar.php'); ?>
                               <!--Ventana Modal para Actualizar--->
                               <?php include('ModalEditar.php'); ?>
                               <!--Ventana Modal para la Alerta de Eliminar--->
