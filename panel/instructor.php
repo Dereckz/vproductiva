@@ -106,6 +106,11 @@ th, td {
               <li class="breadcrumb-item active" aria-current="page">Administrar</li>
             </ol>
           </div>
+          <div>
+          <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#addInstructor">
+            Agregar Nuevo
+          </button>
+          </div>
           <div class="row">
             
                 <div class="col-md-12 p-2">
@@ -157,7 +162,8 @@ th, td {
 
                           </tr>
            
-
+                            <!--Ventana Modal para Actualizar--->
+                              <?php include('ModalAgregar.php'); ?>
                               <!--Ventana Modal para Actualizar--->
                               <?php include('ModalEditar.php'); ?>
                               <!--Ventana Modal para la Alerta de Eliminar--->
