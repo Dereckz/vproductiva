@@ -26,9 +26,9 @@
     padding: 0.5em;
     width: 9em;
     height: 2em;
-    background-color: #2499e3;
+    background-color: #00b0ff;
     -webkit-border-radius:5px;
-    -webkit-box-shadow:0px 3px 0px #1a71a9;
+    /*-webkit-box-shadow:0px 3px 0px #1a71a9;*/
     margin-left: 9em;
   }
 

@@ -43,10 +43,19 @@
                  require("../../dev/conectar.php");
                 $resultado = mysqli_query($conn,"SELECT c.cNombreCurso, m.cNombreModulo FROM curso c
                 INNER JOIN modulo m ON c.iIdCurso = m.fkiIdCurso WHERE c.iIdCurso=1");
+                $modulo=0;
                 while ($consulta = mysqli_fetch_array($resultado))
                 {
-                    echo '<tr> <td class=sangriavinetas></td> <td class=titulostemario2>'.$consulta['cNombreModulo'] .'</td></tr>
-                    <tr><td></td><td class=celdasvacias2></td></tr>';
+                    $modulo=$modulo+1;
+                    echo '<tr> 
+                            <td class=sangriavinetas></td>
+                             <td class=titulostemario2><span id="nmodulo">Módulo '.$modulo. '.</span> </br> '.$consulta['cNombreModulo'] .'</td>
+                          </tr>
+                         <tr>
+                            <td></td>
+                            <td class=celdasvacias2>
+                            </td>
+                         </tr>';
                 }
                 
                 ?>  
