@@ -1,8 +1,10 @@
 <?php
-//session_start(); 
+
+
 $idcurso=1;
-   
+
 require("../../dev/conectar.php");
+
 $inscrito = mysqli_query($conn, "SELECT c.iIdCurso 
 FROM curso c
 INNER JOIN inscripcion i ON i.fkiIdeCurso = c.iIdCurso

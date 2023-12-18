@@ -63,8 +63,7 @@
                     <td>
                     </td>
                     <td >
-                    <?php include('..\funct\functiones.php'); 
-                    ?>
+                    <?php include('..\funct\functiones.php');   ?> 
                    
                     </td>
                 </tr>       
