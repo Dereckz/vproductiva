@@ -6,16 +6,20 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="estiloencabezado.css">
         <title>Resultado</title>
-            <style>
+<style>
+                
     #customers {
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;
+    
+    
     }
 
     #customers td, #customers th {
     border: 1px solid #ddd;
     padding: 8px;
+    
     }
 
     #customers tr:nth-child(even){background-color: #f2f2f2;}
@@ -28,8 +32,9 @@
     text-align: left;
     background-color: #04AA6D;
     color: white;
+    
     }
-            </style>
+</style>
     </head>
     <body>
     <header id="encabezado">
@@ -52,31 +57,35 @@
          $idexamen=$_GET["idex"];
          $idcurso=$_GET["idc"];
          $idusuario=$_GET["idu"];
-         $examen = $conn->query("SELECT * FROM resuelto
-         WHERE idexamen=$idexamen
-         and idcurso=$idcurso
-         and idusuario=$idusuario; ");
-   
-        $correcta = $conn->query("SELECT * FROM resuelto
-        WHERE idexamen=$idexamen
-        and idcurso=$idcurso
-        and idusuario=$idusuario
-        and correcta=1; ");
 
-        $incorrecta = $conn->query("SELECT * FROM resuelto
-        WHERE idexamen=$idexamen
-        and idcurso=$idcurso
-        and idusuario=$idusuario
-        and correcta=0; ");
+         $examen = $conn->query("SELECT * FROM preguntas
+         WHERE idexamen=$idexamen  ");
+   
+        $correcta = $conn->query("SELECT * FROM resuelto r
+        INNER JOIN preguntas p
+        ON p.idexamen= r.idexamen
+        WHERE p.idexamen=$idexamen
+        AND r.idusuario=$idusuario
+        AND r.correcta=1;");
+
+        $incorrecta = $conn->query("SELECT * FROM resuelto r
+        INNER JOIN preguntas p
+        ON p.idexamen= r.idexamen
+        WHERE p.idexamen=$idexamen
+        AND r.idusuario=$idusuario
+        AND r.correcta=0; ");
 
       
-           $numpreguntas= mysqli_num_rows($examen);
+         $numpreguntas= mysqli_num_rows($examen);
           $numCorrecta= mysqli_num_rows($correcta);
           $numIncorrecta = mysqli_num_rows($incorrecta);
 
-         while($row=$examen->fetch_assoc())	:  
-
-            
+         while($row=$correcta->fetch_assoc())	:  
+            $intentost=$row['intento'];
+            $cursotomado = $conn->query("SELECT * FROM curso where iIdCurso=".  $idcurso=$_GET["idc"]);
+            while($curse=$cursotomado->fetch_assoc())	: 
+                $examendecurso= $curse['cNombreCurso']; 
+            endwhile
         ?>
 
     <?php 
@@ -98,16 +107,17 @@
         </tr>
         <tr>
             <td><?php echo $_SESSION['NombreLargo'] ?></td>
-            <td>Maria Anders</td>
+            <td><?php echo strtoupper($examendecurso)?></td>
             <td><?php echo $numpreguntas?></td>
             <td><?php echo $numCorrecta?></td>
             <td><?php echo $numIncorrecta?></td>
-            <td>Puntuación</td>
-            <td><?php echo $row['intento'] ?></td>
+            <td></td>
+            <td><?php echo $intentost ?></td>
         </tr>
         </table>
     </body>
 </html>
+
 <script  type="text/javascript">
   function confirmar_examen() {
         Swal.fire({

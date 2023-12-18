@@ -2,6 +2,9 @@
 session_start();
 require("../dev/conectar.php");
 
+date_default_timezone_set('America/Mexico_City');
+ 
+
 $idexamen=$_GET["idEx"];
 $idcurso=$_GET["idC"];
 $contadorpreguntas=0;
@@ -10,7 +13,7 @@ $idusuario=$_GET["idU"];
 $idpregunta=$_GET["idpregunta"];
 $idrespuesta=$_GET["idrespuesta"];
 $originalDate = $_GET["fecha"];
-$fecha= date("d/m/Y", strtotime($originalDate));
+$fecha= date("Y-m-d H:i:s");
 
 
 
