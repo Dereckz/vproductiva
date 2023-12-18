@@ -112,6 +112,7 @@ while ($consulta = mysqli_fetch_array($resultado)) {
     ';
 
 }
+$examen ="";
 $masDedos='';
 if($numMudulo==$numVisto){
     while ($dataExamen = mysqli_fetch_array($existeexamen)) { 
