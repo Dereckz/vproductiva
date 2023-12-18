@@ -1,4 +1,4 @@
-
+<?php session_start(); ?>
 
 <!DOCTYPE html>
 <html>
@@ -64,8 +64,7 @@
                     <td>
                     </td>
                     <td >
-                    <?php include('..\funct\functiones.php'); 
-                    ?>
+                    <?php include('..\funct\functiones.php');   ?> 
                    
                     </td>
                 </tr>       
