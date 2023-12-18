@@ -77,6 +77,7 @@ th, td {
             Agregar Nuevo
           </button>
           </div>
+         
           <div class="row">
                 <div class="table-responsive">
                     <table class="table table-bordered table-striped table-hover">
@@ -150,7 +151,10 @@ th, td {
                 <div class="card-footer"></div>
               </div>
             </div>
-           
+            
+                  
+          <input type="button" name="imprimir" value="Imprimir P&aacute;gina" onclick="window.print();">
+          
             </div>
           
 
