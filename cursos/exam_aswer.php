@@ -14,7 +14,7 @@ $idpregunta=$_GET["idpregunta"];
 $idrespuesta=$_GET["idrespuesta"];
 $originalDate = $_GET["fecha"];
 $fecha= date("Y-m-d H:i:s");
-
+$intento="1";
 
 
 
@@ -29,6 +29,9 @@ $fecha= date("Y-m-d H:i:s");
             $data.=", fecha='".$fecha. "'";
             $question = $conn->query("SELECT * FROM respuesta where idpregunta = $pid");
             $data .=", idpregunta=".$pid;
+
+            $resultado = $conn->query("SELECT * FROM resuelto where idexamen = $pid and idusuario=".$idusuario);
+
             while($row=$question->fetch_assoc())	:  
             
                 foreach($idrespuesta as $rid){
@@ -46,12 +49,14 @@ $fecha= date("Y-m-d H:i:s");
                         }
                     endwhile;
                     }
-                    
-                
+                  
+                  
                    
                 }
-              
+               
              endwhile;
+             $data.=", intento=".$intento;
+
              $INSERT[] = $conn->query("INSERT INTO resuelto set $data");
                 
         }
