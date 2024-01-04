@@ -1,4 +1,7 @@
 <?php  session_start();?>
+<? echo $examendecurso;
+                echo $intentost;
+                ?>
 <!DOCTYPE html>
 <link href="../img/LOGOVP.ico" rel="icon">
 <html>
@@ -91,6 +94,7 @@
     <?php 
         endwhile
     ?>
+                
                 
     <body>
 
