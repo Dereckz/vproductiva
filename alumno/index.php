@@ -423,15 +423,17 @@ font-weight: 550;
   }
 
   
-}</style>
+    }
+    </style>
 
-    <script type="application/ld+json">{
+    <script type="application/ld+json">
+      {
 		"@context": "http://schema.org",
 		"@type": "Organization",
 		"name": "",
 		"url": "https://website529400.nicepage.io/1234.html"
 }
-</script>
+    </script>
     <meta name="theme-color" content="#0066ff">
     <meta property="og:title" content="1234">
     <meta property="og:type" content="website">
@@ -441,10 +443,8 @@ font-weight: 550;
 </head>
   <body class="u-body u-xl-mode" data-lang="es">
   <header id="encabezado">
-    	<!--<div id="logotipo">
-    	<img src="img/logovproductiva2.png" id="logo"> 
-    	</div>-->
-    	<!--<h1 id="tituloprincipal">Valuacion Productiva</h1>-->
+    	
+    
     	<ul id="menu">
       <li class="logo"><img src="img/logob.png" id="logo"></li>
       <li class="menus"></li>
