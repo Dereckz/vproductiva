@@ -4,48 +4,20 @@
     if (!isset($_SESSION)) {
         session_start();
     }
-    $idcursoseleccionado=$_GET["pidc"];
-    $titulocurso="";
-    $resultado = mysqli_query($conn, "SELECT r.iIdRecurso,c.cNombreCurso, m.cNombreModulo,r.cRuta,c.fkidAreaCurso FROM usuarios u
-    INNER JOIN inscripcion i ON u.iIdUsuario = i.fkiIdUsuario
-    INNER JOIN curso c ON i.fkiIdeCurso = c.iIdCurso
-    INNER JOIN modulo m ON c.iIdCurso = m.fkiIdCurso
-    INNER JOIN recurso r ON  m.iIdModulo = r.fkiIdModulo
-    WHERE c.iIdCurso=".$idcursoseleccionado." and u.iIdUsuario=" . $_SESSION["id"]);
-
-    $resultadoVisto = mysqli_query($conn, "SELECT r.iIdRecurso,c.cNombreCurso, m.cNombreModulo,r.cRuta FROM usuarios u
-    INNER JOIN inscripcion i ON u.iIdUsuario = i.fkiIdUsuario
-    INNER JOIN curso c ON i.fkiIdeCurso = c.iIdCurso
-    INNER JOIN modulo m ON c.iIdCurso = m.fkiIdCurso
-    INNER JOIN recurso r ON  m.iIdModulo = r.fkiIdModulo
-    INNER JOIN visto v ON r.iIdRecurso = v.idRecurso
-    WHERE c.iIdCurso=".$idcursoseleccionado." and v.idAlumno=" . $_SESSION["id"]." GROUP BY iIdRecurso");
-
-    $existeexamen = mysqli_query($conn,"SELECT count(*) as existe FROM resuelto");
-
-
-    $numMudulo= mysqli_num_rows($resultado);
-    $numVisto = mysqli_num_rows($resultadoVisto);
-    $numexiste =mysqli_num_rows($existeexamen);
-    $tituloarea="";
-    while ($consulta = mysqli_fetch_array($resultado)) {
-        $areacurso=mysqli_query($conn,"SELECT * FROM areacursos where iIdAreaCursos=". $consulta['fkidAreaCurso'] );
-            while ($areac = mysqli_fetch_array($areacurso)) {
-                $tituloarea=$areac["NombreArea"];
-            }  
-            $titulocurso=$consulta['cNombreCurso']  ; 
-?>      
-
+?>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="estiloencabezado.css">
-        <title><?php echo $tituloarea ?></title>
+        <title>Productividad Laboral</title>
     </head>
     <body>
     <header id="encabezado">
-    	
+    	<!--<div id="logotipo">
+    	<img src="img/logovproductiva2.png" id="logo"> 
+    	</div>-->
+    	<!--<h1 id="tituloprincipal">Valuacion Productiva</h1>-->
     	<ul id="menu">
             <li class="logo"><img src="img/logob.png" id="logo"></li>
             <li class="menus"></li>
@@ -58,9 +30,37 @@
    
     <!--<img class="tituloscursos" src="img/PLaboral.png" >-->
     <table id=tablarecursos>
-        <tr> <td colspan=3 id=filatitulo> <h2><?php echo $consulta['cNombreCurso']?></h2> </td></tr>    
-       
-<?php
+        <tr> <td colspan=3 id=filatitulo> <h2>Código de ética en la empresa</h2> </td></tr>    
+        <!--<tr> <td colspan=3 id=filainstrucciones> <h4> En este curso aprenderas las habilidades necesarias para optimizar al máximo tus labores diarias.</h4> </td></tr> -->  
+    
+        <?php
+
+$resultado = mysqli_query($conn, "SELECT r.iIdRecurso,c.cNombreCurso, m.cNombreModulo,r.cRuta FROM usuarios u
+    INNER JOIN inscripcion i ON u.iIdUsuario = i.fkiIdUsuario
+    INNER JOIN curso c ON i.fkiIdeCurso = c.iIdCurso
+    INNER JOIN modulo m ON c.iIdCurso = m.fkiIdCurso
+    INNER JOIN recurso r ON  m.iIdModulo = r.fkiIdModulo
+    WHERE c.iIdCurso=1 and u.iIdUsuario=" . $_SESSION["id"]);
+
+$resultadoVisto = mysqli_query($conn, "SELECT r.iIdRecurso,c.cNombreCurso, m.cNombreModulo,r.cRuta FROM usuarios u
+INNER JOIN inscripcion i ON u.iIdUsuario = i.fkiIdUsuario
+INNER JOIN curso c ON i.fkiIdeCurso = c.iIdCurso
+INNER JOIN modulo m ON c.iIdCurso = m.fkiIdCurso
+INNER JOIN recurso r ON  m.iIdModulo = r.fkiIdModulo
+INNER JOIN visto v ON r.iIdRecurso = v.idRecurso
+WHERE c.iIdCurso=1 and v.idAlumno=" . $_SESSION["id"]." GROUP BY iIdRecurso");
+
+$existeexamen = mysqli_query($conn,"SELECT count(*) as existe FROM resuelto");
+
+
+$numMudulo= mysqli_num_rows($resultado);
+$numVisto = mysqli_num_rows($resultadoVisto);
+$numexiste =mysqli_num_rows($existeexamen);
+
+
+
+
+while ($consulta = mysqli_fetch_array($resultado)) {
 
     $check = mysqli_query($conn, "SELECT COUNT(*) as num FROM visto
     WHERE idRecurso= " . $consulta['iIdRecurso'] . " and idAlumno=" . $_SESSION["id"] . " and estatus=1");
@@ -111,7 +111,7 @@
 
     ';
 
-}//fin while
+}
 $examen ="";
 $masDedos='';
 if($numMudulo==$numVisto){
@@ -133,11 +133,10 @@ if($numMudulo==$numVisto){
                 <td colspan=3 class=celdasvacias>
                 </td>
             </tr>';
-            
 
         }else
         {
-            $resultadoExamen=mysqli_query($conn,"SELECT *  FROM  resuelto where idcurso=$idcursoseleccionado  and idusuario=" . $_SESSION["id"] );
+            $resultadoExamen=mysqli_query($conn,"SELECT *  FROM  resuelto where idcurso=1  and idusuario=" . $_SESSION["id"] );
             $numencuesta =mysqli_num_rows($resultadoExamen);
                 $errores=0;
                
@@ -158,7 +157,7 @@ if($numMudulo==$numVisto){
                     <td></td>
                     <td></td>
                         <td class=constancia>
-                            <a href="../reward/reconocimiento.php?idCurso='.$idcursoseleccionado.'" id="texconstancia" target="_blank" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">
+                            <a href="../alumno/recoproductividad.php?curso=PRODUCTIVIDAD LABORAL&idCurso=1" id="texconstancia" target="_blank" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">
                             DESCARGA TU CONSTANCIA<br>
                             </a>
                         </td>
@@ -222,14 +221,14 @@ else{
     $constancia="";
 }
 if($masDedos==3){
-   /* $mensaje= '<tr><td></td><td></td><td class=notacurso>Nota: Este curso ya fue tomado anteriormente.</td></tr>';*/
+    $mensaje= '<tr><td></td><td></td><td class=notacurso>Nota: Este curso ya fue tomado anteriormente.</td></tr>';
 }
 else{
     $mensaje='';
 }
 echo $examen;
 echo $constancia;
-//echo $mensaje;
+echo $mensaje;
 
 ?>
 

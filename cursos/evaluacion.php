@@ -190,18 +190,18 @@
         </style>
     </head>
     <body>
-    <header id="encabezado">
+    <header id="encabezadoeva">
     	<ul id="menu">
             <li class="logo"><img src="img/logob.png" id="logo"></li>
-            <li class="menus"></li>
-    	    <li class="menus"><a href="../alumno/index.php" class="enlacemenu">Mi perfil</a></li>
-    	    <li class="menus"><a href="../alumno/cursos.php" class="enlacemenu">Catálogo de Cursos</a></li>
-            <li class="menus"><a href="../account/login.html" class="enlacemenu">Salir</a></li>
+            <li class="menuseva"></li>
+    	    <li class="menuseva"><a href="../alumno/index.php" class="enlacemenu">Mi perfil</a></li>
+    	    <li class="menuseva"><a href="../alumno/cursos.php" class="enlacemenu">Catálogo de Cursos</a></li>
+            <li class="menuseva"><a href="../account/login.html" class="enlacemenu">Salir</a></li>
     	</ul>
     </header>
-    <div>
+    <!--<div>
         <img class="tituloscursos" src="img/CJuridica.png" >
-    </div> 
+    </div> -->
 
     <?php
    
@@ -299,7 +299,7 @@
             
                         <?php }?>
                 
-                        <button class="form-item-margin" id="submit" type="submit"  form="survey-form">Responder</button>
+                        <button class="form-item-margin" id="submit" type="submit"  form="survey-form">Enviar Evaluación</button>
                     </form>
                 </div>
             </section>
