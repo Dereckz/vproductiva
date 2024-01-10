@@ -1,7 +1,6 @@
 <script src="sweetalert2.all.min.js"></script>
 <link href="sweetalert2.min.css" rel="stylesheet">
 
-
 <?php
 
 require("../dev/conectar.php");
@@ -19,13 +18,13 @@ $confirmcontrasena =password_hash(($_POST["confirmpassword"]), PASSWORD_DEFAULT)
 
 //Separar Nombres
 if (strpos($fullname, " ")){
-$nombres=namess::getNombreSplit($fullname)["Nombres"];
-$paternos=namess::getNombreSplit($fullname)["Paterno"];
-$maternos=namess::getNombreSplit($fullname)["Materno"];
+    $nombres=namess::getNombreSplit($fullname)["Nombres"];
+    $paternos=namess::getNombreSplit($fullname)["Paterno"];
+    $maternos=namess::getNombreSplit($fullname)["Materno"];
 }else{
-$nombres=$fullname;
-$paternos="";
-$maternos="";
+    $nombres=$fullname;
+    $paternos="";
+    $maternos="";
 }
 
 if ($stmt = $conn->prepare("SELECT cUsuario FROM usuarios WHERE cUsuario= ? LIMIT 1")) {
@@ -37,37 +36,57 @@ if ($stmt = $conn->prepare("SELECT cUsuario FROM usuarios WHERE cUsuario= ? LIMI
 
 //@Dereckz13
     if ($fila> 0)  {
-        echo "<script> alert('$correo Ya se encuentra registrado, verificalo') ;window.location= '../account/login.html' </script>";
+        echo 
+        "<script> 
+             alert('$correo Ya se encuentra registrado, verificalo') ;
+             window.location= '../account/login.html' 
+        </script>";
    } else {
          if (!empty($fullname)){
 
            session_abort();
+
             if ($_POST["password"] == $_POST["confirmpassword"]) 
              {
                 $queryA = mysqli_query($conn,"INSERT INTO `usuarios`(`iIdUsuario`, `fkidTipoUsuario`, `cNombre`, `cApellidoP`, `cApellidoM`, `cNombreLargo`, `cCorreo`, `cUsuario`, `cPassword`, `cTelefono`, `cCodigo`, `dFechaAlta`, `iGenero`,`iEstatus`)
-                VALUES ('0','3','$nombres','$paternos','$maternos','$fullname','$correo','$correo','$contrasena','','','$fecha_actual','1','1')");
+                                               VALUES ('0','3','$nombres','$paternos','$maternos','$fullname','$correo','$correo','$contrasena','','','$fecha_actual','1','1')");
                     if($queryA){
                             
-                        header("Location: http://localhost/vproductivam/account/login.html");     
+                       header("Location: ../account/exitoso.php");                          
+                                  
                      }
                      else{	
-                         echo "<script> alert('No se pudo regustra el Alumno');window.location= '../account/login.html' </script>";
+                         echo 
+                         "<script> 
+                            alert('No se pudo regustra el Alumno');
+                            window.location= '../account/login.html' 
+                         </script>";
                                   
                      }                            
             }
             else{ 
                
-                echo "<script> Swal.fire('Any fool can use a computer');window.location= 'http://localhost/vproductivam/account/login.html' </script>";
+                echo 
+                "<script> Swal.fire('Any fool can use a computer');
+                    window.location= '../account/login.html' 
+                </script>";
                // echo "<script> alert('No coinciden las contraseñas');window.location= 'http://localhost/vproductivam/account/login.html' </script>";
                 //echo "<script> alert('pass1-".$_POST["password"]. "=".$_POST["confirmpassword"]."');window.location= 'http://localhost/vproductivam/account/login.html' </script>";    
             }   
         }else{
-            echo "<script> alert('Ingrese su nombre para continuar');window.location= 'http://localhost/vproductivam/account/login.html' </script>";                
+            echo "<script> 
+                    alert('Ingrese su nombre para continuar');
+                    window.location= 'http://localhost/vproductivam/account/login.html' 
+                 </script>";                
         }
    }
     
 }else{
-echo "<script> alert('Error en la base de datos, consulta al admin') </script>";	  
+echo 
+"<script> 
+    alert('Error en la base de datos, consulta al admin') 
+</script>";	  
+
 }    
 //Separa Nombres
 class namess{
