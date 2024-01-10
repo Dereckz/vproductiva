@@ -354,20 +354,7 @@ function miCurso()
     echo $cur7;
 
 }
-function showCursos(){
-    require("../dev/conectar.php");
-    $info = "";
-    $cur1 = "";
-    $cur2 = "";
-    $cur3 = "";
-    $cur4 = "";
-    $cur5 = "";
-    $cur6 = "";
-    $cur7 = "";
-    $contador = 1;
 
-
-}
 /*function curso()
 {
     include "..\dev\conectar.php";
