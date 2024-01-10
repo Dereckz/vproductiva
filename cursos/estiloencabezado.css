@@ -186,3 +186,39 @@ text-decoration: none;
 #fondotemario{
 	background-image: url(img/fondotemarios.gif)
 }
+
+.menuseva{
+	display: inline-block;
+    font-size: 1.4em;
+    text-align: center;
+    width: 19%;
+    vertical-align: top;
+    padding: 1em;
+}
+
+#encabezadoeva{
+	/*background-color: rgb(216, 210, 227); */
+    position: sticky;
+    /*top: 1em;*/
+    margin: 0%;
+    width: 100%;
+    text-align: center;
+	/*height: 4.5em;*/
+}
+
+#tituloeva{
+	color: #2E49E1;
+	margin-left: 2em;
+}
+
+.regresarCurso {
+    background-color: #2E49E1;
+    border-radius: 5em;
+    height: 3em;
+    text-align: center;
+    width: 18%;
+}
+
+#regresarCurso {
+    margin: 2% 40%;
+}
