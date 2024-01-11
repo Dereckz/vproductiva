@@ -9,7 +9,20 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="estiloencabezado.css">
         <title>Resultado</title>
-<style>
+
+    </head>
+    
+    <header id="encabezado">
+    	
+    	<ul id="menu">
+            <li class="logo"><img src="img/logob.png" id="logo"></li>
+            <li class="menus"></li>
+    	    <li class="menus" style="background-color: #872362;"><a href="../alumno/index.php" class="enlacemenu" style="color: white;" >Mis Cursos</a></li>
+    	    <li class="menus"><a href="../alumno/cursos.php" class="enlacemenu">Catálogo de Cursos</a></li>
+            <li class="menus"><a href="../account/login.html" class="enlacemenu">Salir</a></li>
+    	</ul>
+    </header>
+    <style>
                 
     #customers {
     font-family: Arial, Helvetica, sans-serif;
@@ -37,22 +50,7 @@
     color: white;
     
     }
-</style>
-    </head>
-    <body onload="deshabilitaRetroceso()">
-    <header id="encabezado">
-    	
-    	<ul id="menu">
-            <li class="logo"><img src="img/logob.png" id="logo"></li>
-            <li class="menus"></li>
-    	    <li class="menus" style="background-color: #872362;"><a href="../alumno/index.php" class="enlacemenu" style="color: white;" >Mis Cursos</a></li>
-    	    <li class="menus"><a href="../alumno/cursos.php" class="enlacemenu">Catálogo de Cursos</a></li>
-            <li class="menus"><a href="../account/login.html" class="enlacemenu">Salir</a></li>
-    	</ul>
-    </header>
-    <!--<div>
-    <img class="tituloscursos" src="img/CJuridica.png" >
-    </div> -->
+    </style>
     <?php
     
          require("../dev/conectar.php");
@@ -97,38 +95,47 @@
     ?>
                 
                 
-    <body>
-
-    <h1 id="tituloeva">Resultados</h1>
-        <table id="customers">
-        <tr>
-            <th>Usuario</th>
-            <th>Curso</th>
-            <th>Preguntas</th>
-            <th>Respuestas Correctas</th>
-            <th>Respuestas Incorrectas</th>
-            <th>Puntuación</th>
-            <th>Intentos</th>
-        </tr>
-        <tr>
-            <td><?php echo $_SESSION['NombreLargo'] ?></td>
-            <td><?php echo strtoupper($examendecurso)?></td>
-            <td><?php echo $numpreguntas?></td>
-            <td><?php echo $numCorrecta?></td>
-            <td><?php echo $numIncorrecta?></td>
-            <td></td>
-            <td><?php echo $intentost ?></td>
-        </tr>
-        </table>
-        <table id="regresarCurso">
-        <tr>
+<body onload="deshabilitaRetroceso()">
+<div style="padding-top: 100px; padding-left: 180px;" >
+    
+    <h1 id="tituloeva" style="text-align: center">Resultados</h1>
+            <table id="customers">
+            <tr>
+                <th>Usuario</th>
+                <th>Curso</th>
+                <th>Preguntas</th>
+                <th>Respuestas Correctas</th>
+                <th>Respuestas Incorrectas</th>
+                <th>Puntuación</th>
+                <th>Intentos</th>
+            </tr>
+            <tr>
+                <td><?php echo $_SESSION['NombreLargo'] ?></td>
+                <td><?php echo strtoupper($examendecurso)?></td>
+                <td><?php echo $numpreguntas?></td>
+                <td><?php echo $numCorrecta?></td>
+                <td><?php echo $numIncorrecta?></td>
+                <td></td>
+                <td><?php echo $intentost ?></td>
+            </tr>
+            
+            
+            </table>
+            <table id="regresarCurso">
+            <tr>
             <td class=regresarCurso>
-                <a href="../reward/reconocimiento.php?idCurso='.$idcursoseleccionado.'" id="texconstancia" target="_blank" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">
-                    Regresar al curso<br>
-                </a>
-            </td>
-        </tr>
-        </table>
+                    <a href='../reward/reconocimiento.php?idCurso="<?php echo $idcurso ?>" 
+                        id="texconstancia" 
+                        target="_blank" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2'>
+                        Regresar al curso
+                        <br>
+                    </a>
+                </td>
+            </tr>
+            </table>
+</div>
+
+   
     </body>
 </html>
 
