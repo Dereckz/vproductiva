@@ -95,13 +95,16 @@ function miCurso()
 
     
         $resultado = mysqli_query($conn, 
-        "SELECT c.iIdCurso, c.cNombreCurso, c.ruta2, c.ricono 
+        "SELECT c.iIdCurso, c.cNombreCurso, c.ruta2, c.ricono, c.fkidAreaCurso  
         FROM curso c
         INNER JOIN inscripcion i ON i.fkiIdeCurso = c.iIdCurso
         INNER JOIN usuarios u ON u.iIdUsuario = i.fkiIdUsuario
         WHERE i.finalizado !=2 AND i.fkiIdUsuario=" . $_SESSION["id"]);
        
        while ($consulta = mysqli_fetch_array($resultado)) {
+        $datacurso = mysqli_query($conn, "SELECT * FROM areacursos where iIdAreaCursos=". $consulta['fkidAreaCurso'] );
+        $detallearea = mysqli_fetch_array($datacurso);
+
         $info = '
          <div class="u-align-left u-border-10 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-base u-container-style u-custom-item u-list-item u-repeater-item u-shape-rectangle u-video-cover u-white u-list-item-4 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="250" style="will-change: transform, opacity; animation-duration: 1500ms;">
             <div class="u-container-layout u-similar-container u-valign-top u-container-layout-4" style="flex-direction: row;">
@@ -113,7 +116,8 @@ function miCurso()
                 ' . $consulta['cNombreCurso'] . '
               </h4>
               <span id="btncontinuarcurso">
-                    <a href="../cursos/detailcurso?pidc='. $consulta['iIdCurso'] . '" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-3-base u-text-body-color u-text-hover-palette-3-base u-top-left-radius-0 u-top-right-radius-0 u-btn-5">
+       
+                    <a href="../cursos/detailcurso?pidc='. $consulta['iIdCurso'] . '&areacurso='. $detallearea["NombreArea"].'&curso='. $consulta['cNombreCurso'] .'" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-3-base u-text-body-color u-text-hover-palette-3-base u-top-left-radius-0 u-top-right-radius-0 u-btn-5">
                         Continuar
                     </a>
               </span>
