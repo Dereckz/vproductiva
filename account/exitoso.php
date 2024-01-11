@@ -94,10 +94,8 @@
                             Para explorar el catalogo del curso
                         <a>
                     </button>
-                    
-                 
+                                    
                 </form>
-
              </div>
 
     </div>
