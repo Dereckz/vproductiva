@@ -23,7 +23,7 @@
     	</ul>
     </header>
     <style>
-                
+              
     #customers {
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
@@ -50,6 +50,22 @@
     color: white;
     
     }
+    .my-button {
+    padding: 10px 20px;
+    background-color: #2E49E1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    }
+
+    .my-button:hover {
+    background-color: #45a049;
+    }
+
+    .my-button:active {
+    background-color: #3e8e41;
+    }  
     </style>
     <?php
     
@@ -124,10 +140,11 @@
             <table id="regresarCurso">
             <tr>
             <td class=regresarCurso>
-                    <a href='../alumno/index.php'>
+                <button class="my-button" >
+                        <a class="text-white" href='../alumno/index.php'>
                         Regresar al curso
-                        <br>
-                    </a>
+                        <a>
+                </button>
                 </td>
             </tr>
             </table>
