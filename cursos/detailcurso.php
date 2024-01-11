@@ -5,7 +5,9 @@
         session_start();
     }
     $idcursoseleccionado=$_GET["pidc"];
-    $titulocurso="";
+    $titulocurso=$_GET["areacurso"];
+    $cursoname=$_GET["curso"];
+
     $resultado = mysqli_query($conn, "SELECT r.iIdRecurso,c.cNombreCurso, m.cNombreModulo,r.cRuta,c.fkidAreaCurso FROM usuarios u
     INNER JOIN inscripcion i ON u.iIdUsuario = i.fkiIdUsuario
     INNER JOIN curso c ON i.fkiIdeCurso = c.iIdCurso
@@ -28,12 +30,7 @@
     $numVisto = mysqli_num_rows($resultadoVisto);
     $numexiste =mysqli_num_rows($existeexamen);
     $tituloarea="";
-    while ($consulta = mysqli_fetch_array($resultado)) {
-        $areacurso=mysqli_query($conn,"SELECT * FROM areacursos where iIdAreaCursos=". $consulta['fkidAreaCurso'] );
-            while ($areac = mysqli_fetch_array($areacurso)) {
-                $tituloarea=$areac["NombreArea"];
-            }  
-            $titulocurso=$consulta['cNombreCurso']  ; 
+  
 ?>      
 
 <!DOCTYPE html>
@@ -58,10 +55,11 @@
    
     <!--<img class="tituloscursos" src="img/PLaboral.png" >-->
     <table id=tablarecursos>
-        <tr> <td colspan=3 id=filatitulo> <h2><?php echo $consulta['cNombreCurso']?></h2> </td></tr>    
+        <tr> <td colspan=3 id=filatitulo> <h2><?php echo $cursoname?></h2> </td></tr>    
        
 <?php
-
+ 
+ while ($consulta = mysqli_fetch_array($resultado)) {
     $check = mysqli_query($conn, "SELECT COUNT(*) as num FROM visto
     WHERE idRecurso= " . $consulta['iIdRecurso'] . " and idAlumno=" . $_SESSION["id"] . " and estatus=1");
     $info = mysqli_fetch_array($check);
