@@ -439,6 +439,7 @@ font-weight: 550;
     <meta property="og:type" content="website">
     <link rel="canonical" href="https://website529400.nicepage.io/1234.html">
     <link rel="stylesheet" href="estiloencabezado.css">
+    <link href="../img/LOGOVP.ico" rel="icon">
 
 </head>
   <body class="u-body u-xl-mode" data-lang="es">
