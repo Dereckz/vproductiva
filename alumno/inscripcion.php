@@ -49,6 +49,7 @@ alert('Se inscribio correctamente al curso');
 window.location.href='index.php';
 </script>";
 
+
 }
 
 
