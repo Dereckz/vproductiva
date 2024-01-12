@@ -1,7 +1,7 @@
 <?php  session_start();?>
-<? echo $examendecurso;
-                echo $intentost;
-                ?>
+<? echo $examendecurso="";
+   echo $intentost="";
+?>
 <!DOCTYPE html>
 <link href="../img/LOGOVP.ico" rel="icon">
 <html>
@@ -100,7 +100,7 @@
 
          while($row=$correcta->fetch_assoc())	:  
             $intentost=$row['intento'];
-            $cursotomado = $conn->query("SELECT * FROM curso where iIdCurso=".  $idcurso=$_GET["idc"]);
+            $cursotomado = $conn->query("SELECT * FROM curso where iIdCurso=".  $idcurso);
             while($curse=$cursotomado->fetch_assoc())	: 
                 $examendecurso= $curse['cNombreCurso']; 
             endwhile

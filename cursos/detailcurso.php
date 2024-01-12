@@ -123,132 +123,122 @@
     
     }//fin while
 
-$examen ="";
-$masDedos='';
-$correcta="";
-if($numMudulo==$numVisto){
-    while ($dataExamen = mysqli_fetch_array($existeexamen)) { 
-        if ( $dataExamen['existe']<1){
-
-            $constancia="";
-            $examen='
-            <tr>
-                <td></td>
-                <td></td>
-                <td class=constancia>
-                    <a href="../cursos/evaluacion.php?idC='.$idcursoseleccionado.'" id="texconstancia" target="_blank" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">
-                    Realizar Examen<br>
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <td colspan=3 class=celdasvacias>
-                </td>
-            </tr>';
-            
-
-        }else
-        {
-            $resultadoExamen=mysqli_query($conn,"SELECT *  FROM  resuelto where idcurso=$idcursoseleccionado  and idusuario=" . $_SESSION["id"] );
-            $numencuesta =mysqli_num_rows($resultadoExamen);
-                $errores=0;
-               
-            while ($intentos = mysqli_fetch_array($resultadoExamen)) { 
-                if ($intentos['correcta']==0 ){
-                    $errores = $errores + 1;
-                    $correcta=0;
-                    $resres=$intentos['correcta'];
-                }elseif  ($intentos['correcta']==1 ){
-                    $correcta=1;
-                    $errores=0;
-                }
-
-            }
-                if (  $correcta==1 ){
-                    $examen="Bien hecho";
-                    $constancia='<tr>
-                    <td></td>
-                    <td></td>
-                        <td class=constancia>
-                            <a href="../reward/reconocimiento.php?idCurso='.$idcursoseleccionado.'" id="texconstancia" target="_blank" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">
-                            DESCARGA TU CONSTANCIA<br>
-                            </a>
-                        </td>
-                    </tr>
-                 <tr>
-                    <td colspan=3 class=celdasvacias>
+    $examen ="";
+    $masDedos='';
+    if($numMudulo==$numVisto){
+        while ($dataExamen = mysqli_fetch_array($existeexamen)) { 
+            if ( $dataExamen['existe']<1){
+    
+                $constancia="";
+                $examen='
+                <tr>
+                 <td></td>
+                    <td class=constancia>
+                        <a href="../cursos/evaluacion.php?idC='.$idcursoseleccionado.'" 
+                        id="texconstancia" target="_blank" 
+                        class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">
+                        Realizar Examen
+                        <br>
+                        </a>
                     </td>
-                 </tr>';   
-            
-                
-                  
-                }else  if ($errores>=3)
-                {   
-                    $constancia="";
-                    $examen="Restear";
+                </tr>
+                <tr><td     colspan=3 class=celdasvacias></td></tr>';
+    
+            }else
+            {
+                $resultadoExamen=mysqli_query($conn,"SELECT *  FROM  resuelto where idcurso=1  and idusuario=" . $_SESSION["id"] );
+                $numencuesta =mysqli_num_rows($resultadoExamen);
+                    $errores=0;
                    
-            
-                }else if ($errores<3){
-                    $constancia="";
-                    $examen='
-                    <tr>
-                        <td></td>
-                        <td class=constancia>
-                            <a href="../cursos/evaluacion.php?idC=1" id="texconstancia"class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">
-                                Realizar Examen
-                            <br>
-                            </a>
-                        </td>
-                        </tr>
-                   <tr>
-                     <td colspan=3 class=celdasvacias>
-                     </td>
-                   </tr>'; 
-                  
+                while ($intentos = mysqli_fetch_array($resultadoExamen)) { 
+                    if ($intentos['correcta']==0 ){
+                        $errores = $errores + 1;
+                        $correcta=0;
+                        $resres=$intentos['correcta'];
+                    }elseif  ($intentos['correcta']==1 ){
+                        $correcta=1;
+                        $errores=0;
+                    }
+    
                 }
-           
-          
-
+                    if (  $correcta==1 ){
+                        $examen="Bien hecho";
+                        $constancia='<tr>
+                        <td></td>
+                        <td></td>
+                            <td class=constancia>
+                                <a href="../reward/reconocimiento.php?idCurso='.$idcursoseleccionado.'" id="texconstancia" target="_blank" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">
+                                DESCARGA TU CONSTANCIA<br>
+                                </a>
+                            </td>
+                        </tr>
+                    <tr>
+                        <td colspan=3 class=celdasvacias>
+                        </td>
+                    </tr>';   
+                
+                    
+                      
+                    }else  if ($errores>=3)
+                    {   
+                        $constancia="";
+                        $examen="Restear";
+                       /*  $constancia='<tr>
+                        <td></td>
+                        <td></td>
+                            <td class=constancia>
+                                <a href="../alumno/recoproductividad.php?curso=PRODUCTIVIDAD LABORAL&idCurso=1" id="texconstancia" target="_blank" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">
+                                DESCARGA TU CONSTANCIA<br>
+                                </a>
+                            </td>
+                        </tr>
+                     <tr>
+                        <td colspan=3 class=celdasvacias>
+                        </td>
+                     </tr>';  */
+                
+                    }else if ($errores<3){
+                        $constancia="";
+                        $examen='<tr><td></td><td class=constancia><a href="../cursos/evaluacion.php?idC=1" id="texconstancia"class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">Realizar Examen<br></a></td></tr>
+                       <tr><td colspan=3 class=celdasvacias></td></tr>'; 
+                      
+                    }
+               
+              
+    
+            }
+        }
+         
+        $consCur = mysqli_query($conn, "SELECT * FROM  inscripcion WHERE fkiIdeCurso = 1 and fkiIdUsuario =".$_SESSION["id"]);
+        $idIns= mysqli_fetch_array($consCur);
+    
+        $masDedos=$idIns['finalizado'];
+    
+        date_default_timezone_set('America/Mexico_City');
+        $fecha = date("Y-m-d");
+        $fechafor = strval($fecha);
+    
+        if($idIns['cDescripcion'] ==''){
+        $act = "UPDATE inscripcion SET cDescripcion = '".$fechafor."' WHERE iIdInscripcion =".$idIns['iIdInscripcion'];
+        if (mysqli_query($conn, $act)) {
+            //echo "Se actualizo correctamente el registro";
+        } else {
+            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        }
         }
     }
-     
-    $consCur = mysqli_query($conn, "SELECT * FROM  inscripcion WHERE fkiIdeCurso = 1 and fkiIdUsuario =".$_SESSION["id"]);
-    $idIns= mysqli_fetch_array($consCur);
-
-    $masDedos=$idIns['finalizado'];
-
-    date_default_timezone_set('America/Mexico_City');
-    $fecha = date("Y-m-d");
-    $fechafor = strval($fecha);
-
-    if($idIns['cDescripcion'] ==''){
-    $act = "UPDATE inscripcion SET cDescripcion = '".$fechafor."' WHERE iIdInscripcion =".$idIns['iIdInscripcion'];
-    if (mysqli_query($conn, $act)) {
-        //echo "Se actualizo correctamente el registro";
-    } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    else{
+        $constancia="";
     }
+    if($masDedos==3){
+        $mensaje= '<tr><td></td><td></td><td class=notacurso>Nota: Este curso ya fue tomado anteriormente.</td></tr>';
     }
-}
-else{
-    $constancia="";
-}
-if($masDedos==3){
-   /* $mensaje= '<tr><td></td><td></td><td class=notacurso>Nota: Este curso ya fue tomado anteriormente.</td></tr>';*/
-}
-else{
-    $mensaje='';
-}
-echo $examen;
-echo $constancia;
-//echo $mensaje;
-
-?>
-
+    else{
+        $mensaje='';
+    }
+    echo $examen;
+    echo $constancia;
+    echo $mensaje;
     
-    </table>
-  </div>
-    </body>
-</html>
-
-
+    ?>
+    
