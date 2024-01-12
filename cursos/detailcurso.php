@@ -162,7 +162,7 @@
     
                 }
                     if (  $correcta==1 ){
-                        $examen="Bien hecho";
+                        $examen="";//"Bien hecho";
                         $constancia='<tr>
                         <td></td>
                         <td></td>
@@ -182,7 +182,7 @@
                     }else  if ($errores>=3)
                     {   
                         $constancia="";
-                        $examen="Restear";
+                        $examen="";//"Restear";
                        /*  $constancia='<tr>
                         <td></td>
                         <td></td>

@@ -1,7 +1,7 @@
 
 <?php include ('consulta2.php'); ?>
 <?php $ida=$_GET["ida"]; ?>
-
+<?php $name=$_GET["name"]; ?>
 <!DOCTYPE html>
 <!-- saved from url=(0091)https://website529400.nicepage.io/es/1234.html?version=56a80d83-e130-4c50-b76e-7bfc4c0ea516 -->
 <html style="font-size: 16px;" lang="es" class="u-responsive-xl"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -16,7 +16,8 @@
     <script class="u-script" type="text/javascript" src="./nicepage.js.descarga" defer=""></script>
     <meta name="generator" content="Nicepage 4.18.8, nicepage.com">
     <link id="u-theme-google-font" rel="stylesheet" href="./css">
-    <style class="u-style"> .u-section-2 {
+    <style 
+    class="u-style"> .u-section-2 {
   background-image: none;
 }
 .u-section-2 .u-sheet-1 {
@@ -370,14 +371,16 @@
   .u-section-2 .u-text-9 {
     font-size: 1.875rem;
   }
-}</style>
+}
+    </style>
     
     <script type="application/ld+json">{
 		"@context": "http://schema.org",
 		"@type": "Organization",
 		"name": "",
 		"url": "https://website529400.nicepage.io/1234.html"
-}</script>
+}
+</script>
     <meta name="theme-color" content="#0066ff">
     <meta property="og:title" content="1234">
     <meta property="og:type" content="website">
@@ -404,7 +407,7 @@
     <section class="u-align-left u-clearfix u-grey-5 u-section-2" id="carousel_0852">
       <div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
         
-          <h1 class="section-title"> <span>Cursos de Productividad Laboral</span></h1>
+          <h1 class="section-title"> <span><?php echo $name ?></span></h1>
           <div class="u-expanded-width u-list u-list-1">
           <div class="u-repeater u-repeater-1">
           <?php infoCurso2($ida);?>
