@@ -41,13 +41,13 @@
     INNER JOIN recurso r ON  m.iIdModulo = r.fkiIdModulo
     WHERE c.iIdCurso=2 and u.iIdUsuario=".$_SESSION["id"]);
 
-$resultadoVisto = mysqli_query($conn, "SELECT r.iIdRecurso,c.cNombreCurso, m.cNombreModulo,r.cRuta FROM usuarios u
-INNER JOIN inscripcion i ON u.iIdUsuario = i.fkiIdUsuario
-  INNER JOIN curso c ON i.fkiIdeCurso = c.iIdCurso
-INNER JOIN modulo m ON c.iIdCurso = m.fkiIdCurso
-INNER JOIN recurso r ON  m.iIdModulo = r.fkiIdModulo
-INNER JOIN visto v ON r.iIdRecurso = v.idRecurso
-WHERE c.iIdCurso=2 and v.idAlumno=" . $_SESSION["id"]." GROUP BY iIdRecurso");
+    $resultadoVisto = mysqli_query($conn, "SELECT r.iIdRecurso,c.cNombreCurso, m.cNombreModulo,r.cRuta FROM usuarios u
+    INNER JOIN inscripcion i ON u.iIdUsuario = i.fkiIdUsuario
+    INNER JOIN curso c ON i.fkiIdeCurso = c.iIdCurso
+    INNER JOIN modulo m ON c.iIdCurso = m.fkiIdCurso
+    INNER JOIN recurso r ON  m.iIdModulo = r.fkiIdModulo
+    INNER JOIN visto v ON r.iIdRecurso = v.idRecurso
+    WHERE c.iIdCurso=2 and v.idAlumno=" . $_SESSION["id"]." GROUP BY iIdRecurso");
 
 $numMudulo= mysqli_num_rows($resultado);
 $numVisto = mysqli_num_rows($resultadoVisto);
@@ -66,34 +66,38 @@ $info =mysqli_fetch_array($check);
         $visto='<td class=temario><img src="img/checkvacio.png" style="width: 2.4em;"></td>';
      }
 
-     echo '<tr> <td class=iconorecursocelda><img class=iconorecurso src="img/recursovideo.png"></td> <td class=fondotemario><a class=titulostemario  href="'.$consulta['cRuta'].'" id="'.$consulta['iIdRecurso'].'" target="_blank" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">'.$consulta['cNombreModulo'].'</a></td> '.$visto.' </tr>
-        <tr><td colspan=3 class=celdasvacias></td></tr>
+     echo '<tr> 
+            <td class=iconorecursocelda><img class=iconorecurso src="img/recursovideo.png"></td>
+            <td class=fondotemario><a class=titulostemario  href="'.$consulta['cRuta'].'" id="'.$consulta['iIdRecurso'].'" target="_blank" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">'.$consulta['cNombreModulo'].
+            '</a>
+            </td> '.$visto.' </tr>
+            <tr><td colspan=3 class=celdasvacias></td></tr>
     
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+            <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 
-    <script>
-    // se insertara el recurso y alumno mas estatus.
-    document.getElementById("'.$consulta['iIdRecurso'].'").onclick = function(){
+            <script>
+            // se insertara el recurso y alumno mas estatus.
+            document.getElementById("'.$consulta['iIdRecurso'].'").onclick = function(){
 
-        idRecurso = "'.$consulta['iIdRecurso'].'";
-        idAlumno = "' . $_SESSION["id"] . '";
-        //alert("Hey me tocaste");
+                idRecurso = "'.$consulta['iIdRecurso'].'";
+                idAlumno = "' . $_SESSION["id"] . '";
+                //alert("Hey me tocaste");
 
-       //Convertimos las variables de javascript en variables de PHP
-        $( document ).ready(function() {
-    // Definimos las variables de javascrpt
-        var recurso = idRecurso;
-        var alumno = idAlumno;
-    // Ejecutamos AJAX
-    $.post("visto.php",{"recurso":recurso,"alumno": alumno},function(respuesta){
-            alert(respuesta);
-            location.reload();
-        });
-        });
-    }
+            //Convertimos las variables de javascript en variables de PHP
+                $( document ).ready(function() {
+            // Definimos las variables de javascrpt
+                var recurso = idRecurso;
+                var alumno = idAlumno;
+            // Ejecutamos AJAX
+            $.post("visto.php",{"recurso":recurso,"alumno": alumno},function(respuesta){
+                    alert(respuesta);
+                    location.reload();
+                });
+                });
+            }
 
-    </script>
+            </script>
     
     ';
 

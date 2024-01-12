@@ -8,6 +8,34 @@
     $tituloarea=$_GET["areacurso"];
     $cursoname=$_GET["curso"];
 
+?>      
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="estiloencabezado.css">
+        <title><?php echo $tituloarea ?></title>
+        <link href="../img/LOGOVP.ico" rel="icon">
+    </head>
+    <body>
+        <header id="encabezado">
+            
+            <ul id="menu">
+                <li class="logo"><img src="img/logob.png" id="logo"></li>
+                <li class="menus"></li>
+                <li class="menus" style="background-color: #872362;"><a href="../alumno/index.php" class="enlacemenu" style="color: white;" >Mis Cursos</a></li>
+                <li class="menus"><a href="../alumno/cursos.php" class="enlacemenu">Catálogo de Cursos</a></li>
+                <li class="menus"><a href="../account/login.html" class="enlacemenu">Salir</a></li>
+            </ul>
+        </header>
+    <div>
+   
+        <!--<img class="tituloscursos" src="img/PLaboral.png" >-->
+        <table id=tablarecursos>
+            <tr> <td colspan=3 id=filatitulo> <h2><?php echo $cursoname?></h2> </td></tr>    
+       
+<?php
     $resultado = mysqli_query($conn, "SELECT r.iIdRecurso,c.cNombreCurso, m.cNombreModulo,r.cRuta,c.fkidAreaCurso FROM usuarios u
     INNER JOIN inscripcion i ON u.iIdUsuario = i.fkiIdUsuario
     INNER JOIN curso c ON i.fkiIdeCurso = c.iIdCurso
@@ -29,91 +57,66 @@
     $numMudulo= mysqli_num_rows($resultado);
     $numVisto = mysqli_num_rows($resultadoVisto);
     $numexiste =mysqli_num_rows($existeexamen);
-   
-  
-?>      
 
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="estiloencabezado.css">
-        <title><?php echo $tituloarea ?></title>
-        <link href="../img/LOGOVP.ico" rel="icon">
-    </head>
-    <body>
-    <header id="encabezado">
-    	
-    	<ul id="menu">
-            <li class="logo"><img src="img/logob.png" id="logo"></li>
-            <li class="menus"></li>
-    	    <li class="menus" style="background-color: #872362;"><a href="../alumno/index.php" class="enlacemenu" style="color: white;" >Mis Cursos</a></li>
-    	    <li class="menus"><a href="../alumno/cursos.php" class="enlacemenu">Catálogo de Cursos</a></li>
-            <li class="menus"><a href="../account/login.html" class="enlacemenu">Salir</a></li>
-    	</ul>
-    </header>
-  <div>
-   
-    <!--<img class="tituloscursos" src="img/PLaboral.png" >-->
-    <table id=tablarecursos>
-        <tr> <td colspan=3 id=filatitulo> <h2><?php echo $cursoname?></h2> </td></tr>    
+    while ($consulta = mysqli_fetch_array($resultado)) {
+
+            $check = mysqli_query($conn, "SELECT COUNT(*) as num FROM visto
+                                        WHERE idRecurso= " . $consulta['iIdRecurso'] 
+                                        . " and idAlumno=" . $_SESSION["id"] 
+                                        ." and estatus=1");
+            $info = mysqli_fetch_array($check);
+
+            if ($info['num'] > 0) {
+                $visto = 
+                '<td class=temario>
+                    <img src="img/checkcompleto.png" style="width: 2.4em; margin-left: 0.6em;">
+                </td>';
+            } else {
+                $visto = 
+                '<td class=temario>
+                    <img src="img/checkvacio.png" style="width: 2.4em;">
+                </td>';
+            }
        
-<?php
- 
- while ($consulta = mysqli_fetch_array($resultado)) {
-    $check = mysqli_query($conn, "SELECT COUNT(*) as num FROM visto
-    WHERE idRecurso= " . $consulta['iIdRecurso'] . " and idAlumno=" . $_SESSION["id"] . " and estatus=1");
-    $info = mysqli_fetch_array($check);
+            echo '<tr> 
+            <td class=iconorecursocelda><img class=iconorecurso src="img/recursovideo.png"></td>
+            <td class=fondotemario><a class=titulostemario  href="'.$consulta['cRuta'].'" id="'.$consulta['iIdRecurso'].'" target="_blank" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">'.$consulta['cNombreModulo'].
+            '</a>
+            </td> '.$visto.' </tr>
+            <tr><td colspan=3 class=celdasvacias></td></tr>
+    
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+            <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 
-    if ($info['num'] > 0) {
-        $visto = '<td class=temario><img src="img/checkcompleto.png" style="width: 2.4em; margin-left: 0.6em;"></td>';
-    } else {
-        $visto = '<td class=temario><img src="img/checkvacio.png" style="width: 2.4em;"></td>';
-    }
-?>
-   <tr> 
-        <td class=iconorecursocelda> <?php echo $visto?></td> 
-        <td class=fondotemario>
-            <a class=titulostemario  href=<?php echo $consulta['cRuta']?> id=<?php echo $consulta['iIdRecurso']?> 
-            target="_blank" 
-            class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">
-            <?php echo $consulta['cNombreModulo']?>
-            </a></td> 
-        </tr>
-     <tr>
-        <td colspan=3 class=celdasvacias></td>
-     </tr>
+            <script>
+            // se insertara el recurso y alumno mas estatus.
+            document.getElementById("'.$consulta['iIdRecurso'].'").onclick = function(){
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+                idRecurso = "'.$consulta['iIdRecurso'].'";
+                idAlumno = "' . $_SESSION["id"] . '";
+                //alert("Hey me tocaste");
 
-    <script>
-    // se insertara el recurso y alumno mas estatus.
-    document.getElementById("' . $consulta['iIdRecurso'] . '").onclick = function(){
+            //Convertimos las variables de javascript en variables de PHP
+                $( document ).ready(function() {
+            // Definimos las variables de javascrpt
+                var recurso = idRecurso;
+                var alumno = idAlumno;
+            // Ejecutamos AJAX
+            $.post("visto.php",{"recurso":recurso,"alumno": alumno},function(respuesta){
+                    alert(respuesta);
+                    location.reload();
+                });
+                });
+            }
 
-        idRecurso = "' . $consulta['iIdRecurso'] . '";
-        idAlumno = "' . $_SESSION["id"] . '";
-        //alert("Hey me tocaste");
+            </script>
+    
+    ';
 
-       //Convertimos las variables de javascript en variables de PHP
-        $( document ).ready(function() {
-    // Definimos las variables de javascrpt
-        var recurso = idRecurso;
-        var alumno = idAlumno;
-    // Ejecutamos AJAX
-    $.post("visto.php",{"recurso":recurso,"alumno": alumno},function(respuesta){
-            alert(respuesta);
-            location.reload();
-        });
-        });
-    }
-
-    </script>
+        
 
     
-
-<?php
-}//fin while
+    }//fin while
 
 $examen ="";
 $masDedos='';
