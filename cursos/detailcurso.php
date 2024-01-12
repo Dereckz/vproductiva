@@ -125,6 +125,7 @@
 
 $examen ="";
 $masDedos='';
+$correcta="";
 if($numMudulo==$numVisto){
     while ($dataExamen = mysqli_fetch_array($existeexamen)) { 
         if ( $dataExamen['existe']<1){
