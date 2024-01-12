@@ -112,7 +112,7 @@
                 
                 
 <body onload="deshabilitaRetroceso()">
-<div style="padding-top: 100px; padding-left: 180px;" >
+<div style="padding-top: 100px; padding-left: 100px;" >
     
     <h1 id="tituloeva" style="text-align: center">Resultados</h1>
             <table id="customers">
