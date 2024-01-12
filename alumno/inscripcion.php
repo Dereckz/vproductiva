@@ -31,14 +31,23 @@ else {
 VALUES ($idUsuario,$idCurso,1)";
 
 if (mysqli_query($conn, $sql)) {
-    header("Location: index.php");
-   
-    echo "Se inserto correctamente el registro";
+    echo "<script>
+        alert('Se inscribio correctamente al curso');
+        window.location.href='index.php';
+        </script>";
+
+   //echo "Se inserto correctamente el registro";
     
 } else {
+    
+
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    header("Location: index.php");
 }
-    echo "El usuario fue registrado con exito";
+echo "<script>
+alert('Se inscribio correctamente al curso');
+window.location.href='index.php';
+</script>";
 
 }
 
