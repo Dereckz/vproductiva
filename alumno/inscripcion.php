@@ -31,6 +31,8 @@ else {
 VALUES ($idUsuario,$idCurso,1)";
 
 if (mysqli_query($conn, $sql)) {
+    header("Location: index.php");
+   
     echo "Se inserto correctamente el registro";
     
 } else {
