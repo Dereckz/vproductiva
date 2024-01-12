@@ -1,7 +1,5 @@
 <?php  session_start();?>
-<? echo $examendecurso="";
-   echo $intentost="";
-?>
+
 <!DOCTYPE html>
 <link href="../img/LOGOVP.ico" rel="icon">
 <html>
@@ -30,11 +28,12 @@
     /*width: 100%;*/
     text-align: center;
     margin: 2% 5%;   
+    
     }
 
     #customers td, #customers th {
     border: 1px solid #ddd;
-    padding: 8px;
+    padding: 10px;
     
     }
 
@@ -48,7 +47,7 @@
     text-align: left;
     background-color: #630ba3;
     color: white;
-    
+    padding-left: 100px;
     }
     .my-button {
     padding: 10px 20px;
@@ -76,35 +75,41 @@
          $idcurso=$_GET["idc"];
          $idusuario=$_GET["idu"];
 
+        
+
          $examen = $conn->query("SELECT * FROM preguntas
-         WHERE idexamen=$idexamen  ");
+         WHERE idexamen=$idexamen ");
    
-        $correcta = $conn->query("SELECT * FROM resuelto r
-        INNER JOIN preguntas p
-        ON p.idexamen= r.idexamen
-        WHERE p.idexamen=$idexamen
-        AND r.idusuario=$idusuario
-        AND r.correcta=1;");
+            $correcta = $conn->query("SELECT * FROM resuelto r
+            INNER JOIN preguntas p
+            ON p.idexamen= r.idexamen
+            WHERE p.idexamen=$idexamen
+            AND r.idusuario=$idusuario
+            AND r.correcta=1;");
 
-        $incorrecta = $conn->query("SELECT * FROM resuelto r
-        INNER JOIN preguntas p
-        ON p.idexamen= r.idexamen
-        WHERE p.idexamen=$idexamen
-        AND r.idusuario=$idusuario
-        AND r.correcta=0; ");
+            $incorrecta = $conn->query("SELECT * FROM resuelto r
+            INNER JOIN preguntas p
+            ON p.idexamen= r.idexamen
+            WHERE p.idexamen=$idexamen
+            AND r.idusuario=$idusuario
+            AND r.correcta=0; ");
+             $examendecurso="";
+             $intentost="";
+            
+        $detallecurso = mysqli_query($conn, "SELECT * FROM curso WHERE iIdCurso=" .$idcurso);
+        $infocurso = mysqli_fetch_array($detallecurso);
+        $examendecurso= $infocurso['cNombreCurso']; 
 
-      
-         $numpreguntas= mysqli_num_rows($examen);
-          $numCorrecta= mysqli_num_rows($correcta);
-          $numIncorrecta = mysqli_num_rows($incorrecta);
+        $numpreguntas= mysqli_num_rows($examen);
+        $numCorrecta= mysqli_num_rows($correcta);
+        $numIncorrecta = mysqli_num_rows($incorrecta);
 
          while($row=$correcta->fetch_assoc())	:  
             $intentost=$row['intento'];
-            $cursotomado = $conn->query("SELECT * FROM curso where iIdCurso=".  $idcurso);
-            while($curse=$cursotomado->fetch_assoc())	: 
-                $examendecurso= $curse['cNombreCurso']; 
-            endwhile
-        ?>
+           
+                   
+                
+            ?>
 
     <?php 
         endwhile
@@ -112,10 +117,10 @@
                 
                 
 <body onload="deshabilitaRetroceso()">
-<div style="padding-top: 100px; padding-left: 100px;" >
+<div style="padding-top: 100px; ;" >
     
     <h1 id="tituloeva" style="text-align: center">Resultados</h1>
-            <table id="customers">
+            <table id="customers" >
             <tr>
                 <th>Usuario</th>
                 <th>Curso</th>
@@ -177,14 +182,14 @@
    
   }
  
-   function deshabilitaRetroceso(){
+</script>
+
+<script>
+function deshabilitaRetroceso(){
     window.location.hash="no-back-button";
     window.location.hash="Again-No-back-button" //chrome
     window.onhashchange=function(){
         window.location.hash="";
     }
 }
-
-
 </script>
-
