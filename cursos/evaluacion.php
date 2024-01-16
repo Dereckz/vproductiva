@@ -297,7 +297,11 @@
                                         <?php }?>
 
                                     </fieldset>
+<<<<<<< HEAD
                                     <!-- enalign-items: center;d radio buttons -->
+=======
+                                    <!--ee enalign-items: center;d radio buttons -->
+>>>>>>> 5645901 (super)
             
                         <?php }?>
                 
