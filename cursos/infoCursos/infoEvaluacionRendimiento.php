@@ -1,4 +1,8 @@
 
+<<<<<<< HEAD
+=======
+<?php session_start(); ?>
+>>>>>>> 5645901 (super)
 
 <!DOCTYPE html>
 <html>
@@ -34,7 +38,11 @@
             <table id=tablacontenido>
                 <tr> <td></td><td> <h3 id="descricpiontemario">
                 La Evaluación del Rendimiento es una piedra angular en el desarrollo y crecimiento tanto de los empleados como de las organizaciones. Este curso está diseñado para proporcionar a los líderes y profesionales de recursos humanos las habilidades y conocimientos necesarios para llevar a cabo evaluaciones de rendimiento efectivas y construir equipos de alto rendimiento. Mejorando prácticas en la gestión del rendimiento, desde la planificación hasta la retroalimentación, para garantizar un desarrollo continuo y un éxito sostenible.  
+<<<<<<< HEAD
                 </br>"No solo midas, maximiza” 
+=======
+                </br>"No solo midas, maximiza”  
+>>>>>>> 5645901 (super)
                 </h3> </td></tr>
                 <tr> <td></td><td id=filatitulo> <h2>TEMARIO</h2> </td></tr>
                 

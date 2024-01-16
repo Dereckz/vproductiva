@@ -95,7 +95,11 @@ h1{
 	margin-bottom: 2em;
 	margin-top: 6em;
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+<<<<<<< HEAD
 	width: 45%;
+=======
+	/*width: 45%;*/
+>>>>>>> 5645901 (super)
 }
 
 .iconosrec{
@@ -208,7 +212,11 @@ text-decoration: none;
 
 #tituloeva{
 	color: #2E49E1;
+<<<<<<< HEAD
 	margin-left: 2em;
+=======
+	/*margin-left: 2em;*/
+>>>>>>> 5645901 (super)
 }
 
 .regresarCurso {
@@ -221,4 +229,13 @@ text-decoration: none;
 
 #regresarCurso {
     margin: 2% 40%;
+<<<<<<< HEAD
+=======
+}
+
+#btnRegresarCurso{
+	color: white;
+    text-decoration: none;
+    font-size: 1.16em;
+>>>>>>> 5645901 (super)
 }
