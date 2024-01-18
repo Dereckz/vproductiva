@@ -292,7 +292,11 @@ p {
 	justify-content: center;
 	flex-wrap: wrap;
 	margin-top: 20px;
+<<<<<<< HEAD
 	background-image: url(fondologin.png);
+=======
+	/*background-image: url(fondologin.png);*/
+>>>>>>> 5645901 (super)
 }
 #services .service-item {
 	flex-basis: 80%;
