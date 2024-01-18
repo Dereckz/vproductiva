@@ -2,11 +2,7 @@
 
 $dbhost = "localhost";
 $dbuser = "root";
-<<<<<<< HEAD
-$dbpass = "@rupe2021";
-=======
 $dbpass = "";
->>>>>>> 5645901 (super)
 $dbname = "vproductivabd"; 
 
  /* $dbhost = "localhost";

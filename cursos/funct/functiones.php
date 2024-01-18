@@ -2,10 +2,6 @@
 
 
 $idcurso=1;
-<<<<<<< HEAD
-
-=======
->>>>>>> 5645901 (super)
 require("../../dev/conectar.php");
 
 $inscrito = mysqli_query($conn, "SELECT c.iIdCurso 
