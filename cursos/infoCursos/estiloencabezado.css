@@ -226,10 +226,18 @@ text-decoration: none;
 
 #imagentemario{
 	width: 35%;
+<<<<<<< HEAD
+=======
+	vertical-align: top;
+>>>>>>> 5645901 (super)
 }
 
 #imagentemar{
 	width: 100%;
+<<<<<<< HEAD
+=======
+	margin-top: 1.3em;
+>>>>>>> 5645901 (super)
 }
 
 #descricpiontemario{
