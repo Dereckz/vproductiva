@@ -292,11 +292,7 @@ p {
 	justify-content: center;
 	flex-wrap: wrap;
 	margin-top: 20px;
-<<<<<<< HEAD
-	background-image: url(fondologin.png);
-=======
 	/*background-image: url(fondologin.png);*/
->>>>>>> 5645901 (super)
 }
 #services .service-item {
 	flex-basis: 80%;
@@ -444,6 +440,9 @@ p {
 /* End Projects section */
 
 /* About Section */
+#about{
+	padding-top: 9em;
+}
 #about .about {
 	flex-direction: column-reverse;
 	text-align: center;
@@ -936,20 +935,23 @@ p {
 	/*margin-bottom: 10px;*/
 	letter-spacing: 0.2rem;
 	text-align: center;
+	margin-top: 5em;
 }
+/*
 .misionvision p{
 	margin-bottom: 3em;
-}
+}*/
 
-#parrafomision{
-	margin-right: 25em;
-	margin-left: 25em;
-	margin-bottom: 10em;
+#parrafosmision{
+	background-color: #872362;
 }
-#parrafovision{
-	margin-right: 10em;
-	margin-left: 10em;
-	color: white;
+.parrafomision{
+	margin-right: 4em;
+    margin-left: 4em;
+    color: white;
+    font-size: 2.3em;
+    font-weight: 500;
+    text-align: justify;
 }
 #titulovision{
 	color: white;
@@ -987,4 +989,54 @@ p {
 
 .imgiconoscursos{
 	margin-left: 8em;
+}
+
+/*
+.nosotrosp1{
+	height: 40em;
+}*/
+
+.cuadroazul{
+	height: 33em;
+    /* vertical-align: middle; */
+    background-color: #2E49C1;
+    padding: 2em 20em;
+    margin: 3em 7em;
+    border-radius: 4em;
+}
+#texto1nosotros{
+	font-size: 3.2em;
+    text-align: center;
+    /* margin-top: 8em; */
+    padding-top: 1.2em;
+	color: white;
+	font-weight: 550;
+}
+
+.texto2nosotros{
+	font-size: 1.5em;
+	color: white;
+	text-align: center;
+	font-weight: 450;
+}
+#texto3nosotros{
+	text-align: center;
+    font-size: 3em;
+    margin-top: 1.5em;
+}
+#imgmision{
+	width: 22%;
+	padding-left: 5em;
+}
+#imgvision{
+	margin-top: 3em;
+	width: 123%;
+	margin-bottom: 5em;
+}
+#valores{
+	font-size: 2em;
+	font-weight: 600;
+}
+#imgvalores{
+	width: 52%;
 }

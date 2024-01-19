@@ -1,10 +1,21 @@
+<<<<<<< HEAD
+=======
+<?php session_start(); ?>
+
+>>>>>>> origin/master
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="estiloencabezado.css">
         
+<<<<<<< HEAD
         <title>Organización del tiempo</title>
+=======
+
+        <title>Organizacion del tiempo</title>
+
+>>>>>>> origin/master
     </head>
     <body>
     <header id="encabezado">
@@ -16,7 +27,13 @@
             <li class="logo"><img src="../img/logob.png" id="logo"></li>
             <li class="menus"></li>
     	    <li class="menus"><a href="../../alumno/index.php" class="enlacemenu">Mi perfil</a></li>
+<<<<<<< HEAD
     	    <li id="miperfilfondo" class="menus"><a href="../../alumno/cursos.php" id="miperfil" class="enlacemenu">Catálogo de Cursos</a></li>
+=======
+
+    	    <li id="miperfilfondo" class="menus"><a href="../../alumno/cursos.php" id="miperfil" class="enlacemenu">Catálogo de Cursos</a></li>
+
+>>>>>>> origin/master
             <li class="menus"><a href="../../account/login.html" class="enlacemenu">Salir</a></li>
     	</ul>
     </header>
