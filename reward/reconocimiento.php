@@ -45,20 +45,16 @@ $pdf->Cell(160,15, mb_convert_encoding( $consulta['cNombre'].' '.$consulta['cApe
 
 
     //$infocurso["cNombreCurso"]
-<<<<<<< HEAD
- 
-=======
+
  /*
->>>>>>> 5645901 (super)
+
 $pdf->SetFont('Times','I',20);
 $pdf->SetY(135);
 $pdf->SetX(100);
 $pdf->Cell(160,15,html_entity_decode($infocurso["cNombreCurso"]),0,0,'C');
-<<<<<<< HEAD
 
-=======
 */
->>>>>>> 5645901 (super)
+
 
 $pdf->SetFont('Times','I',15);
 $pdf->SetY(159);
