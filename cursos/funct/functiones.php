@@ -2,10 +2,6 @@
 
 
 $idcurso=1;
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/master
 require("../../dev/conectar.php");
 
 $inscrito = mysqli_query($conn, "SELECT c.iIdCurso 

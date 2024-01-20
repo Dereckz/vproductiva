@@ -88,7 +88,7 @@ p {
 }
 #header .header {
 	min-height: 15vh;
-	background-color: #F6F6F6;
+	background-color: #ffffff;
 	transition: 0.3s ease background-color;
 }
 #header .nav-bar {
@@ -207,7 +207,7 @@ p {
 
 /* Hero Section */
 #hero {
-	background-image: url(inicio9.jpeg);
+	/*background-image: url(inicio9.jpeg);*/
 	background-size: cover;
 	background-position: top left;
 	position: relative;
@@ -225,10 +225,11 @@ p {
 	z-index: -1;
 }
 #hero .hero {
-	max-width: 1200px;
+	
 	margin: 0 auto;
 	/*padding: 0 50px;
-	justify-content: flex-start;*/
+	justify-content: flex-start;
+	max-width: 1200px;*/
 }
 #hero h1 {
 	display: block;
@@ -282,10 +283,11 @@ p {
 	/*padding: 12em 0;*/
 	/*background-image: url(fondotem.gif);*/
 }
+/*
 #services .service-top {
-	/*max-width: 60%;
-	margin: 0 auto;*/
-}
+	max-width: 60%;
+	margin: 0 auto;
+}*/
 #services .service-bottom {
 	display: flex;
 	align-items: center;
@@ -1039,4 +1041,99 @@ p {
 }
 #imgvalores{
 	width: 52%;
+}
+
+/*slider principal de imagenes de inicio*/
+.contenedorslider{
+	height: 100vh;
+	width: 100%;
+	display: grid;
+	place-content: center;
+	margin-top: 14em;
+}
+.sliders{
+	width: 100vw;
+	max-width: 1400px;
+	height: 720px;
+	overflow: hidden;
+	
+}
+.sliders ul{
+	display: flex;
+	padding: 0;
+	width: 300%;
+	
+	animation: sliders 20s infinite cubic-bezier(0.55, 0.48, 0.37, 0.92);
+}
+.celdassliders{
+	width: 34%
+}
+.sliders img{
+	height: 93%;
+}
+
+@keyframes sliders {
+	0% {margin-left: 0;}
+	20% {margin-left: 0;}
+	
+	33% {margin-left: -100%;}
+	45% {margin-left: -100%;}
+	
+	66% {margin-left: -200%;}
+	70% {margin-left: -200%;}
+}
+
+.htmltotal{
+	overflow-x: hidden;
+}
+
+.bienvenida{
+	height: 33em;
+    /* vertical-align: middle; */
+    background-color: #872362;
+    padding: 4em 6em;
+    margin: 3em 7em;
+    border-radius: 4em;
+}
+#parrafo1bienvenida{
+	color: white;
+	/*font-size: 1.2em;*/
+	padding: 2.5em 2em;
+}
+#parrafo2bienvenida{
+	color: white;
+	font-size: 4em;
+	
+}
+#parrafo3bienvenida{
+	color: white;
+	font-size: 1.6em;
+	text-align: justify;
+	padding-top: 1.9em;
+    font-weight: 450;
+}
+.celdasbienvenida{
+	width: 50%;
+}
+#parrafo4bienvenida{
+	text-align: center;
+    font-size: 4em;
+    padding: 0em 6em;
+	color: #1CC4EA;
+}
+.btnvercursos{
+	text-align: center;
+	font-size: 1.4em;
+	color: white;
+	font-weight: 600;
+}
+.divvercursos{
+	width: 20%;
+	background-color: #2E49C1;
+	margin-left: 40%;
+	text-align: center;
+	margin-top: 2em;
+	height: 3em;
+	border-radius: 10em;
+	padding-top: 0.5em;
 }
