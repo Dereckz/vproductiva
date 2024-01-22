@@ -10,7 +10,6 @@
         <link rel="stylesheet" href="estiloencabezado.css">
         
         <title>Integración y productividad laboral</title>
-
     </head>
     <body>
     <header id="encabezado">
@@ -22,7 +21,6 @@
             <li class="logo"><img src="../img/logob.png" id="logo"></li>
             <li class="menus"></li>
     	    <li class="menus"><a href="../../alumno/index.php" class="enlacemenu">Mi perfil</a></li>
-
     	    <li id="miperfilfondo" class="menus"><a href="../../alumno/cursos.php" id="miperfil" class="enlacemenu">Catálogo de Cursos</a></li>
             <li class="menus"><a href="../../account/login.html" class="enlacemenu">Salir</a></li>
     	</ul>
@@ -30,7 +28,6 @@
 
     <div id="fondotemario">
     
-
     <!--<img class="tituloscursos" src="../img/etica.png" >-->
     <h1 id="tituloprincipal">INTEGRACIÓN Y PRODUCTIVIDAD LABORAL</h1>
     <table  id=tablarecursos>
@@ -45,12 +42,10 @@
                 <tr> <td></td><td id=filatitulo> <h2>TEMARIO</h2> </td></tr>
                 
                 <!--<tr> <td id=filainstrucciones> <h4> En este curso aprenderas las habilidades necesarias para optimizar tus actividades diarias.</h4> </td></tr>  -->
-
                 <?php
                  require("../../dev/conectar.php");
                 $resultado = mysqli_query($conn,"SELECT c.cNombreCurso, m.cNombreModulo FROM curso c
                 INNER JOIN modulo m ON c.iIdCurso = m.fkiIdCurso WHERE c.iIdCurso=3");
-
                 $modulo=0;
                 while ($consulta = mysqli_fetch_array($resultado))
                 {
@@ -77,7 +72,6 @@
                     </td>
                 </tr>       
                 
-
             </table> 
             </td>
         </tr>
