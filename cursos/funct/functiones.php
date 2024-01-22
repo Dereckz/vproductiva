@@ -2,7 +2,6 @@
 
 
 $idcurso=1;
-
 require("../../dev/conectar.php");
 
 $inscrito = mysqli_query($conn, "SELECT c.iIdCurso 

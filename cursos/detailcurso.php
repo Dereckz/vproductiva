@@ -132,7 +132,7 @@
                 $examen='
                 <tr>
                  <td></td>
-
+                 <td></td>
                     <td class=constancia>
                         <a href="../cursos/evaluacion.php?idC='.$idcursoseleccionado.'" 
                         id="texconstancia" target="_blank" 
