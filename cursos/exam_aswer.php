@@ -19,7 +19,7 @@ $intento="1";
     $dataresultado = mysqli_query($conn, "SELECT * FROM resuelto 
                                     WHERE idcurso=" .$idcurso.
                                     " AND idusuario=" .$idusuario.
-                                    " AND fecha like '%".date("Y-m-d")."%' order by fecha DESC  LIMIT 1;");
+                                    " AND fecha like '%".date("Y-m")."%' order by fecha DESC  LIMIT 1;");
 
     $inforesultado = mysqli_fetch_array($dataresultado);
 
@@ -57,7 +57,7 @@ $intento="1";
                
              endwhile;
 
-             if($inforesultado["intento"]=$intento){
+             if($inforesultado["intento"]<=0){
                     $intento=1;
              }else
              {
@@ -72,7 +72,7 @@ $intento="1";
 
    
         if(isset($INSERT)){
-            header("Location:resultado.php?idex=".$idexamen."&idc=".$idcurso."&idu=".$idusuario);
+            header("Location:resultado.php?idex=".$idexamen."&idc=".$idcurso."&idu=".$idusuario."&i=".$intento);
           }else
           {
             header("Location:resultado.php");
