@@ -874,14 +874,16 @@ p {
 	left: -70%;
 }
  */
-#conocecapacitores{
+/*
+ #conocecapacitores{
 	background-color: #40bff2;
 	height: 20em;
-}
+}*/
 
 #capacitorestitle{
-	color: white;
+	color: #2E49C1;
 	padding-top: 5%;
+	font-weight: 700;
 }
 
 /*Finaliza estilo para slider de videos de capacitores*/
@@ -999,10 +1001,10 @@ p {
 }*/
 
 .cuadroazul{
-	height: 33em;
+	height: 40em;
     /* vertical-align: middle; */
     background-color: #2E49C1;
-    padding: 2em 20em;
+    padding: 5.5em 20em;
     margin: 3em 7em;
     border-radius: 4em;
 }
@@ -1136,4 +1138,8 @@ p {
 	height: 3em;
 	border-radius: 10em;
 	padding-top: 0.5em;
+}
+
+#contact{
+	margin-top: 4em;
 }
