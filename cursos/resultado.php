@@ -117,16 +117,12 @@
                 
                 
 <body onload="deshabilitaRetroceso()">
-<<<<<<< HEAD
+
 <div style="padding-top: 100px; ;" >
-=======
-<<<<<<< HEAD
-<div style="padding-top: 100px; ;" >
-=======
+
+
 <div style="padding-top: 5em; padding-left: 1.2em;" >
->>>>>>> f50640c (cambios Merino2 11012024)
->>>>>>> 5645901 (super)
-    
+
     <h1 id="tituloeva" style="text-align: center">Resultados</h1>
             <table id="customers" >
             <tr>
@@ -140,11 +136,8 @@
             </tr>
             <tr>
                 <td><?php echo $_SESSION['NombreLargo'] ?></td>
-<<<<<<< HEAD
-                <td><?php echo strtoupper($examendecurso)?></td>
-=======
                 <td><?php echo ucwords($examendecurso)?></td>
->>>>>>> 5645901 (super)
+
                 <td><?php echo $numpreguntas?></td>
                 <td><?php echo $numCorrecta?></td>
                 <td><?php echo $numIncorrecta?></td>
@@ -158,11 +151,8 @@
             <tr>
             <td class=regresarCurso>
                 <button class="my-button" >
-<<<<<<< HEAD
-                        <a class="text-white" href='../alumno/index.php'>
-=======
+
                         <a class="text-white" href='../alumno/index.php' id="btnRegresarCurso">
->>>>>>> 5645901 (super)
                         Regresar al curso
                         <a>
                 </button>
