@@ -74,6 +74,7 @@
          $idexamen=$_GET["idex"];
          $idcurso=$_GET["idc"];
          $idusuario=$_GET["idu"];
+         $intentost=$_GET["i"];
 
         
 
@@ -85,16 +86,19 @@
             ON p.idexamen= r.idexamen
             WHERE p.idexamen=$idexamen
             AND r.idusuario=$idusuario
-            AND r.correcta=1;");
+            AND r.correcta=1
+            AND r.intento= $intentost;");
 
             $incorrecta = $conn->query("SELECT * FROM resuelto r
             INNER JOIN preguntas p
             ON p.idexamen= r.idexamen
             WHERE p.idexamen=$idexamen
             AND r.idusuario=$idusuario
-            AND r.correcta=0; ");
-             $examendecurso="";
-             $intentost="";
+            AND r.correcta=0
+            AND r.intento=$intentost;");
+             
+            $examendecurso="";
+         
             
         $detallecurso = mysqli_query($conn, "SELECT * FROM curso WHERE iIdCurso=" .$idcurso);
         $infocurso = mysqli_fetch_array($detallecurso);
@@ -105,9 +109,7 @@
         $numIncorrecta = mysqli_num_rows($incorrecta);
 
          while($row=$correcta->fetch_assoc())	:  
-            $intentost=$row['intento'];
-           
-                   
+            $intentost=$row['intento'];               
                 
             ?>
 
@@ -115,7 +117,7 @@
         endwhile
     ?>
                 
-                
+
 <body onload="deshabilitaRetroceso()">
 
 <div style="padding-top: 100px; ;" >
