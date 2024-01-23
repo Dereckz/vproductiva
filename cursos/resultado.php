@@ -133,7 +133,7 @@
                 <th>Preguntas</th>
                 <th>Respuestas Correctas</th>
                 <th>Respuestas Incorrectas</th>
-                <th>Puntuación</th>
+                <!-- <th>Puntuación</th> -->
                 <th>Intentos</th>
             </tr>
             <tr>
@@ -143,7 +143,7 @@
                 <td><?php echo $numpreguntas?></td>
                 <td><?php echo $numCorrecta?></td>
                 <td><?php echo $numIncorrecta?></td>
-                <td></td>
+               <!--  <td></td> -->
                 <td><?php echo $intentost ?></td>
             </tr>
             
