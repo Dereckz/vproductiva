@@ -12,14 +12,15 @@ $contadorrespuestas=0;
 $idusuario=$_GET["idU"];
 $idpregunta=$_GET["idpregunta"];
 $idrespuesta=$_GET["idrespuesta"];
-$originalDate = $_GET["fecha"];
+//$originalDate = $_GET["fecha"];
 $fecha= date("Y-m-d H:i:s");
 $intento="1";
+$iestatus="";
 
-    $dataresultado = mysqli_query($conn, "SELECT * FROM resuelto 
-                                    WHERE idcurso=" .$idcurso.
-                                    " AND idusuario=" .$idusuario.
-                                    " AND fecha like '%".date("Y-m")."%' order by fecha DESC  LIMIT 1;");
+        $dataresultado = mysqli_query($conn, "SELECT * FROM resuelto 
+                                        WHERE idcurso=" .$idcurso.
+                                        " AND idusuario=" .$idusuario.
+                                        " AND fecha like '%".date("Y-m")."%' order by fecha DESC  LIMIT 1;");
 
     $inforesultado = mysqli_fetch_array($dataresultado);
 
@@ -56,14 +57,52 @@ $intento="1";
                 }
                
              endwhile;
-
+                //primer intento
              if($inforesultado["intento"]<=0){
                     $intento=1;
-             }else
-             {
-                $intento=$inforesultado["intento"]+1;
+                    $iestatus=1;
+
              }
+             else if($inforesultado["intento"]>=2)
+             {
+                //restear
+                $validarvisto=mysqli_query($conn,
+                "SELECT* FROM visto v
+                INNER JOIN inscripcion i
+                ON v.idAlumno=i.fkiIdUsuario
+                WHERE v.idAlumno=" .$idusuario.
+                " AND i.fkiIdeCurso=".$idcurso);
+
+               
+                while ($visto = mysqli_fetch_array($dataresultado))
+                { 
+                    $dataresultado = mysqli_query($conn,
+                    "UPDATE visto  SET iEstatus=0 
+                     WHERE idvisto=" .$visto["idVisto"]);
+
+                }
+                /* $dataresultado = mysqli_query($conn,
+                "UPDATE  resuelto SET iEstatus=0 
+                 WHERE idcurso=" .$idcurso.
+                " AND idusuario=" .$idusuario.
+                " AND idexamen=" .$idexamen ); */
+                $iestatus=0;
+               // if ($dataresultado== TRUE) {
+                 
+                    header("Location:index.php");
+                 // } else{
+                   // header("Location:resultado.php");
+                  //}
+
+             }
+             else
+             {//agrgar intentos
+                $intento=$inforesultado["intento"]+1;
+                $iestatus=1;
+             }
+
              $data.=", intento=".$intento;
+             $data.=", iestatus=".$iestatus;
 
              $INSERT[] = $conn->query("INSERT INTO resuelto set $data");
                 

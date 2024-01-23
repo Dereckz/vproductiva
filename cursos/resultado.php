@@ -33,7 +33,7 @@
 
     #customers td, #customers th {
     border: 1px solid #ddd;
-    padding: 10px;
+    padding: 6px;
     
     }
 
