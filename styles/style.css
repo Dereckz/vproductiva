@@ -3,6 +3,10 @@
     font-family: Acumin;
     src: url(AcuminVariableConcept.ttf);
 }
+@font-face {
+    font-family: MonserratBold;
+    src: url(Montserrat-Bold.ttf);
+}
 * {
 	padding: 0;
 	margin: 0;
@@ -280,6 +284,7 @@ p {
 	text-align: center;
 	max-width: 1500px;
 	margin: 0 auto;
+	margin-top: 5em;
 	/*padding: 12em 0;*/
 	/*background-image: url(fondotem.gif);*/
 }
@@ -338,20 +343,21 @@ p {
 	color: #0a0a0a;
 	text-align: left;
 }
-#services h1 {
+/*#services h1 {
 	margin-bottom: 0.5em;
-	/*font-size: 3.2em;*/
+	/*font-size: 3.2em;
     color: rgb(2 2 2);
-	/*font-family: Acumin;*/
-	/* border-bottom: solid; */
+	/*font-family: Acumin;
+	/* border-bottom: solid; 
 	width: 100em;
-	/* text-align: center; */
-	/* margin-left: 4em; */
+	/* text-align: center; 
+	/* margin-left: 4em; 
 	background-color: white;
 	padding-top: 2em;
-}
+}*/
 #services h2 {
-	font-size: 1.8em;
+	font-size: 1.85em;
+    padding: 0.8em 9em;
 }
 #services h3 {
 	font-size: 1.6em;
@@ -390,7 +396,7 @@ p {
 	border-radius: 10px;
 }
 #projects .project-info {
-	padding: 30px;
+	padding: 3em;
 	/*flex-basis: 50%;*/
 	height: 100%;
 	display: flex;
@@ -401,11 +407,12 @@ p {
 	color: white;
 }
 #projects .project-info h1 {
-	font-size: 4rem;
-	font-weight: 500;
-	text-align: center;
-	padding-bottom: 0.5em;
-	font-family: Acumin;
+	font-size: 3.8rem;
+    /* font-weight: 900; */
+    text-align: center;
+    padding-bottom: 0.5em;
+    font-family: MonserratBold;
+    color: #872362;
 }
 #projects .project-info li {
 	font-size: 1.5rem;
@@ -414,10 +421,13 @@ p {
 	margin-left: 2em;
 }
 #projects .project-info p {
-	color: white;
+	color: black;
+    font-size: 1.5em;
+    font-weight: 600;
+    padding: 0em 3em;
 }
 #projects .project-img {
-	flex-basis: 45%;
+	flex-basis: 100%;
 	height: 300px;
 	overflow: hidden;
 	position: relative;
@@ -641,14 +651,15 @@ p {
 	#projects .project-item {
 		flex-direction: row;
 	}
-	#projects .project-item:nth-child(even) {
+	/*#projects .project-item:nth-child(even) {
 		flex-direction: row-reverse;
-	}
+	}*/
 	#projects .project-item {
-		height: 300px;
+		height: 37em;
 		margin: 2em;
 		width: 100%;
 		border-radius: 0;
+		background-image: url(../images/fondocursos.png);
 	}
 	#projects .all-projects .project-info {
 		height: 100%;
@@ -889,26 +900,27 @@ p {
 /*Finaliza estilo para slider de videos de capacitores*/
 
 /*Empieza colores de fondo para cursos Inicio*/
-#curso1{
+/*#curso1{
 	background-color: #4720b7;
-}
+	background-image: url(../images/fondocursos.png);
+}*/
 #curso2{
-	background-color: #40c0f2;
+	width: 160%;
 }
 #curso3{
-	background-color: #4720b7;
+	width: 161%;
 }
 #curso4{
 	background-color: #40c0f2;
 }
 #curso5{
-	background-color: #4720b7;
+	width: 161%;
 }
 #curso6{
-	background-color: #40c0f2;
+	width: 161%;
 }
 #curso7{
-	background-color: #4720b7;
+	width: 161%;
 }
 
 .titlescursos{
@@ -1142,4 +1154,35 @@ p {
 
 #contact{
 	margin-top: 4em;
+}
+
+#texto1cursos{
+	color: #872362;
+    padding-top: 1.5%;
+    font-size: 3.8em;
+	font-family: MonserratBold;
+}
+
+.imagenesareas {
+    /*width: 85%; */
+    padding: 1em 1.5em;
+}
+.filacentrada {
+    text-align: center;
+}
+#titulocategorias{
+	color: #2E49C1;
+    font-family: MonserratBold;
+    font-size: 3.5em;
+    margin-top: 0.3em;
+}
+.celdacategoria{
+	height: 25em;
+}
+
+.banersinicio{
+	margin: 5em 1em;
+}
+.banernosotros{
+	margin-top: 20em;
 }
