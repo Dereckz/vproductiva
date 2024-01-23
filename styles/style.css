@@ -651,12 +651,12 @@ p {
 	#projects .project-item {
 		flex-direction: row;
 	}
-	#projects .project-item:nth-child(even) {
+	/*#projects .project-item:nth-child(even) {
 		flex-direction: row-reverse;
-	}
+	}*/
 	#projects .project-item {
 		height: 37em;
-		margin: 2em;
+		margin: 3.2em 2em;
 		width: 100%;
 		border-radius: 0;
 		background-image: url(../images/fondocursos.png);
@@ -900,27 +900,27 @@ p {
 /*Finaliza estilo para slider de videos de capacitores*/
 
 /*Empieza colores de fondo para cursos Inicio*/
-#curso1{
-	/*background-color: #4720b7;
-	background-image: url(../images/fondocursos.png);*/
-}
+/*#curso1{
+	background-color: #4720b7;
+	background-image: url(../images/fondocursos.png);
+}*/
 #curso2{
-	background-color: #40c0f2;
+	width: 160%;
 }
 #curso3{
-	background-color: #4720b7;
+	width: 161%;
 }
 #curso4{
 	background-color: #40c0f2;
 }
 #curso5{
-	background-color: #4720b7;
+	width: 161%;
 }
 #curso6{
-	background-color: #40c0f2;
+	width: 161%;
 }
 #curso7{
-	background-color: #4720b7;
+	width: 161%;
 }
 
 .titlescursos{
