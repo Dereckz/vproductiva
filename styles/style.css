@@ -656,7 +656,7 @@ p {
 	}*/
 	#projects .project-item {
 		height: 37em;
-		margin: 3.2em 2em;
+		margin: 2em;
 		width: 100%;
 		border-radius: 0;
 		background-image: url(../images/fondocursos.png);
@@ -1178,4 +1178,11 @@ p {
 }
 .celdacategoria{
 	height: 25em;
+}
+
+.banersinicio{
+	margin: 5em 1em;
+}
+.banernosotros{
+	margin-top: 20em;
 }
