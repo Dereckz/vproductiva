@@ -84,7 +84,7 @@
                 <div class="card-body">
                   <h5 class="card-title"><?php echo $consulta["cNombreCurso"]?></h5>
                   <p class="card-text"><?php echo $consulta["cDescripcion"]?></p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                
                 </div>
               </div>
           
