@@ -4,7 +4,7 @@ require("../dev/conectar.php");
 $idrecurso = $_POST['recurso'];
 $idAlumno = $_POST['alumno'];
 
-$consulta = mysqli_query($conn, "SELECT * FROM visto WHERE idAlumno=$idAlumno AND idRecurso=$idrecurso");
+$consulta = mysqli_query($conn, "SELECT * FROM visto WHERE idAlumno=$idAlumno AND idRecurso=$idrecurso and estatus=1 ");
 
 $num = mysqli_num_rows($consulta);
 
