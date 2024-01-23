@@ -74,11 +74,17 @@ $iestatus="";
                 " AND i.fkiIdeCurso=".$idcurso);
 
                
-                while ($visto = mysqli_fetch_array($dataresultado))
+                while ($visto = mysqli_fetch_array($validarvisto))
                 { 
                     $dataresultado = mysqli_query($conn,
-                    "UPDATE visto  SET iEstatus=0 
+                    "UPDATE visto  SET estatus=0 
                      WHERE idvisto=" .$visto["idVisto"]);
+                     if ($dataresultado== TRUE) {
+                 
+                        header("Location:index.php");
+                         } else{
+                           header("Location:index.php");
+                         }
 
                 }
                 /* $dataresultado = mysqli_query($conn,
@@ -87,12 +93,7 @@ $iestatus="";
                 " AND idusuario=" .$idusuario.
                 " AND idexamen=" .$idexamen ); */
                 $iestatus=0;
-               // if ($dataresultado== TRUE) {
-                 
-                    header("Location:index.php");
-                 // } else{
-                   // header("Location:resultado.php");
-                  //}
+              
 
              }
              else
