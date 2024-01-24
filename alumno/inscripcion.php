@@ -6,6 +6,7 @@ $idUsuario = $_GET['usuario'];
 
 //Se manejaran 3 valores para saber si ya estuvo inscrito en el curso se salio y nuevamente se volvio a inscribir
 //1 inscrito, 2 salir, 3 inscrito por segunda ves.
+echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>';
 
 $consCur = mysqli_query($conn, "SELECT * FROM  inscripcion WHERE fkiIdeCurso = ".$idCurso." and fkiIdUsuario =".$idUsuario);
 $consulta= mysqli_fetch_array($consCur);
@@ -31,12 +32,9 @@ else {
 VALUES ($idUsuario,$idCurso,1)";
 
 if (mysqli_query($conn, $sql)) {
-    echo "<script>
-        alert('Se inscribio correctamente al curso');
-        window.location.href='index.php';
-        </script>";
+     echo "....";
 
-   //echo "Se inserto correctamente el registro";
+
     
 } else {
     
@@ -44,10 +42,21 @@ if (mysqli_query($conn, $sql)) {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     header("Location: index.php");
 }
-echo "<script>
-alert('Se inscribio correctamente al curso');
-window.location.href='index.php';
-</script>";
+echo '<script>
+        Swal.fire({
+        title: "¡Bien hecho!",
+        text: "Se inscribio correctamente al curso",
+        icon: "success"
+    }).then(function() {
+        window.location = "index.php";
+    });
+       
+    </script>';
+
+// echo "<script>
+// alert('Se inscribio correctamente al curso');
+// window.location.href='index.php';
+// </script>";
 
 
 }
