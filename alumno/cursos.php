@@ -1,4 +1,6 @@
-<?php include ('consulta.php'); ?>
+<?php include ('consulta.php'); 
+    require("../dev/conectar.php");?>
+
 <!DOCTYPE html>
 <!-- saved from url=(0091)https://website529400.nicepage.io/es/1234.html?version=56a80d83-e130-4c50-b76e-7bfc4c0ea516 -->
 <html style="font-size: 16px;" lang="es" class="u-responsive-xl"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -13,6 +15,7 @@
     <script class="u-script" type="text/javascript" src="./nicepage.js.descarga" defer=""></script>
     <meta name="generator" content="Nicepage 4.18.8, nicepage.com">
     <link id="u-theme-google-font" rel="stylesheet" href="./css">
+    <link href="../img/LOGOVP.ico" rel="icon">
     <style class="u-style"> .u-section-2 {
   background-image: none;
 }
@@ -403,7 +406,33 @@
           <div class="u-repeater u-repeater-1">-->
           <div>
             <table>
-              <tr class="filacentrada">
+            <tr  class="filacentrada">
+            
+              <?php 
+              $dataareacurso=mysqli_query($conn,"SELECT * FROM areacursos");//a INNER JOIN curso c on a.iIdAreaCursos=c.fkidAreaCurso;" );
+              $numcurso =mysqli_num_rows($dataareacurso);
+              $filabusqueda=0;
+              $filadetres=$numcurso/3;
+              while ($datocategorias = mysqli_fetch_array($dataareacurso)):
+                $filabusqueda=$filabusqueda+1;
+                
+              ?>
+                 
+                      <td>
+                        <a href="cursoxarea.php?ida=<?php echo $datocategorias["iIdAreaCursos"]?>&name=<?php echo $datocategorias["NombreArea"]?>">
+                            <img src="<?php echo $datocategorias["imagen"]?>"  class="imagenesareas" 
+                                onmouseover="<?php echo 'this.src='.$datocategorias["imagen2"]?>" 
+                                onmouseout="<?php echo 'this.src='.$datocategorias["imagen"]?>">
+                        </a>
+                      </td>
+                  
+                    <?php  
+                  
+                      endwhile
+                    ?>
+                
+                </tr>
+             <!--  <tr class="filacentrada">
                 <td><a href="cursoxarea.php?ida=1&name=Productividad Laboral"><img src="img/areaplaboral.png" class="imagenesareas" 
                 onmouseover="this.src='img/areaplaboral2.png'" onmouseout="this.src='img/areaplaboral.png'"></a></td>
                 <td><a href="cursoxarea.php?ida=2&name=Habilidades Blandas"><img src="img/areahblandas.png" class="imagenesareas" 
@@ -422,7 +451,7 @@
                 onmouseover="this.src='img/areahdigitales2.png'" onmouseout="this.src='img/areahdigitales.png'"></a></td>
                 <td><a href=""><img src="img/areaotro.png" class="imagenesareas2" 
                 onmouseover="this.src='img/areaotro2.png'" onmouseout="this.src='img/areaotro.png'"></a></td>
-              </tr>
+              </tr> -->
             </table>
           </div>
           <!--?=infoCurso();?>-->
