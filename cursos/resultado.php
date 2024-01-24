@@ -162,7 +162,7 @@
                     <td class=regresarCurso>
                         <button class="my-button" >
 
-                                <a class="text-white" href="../cursos/detailcurso.php?pidc=<?php echo $idcurso?> &areacurso=<?php echo $detallearea["NombreArea"]?>&curso=<?php echo $detallearea["cNombreCurso"]?>" id="btnRegresarCurso">
+                                <a class="text-white" href="../cursos/detailcursoz.php?pidc=<?php echo $idcurso?> &areacurso=<?php echo $detallearea["NombreArea"]?>&curso=<?php echo $detallearea["cNombreCurso"]?>" id="btnRegresarCurso">
                                 Regresar al curso
                                 <a>
                         </button>
