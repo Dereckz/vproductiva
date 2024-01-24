@@ -51,7 +51,7 @@
     INNER JOIN visto v ON r.iIdRecurso = v.idRecurso
     WHERE c.iIdCurso=".$idcursoseleccionado." and v.idAlumno=" . $_SESSION["id"]." GROUP BY iIdRecurso");
 
-    $existeexamen = mysqli_query($conn,"SELECT count(*) as existe FROM resuelto");
+    $existeexamen = mysqli_query($conn,"SELECT count(*) as existe FROM resuelto WHERE iestatus=1");
 
 
     $numMudulo= mysqli_num_rows($resultado);
@@ -122,11 +122,12 @@
 
     $examen ="";
     $masDedos='';
+    $constancia="";
     $correcta=0;
 
     if($numMudulo==$numVisto){
         while ($dataExamen = mysqli_fetch_array($existeexamen)) { 
-            if ( $dataExamen['existe']<1){
+            if ( $dataExamen['existe']<=1){
     
                 $constancia="";
                 $examen='
@@ -178,7 +179,7 @@
                     </tr>';   
                 
                                       
-                    }else  if ($errores>=3)
+                    }/* else  if ($errores>=3)
                     {   
                         $constancia="";
                         $examen="";
@@ -195,9 +196,10 @@
                      <tr>
                         <td colspan=3 class=celdasvacias>
                         </td>
-                     </tr>';  */
+                     </tr>';  
                 
-                    }else if ($errores<3){
+                    } */
+                    else if ($errores<=3){
                         $constancia="";
 
                         $examen='<tr>
