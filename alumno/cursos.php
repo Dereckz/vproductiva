@@ -402,33 +402,15 @@
       <div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
         
           <h1 class="section-title"> <span>Categorías principales</span></h1>
-               
+          <div>
+            <table>   
+              <tr  class="filacentrada"> 
                         <?php 
                             $dataareacurso=mysqli_query($conn,"SELECT * FROM areacursos");//a INNER JOIN curso c on a.iIdAreaCursos=c.fkidAreaCurso;" );
                             $numcurso =mysqli_num_rows($dataareacurso);
-                            
-                            if ($numcurso > 0)
-                            {
-                              for ($i=0; $i<$numcurso; $i++)
-                                  {
-                                    $datocategorias = mysqli_fetch_array($dataareacurso);
-                                  ?>
-                           <div align='center'><TABLE class='tabl'>\n
-                                  <TR>
-                                <TD class='td'><?php echo $datocategorias["iIdAreaCursos"]?></TD>
-                                <TD></TD>
-                                  <TD class='td1'><img src='./imagenes/imagen1.jpg'></TD>
-                                </table></div>
-                                  <?php
-                                  }
-                            }
-                          
-                              
+                            $datocategorias = mysqli_fetch_array($dataareacurso);
+                            while ($datocategorias = mysqli_fetch_array($dataareacurso)) {
                               ?>     
-                             
-                                              <!-- <div>
-                                    <table>   
-                                      <tr  class="filacentrada"> 
                                       <td>
                                         <a href="cursoxarea.php?ida=<?php echo $datocategorias["iIdAreaCursos"]?>&name=<?php echo $datocategorias["NombreArea"]?>">
                                             <img src="<?php echo $datocategorias["imagen"]?>"  class="imagenesareas" 
@@ -436,17 +418,20 @@
                                                 onmouseout="<?php echo 'this.src='.$datocategorias["imagen"]?>">
                                         </a>
                                       </td>
+                                      <?php
+                                      }
+                                      ?>
                                       </tr>
-                                  </table>
-                                </div> -->     
-                  
-          
-                      <tr class="filacentrada">
-                          <td><a href=""><img src="img/areaotro.png" class="imagenesareas2" 
-                                  onmouseover="this.src='img/areaotro2.png'" onmouseout="this.src='img/areaotro.png'"></a></td>   
-                      </tr>
+                                 
+                              
+                        
                           
-            </table>
+                                    <tr class="filacentrada">
+                                        <td><a href=""><img src="img/areaotro.png" class="imagenesareas2" 
+                                                onmouseover="this.src='img/areaotro2.png'" onmouseout="this.src='img/areaotro.png'"></a></td>   
+                                    </tr>
+                                        
+                        </table>
           </div>
         
       </div>
