@@ -32,10 +32,7 @@ else {
 VALUES ($idUsuario,$idCurso,1)";
 
 if (mysqli_query($conn, $sql)) {
-    /* echo "<script>
-        alert('Se inscribio correctamente al curso');
-        window.location.href='index.php';
-        </script>"; */
+     echo "....";
 
 
     
