@@ -44,18 +44,19 @@
     #customers th {
     padding-top: 12px;
     padding-bottom: 12px;
-    text-align: left;
+    text-align: center;
     background-color: #630ba3;
     color: white;
-    padding-left: 100px;
+    /*padding-left: 100px;*/
     }
     .my-button {
-    padding: 10px 20px;
+    padding: 1em 3em;
     background-color: #2E49E1;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 5em;
     cursor: pointer;
+    font-weight: 550;
     }
 
     .my-button:hover {
@@ -120,12 +121,12 @@
 
 <body onload="deshabilitaRetroceso()">
 
-<div style="padding-top: 100px; ;" >
+<div style="padding-top: 4.5em;" >
 
 
-<div style="padding-top: 5em; padding-left: 1.2em;" >
+<div style="padding-top: 5em; padding-left: 7%;" >
 
-    <h1 id="tituloeva" style="text-align: center">Resultados</h1>
+    <h1 id="tituloeva" style="text-align: center; margin-right: 1.1em;">Resultados</h1>
             <table id="customers" >
             <tr>
                 <th>Usuario</th>
@@ -141,8 +142,8 @@
                 <td><?php echo ucwords($examendecurso)?></td>
 
                 <td><?php echo $numpreguntas?></td>
-                <td><?php echo $numCorrecta?></td>
-                <td><?php echo $numIncorrecta?></td>
+                <td><?php echo ($numCorrecta/10)?></td>
+                <td><?php echo ($numIncorrecta/10)?></td>
                <!--  <td></td> -->
                 <td><?php echo $intentost ?></td>
             </tr>
