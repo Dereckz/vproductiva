@@ -1,11 +1,13 @@
+
 <?php session_start(); ?>
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="estiloencabezado.css">
         
-        <title>Cambios de hábitos</title>
+        <title>Cambios de hábitos con programación neurolingüistica</title>
     </head>
     <body>
     <header id="encabezado">
@@ -28,13 +30,12 @@
     <h1 id="tituloprincipal">CAMBIOS DE HÁBITOS CON PROGRAMACIÓN NEUROLINGÜISTICA</h1>
     <table  id=tablarecursos>
         <tr>
-            <td id="imagentemario"><img src="img/etica.png" id="imagentemar"></td>
+            <td id="imagentemario"><img src="img/cambios.png" id="imagentemar"></td>
             <td class="celdatop">
             <table id=tablacontenido>
                 <tr> <td></td><td> <h3 id="descricpiontemario">
-                Cambios de hábitos con programación neurolingüística
                 El curso de Cambio de Hábitos con Programación Neurolingüística te ayudará a superar obstáculos, mejorar la toma de decisiones, aumentar la autoconciencia y la autoconfianza, y lograr un cambio positivo y duradero en tu vida. La PNL es una herramienta poderosa para la autotransformación y el crecimiento personal.
-                </br>"Transforma tus pensamientos y hábitos para un cambio duradero."  
+                </br>"Transforma tus pensamientos y hábitos para un cambio duradero."
                 </h3> </td></tr>
                 <tr> <td></td><td id=filatitulo> <h2>TEMARIO</h2> </td></tr>
                 
@@ -63,7 +64,8 @@
                     <td>
                     </td>
                     <td >
-                    <?php include('..\funct\functiones.php');   ?> 
+                    <?php include('..\funct\functiones.php'); 
+                    ?>
                    
                     </td>
                 </tr>       
