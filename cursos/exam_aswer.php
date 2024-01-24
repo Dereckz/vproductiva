@@ -4,7 +4,8 @@ require("../dev/conectar.php");
 
 date_default_timezone_set('America/Mexico_City');
 
-
+$dataresultado="";
+$inforesultado="";
 $idexamen=$_GET["idEx"];
 $idcurso=$_GET["idC"];
 $contadorpreguntas=0;

@@ -1080,7 +1080,8 @@ p {
 	animation: sliders 20s infinite cubic-bezier(0.55, 0.48, 0.37, 0.92);
 }
 .celdassliders{
-	width: 34%
+	width: 100%;
+    margin-left: 1em;
 }
 .sliders img{
 	height: 93%;
@@ -1185,4 +1186,48 @@ p {
 }
 .banernosotros{
 	margin-top: 20em;
+}
+#slider1{
+	background-image: url(../img/slider1.jpg);
+	height: 48em;
+    width: 133.85em;
+}
+#slider2{
+	background-image: url(../img/slider2.jpg);
+	height: 48em;
+    width: 133.85em;
+}
+#slider3{
+	background-image: url(../img/slider3.jpg);
+	height: 48em;
+    width: 133.85em;
+}
+
+#btncontactanos{
+	margin-top: 27em;
+    margin-left: 14em;
+    width: 15em;
+    height: 3em;
+    background-color: #001c9bed;
+    border-radius: 4em;
+    color: white;
+    border: 3em;
+    font-weight: 550;
+}
+#btncontactanos:hover{
+	background-color: #0d4ee7;
+}
+#btncursos{
+	margin-top: 27em;
+    margin-left: 65em;
+    width: 15em;
+    height: 3em;
+    background-color: #001c9bed;
+    border-radius: 4em;
+    color: white;
+    border: 3em;
+    font-weight: 550;
+}
+#btncursos:hover{
+	background-color: #0d4ee7;
 }
