@@ -149,18 +149,25 @@
             
             
             </table>
-            <table id="regresarCurso">
-            <tr>
-            <td class=regresarCurso>
-                <button class="my-button" >
+           <?php 
+            $dataareacurso = mysqli_query($conn, "SELECT * FROM areacursos a
+                        INNER JOIN curso c
+                        ON A.iIdAreaCursos=C.fkidAreaCurso
+                        where c.iIdCurso=".$idcurso);
+            $detallearea = mysqli_fetch_array($dataareacurso);
+           ?> 
+                <table id="regresarCurso">
+                    <tr>
+                    <td class=regresarCurso>
+                        <button class="my-button" >
 
-                        <a class="text-white" href='../alumno/index.php' id="btnRegresarCurso">
-                        Regresar al curso
-                        <a>
-                </button>
-                </td>
-            </tr>
-            </table>
+                                <a class="text-white" href="../cursos/detailcurso.php?pidc=<?php echo $idcurso?> &areacurso=<?php echo $detallearea["NombreArea"]?>&curso=<?php echo $detallearea["cNombreCurso"]?>" id="btnRegresarCurso">
+                                Regresar al curso
+                                <a>
+                        </button>
+                        </td>
+                    </tr>
+                </table>
 </div>
 
    
