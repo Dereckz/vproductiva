@@ -42,12 +42,14 @@
                 <!--<tr> <td id=filainstrucciones> <h4> En este curso aprenderas las habilidades necesarias para optimizar tus actividades diarias.</h4> </td></tr>  -->
                 <?php
                  require("../../dev/conectar.php");
-                $resultado = mysqli_query($conn,"SELECT c.cNombreCurso, m.cNombreModulo FROM curso c
+                $resultado = mysqli_query($conn,"SELECT c.iIdCurso,c.cNombreCurso, m.cNombreModulo FROM curso c
                 INNER JOIN modulo m ON c.iIdCurso = m.fkiIdCurso WHERE c.iIdCurso=1");
                 $modulo=0;
+                $idcurso="";
                 while ($consulta = mysqli_fetch_array($resultado))
                 {
                     $modulo=$modulo+1;
+                    $idcurso=$consulta["iIdCurso"];
                     echo '<tr> 
                             <td class=sangriavinetas></td>
                              <td class=titulostemario2><span id="nmodulo">Módulo '.$modulo. '.</span> </br> '.$consulta['cNombreModulo'] .'</td>
@@ -64,7 +66,7 @@
                     <td>
                     </td>
                     <td >
-                    <?php include('..\funct\functiones.php'); 
+                    <?php include('..\funct\btninscripcion.php?idc='.$idcurso); 
                     ?>
                    
                     </td>
