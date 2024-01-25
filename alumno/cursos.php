@@ -1,6 +1,4 @@
-<?php include ('consulta.php'); 
-    require("../dev/conectar.php");?>
-
+<?php include ('consulta.php'); ?>
 <!DOCTYPE html>
 <!-- saved from url=(0091)https://website529400.nicepage.io/es/1234.html?version=56a80d83-e130-4c50-b76e-7bfc4c0ea516 -->
 <html style="font-size: 16px;" lang="es" class="u-responsive-xl"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -15,7 +13,6 @@
     <script class="u-script" type="text/javascript" src="./nicepage.js.descarga" defer=""></script>
     <meta name="generator" content="Nicepage 4.18.8, nicepage.com">
     <link id="u-theme-google-font" rel="stylesheet" href="./css">
-    <link href="../img/LOGOVP.ico" rel="icon">
     <style class="u-style"> .u-section-2 {
   background-image: none;
 }
@@ -402,41 +399,48 @@
       <div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
         
           <h1 class="section-title"> <span>Categorías principales</span></h1>
+          <!--<div class="u-expanded-width u-list u-list-1">
+          <div class="u-repeater u-repeater-1">-->
           <div>
-            <table>   
-              <tr  class="filacentrada"> 
-                        <?php 
-                            $dataareacurso=mysqli_query($conn,"SELECT * FROM areacursos");//a INNER JOIN curso c on a.iIdAreaCursos=c.fkidAreaCurso;" );
-                            $numcurso =mysqli_num_rows($dataareacurso);
-                            $datocategorias = mysqli_fetch_array($dataareacurso);
-                            while ($datocategorias = mysqli_fetch_array($dataareacurso)) {
-                              ?>     
-                                      <td>
-                                        <a href="cursoxarea.php?ida=<?php echo $datocategorias["iIdAreaCursos"]?>&name=<?php echo $datocategorias["NombreArea"]?>">
-                                            <img src="<?php echo $datocategorias["imagen"]?>"  class="imagenesareas" 
-                                                onmouseover="<?php echo 'this.src='.$datocategorias["imagen2"]?>" 
-                                                onmouseout="<?php echo 'this.src='.$datocategorias["imagen"]?>">
-                                        </a>
-                                      </td>
-                                      <?php
-                                      }
-                                      ?>
-                                      </tr>
-                                 
-                              
-                        
-                          
-                                    <tr class="filacentrada">
-                                        <td><a href=""><img src="img/areaotro.png" class="imagenesareas2" 
-                                                onmouseover="this.src='img/areaotro2.png'" onmouseout="this.src='img/areaotro.png'"></a></td>   
-                                    </tr>
-                                        
-                        </table>
+            <table>
+              <tr class="filacentrada">
+                <td><a href="cursoxarea.php?ida=1&name=Productividad Laboral"><img src="img/areaplaboral.png" class="imagenesareas" 
+                onmouseover="this.src='img/areaplaboral2.png'" onmouseout="this.src='img/areaplaboral.png'"></a></td>
+                <td><a href="cursoxarea.php?ida=2&name=Habilidades Blandas"><img src="img/areahblandas.png" class="imagenesareas" 
+                onmouseover="this.src='img/areahblandas2.png'" onmouseout="this.src='img/areahblandas.png'"></a></td>
+                <td><a href="cursoxarea.php?ida=3&name=Psicologia"><img src="img/areapsicologia.png" class="imagenesareas" 
+                onmouseover="this.src='img/areapsicologia2.png'" onmouseout="this.src='img/areapsicologia.png'"></a></td>
+                <td><a href="cursoxarea.php?ida=4&name=Salud, Higiene y Seguridad"><img src="img/areasalud.png" class="imagenesareas" 
+                onmouseover="this.src='img/areasalud2.png'" onmouseout="this.src='img/areasalud.png'"></a></td>
+              </tr>
+              <tr class="filacentrada">
+                <td><a href="cursoxarea.php?ida=5&name=Cultura Juridica"><img src="img/areacjuridica.png" class="imagenesareas2" 
+                onmouseover="this.src='img/areacjuridica2.png'" onmouseout="this.src='img/areacjuridica.png'"></a></td>
+                <td><a href="cursoxarea.php?ida=6&name=Finanzas"><img src="img/areafinanzas.png" class="imagenesareas2" 
+                onmouseover="this.src='img/areafinanzas2.png'" onmouseout="this.src='img/areafinanzas.png'"></a></td>
+                <td><a href="cursoxarea.php?ida=7&name=Habilidades Digitales"><img src="img/areahdigitales.png" class="imagenesareas2" 
+                onmouseover="this.src='img/areahdigitales2.png'" onmouseout="this.src='img/areahdigitales.png'"></a></td>
+                <td><a href=""><img src="img/areaotro.png" class="imagenesareas2" 
+                onmouseover="this.src='img/areaotro2.png'" onmouseout="this.src='img/areaotro.png'"></a></td>
+              </tr>
+            </table>
           </div>
-        
+          <!--?=infoCurso();?>-->
+        <!--</div>-->
       </div>
     </section>
     
-    
+    <!--
+    <section class="u-backlink u-clearfix u-grey-80">
+      <a class="u-link">
+        <span>Copyright © 2023</span>
+      </a>
+      <p class="u-text">
+        <span>- developed by</span>
+      </p>
+      <a class="u-link" href="https://desetecnologias.net" target="_blank">
+        <span>Dese Tecnologias</span>
+      </a>. 
+    </section>-->
   
 <style>.u-disable-duration * {transition-duration: 0s !important;}</style></body></html>
