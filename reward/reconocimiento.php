@@ -28,7 +28,7 @@ $certificado = mysqli_fetch_array($datacertificado);
 $pdf = new FPDF('L','mm','Letter');
 $pdf->AddPage();
 $pdf->SetFont('Arial','B',70);
-$pdf->Image($certificado["certificado"],0,0,280,218,'PNG');
+$pdf->Image($certificado["certificado"],0,0,280,218,'JPG');
 //$pdf->Image('1.png',0,0,299,218,'PNG');
 //$pdf->Image('2.png',190,20,85,28,'PNG');
 //$pdf->Image('3.png',210,155,15,15,'PNG');
