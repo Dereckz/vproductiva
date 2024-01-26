@@ -54,7 +54,9 @@ function infoCurso2($idarea )
            }
            else{
            $link ='<div style="background-color: #00b0ff; border-radius: 25em; color: white; padding: 0em 1em; margin: 0em 1em;">
-           <a href="inscripcion.php?curso='. $consulta["iIdCurso"] .'&usuario='.$_SESSION["id"].'"  class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">Inscribirse</a></div>';
+           <a href="inscripcion.php?curso='. $consulta["iIdCurso"] .'&usuario='.$_SESSION["id"].'"  class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">
+           Inscribirse
+           </a></div>';
            } 
            $i++;       
        }
@@ -64,7 +66,7 @@ function infoCurso2($idarea )
        <h4 class="u-text u-text-5">' . $consulta['cNombreCurso'] . '</h4> 
        <div style="margin: 0em 1em; padding-left: 1em; padding-bottom: 0.5em">
        <br>
-       <a href="..\cursos\infocursos\issue.php?namec='. $consulta['cNombreCurso']  .'&idc='. $consulta["iIdCurso"] .'"
+       <a href="..\cursos\infoCursos\issue.php?namec='. $consulta['cNombreCurso']  .'&idc='. $consulta["iIdCurso"] .'"
             class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">
                     Ver temario del curso<br>
             </a>
@@ -252,7 +254,10 @@ array_push($arreglo, $infoinscrito['iIdCurso']);
        while($i<count($arreglo)){
            if ($arreglo[$i]== $idcurso){
                $link ='<div style="background-color: #00b0ff; border-radius: 25em; color: white; padding: 0em 1em; margin: 0em 1em;">
-               <a href="#" id="" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">Inscrito</a></div>';  
+               <a href="#" id="" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">
+               Inscrito
+               </a>
+               </div>';  
                $i=count($arreglo);
            }
            else{
