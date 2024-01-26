@@ -1187,6 +1187,7 @@ p {
 }
 .banernosotros{
 	margin-top: 20em;
+	margin-bottom: 5em;
 }
 #slider1{
 	background-image: url(../img/slider1.jpg);
@@ -1279,4 +1280,7 @@ p {
 }
 #fondoinicio{
 	background-color: #872362;
+}
+.imgcursosp1{
+	height: 43em;
 }
