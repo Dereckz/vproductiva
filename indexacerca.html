@@ -1,0 +1,281 @@
+
+<!DOCTYPE html>
+<html lang="en" class="htmltotal">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="icon" href="img/LOGOVP.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <title>Valuación Productiva</title>
+</head>
+
+<body>
+  <!-- Header -->
+  <section id="header">
+    <div class="header container">
+      <div class="nav-bar">
+        <div class="brand">
+          <a href="#">
+
+           <img src="img/logob.png" id="logoinicio" alt="VProductiva Logo">
+           <!-- <h1>Valuación Productiva</h1>-->
+          </a>
+        </div>
+        <div class="nav-list">
+          <div class="hamburger">
+            <div class="bar"></div>
+          </div>
+          <ul>
+            <li><a href="index.html" data-after="Home" class="headermenu" >Inicio</a></li>
+
+           <!-- <li><a href="#services" data-after="Service">Servicios</a></li>-->
+            <li><a href="indexcursos.html" data-after="Projects" class="headermenu">Cursos</a></li>
+            <li id="fondoinicio"><a href="#" data-after="About" class="headermenu" style="color: white;">Acerca de nosotros</a></li>
+            <li><a href="indexcontacto.html" data-after="Contact" class="headermenu">Contacto</a></li>
+            <!--<li><a href="account/register.html" data-after="Login">Login</a></li> -->
+            <li><a href="account/login.html" data-after="Login" class="headermenu">Login</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Header -->
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="nosotrosp1">
+      <div class="cuadroazul">
+        <h3 id="texto1nosotros">Nuestra plataforma se destaca por ofrecer una experiencia de aprendizaje única y adaptable a tus necesidades</h3>
+        </br>
+        <h4 class="texto2nosotros">Aprender a tu propio ritmo, desde cualquier lugar y en cualquier momento, otorgándote la flexibilidad que necesitas para alcanzar tus metas profesionales. Únete a nosotros y descubre por qué miles de personas confían en nuestra plataforma de capacitación para impulsar su crecimiento profesional.
+        </h4>
+        <h4 class="texto2nosotros">¡Elige la excelencia, elige nuestro espacio educativo líder!</h4>
+      </div>
+      <h2 id="texto3nosotros">Forjando equipos preparados para el mañana.</h2>
+    </div>
+    <div id="misionvision" class="misionvision">
+      <!--<h2>Misión</h2>
+        <p id="parrafomision">Pugnar, mediante la unión y representación de empresarios afiliados voluntariamente, 
+          la cultura de excelencia empresarial, el establecimiento de una economía de mercado 
+          con responsabilidad social y la participación ciudadana, en aras de la edificación 
+          de un México más justo, libre, próspero y respetuoso de la persona humana, 
+          de la verdad y del derecho y, por tanto, más apto para la consecución del bien 
+          común y el combate a la pobreza.</p>
+        <table>
+          <tr id="filavision"><td id="celdavision">
+            <h2 id="titulovision">Visión</h2><p id="parrafovision">Nuestro objetivo principal es que los trabajadores de las empresas asociadas 
+              desarrollen una sana relación laboral que deriven en altos niveles de productividad, 
+              apegadas a la Ley, para impulsar el crecimiento sostenido de la productividad y 
+              la competitividad de la economía nacional.</p>
+          </td>
+        <td><img src="./img/nosotros.webp" alt="img" class="about-img" id="imagenconocenos"></td></tr>
+        </table>
+      <-->
+      <!--<img src="./img/misionvision.png" alt="img" class="about-img">-->
+      <table>
+        <tr id="">
+          <td id="imgmision"><img src="./img/mision.png" ></td>
+          <td id="parrafosmision">
+            <p class="parrafomision">Nuestra misión es democratizar el acceso al conocimiento y empoderar a las personas a través de la educación en línea.</p>
+            </br>
+            <p class="parrafomision">Nos esforzamos por ofrecer cursos de alta calidad, relevantes y accesibles para todos, sin importar su ubicación geográfica o su nivel de experiencia.</p>
+          </td>
+        </tr>
+        <tr>
+          <td><img src="./img/vision.png" id="imgvision"></td>
+          <td>
+            <img src="./img/valores.png" id="imgvalores">
+            <p id="valores">Respeto  |  Equidad  |  Innovación  |  Comprimiso</p>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- End About Section -->
+
+  <!-- Side Video -->
+  <style>
+    .divbody{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 8em;
+    }
+  .wrapper{
+      display: flex;
+      max-width: 1800px;
+      position: relative;
+    }
+    .wrapper i{
+    top: 50%;
+    height: 44px;
+    width: 44px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.15rem;
+    position: absolute;
+    text-align: center;
+    line-height: 44px;
+    background: #343F4F;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.1s linear;
+    }
+    .wrapper i:active{
+    transform: translateY(-50%) scale(0.9);
+    }
+    .wrapper i:hover{
+    background: #343F4F
+    }
+    .wrapper i:first-child{
+    left: -22px;
+    display: none;
+    }
+    .wrapper i:last-child{
+    right: -22px;
+    }
+    .wrapper .carousel{
+    font-size: 0px;
+    cursor: pointer;
+    overflow: hidden;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+    }
+    .carousel.dragging{
+    cursor: grab;
+    scroll-behavior: auto;
+    }
+    .carousel.dragging video{
+    pointer-events: none;
+    }
+    .carousel video{
+    /*height: 340px;*/
+    object-fit: cover;
+    user-select: none;
+    margin-left: 14px;
+    width: calc(100% / 3);
+    }
+    .carousel video:first-child{
+    margin-left: 0px;
+    }
+
+    @media screen and (max-width: 900px) {
+    .carousel video{
+    width: calc(100% / 2);
+    }
+    }
+
+    @media screen and (max-width: 550px) {
+    .carousel video{
+    width: 100%;
+    }
+    }
+  </style>
+    <div class="projects-header" id="conocecapacitores">
+      <h1 class="section-title" id="capacitorestitle">CONOCE A NUESTROS CAPACITADORES</h1>
+      
+    </div>
+  <div class="divbody">
+    <div class="wrapper">
+      <i id="left" class="fa-solid fa-angle-left"></i>
+      <div class="carousel">
+        |<video src="/img/LORENAVP.mp4"  poster="img/sliderlore.PNG"  controls type=video/mp4 draggable="false" ></video>
+          <video src="img/MIGUELVP.mp4"  poster="img/slidermiguel.PNG" controls   alt="img" draggable="false"></video>
+          <video src="img/JESSVP.mp4"  poster="img/sliderjess.PNG"   controls  alt="img"  draggable="false"></video>
+          <video src="img/ALFREDOVP.mp4"  poster="img/slideralfredo.PNG"  controls  alt="img" draggable="false"></video>
+          <video src="img/MARISOLVP.mp4"  poster="img/slidermarisol.PNG" controls   alt="img" draggable="false"></video>
+          <video src="img/ADRIANVP.mp4"  poster="img/slideradrian.PNG"  controls  alt="img" draggable="false"></video>
+          <video src="img/WENDYVP.mp4"  poster="img/sliderwendi.PNG" controls alt="img" draggable="false"></video>
+
+      </div>
+      <i id="right" class="fa-solid fa-angle-right"></i>
+    </div>
+</div>
+  <script>
+    const carousel = document.querySelector(".carousel"),
+    firstImg = carousel.querySelectorAll("video")[0],
+    arrowIcons = document.querySelectorAll(".wrapper i");
+
+          let isDragStart = false, isDragging = false, prevPageX, prevScrollLeft, positionDiff;
+
+          const showHideIcons = () => {
+              // showing and hiding prev/next icon according to carousel scroll left value
+              let scrollWidth = carousel.scrollWidth - carousel.clientWidth; // getting max scrollable width
+              arrowIcons[0].style.display = carousel.scrollLeft == 0 ? "none" : "block";
+              arrowIcons[1].style.display = carousel.scrollLeft == scrollWidth ? "none" : "block";
+          }
+
+          arrowIcons.forEach(icon => {
+              icon.addEventListener("click", () => {
+                  let firstImgWidth = firstImg.clientWidth + 14; // getting first img width & adding 14 margin value
+                  // if clicked icon is left, reduce width value from the carousel scroll left else add to it
+                  carousel.scrollLeft += icon.id == "left" ? -firstImgWidth : firstImgWidth;
+                  setTimeout(() => showHideIcons(), 60); // calling showHideIcons after 60ms
+              });
+          });
+
+          const autoSlide = () => {
+              // if there is no image left to scroll then return from here
+              if(carousel.scrollLeft - (carousel.scrollWidth - carousel.clientWidth) > -1 || carousel.scrollLeft <= 0) return;
+
+              positionDiff = Math.abs(positionDiff); // making positionDiff value to positive
+              let firstImgWidth = firstImg.clientWidth + 14;
+              // getting difference value that needs to add or reduce from carousel left to take middle img center
+              let valDifference = firstImgWidth - positionDiff;
+
+              if(carousel.scrollLeft > prevScrollLeft) { // if user is scrolling to the right
+                  return carousel.scrollLeft += positionDiff > firstImgWidth / 3 ? valDifference : -positionDiff;
+              }
+              // if user is scrolling to the left
+              carousel.scrollLeft -= positionDiff > firstImgWidth / 3 ? valDifference : -positionDiff;
+          }
+
+          const dragStart = (e) => {
+              // updatating global variables value on mouse down event
+              isDragStart = true;
+              prevPageX = e.pageX || e.touches[0].pageX;
+              prevScrollLeft = carousel.scrollLeft;
+          }
+
+          const dragging = (e) => {
+              // scrolling images/carousel to left according to mouse pointer
+              if(!isDragStart) return;
+              e.preventDefault();
+              isDragging = true;
+              carousel.classList.add("dragging");
+              positionDiff = (e.pageX || e.touches[0].pageX) - prevPageX;
+              carousel.scrollLeft = prevScrollLeft - positionDiff;
+              showHideIcons();
+          }
+
+          const dragStop = () => {
+              isDragStart = false;
+              carousel.classList.remove("dragging");
+
+              if(!isDragging) return;
+              isDragging = false;
+              autoSlide();
+          }
+
+          carousel.addEventListener("mousedown", dragStart);
+          carousel.addEventListener("touchstart", dragStart);
+
+          document.addEventListener("mousemove", dragging);
+          carousel.addEventListener("touchmove", dragging);
+
+          document.addEventListener("mouseup", dragStop);
+          carousel.addEventListener("touchend", dragStop);
+  </script>
+  <div class="banernosotros">
+    <img src="img/banernosotros.jpg">
+  </div>
+  <!-- end Side Video -->
+
+  <script src="./app.js"></script>
+</body>
+
+</html>
