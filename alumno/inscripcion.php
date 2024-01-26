@@ -44,8 +44,7 @@ if (mysqli_query($conn, $sql)) {
 }
 echo '<script>
         Swal.fire({
-        title: "¡Bien hecho!",
-        text: "Se inscribio correctamente al curso",
+        title: "Inscripción realizada",
         icon: "success"
     }).then(function() {
         window.location = "index.php";

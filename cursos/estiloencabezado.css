@@ -3,6 +3,10 @@
 	font-family: Acumin;
 	src: url(AcuminVariableConcept.ttf);
 }
+@font-face {
+    font-family: MonserratBold;
+    src: url(Montserrat-Bold.ttf);
+}
 body{
 	margin: 0;
 	background-color: #ffffff;
@@ -209,8 +213,13 @@ text-decoration: none;
 #tituloeva{
 	color: #2E49E1;
 	margin-left: 2em;
+	font-family: MonserratBold;
 }
 
 #regresarCurso {
     margin: 2% 40%;
+}
+#btnRegresarCurso {
+    color: white;
+	text-decoration: none;
 }
