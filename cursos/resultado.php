@@ -60,7 +60,7 @@
     }
 
     .my-button:hover {
-    background-color: #45a049;
+    background-color: #630ba3;
     }
 
     .my-button:active {
@@ -126,7 +126,7 @@
 
 <div style="padding-top: 5em; padding-left: 7%;" >
 
-    <h1 id="tituloeva" style="text-align: center; margin-right: 1.1em;">Resultados</h1>
+    <h1 id="tituloeva" style="text-align: center; margin-right: 4em;">Resultados</h1>
             <table id="customers" >
             <tr>
                 <th>Usuario</th>
