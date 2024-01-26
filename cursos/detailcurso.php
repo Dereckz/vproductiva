@@ -57,9 +57,9 @@
     $numMudulo= mysqli_num_rows($resultado);
     $numVisto = mysqli_num_rows($resultadoVisto);
     $numexiste =mysqli_num_rows($existeexamen);
-
+    $modulo=0;
     while ($consulta = mysqli_fetch_array($resultado)) {
-
+$modulo=$modulo+1;
             $check = mysqli_query($conn, "SELECT COUNT(*) as num FROM visto
                                         WHERE idRecurso= " . $consulta['iIdRecurso'] 
                                         . " and idAlumno=" . $_SESSION["id"] 
@@ -82,7 +82,8 @@
             '<tr> 
                 <td class=iconorecursocelda> '.$visto.'</td> 
                 <td class=fondotemario>
-                    <a class=titulostemario  href="'.$consulta['cRuta'].'" id="'.$consulta['iIdRecurso'].'" target="_blank" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">'.$consulta['cNombreModulo'].'
+                    <a class=titulostemario  href="'.$consulta['cRuta'].'" id="'.$consulta['iIdRecurso'].'" target="_blank" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">
+                    Modulo '.$modulo.': '.$consulta['cNombreModulo'].'
                     </a></td> 
                 </tr>
              <tr>
