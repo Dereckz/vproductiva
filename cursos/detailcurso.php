@@ -59,7 +59,7 @@
     $numexiste =mysqli_num_rows($existeexamen);
     $modulo=0;
     while ($consulta = mysqli_fetch_array($resultado)) {
-$modulo=$modulo+1;
+            $modulo=$modulo+1;
             $check = mysqli_query($conn, "SELECT COUNT(*) as num FROM visto
                                         WHERE idRecurso= " . $consulta['iIdRecurso'] 
                                         . " and idAlumno=" . $_SESSION["id"] 
