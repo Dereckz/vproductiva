@@ -370,9 +370,10 @@ p {
 /* Projects section */
 #projects .projects {
 	flex-direction: column;
-	max-width: 1200px;
+	/*max-width: 1200px;
 	margin: 0 auto;
-	padding: 20px 0;
+	padding: 20px 0;*/
+	margin-top: 6%;
 }
 #projects .projects-header h1 {
 	margin-bottom: 30px;
@@ -1277,6 +1278,10 @@ p {
 .btnregresar3:hover{
 	background-color: #182da6;
 }
-#fondoinicio{
+
+#titulocursos{
+	color: white;
+}
+#fondotitulocurso{
 	background-color: #872362;
 }
