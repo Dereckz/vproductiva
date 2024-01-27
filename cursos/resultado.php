@@ -139,7 +139,7 @@
             </tr>
             <tr>
                 <td><?php echo $_SESSION['NombreLargo'] ?></td>
-                <td><?php echo ucwords($examendecurso)?></td>
+                <td><?php echo mb_strtoupper($examendecurso)?></td>
 
                 <td><?php echo $numpreguntas?></td>
                 <td><?php echo ($numCorrecta/10)?></td>
