@@ -82,20 +82,20 @@ $iestatus="";
                      WHERE idvisto=" .$visto["idVisto"]);
                      if ($dataresultado== TRUE) {
                  
-                        header("Location:index.php");
+                        $dataresultad2 = mysqli_query($conn,
+                        "UPDATE  resuelto SET iEstatus=0 
+                         WHERE idcurso=" .$idcurso.
+                        " AND idusuario=" .$idusuario.
+                        " AND idexamen=" .$idexamen ); 
+                            $iestatus=0;
+                      
+                          
                          } else{
-                           header("Location:index.php");
+                           header("Location:../alumno/index.php");
                          }
 
                 }
-                /* $dataresultado = mysqli_query($conn,
-                "UPDATE  resuelto SET iEstatus=0 
-                 WHERE idcurso=" .$idcurso.
-                " AND idusuario=" .$idusuario.
-                " AND idexamen=" .$idexamen ); */
-                $iestatus=0;
-              
-
+                
              }
              else
              {//agrgar intentos

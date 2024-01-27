@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="styles/style.css">
   <link rel="icon" href="img/LOGOVP.ico">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="style.css">
   <title>Valuación Productiva</title>
 </head>
 
@@ -49,6 +51,36 @@
     <div class="contact container">
       <div class="projects-header" id="contactanos">
         <h1 class="section-title" id="contactanostitle">Contacto</h1>
+        <div class="container">
+          <div class="login-register" id="login-register">
+              <div class="nav-buttons">
+                  <button id="loginBtn" class='active' >Iniciar sesión </button>
+                  <button id="registerBtn" >Registrarse</button>
+              </div>
+              <div class="form-group">
+  
+                  <form method="post" action="contacto.php" id="contacto">
+                      <label for="username">Nombre:</label>
+                      <input type="text" id="name" name="name">
+                      <br>
+                      <label for="apellidos">Apellido:</label>
+                      <input type="text" id="apellido" name="apellido">
+                      <br>
+                      <label for="email">Email:</label>
+                      <input type="email" id="email" name="email">
+                      <br>
+                      <label for="numero">Número de telefono:</label>
+                      <input type="text" id="numero" name="numero">
+                      <input type="submit" value="contacto" class="submit">
+                  </form>
+                 
+                
+               
+          </div>
+  
+      </div>
+  </section>
+
       </div>
       <div class="contact-items">
         <div class="contact-item">

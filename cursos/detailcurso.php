@@ -51,7 +51,10 @@
     INNER JOIN visto v ON r.iIdRecurso = v.idRecurso
     WHERE c.iIdCurso=".$idcursoseleccionado." and v.idAlumno=" . $_SESSION["id"]." GROUP BY iIdRecurso");
 
-    $existeexamen = mysqli_query($conn,"SELECT count(*) as existe FROM resuelto WHERE iestatus=1");
+    $existeexamen = mysqli_query($conn,"SELECT count(*) as existe 
+                                        FROM resuelto 
+                                        WHERE iestatus=1 
+                                        AND idcurso=".$idcursoseleccionado);
 
 
     $numMudulo= mysqli_num_rows($resultado);
@@ -127,10 +130,25 @@
     $correcta=0;
 
     if($numMudulo==$numVisto){
-        while ($dataExamen = mysqli_fetch_array($existeexamen)) { 
-            if ( $dataExamen['existe']<=1){
+      $consultavistotodo= mysqli_query($conn,"SELECT * FROM modulo m
+      INNER JOIN recurso r
+      on m.iIdModulo=r.fkiIdModulo
+      INNER JOIN visto v
+      on v.idRecurso=r.iIdRecurso
+      WHERE m.fkiIdCurso=".$idcursoseleccionado.
+    " AND v.estatus=1;");
+
+    $vistoa = mysqli_fetch_array($consultavistotodo); 
+    $numvisto=mysqli_num_rows($consultavistotodo);
+    $intentoscorrectos="";
+    if($numVisto>0 and $vistoa>0){
     
+        while ($dataExamen = mysqli_fetch_array($existeexamen)) { 
+           
+            if ( $dataExamen['existe']<1){
+      
                 $constancia="";
+                
                 $examen='
                 <tr>
                  <td></td>
@@ -139,31 +157,47 @@
                         <a href="../cursos/evaluacion.php?idC='.$idcursoseleccionado.'" 
                         id="texconstancia" target="_blank" 
                         class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">
-                        Realizar Examen
+                        Realizar Examens
                         <br>
                         </a>
                     </td>
                 </tr>
-                <tr><td     colspan=3 class=celdasvacias></td></tr>';
+                <tr><td     colspan=3 class=celdasvacias></td></tr>'; 
     
             }else
             {
-                $resultadoExamen=mysqli_query($conn,"SELECT *  FROM  resuelto where idcurso=1  and idusuario=" . $_SESSION["id"] );
+                $resultadoExamen=mysqli_query($conn,"SELECT *  FROM  resuelto 
+                                                    WHERE idcurso=".$idcursoseleccionado.
+                                                    " AND idusuario=" . $_SESSION["id"] .
+                                                    " AND iEstatus=1");
                 $numencuesta =mysqli_num_rows($resultadoExamen);
-                    $errores=0;
-                   
-                while ($intentos = mysqli_fetch_array($resultadoExamen)) { 
-                    if ($intentos['correcta']==0 ){
-                        $errores = $errores + 1;
-                        $correcta=0;
-                        $resres=$intentos['correcta'];
-                    }elseif  ($intentos['correcta']==1 ){
-                        $correcta=1;
-                        $errores=0;
+                $errores=0;
+                  
+
+                  
+                    while ($intentos = mysqli_fetch_array($resultadoExamen)) { 
+
+                        if ($intentos['correcta']==0 ){
+                            $errores = $errores + 1;
+                            $correcta=0;
+                            $resres=$intentos['correcta'];
+                            $intentosincorrectos=$intentos['intento'];
+
+                        }elseif  ($intentos['correcta']==1 ){
+                            $correcta=1;
+                            $errores=0;
+                            $intentoscorrectos=$intentos['intento'];
+                        }else{
+                            $correcta="";
+                            $errores="";
+                            $intentoscorrectos="";
+                            $intentosincorrectos="";
+
+                        }
+        
                     }
-    
-                }
-                    if (  $correcta==1 ){
+
+                    if (  $correcta==1 & $intentoscorrectos<3 ){
                         $examen="";//"Bien hecho";
                         $constancia='<tr>
                         <td></td>
@@ -180,12 +214,13 @@
                     </tr>';   
                 
                                       
-                    }/* else  if ($errores>=3)
+                    }else  if ($intentoscorrectos>2)
                     {   
                         $constancia="";
                         $examen="";
                         //"Restear";}
-                       /*  $constancia='<tr>
+                        $constancia="";
+                       /*   $constancia='<tr>
                         <td></td>
                         <td></td>
                             <td class=constancia>
@@ -197,9 +232,9 @@
                      <tr>
                         <td colspan=3 class=celdasvacias>
                         </td>
-                     </tr>';  
+                     </tr>';   */
                 
-                    } */
+                    } 
                     else if ($errores<=3){
                         $constancia="";
 
@@ -219,6 +254,7 @@
               
     
             }
+            
         }
          
         $consCur = mysqli_query($conn, "SELECT * FROM  inscripcion WHERE fkiIdeCurso = 1 and fkiIdUsuario =".$_SESSION["id"]);
@@ -238,16 +274,26 @@
             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
         }
         }
-    }
-    else{
+        }
+        else{
+            $constancia="";
+        }
+        if($masDedos==3){
+            $mensaje= '<tr><td></td><td></td><td class=notacurso>Nota: Este curso ya fue tomado anteriormente.</td></tr>';
+        }
+        else{
+            $mensaje='';
+        }
+    }else{
+        
         $constancia="";
-    }
-    if($masDedos==3){
-        $mensaje= '<tr><td></td><td></td><td class=notacurso>Nota: Este curso ya fue tomado anteriormente.</td></tr>';
-    }
-    else{
+        $examen="";
+        $constancia="";
         $mensaje='';
+
     }
+
+
        
         echo $constancia;
         echo $examen;
