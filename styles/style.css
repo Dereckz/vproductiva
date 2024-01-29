@@ -711,6 +711,7 @@ p {
 		flex-direction: row;
 		justify-content: space-evenly;
 		margin: 0;
+		margin-bottom: 5em;
 	}
 	#contact .contact-item {
 		width: 30%;
