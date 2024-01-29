@@ -47,41 +47,42 @@
   <!-- End Header -->
 
   <!-- Contact Section -->
-  <section id="contact">
-    <div class="contact container">
+  <!--<section id="contact">
+    <div >
       <div class="projects-header" id="contactanos">
         <h1 class="section-title" id="contactanostitle">Contacto</h1>
-        <div class="container">
-          <div class="login-register" id="login-register">
-              <div class="nav-buttons">
-                  <button id="loginBtn" class='active' >Iniciar sesión </button>
-                  <button id="registerBtn" >Registrarse</button>
-              </div>
-              <div class="form-group">
-  
-                  <form method="post" action="contacto.php" id="contacto">
-                      <label for="username">Nombre:</label>
-                      <input type="text" id="name" name="name">
-                      <br>
-                      <label for="apellidos">Apellido:</label>
-                      <input type="text" id="apellido" name="apellido">
-                      <br>
-                      <label for="email">Email:</label>
-                      <input type="email" id="email" name="email">
-                      <br>
-                      <label for="numero">Número de telefono:</label>
-                      <input type="text" id="numero" name="numero">
-                      <input type="submit" value="contacto" class="submit">
-                  </form>
-                 
-                
-               
-          </div>
-  
       </div>
+    </div>
+  </section>-->
+
+  <section id="formulariocontacto">
+    <div id="izquierdacontacto">
+      <div>
+        <h3 id="texto1contacto">Fortalece a tu equipo y apertura nuevas propuestas.</h3>
+        <p id="texto2contacto">Estamos aquí para aclarar todas tus dudas y
+          guíarte de la mejor manera, somos tu equipo</p>
+      </div>
+      <div class="login-register" id="login-register">
+        
+          <!--<div class="nav-buttons">
+              <button id="loginBtn" class='active' >Iniciar sesión </button>
+              <button id="registerBtn" >Registrarse</button>
+          </div>-->
+          <div class="form-group">
+              <form method="post" action="contacto.php" id="contacto">
+                <table>
+                  <tr><td class="textoscontacto"><label for="username">Nombre:</label></td><td class="textoscontacto"><label for="apellidos">Apellido:</label></td></tr>
+                  <tr><td class="entradacontacto"><input type="text" id="name" name="name"></td><td class="entradacontacto"><input type="text" id="apellido" name="apellido"></td></tr>
+                  <tr><td class="textoscontacto"><label for="email">Email:</label></td><td class="textoscontacto"><label for="numero">Número de telefono:</label></td></tr>
+                  <tr><td class="entradacontacto"><input type="email" id="email" name="email"></td><td class="entradacontacto"><input type="text" id="numero" name="numero"></td></tr>
+                  <tr><td colspan="2" id="centrobtncontactar"><input type="submit" value="ENVÍAR" class="submit" id="btncontactar"></td></tr>
+                </table>                  
+              </form>
+          </div>
+      </div>
+    </div>
   </section>
 
-      </div>
       <div class="contact-items">
         <div class="contact-item">
           <div class="icon"><img src="img/chat.png" /></div>
