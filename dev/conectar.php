@@ -2,11 +2,7 @@
 
 $dbhost = "localhost";
 $dbuser = "root";
-<<<<<<< HEAD
 $dbpass = "@rupe2021";//-----
-=======
-$dbpass = "";
->>>>>>> origin/master
 $dbname = "vproductivabd"; 
 
  /* $dbhost = "localhost";
