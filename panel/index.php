@@ -83,7 +83,7 @@
                 <img width="300" height="200"  src="<?php echo $consulta["ricono"]?>"class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title"><?php echo $consulta["cNombreCurso"]?></h5>
-                  <p class="card-text"><?php echo $consulta["cDescripcion"]?></p>
+                 <!--  <p class="card-text"><?php echo $consulta["cDescripcion"]?></p> -->
                 
                 </div>
               </div>
