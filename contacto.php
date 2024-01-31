@@ -2,7 +2,7 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <link href="sweetalert2.min.css" rel="stylesheet">
 <?php
-require("dev/conectar.php");
+require('dev/conectar.php');
 date_default_timezone_set('America/Mexico_City');
  
 $fechaActual = date("d-m-Y h:i:s");

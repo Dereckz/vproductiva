@@ -96,7 +96,7 @@ th, td {
     <div class="container-fluid" id="container-wrapper">
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
 
-            <h1 class="h3 mb-0 text-gray-800">Capacitadores</h1>
+            <h1 class="h3 mb-0 text-gray-800">Personas Interesadas</h1>
 
             <ol class="breadcrumb">
               <li class="breadcrumb-item">
@@ -108,9 +108,9 @@ th, td {
           </div>
           <div>
             <?php $tipousuario =2?>
-          <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#addInstructor<?php echo $tipousuario ?>">
+<!--           <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#addInstructor<?php echo $tipousuario ?>">
             Agregar Nuevo
-          </button>
+          </button> -->
           </div>
           <div class="row">
             
