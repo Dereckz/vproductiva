@@ -905,16 +905,17 @@ p {
 /*#curso1{
 	background-color: #4720b7;
 	background-image: url(../images/fondocursos.png);
-}*/
+}
 #curso2{
 	width: 160%;
 }
 #curso3{
 	width: 161%;
-}
+}*/
 #curso4{
 	background-color: #40c0f2;
 }
+/*
 #curso5{
 	width: 161%;
 }
@@ -923,7 +924,7 @@ p {
 }
 #curso7{
 	width: 161%;
-}
+}*/
 
 .titlescursos{
 	font-family: Acumin;

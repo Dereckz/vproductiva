@@ -157,7 +157,7 @@
                         <a href="../cursos/evaluacion.php?idC='.$idcursoseleccionado.'" 
                         id="texconstancia" target="_blank" 
                         class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">
-                        Realizar Examens
+                        Realizar Examen
                         <br>
                         </a>
                     </td>
