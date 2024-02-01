@@ -41,7 +41,8 @@
     INNER JOIN curso c ON i.fkiIdeCurso = c.iIdCurso
     INNER JOIN modulo m ON c.iIdCurso = m.fkiIdCurso
     INNER JOIN recurso r ON  m.iIdModulo = r.fkiIdModulo
-    WHERE c.iIdCurso=".$idcursoseleccionado." and u.iIdUsuario=" . $_SESSION["id"]);
+    WHERE c.iIdCurso=".$idcursoseleccionado." and u.iIdUsuario=" . $_SESSION["id"].
+    " ORDER BY m.fkiIdCurso");
 
     $resultadoVisto = mysqli_query($conn, "SELECT r.iIdRecurso,c.cNombreCurso, m.cNombreModulo,r.cRuta FROM usuarios u
     INNER JOIN inscripcion i ON u.iIdUsuario = i.fkiIdUsuario
@@ -250,6 +251,7 @@
                       
                       
                     }
+                    //l
                
               
     
