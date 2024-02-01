@@ -5,17 +5,6 @@
     <style>
         .my-button {
         padding: 10px 20px;
-<<<<<<< HEAD
-        background-color: #2E49E1;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        }
-
-        .my-button:hover {
-        background-color: #45a049;
-=======
         background-color: #1CC4EA;
         color: white;
         border: none;
@@ -26,7 +15,6 @@
 
         .my-button:hover {
         background-color: #0D1566;
->>>>>>> 5645901 (super)
         }
 
         .my-button:active {
@@ -44,12 +32,8 @@
     <link href="../img/LOGOVP.ico" rel="icon">
     <link rel="stylesheet" href="main.css">
 </head>
-<<<<<<< HEAD
-<body onload="deshabilitaRetroceso()">
-=======
 <body onload="deshabilitaRetroceso()" style="background-image: url(fondoexitoso.png);
     ">
->>>>>>> 5645901 (super)
     <!-- Header -->
   <section id="header">
     <link rel="stylesheet" href="style.css">
@@ -85,11 +69,7 @@
 
  
     <div class="container"   >
-<<<<<<< HEAD
-        <div class="login-register" id="login-register" class="exampleone">
-=======
         <div class="login-register" id="login-register" class="exampleone" style="background-color: #2E49C1;">
->>>>>>> 5645901 (super)
             <div class="nav-buttons">
                <!--  <button id="loginBtn" class='active' >Iniciar sesión </button> -->
               <!--   <button id="registerBtn" >Registrarse</button> -->
@@ -97,11 +77,7 @@
             <div class="form-group">
 
                 <form method="post" id="loginform" >
-<<<<<<< HEAD
-                    <li style="text-align: center">
-=======
                     <li style="text-align: center" type="none">
->>>>>>> 5645901 (super)
                         <svg xmlns="http://www.w3.org/2000/svg" 
                                 width="156" height="156" 
                                 fill="currentColor" class="bi bi-check-circle-fill" 
@@ -111,16 +87,6 @@
                     </li>
                     <br>
                     <label style="text-align: center"><h2>¡Gracias!</h2></label>
-<<<<<<< HEAD
-                    <br>
-                    <label  style="text-align: center"><h2>Tu registro ha sido exitoso.</h2></label>
-                    <br><br>
-                    <button class="my-button" >
-                        <a class="text-white" href="../account/login.html">
-                            Haz clic aquí <br> 
-                            Para explorar el catalogo del curso
-                        <a>
-=======
                     <label  style="text-align: center"><h2>Tu registro ha sido exitoso.</h2></label>
                     <br><br>
                     <button class="my-button">
@@ -128,7 +94,6 @@
                           Haz clic aquí
                           <p>Para explorar el catalogo de cursos</p>
                         </a>
->>>>>>> 5645901 (super)
                     </button>
                                     
                 </form>
