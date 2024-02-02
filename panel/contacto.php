@@ -108,7 +108,8 @@ th, td {
           </div>
           <div>
             <?php $tipousuario =2?>
-<!--           <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#addInstructor<?php echo $tipousuario ?>">
+<!--           <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#addInstructor
+            <?php echo $tipousuario ?>">
             Agregar Nuevo
           </button> -->
           </div>

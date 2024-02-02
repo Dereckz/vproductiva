@@ -37,7 +37,7 @@ function infoCurso2($idarea )
        //validar si esta inscrito en el curso
        $link =
        '<div style="background-color: #00b0ff; border-radius: 25em; color: white; padding: 0em 1em; margin: 0em 1em;">
-            <a href="inscripcion.php? curso='. $consulta["iIdCurso"] .'&usuario='.$_SESSION["id"].'" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">
+            <a href="inscripcion.php?curso='. $consulta["iIdCurso"] .'&usuario='.$_SESSION["id"].'" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">
                 Inscribirse
             </a>
         </div>';

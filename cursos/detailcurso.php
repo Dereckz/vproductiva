@@ -62,6 +62,7 @@
     $numVisto = mysqli_num_rows($resultadoVisto);
     $numexiste =mysqli_num_rows($existeexamen);
     $modulo=0;
+
     while ($consulta = mysqli_fetch_array($resultado)) {
             $modulo=$modulo+1;
             $check = mysqli_query($conn, "SELECT COUNT(*) as num FROM visto
@@ -131,154 +132,348 @@
     $correcta=0;
 
     if($numMudulo==$numVisto){
-      $consultavistotodo= mysqli_query($conn,"SELECT * FROM modulo m
-      INNER JOIN recurso r
-      on m.iIdModulo=r.fkiIdModulo
-      INNER JOIN visto v
-      on v.idRecurso=r.iIdRecurso
-      WHERE m.fkiIdCurso=".$idcursoseleccionado.
-    " AND v.estatus=1;");
-
-    $vistoa = mysqli_fetch_array($consultavistotodo); 
-    $numvisto=mysqli_num_rows($consultavistotodo);
-    $intentoscorrectos="";
-    if($numVisto>0 and $vistoa>0){
-    
-        while ($dataExamen = mysqli_fetch_array($existeexamen)) { 
-           
-            if ( $dataExamen['existe']<1){
       
-                $constancia="";
-                
-                $examen='
-                <tr>
-                 <td></td>
-                 <td></td>
-                    <td class=constancia>
-                        <a href="../cursos/evaluacion.php?idC='.$idcursoseleccionado.'" 
-                        id="texconstancia" target="_blank" 
-                        class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">
-                        Realizar Examen
-                        <br>
-                        </a>
-                    </td>
-                </tr>
-                <tr><td     colspan=3 class=celdasvacias></td></tr>'; 
-    
-            }else
-            {
-                $resultadoExamen=mysqli_query($conn,"SELECT *  FROM  resuelto 
-                                                    WHERE idcurso=".$idcursoseleccionado.
-                                                    " AND idusuario=" . $_SESSION["id"] .
-                                                    " AND iEstatus=1");
-                $numencuesta =mysqli_num_rows($resultadoExamen);
-                $errores=0;
-                  
+        $consultavistotodo= mysqli_query($conn,"SELECT * FROM modulo m
+        INNER JOIN recurso r
+        on m.iIdModulo=r.fkiIdModulo
+        INNER JOIN visto v
+        on v.idRecurso=r.iIdRecurso
+        WHERE m.fkiIdCurso=".$idcursoseleccionado.
+        " AND v.estatus=1;");
 
-                  
-                    while ($intentos = mysqli_fetch_array($resultadoExamen)) { 
+        $vistoa = mysqli_fetch_array($consultavistotodo); 
+        $numvisto=mysqli_num_rows($consultavistotodo);
+        $intentoscorrectos="";
 
-                        if ($intentos['correcta']==0 ){
-                            $errores = $errores + 1;
-                            $correcta=0;
-                            $resres=$intentos['correcta'];
-                            $intentosincorrectos=$intentos['intento'];
-
-                        }elseif  ($intentos['correcta']==1 ){
-                            $correcta=1;
-                            $errores=0;
-                            $intentoscorrectos=$intentos['intento'];
-                        }else{
-                            $correcta="";
-                            $errores="";
-                            $intentoscorrectos="";
-                            $intentosincorrectos="";
-
-                        }
+        if($numVisto>0 ){
         
-                    }
-
-                    if (  $correcta==1 & $intentoscorrectos<3 ){
-                        $examen="";//"Bien hecho";
-                        $constancia='<tr>
-                        <td></td>
-                        <td></td>
-                            <td class=constancia>
-                                <a href="../reward/reconocimiento.php?idCurso='.$idcursoseleccionado.'" id="texconstancia" target="_blank" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">
-                                DESCARGA TU CONSTANCIA<br>
-                                </a>
-                            </td>
-                        </tr>
+           /*  while ($dataExamen = mysqli_fetch_array($existeexamen)) { 
+            } */
+                if ( $numexiste==0){
+        
+                    $constancia="";
+                  $examen="";
+                   /*  $examen='
                     <tr>
-                        <td colspan=3 class=celdasvacias>
-                        </td>
-                    </tr>';   
-                
-                                      
-                    }else  if ($intentoscorrectos>2)
-                    {   
-                        $constancia="";
-                        $examen="";
-                        //"Restear";}
-                        $constancia="";
-                       /*   $constancia='<tr>
-                        <td></td>
-                        <td></td>
-                            <td class=constancia>
-                                <a href="../alumno/recoproductividad.php?curso=PRODUCTIVIDAD LABORAL&idCurso=1" id="texconstancia" target="_blank" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">
-                                DESCARGA TU CONSTANCIA<br>
-                                </a>
-                            </td>
-                        </tr>
-                     <tr>
-                        <td colspan=3 class=celdasvacias>
-                        </td>
-                     </tr>';   */
-                
-                    } 
-                    else if ($errores<=3){
-                        $constancia="";
-
-                        $examen='<tr>
-                        <td></td>
-                        <td></td>
+                    <td></td>
+                    <td></td>
                         <td class=constancia>
-                            <a href="../cursos/evaluacion.php?idC='.$idcursoseleccionado.'" id="texconstancia"class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">
+                            <a href="../cursos/evaluacion.php?idC='.$idcursoseleccionado.'" 
+                            id="texconstancia" target="_blank" 
+                            class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">
+                            Realizar Examen
+                            <br>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr><td     colspan=3 class=celdasvacias></td></tr>';   */
+        
+                }else
+                {
+                    $resultadoExamen=mysqli_query($conn,"SELECT *  FROM  resuelto 
+                                                        WHERE idcurso=".$idcursoseleccionado.
+                                                        " AND idusuario=" . $_SESSION["id"] .
+                                                        " AND iEstatus=1
+                                                         AND intento=(SELECT MAX(intento) FROM resuelto where iEstatus=1);");
+                    $totalpreguntas =mysqli_num_rows($resultadoExamen);
+                    $errores=0;
+                    $aciertos=0;
 
-                            Realizar Examen<br>
-                        </a></td></tr>
-                       <tr><td colspan=3 class=celdasvacias></td></tr>'; 
-                      
-                      
-                    }
-                    //l
-               
-              
+                        while ($intentos = mysqli_fetch_array($resultadoExamen)) { 
+
+                            if ($intentos['correcta']==0 ){
+                                $errores = $errores + 1;
+                                $correcta=0;
+                            }elseif  ($intentos['correcta']==1 ){
+                                $correcta=1;
+                                $errores=0;
+                                $aciertos=$aciertos+1;
+                            }else{
+                                $correcta="";
+                                $errores="";
+                            }            
+                        }
+
+                        $dataintentos=mysqli_query($conn,"SELECT *  FROM  resuelto 
+                        WHERE idcurso=".$idcursoseleccionado.
+                        " AND idusuario=" . $_SESSION["id"] .
+                        " AND iEstatus=1
+                         AND intento=(SELECT MAX(intento) FROM resuelto where iEstatus=1)
+                         LIMIT 1;");
+                        $intentosresultados = mysqli_fetch_array($dataintentos);
+                        $haydatos=mysqli_num_rows($dataintentos);
+                        if($haydatos>0 || !isset($haydatos)){
+                            if($totalpreguntas==15){
+                                switch ($intentosresultados["intento"]) {
+                                    case 1:
+                                        if($aciertos>11){
+                                            $examen="";
+                                            $constancia=
+                                            '<tr>
+                                                <td></td>
+                                                <td></td>
+                                                    <td class=constancia>
+                                                        <a href="../reward/reconocimiento.php?idCurso='.$idcursoseleccionado.'" id="texconstancia" target="_blank" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">
+                                                        DESCARGA TU CONSTANCIA<br>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                             <tr>
+                                                <td colspan=3 class=celdasvacias>
+                                                </td>
+                                            </tr>';   
+                                        }else{
+                                            $constancia="";
+                                            $examen=
+                                            '<tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td class=constancia>
+                                                    <a href="../cursos/evaluacion.php?idC='.$idcursoseleccionado.'" 
+                                                    id="texconstancia"class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">    
+                                                    Realizar Examen<br>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        <tr><td colspan=3 class=celdasvacias></td></tr>'; 
+                                        }
+                                       
+                                    break;
+                                    case 2:
+                                        if($aciertos>11){
+                                            $examen="";
+                                            $constancia=
+                                            '<tr>
+                                                <td></td>
+                                                <td></td>
+                                                    <td class=constancia>
+                                                        <a href="../reward/reconocimiento.php?idCurso='.$idcursoseleccionado.'" id="texconstancia" target="_blank" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">
+                                                        DESCARGA TU CONSTANCIA<br>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                             <tr>
+                                                <td colspan=3 class=celdasvacias>
+                                                </td>
+                                            </tr>';   
+                                        }else{
+                                            $constancia="";
+                                            $examen=
+                                            '<tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td class=constancia>
+                                                    <a href="../cursos/evaluacion.php?idC='.$idcursoseleccionado.'" 
+                                                    id="texconstancia"class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">    
+                                                    Realizar Examen<br>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        <tr><td colspan=3 class=celdasvacias></td></tr>'; 
+                                        }
+                                       
+                                    break;
+                                    case 3:
+                                        $examen="";
+                                        $constancia="";
+                                        $validarvisto=mysqli_query($conn,
+                                        "SELECT* FROM visto v
+                                        INNER JOIN inscripcion i
+                                        ON v.idAlumno=i.fkiIdUsuario
+                                        WHERE v.idAlumno=" .$_SESSION["id"].
+                                        " AND i.fkiIdeCurso=".$idcursoseleccionado);
     
-            }
+                                    
+                                        while ($visto = mysqli_fetch_array($validarvisto))
+                                        { 
+                                            $dataresultado = mysqli_query($conn,
+                                            "UPDATE visto  SET estatus=0 
+                                            WHERE idvisto=" .$visto["idVisto"]);
+                                                if ($dataresultado== TRUE) {
+                                                    $dataresultad2 = mysqli_query($conn,
+                                                    "DELETE FROM  resuelto 
+                                                     WHERE idcurso=" .$idcursoseleccionado.
+                                                    " AND idusuario=" . $_SESSION["id"]); 
+                                                        $iestatus=0;
+                                                  
+                                                      
+                                                     } else{
+                                                        echo '<script type="text/JavaScript"> location.reload(); </script>';
+                                                      }
+                                        }
+                                       
+                                    break;
+                                    
+                                    default:
+                                    $examen="";
+                                    $constancia="";
+                                   
+                                }
+                            }else if($totalpreguntas==10){
+                                switch ($intentosresultados["intento"]) {
+                                    case 1:
+                                        if($aciertos>6){
+                                            $examen="";
+                                            $constancia=
+                                            '<tr>
+                                                <td></td>
+                                                <td></td>
+                                                    <td class=constancia>
+                                                        <a href="../reward/reconocimiento.php?idCurso='.$idcursoseleccionado.'" id="texconstancia" target="_blank" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">
+                                                        DESCARGA TU CONSTANCIA<br>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                             <tr>
+                                                <td colspan=3 class=celdasvacias>
+                                                </td>
+                                            </tr>';   
+                                        }else{
+                                            $constancia="";
+                                            $examen=
+                                            '<tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td class=constancia>
+                                                    <a href="../cursos/evaluacion.php?idC='.$idcursoseleccionado.'" 
+                                                    id="texconstancia"class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">    
+                                                    Realizar Examen1<br>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        <tr><td colspan=3 class=celdasvacias></td></tr>'; 
+                                        }
+                                       
+                                    break;
+                                    case 2:
+                                        if($aciertos>6){
+                                            $examen="";
+                                            $constancia=
+                                            '<tr>
+                                                <td></td>
+                                                <td></td>
+                                                    <td class=constancia>
+                                                        <a href="../reward/reconocimiento.php?idCurso='.$idcursoseleccionado.'" id="texconstancia" target="_blank" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">
+                                                        DESCARGA TU CONSTANCIA<br>
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                             <tr>
+                                                <td colspan=3 class=celdasvacias>
+                                                </td>
+                                            </tr>';   
+                                        }else{
+                                            $constancia="";
+                                            $examen=
+                                            '<tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td class=constancia>
+                                                    <a href="../cursos/evaluacion.php?idC='.$idcursoseleccionado.'" 
+                                                    id="texconstancia"class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">    
+                                                    Realizar Examen2<br>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        <tr><td colspan=3 class=celdasvacias></td></tr>'; 
+                                        }
+                                       
+                                    break;
+                                    case 3:
+                                       
+                                         $validarvisto=mysqli_query($conn,
+                                        "SELECT* FROM visto v
+                                        INNER JOIN inscripcion i
+                                        ON v.idAlumno=i.fkiIdUsuario
+                                        WHERE v.idAlumno=" .$_SESSION["id"].
+                                        " AND i.fkiIdeCurso=".$idcursoseleccionado);
+    
+                                    
+                                        while ($visto = mysqli_fetch_array($validarvisto))
+                                        { 
+                                            $dataresultado = mysqli_query($conn,
+                                            "UPDATE visto  SET estatus=0 
+                                            WHERE idvisto=" .$visto["idVisto"]);
+                                                if ($dataresultado== TRUE) {
+                                                    $dataresultad2 = mysqli_query($conn,
+                                                    "UPDATE  resuelto SET iEstatus=0 
+                                                     WHERE idcurso=" .$idcursoseleccionado.
+                                                    " AND idusuario=" . $_SESSION["id"]); 
+                                                        $iestatus=0;
+                                                  
+                                                      
+                                                     } else{
+                                                        echo '<script type="text/JavaScript"> location.reload(); </script>';
+                                                      }
+                                        } 
+                                       
+                                    break;
+                                    
+                                    default:
+                                    $examen="";
+                                    $constancia="";
+                                   
+                                }
+                            }else if($totalpreguntas==0){
+                                $examen='
+                                    <tr>
+                                    <td></td>
+                                    <td></td>
+                                        <td class=constancia>
+                                            <a href="../cursos/evaluacion.php?idC='.$idcursoseleccionado.'" 
+                                            id="texconstancia" target="_blank" 
+                                            class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">
+                                            Realizar Examen
+                                            <br>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr><td     colspan=3 class=celdasvacias></td></tr>';
+                            }else{
+                                $examen=".";
+
+                            }
+                            
+                       }else{
+                      /*   $examen='
+                    <tr>
+                    <td></td>
+                    <td></td>
+                        <td class=constancia>
+                            <a href="../cursos/evaluacion.php?idC='.$idcursoseleccionado.'" 
+                            id="texconstancia" target="_blank" 
+                            class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">
+                            Realizar Examen
+                            <br>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr><td     colspan=3 class=celdasvacias></td></tr>';    */
+                       }
+                      
+                }
+
             
-        }
-         
-        $consCur = mysqli_query($conn, "SELECT * FROM  inscripcion WHERE fkiIdeCurso = 1 and fkiIdUsuario =".$_SESSION["id"]);
-        $idIns= mysqli_fetch_array($consCur);
-    
-        $masDedos=$idIns['finalizado'];
-    
-        date_default_timezone_set('America/Mexico_City');
-        $fecha = date("Y-m-d");
-        $fechafor = strval($fecha);
-    
-        if($idIns['cDescripcion'] ==''){
-        $act = "UPDATE inscripcion SET cDescripcion = '".$fechafor."' WHERE iIdInscripcion =".$idIns['iIdInscripcion'];
-        if (mysqli_query($conn, $act)) {
-            //echo "Se actualizo correctamente el registro";
-        } else {
-            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-        }
-        }
-        }
-        else{
-            $constancia="";
+                $consCur = mysqli_query($conn, "SELECT * FROM  inscripcion WHERE fkiIdeCurso = 1 and fkiIdUsuario =".$_SESSION["id"]);
+                $idIns= mysqli_fetch_array($consCur);
+            
+                $masDedos=$idIns['finalizado'];
+            
+                date_default_timezone_set('America/Mexico_City');
+                $fecha = date("Y-m-d");
+                $fechafor = strval($fecha);
+            
+                if($idIns['cDescripcion'] ==''){
+                $act = "UPDATE inscripcion SET cDescripcion = '".$fechafor."' WHERE iIdInscripcion =".$idIns['iIdInscripcion'];
+                    if (mysqli_query($conn, $act)) {
+                        //echo "Se actualizo correctamente el registro";
+                    } else {
+                        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+                    }
+                }
+        }else{
+                $constancia="";
+                $examen="";
         }
         if($masDedos==3){
             $mensaje= '<tr><td></td><td></td><td class=notacurso>Nota: Este curso ya fue tomado anteriormente.</td></tr>';
@@ -290,13 +485,10 @@
         
         $constancia="";
         $examen="";
-        $constancia="";
         $mensaje='';
 
     }
 
-
-       
         echo $constancia;
         echo $examen;
         echo $mensaje;

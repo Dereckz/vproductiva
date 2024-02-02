@@ -2,14 +2,14 @@
 
 $dbhost = "localhost";
 $dbuser = "root";
-$dbpass = "";//-----
+$dbpass = "@rupe2021";
 $dbname = "vproductivabd"; 
 
  /* $dbhost = "localhost";
 $dbuser = "desetec2_elchingon";
 $dbpass = "VlzqrY1aP7D)";
 $dbname = "desetec2_vproductivabd";
-@rupe2021
+
  */
 
 
