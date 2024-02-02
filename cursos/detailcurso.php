@@ -41,7 +41,8 @@
     INNER JOIN curso c ON i.fkiIdeCurso = c.iIdCurso
     INNER JOIN modulo m ON c.iIdCurso = m.fkiIdCurso
     INNER JOIN recurso r ON  m.iIdModulo = r.fkiIdModulo
-    WHERE c.iIdCurso=".$idcursoseleccionado." and u.iIdUsuario=" . $_SESSION["id"].
+    WHERE c.iIdCurso=".$idcursoseleccionado.
+    " AND u.iIdUsuario=" . $_SESSION["id"].
     " ORDER BY m.fkiIdCurso");
 
     $resultadoVisto = mysqli_query($conn, "SELECT r.iIdRecurso,c.cNombreCurso, m.cNombreModulo,r.cRuta FROM usuarios u
@@ -50,7 +51,10 @@
     INNER JOIN modulo m ON c.iIdCurso = m.fkiIdCurso
     INNER JOIN recurso r ON  m.iIdModulo = r.fkiIdModulo
     INNER JOIN visto v ON r.iIdRecurso = v.idRecurso
-    WHERE c.iIdCurso=".$idcursoseleccionado." and v.idAlumno=" . $_SESSION["id"]." GROUP BY iIdRecurso");
+    WHERE c.iIdCurso=".$idcursoseleccionado.
+    " AND v.idAlumno=" . $_SESSION["id"].
+    " AND v.estatus=1 ".
+    " GROUP BY iIdRecurso");
 
     $existeexamen = mysqli_query($conn,"SELECT count(*) as existe 
                                         FROM resuelto 
@@ -137,7 +141,7 @@
           
                 if ( $numexiste==0){
                     $constancia="";
-                    $examen="ss";                 
+                    $examen="";                 
                 }else
                 {
                     $resultadoExamen=mysqli_query($conn,"SELECT *  FROM  resuelto 
@@ -308,7 +312,7 @@
                                                 <td class=constancia>
                                                     <a href="../cursos/evaluacion.php?idC='.$idcursoseleccionado.'" 
                                                     id="texconstancia"class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">    
-                                                    Realizar Examen1<br>
+                                                    Realizar Examen<br>
                                                     </a>
                                                 </td>
                                             </tr>
@@ -342,7 +346,7 @@
                                                 <td class=constancia>
                                                     <a href="../cursos/evaluacion.php?idC='.$idcursoseleccionado.'" 
                                                     id="texconstancia"class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">    
-                                                    Realizar Examen2<br>
+                                                    Realizar Examen<br>
                                                     </a>
                                                 </td>
                                             </tr>
@@ -377,7 +381,7 @@
                                                         echo '<script type="text/JavaScript"> location.reload(); </script>';
                                                       }
                                         } 
-                                       
+                                        echo '<script type="text/JavaScript"> location.reload(); </script>';
                                     break;
                                     
                                     default:
@@ -406,20 +410,26 @@
                             }
                             
                        }else{
-                         $examen='
-                    <tr>
-                    <td></td>
-                    <td></td>
-                        <td class=constancia>
-                            <a href="../cursos/evaluacion.php?idC='.$idcursoseleccionado.'" 
-                            id="texconstancia" target="_blank" 
-                            class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">
-                            Realizar Examen
-                            <br>
-                            </a>
-                        </td>
-                    </tr>
-                    <tr><td     colspan=3 class=celdasvacias></td></tr>';  
+                        if($numVisto>0){
+                            $examen='
+                            <tr>
+                            <td></td>
+                            <td></td>
+                                <td class=constancia>
+                                    <a href="../cursos/evaluacion.php?idC='.$idcursoseleccionado.'" 
+                                    id="texconstancia" target="_blank" 
+                                    class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">
+                                    Realizar Examen
+                                    <br>
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr><td     colspan=3 class=celdasvacias></td></tr>';  
+                        }else{
+                            $examen="";
+                        }
+                    
+                       
                        }
                       
                 }
