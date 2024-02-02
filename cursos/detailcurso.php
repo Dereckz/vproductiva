@@ -426,7 +426,8 @@
                             </tr>
                             <tr><td     colspan=3 class=celdasvacias></td></tr>';  
                         }else{
-                            $examen="";
+                            $examen=""
+                        ;
                         }
                     
                        
