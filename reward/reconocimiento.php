@@ -41,7 +41,7 @@ $pdf->Image($certificado["certificado"],0,0,280,218,'JPG');
 $pdf->SetFont('Times','I',25);
 $pdf->SetY(105);
 $pdf->SetX(105);
-$pdf->Cell(160,15, mb_convert_encoding( $consulta['cNombre'].' '.$consulta['cApellidoP'].' '.$consulta['cApellidoM'], 'UTF-8', mb_list_encodings()),0,0,'C');
+$pdf->Cell(160,15, iconv('UTF-8', 'windows-1252', $consulta['cNombreLargo']),0,0,'C');
 
 
     //$infocurso["cNombreCurso"]

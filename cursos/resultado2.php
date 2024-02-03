@@ -82,21 +82,18 @@
          $examen = $conn->query("SELECT * FROM preguntas
          WHERE idexamen=$idexamen ");
    
-            $correcta = $conn->query("SELECT * FROM resuelto r
-            INNER JOIN preguntas p
-            ON p.idexamen= r.idexamen
-            WHERE p.idexamen=$idexamen
-            AND r.idusuario=$idusuario
-            AND r.correcta=1
-            AND r.intento= $intentost;");
+            $correcta = $conn->query("SELECT * FROM resuelto
+            WHERE idcurso=$idcurso
+            and idexamen=$idexamen
+            and iEstatus=1
+            AND correcta=1;");
 
-            $incorrecta = $conn->query("SELECT * FROM resuelto r
-            INNER JOIN preguntas p
-            ON p.idexamen= r.idexamen
-            WHERE p.idexamen=$idexamen
-            AND r.idusuario=$idusuario
-            AND r.correcta=0
-            AND r.intento=$intentost;");
+            $incorrecta = $conn->query(
+            "SELECT * FROM resuelto
+            WHERE idcurso=$idcurso
+            and idexamen=$idexamen
+            and iEstatus=1
+            AND correcta=0;");
              
             $examendecurso="";
          
@@ -142,8 +139,8 @@
                 <td><?php echo mb_strtoupper($examendecurso)?></td>
 
                 <td><?php echo $numpreguntas?></td>
-                <td><?php echo ($numCorrecta/10)?></td>
-                <td><?php echo ($numIncorrecta/10)?></td>
+                <td><?php echo ($numCorrecta)?></td>
+                <td><?php echo ($numIncorrecta)?></td>
                <!--  <td></td> -->
                 <td><?php echo $intentost ?></td>
             </tr>
