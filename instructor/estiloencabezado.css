@@ -1,4 +1,9 @@
 /* inicia el estilo para el encabezado*/
+@font-face {
+	font-family: Acumin;
+	src: url(AcuminVariableConcept.ttf);
+}
+
 #planmarketing{
 	margin-left: 20px;
 }
@@ -8,12 +13,12 @@
 }
 #logo{
 	position: relative;
-	width: 40%;
+	width: 53%;
 	padding-top: 2%;
 }
 
 #encabezado{
-	background-color: rgb(216, 210, 227);
+	/*background-color: rgb(216, 210, 227);*/
 	position: sticky;
 	top: 0px;
 	margin: 0%;
@@ -25,20 +30,20 @@
 	color: #000000;
 }
 #menu{
-	background-color: #40bff2;
+	/*background-color: #40bff2;*/
 	margin-top: 0%;
 	margin-left: 0%;
 	font-family: sans-serif;
 	margin-bottom: 0%;
-	height: 6.5em;
+	/*height: 6.5em;*/
 }
 .menus{
 	display: inline-block;
-	font-size: 1.4em;
+	font-size: 1.1em;
 	text-align: center;
-	width: 20%;
+	width: 25%;
 	vertical-align: top;
-	padding-top: 1.8em;
+	padding: 1em;
 }
 .logo{
 	display: inline-block;
@@ -47,7 +52,14 @@
 	width: 17%;
 }
 a{
-	color: #ffffff;
+	color: #000000;
+	font-family: Acumin;
+}
+#miperfil{
+	color: white;
+}
+#miperfilfondo{
+	background-color: #872362;
 }
 a:hover {
 	color: #630ba3;
@@ -61,13 +73,32 @@ h1{
 .section-title {
 	font-size: 4rem;
 	font-weight: 300;
+	color: #872362;
+	margin-bottom: 10px;
+	/*text-transform: uppercase;
+	letter-spacing: 0.2rem;
+	text-align: center;*/
+	margin-left: 1.3rem;
+}
+.section-title span {
+	/*color: #4720b7;*/
+	
+}
+
+.letrasmenu{
+	font-family: Acumin;
+}
+
+h2{
+	color: #000000;
+}
+.section-eva{
+	font-size: 2rem;
+	font-weight: 300;
 	color: rgb(146, 26, 201);
 	margin-bottom: 10px;
 	text-transform: uppercase;
 	letter-spacing: 0.2rem;
 	text-align: center;
 }
-.section-title span {
-	color: #4720b7;
-	
-}
+
