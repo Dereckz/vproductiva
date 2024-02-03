@@ -157,12 +157,12 @@
                         while ($intentos = mysqli_fetch_array($resultadoExamen)) { 
 
                             if ($intentos['correcta']==0 ){
-                                $errores = $errores + 1;
+                                $errores =intval($errores) + 1;
                                 $correcta=0;
-                            }elseif  ($intentos['correcta']==1 ){
+                            }if  ($intentos['correcta']==1 ){
                                 $correcta=1;
                                 $errores=0;
-                                $aciertos=$aciertos+1;
+                                $aciertos=intval($aciertos)+1;
                             }else{
                                 $correcta="";
                                 $errores="";
@@ -175,9 +175,12 @@
                         " AND iEstatus=1
                          AND intento=(SELECT MAX(intento) FROM resuelto where iEstatus=1)
                          LIMIT 1;");
+
                         $intentosresultados = mysqli_fetch_array($dataintentos);
                         $haydatos=mysqli_num_rows($dataintentos);
+
                         if($haydatos>0 || !isset($haydatos)){
+                           
                             if($totalpreguntas==15){
                                 switch ($intentosresultados["intento"]) {
                                     case 1:
@@ -189,7 +192,7 @@
                                                 <td></td>
                                                     <td class=constancia>
                                                         <a href="../reward/reconocimiento.php?idCurso='.$idcursoseleccionado.'" id="texconstancia" target="_blank" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">
-                                                        DESCARGA TU CONSTANCIA<br>
+                                                        DESCARGA TU CONSTANCIA151<br>
                                                         </a>
                                                     </td>
                                                 </tr>
@@ -223,7 +226,7 @@
                                                 <td></td>
                                                     <td class=constancia>
                                                         <a href="../reward/reconocimiento.php?idCurso='.$idcursoseleccionado.'" id="texconstancia" target="_blank" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">
-                                                        DESCARGA TU CONSTANCIA<br>
+                                                        DESCARGA TU CONSTANCIA15<br>
                                                         </a>
                                                     </td>
                                                 </tr>
@@ -263,13 +266,14 @@
                                         { 
                                             $dataresultado = mysqli_query($conn,
                                             "UPDATE visto  SET estatus=0 
-                                            WHERE idvisto=" .$visto["idVisto"]);
+                                             WHERE idvisto=" .$visto["idVisto"]);
                                                 if ($dataresultado== TRUE) {
                                                     $dataresultad2 = mysqli_query($conn,
                                                     "DELETE FROM  resuelto 
-                                                     WHERE idcurso=" .$idcursoseleccionado.
+                                                      WHERE idcurso=" .$idcursoseleccionado.
                                                     " AND idusuario=" . $_SESSION["id"]); 
-                                                        $iestatus=0;
+                                                       
+                                                    $iestatus=0;
                                                   
                                                       
                                                      } else{
@@ -295,7 +299,7 @@
                                                 <td></td>
                                                     <td class=constancia>
                                                         <a href="../reward/reconocimiento.php?idCurso='.$idcursoseleccionado.'" id="texconstancia" target="_blank" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">
-                                                        DESCARGA TU CONSTANCIA<br>
+                                                        DESCARGA TU CONSTANCIA--'.$aciertos.'<br>
                                                         </a>
                                                     </td>
                                                 </tr>
@@ -329,7 +333,7 @@
                                                 <td></td>
                                                     <td class=constancia>
                                                         <a href="../reward/reconocimiento.php?idCurso='.$idcursoseleccionado.'" id="texconstancia" target="_blank" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">
-                                                        DESCARGA TU CONSTANCIA<br>
+                                                        DESCARGA TU CONSTANCIAs<br>
                                                         </a>
                                                     </td>
                                                 </tr>
