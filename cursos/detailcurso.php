@@ -442,15 +442,18 @@
             
                 $consCur = mysqli_query($conn, "SELECT * FROM  inscripcion WHERE fkiIdeCurso = 1 and fkiIdUsuario =".$_SESSION["id"]);
                 $idIns= mysqli_fetch_array($consCur);
-            
-                $masDedos=$idIns['finalizado'];
-            
+                 if(isset($idIns["finalizado"])){
+                    $masDedos=$idIns["finalizado"];
+                 }else{
+                    $masDedos=0;
+                 }
                 date_default_timezone_set('America/Mexico_City');
                 $fecha = date("Y-m-d");
                 $fechafor = strval($fecha);
             
-                if($idIns['cDescripcion'] ==''){
-                $act = "UPDATE inscripcion SET cDescripcion = '".$fechafor."' WHERE iIdInscripcion =".$idIns['iIdInscripcion'];
+                if(isset($idIns['cDescripcion'])){
+                  
+                $act = "UPDATE inscripcion SET cDescripcion = '$fechafor' WHERE iIdInscripcion =".$idIns['iIdInscripcion'];
                     if (mysqli_query($conn, $act)) {
                         //echo "Se actualizo correctamente el registro";
                     } else {
