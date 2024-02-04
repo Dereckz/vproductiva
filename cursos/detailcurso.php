@@ -111,19 +111,19 @@
                 //alert("Hey me tocaste");
         
                //Convertimos las variables de javascript en variables de PHP
-                $( document ).ready(function() {
-            // Definimos las variables de javascrpt
-                var recurso = idRecurso;
-                var alumno = idAlumno;
-            // Ejecutamos AJAX
-            $.post("visto.php",{"recurso":recurso,"alumno": alumno},function(respuesta){
-                    alert(respuesta);
-                    location.reload();
-                });
-                });
-            }
-        
-            </script>
+                    $( document ).ready(function() {
+                // Definimos las variables de javascrpt
+                    var recurso = idRecurso;
+                    var alumno = idAlumno;
+                // Ejecutamos AJAX
+                $.post("visto.php",{"recurso":recurso,"alumno": alumno},function(respuesta){
+                        alert(respuesta);
+                        location.reload();
+                    });
+                    });
+                }
+            
+                </script>
         
             ';
         
@@ -183,40 +183,8 @@
                            
                             if($totalpreguntas==15){
                                 switch ($intentosresultados["intento"]) {
+
                                     case 1:
-                                        if($aciertos>11){
-                                            $examen="";
-                                            $constancia=
-                                            '<tr>
-                                                <td></td>
-                                                <td></td>
-                                                    <td class=constancia>
-                                                        <a href="../reward/reconocimiento.php?idCurso='.$idcursoseleccionado.'" id="texconstancia" target="_blank" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">
-                                                        DESCARGA TU CONSTANCIA151<br>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                             <tr>
-                                                <td colspan=3 class=celdasvacias>
-                                                </td>
-                                            </tr>';   
-                                        }else{
-                                            $constancia="";
-                                            $examen=
-                                            '<tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td class=constancia>
-                                                    <a href="../cursos/evaluacion.php?idC='.$idcursoseleccionado.'" 
-                                                    id="texconstancia"class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">    
-                                                    Realizar Examen<br>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                        <tr><td colspan=3 class=celdasvacias></td></tr>'; 
-                                        }
-                                       
-                                    break;
                                     case 2:
                                         if($aciertos>11){
                                             $examen="";
@@ -225,8 +193,8 @@
                                                 <td></td>
                                                 <td></td>
                                                     <td class=constancia>
-                                                        <a href="../reward/reconocimiento.php?idCurso='.$idcursoseleccionado.'" id="texconstancia" target="_blank" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">
-                                                        DESCARGA TU CONSTANCIA15<br>
+                                                        <a href="../reward/reconocimiento.php?idCurso='.$idcursoseleccionado.'" id="texconstancia" target="_self" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">
+                                                        DESCARGA TU CONSTANCIA<br>
                                                         </a>
                                                     </td>
                                                 </tr>
@@ -249,7 +217,6 @@
                                             </tr>
                                         <tr><td colspan=3 class=celdasvacias></td></tr>'; 
                                         }
-                                       
                                     break;
                                     case 3:
                                         $examen="";
@@ -280,9 +247,8 @@
                                                         echo '<script type="text/JavaScript"> location.reload(); </script>';
                                                       }
                                         }
-                                       
+
                                     break;
-                                    
                                     default:
                                     $examen="";
                                     $constancia="";
@@ -291,39 +257,6 @@
                             }else if($totalpreguntas==10){
                                 switch ($intentosresultados["intento"]) {
                                     case 1:
-                                        if($aciertos>6){
-                                            $examen="";
-                                            $constancia=
-                                            '<tr>
-                                                <td></td>
-                                                <td></td>
-                                                    <td class=constancia>
-                                                        <a href="../reward/reconocimiento.php?idCurso='.$idcursoseleccionado.'" id="texconstancia" target="_blank" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">
-                                                        DESCARGA TU CONSTANCIA--'.$aciertos.'<br>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                             <tr>
-                                                <td colspan=3 class=celdasvacias>
-                                                </td>
-                                            </tr>';   
-                                        }else{
-                                            $constancia="";
-                                            $examen=
-                                            '<tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td class=constancia>
-                                                    <a href="../cursos/evaluacion.php?idC='.$idcursoseleccionado.'" 
-                                                    id="texconstancia"class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">    
-                                                    Realizar Examen<br>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                        <tr><td colspan=3 class=celdasvacias></td></tr>'; 
-                                        }
-                                       
-                                    break;
                                     case 2:
                                         if($aciertos>6){
                                             $examen="";
@@ -332,8 +265,8 @@
                                                 <td></td>
                                                 <td></td>
                                                     <td class=constancia>
-                                                        <a href="../reward/reconocimiento.php?idCurso='.$idcursoseleccionado.'" id="texconstancia" target="_blank" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">
-                                                        DESCARGA TU CONSTANCIAs<br>
+                                                        <a href="../reward/reconocimiento.php?idCurso='.$idcursoseleccionado.'"   id="texconstancia" target="_self" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">
+                                                        DESCARGA TU CONSTANCIA<br>
                                                         </a>
                                                     </td>
                                                 </tr>
@@ -358,9 +291,8 @@
                                         }
                                        
                                     break;
-                                    case 3:
-                                       
-                                         $validarvisto=mysqli_query($conn,
+                                     case 3:
+                                        $validarvisto=mysqli_query($conn,
                                         "SELECT* FROM visto v
                                         INNER JOIN inscripcion i
                                         ON v.idAlumno=i.fkiIdUsuario
@@ -375,10 +307,10 @@
                                             WHERE idvisto=" .$visto["idVisto"]);
                                                 if ($dataresultado== TRUE) {
                                                     $dataresultad2 = mysqli_query($conn,
-                                                    "UPDATE  resuelto SET iEstatus=0 
-                                                     WHERE idcurso=" .$idcursoseleccionado.
-                                                    " AND idusuario=" . $_SESSION["id"]); 
-                                                        $iestatus=0;
+                                                    "DELETE FROM  resuelto 
+                                                    WHERE idcurso=" .$idcursoseleccionado.
+                                                  " AND idusuario=" . $_SESSION["id"]); 
+                                                     
                                                   
                                                       
                                                      } else{
@@ -386,8 +318,7 @@
                                                       }
                                         } 
                                         echo '<script type="text/JavaScript"> location.reload(); </script>';
-                                    break;
-                                    
+                                     break;
                                     default:
                                     $examen="";
                                     $constancia="";
@@ -421,7 +352,7 @@
                             <td></td>
                                 <td class=constancia>
                                     <a href="../cursos/evaluacion.php?idC='.$idcursoseleccionado.'" 
-                                    id="texconstancia" target="_blank" 
+                                    id="texconstancia" target="_self" 
                                     class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">
                                     Realizar Examen
                                     <br>
