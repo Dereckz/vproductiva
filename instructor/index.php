@@ -8,7 +8,7 @@
 
     <meta name="keywords" content="​Hello!">
     <meta name="description" content="">
-    <title>VProductivaPerfil</title>
+    <title>VProductiva</title>
     <link rel="stylesheet" href="./nicepage.css" media="screen" class="u-static-style">
     <link rel="stylesheet" href="./nicepage(1).css" media="screen">
     <script class="u-script" type="text/javascript" src="./jquery-1.9.1.min.js.descarga" defer=""></script>
@@ -24,7 +24,7 @@
   div#div_file{
     position: relative;
     padding: 0.5em;
-    width: 9em;
+    width: 38%;
     height: 2em;
     background-color: #2499e3;
     -webkit-border-radius:5px;
@@ -97,7 +97,7 @@
   padding: 0;
 }
 .u-section-2 .u-list-1 {
-  margin-top: 2.8em;
+  /*margin-top: 2.8em;*/
   margin-bottom: 0;
 }
 .u-section-2 .u-repeater-1 {
@@ -427,16 +427,14 @@
 </head>
   <body class="u-body u-xl-mode" data-lang="es">
   <header id="encabezado">
-    	<!--<div id="logotipo">
-    	<img src="img/logovproductiva2.png" id="logo"> 
-    	</div>-->
-    	<!--<h1 id="tituloprincipal">Valuacion Productiva</h1>-->
+    	
+    
     	<ul id="menu">
       <li class="logo"><img src="img/logob.png" id="logo"></li>
       <li class="menus"></li>
-    	<li class="menus"><a href="index.php">Mi perfil</a></li>
-    	<li class="menus"><a href="cursos.php">Catálogo de Cursos</a></li>
-      <li class="menus"><a href="../account/login.html">Salir</a></li>
+    	<li id="miperfilfondo" class="menus"><a href="index.php" id="miperfil" class="letramenus">Mi perfil</a></li>
+    	<!--<li class="menus"><a href="cursos.php">Catálogo de Cursos</a></li>-->
+      <li class="menus"><a href="../function/finacceso.php">Salir</a></li>
     	</ul>
   </header>
 
@@ -447,22 +445,24 @@
 
         <div class="u-expanded-width u-list u-list-1">
         <div class="u-repeater u-repeater-1">
+        <h1 class="section-title" id="titulomiscursos"> <span>Encuestas asignadas:</span></h1>
         <?php include 'survey.php' ?>
 
-        <?=miCurso();?>
+        <!-- ?=miCurso();?>-->
         
         </div>
         </div>
+        <!--
         <div class="u-align-left u-container-style u-expanded-width u-group u-palette-1-base u-group-1 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1750" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1750ms;">
           <div class="u-container-layout u-valign-middle u-container-layout-5">
             <h4 class="u-text u-text-default u-text-9"> Quieres tomar alguno de nuestros cursos, inscribete.</h4>
             <a href="cursos.php" class="u-active-white u-align-center u-border-1 u-border-active-white u-border-hover-white u-border-white u-btn u-button-style u-hover-white u-none u-text-active-palette-1-base u-text-hover-palette-1-base u-btn-6" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">Catálogo de cursos</a>
           </div>
-        </div>
+        </div>-->
       </div>
     </section>
 
-
+    <!--
     <section class="u-backlink u-clearfix u-grey-80">
       <a class="u-link">
         <span>Copyright © 2023</span>
@@ -473,6 +473,6 @@
       <a class="u-link" href="https://desetecnologias.net" target="_blank">
         <span>Dese Tecnologias</span>
       </a>. 
-    </section>
+    </section>-->
 
 <style>.u-disable-duration * {transition-duration: 0s !important;}</style></body></html>
