@@ -93,6 +93,7 @@ img {
 #header .nav-list ul li:hover a {
 	color: #4720b7;
 }
+
 #header .hamburger {
 	height: 60px;
 	width: 60px;
@@ -261,3 +262,42 @@ img {
     margin-left: 2em;
 }
 
+@media screen and (max-width:700px){
+	/*#logoinicio{
+		width: 30%;
+	}*/
+	#header .nav-bar{
+		width: 112%;
+		margin-right: 1em;
+		margin-left: 1.5em;
+	}
+	#header .nav-list{
+		display: flex;
+		/*margin-left: 4em;*/
+	}
+	#header .nav-list ul {
+		display: contents;
+    	flex-direction: row;
+	}
+	#header .nav-list ul a {
+		font-size: 1.2rem;
+		font-weight: 550;
+		letter-spacing: 0.1rem;
+		text-decoration: none;
+		color: #000000;
+		text-transform: uppercase;
+		padding: 10px;
+		display: block;
+		text-align: center;
+	}
+	.fondoinicio{
+		background-color: white;
+		margin-top: 4%;
+	}
+	#acercade{
+		background-color: white;
+	}
+	#logoinicio {
+		width: 9em;
+	}
+}

@@ -1336,3 +1336,170 @@ p {
 #centrobtncontactar{
 	text-align: center;
 }
+#imgbienvenida{
+	height: 52em;
+}
+
+@media screen and (max-width:700px){
+	#logoinicio{
+		width: 30%;
+	}
+	#header .nav-bar{
+		width: 112%;
+		margin-right: 1em;
+		margin-left: 1.5em;
+	}
+	#header .nav-list{
+		display: flex;
+		margin-left: 4em;
+	}
+	#header .nav-list ul {
+		display: contents;
+    	flex-direction: row;
+	}
+	#header .nav-list ul a {
+		font-size: 1.2rem;
+		font-weight: 550;
+		letter-spacing: 0.1rem;
+		text-decoration: none;
+		color: #000000;
+		text-transform: uppercase;
+		padding: 10px;
+		display: block;
+		text-align: center;
+	}
+	/*#hero{
+		width: 58em;
+	}*/
+	.contenedorslider {
+		width: 98%;
+		height: fit-content;
+		margin-top: 0%;
+	}
+	#slider1 {
+		background-image: url(../img/slider1after.jpg);
+		width: 49em;
+		height: 23em;
+	}
+	#btncontactanos {
+		margin-top: 13em;
+		margin-left: 3.4em;
+		width: 10em;
+		height: 2em;
+	}
+	#slider2 {
+		background-image: url(../img/slider2after.jpg);
+		width: 49em;
+		height: 23em;
+	}
+	#btncursos {
+		margin-top: 13em;
+		margin-left: 25em;
+		width: 10em;
+		height: 2em;
+	}
+	#slider3 {
+		background-image: url(../img/slider3after.jpg);
+		width: 49em;
+		height: 23em;
+	}
+	/*
+	.sliders {
+		width: 100vw;
+		/* max-width: 1400px; *-/
+		/* height: 720px; *-/
+		overflow: hidden;
+	}
+*/
+	.celdassliders {
+		width: 100%;
+		/* margin-left: 1em; */
+	}
+	.sliders {
+		width: 100vw;
+		/* max-width: 1400px; */
+		height: 220px;
+		overflow: hidden;
+	}
+	.fondoinicio {
+		padding-top: 4%;
+	}
+
+	#bienvenida {
+		height: 100%;
+		/* width: 80%; */
+		vertical-align: middle;
+		background-color: #872362;
+		padding: 0em 1em;
+		margin: 0;
+		border-radius: 4em;
+	}
+
+	#parrafo2bienvenida {
+		color: white;
+		font-size: 1.5em;
+	}
+	#parrafo4bienvenida {
+		text-align: center;
+		font-size: 2em;
+		padding: 0.8em 2em;
+		color: #1CC4EA;
+	}
+	.btnvercursos {
+		text-align: center;
+		font-size: 1em;
+		color: white;
+		font-weight: 500;
+	}
+	#imgbienvenida{
+		height: auto;
+	}
+	.imgcursosp1 {
+		margin-top: 12%;
+		height: auto;
+	}
+	#services h2 {
+		font-size: 1.5em;
+		padding: 0.8em 2em;
+	}
+	.imagenesareas {
+		/* width: 85%; */
+		padding: 0.3em 0.5em;
+		/* height: 69%; */
+	}
+	.celdacategoria {
+		height: auto;
+	}
+	.cuadroazul {
+		background-color: #2E49C1;
+		border-radius: 4em;
+		margin: 0;
+		padding: 0.2em 0.2em;
+		margin-top: 5%;
+		padding-bottom: 5%;
+		height: auto;
+	}
+	#texto3nosotros {
+		font-size: 2em;
+	}
+	.parrafomision {
+		margin-right: 1em;
+		margin-left: 1em;
+		color: white;
+		font-size: 1.3em;
+		font-weight: 500;
+		text-align: justify;
+		letter-spacing: normal;
+		line-height: 125%;
+	}
+	#imgmision {
+		width: 22%;
+		padding-left: 0;
+	}
+	#valores {
+		font-size: 1.3em;
+	}
+	#texto1nosotros {
+		font-size: 2.2em;
+	}
+}

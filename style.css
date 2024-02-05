@@ -261,3 +261,70 @@ img {
     margin-left: 2em;
 }
 
+@media screen and (max-width:700px){
+	#logoinicio{
+		width: 30%;
+	}
+	#header .nav-bar{
+		width: 112%;
+		margin-right: 1em;
+		margin-left: 1.5em;
+	}
+	#header .nav-list{
+		display: flex;
+		margin-left: 4em;
+	}
+	#header .nav-list ul {
+		display: contents;
+    	flex-direction: row;
+	}
+	#header .nav-list ul a {
+		font-size: 1.2rem;
+		font-weight: 550;
+		letter-spacing: 0.1rem;
+		text-decoration: none;
+		color: #000000;
+		text-transform: uppercase;
+		padding: 10px;
+		display: block;
+		text-align: center;
+	}
+	/*#hero{
+		width: 58em;
+	}*/
+	.contenedorslider {
+		width: 98%;
+		height: fit-content;
+		margin-top: 0%;
+	}
+	#slider1 {
+		background-image: url(../img/slider1after.jpg);
+		width: 49em;
+		height: 23em;
+	}
+	#btncontactanos {
+		margin-top: 13em;
+		margin-left: 3.4em;
+		width: 10em;
+		height: 2em;
+	}
+	#izquierdacontacto {
+		display: block;
+	}
+	#login-register {
+		width: 100%;
+		padding: 1em 0em;
+	}
+	#texto1contacto {
+		font-size: 2em;
+		color: white;
+		padding-top: 13%;
+		padding-left: 10%;
+		padding-right: 10%;
+	}
+	#texto2contacto {
+		font-size: 1.4em;
+		color: white;
+		padding: 3% 10%;
+	}
+}
