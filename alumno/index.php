@@ -449,7 +449,7 @@ font-weight: 550;
     
     	<ul id="menu">
       <li class="logo"><img src="img/logob.png" id="logo"></li>
-      <li class="menus"></li>
+      <li class="menusvacio"></li>
     	<li id="miperfilfondo" class="menus"><a href="index.php" id="miperfil" class="letramenus">Mi perfil</a></li>
     	<li class="menus"><a href="cursos.php">Catálogo de Cursos</a></li>
       <li class="menus"><a href="../function/finacceso.php">Salir</a></li>
@@ -457,7 +457,7 @@ font-weight: 550;
   </header>
 
     <section class="u-align-left u-clearfix u-grey-5 u-section-2" id="carousel_0852">
-      <div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
+      <div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1" id="divperfil">
         
         <?=informacion();?>
         <div class="u-expanded-width u-list u-list-1">
