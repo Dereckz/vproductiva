@@ -134,7 +134,7 @@
     $masDedos='';
     $constancia="";
     $correcta=0;
-
+    $mensaje="";
     if($numMudulo==$numVisto){
 
         $intentoscorrectos="";
@@ -148,7 +148,10 @@
                                                         WHERE idcurso=".$idcursoseleccionado.
                                                         " AND idusuario=" . $_SESSION["id"] .
                                                         " AND iEstatus=1
-                                                         AND intento=(SELECT MAX(intento) FROM resuelto where iEstatus=1);");
+                                                         AND intento=(SELECT MAX(intento) FROM resuelto 
+                                                                      WHERE iEstatus=1 
+                                                                      AND idcurso=" .$idcursoseleccionado.
+                                                                      " AND idusuario=". $_SESSION["id"] .");");
                   
                     $totalpreguntas =mysqli_num_rows($resultadoExamen);
                     $errores=0;
@@ -173,13 +176,16 @@
                         WHERE idcurso=".$idcursoseleccionado.
                         " AND idusuario=" . $_SESSION["id"] .
                         " AND iEstatus=1
-                         AND intento=(SELECT MAX(intento) FROM resuelto where iEstatus=1)
-                         LIMIT 1;");
-
+                         AND intento=(SELECT MAX(intento) FROM resuelto 
+                                        WHERE iEstatus=1 
+                                        AND idcurso=" .$idcursoseleccionado.
+                                        " AND idusuario=".$_SESSION["id"].")
+                                        LIMIT 1;");
+                                       
                         $intentosresultados = mysqli_fetch_array($dataintentos);
                         $haydatos=mysqli_num_rows($dataintentos);
 
-                        if($haydatos>0 || !isset($haydatos)){
+                        if($haydatos>0){
                            
                             if($totalpreguntas==15){
                                 switch ($intentosresultados["intento"]) {
@@ -201,6 +207,35 @@
                                                 <td colspan=3 class=celdasvacias>
                                                 </td>
                                             </tr>';   
+                                            $consCur = mysqli_query($conn, "SELECT * FROM  inscripcion 
+                                            WHERE fkiIdeCurso = ".$idcursoseleccionado.
+                                            " AND fkiIdUsuario =".$_SESSION["id"]);
+                                            $idIns= mysqli_fetch_array($consCur);
+                                            $numins=mysqli_num_rows($consCur);
+                                                        
+                                            $masDedos=$idIns["finalizado"];
+                    
+
+                                            date_default_timezone_set('America/Mexico_City');
+                                            $fecha = date("Y-m-d");
+                                            $fechafor = strval($fecha);
+
+                                             if(($idIns['cDescripcion'])== null){
+                                            
+                                            $act = "UPDATE inscripcion SET cDescripcion = '$fechafor' WHERE iIdInscripcion =".$idIns['iIdInscripcion'];
+                                                if (mysqli_query($conn, $act)) {
+                                                    //echo "Se actualizo correctamente el registro";
+                                                } else {
+                                                    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+                                                }
+                                            }
+                                    
+                                            if($masDedos==3){
+                                                $mensaje= '<tr><td></td><td></td><td class=notacurso>Nota: Este curso ya fue tomado anteriormente.</td></tr>';
+                                            }
+                                            else{
+                                                $mensaje='';
+                                            }
                                         }else{
                                             $constancia="";
                                             $examen=
@@ -234,6 +269,36 @@
                                                     <td colspan=3 class=celdasvacias>
                                                     </td>
                                                 </tr>';   
+
+                                                $consCur = mysqli_query($conn, "SELECT * FROM  inscripcion 
+                                                WHERE fkiIdeCurso = ".$idcursoseleccionado.
+                                                " AND fkiIdUsuario =".$_SESSION["id"]);
+                                                $idIns= mysqli_fetch_array($consCur);
+                                                $numins=mysqli_num_rows($consCur);
+                                                            
+                                                $masDedos=$idIns["finalizado"];
+                        
+    
+                                                date_default_timezone_set('America/Mexico_City');
+                                                $fecha = date("Y-m-d");
+                                                $fechafor = strval($fecha);
+    
+                                                if(($idIns['cDescripcion'])== null){
+                                                
+                                                $act = "UPDATE inscripcion SET cDescripcion = '$fechafor' WHERE iIdInscripcion =".$idIns['iIdInscripcion'];
+                                                    if (mysqli_query($conn, $act)) {
+                                                        //echo "Se actualizo correctamente el registro";
+                                                    } else {
+                                                        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+                                                    }
+                                                }
+                                        
+                                                if($masDedos==3){
+                                                    $mensaje= '<tr><td></td><td></td><td class=notacurso>Nota: Este curso ya fue tomado anteriormente.</td></tr>';
+                                                }
+                                                else{
+                                                    $mensaje='';
+                                                }
                                             }else{
                                                 $validarvisto=mysqli_query($conn,
                                                 "SELECT* FROM visto v
@@ -318,6 +383,36 @@
                                                 <td colspan=3 class=celdasvacias>
                                                 </td>
                                             </tr>';   
+
+                                            $consCur = mysqli_query($conn, "SELECT * FROM  inscripcion 
+                                            WHERE fkiIdeCurso = ".$idcursoseleccionado.
+                                            " AND fkiIdUsuario =".$_SESSION["id"]);
+                                            $idIns= mysqli_fetch_array($consCur);
+                                            $numins=mysqli_num_rows($consCur);
+                                                        
+                                            $masDedos=$idIns["finalizado"];
+                    
+
+                                            date_default_timezone_set('America/Mexico_City');
+                                            $fecha = date("Y-m-d");
+                                            $fechafor = strval($fecha);
+
+                                            if(($idIns['cDescripcion'])== null){
+                                            
+                                            $act = "UPDATE inscripcion SET cDescripcion = '$fechafor' WHERE iIdInscripcion =".$idIns['iIdInscripcion'];
+                                                if (mysqli_query($conn, $act)) {
+                                                    //echo "Se actualizo correctamente el registro";
+                                                } else {
+                                                    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+                                                }
+                                            }
+                                    
+                                            if($masDedos==3){
+                                                $mensaje= '<tr><td></td><td></td><td class=notacurso>Nota: Este curso ya fue tomado anteriormente.</td></tr>';
+                                            }
+                                            else{
+                                                $mensaje='';
+                                            }
                                         }else{
                                             $constancia="";
                                             $examen=
@@ -351,6 +446,35 @@
                                                     <td colspan=3 class=celdasvacias>
                                                     </td>
                                                 </tr>';   
+                                                $consCur = mysqli_query($conn, "SELECT * FROM  inscripcion 
+                                                WHERE fkiIdeCurso = ".$idcursoseleccionado.
+                                                " AND fkiIdUsuario =".$_SESSION["id"]);
+                                                $idIns= mysqli_fetch_array($consCur);
+                                                $numins=mysqli_num_rows($consCur);
+                                                            
+                                                $masDedos=$idIns["finalizado"];
+                        
+    
+                                                date_default_timezone_set('America/Mexico_City');
+                                                $fecha = date("Y-m-d");
+                                                $fechafor = strval($fecha);
+    
+                                                if(($idIns['cDescripcion'])== null){
+                                                
+                                                $act = "UPDATE inscripcion SET cDescripcion = '$fechafor' WHERE iIdInscripcion =".$idIns['iIdInscripcion'];
+                                                    if (mysqli_query($conn, $act)) {
+                                                        //echo "Se actualizo correctamente el registro";
+                                                    } else {
+                                                        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+                                                    }
+                                                }
+                                        
+                                                if($masDedos==3){
+                                                    $mensaje= '<tr><td></td><td></td><td class=notacurso>Nota: Este curso ya fue tomado anteriormente.</td></tr>';
+                                                }
+                                                else{
+                                                    $mensaje='';
+                                                }
                                             }else{
                                                 $validarvisto=mysqli_query($conn,
                                                 "SELECT* FROM visto v
@@ -433,59 +557,32 @@
                             }
                             
                        }else{
-                        if($numVisto>0){
-                            $examen='
-                            <tr>
-                            <td></td>
-                            <td></td>
-                                <td class=constancia>
-                                    <a href="../cursos/evaluacion.php?idC='.$idcursoseleccionado.'" 
-                                    id="texconstancia" target="_self" 
-                                    class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">
-                                    Realizar Examen
-                                    <br>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr><td     colspan=3 class=celdasvacias></td></tr>';  
-                        }else{
-                            $examen=""
-                        ;
-                        }
+                            if($numVisto>0){
+                                $examen='
+                                <tr>
+                                <td></td>
+                                <td></td>
+                                    <td class=constancia>
+                                        <a href="../cursos/evaluacion.php?idC='.$idcursoseleccionado.'" 
+                                        id="texconstancia" target="_self" 
+                                        class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">
+                                        Realizar Examen
+                                        <br>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr><td     colspan=3 class=celdasvacias></td></tr>';  
+                            }else{
+                                $examen=""
+                            ;
+                            }
                     
                        
                        }
                       
                 }
 
-            
-                $consCur = mysqli_query($conn, "SELECT * FROM  inscripcion WHERE fkiIdeCurso = 1 and fkiIdUsuario =".$_SESSION["id"]);
-                $idIns= mysqli_fetch_array($consCur);
-                 if(isset($idIns["finalizado"])){
-                    $masDedos=$idIns["finalizado"];
-                 }else{
-                    $masDedos=0;
-                 }
-                date_default_timezone_set('America/Mexico_City');
-                $fecha = date("Y-m-d");
-                $fechafor = strval($fecha);
-            
-                if(isset($idIns['cDescripcion'])){
-                  
-                $act = "UPDATE inscripcion SET cDescripcion = '$fechafor' WHERE iIdInscripcion =".$idIns['iIdInscripcion'];
-                    if (mysqli_query($conn, $act)) {
-                        //echo "Se actualizo correctamente el registro";
-                    } else {
-                        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-                    }
-                }
-        
-        if($masDedos==3){
-            $mensaje= '<tr><td></td><td></td><td class=notacurso>Nota: Este curso ya fue tomado anteriormente.</td></tr>';
-        }
-        else{
-            $mensaje='';
-        }
+               
     }else{
         
         $constancia="";

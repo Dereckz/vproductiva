@@ -10,8 +10,10 @@ function informacion()
     require("../dev/conectar.php");
 
     // para saber los cursos terminados
+    $cursos= mysqli_query($conn, "SELECT * FROM curso");
+    $totalcursos= mysqli_num_rows($cursos);
     $final=0;
-    for ($i=1; $i<=7; $i++){
+    for ($i=1; $i<=$totalcursos; $i++){
         
 
             $terminado = mysqli_query($conn, "SELECT r.iIdRecurso,c.cNombreCurso, m.cNombreModulo,r.cRuta 
@@ -136,7 +138,7 @@ function miCurso()
     document.getElementById("1").onclick = function() {
       if (confirm("Favor de confirmar que desea salir del curso")) {
 
-        idfCurso = "1";
+        idfCurso = "'. $consulta['iIdCurso'] . '";
         idfUsuario = "' . $_SESSION["id"] . '";
 
     //Convertimos las variables de javascript en variables de PHP

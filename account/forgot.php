@@ -69,11 +69,6 @@ include 'mail.php';
 </section>
 <!-- End formulario -->
 
-<script>
-function clickMe(){
-var result ="<?php enviaremail(); ?>"
-document.write(result);
-}
-  </script>
+
 </body>
 </html>
