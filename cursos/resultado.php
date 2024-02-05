@@ -77,6 +77,7 @@
          $idusuario=$_GET["idu"];
          $intentost=$_GET["i"];
 
+         $qod=10;
         
 
          $examen = $conn->query("SELECT * FROM preguntas
@@ -108,12 +109,17 @@
         $numpreguntas= mysqli_num_rows($examen);
         $numCorrecta= mysqli_num_rows($correcta);
         $numIncorrecta = mysqli_num_rows($incorrecta);
-
+       /*  if($numpreguntas==10){
+            $qod=10;         
+        }
+        if($numpreguntas==15){
+            $qod=15;            
+        } */
          while($row=$correcta->fetch_assoc())	:  
             $intentost=$row['intento'];               
                 
             ?>
-
+   
     <?php 
         endwhile
     ?>
@@ -142,8 +148,8 @@
                 <td><?php echo mb_strtoupper($examendecurso)?></td>
 
                 <td><?php echo $numpreguntas?></td>
-                <td><?php echo ($numCorrecta/10)?></td>
-                <td><?php echo ($numIncorrecta/10)?></td>
+                <td><?php echo ($numCorrecta/$numpreguntas)?></td>
+                <td><?php echo ($numIncorrecta/$numpreguntas)?></td>
                <!--  <td></td> -->
                 <td><?php echo $intentost ?></td>
             </tr>
