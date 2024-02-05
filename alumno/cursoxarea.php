@@ -372,6 +372,11 @@
     font-size: 1.875rem;
   }
 }
+@media screen and (max-width:700px){
+  .u-section-2 .u-list-item-1 {
+    height: 103%;
+  }
+}
     </style>
     
     <script type="application/ld+json">{
@@ -396,7 +401,7 @@
     	<!--<h1 id="tituloprincipal">Valuacion Productiva</h1>-->
     	<ul id="menu">
       <li class="logo"><img src="img/logob.png" id="logo"></li>
-      <li class="menus"></li>
+      <li class="menusvacio"></li>
     	<li class="menus"><a href="index.php">Mi perfil</a></li>
     	<li id="miperfilfondo" class="menus"><a href="cursos.php" id="miperfil">Catálogo de Cursos</a></li>
       <li class="menus"><a href="../account/login.html">Salir</a></li>

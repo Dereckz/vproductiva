@@ -15314,7 +15314,7 @@ a.u-link.u-text-hover-grey-90:hover {
         @media (max-width: 575px) {
         h1:not(.u-title)
         {
-        font-size: 1.875rem;
+        font-size: 1.475rem;
         }
         }
         @media (max-width: 575px) {
@@ -15331,6 +15331,9 @@ a.u-link.u-text-hover-grey-90:hover {
         h3
         {
         font-size: 1.5rem;
+        }
+        #divcategorias {
+          width: 97%;
         }
         }
         /*end-media rules*/

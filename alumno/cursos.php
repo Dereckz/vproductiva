@@ -273,7 +273,8 @@
 }
 @media (max-width: 991px) {
   .u-section-2 .u-sheet-1 {
-    min-height: 1439px;
+    min-height: 439px;
+    margin-left: 3%;
   }
   .u-section-2 .u-text-1 {
     margin-top: 60px;
@@ -388,7 +389,7 @@
     	<!--<h1 id="tituloprincipal">Valuacion Productiva</h1>-->
     	<ul id="menu">
       <li class="logo"><img src="img/logob.png" id="logo"></li>
-      <li class="menus"></li>
+      <li class="menusvacio"></li>
     	<li class="menus"><a href="index.php">Mi perfil</a></li>
     	<li id="miperfilfondo" class="menus"><a href="cursos.php" id="miperfil">Catálogo de Cursos</a></li>
       <li class="menus"><a href="../account/login.html">Salir</a></li>
@@ -402,7 +403,7 @@
           <h1 class="section-title"> <span>Categorías principales</span></h1>
           <!--<div class="u-expanded-width u-list u-list-1">
           <div class="u-repeater u-repeater-1">-->
-          <div>
+          <div id="divcategorias">
             <table>
               <tr class="filacentrada">
                 <td><a href="cursoxarea.php?ida=1&name=Productividad Laboral"><img src="img/areaplaboral.png" class="imagenesareas" 

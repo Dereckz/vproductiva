@@ -18,7 +18,7 @@
     	<!--<h1 id="tituloprincipal">Valuacion Productiva</h1>-->
         <ul id="menu">
             <li class="logo"><img src="../img/logob.png" id="logo"></li>
-            <li class="menus"></li>
+            <li class="menusvacio"></li>
     	    <li class="menus"><a href="../../alumno/index.php" class="enlacemenu">Mi perfil</a></li>
     	    <li id="miperfilfondo" class="menus"><a href="../../alumno/cursos.php" id="miperfil" class="enlacemenu">Catálogo de Cursos</a></li>
             <li class="menus"><a href="../../account/login.html" class="enlacemenu">Salir</a></li>

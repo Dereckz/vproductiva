@@ -269,4 +269,53 @@ text-decoration: none;
 	font-size: 0.88em;
 	font-weight: 400;
 }
+.menusvacio{
+	display: inline-block;
+	font-size: 1.1em;
+	text-align: center;
+	width: 20%;
+	vertical-align: top;
+	padding: 1em;
+}
+@media screen and (max-width:700px){
+	.logo {
+		display: none;
+	}
+	.menus {
+		display: inline-block;
+		font-size: 1em;
+		text-align: center;
+		vertical-align: top;
+		padding: 1em;
+	}
+	.menusvacio {
+		display: inline-block;
+		width: 0%;
+	}
+	#tituloprincipal {
+		margin-left: 0.8em;
+		margin-right: 0.8em;
+		font-size: 1.6rem;
+	}
+	#tablarecursos {
+		margin-left: 0%;
+		margin-right: 1em;
+	}
+	#descricpiontemario {
+		line-height: 1.2em;
+		font-size: 0.7em;
+	}
+	.titulostemario2 {
+		font-size: 1em;
+	}
+	.btnInscribirsebtn {
+		font-size:0.8em;
+	}
+	.btnInscribirse {
+		height: 1.7em;
+		padding-left: 3%;
+		padding-top: 0.3em;
+	}
+
+}
 
