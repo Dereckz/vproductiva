@@ -22,5 +22,6 @@
         $errorMessage = error_get_last()['msg'];
         echo $errorMessage;
     }
+    header('Location: login.html');
  }
 ?>

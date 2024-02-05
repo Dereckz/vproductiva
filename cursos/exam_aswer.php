@@ -65,7 +65,7 @@ $iestatus="";
                         $iestatus=1;
     
                  }
-                 else if($inforesultado["intento"]>3)
+                 else if($inforesultado["intento"]>2)
                  {
                     //restear
                     $validarvisto=mysqli_query($conn,
