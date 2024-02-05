@@ -1,6 +1,4 @@
-<?php
-include 'mail.php';
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,7 +53,7 @@ include 'mail.php';
                 <form method="post" action="mail.php" id="forgotform">
                   
                      <label for="email">Email</label>
-                  <input type="text" id="email" name="email">
+                  <input type="text" id="correo" name="correo">
                     <input type="submit" value="enviar" class="submit"  onclick = "clickMe();" >
                 </form>
                
@@ -69,11 +67,6 @@ include 'mail.php';
 </section>
 <!-- End formulario -->
 
-<script>
-function clickMe(){
-var result ="<?php enviaremail(); ?>"
-document.write(result);
-}
-  </script>
+
 </body>
 </html>
