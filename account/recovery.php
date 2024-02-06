@@ -6,6 +6,8 @@ $contrasenad=$_POST["contrasenad"];
 $codigo=$_POST["id"];
 $codigod=$desencriptar($_POST["id"]);
 
+echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>';
+
  if ($contrasena<>"" || $contrasenad<>""){
     if($contrasena==$contrasenad){
        
@@ -21,33 +23,39 @@ $codigod=$desencriptar($_POST["id"]);
 
 
                 if($queryA){
-                "<script> 
-                alert('Se ha actualizado correctamente su contraseña') ;       
-                </script>";
-                header("Location: login.html");
+                    echo "<script> 
+                            alert('Se ha actualizado correctamente su contraseña') ;     
+                            window.location='login.html'; 
+                        </script>";
+                     
+              
             }else{
-                "<script> 
-                alert('Hubo un error, intentelo mas tarde') ;       
-                </script>";
-                header("Location: login.html");
+                echo   "<script> 
+                            alert('Hubo un error, intentelo mas tarde') ;       
+                            window.location='login.html'; 
+                        </script>";
+                        
             }
         
         }
 
     }else{
-        echo 
-        "<script> 
-             alert('Las contraseñas no coinciden, verifique.') ;
-                   
-        </script>";
-    }
-    header("Location: login.html");
-
+       
+        echo "<script> 
+                alert('No coiciden las contraseñas') ;     
+                window.location='login.html'; 
+            </script>";
+           
+     
+      
+    }   
 }else{
     echo 
     "<script> 
-         alert('Ingrese su contraseña, porfavor') ;
-         
+         alert('Ingrese su contraseña, porfavor') ;   
+         window.location='login.html'; 
     </script>";
+   
+     
 } 
 ?>

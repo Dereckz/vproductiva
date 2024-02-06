@@ -85,10 +85,10 @@ if($result->num_rows>0){
         $mail->AltBody = 'Aquí tienes el enlace para recuperarla.';
 
         $mail->send();
-        echo '.. ';
+        echo '.';
         echo '<script>
         Swal.fire({
-        title: "Se envio un correo de recuperación, verifiquelo porfavors",
+        title: "Se envio un correo de recuperación, verifiquelo porfavor",
         timer: 1500,
         icon: "sucess"
         }).then(function() {
