@@ -13,7 +13,7 @@ require("../dev/conectar.php");
     include "mcript.php";
     echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>';
 
-$correo =($_POST["correo"]);
+$correo =(($_POST["correo"]));
 $query="SELECT * FROM usuarios where cCorreo='$correo' and iEstatus=1";
 $result=$conn->query($query);
 $row=$result->fetch_assoc();
@@ -27,21 +27,10 @@ if($result->num_rows>0){
         $mail->isSMTP();   
         
         
-        $mail->SMTPAuth = true; // authentication enabled
-        $mail->Host       = 'smtp-mail.outlook.com';                     //Set the SMTP server to send through
-        $mail->Username   = 'soporte.valuacion.productiva@outlook.com';    
-        $mail->Password   = '@vproductivam24';
-        $mail->Port       = 587;  
-
-       //$mail->Password   = '@vproductivam24';
-       // $mail->Host='mail.desetecnologias.net';
-       //$mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for Gmail 
-        //$mail->Username   = 'contacto@desetecnologias.net';                     
-        //$mail->Password   = '@safa2017';                      
-        //$mail->Port       = 465;  
+       
 
         //Recipients
-       $mail->setFrom('soporte.valuacion.productiva@outlook.com', 'SOPORTE VALUACIÓN PRODUCTIVA');
+       $mail->setFrom('soporte.valuacion.productiva@outlook.com', 'SOPORTE');
        //$mail->AddAddress("soporte.valuacion.productiva@outlook.com", "SOPORTE VALUACIÓN PRODUCTIVA");
        $mail->AddAddress($correo, $nombreusuario); 
       
@@ -85,10 +74,10 @@ if($result->num_rows>0){
         $mail->AltBody = 'Aquí tienes el enlace para recuperarla.';
 
         $mail->send();
-        echo '.. ';
+        echo '.';
         echo '<script>
         Swal.fire({
-        title: "Se envio un correo de recuperación, verifiquelo porfavors",
+        title: "Se envio un correo de recuperación, verifiquelo porfavor",
         timer: 1500,
         icon: "sucess"
         }).then(function() {
