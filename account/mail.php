@@ -65,7 +65,7 @@ if($result->num_rows>0){
             </div>
             <div class="bajada" style="padding: 40px;text-align: center;color:#585758;font-size:15px">
               <p>Hola <b>'.$nombreusuario.'</b>: Hemos recibido una solicitud de recuperación de contraseña. Para generar una nueva, haga click en el siguiente botón.</p>
-              <a href="http://localhost/vproductivam/account/recuperar.php?ic='.$codigo.'" class="boton" style="background: #003272 ;color: white;border-radius: 5px;padding: 15px 40px;text-decoration: none;margin: 15px 0;display:inline-block;">Recuperar contraseña</a>
+              <a href="https://desetecnologias.net/account/recuperar.php?ic='.$codigo.'" class="boton" style="background: #003272 ;color: white;border-radius: 5px;padding: 15px 40px;text-decoration: none;margin: 15px 0;display:inline-block;">Recuperar contraseña</a>
               <p style="font-weight:bold">Si no ha solicitado recuperación de contraseña haga caso omiso a este mensaje.</p>
             </div>
           </div>

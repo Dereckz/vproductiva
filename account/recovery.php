@@ -4,9 +4,9 @@ include "mcript.php";
 $contrasena=$_POST["contrasena"];
 $contrasenad=$_POST["contrasenad"];
 $codigo=$_POST["id"];
-$codigod=$desencriptar($codigo);
-echo $codigod;
-if ($contrasena<>"" || $contrasenad<>""){
+$codigod=$desencriptar($_POST["id"]);
+
+ if ($contrasena<>"" || $contrasenad<>""){
     if($contrasena==$contrasenad){
        
         $query="SELECT * FROM usuarios where cCorreo='$codigod' and iEstatus=1";
@@ -15,9 +15,8 @@ if ($contrasena<>"" || $contrasenad<>""){
 
         if($result->num_rows>0){
             $pass=password_hash(($contrasena), PASSWORD_DEFAULT); 
-            $$consulta = mysqli_query($conn,"UPDATE usuarios 
-                                          SET cPassword='".$pass."'
-                                          WHERE iIdUsuario= ". $row["iIdUsuario"]);
+            $consulta ="UPDATE usuarios SET cPassword='$pass' 
+                         WHERE iIdUsuario= ". $row["iIdUsuario"];
                                           $queryA = mysqli_query($conn,$consulta);
 
 
@@ -48,5 +47,5 @@ if ($contrasena<>"" || $contrasenad<>""){
          alert('Ingrese su contraseña, porfavor') ;
          
     </script>";
-}
+} 
 ?>
