@@ -2,7 +2,7 @@
 //ConfiguraciÃ³n del algoritmo de encriptaciÃ³n
 //Debes cambiar esta cadena, debe ser larga y unica
 //nadie mas debe conocerla
-$clave  = '@qsapeeti81valuacionproductiva2424';
+$clave  = '@qsape9ti81valuacionproductiva201';
 //Metodo de encriptaciÃ³n
 $method = 'aes-256-cbc';
 // Puedes generar una diferente usando la funcion $getIV()
