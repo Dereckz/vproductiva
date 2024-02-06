@@ -5,7 +5,7 @@
 
 require("../dev/conectar.php");
 date_default_timezone_set('America/Mexico_City');
- 
+echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>';
 $fechaActual = date("d-m-Y h:i:s");
 
 $fullname = ($_POST["fullname"]);
@@ -36,11 +36,18 @@ if ($stmt = $conn->prepare("SELECT cUsuario FROM usuarios WHERE cUsuario= ? LIMI
 
 //@Dereckz13
     if ($fila> 0)  {
-        echo 
-        "<script> 
-             alert('$correo Ya se encuentra registrado, verificalo') ;
-             window.location= '../account/login.html' 
-        </script>";
+      
+        echo '.';
+        echo '<script>
+            Swal.fire({
+            title: "Ya se encuentra registrado, verificalo",
+            timer: 1800,
+            icon: "warning"
+            }).then(function() {
+                window.location = "login.html";
+            });
+        
+        </script>';
    } else {
          if (!empty($fullname)){
 
@@ -56,28 +63,47 @@ if ($stmt = $conn->prepare("SELECT cUsuario FROM usuarios WHERE cUsuario= ? LIMI
                                   
                      }
                      else{	
-                         echo 
-                         "<script> 
-                            alert('No se pudo regustra el Alumno');
-                            window.location= '../account/login.html' 
-                         </script>";
+                         
+                         echo '.. ';
+                         echo '<script>
+                             Swal.fire({
+                             title: "No se pudo regustra el Alumno",
+                             timer: 1500,
+                             icon: "error"
+                             }).then(function() {
+                                 window.location = "login.html";
+                             });
+                         
+                         </script>';
                                   
                      }                            
             }
             else{ 
-               
-                echo 
-                "<script> Swal.fire('Any fool can use a computer');
-                    window.location= '../account/login.html' 
-                </script>";
-               // echo "<script> alert('No coinciden las contraseñas');window.location= 'http://localhost/vproductivam/account/login.html' </script>";
-                //echo "<script> alert('pass1-".$_POST["password"]. "=".$_POST["confirmpassword"]."');window.location= 'http://localhost/vproductivam/account/login.html' </script>";    
-            }   
+                echo '.. ';
+                echo '<script>
+                    Swal.fire({
+                    title: "Las contraseña  no coiciden.",
+                    timer: 1500,
+                    icon: "warning"
+                    }).then(function() {
+                        window.location = "login.html";
+                    });
+                
+                </script>';
+                     }   
         }else{
-            echo "<script> 
-                    alert('Ingrese su nombre para continuar');
-                    window.location= 'http://localhost/vproductivam/account/login.html' 
-                 </script>";                
+           
+                 echo '.. ';
+                echo '<script>
+                    Swal.fire({
+                    title: "Ingrese su nombre para continuar.",
+                    timer: 1500,
+                    icon: "warning"
+                    }).then(function() {
+                        window.location = "login.html";
+                    });
+                
+                </script>';             
         }
    }
     

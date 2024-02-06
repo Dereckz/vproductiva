@@ -44,13 +44,13 @@
     <div class="container">
         <div class="login-register">
             <div class="nav-buttons">
-                <button id="loginBtn" class='active' >Inserte correo asociado </button>
+                <button id="loginBtn" class='active' >Inserte correo asocisado </button>
                 
             </div>
             <div class="form-group">
 
                 <form method="post" action="recovery.php" id="forgotform">
-                    <input type="hidden"id="id" name="id" value="<?php echo $codigo?>">
+                    <input type="text"id="id" name="id" value="<?php echo str_replace(" ","+",$codigo)?>">
                     <label for="pass">Nueva Contraseña</label>
                     <input type="password" id="contrasena" name="contrasena">
                     <label for="pass">Confirme Contraseña</label>
