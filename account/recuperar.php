@@ -1,14 +1,14 @@
-
+<?php  $codigo=$_GET["ic"];?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Olvide contraseña</title>
+    <title>Recuperar Cuenta</title>
     <link href="../img/LOGOVP.ico" rel="icon">
     <link rel="stylesheet" href="main.css">
 </head>
-<body>
+<body onload="deshabilitaRetroceso()">
     <!-- Header -->
   <section id="header">
     <link rel="stylesheet" href="style.css">
@@ -25,12 +25,11 @@
             <div class="bar"></div>
           </div>
           <ul>
-            <li><a href="../index.html" data-after="Home">Inicio</a></li>
-           <!-- <li><a href="#services" data-after="Service">Servicios</a></li>-->
+             <!--<li><a href="../index.html" data-after="Home">Inicio</a></li>
+           
             <li><a href="../index.html#projects" data-after="Projects">Cursos</a></li>
             <li><a href="../index.html#about" data-after="About">Acerca de nosotros</a></li>
-            <li><a href="../index.html#contact" data-after="Contact">Contacto</a></li>
-            <!--<li><a href="account/register.html" data-after="Login">Login</a></li> -->
+            <li><a href="../index.html#contact" data-after="Contact">Contacto</a></li>          -->
             <li><a href="login.html" data-after="Login">Login</a></li>
           </ul>
         </div>
@@ -50,14 +49,15 @@
             </div>
             <div class="form-group">
 
-                <form method="post" action="mail.php" id="forgotform">
-                  
-                     <label for="email">Email</label>
-                  <input type="text" id="correo" name="correo">
-                    <input type="submit" value="enviar" class="submit"  onclick = "clickMe();" >
+                <form method="post" action="recovery.php" id="forgotform">
+                    <input type="hidden"id="id" name="id" value="<?php echo $codigo?>">
+                    <label for="pass">Nueva Contraseña</label>
+                    <input type="password" id="contrasena" name="contrasena">
+                    <label for="pass">Confirme Contraseña</label>
+                    <input type="password" id="contrasenad" name="contrasenad">
+                    <input type="submit" value="Cambiar Contraseña" class="submit">
                 </form>
-               
-              
+            
              <div id="regresar">
                 <a href="login.html">Regresar</a>
             </div>
@@ -70,3 +70,12 @@
 
 </body>
 </html>
+<script type="text/javascript">
+ function deshabilitaRetroceso(){
+    window.location.hash="no-back-button";
+    window.location.hash="Again-No-back-button" //chrome
+    window.onhashchange=function(){
+        window.location.hash="";
+    }
+}
+</script>
