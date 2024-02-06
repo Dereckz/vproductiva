@@ -37,9 +37,11 @@ $codigod=$desencriptar($_POST["id"]);
     }else{
         echo 
         "<script> 
-             alert('Las contraseñas no coinciden, verifique.') ;       
+             alert('Las contraseñas no coinciden, verifique.') ;
+                   
         </script>";
     }
+    header("Location: login.html");
 
 }else{
     echo 
