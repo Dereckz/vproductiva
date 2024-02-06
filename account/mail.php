@@ -29,15 +29,15 @@ if($result->num_rows>0){
         
         $mail->SMTPAuth = true; // authentication enabled
         $mail->Host       = 'smtp-mail.outlook.com';                     //Set the SMTP server to send through
-        $mail->Username   = 'soporte.valuacion.productiva@outlook.com';    
-        $mail->Password   = '@vproductivam24';
+        $mail->Username   = 's';    
+        $mail->Password   = '';
         $mail->Port       = 587;  
 
-       //$mail->Password   = '@vproductivam24';
+
        // $mail->Host='mail.desetecnologias.net';
        //$mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for Gmail 
-        //$mail->Username   = 'contacto@desetecnologias.net';                     
-        //$mail->Password   = '@safa2017';                      
+        //$mail->Username   = '';                     
+        //$mail->Password   = '';                      
         //$mail->Port       = 465;  
 
         //Recipients
