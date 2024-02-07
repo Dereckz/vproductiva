@@ -2,6 +2,7 @@
 
 <?php $idc=$_GET["idc"]; ?>
 <?php $namec=$_GET["namec"]; ?>
+<?php $areacurso="";?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -31,11 +32,11 @@
     while ($consulta = mysqli_fetch_array($resultado)):
         $dataareacurso = mysqli_query($conn, "SELECT * FROM areacursos WHERE iIdAreaCursos=" .$consulta["fkidAreaCurso"]);
         $acursoname = mysqli_fetch_array($dataareacurso);
-
+        $areacurso=$acursoname["NombreArea"];
    ?>
 
 
-    <h1 id="tituloprincipal"><?php echo $namec ?></h1>
+    <h1 id="tituloprincipal"><?php echo $areacurso ?></h1>
 
     <table  id=tablarecursos>
         <tr>
