@@ -8,7 +8,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="estiloencabezado.css">
         
-        <title>Código de ética</title>
+        <title><?php $namec ?></title>
     </head>
     <body>
     <header id="encabezado">
@@ -29,9 +29,12 @@
    <?php
     $resultado = mysqli_query($conn, "SELECT * FROM curso where iIdCurso=".$idc);
     while ($consulta = mysqli_fetch_array($resultado)):
+        $dataareacurso = mysqli_query($conn, "SELECT * FROM areacursos WHERE iIdAreaCursos=" .$consulta["fkidAreaCurso"]);
+        $acursoname = mysqli_fetch_array($dataareacurso);
+
    ?>
 
-    <h1 id="tituloprincipal"><?php echo $namec?></h1>
+    <h1 id="tituloprincipal"><?php echo $acursoname["NombreArea"]?></h1>
     <table  id=tablarecursos>
         <tr>
             <td id="imagentemario"><img src="<?php echo str_replace('../alumno/','',$consulta["ricono"]) ?>" id="imagentemar" alt="<?php echo str_replace('../alumno/','',$consulta["ricono"]) ?>"></td>
