@@ -224,6 +224,10 @@ img {
 	}
 }
 /* End Keyframes */
+#fondoinicio{
+	background-color: #872362;
+	color: white;
+}
 
 /* Media Query For Desktop */
 @media only screen and (min-width: 1200px) {
@@ -242,7 +246,8 @@ img {
 		display: inline-block;
 	}
 	#header .nav-list ul li a {
-		font-size: 1.8rem;
+		font-size: 1.6rem;
+    	font-weight: 600;
 	}
 	#header .nav-list ul a:after {
 		display: none;
@@ -284,7 +289,6 @@ img {
 		font-weight: 550;
 		letter-spacing: 0.1rem;
 		text-decoration: none;
-		color: #000000;
 		text-transform: uppercase;
 		padding: 10px;
 		display: block;
@@ -292,12 +296,17 @@ img {
 	}
 	.fondoinicio{
 		background-color: white;
-		margin-top: 4%;
 	}
 	#acercade{
 		background-color: white;
 	}
 	#logoinicio {
 		width: 9em;
+	}
+	#fondoinicio{
+		background-color: #872362;
+	}
+	#ingresarblanco{
+		color: white;
 	}
 }

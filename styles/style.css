@@ -131,7 +131,7 @@ p {
 	text-decoration: none;
 	color: #000000;
 	text-transform: uppercase;
-	padding: 20px;
+	padding: 15px 30px;
 	display: block;
 }
 #header .nav-list ul a::after {
@@ -356,7 +356,7 @@ p {
 	padding-top: 2em;
 }*/
 #services h2 {
-	font-size: 1.85em;
+	font-size: 190%;
     padding: 0.8em 9em;
 }
 #services h3 {
@@ -752,7 +752,8 @@ p {
 		display: inline-block;
 	}
 	#header .nav-list ul li a {
-		font-size: 1.8rem;
+		font-size: 1.6rem;
+    	font-weight: 600;
 	}
 	#header .nav-list ul a:after {
 		display: none;
@@ -769,7 +770,7 @@ p {
 
 
 #logoinicio{
-	width: 220px;
+	width: 21em;
 }
 
 /* Inicia estilo para slider de videos de capactiroes*/
@@ -1025,7 +1026,7 @@ p {
     border-radius: 4em;
 }
 #texto1nosotros{
-	font-size: 3.2em;
+	font-size: 350%;
     text-align: center;
     /* margin-top: 8em; */
     padding-top: 1.2em;
@@ -1034,15 +1035,16 @@ p {
 }
 
 .texto2nosotros{
-	font-size: 1.5em;
+	font-size: 150%;
 	color: white;
 	text-align: center;
 	font-weight: 450;
 }
 #texto3nosotros{
 	text-align: center;
-    font-size: 3em;
+    font-size: 300%;
     margin-top: 1.5em;
+	font-family: 'MonserratBold';
 }
 #imgmision{
 	width: 22%;
@@ -1054,8 +1056,8 @@ p {
 	margin-bottom: 5em;
 }
 #valores{
-	font-size: 2em;
-	font-weight: 600;
+	font-size: 250%;
+    font-weight: 550;
 }
 #imgvalores{
 	width: 52%;
@@ -1116,29 +1118,36 @@ p {
 }
 #parrafo1bienvenida{
 	color: white;
-	/*font-size: 1.2em;*/
-	padding: 2.5em 2em;
+	font-size: 170%;
+	padding-top: 4%;
+	padding-bottom: 2%;
 }
 #parrafo2bienvenida{
 	color: white;
 	font-size: 4em;
-	
+	font-family: 'MonserratBold';
 }
 #parrafo3bienvenida{
 	color: white;
 	font-size: 1.6em;
 	text-align: justify;
-	padding-top: 1.9em;
-    font-weight: 450;
+    font-weight: 500;
 }
-.celdasbienvenida{
-	width: 50%;
+.celdasbienvenida1{
+	width: 45%;
+    border-right: solid white;
+}
+.celdasbienvenida2{
+    padding-left: 3%;
 }
 #parrafo4bienvenida{
 	text-align: center;
     font-size: 4em;
     padding: 0em 6em;
 	color: #1CC4EA;
+	font-family: 'MonserratBold';
+	margin-top: 4%;
+    margin-bottom: 3%;
 }
 .btnvercursos{
 	text-align: center;
@@ -1164,13 +1173,14 @@ p {
 #texto1cursos{
 	color: #872362;
     padding-top: 1.5%;
-    font-size: 3.8em;
+    font-size: 400%;
 	font-family: MonserratBold;
 }
 
 .imagenesareas {
     /*width: 85%; */
     padding: 1em 1.5em;
+	border-radius: 2.9em
 }
 .filacentrada {
     text-align: center;
@@ -1178,15 +1188,19 @@ p {
 #titulocategorias{
 	color: #2E49C1;
     font-family: MonserratBold;
-    font-size: 3.5em;
+    font-size: 400%;
     margin-top: 0.3em;
+    text-align: left;
+}
+.titulocategoriascursos{
+	width: 75%;
 }
 .celdacategoria{
 	height: 25em;
 }
 
 .banersinicio{
-	margin: 5em 1em;
+	margin: 5% 1%;
 }
 .banernosotros{
 	margin-top: 20em;
@@ -1289,22 +1303,23 @@ p {
 }
 
 #izquierdacontacto{
-	background-color: #872362;
 	min-height: 65vh;
 	display: flex;
 	margin: 10% 0;
 }
+#izquierdacontacto2{
+	background-color: #872362;
+}
 #login-register{
 	width: 58%;
     background-color: white;
-	padding: 8% 2%;
 }
 #texto1contacto{
-	font-size: 3.3em;
+	font-size: 330%;
     color: white;
-	padding-top: 13%;
-	padding-left: 20%;
-	padding-right: 20%;
+    padding-top: 15%;
+    padding-left: 20%;
+    padding-right: 20%;
 }
 #texto2contacto{
 	font-size: 1.8em;
@@ -1426,9 +1441,10 @@ p {
 		height: 220px;
 		overflow: hidden;
 	}
+	/*
 	.fondoinicio {
 		padding-top: 4%;
-	}
+	}*/
 
 	#bienvenida {
 		height: 100%;

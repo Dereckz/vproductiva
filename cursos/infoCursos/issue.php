@@ -37,9 +37,11 @@
             <td id="imagentemario"><img src="<?php echo str_replace('../alumno/','',$consulta["ricono"]) ?>" id="imagentemar" alt="<?php echo str_replace('../alumno/','',$consulta["ricono"]) ?>"></td>
             <td class="celdatop">
             <table id=tablacontenido>
+                <tr><td></td><td> <h3 id="titulocurso">
+                <?php echo $namec?>
+                </h3> </td></tr>
                 <tr> <td></td><td> <h3 id="descricpiontemario">
                 <?php echo $consulta["cDescripcion"]?>
-                 
                 </h3> </td></tr>
                 <tr> <td></td><td id=filatitulo> <h2>TEMARIO</h2> </td></tr>
                 

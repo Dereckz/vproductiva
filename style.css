@@ -260,6 +260,9 @@ img {
 	width: 19em;
     margin-left: 2em;
 }
+#contactoform{
+	margin: 16% 12%;
+}
 
 @media screen and (max-width:700px){
 	#logoinicio{
@@ -318,7 +321,7 @@ img {
 	#texto1contacto {
 		font-size: 2em;
 		color: white;
-		padding-top: 13%;
+		padding-top: 5%;
 		padding-left: 10%;
 		padding-right: 10%;
 	}
@@ -326,5 +329,8 @@ img {
 		font-size: 1.4em;
 		color: white;
 		padding: 3% 10%;
+	}
+	#contactoform {
+		margin: 2% 0%;
 	}
 }
