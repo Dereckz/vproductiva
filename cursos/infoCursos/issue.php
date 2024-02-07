@@ -34,11 +34,7 @@
 
    ?>
 
-<<<<<<< HEAD
-    <h1 id="tituloprincipal"><?php echo $acursoname["NombreArea"]?></h1>
-=======
     <h1 id="tituloprincipal"><?php echo $namec ?></h1>
->>>>>>> origin/master
     <table  id=tablarecursos>
         <tr>
             <td id="imagentemario">
@@ -46,22 +42,6 @@
             </td>
             <td class="celdatop">
             <table id=tablacontenido>
-<<<<<<< HEAD
-                <tr> 
-                    <td> </td>
-                    <td> <h2> <?php echo $namec?></h2> 
-                        <h3 id="descricpiontemario">
-                            <?php echo $consulta["cDescripcion"]?>
-                        </h3> 
-                    </td>
-                </tr>
-                <tr> 
-                    <td></td>
-                    <td id=filatitulo>
-                         <h2>TEMARIO</h2> 
-                    </td>
-                </tr>
-=======
                 <tr><td></td><td> <h3 id="titulocurso">
                 <?php echo $namec?>
                 </h3> </td></tr>
@@ -69,7 +49,6 @@
                 <?php echo $consulta["cDescripcion"]?>
                 </h3> </td></tr>
                 <tr> <td></td><td id=filatitulo> <h2>TEMARIO</h2> </td></tr>
->>>>>>> origin/master
                 
                   <?php
                 
