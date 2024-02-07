@@ -17,7 +17,7 @@
     	</div>-->
     	<!--<h1 id="tituloprincipal">Valuacion Productiva</h1>-->
         <ul id="menu">
-            <li class="logo"><img src="../img/logob.png" id="logo"></li>
+            <li class="logo"><a href="../../alumno/index.php"><img src="../img/logob.png" id="logo"></a></li>
             <li class="menusvacio"></li>
     	    <li class="menus"><a href="../../alumno/index.php" class="enlacemenu">Mi perfil</a></li>
     	    <li id="miperfilfondo" class="menus"><a href="../../alumno/cursos.php" id="miperfil" class="enlacemenu">Catálogo de Cursos</a></li>
@@ -31,7 +31,7 @@
     while ($consulta = mysqli_fetch_array($resultado)):
    ?>
 
-    <h1 id="tituloprincipal"><?php echo $namec?></h1>
+    <h1 id="tituloprincipal"><?php echo $namec ?></h1>
     <table  id=tablarecursos>
         <tr>
             <td id="imagentemario"><img src="<?php echo str_replace('../alumno/','',$consulta["ricono"]) ?>" id="imagentemar" alt="<?php echo str_replace('../alumno/','',$consulta["ricono"]) ?>"></td>

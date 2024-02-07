@@ -283,6 +283,7 @@ img {
 	#header .nav-list ul {
 		display: contents;
     	flex-direction: row;
+		background-color: white;
 	}
 	#header .nav-list ul a {
 		font-size: 1.2rem;
