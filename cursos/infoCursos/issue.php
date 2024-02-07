@@ -8,7 +8,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="estiloencabezado.css">
         
-        <title><?php $namec ?></title>
+        <title><?php echo $namec ?></title>
     </head>
     <body>
     <header id="encabezado">
@@ -37,17 +37,27 @@
     <h1 id="tituloprincipal"><?php echo $acursoname["NombreArea"]?></h1>
     <table  id=tablarecursos>
         <tr>
-            <td id="imagentemario"><img src="<?php echo str_replace('../alumno/','',$consulta["ricono"]) ?>" id="imagentemar" alt="<?php echo str_replace('../alumno/','',$consulta["ricono"]) ?>"></td>
+            <td id="imagentemario">
+                <img src="<?php echo str_replace('../alumno/','',$consulta["ricono"]) ?>" id="imagentemar" alt="<?php echo str_replace('../alumno/','',$consulta["ricono"]) ?>">
+            </td>
             <td class="celdatop">
             <table id=tablacontenido>
-                <tr> <td></td><td> <h3 id="descricpiontemario">
-                <?php echo $consulta["cDescripcion"]?>
-                 
-                </h3> </td></tr>
-                <tr> <td></td><td id=filatitulo> <h2>TEMARIO</h2> </td></tr>
+                <tr> 
+                    <td> </td>
+                    <td> <h2> <?php echo $namec?></h2> 
+                        <h3 id="descricpiontemario">
+                            <?php echo $consulta["cDescripcion"]?>
+                        </h3> 
+                    </td>
+                </tr>
+                <tr> 
+                    <td></td>
+                    <td id=filatitulo>
+                         <h2>TEMARIO</h2> 
+                    </td>
+                </tr>
                 
-                <!--<tr> <td id=filainstrucciones> <h4> En este curso aprenderas las habilidades necesarias para optimizar tus actividades diarias.</h4> </td></tr>  -->
-                <?php
+                  <?php
                 
                 $resultado = mysqli_query($conn,"SELECT c.cNombreCurso, m.cNombreModulo FROM curso c
                 INNER JOIN modulo m ON c.iIdCurso = m.fkiIdCurso WHERE c.iIdCurso=".$idc);
