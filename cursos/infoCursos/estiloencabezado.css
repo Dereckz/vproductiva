@@ -277,6 +277,13 @@ text-decoration: none;
 	vertical-align: top;
 	padding: 1em;
 }
+
+#titulocurso{
+	margin-bottom: 0;
+    margin-top: 3%;
+    font-family: 'Montserrat';
+    font-size: 150%;
+}
 @media screen and (max-width:700px){
 	.logo {
 		display: none;
