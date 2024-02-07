@@ -4,13 +4,14 @@
 <html lang="en">
     <style>
         .my-button {
-        padding: 10px 20px;
+        padding: 8px 20px;
         background-color: #1CC4EA;
         color: white;
         border: none;
         border-radius: 30px;
         cursor: pointer;
-        margin-left: 10%;
+        margin-left: 14%;
+        padding-top: 0%;
         }
 
         .my-button:hover {
@@ -22,6 +23,14 @@
         }
         .exampleone {
         background-color: #2E49E1;
+        }
+        .text-white{
+          font-size: 60%;
+          font-family: "Montserrat";
+          font-weight: 600;
+        }
+        .text-white2{
+          font-family: "Montserrat";
         }
     </style>
 <head>
@@ -40,7 +49,7 @@
     <div class="header containerh">
       <div class="nav-bar">
         <div class="brand" style="background-color: transparent;">
-          <a href="#hero">
+          <a href="../index.html">
            <img src="logo.png" id="logoinicio" alt="VProductiva Logo">
            <!-- <h1>Valuación Productiva</h1>-->
           </a>
@@ -53,10 +62,10 @@
             <li><a href="../index.html" data-after="Home">Inicio</a></li>
            <!-- <li><a href="#services" data-after="Service">Servicios</a></li>-->
             <li><a href="../index.html#projects" data-after="Projects">Cursos</a></li>
-            <li><a href="../index.html#about" data-after="About">Acerca de nosotros</a></li>
+            <li><a href="../index.html#about" data-after="About">Nosotros</a></li>
             <li><a href="../index.html#contact" data-after="Contact">Contacto</a></li>
             <!--<li><a href="account/register.html" data-after="Login">Login</a></li> -->
-            <li><a href="login.html" data-after="Login">Login</a></li>
+            <li><a href="login.html" data-after="Login">Ingresar</a></li>
           </ul>
         </div>
       </div>
@@ -90,9 +99,9 @@
                     <label  style="text-align: center"><h2>Tu registro ha sido exitoso.</h2></label>
                     <br><br>
                     <button class="my-button">
-                        <a class="text-white" href="../account/login.html" style="font-size: 0.8em;">
+                        <a class="text-white" href="../account/login.html">
                           Haz clic aquí
-                          <p>Para explorar el catalogo de cursos</p>
+                          <p class="text-white2">Para explorar el catalogo de cursos</p>
                         </a>
                     </button>
                                     

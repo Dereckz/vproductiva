@@ -664,7 +664,7 @@ p {
 		background-image: url(../images/fondocursos.png);
 	}
 	#projects .all-projects .project-info {
-		height: 100%;
+		width: 150%;
 	}
 	#projects .all-projects .project-img {
 		height: 100%;
@@ -751,7 +751,8 @@ p {
 		display: inline-block;
 	}
 	#header .nav-list ul li a {
-		font-size: 1.8rem;
+		font-size: 1.6rem;
+    	font-weight: 600;
 	}
 	#header .nav-list ul a:after {
 		display: none;

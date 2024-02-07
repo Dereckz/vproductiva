@@ -17,7 +17,7 @@
     	</div>-->
     	<!--<h1 id="tituloprincipal">Valuacion Productiva</h1>-->
         <ul id="menu">
-            <li class="logo"><img src="../img/logob.png" id="logo"></li>
+            <li class="logo"><a href="../../alumno/index.php"><img src="../img/logob.png" id="logo"></a></li>
             <li class="menusvacio"></li>
     	    <li class="menus"><a href="../../alumno/index.php" class="enlacemenu">Mi perfil</a></li>
     	    <li id="miperfilfondo" class="menus"><a href="../../alumno/cursos.php" id="miperfil" class="enlacemenu">Catálogo de Cursos</a></li>
@@ -34,7 +34,11 @@
 
    ?>
 
+<<<<<<< HEAD
     <h1 id="tituloprincipal"><?php echo $acursoname["NombreArea"]?></h1>
+=======
+    <h1 id="tituloprincipal"><?php echo $namec ?></h1>
+>>>>>>> origin/master
     <table  id=tablarecursos>
         <tr>
             <td id="imagentemario">
@@ -42,6 +46,7 @@
             </td>
             <td class="celdatop">
             <table id=tablacontenido>
+<<<<<<< HEAD
                 <tr> 
                     <td> </td>
                     <td> <h2> <?php echo $namec?></h2> 
@@ -56,6 +61,15 @@
                          <h2>TEMARIO</h2> 
                     </td>
                 </tr>
+=======
+                <tr><td></td><td> <h3 id="titulocurso">
+                <?php echo $namec?>
+                </h3> </td></tr>
+                <tr> <td></td><td> <h3 id="descricpiontemario">
+                <?php echo $consulta["cDescripcion"]?>
+                </h3> </td></tr>
+                <tr> <td></td><td id=filatitulo> <h2>TEMARIO</h2> </td></tr>
+>>>>>>> origin/master
                 
                   <?php
                 
