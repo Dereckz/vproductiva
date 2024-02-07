@@ -400,7 +400,7 @@
     	</div>-->
     	<!--<h1 id="tituloprincipal">Valuacion Productiva</h1>-->
     	<ul id="menu">
-      <li class="logo"><img src="img/logob.png" id="logo"></li>
+      <li class="logo"><a href="index.php"><img src="img/logob.png" id="logo"></a></li>
       <li class="menusvacio"></li>
     	<li class="menus"><a href="index.php">Mi perfil</a></li>
     	<li id="miperfilfondo" class="menus"><a href="cursos.php" id="miperfil">Catálogo de Cursos</a></li>
