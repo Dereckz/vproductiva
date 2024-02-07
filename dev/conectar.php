@@ -1,9 +1,5 @@
 <?php
 
-$dbhost = "localhost";
-$dbuser = "root";
-$dbpass = "";
-$dbname = "vproductivabd"; 
 
  /* $dbhost = "localhost";
 $dbuser = "desetec2_elchingon";
@@ -12,8 +8,11 @@ $dbname = "desetec2_vproductivabd";
 
  */
 
-
-
+ $dbhost = "localhost";
+ $dbuser = "root";
+ $dbpass = "@rupe2021";
+ $dbname = "vproductivabd"; 
+ 
 $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 if (!$conn) 
 {
