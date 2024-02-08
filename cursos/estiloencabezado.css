@@ -49,9 +49,25 @@ body{
 }
 .menus{
 	display: inline-block;
-    font-size: 1.4em;
+    font-size: 1.1em;
     text-align: center;
     width: 16%;
+    vertical-align: top;
+    padding: 1em;
+}
+.menusvacio{
+    display: inline-block;
+    font-size: 1.1em;
+    text-align: center;
+    width: 16%;
+    vertical-align: top;
+    padding: 1em;
+}
+.menusevaluacion{
+	display: inline-block;
+    font-size: 1.1em;
+    text-align: center;
+    width: 19%;
     vertical-align: top;
     padding: 1em;
 }
