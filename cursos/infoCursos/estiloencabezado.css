@@ -51,7 +51,7 @@ body{
 }
 .menus{
 	display: inline-block;
-	font-size: 1.4em;
+	font-size: 1.1em;
 	text-align: center;
 	width: 18%;
 	vertical-align: top;
@@ -137,7 +137,7 @@ h1{
 h2{
 	color: #0D1566;
 	/*text-indent: 8em;*/
-	font-size: 1.6em;
+	font-size: 130%;
 	margin-top: 0.5em;
 	/*font-family: Acumin;*/
 	margin-bottom: 0.3em
@@ -282,7 +282,8 @@ text-decoration: none;
 	margin-bottom: 0;
     margin-top: 3%;
     font-family: 'Montserrat';
-    font-size: 150%;
+    font-size: 160%;
+	color: #0D1566;
 }
 @media screen and (max-width:700px){
 	.logo {

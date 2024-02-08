@@ -390,9 +390,9 @@
     	<ul id="menu">
       <li class="logo"><a href="index.php"><img src="img/logob.png" id="logo"></a></li>
       <li class="menusvacio"></li>
-    	<li class="menus"><a href="index.php">Mi perfil</a></li>
-    	<li id="miperfilfondo" class="menus"><a href="cursos.php" id="miperfil">Catálogo de Cursos</a></li>
-      <li class="menus"><a href="../account/login.html">Salir</a></li>
+    	<li class="menus"><a href="index.php">MI PERFIL</a></li>
+    	<li id="miperfilfondo" class="menus"><a href="cursos.php" id="miperfil">CATÁLOGO DE CURSOS</a></li>
+      <li class="menus"><a href="../account/login.html">SALIR</a></li>
     	</ul>
   </header>
 
@@ -406,23 +406,23 @@
           <div id="divcategorias">
             <table>
               <tr class="filacentrada">
-                <td><a href="cursoxarea.php?ida=1&name=Productividad Laboral"><img src="img/areaplaboral.png" class="imagenesareas" 
+                <td class="imagenxarea"><a href="cursoxarea.php?ida=1&name=Productividad Laboral"><img src="img/areaplaboral.png" class="imagenesareas" 
                 onmouseover="this.src='img/areaplaboral2.png'" onmouseout="this.src='img/areaplaboral.png'"></a></td>
-                <td><a href="cursoxarea.php?ida=2&name=Habilidades Blandas"><img src="img/areahblandas.png" class="imagenesareas" 
+                <td class="imagenxarea"><a href="cursoxarea.php?ida=2&name=Habilidades Blandas"><img src="img/areahblandas.png" class="imagenesareas" 
                 onmouseover="this.src='img/areahblandas2.png'" onmouseout="this.src='img/areahblandas.png'"></a></td>
-                <td><a href="cursoxarea.php?ida=3&name=Psicologia"><img src="img/areapsicologia.png" class="imagenesareas" 
+                <td class="imagenxarea"><a href="cursoxarea.php?ida=3&name=Psicologia"><img src="img/areapsicologia.png" class="imagenesareas" 
                 onmouseover="this.src='img/areapsicologia2.png'" onmouseout="this.src='img/areapsicologia.png'"></a></td>
-                <td><a href="cursoxarea.php?ida=4&name=Salud, Higiene y Seguridad"><img src="img/areasalud.png" class="imagenesareas" 
+                <td class="imagenxarea"><a href="cursoxarea.php?ida=4&name=Salud, Higiene y Seguridad"><img src="img/areasalud.png" class="imagenesareas" 
                 onmouseover="this.src='img/areasalud2.png'" onmouseout="this.src='img/areasalud.png'"></a></td>
               </tr>
               <tr class="filacentrada">
-                <td><a href="cursoxarea.php?ida=5&name=Cultura Juridica"><img src="img/areacjuridica.png" class="imagenesareas2" 
+                <td class="imagenxarea"><a href="cursoxarea.php?ida=5&name=Cultura Juridica"><img src="img/areacjuridica.png" class="imagenesareas2" 
                 onmouseover="this.src='img/areacjuridica2.png'" onmouseout="this.src='img/areacjuridica.png'"></a></td>
-                <td><a href="cursoxarea.php?ida=6&name=Finanzas"><img src="img/areafinanzas.png" class="imagenesareas2" 
+                <td class="imagenxarea"><a href="cursoxarea.php?ida=6&name=Finanzas"><img src="img/areafinanzas.png" class="imagenesareas2" 
                 onmouseover="this.src='img/areafinanzas2.png'" onmouseout="this.src='img/areafinanzas.png'"></a></td>
-                <td><a href="cursoxarea.php?ida=7&name=Habilidades Digitales"><img src="img/areahdigitales.png" class="imagenesareas2" 
+                <td class="imagenxarea"><a href="cursoxarea.php?ida=7&name=Habilidades Digitales"><img src="img/areahdigitales.png" class="imagenesareas2" 
                 onmouseover="this.src='img/areahdigitales2.png'" onmouseout="this.src='img/areahdigitales.png'"></a></td>
-                <td><a href=""><img src="img/areaotro.png" class="imagenesareas2" 
+                <td class="imagenxarea"><a href=""><img src="img/areaotro.png" class="imagenesareas2" 
                 onmouseover="this.src='img/areaotro2.png'" onmouseout="this.src='img/areaotro.png'"></a></td>
               </tr>
             </table>

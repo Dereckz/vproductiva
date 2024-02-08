@@ -361,7 +361,7 @@ p {
 }
 #services h3 {
 	font-size: 1.6em;
-	color: rgb(147, 147, 177);
+	/*color: rgb(147, 147, 177);*/
 	padding-bottom: 3em;
 	background-color: white;
 }
@@ -551,7 +551,8 @@ p {
 
 /* Footer */
 #footer {
-	background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+	background-color: #0D1566;
+	/*background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);*/
 }
 #footer .footer {
 	min-height: 200px;
@@ -1052,7 +1053,7 @@ p {
 }
 #imgvision{
 	margin-top: 3em;
-	width: 123%;
+	width: 130%;
 	margin-bottom: 5em;
 }
 #valores{
@@ -1356,10 +1357,57 @@ p {
 #imgbienvenida{
 	height: 52em;
 }
-/*
-.piedepagina{
-	margin: 1em 4em;
-}*/
+/*style footer*/
+#divfooter{
+	display: flex;
+}
+#logopie{
+	width: 20%;
+    padding: 2% 3%;
+}
+#texto1pie{
+	width: 50%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 1%;
+}
+#parrafodireccion{
+	line-height: 110%;
+}
+.parrafosfooter{
+	font-weight: 550;
+	color: white;
+}
+#texto2pie{
+	width: 32%;
+    padding: 2% 5%;
+}
+#parrafoter{
+	line-height: 110%;
+}
+#terminosycon{
+	text-decoration: underline;
+}
+
+#tituloterminos{
+	margin-top: 3%;
+	font-size: 190%;
+    text-align: center;
+}
+.terminos{
+	text-align: justify;
+	margin: 0 5%;
+}
+.terminos h4{
+	color: #000000;
+	padding-bottom: 0;
+	font-size: 160%;
+	padding-top: 1.2%;
+}
+.terminos p{
+	font-weight: 500;
+}
+
 
 @media screen and (max-width:700px){
 	#logoinicio{
@@ -1528,6 +1576,13 @@ p {
 	#footer .footer {
 		flex-direction: column;
 		width: 50em;
+	}
+	#logopie{
+		height: 30%;
+    	padding: 12% 0%;
+	}
+	#footer p {
+		font-size: 1rem;
 	}
 	
 }
