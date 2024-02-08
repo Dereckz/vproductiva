@@ -3,7 +3,7 @@
  
  $fechaActual = date("d-m-Y h:i:s");
 session_start();
-
+echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>';
 require("../dev/conectar.php");
 require("../function/sesion.php");
 $nombre =$_POST["username"];
@@ -58,14 +58,35 @@ if ($stmt = $conn->prepare("SELECT iIdUsuario, cUsuario, cPassword, cNombre, cAp
      } else {
        //header("Location: login.html");
          //echo 'La contraseña no es válida!' ;
-         echo "<script> alert('La contraseña no es válida!');window.location= '../account/login.html' </script>";
-
+         //echo "<script> alert('La contraseña no es válida!');window.location= '../account/login.html' </script>";
+         echo '.';
+         echo '<script>
+             Swal.fire({
+             title: "Las contraseña o el usuario no son correctos, verfique.",
+             timer: 1800,
+             icon: "warning"
+             }).then(function() {
+                 window.location = "login.html";
+             });
+         
+         </script>';
           
      }
 
  } else {
-     echo "<script> alert('Error al logarse');window.location= '../index.html' </script>";
-    header("Location:  ../index.html");
+    // echo "<script> alert('Error al logarse');window.location= '../index.html' </script>";
+    //header("Location:  ../index.html");
+    echo '.';
+    echo '<script>
+        Swal.fire({
+        title: "Hubo un error al tratar de logearse, intente mas tarde",
+        timer: 1500,
+        icon: "error"
+        }).then(function() {
+            window.location = "login.html";
+        });
+    
+    </script>';
 }
  
 ?>
