@@ -24,33 +24,79 @@ echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>';
 
                 if($queryA){
                     echo '.';
-                    echo "<script> 
+                  
+                    echo '<script>
+                        Swal.fire({
+                        title: "Se ha actualizado correctamente su contraseña",
+                        timer: 1800,
+                        icon: "success"
+                        }).then(function() {
+                            window.location = "login.html";
+                        });
+                    
+                    </script>';
+                   /*  echo "<script> 
                             alert('Se ha actualizado correctamente su contraseña') ;     
                             window.location='login.html'; 
                         </script>";
-                     
+                      */
               
             }else{
                 echo '.';
-                echo   "<script> 
+                  
+                echo '<script>
+                    Swal.fire({
+                    title: "Hubo un error, intentelo mas tarde",
+                    timer: 1800,
+                    icon: "error"
+                    }).then(function() {
+                        window.location = "login.html";
+                    });
+                
+                </script>';
+              /*   echo   "<script> 
                             alert('Hubo un error, intentelo mas tarde') ;       
                             window.location='login.html'; 
-                        </script>";
+                        </script>"; */
                         
             }       
         }else{
-            echo '.';
+            /* echo '.';
                 echo   "<script> 
                             alert('Hubo un error, intentelo mas tarde.') ;       
                             window.location='login.html'; 
-                        </script>";
+                        </script>"; */
+                        echo '.';
+                  
+                        echo '<script>
+                            Swal.fire({
+                            title: "Hubo un error, intentelo mas tarde",
+                            timer: 1800,
+                            icon: "error"
+                            }).then(function() {
+                                window.location = "login.html";
+                            });
+                        
+                        </script>';
         }
     }else{
         echo '.';
+                  
+        echo '<script>
+            Swal.fire({
+            title: "No coiciden las contraseñas, verifique porfavor",
+            timer: 1500,
+            icon: "warning"
+            }).then(function() {
+                window.location = "login.html";
+            });
+        
+        </script>';
+       /*  echo '.';
         echo "<script> 
                 alert('No coiciden las contraseñas') ;     
                 window.location='login.html'; 
-            </script>";  
+            </script>";   */
       
     }   
 }else{
