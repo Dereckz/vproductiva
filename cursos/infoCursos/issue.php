@@ -2,6 +2,7 @@
 
 <?php $idc=$_GET["idc"]; ?>
 <?php $namec=$_GET["namec"]; ?>
+<?php $areacurso="";?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -19,9 +20,9 @@
         <ul id="menu">
             <li class="logo"><a href="../../alumno/index.php"><img src="../img/logob.png" id="logo"></a></li>
             <li class="menusvacio"></li>
-    	    <li class="menus"><a href="../../alumno/index.php" class="enlacemenu">Mi perfil</a></li>
-    	    <li id="miperfilfondo" class="menus"><a href="../../alumno/cursos.php" id="miperfil" class="enlacemenu">Catálogo de Cursos</a></li>
-            <li class="menus"><a href="../../account/login.html" class="enlacemenu">Salir</a></li>
+    	    <li class="menus"><a href="../../alumno/index.php" class="enlacemenu">MI PERFIL</a></li>
+    	    <li id="miperfilfondo" class="menus"><a href="../../alumno/cursos.php" id="miperfil" class="enlacemenu">CATÁLOGO DE CURSOS</a></li>
+            <li class="menus"><a href="../../account/login.html" class="enlacemenu">SALIR</a></li>
     	</ul>
     </header>
     <div id="fondotemario">
@@ -31,10 +32,12 @@
     while ($consulta = mysqli_fetch_array($resultado)):
         $dataareacurso = mysqli_query($conn, "SELECT * FROM areacursos WHERE iIdAreaCursos=" .$consulta["fkidAreaCurso"]);
         $acursoname = mysqli_fetch_array($dataareacurso);
-
+        $areacurso=$acursoname["NombreArea"];
    ?>
 
-    <h1 id="tituloprincipal"><?php echo $namec ?></h1>
+
+    <h1 id="tituloprincipal"><?php echo $areacurso ?></h1>
+
     <table  id=tablarecursos>
         <tr>
             <td id="imagentemario">

@@ -10,7 +10,7 @@ $dbname = "desetec2_vproductivabd";
 
  $dbhost = "localhost";
  $dbuser = "root";
- $dbpass = "@rupe2021";
+ $dbpass = "";
  $dbname = "vproductivabd"; 
  
 $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
