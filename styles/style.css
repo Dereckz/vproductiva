@@ -1572,6 +1572,16 @@ p {
 	#texto1nosotros {
 		font-size: 2.2em;
 	}
+	#text1 {
+		bottom: 25px;
+	}
+	#text2 {
+		bottom: 28px;
+    	right: 52px;
+	}
+	#text3 {
+		bottom: 25px;
+	}
 	/*inicia pie de pagina*/
 	#footer .footer {
 		flex-direction: column;
@@ -1579,10 +1589,28 @@ p {
 	}
 	#logopie{
 		height: 30%;
-    	padding: 12% 0%;
+    	padding: 5% 0%;
 	}
 	#footer p {
-		font-size: 1rem;
+		font-size: 100%;
+    	margin-top: 0;
+    	margin-bottom: 0;
+		line-height: 135%;
+	}
+	#texto1pie {
+		width: 50%;
+		padding-left: 0%;
+		padding-right: 0%;
+		padding-top: 0%;
+	}
+	#texto2pie {
+		width: 32%;
+		padding: 0%
+	}
+	#parrafo3bienvenida {
+		line-height: 110%;
+		font-size: 140%;
+    	padding: 2% 1%;
 	}
 	
 }
