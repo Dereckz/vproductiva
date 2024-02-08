@@ -1065,32 +1065,33 @@ p {
 
 /*slider principal de imagenes de inicio*/
 .contenedorslider{
-	height: 100vh;
-	width: 100%;
+	
 	display: grid;
 	place-content: center;
 	margin-top: 14em;
 }
 .sliders{
-	width: 100vw;
-	max-width: 1400px;
-	height: 720px;
+	
+	height: 100%;
+	width: 200%;
+
 	overflow: hidden;
 	
 }
 .sliders ul{
 	display: flex;
 	padding: 0;
-	width: 300%;
+	width: 100%;
 	
 	animation: sliders 20s infinite cubic-bezier(0.55, 0.48, 0.37, 0.92);
 }
 .celdassliders{
-	width: 100%;
-    margin-left: 1em;
+	
+    margin-left: 1px;
 }
 .sliders img{
-	height: 93%;
+	height: 100%;
+	width: 100%;
 }
 
 @keyframes sliders {

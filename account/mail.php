@@ -64,7 +64,7 @@ if($result->num_rows>0){
             </div>
             <div class="bajada" style="padding: 40px;text-align: center;color:#585758;font-size:15px">
               <p>Hola <b>'.$nombreusuario.'</b>: Hemos recibido una solicitud de recuperación de contraseña. Para generar una nueva, haga click en el siguiente botón.</p>
-              <a href="https://desetecnologias.net/account/recuperar.php?ic='.$codigo.'" class="boton" style="background: #003272 ;color: white;border-radius: 5px;padding: 15px 40px;text-decoration: none;margin: 15px 0;display:inline-block;">Recuperar contraseña</a>
+              <a href="https://valuacionproductiva.mx/account/recuperar.php?ic='.$codigo.'" class="boton" style="background: #003272 ;color: white;border-radius: 5px;padding: 15px 40px;text-decoration: none;margin: 15px 0;display:inline-block;">Recuperar contraseña</a>
               <p style="font-weight:bold">Si no ha solicitado recuperación de contraseña haga caso omiso a este mensaje.</p>
             </div>
           </div>
@@ -78,7 +78,7 @@ if($result->num_rows>0){
             <p style="margin: 10px 0">.</p>
           </div>
         </div>';                               //Set email format to HTML
-        $mail->Subject = 'Enlace para cambiar tu contraseña';
+        $mail->Subject = 'Enlace para cambiar tu password';
         //$mail->Body    = $cuerpecito;
         $mail->Body    = $cuerpecito;//'Hola, este es un correo generado para solicitar tu recuperación de contraseña, por favor, visita la página de <a href="localhost/spending_tracker/change_password.php?id='.$row['iIdUsuario'].'">Recuperación de contraseña</a>';
         $mail->AltBody = 'Aquí tienes el enlace para recuperarla.';
