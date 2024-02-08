@@ -1,17 +1,17 @@
 <?php
 
 
- /* $dbhost = "localhost";
-$dbuser = "desetec2_elchingon";
-$dbpass = "VlzqrY1aP7D)";
-$dbname = "desetec2_vproductivabd";
+$dbhost = "localhost";
+$dbuser = "valuaci4_administradorbd";
+$dbpass = "MK7GwJ.NiF{4";
+$dbname = "valuaci4_valuacionproductivabd";
 
- */
-
+ 
+/* 
  $dbhost = "localhost";
  $dbuser = "root";
  $dbpass = "@rupe2021";
- $dbname = "vproductivabd"; 
+ $dbname = "vproductivabd";  */
  
 $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
 if (!$conn) 
