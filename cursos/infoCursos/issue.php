@@ -20,9 +20,9 @@
         <ul id="menu">
             <li class="logo"><a href="../../alumno/index.php"><img src="../img/logob.png" id="logo"></a></li>
             <li class="menusvacio"></li>
-    	    <li class="menus"><a href="../../alumno/index.php" class="enlacemenu">Mi perfil</a></li>
-    	    <li id="miperfilfondo" class="menus"><a href="../../alumno/cursos.php" id="miperfil" class="enlacemenu">Catálogo de Cursos</a></li>
-            <li class="menus"><a href="../../account/login.html" class="enlacemenu">Salir</a></li>
+    	    <li class="menus"><a href="../../alumno/index.php" class="enlacemenu">MI PERFIL</a></li>
+    	    <li id="miperfilfondo" class="menus"><a href="../../alumno/cursos.php" id="miperfil" class="enlacemenu">CATÁLOGO DE CURSOS</a></li>
+            <li class="menus"><a href="../../account/login.html" class="enlacemenu">SALIR</a></li>
     	</ul>
     </header>
     <div id="fondotemario">
@@ -45,7 +45,6 @@
             </td>
             <td class="celdatop">
             <table id=tablacontenido>
-
                 <tr><td></td><td> <h3 id="titulocurso">
                 <?php echo $namec?>
                 </h3> </td></tr>
@@ -53,7 +52,6 @@
                 <?php echo $consulta["cDescripcion"]?>
                 </h3> </td></tr>
                 <tr> <td></td><td id=filatitulo> <h2>TEMARIO</h2> </td></tr>
-
                 
                   <?php
                 

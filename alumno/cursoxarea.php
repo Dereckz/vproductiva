@@ -402,9 +402,9 @@
     	<ul id="menu">
       <li class="logo"><a href="index.php"><img src="img/logob.png" id="logo"></a></li>
       <li class="menusvacio"></li>
-    	<li class="menus"><a href="index.php">Mi perfil</a></li>
-    	<li id="miperfilfondo" class="menus"><a href="cursos.php" id="miperfil">Catálogo de Cursos</a></li>
-      <li class="menus"><a href="../account/login.html">Salir</a></li>
+    	<li class="menus"><a href="index.php">MI PERFIL</a></li>
+    	<li id="miperfilfondo" class="menus"><a href="cursos.php" id="miperfil">CATÁLOGO DE CURSOS</a></li>
+      <li class="menus"><a href="../account/login.html">SALIR</a></li>
     	</ul>
   </header>
 
