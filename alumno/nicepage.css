@@ -4,13 +4,14 @@
  * Copyright 2014-2021 Froala Labs
  */
 
-.imagenesareas{
+ .imagenesareas{
   width: 90%;
   border-radius: 8%;
 }
 .imagenesareas2{
   width: 90%;
   margin-top: 2em;
+  border-radius: 8%;
 }
 .filacentrada{
   text-align: center;

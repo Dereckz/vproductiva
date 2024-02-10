@@ -82,7 +82,7 @@ if ($stmt = $conn->prepare("SELECT cUsuario FROM usuarios WHERE cUsuario= ? LIMI
                 echo '.. ';
                 echo '<script>
                     Swal.fire({
-                    title: "Las contraseña  no coiciden.",
+                    title: "Las contraseñas  no coiciden.",
                     timer: 1500,
                     icon: "warning"
                     }).then(function() {
