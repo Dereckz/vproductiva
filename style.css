@@ -265,10 +265,6 @@ a {
 }
 
 /*style footer*/
-#divfooter{
-	display: flex;
-	height: 15em;
-}
 #logopie{
 	/*width: 20%;*/
     padding: 2% 3%;
@@ -373,23 +369,21 @@ a {
 		width: 50em;
 	}
 	#logopie{
-		height: 30%;
-        padding: 5% 0%;
+		height: 9em;
+    	padding: 5% 2%;
+    	margin-top: 4%;
 	}
 	#footer p {
-		font-size: 100%;
-        margin-top: 0;
-        margin-bottom: 0;
-        line-height: 135%;
+		font-size: 105%;
+    	margin-bottom: 3.3%;
+    	line-height: 120%;
 	}
 	#texto1pie {
         width: 50%;
-        padding-left: 0%;
-        padding-right: 0%;
-        padding-top: 0%;
+    	padding: 3% 0%;
     }
     #texto2pie {
         width: 32%;
-        padding: 0%;
+    	padding: 4% 2%;
     }
 }
