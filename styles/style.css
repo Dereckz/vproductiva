@@ -1700,10 +1700,14 @@ p {
 	#capacitorestitle {
 	font-size: 230%;
 	}
-	
+
 	/* contacto*/
 	.htmltotal{
 		overflow-x: hidden;
 	}
-	
+	/* menu header*/
+	#header .header {
+		min-height: 10%;
+		display: flex;
+	}
 }
