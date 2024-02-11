@@ -47,13 +47,14 @@
     .u-section-2 {
   background-image: none;
   padding-top: 2.8em;
+  margin-bottom: 5%;
 }
 @font-face {
     font-family: Acumin;
     src: url(AcuminVariableConcept.ttf);
 }
 .u-section-2 .u-sheet-1 {
-  min-height: 1108px;
+  min-height: 908px;
 }
 .u-section-2 .u-text-1 {
   text-transform: uppercase;
@@ -476,17 +477,25 @@ font-weight: 550;
       </div>
     </section>
 
-<!--
-    <section class="u-backlink u-clearfix u-grey-80">
-      <a class="u-link">
-        <span>Copyright © 2023</span>
-      </a>
-      <p class="u-text">
-        <span>- developed by</span>
-      </p>
-      <a class="u-link" href="https://desetecnologias.net" target="_blank">
-        <span>Dese Tecnologias</span>
-      </a>. 
-    </section>
--->  
+  <!-- Start Footer -->
+  <section id="footer">
+    <div id="divfooter">
+      <div id="logopie">
+        <img src="../img/logob2.png" id="imglogopie">
+      </div>
+      <div id="texto1pie">
+        <p id="parrafodireccion" class="parrafosfooter">Dirección: Av. Paseo de las Palmas 830, Int. 102-1.
+          Lomas de Chapultepec V Sección. Miguel Hidalgo.
+          Ciudad de México. C.P. 11000. México.</p>
+          <p class="parrafosfooter">Teléfono: 55-104-680-95</p>
+          <p class="parrafosfooter">Correo electrónico: valuacionproductiva9@gmail.com</p>
+      </div>
+      <div id="texto2pie">
+        <p class="parrafosfooter"><a href="indexterminos.html" class="parrafosfooter" id="terminosycon">Terminos y Condiciones</a></p>
+          <p id="parrafoter" class="parrafosfooter">© 2024 VALUACIÓN PRODUCTIVA Y
+            COMPETITIVA EN MATERIA LABORAL A.C.</p>
+      </div>
+    </div>
+  </section>
+  <!-- End Footer  -->
 <style>.u-disable-duration * {transition-duration: 0s !important;}</style></body></html>

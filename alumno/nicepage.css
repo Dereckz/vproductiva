@@ -6024,7 +6024,7 @@ section.u-image:not(.u-hover-box),
   margin: 0 auto;
 }
 .u-xl-mode .u-sheet {
-  width: var(--theme-sheet-width-xl);
+  /*width: var(--theme-sheet-width-xl);*/
 }
 .u-xxl-mode .u-sheet {
   width: var(--theme-sheet-width-xxl);
@@ -6036,7 +6036,7 @@ section.u-image:not(.u-hover-box),
 }
 @media (min-width: 1200px) {
   .u-xl-mode .u-sheet {
-    width: var(--theme-sheet-width-xl) !important;
+    /*width: var(--theme-sheet-width-xl) !important;*/
   }
 }
 @media (min-width: 1200px) and (max-width: 1399px) {

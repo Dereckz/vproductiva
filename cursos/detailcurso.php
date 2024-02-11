@@ -596,4 +596,7 @@
         echo $mensaje;
     
     ?>
+
+</html>
+
     
