@@ -5,7 +5,6 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
-
     require("../dev/conectar.php");
     $nom_archivo = $_FILES['file1']['name'];
     $ruta ="../alumno/imagenes/".$nom_archivo;
@@ -14,7 +13,8 @@ if (!isset($_SESSION)) {
    
     $sql= "UPDATE usuarios SET cProfile='".$ruta."' WHERE iIdUsuario=". $_SESSION["id"];
     if (mysqli_query($conn, $sql)) {
-        echo "Se inserto correctamente el registro";
+        //echo "Se inserto correctamente el registro";
+        header("Location: index.php");
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
