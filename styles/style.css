@@ -1588,7 +1588,7 @@ p {
 		margin-right: 1em;
 		margin-left: 1em;
 		color: white;
-		font-size: 1.3em;
+		font-size: 100%;
 		font-weight: 500;
 		text-align: justify;
 		letter-spacing: normal;
@@ -1599,7 +1599,7 @@ p {
 		padding-left: 0;
 	}
 	#valores {
-		font-size: 1.3em;
+		font-size: 100%;
 	}
 	#texto1nosotros {
 		font-size: 2em;
@@ -1612,15 +1612,15 @@ p {
 		padding: 3% 4%;
 	}
 	#text1 {
-		bottom: 23px;
+		bottom: 5%;
 		left: 0;
 	}
 	#text2 {
 		bottom: 25px;
-    	right: 60px;
+    	right: 20%;
 	}
 	#text3 {
-		bottom: 25px;
+		bottom: 5%;
 		left: 0;
 	}
 	#izquierdacontacto2 {
@@ -1637,9 +1637,10 @@ p {
 		height: 9em;
     	padding: 5% 2%;
 		margin-top: 4%;
+		padding-left: 0;
 	}
 	#footer p {
-		font-size: 105%;
+		font-size: 100%;
     	margin-bottom: 3.3%;
     	line-height: 120%;
 	}
@@ -1705,6 +1706,17 @@ p {
 	.htmltotal{
 		overflow-x: hidden;
 	}
+	.form-group input {
+		width: 98%;
+	}
+	#btncontactar {
+		width: 50%;
+		padding: 0;
+	}
+	#izquierdacontacto {
+		margin-bottom: 3%;
+	}
+
 	/* menu header*/
 	#header .header {
 		min-height: 10%;

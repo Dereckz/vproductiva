@@ -321,6 +321,9 @@ img {
 	#ingresarblanco{
 		color: white;
 	}
-
+	/*login*/
+	.login-register {
+		width: auto;
+	}
 	
 }
