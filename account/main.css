@@ -175,9 +175,9 @@ html,body, body * {
         height: auto;
     }
 	#logopie{
-		height: 4em;
+		height: 6em;
         padding-right: 1%;
-        margin-top: 5%;
+        margin-top: 10%;
 	}
 	#parrafofooter1 {
 		font-size: 1rem;
@@ -195,13 +195,16 @@ html,body, body * {
         font-size: 1rem;
     }
     #texto1pie {
-        padding: 0;
+        padding: 3% 0;
     }
     #footer p {
-        font-size: 1rem;
+        font-size: 105%;
+        margin-bottom: 3.3%;
+        line-height: 120%;
     }
     #texto2pie {
-        padding: 0% 3%;
+        width: 32%;
+        padding: 4% 2%;
     }
 	
 }

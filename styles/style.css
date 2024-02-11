@@ -1481,7 +1481,7 @@ p {
 	}
 	#btncontactanos {
 		margin-top: 13em;
-		margin-left: 3.4em;
+		margin-left: 4.5%;
 		width: 10em;
 		height: 2em;
 	}
@@ -1536,7 +1536,7 @@ p {
 
 	#parrafo2bienvenida {
 		color: white;
-		font-size: 1.5em;
+		font-size: 133%;
 	}
 	#parrafo4bienvenida {
 		text-align: center;
@@ -1602,22 +1602,29 @@ p {
 		font-size: 1.3em;
 	}
 	#texto1nosotros {
-		font-size: 2.2em;
+		font-size: 2em;
+		padding-bottom: 0;
+		padding-left: 8%;
+    	padding-right: 8%;
+	}
+	.texto2nosotros {
+		font-size: 130%;
+		padding: 3% 4%;
 	}
 	#text1 {
-		bottom: 17px;
+		bottom: 23px;
 		left: 0;
 	}
 	#text2 {
 		bottom: 25px;
-    	right: 75px;
+    	right: 60px;
 	}
 	#text3 {
-		bottom: 17px;
+		bottom: 25px;
 		left: 0;
 	}
 	#izquierdacontacto2 {
-		width: 120%;
+		width: 100%;
 		margin-top: 15%;
         height: 17em;
 	}
@@ -1627,29 +1634,35 @@ p {
 		width: 50em;
 	}
 	#logopie{
-		height: 30%;
-    	padding: 5% 0%;
+		height: 9em;
+    	padding: 5% 2%;
+		margin-top: 4%;
 	}
 	#footer p {
-		font-size: 100%;
-    	margin-top: 0;
-    	margin-bottom: 0;
-		line-height: 135%;
+		font-size: 105%;
+    	margin-bottom: 3.3%;
+    	line-height: 120%;
 	}
 	#texto1pie {
 		width: 50%;
-		padding-left: 0%;
-		padding-right: 0%;
-		padding-top: 0%;
+    	padding: 3% 0%;
 	}
 	#texto2pie {
 		width: 32%;
-		padding: 0%
+		padding: 4% 2%;
 	}
+	#parrafoter{
+		margin-top: 7%;
+	}
+
 	#parrafo3bienvenida {
 		line-height: 110%;
-		font-size: 140%;
+		font-size: 120%;
     	padding: 2% 1%;
+	}
+	#divfooter {
+		display: flex;
+		height: auto;
 	}
 
 	/*categorias cursos*/
@@ -1659,6 +1672,38 @@ p {
 	}
 	#texto1cursos {
 		font-size: 250%;
+	}
+
+	/* cuadro morado index */
+	#tabla1index {
+		padding: 0% 0%;
+	}
+	.celdasbienvenida1 {
+		width: 40%;
+	}
+	#parrafo1bienvenida {
+		font-size: 110%;
+		padding-top: 0%;
+	}
+
+	/* botones slider*/
+	#btncontactanos2 {
+		width: 30%;
+		height: 2em;
+	}
+
+	/* nosotros*/
+	.banernosotros {
+		margin-top: 15%;
+		margin-bottom: 14%;
+	}
+	#capacitorestitle {
+	font-size: 230%;
+	}
+	
+	/* contacto*/
+	.htmltotal{
+		overflow-x: hidden;
 	}
 	
 }
