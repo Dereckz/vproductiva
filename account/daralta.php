@@ -13,7 +13,7 @@ $correo = ($_POST["email"]);
 $contrasena = password_hash(($_POST["password"]), PASSWORD_DEFAULT);   
 $confirmcontrasena =password_hash(($_POST["confirmpassword"]), PASSWORD_DEFAULT);  
 //$codigomaestro=$_POST["codigomaestro"];
-
+$tyc=$_POST["chkbxtyc"];
     
     if (strpos($fullname, " ")){
         $nombres=namess::getNombreSplit($fullname)["Nombres"];
@@ -112,6 +112,7 @@ $confirmcontrasena =password_hash(($_POST["confirmpassword"]), PASSWORD_DEFAULT)
     </script>";	  
 
     }   
+
 
 
 //Separa Nombres
