@@ -23,14 +23,14 @@
 	top: 0px;
 	margin: 0%;
 	width: 100%;
-	text-align: center;
+	/*text-align: center;*/
 }
 #tituloprincipal{
 	margin: 0%;
 	color: #000000;
 }
 #menu{
-	/*background-color: #40bff2;*/
+	background-color: white;
 	margin-top: 0%;
 	margin-left: 0%;
 	font-family: sans-serif;
@@ -40,6 +40,14 @@
 .menus{
 	display: inline-block;
 	font-size: 1.1em;
+	text-align: center;
+	width: 20%;
+	vertical-align: top;
+	padding: 1em;
+}
+.menuster{
+	display: inline-block;
+	font-size: 1.75em;
 	text-align: center;
 	width: 20%;
 	vertical-align: top;
@@ -112,6 +120,57 @@ h2{
 #divcursosinscritos{
 	flex-direction: row;
 }
+
+/*style footer*/
+
+#footer{
+	background-color: #872362;
+}
+#divfooter{
+	display: flex;
+	height: 13em;
+}
+#logopie{
+	/*width: 20%;*/
+    padding: 2% 3%;
+}
+#imglogopie{
+	height: 50%;
+	margin-top: 20%;
+}
+#texto1pie{
+	width: 50%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 2.5%;
+	font-family: 'Montserrat';
+}
+#parrafodireccion{
+	line-height: 110%;
+}
+.parrafosfooter{
+	font-weight: 550;
+	color: white;
+}
+#texto2pie{
+	width: 32%;
+    padding: 2% 5%;
+	font-family: 'Montserrat';
+    margin-top: 2.6%;
+}
+#parrafoter{
+	line-height: 110%;
+}
+#terminosycon{
+	text-decoration: underline;
+}
+
+#divcategorias{
+	margin: 0 4%;
+}
+#titulocategorias{
+	margin-left: 5.5%;
+}
 @media screen and (max-width:700px){
 	.logo {
 		display: none;
@@ -158,14 +217,32 @@ h2{
 		padding: 2% 9%;
 	}
 }
-@media (min-width: 1200px){
+@media (min-width: 1370px){
 	.imagenxarea{
-		width: 25%;
+		width: auto;
+	}
+	#divcategorias{
+		margin: 0 4%;
+	}
+	#titulocategorias{
+		margin-left: 5.5%;
 	}
 }
+/*
 @media (min-width: 1450px){
 	.imagenxarea{
 		width: 27%;
+	}
+}*/
+@media (min-width: 1371px){
+	.imagenxarea{
+		width: auto;
+	}
+	#divcategorias{
+		margin: 0 1%;
+	}
+	#titulocategorias{
+		margin-left: 2.5%;
 	}
 }
 

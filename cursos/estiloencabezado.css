@@ -245,7 +245,6 @@ h4{
 
 #tituloeva{
 	color: #2E49E1;
-	margin-left: 2em;
 	font-family: MonserratBold;
 }
 
@@ -256,6 +255,51 @@ h4{
     color: white;
 	text-decoration: none;
 }
+
+/*style footer*/
+
+#footer{
+	background-color: #872362;
+}
+#divfooter{
+	display: flex;
+	height: 13em;
+}
+#logopie{
+	/*width: 20%;*/
+    padding: 2% 3%;
+}
+#imglogopie{
+	height: 50%;
+	margin-top: 20%;
+}
+#texto1pie{
+	width: 50%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 2.5%;
+	font-family: 'Montserrat';
+}
+#parrafodireccion{
+	line-height: 110%;
+}
+.parrafosfooter{
+	font-weight: 550;
+	color: white;
+}
+#texto2pie{
+	width: 32%;
+    padding: 2% 5%;
+	font-family: 'Montserrat';
+    margin-top: 2.6%;
+}
+#parrafoter{
+	line-height: 110%;
+}
+#terminosycon{
+	text-decoration: underline;
+}
+
 @media screen and (max-width:700px){
 	.logo {
 		display: none;

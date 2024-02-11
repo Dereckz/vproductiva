@@ -400,7 +400,7 @@
     <section class="u-align-left u-clearfix u-grey-5 u-section-2" id="carousel_0852">
       <div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
         
-          <h1 class="section-title"> <span>Categorías principales</span></h1>
+          <h1 class="section-title" id="titulocategorias"> <span>Categorías principales</span></h1>
           <!--<div class="u-expanded-width u-list u-list-1">
           <div class="u-repeater u-repeater-1">-->
           <div id="divcategorias">
@@ -432,17 +432,26 @@
       </div>
     </section>
     
-    <!--
-    <section class="u-backlink u-clearfix u-grey-80">
-      <a class="u-link">
-        <span>Copyright © 2023</span>
-      </a>
-      <p class="u-text">
-        <span>- developed by</span>
-      </p>
-      <a class="u-link" href="https://desetecnologias.net" target="_blank">
-        <span>Dese Tecnologias</span>
-      </a>. 
-    </section>-->
+  <!-- Start Footer -->
+  <section id="footer">
+    <div id="divfooter">
+      <div id="logopie">
+        <img src="../img/logob2.png" id="imglogopie">
+      </div>
+      <div id="texto1pie">
+        <p id="parrafodireccion" class="parrafosfooter">Dirección: Av. Paseo de las Palmas 830, Int. 102-1.
+          Lomas de Chapultepec V Sección. Miguel Hidalgo.
+          Ciudad de México. C.P. 11000. México.</p>
+          <p class="parrafosfooter">Teléfono: 55-104-680-95</p>
+          <p class="parrafosfooter">Correo electrónico: valuacionproductiva9@gmail.com</p>
+      </div>
+      <div id="texto2pie">
+        <p class="parrafosfooter"><a href="indexterminos.html" class="parrafosfooter" id="terminosycon">Terminos y Condiciones</a></p>
+          <p id="parrafoter" class="parrafosfooter">© 2024 VALUACIÓN PRODUCTIVA Y
+            COMPETITIVA EN MATERIA LABORAL A.C.</p>
+      </div>
+    </div>
+  </section>
+  <!-- End Footer  -->
   
 <style>.u-disable-duration * {transition-duration: 0s !important;}</style></body></html>
