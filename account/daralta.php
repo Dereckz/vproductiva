@@ -13,7 +13,7 @@ $correo = ($_POST["email"]);
 $contrasena = password_hash(($_POST["password"]), PASSWORD_DEFAULT);   
 $confirmcontrasena =password_hash(($_POST["confirmpassword"]), PASSWORD_DEFAULT);  
 //$codigomaestro=$_POST["codigomaestro"];
-
+$tyc=$_POST["checkboxtyc"];
     
     if (strpos($fullname, " ")){
         $nombres=namess::getNombreSplit($fullname)["Nombres"];
@@ -24,7 +24,7 @@ $confirmcontrasena =password_hash(($_POST["confirmpassword"]), PASSWORD_DEFAULT)
         $paternos="";
         $maternos="";
     }
-
+if($tyc==true){
     if ($stmt = $conn->prepare("SELECT cUsuario FROM usuarios WHERE cUsuario= ? LIMIT 1")) {
 
         $stmt->bind_param("s", $correo);
@@ -113,6 +113,20 @@ $confirmcontrasena =password_hash(($_POST["confirmpassword"]), PASSWORD_DEFAULT)
 
     }   
 
+}else{
+    echo '.';
+            echo '<script>
+                Swal.fire({
+                title: "Para registrase, se requiere aceptar nuestros Términos y Condiciones",
+                timer: 1800,
+                icon: "warning"
+                }).then(function() {
+                    window.location = "login.html";
+                });
+            
+            </script>'; 
+}
+ 
 
 //Separa Nombres
 class namess{
