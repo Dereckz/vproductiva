@@ -14,8 +14,7 @@ $contrasena = password_hash(($_POST["password"]), PASSWORD_DEFAULT);
 $confirmcontrasena =password_hash(($_POST["confirmpassword"]), PASSWORD_DEFAULT);  
 //$codigomaestro=$_POST["codigomaestro"];
 
-/* if(check_pcomplex($_POST["password"],8,5)){ */
-    //Separar Nombres
+    
     if (strpos($fullname, " ")){
         $nombres=namess::getNombreSplit($fullname)["Nombres"];
         $paternos=namess::getNombreSplit($fullname)["Paterno"];
@@ -114,21 +113,7 @@ $confirmcontrasena =password_hash(($_POST["confirmpassword"]), PASSWORD_DEFAULT)
 
     }   
 
-/* }else{
-    echo '.';
-        echo '<script>
-            Swal.fire({
-            title: "Asegurese que su contraseña cumpla con todos los requisito",
-            timer: 1800,
-            icon: "warning"
-            }).then(function() {
-                window.location = "login.html";
-            });
-        
-        </script>';
-        return;
-}
-  */
+
 //Separa Nombres
 class namess{
     public static  function getNombreSplit($nombreCompleto, $apellido_primero = false){

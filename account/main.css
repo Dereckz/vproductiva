@@ -5,7 +5,7 @@
 }
 html,body, body * { 
     box-sizing: border-box; 
-    font-family: 'Open Sans', sans-serif; 
+    font-family: 'Montserrat' 
     margin:0;
     padding:0;
     color:inherit;
@@ -17,6 +17,7 @@ html,body, body * {
     background-size:  contain;
     background-position:center center;
     display: block;
+    margin: 0;
     /*background-color: #CDCBCE;*/
 	/*opacity: 0.7;*/
   }
@@ -127,9 +128,10 @@ html,body, body * {
 /*style footer*/
 #divfooter{
 	display: flex;
+    height: 15em;
 }
 #logopie{
-	width: 20%;
+	/*width: 20%;*/
     padding: 2% 3%;
 }
 #texto1pie{
@@ -155,19 +157,52 @@ html,body, body * {
 #terminosycon{
 	text-decoration: underline;
 }
+#logopieimg{
+    height: 90%
+}
+#footer p {
+	color: white;
+	font-size: 1.3rem;
+    /*padding: 1% 0;*/
+}
 @media screen and (max-width:700px){
     /*inicia pie de pagina*/
 	#footer .footer {
 		flex-direction: column;
 		width: 50em;
 	}
+    #divfooter {
+        height: auto;
+    }
 	#logopie{
-		height: 30%;
-    	padding: 12% 0%;
+		height: 4em;
+        padding-right: 1%;
+        margin-top: 5%;
 	}
-	#footer p {
+	#parrafofooter1 {
 		font-size: 1rem;
 	}
+    #parrafofooter2 {
+		font-size: 1rem;
+	}
+    #parrafofooter3 {
+		font-size: 1rem;
+	}
+    #parrafodireccion {
+		font-size: 1rem;
+	}
+    #parrafoter{
+        font-size: 1rem;
+    }
+    #texto1pie {
+        padding: 0;
+    }
+    #footer p {
+        font-size: 1rem;
+    }
+    #texto2pie {
+        padding: 0% 3%;
+    }
 	
 }
     
