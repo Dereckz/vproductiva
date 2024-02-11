@@ -80,9 +80,10 @@
                         pattern="^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{8,16}$">
                         
                         <li>
-                          <input id="chkbxtyc" type="checkbox">
+                          <input id="checkboxtyc" type="checkbox">
                           <label for="c1">Acepto Términos y Condiciones</label>
                         </li>
+                       
                         
                   <!-- <label for="codigomaestro">Matricula</label>
                   <input type="text" id="codigomaestro" name ="codigomaestro"> -->
@@ -159,7 +160,10 @@
         }
 
         
-
+        if (document.getElementById('checkboxtyc').checked)
+              {
+              alert('Para registrase, se requiere aceptar nuestros Términos y Condiciones');
+              }
         
     </script>
 </body>
