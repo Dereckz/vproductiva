@@ -12,35 +12,113 @@ $fullname = ($_POST["fullname"]);
 $correo = ($_POST["email"]);
 $contrasena = password_hash(($_POST["password"]), PASSWORD_DEFAULT);   
 $confirmcontrasena =password_hash(($_POST["confirmpassword"]), PASSWORD_DEFAULT);  
-
-
 //$codigomaestro=$_POST["codigomaestro"];
 
-//Separar Nombres
-if (strpos($fullname, " ")){
-    $nombres=namess::getNombreSplit($fullname)["Nombres"];
-    $paternos=namess::getNombreSplit($fullname)["Paterno"];
-    $maternos=namess::getNombreSplit($fullname)["Materno"];
-}else{
-    $nombres=$fullname;
-    $paternos="";
-    $maternos="";
-}
+/* if(check_pcomplex($_POST["password"],8,5)){ */
+    //Separar Nombres
+    if (strpos($fullname, " ")){
+        $nombres=namess::getNombreSplit($fullname)["Nombres"];
+        $paternos=namess::getNombreSplit($fullname)["Paterno"];
+        $maternos=namess::getNombreSplit($fullname)["Materno"];
+    }else{
+        $nombres=$fullname;
+        $paternos="";
+        $maternos="";
+    }
 
-if ($stmt = $conn->prepare("SELECT cUsuario FROM usuarios WHERE cUsuario= ? LIMIT 1")) {
+    if ($stmt = $conn->prepare("SELECT cUsuario FROM usuarios WHERE cUsuario= ? LIMIT 1")) {
 
-    $stmt->bind_param("s", $correo);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $fila = $result->fetch_assoc();
+        $stmt->bind_param("s", $correo);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $fila = $result->fetch_assoc();
 
-//@Dereckz13
-    if ($fila> 0)  {
-      
-        echo '.';
+    //@Dereckz13
+        if ($fila> 0)  {
+        
+            echo '.';
+            echo '<script>
+                Swal.fire({
+                title: "Ya se encuentra registrado, verificalo",
+                timer: 1800,
+                icon: "warning"
+                }).then(function() {
+                    window.location = "login.html";
+                });
+            
+            </script>';
+    } else {
+            if (!empty($fullname)){
+
+            session_abort();
+
+                if ($_POST["password"] == $_POST["confirmpassword"]) 
+                {
+                    $queryA = mysqli_query($conn,"INSERT INTO `usuarios`(`iIdUsuario`, `fkidTipoUsuario`, `cNombre`, `cApellidoP`, `cApellidoM`, `cNombreLargo`, `cCorreo`, `cUsuario`, `cPassword`, `cTelefono`, `cCodigo`, `dFechaAlta`, `iGenero`,`iEstatus`)
+                                                VALUES ('0','3','$nombres','$paternos','$maternos','$fullname','$correo','$correo','$contrasena','','','$fecha_actual','1','1')");
+                        if($queryA){
+                                
+                        header("Location: ../account/exitoso.php");                          
+                                    
+                        }
+                        else{	
+                            
+                            echo '.. ';
+                            echo '<script>
+                                Swal.fire({
+                                title: "No se pudo regustra el Alumno",
+                                timer: 1500,
+                                icon: "error"
+                                }).then(function() {
+                                    window.location = "login.html";
+                                });
+                            
+                            </script>';
+                                    
+                        }                            
+                }
+                else{ 
+                    echo '.. ';
+                    echo '<script>
+                        Swal.fire({
+                        title: "Las contraseña  no coiciden.",
+                        timer: 1500,
+                        icon: "warning"
+                        }).then(function() {
+                            window.location = "login.html";
+                        });
+                    
+                    </script>';
+                        }   
+            }else{
+            
+                    echo '.. ';
+                    echo '<script>
+                        Swal.fire({
+                        title: "Ingrese su nombre para continuar.",
+                        timer: 1500,
+                        icon: "warning"
+                        }).then(function() {
+                            window.location = "login.html";
+                        });
+                    
+                    </script>';             
+            }
+    }
+        
+    }else{
+    echo 
+    "<script> 
+        alert('Error en la base de datos, consulta al admin') 
+    </script>";	  
+
+    }   
+
+/* }else{
+    echo '.';
         echo '<script>
             Swal.fire({
-            title: "Ya se encuentra registrado, verificalo",
+            title: "Asegurese que su contraseña cumpla con todos los requisito",
             timer: 1800,
             icon: "warning"
             }).then(function() {
@@ -48,72 +126,9 @@ if ($stmt = $conn->prepare("SELECT cUsuario FROM usuarios WHERE cUsuario= ? LIMI
             });
         
         </script>';
-   } else {
-         if (!empty($fullname)){
-
-           session_abort();
-
-            if ($_POST["password"] == $_POST["confirmpassword"]) 
-             {
-                $queryA = mysqli_query($conn,"INSERT INTO `usuarios`(`iIdUsuario`, `fkidTipoUsuario`, `cNombre`, `cApellidoP`, `cApellidoM`, `cNombreLargo`, `cCorreo`, `cUsuario`, `cPassword`, `cTelefono`, `cCodigo`, `dFechaAlta`, `iGenero`,`iEstatus`)
-                                               VALUES ('0','3','$nombres','$paternos','$maternos','$fullname','$correo','$correo','$contrasena','','','$fecha_actual','1','1')");
-                    if($queryA){
-                            
-                       header("Location: ../account/exitoso.php");                          
-                                  
-                     }
-                     else{	
-                         
-                         echo '.. ';
-                         echo '<script>
-                             Swal.fire({
-                             title: "No se pudo regustra el Alumno",
-                             timer: 1500,
-                             icon: "error"
-                             }).then(function() {
-                                 window.location = "login.html";
-                             });
-                         
-                         </script>';
-                                  
-                     }                            
-            }
-            else{ 
-                echo '.. ';
-                echo '<script>
-                    Swal.fire({
-                    title: "Las contraseña  no coiciden.",
-                    timer: 1500,
-                    icon: "warning"
-                    }).then(function() {
-                        window.location = "login.html";
-                    });
-                
-                </script>';
-                     }   
-        }else{
-           
-                 echo '.. ';
-                echo '<script>
-                    Swal.fire({
-                    title: "Ingrese su nombre para continuar.",
-                    timer: 1500,
-                    icon: "warning"
-                    }).then(function() {
-                        window.location = "login.html";
-                    });
-                
-                </script>';             
-        }
-   }
-    
-}else{
-echo 
-"<script> 
-    alert('Error en la base de datos, consulta al admin') 
-</script>";	  
-
-}    
+        return;
+}
+  */
 //Separa Nombres
 class namess{
     public static  function getNombreSplit($nombreCompleto, $apellido_primero = false){
@@ -216,6 +231,29 @@ class namess{
     }
 }
 
+function check_pcomplex($string, $minchar, $level) {
+    /*$level = 1- Requerido al menos una letra de cualquier tipo o numeros, especiales son validos
+      $level = 2- Lo del $level 1, pero con al menos una minuscula obligatoria
+      $level = 3- Lo del $level 2, pero con al menos un numero obligatorio
+      $level = 4- Lo del $level 3, pero con al menos una mayuscula, obligatoria
+      $level = 5- Lo del $level 4, pero con al menos un caracter especial, obligatorio.*/
+    $lowcase = preg_match('/[a-z]/', $string);
+    $uppcase = preg_match('/[A-Z]/', $string);
+    $numbers = preg_match('/\d/', $string);
+    $special = preg_match('/[^a-zA-Z\d]/', $string);
 
+    $passed = true;
+    switch($level) {
+        case 5: $passed = ($passed and $special);
+        case 4: $passed = ($passed and $uppcase);
+        case 3: $passed = ($passed and $numbers);
+        case 2: $passed = ($passed and $lowcase);
+        case 1: $passed = ($passed and ($lowcase or $uppcase or $numbers));
+        case 0: $passed = ($passed and (strlen($string) >= $minchar)); 
+        break;
+        default: $passed = false;
+    }
+    return $passed;
+}
 
 ?>
