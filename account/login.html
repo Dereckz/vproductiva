@@ -7,6 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar sesión</title>
+    <script type="text/javascript" src="script.js"></script>
     <link href="../img/LOGOVP.ico" rel="icon">
     <link rel="stylesheet" href="main.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -47,6 +48,9 @@
 
  
     <div class="container">
+      <div id="main-container">
+
+  
         <div class="login-register" id="login-register">
             <div class="nav-buttons">
                 <button id="loginBtn" class='active' >Iniciar sesión </button>
@@ -67,35 +71,29 @@
                   <label for="email">Email</label>
                   <input type="email" id="email" name="email">
                   <label for="password">Contraseña</label>
-                  <input type="password" id="password" name="password">
+                  <input type="password" id="password" name="password" 
+                        pattern="^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{8,16}$" 
+                        onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Debe contener entre 8 y 16 caracteres:(Dígitos,Minúsculas y simbolos)':'');
+                        if(this.checkValidity()) form.confirm_password.pattern=this.value; ">
                   <label for="confirmpassword">Confirmar contraseña</label>
-                  <input type="password" id="confirmpassword" name="confirmpassword">
-                  <i>seguridad:</i> <span id="seg">0%</span>
+                  <input type="password" id="confirmpassword" name="confirmpassword" 
+                        pattern="^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{8,16}$">
+                  <span id="mensaje"></span>
+                   
+                    
                   <!-- <label for="codigomaestro">Matricula</label>
                   <input type="text" id="codigomaestro" name ="codigomaestro"> -->
-                  <label>
+                  <!-- <label>
                     <input type="checkbox" id="cbox1" value="first_checkbox" /> Terminos y Conexiones
-                  </label>
+                  </label> -->
                   <input type="submit" value="Registrar" class="submit">
-                  <div id="pswd_info">
-                    <h4>La contraseña debe cumplir los siguientes requerimientos:</h4>
-                    <ul>
-                      <li id="letter" class="invalid">Al menos <strong>una letra</strong></li>
-                      <li id="capital" class="invalid">Al menos <strong>una letra mayúscula</strong></li>
-                      <li id="number" class="invalid">Al menos <strong>un número</strong></li>
-                      <li id="length" class="invalid">Al menos <strong>8 carácteres</strong></li>
-                      <li id="null" class="invalid">Debe <strong>confirmar la contraseña</strong></li>
-                      <li id="match" class="invalid">Las contraseñas <strong>deben cohincidir</strong></li>
-                      <li id="blank" class="invalid">Las contraseñas <strong>no deben tener espacios</strong></li>
-                    </ul>
-                  </div>
                   
               </form>
               <div id="forgot">
                 <a href="forgot.php" >¿Olvidaste tu contraseña?</a>
             </div>
         </div>
-
+      </div>
     </div>
 </section>
 <!-- Start Footer -->
@@ -122,6 +120,8 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </script>
 <!-- End formulario -->
+  <script src="jquery.js"></script>
+	<script src="password.js"></script>
 
     <script >
       
@@ -157,135 +157,6 @@
         }
 
         
-  /*      $(document.registration).ready(function() {
-
- $('input').keyup(function() {
-  // set password variable
-  var password = $(this).val();
-  var p1 = document.getElementById("password").value;
-  var p2 = document.getElementById("confirmpassword").value;
-  var noValido = / /;
-
-
-  //validar longitud contraseña
-  if ( password.length < 8 ) {
-      $('#length').removeClass('valid').addClass('invalid');
-  } else {
-      $('#length').removeClass('invalid').addClass('valid');
-  }
-  //validar letra
-  if ( password.match(/[A-z]/) ) {
-      $('#letter').removeClass('invalid').addClass('valid');
-  } else {
-      $('#letter').removeClass('valid').addClass('invalid');
-  }
-
-  //validar letra mayúscula
-  if ( password.match(/[A-Z]/) ) {
-      $('#capital').removeClass('invalid').addClass('valid');
-  } else {
-      $('#capital').removeClass('valid').addClass('invalid');
-  }
-
-  //validar numero
-  if ( password.match(/\d/) ) {
-      $('#number').removeClass('invalid').addClass('valid');
-  } else {
-      $('#number').removeClass('valid').addClass('invalid');
-  }
-
-  if(p1 != "" && p2 != ""){
-
-    //validar confirmación contraseña
-    if (p1.length == 0 || p2.length == 0) {
-      $('#null').removeClass('valid').addClass('invalid');
-    } else {
-      $('#null').removeClass('invalid').addClass('valid');
-    }
-
-    //validar contraseñas cohincidan
-    if (p1 != p2) {
-      $('#match').removeClass('valid').addClass('invalid');
-    } else {
-      $('#match').removeClass('invalid').addClass('valid');
-    }
-
-    if(noValido.test(p1 || p2)){ // se chequea el regex de que el string no tenga espacio
-      $('#blank').removeClass('valid').addClass('invalid');
-    } else {
-      $('#blank').removeClass('invalid').addClass('valid');
-    }
-  }
-
-}).focus(function() {
-    $('#pswd_info').show();
-}).blur(function() {
-  $('#pswd_info').hide();
-});
-
-}); */
-    //--------------------------
-    function tiene_numeros(texto) {
-      var numeros = "0123456789";
-      for (i = 0; i < texto.length; i++) {
-        if (numeros.indexOf(texto.charAt(i), 0) != -1) {
-          return 1;
-        }
-      }
-      return 0;
-    }
-
-    function tiene_letras(texto) {
-      var letras = "abcdefghyjklmnñopqrstuvwxyz";
-      texto = texto.toLowerCase();
-      for (i = 0; i < texto.length; i++) {
-        if (letras.indexOf(texto.charAt(i), 0) != -1) {
-          return 1;
-        }
-      }
-      return 0;
-    }
-
-    function tiene_minusculas(texto) {
-      var letras = "abcdefghyjklmnñopqrstuvwxyz";
-      for (i = 0; i < texto.length; i++) {
-        if (letras.indexOf(texto.charAt(i), 0) != -1) {
-          return 1;
-        }
-      }
-      return 0;
-    }
-
-    function tiene_mayusculas(texto) {
-      var letras_mayusculas = "ABCDEFGHYJKLMNÑOPQRSTUVWXYZ";
-      for (i = 0; i < texto.length; i++) {
-        if (letras_mayusculas.indexOf(texto.charAt(i), 0) != -1) {
-          return 1;
-        }
-      }
-      return 0;
-    }
-
-    function getPasswordSecurity(password) {
-      let secValue;
-      let lengthSecurityValues = [0, 0, 0, 0, 10, 10, 30, 30, 30];
-      if(password.length >= lengthSecurityValues.length) {
-        secValue = 40;
-      } else {
-        secValue = lengthSecurityValues[password.length];
-      }
-      if (tiene_numeros(password) && tiene_letras(password)) {
-        secValue += 30;
-      }
-      if (tiene_minusculas(password) && tiene_mayusculas(password)) {
-        secValue += 30;
-      }
-      return secValue;
-    }
-
-    document.getElementById('password').addEventListener('keyup', function(e) {
-      document.getElementById('seg').innerText = getPasswordSecurity(e.target.value) + "%";
-    });
 
         
     </script>
