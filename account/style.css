@@ -312,4 +312,12 @@ img {
 	#ingresarblanco{
 		color: white;
 	}
+
+	.checkbox {
+		margin-bottom: 30px;
+	  }
+  
+	  .checkbox {
+		font-weight: normal;
+	  }
 }
