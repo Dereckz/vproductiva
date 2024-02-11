@@ -27,7 +27,7 @@
     border-collapse: collapse;
     /*width: 100%;*/
     text-align: center;
-    margin: 2% 5%;   
+    margin: 2% 0%;   
     
     }
 
@@ -45,7 +45,7 @@
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: center;
-    background-color: #630ba3;
+    background-color: #872362;
     color: white;
     /*padding-left: 100px;*/
     }
@@ -130,9 +130,9 @@
 <div style="padding-top: 4.5em;" >
 
 
-<div style="padding-top: 5em; padding-left: 7%;" >
+<div style="padding-top: 5em; text-align: -webkit-center;" >
 
-    <h1 id="tituloeva" style="text-align: center; margin-right: 4em;">Resultados</h1>
+    <h1 id="tituloeva" style="text-align: center;">Resultados</h1>
             <table id="customers" >
             <tr>
                 <th>Usuario</th>
@@ -176,6 +176,29 @@
                     </tr>
                 </table>
 </div>
+    <!-- Start Footer -->
+
+    </body>
+    <section id="footer">
+    <div id="divfooter">
+      <div id="logopie">
+        <img src="../img/logob2.png" id="imglogopie">
+      </div>
+      <div id="texto1pie">
+        <p id="parrafodireccion" class="parrafosfooter">Dirección: Av. Paseo de las Palmas 830, Int. 102-1.
+          Lomas de Chapultepec V Sección. Miguel Hidalgo.
+          Ciudad de México. C.P. 11000. México.</p>
+          <p class="parrafosfooter">Teléfono: 55-104-680-95</p>
+          <p class="parrafosfooter">Correo electrónico: valuacionproductiva9@gmail.com</p>
+      </div>
+      <div id="texto2pie">
+        <p class="parrafosfooter"><a href="../alumno/indexterminos.html" class="parrafosfooter" id="terminosycon">Terminos y Condiciones</a></p>
+          <p id="parrafoter" class="parrafosfooter">© 2024 VALUACIÓN PRODUCTIVA Y
+            COMPETITIVA EN MATERIA LABORAL A.C.</p>
+      </div>
+    </div>
+  </section>
+  <!-- End Footer  -->
 
    
     </body>

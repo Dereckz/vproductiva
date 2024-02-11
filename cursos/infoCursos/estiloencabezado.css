@@ -37,7 +37,7 @@ body{
 	/* line-height: 1.1; */
 	margin-top: 0.7em;
 	margin-bottom: 0.1em;
-	margin-left: 4.8em;
+	margin-left: 14%;
 	margin-right: 4.8em;
 	font-family: Montserrat;
 }
@@ -285,6 +285,51 @@ text-decoration: none;
     font-size: 160%;
 	color: #0D1566;
 }
+
+/*style footer*/
+
+#footer{
+	background-color: #872362;
+}
+#divfooter{
+	display: flex;
+	height: 13em;
+}
+#logopie{
+	/*width: 20%;*/
+    padding: 2% 3%;
+}
+#imglogopie{
+	height: 50%;
+	margin-top: 20%;
+}
+#texto1pie{
+	width: 50%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 2.5%;
+	font-family: 'Montserrat';
+}
+#parrafodireccion{
+	line-height: 110%;
+}
+.parrafosfooter{
+	font-weight: 550;
+	color: white;
+}
+#texto2pie{
+	width: 32%;
+    padding: 2% 5%;
+	font-family: 'Montserrat';
+    margin-top: 2.6%;
+}
+#parrafoter{
+	line-height: 110%;
+}
+#terminosycon{
+	text-decoration: underline;
+}
+/*end footer*/
 @media screen and (max-width:700px){
 	.logo {
 		display: none;
@@ -303,7 +348,8 @@ text-decoration: none;
 	#tituloprincipal {
 		margin-left: 0.8em;
 		margin-right: 0.8em;
-		font-size: 1.6rem;
+		font-size: 1.6rem;		
+		text-align: center;
 	}
 	#tablarecursos {
 		margin-left: 0%;
