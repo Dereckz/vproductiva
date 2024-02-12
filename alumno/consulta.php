@@ -60,14 +60,14 @@ function informacion()
                     <table class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;">
                         <tr>        
                         <form action="subir.php" method="POST" enctype="multipart/form-data">
-                            <td rowspan=6 style="text-align: center; font-size: 0.8em;" id="tdfotoperfil">
+                            <td rowspan=6 id="tdfotoperfil">
                                 <img id=fotoperfil src="'.$consulta['cProfile'].'" width="42%">
                                 <div id="div_file">
                                     <input type="file" name="file1" id="file1"> 
                                     <p id="texto">Examinar</p>
                                  </div>
                                 <br>
-                                <button type="submit" style="border:transparent; background-color: white;">
+                                <button type="submit" id="guardarfotoperfil"style="border:transparent; background-color: white;">
                                     Guardar
                                 </button>
                             </td>
@@ -80,8 +80,8 @@ function informacion()
                         </form>
 
                         <tr><td colspan=2><p class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;"> Correo: ' . $consulta['cCorreo'] . '</p></td></tr>
-                        <tr><td width="3%"><img src="img/docusin.png" width="90%"></td><td><p class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms; margin-bottom: 0.06em;"> Cursos Inscritos: '.$nInscrito.'</p></td></tr>
-                        <tr><td width="3%"><img src="img/docu.png" width="90%"></td><td><p class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms; margin-bottom: 0em;">Cursos Finalizados: '.$final.'</p></td></tr>    
+                        <tr><td width="3%"><img src="img/docusin.png" id="iconoinscritos"></td><td><p class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms; margin-bottom: 0.06em;"> Cursos Inscritos: '.$nInscrito.'</p></td></tr>
+                        <tr><td width="3%"><img src="img/docu.png" id="iconofinalizados"></td><td><p class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms; margin-bottom: 0em;">Cursos Finalizados: '.$final.'</p></td></tr>    
                     </table>
                     ';
 
@@ -122,7 +122,7 @@ function miCurso()
                 <span class="u-custom-item u-file-icon u-icon u-text-palette-3-base u-icon-4 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="750" 
                    style="will-change: transform, opacity; animation-duration: 1500ms;">
                    <img src="' . $consulta['ricono'] . '" alt=""></span>
-            <div>  
+            <div id="divbotonescontinuar">  
               <h4 id="titulocursoinscrito" class="u-text u-text-8" style="color: black"> 
                 ' . $consulta['cNombreCurso'] . '
               </h4>
