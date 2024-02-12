@@ -171,6 +171,17 @@ h2{
 #titulocategorias{
 	margin-left: 5.5%;
 }
+#tdfotoperfil {
+	text-align: center;
+	font-size: 0.8em;
+}
+#iconoinscritos{
+	width: 90%;
+}
+#iconofinalizados{
+	width: 90%;
+}
+
 @media screen and (max-width:700px){
 	.logo {
 		display: none;
@@ -193,8 +204,15 @@ h2{
 	}
 	#tdfotoperfil{
 		text-align: left;
-    	font-size: 0.5em;
+    	font-size: 0.7em;
 	}
+	#fotoperfil{
+		margin-left: 28%;
+	}
+	#guardarfotoperfil{
+		margin-left: 28%;
+	}
+
 	div#div_file {
 		width: 8em;
 		margin-left: 1.8em;
@@ -207,14 +225,54 @@ h2{
     	height: 70%;
 	}
 	#titulocursoinscrito {
-		margin-left: 3em;
+		margin-left: 2em;
 		margin-bottom: 5%;
 		font-weight: 500;
 		font-size: 1.3em;
 	}
 	#btncontinuarcurso {
-		margin-left: 0em;
+		margin-left: 1em;
 		padding: 2% 9%;
+	}
+	#iconoinscritos{
+		width: 90%;
+	}
+	#iconofinalizados{
+		width: 90%;
+	}
+
+	/* footer*/
+	#logopie {
+		width: 22%;
+		padding: 2% 2%;
+		padding-left: 0;
+	}
+	#imglogopie {
+		height: 22%;
+		margin-top: 50%;
+	}
+	#texto1pie {
+		width: 50%;
+		padding: 3% 0%;
+	}
+	#footer p {
+		font-size: 70%;
+		margin-bottom: 3.3%;
+		line-height: 120%;
+	}
+	#texto2pie {
+		width: 32%;
+		padding: 1% 1%;
+	}
+	#divfooter{
+		height: 10em;
+	}
+	/*end footer*/
+	#divbotonescontinuar{
+		text-align: center;
+	}
+	.u-section-2 .u-icon-4 {
+		margin-left: 30%;
 	}
 }
 @media (min-width: 1370px){
