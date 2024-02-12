@@ -1183,6 +1183,7 @@ p {
     padding-top: 1.5%;
     font-size: 400%;
 	font-family: MonserratBold;
+	margin: 2.2% 0%
 }
 
 .imagenesareas {
@@ -1201,7 +1202,7 @@ p {
     text-align: left;
 }
 .titulocategoriascursos{
-	width: 75%;
+	width: 90%;
 }
 .celdacategoria{
 	height: 30em;
@@ -1211,7 +1212,7 @@ p {
 	margin: 5% 1%;
 }
 .banernosotros{
-	margin-top: 20em;
+	margin-top: 8%;
 	margin-bottom: 5em;
 }
 #slider1{
@@ -1444,12 +1445,13 @@ p {
 	}
 	#header .nav-bar{
 		width: 112%;
-		margin-right: 1em;
+		margin-right: 1.3em;
 		margin-left: 1.5em;
 	}
 	#header .nav-list{
 		display: flex;
 		margin-left: 4em;
+		margin-right: 1em;
 	}
 	#header .nav-list ul {
 		display: contents;
@@ -1458,11 +1460,11 @@ p {
 	#header .nav-list ul a {
 		font-size: 1.2rem;
 		font-weight: 550;
-		letter-spacing: 0.1rem;
+		letter-spacing: 0.05rem;
 		text-decoration: none;
 		color: #000000;
 		text-transform: uppercase;
-		padding: 10px;
+		padding: 10px 8px;
 		display: block;
 		text-align: center;
 	}
@@ -1595,9 +1597,13 @@ p {
 		line-height: 125%;
 	}
 	#imgmision {
-		width: 22%;
+	    /*width: 22%;*/
+	    height: 12em;
 		padding-left: 0;
 	}
+    #imgvision {
+        height: 10em;
+    }
 	#valores {
 		font-size: 100%;
 	}
@@ -1626,7 +1632,7 @@ p {
 	#izquierdacontacto2 {
 		width: 100%;
 		margin-top: 15%;
-        height: 17em;
+        height: 22em;
 	}
 	/*inicia pie de pagina*/
 	#footer .footer {
@@ -1634,9 +1640,9 @@ p {
 		width: 50em;
 	}
 	#logopie{
-		height: 9em;
-    	padding: 5% 2%;
-		margin-top: 4%;
+		height: 6em;
+        padding: 1% 2%;
+		margin-top: 8%;
 		padding-left: 0;
 	}
 	#footer p {
@@ -1722,5 +1728,13 @@ p {
 	#header .header {
 		min-height: 10%;
 		display: flex;
+	}
+	/*mision y vision*/
+	#parrafosmision{
+		height: 13em;
+	}
+	#imgvalores {
+		height: auto;
+		width: 52%;
 	}
 }
