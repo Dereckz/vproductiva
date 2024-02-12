@@ -2,6 +2,8 @@
 include "../panel/func/profile.php";
 if (!isset($_SESSION)) {
     session_start();
+}else{
+    header("Location: ../alumno/index.php");                         
 }
 
 // Función para obterner la información de los datos personales del alumno.

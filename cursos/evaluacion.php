@@ -221,7 +221,24 @@
          and idusuario=$idusuario; ");
          $numpreguntas= mysqli_num_rows($examen); */
         ?>
-
+<script type="text/javascript">
+                function validar(form) {
+                    if (form.txt1.value <=4){
+                form.r1.disabled=(form.txt1.value=='');
+                form.r1.style.display = 'block';
+                form.r2.style.display = 'none';
+                form.r2.checked=false;
+                
+                    }
+                    else {
+                form.r2.disabled=(form.txt1.value=='');
+                form.r2.style.display = 'block';
+                form.r1.style.display = 'none';
+                form.r1.checked=false;
+                
+                    }
+                }
+</script>
             
 
 <?php
@@ -282,17 +299,17 @@
                                                     break;
                                             }?> 
                                             <?php if ($preguntas['tipo']=='radio'){?>
-                                                <div>
-                                                    <label for="the-avengers">
-                                                    <input id="the-avengers" type="radio" name="idrespuesta[<?php echo $contadorpreguntas?>]" value=<?php echo $respuesta['idrespuesta'] ?> required>
-                                                  <?php echo $letrarespuesta. $respuesta['respuesta'] ?>
+                                                <div>   
+                                                <label for="the-avengers">
+                                                    <input id=<?php echo $respuesta['idrespuesta']?> type="radio" name="idrespuesta[<?php echo $contadorpreguntas?>]" value=<?php echo $respuesta['idrespuesta'] ?> required>
+                                                    <label for=<?php echo $respuesta['idrespuesta']?>>  <?php echo $letrarespuesta. $respuesta['respuesta'] ?></label>
                                                     </label>
                                                 </div>
                                             <?php }elseif($preguntas['tipo']=='checkbox'){?>
                                                     <div>
                                                         <label for="black-panther">
-                                                            <input id="black-panther" type="checkbox" name=<?php echo $respuesta['idrespuesta'] ?> value=<?php echo $respuesta['respuesta'] ?> onclick="pepe.disabled = false" required>
-                                                            <input type="text" name="pepe" value=<?php echo $letrarespuesta. $respuesta['respuesta'] ?> disabled="disabled" >
+                                                            <input id="black-panther" type="checkbox" name=<?php echo $respuesta['idrespuesta'] ?> value=<?php echo $respuesta['respuesta'] ?> onclick="poner(this)" required>
+                                                            <label for="" value=<?php echo $letrarespuesta. $respuesta['respuesta'] ?>  >
                                                         </label>
                                                     </div>
                                             <?php }?>
@@ -310,6 +327,9 @@
             </section>
             
         <?php }?>
+
+
+
         <!-- Start Footer -->
   <section id="footer">
     <div id="divfooter">
