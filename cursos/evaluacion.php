@@ -174,6 +174,8 @@
                 .footer-link:hover {
                 color: #0f73c4;
                 }
+               
+                
 
                 @media only screen and (max-width: 500px) {
                 #survey-form #about-you{
@@ -283,14 +285,14 @@
                                                 <div>
                                                     <label for="the-avengers">
                                                     <input id="the-avengers" type="radio" name="idrespuesta[<?php echo $contadorpreguntas?>]" value=<?php echo $respuesta['idrespuesta'] ?> required>
-                                                    <?php echo $letrarespuesta. $respuesta['respuesta'] ?>
+                                                  <?php echo $letrarespuesta. $respuesta['respuesta'] ?>
                                                     </label>
                                                 </div>
                                             <?php }elseif($preguntas['tipo']=='checkbox'){?>
                                                     <div>
                                                         <label for="black-panther">
-                                                            <input id="black-panther" type="checkbox" name=<?php echo $respuesta['idrespuesta'] ?> value=<?php echo $respuesta['respuesta'] ?> required>
-                                                            <?php echo $letrarespuesta. $respuesta['respuesta'] ?>
+                                                            <input id="black-panther" type="checkbox" name=<?php echo $respuesta['idrespuesta'] ?> value=<?php echo $respuesta['respuesta'] ?> onclick="pepe.disabled = false" required>
+                                                            <input type="text" name="pepe" value=<?php echo $letrarespuesta. $respuesta['respuesta'] ?> disabled="disabled" >
                                                         </label>
                                                     </div>
                                             <?php }?>
