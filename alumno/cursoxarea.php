@@ -71,7 +71,7 @@
 .u-section-2 .u-repeater-1 {
   grid-template-columns: repeat(4, calc(23%));
   min-height: 553px;
-  grid-gap: 3%;
+  grid-gap: 2%;
 }
 .u-section-2 .u-list-item-1 {
   /*background-image: url(img/carpetablanca.png);*/
@@ -82,7 +82,8 @@
   --animation-custom_in-scale: 1;
   /*box-shadow: 5px 5px 29px 0 rgba(0,0,0,0.15);*/
   background-color: #f6f6f6;
-  height: 20.2em;
+  height: 23.2em;
+  margin: 5%;
 }
 .u-section-2 .u-container-layout-1 {
   /*padding: 50px 30px 30px;*/
@@ -348,6 +349,13 @@
   .u-section-2 .u-btn-6 {
     margin-top: 20px;
   }
+  .u-section-2 {
+  margin-bottom: 57%;
+  background-color: white;
+  }
+  .u-section-2 .u-list-item-1 {
+  margin: 0%;
+}
 }
 @media (max-width: 575px) {
   .u-section-2 .u-text-2 {

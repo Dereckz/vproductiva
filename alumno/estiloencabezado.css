@@ -188,7 +188,7 @@ h2{
 	}
 	.menus {
 		display: inline-block;
-		font-size: 1em;
+		font-size: 90%;
 		text-align: center;
 		width: 25%;
 		vertical-align: top;
