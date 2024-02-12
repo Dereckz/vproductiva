@@ -29,7 +29,7 @@
     background-color: #00b0ff;
     -webkit-border-radius:5px;
     /*-webkit-box-shadow:0px 3px 0px #1a71a9;*/
-    margin-left: 9em;
+    margin-left: 37%;
   }
 
   input#file1{
