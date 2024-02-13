@@ -325,6 +325,7 @@ img {
 		width: auto;
 	}
 	#header .header {
+		min-height: 10%;
 		display: flex;
 	}
 	

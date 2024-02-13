@@ -1573,12 +1573,12 @@ p {
 		margin-top: 15%;
 	}
 	.imagenesareas {
-		width: 105%;
+		width: 100%;
 		padding: 0.3em 0.5em;
 		/* height: 69%; */
 	}
 	.celdacategoria {
-		/*height: auto;*/
+		height: auto;
 		display: flex;
 		margin-top: 5%;
 	}
@@ -1606,7 +1606,7 @@ p {
 	}
 	#imgmision {
 	    /*width: 22%;*/
-	    height: 12em;
+	    height: 10em;
 		padding-left: 0;
 	}
     #imgvision {
@@ -1659,7 +1659,7 @@ p {
     	line-height: 120%;
 	}
 	#texto1pie {
-		width: 50%;
+		width: 30em;
     	padding: 3% 0%;
 	}
 	#texto2pie {
@@ -1739,7 +1739,7 @@ p {
 	}
 	/*mision y vision*/
 	#parrafosmision{
-		height: 13em;
+		height: 10em;
 	}
 	#imgvalores {
 		height: auto;
