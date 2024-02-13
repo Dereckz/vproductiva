@@ -8,7 +8,9 @@ $idUsuario = $_GET['usuario'];
 //1 inscrito, 2 salir, 3 inscrito por segunda ves.
 echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>';
 
-$consCur = mysqli_query($conn, "SELECT * FROM  inscripcion WHERE fkiIdeCurso = ".$idCurso." and fkiIdUsuario =".$idUsuario);
+$consCur = mysqli_query($conn, "SELECT * FROM  inscripcion 
+                                WHERE fkiIdeCurso = ".$idCurso.
+                                " AND fkiIdUsuario =".$idUsuario);
 $consulta= mysqli_fetch_array($consCur);
 $idIns= mysqli_num_rows($consCur);
 if(isset ($consulta['finalizado'])){
@@ -19,17 +21,21 @@ else{
 }
 if ($idIns>1 || $final==2 ){
     
-        $act = "UPDATE inscripcion SET finalizado = 3 WHERE fkiIdeCurso = ".$idCurso." and fkiIdUsuario =".$idUsuario;
-    if (mysqli_query($conn, $act)) {
-        //echo "Se actualizo correctamente el registro";
-    } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-    }
+        $act = "UPDATE inscripcion SET finalizado = 3 
+                WHERE fkiIdeCurso = ".$idCurso.
+                " AND fkiIdUsuario =".$idUsuario;
+
+        if (mysqli_query($conn, $act)) {
+            echo "Se actualizo correctamente el registro";
+            header("Location: index.php");
+        } else {
+            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        }
     
 }
 else {
     $sql = "INSERT INTO inscripcion(fkiIdUsuario, fkiIdeCurso,finalizado)
-VALUES ($idUsuario,$idCurso,1)";
+    VALUES ($idUsuario,$idCurso,1)";
 
 if (mysqli_query($conn, $sql)) {
      echo "....";
