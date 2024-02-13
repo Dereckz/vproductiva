@@ -31,6 +31,8 @@
         }
         .text-white2{
           font-family: "Montserrat";
+          font-size: 60%;
+          font-weight: 600;
         }
     </style>
 <head>
@@ -100,9 +102,8 @@
                     <br><br>
                     <button class="my-button">
                         <a class="text-white" href="../account/login.html">
-                          Haz clic aquí
-                          <p class="text-white2">Para explorar el catalogo de cursos</p>
-                        </a>
+                          Haz clic aquí</a>
+                          <p class="text-white2"><a href="../account/login.html">Para explorar el catalogo de cursos</a></p>
                     </button>
                                     
                 </form>

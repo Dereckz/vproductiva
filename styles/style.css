@@ -102,7 +102,7 @@ p {
 	justify-content: space-between;
 	width: 100%;
 	height: 100%;
-	max-width: 1300px;
+	max-width: 2000px;
 	padding: 0 10px;
 }
 #header .nav-list ul {
@@ -442,7 +442,7 @@ p {
 	top: 0;
 	height: 100%;
 	width: 100%;
-	background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+	/*background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);*/
 	opacity: 0.5;
 }
 #projects .project-img img {
@@ -660,7 +660,7 @@ p {
 		flex-direction: row-reverse;
 	}*/
 	#projects .project-item {
-		height: 37em;
+		height: auto;
 		margin: 2em;
 		width: 100%;
 		border-radius: 0;
@@ -670,7 +670,8 @@ p {
 		height: 100%;
 	}
 	#projects .all-projects .project-img {
-		height: 100%;
+		height: auto;
+		text-align: center;
 	}
 	/* End Project */
 
@@ -902,7 +903,7 @@ p {
 	color: #2E49C1;
 	padding-top: 5%;
 	font-weight: 700;
-	font-family: 'Montserrat';
+	font-family: 'MonserratBold';
 }
 
 /*Finaliza estilo para slider de videos de capacitores*/
@@ -1171,7 +1172,7 @@ p {
 	margin-top: 2em;
 	height: 3em;
 	border-radius: 10em;
-	padding-top: 0.5em;
+	padding-top: 0.5%;
 }
 
 #contact{
@@ -1203,6 +1204,7 @@ p {
 }
 .titulocategoriascursos{
 	width: 90%;
+	margin-bottom: 3%;
 }
 .celdacategoria{
 	height: 30em;
@@ -1240,7 +1242,8 @@ p {
     border-radius: 4em;
     color: white;
     border: 2.7em;
-    font-weight: 550;
+    font-weight: 600;
+    font-family: 'Montserrat';
 }
 #btncontactanos:hover{
 	background-color: #0d4ee7;
@@ -1254,7 +1257,8 @@ p {
     border-radius: 4em;
     color: white;
     border: 3em;
-    font-weight: 550;
+    font-weight: 600;
+    font-family: 'Montserrat';
 }
 #btncursos:hover{
 	background-color: #0D1566;
@@ -1268,7 +1272,8 @@ p {
     border-radius: 4em;
     color: white;
     border: 2.7em;
-    font-weight: 550;
+    font-weight: 600;
+    font-family: 'Montserrat';
 }
 #btncontactanos2:hover{
 	background-color: #0d4ee7;
@@ -1378,7 +1383,7 @@ p {
 	text-align: center;
 }
 #imgbienvenida{
-	height: 52em;
+	height: auto;
 }
 /*style footer*/
 #divfooter{
@@ -1437,9 +1442,12 @@ p {
     vertical-align: middle;
     padding: 3% 5%;
 }
+#divtablacursos{
+	width: 93%;
+}
 
 
-@media screen and (max-width:700px){
+@media screen and (max-width:1190px){
 	#logoinicio{
 		width: 30%;
 	}
@@ -1737,4 +1745,8 @@ p {
 		height: auto;
 		width: 52%;
 	}
+	#divtablacursos{
+		width: auto;
+	}
 }
+
