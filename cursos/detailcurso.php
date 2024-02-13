@@ -33,17 +33,13 @@
    
         <!--<img class="tituloscursos" src="img/PLaboral.png" >-->
         <table id=tablarecursos>
-<<<<<<< HEAD
+
         <tr> <td colspan=3 id=filatitulo> <h2><?php echo $cursoname?></h2> </td></tr>    
        
 <?php
+    
+
     $resultado = mysqli_query($conn, "SELECT r.iIdRecurso,c.cNombreCurso, m.cNombreModulo,r.cRuta,r.cNombreRecurso,r.cFormato,c.fkidAreaCurso FROM usuarios u
-=======
-            <tr> <td colspan=3 id=filatitulo> <h2><?php echo $cursoname?></h2> </td></tr>    
-       
-<?php
-    $resultado = mysqli_query($conn, "SELECT r.iIdRecurso,c.cNombreCurso, m.cNombreModulo,r.cRuta,c.fkidAreaCurso FROM usuarios u
->>>>>>> origin/master
     INNER JOIN inscripcion i ON u.iIdUsuario = i.fkiIdUsuario
     INNER JOIN curso c ON i.fkiIdeCurso = c.iIdCurso
     INNER JOIN modulo m ON c.iIdCurso = m.fkiIdCurso
@@ -73,11 +69,9 @@
     $numVisto = mysqli_num_rows($resultadoVisto);
     $numexiste =mysqli_num_rows($existeexamen);
     $modulo=0;
-<<<<<<< HEAD
-    $result="";
-=======
 
->>>>>>> origin/master
+    $result="";
+
     while ($consulta = mysqli_fetch_array($resultado)) {
             $modulo=$modulo+1;
             $check = mysqli_query($conn, "SELECT COUNT(*) as num FROM visto
@@ -97,7 +91,7 @@
                     <img src="img/checkvacio.png" style="width: 2.4em;">
                 </td>';
             }
-<<<<<<< HEAD
+
           
            
             if(  $consulta['cFormato']=="mp4"){
@@ -108,18 +102,15 @@
                 $rutarrecuso= $consulta['cRuta'];
             }
            
-=======
+
        
->>>>>>> origin/master
+
             echo 
             '<tr> 
                 <td class=iconorecursocelda> '.$visto.'</td> 
                 <td class=fondotemario>
-<<<<<<< HEAD
                     <a class=titulostemario  href="'.$rutarrecuso.'" id="'.$consulta['iIdRecurso'].'" target="_blank" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">
-=======
-                    <a class=titulostemario  href="'.$consulta['cRuta'].'" id="'.$consulta['iIdRecurso'].'" target="_blank" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">
->>>>>>> origin/master
+
                     Módulo '.$modulo.'.<br><span id="titulotema"> '.$consulta['cNombreModulo'].'</span>
                     </a></td> 
                 </tr>
@@ -164,11 +155,7 @@
     $correcta=0;
     $mensaje="";
     if($numMudulo==$numVisto){
-<<<<<<< HEAD
-      
-=======
 
->>>>>>> origin/master
         $intentoscorrectos="";
           
                 if ( $numexiste==0){
