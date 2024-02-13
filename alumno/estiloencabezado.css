@@ -166,10 +166,10 @@ h2{
 }
 
 #divcategorias{
-	margin: 0 4%;
+	margin: 0 0%;
 }
 #titulocategorias{
-	margin-left: 5.5%;
+	margin-left: 0%;
 }
 #tdfotoperfil {
 	text-align: center;
@@ -301,6 +301,13 @@ h2{
 	}
 	#titulocategorias{
 		margin-left: 2.5%;
+	}
+	.parrafosfooter {
+		font-size: 115%;
+	}
+	#divfooter {
+		display: flex;
+		height: 15em;
 	}
 }
 
