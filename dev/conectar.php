@@ -10,7 +10,11 @@ $dbname = "valuaci4_valuacionproductivabd";
  
  $dbhost = "localhost";
  $dbuser = "root";
+<<<<<<< HEAD
  $dbpass = "@rupe2021";
+=======
+ $dbpass = "";
+>>>>>>> origin/master
  $dbname = "vproductivabd"; 
  
 $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
