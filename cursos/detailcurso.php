@@ -33,7 +33,7 @@
    
         <!--<img class="tituloscursos" src="img/PLaboral.png" >-->
         <table id=tablarecursos>
-            <tr> <td colspan=3 id=filatitulo> <h2><?php echo $cursoname?></h2> </td></tr>    
+        <tr> <td colspan=3 id=filatitulo> <h2><?php echo $cursoname?></h2> </td></tr>    
        
 <?php
     $resultado = mysqli_query($conn, "SELECT r.iIdRecurso,c.cNombreCurso, m.cNombreModulo,r.cRuta,r.cNombreRecurso,r.cFormato,c.fkidAreaCurso FROM usuarios u
@@ -89,7 +89,9 @@
           
            
             if(  $consulta['cFormato']=="mp4"){
-                $rutarrecuso='multimedia?ruta='.$consulta['cNombreRecurso'];
+               $archivoconextension= explode('/',$consulta['cRuta']);
+           
+                $rutarrecuso='multimedia.php?ruta='.$archivoconextension[3];
             }else{
                 $rutarrecuso= $consulta['cRuta'];
             }
