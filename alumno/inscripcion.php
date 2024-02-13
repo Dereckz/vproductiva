@@ -24,11 +24,13 @@ if ($idIns>1 || $final==2 ){
         $act = "UPDATE inscripcion SET finalizado = 3 
                 WHERE fkiIdeCurso = ".$idCurso.
                 " AND fkiIdUsuario =".$idUsuario;
-    if (mysqli_query($conn, $act)) {
-        //echo "Se actualizo correctamente el registro";
-    } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-    }
+
+        if (mysqli_query($conn, $act)) {
+            echo "Se actualizo correctamente el registro";
+            header("Location: index.php");
+        } else {
+            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        }
     
 }
 else {

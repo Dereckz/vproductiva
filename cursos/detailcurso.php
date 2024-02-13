@@ -145,7 +145,7 @@
     $correcta=0;
     $mensaje="";
     if($numMudulo==$numVisto){
-
+      
         $intentoscorrectos="";
           
                 if ( $numexiste==0){

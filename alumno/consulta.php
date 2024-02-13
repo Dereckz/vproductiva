@@ -358,7 +358,7 @@ function miCurso()
         }
 
         $contador = $contador + 1;
-    }
+         }
   
    
    
