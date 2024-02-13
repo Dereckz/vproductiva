@@ -274,7 +274,7 @@
 @media (max-width: 991px) {
   .u-section-2 .u-sheet-1 {
     min-height: 439px;
-    margin-left: 3%;
+    margin-left: 0%;
   }
   .u-section-2 .u-text-1 {
     margin-top: 60px;

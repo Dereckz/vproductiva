@@ -102,7 +102,7 @@ p {
 	justify-content: space-between;
 	width: 100%;
 	height: 100%;
-	max-width: 1300px;
+	max-width: 2000px;
 	padding: 0 10px;
 }
 #header .nav-list ul {
@@ -411,10 +411,12 @@ p {
 #projects .project-info h1 {
 	font-size: 3.8rem;
     /* font-weight: 900; */
-    text-align: center;
+    text-align: left;
     padding-bottom: 0.5em;
     font-family: MonserratBold;
     color: #872362;
+	padding-left: 1.2em;
+    padding-right: 1.2em;
 }
 #projects .project-info li {
 	font-size: 1.5rem;
@@ -443,7 +445,7 @@ p {
 	top: 0;
 	height: 100%;
 	width: 100%;
-	background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+	/*background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);*/
 	opacity: 0.5;
 }
 #projects .project-img img {
@@ -659,7 +661,7 @@ p {
 		flex-direction: row-reverse;
 	}*/
 	#projects .project-item {
-		height: 37em;
+		height: auto;
 		margin: 2em;
 		width: 100%;
 		border-radius: 0;
@@ -669,11 +671,13 @@ p {
 		width: 100%;
 	}
 	#projects .all-projects .project-img {
-		height: 120%;
+		height: auto;
+		text-align: center;
 	}
+	/*
 	#imghomecurso{
 		border-bottom: solid #2E49C1 8em;
-	}
+	}*/
 	/* End Project */
 
 	/* About */
@@ -1249,7 +1253,8 @@ p {
     border-radius: 4em;
     color: white;
     border: 3em;
-    font-weight: 550;
+    font-weight: 600;
+    font-family: 'Montserrat';
 }
 .btnregresar:hover{
 	background-color: #182da6;
@@ -1263,7 +1268,8 @@ p {
     border-radius: 4em;
     color: white;
     border: 3em;
-    font-weight: 550;
+    font-weight: 600;
+    font-family: 'Montserrat';
 	margin-bottom: 2.2em;
 }
 .btnregresar2:hover{
@@ -1293,15 +1299,18 @@ p {
 }
 #divfooter {
     display: flex;
+	height: 15em;
 }
 
 #texto1pie {
-    width: 50%;
-    padding: 3% 0%;
+	width: 50%;
+    padding-left: 11%;
+    padding-right: 11%;
+    padding-top: 1%;
 }
 #texto2pie {
     width: 32%;
-    padding: 2% 5%;
+    padding: 2.7% 5%;
 }
 #terminosycon {
     text-decoration: underline;
@@ -1316,6 +1325,16 @@ p {
     font-weight: 550;
     color: white;
 }
+#logopie{
+	width: 20%;
+    padding: 2% 3%;
+}
+
+#imghomecurso{
+	height: auto;
+    width: 65%;
+}
+
 @media screen and (max-width:700px){
 	#projects .project-info {
 		padding: 0;
