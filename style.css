@@ -314,6 +314,7 @@ input[type=number] { -moz-appearance:textfield; }
 	#header .nav-list{
 		display: flex;
 		margin-left: 4em;
+		margin-right: 0.5em;
 	}
 	#header .nav-list ul {
 		display: contents;

@@ -1343,9 +1343,14 @@ p {
 		font-size: 2.6em;
 		margin-top: 0.9em;
 		text-align: left;
+		padding-left: 0%;
 	}
 	.btnregresar {
-	margin-bottom: 6%;
+		margin-bottom: 6%;
+		margin-left: 0;
+	}
+	#enlaceregresar{
+		text-align: center;
 	}
 	#projects .project-info p {
 		padding: 0em 0em;
@@ -1366,5 +1371,9 @@ p {
     	margin-top: 7%;
     	padding-left: 0;
 		width: 30%;
+	}
+	#imgcategoria{
+		border-radius: 0%;
+  		text-align: center;
 	}
 }
