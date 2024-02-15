@@ -93,16 +93,20 @@
             }
 
           
-            if(  $consulta['cFormato']=="mp4"){
+           
+            //if(  $consulta['cFormato']=="mp4"){
+
                 $archivoconextension= explode('/',$consulta['cRuta']);
-            
-                 $rutarrecuso='multimedia.php?ruta='.$archivoconextension[3];
-             }else{
-                 $rutarrecuso= $consulta['cRuta'];
-             }
+                $url='r='.$archivoconextension[3];
+                $recursourl=str_replace($archivoconextension[3],$consulta['cNombreCurso'],$url);
+               
+                $rutarrecuso='multimedia.php?irc='.$consulta["iIdRecurso"].'&'.$recursourl;
+          //  }else{
 
-       
-
+                
+            //    $rutarrecuso= $consulta['cRuta'];
+            //}
+                 
             echo 
             '<tr> 
                 <td class=iconorecursocelda> '.$visto.'</td> 
@@ -125,7 +129,8 @@
         
                 idRecurso = "' . $consulta['iIdRecurso'] . '";
                 idAlumno = "' . $_SESSION["id"] . '";
-               
+                //alert("Hey me tocaste");
+        
                //Convertimos las variables de javascript en variables de PHP
                     $( document ).ready(function() {
                 // Definimos las variables de javascrpt
