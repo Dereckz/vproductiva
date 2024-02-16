@@ -3,11 +3,9 @@ include "../panel/func/profile.php";
 
  if (!isset($_SESSION)) {
     session_start();
-}else{
-    header("Location: https://valuacionproductiva.mx/");                         
-} 
+}
 require "sesiontime.php";
-// Función para obterner la información de los datos personales del alumno.
+
 function informacion()
 {
     require("../dev/conectar.php");

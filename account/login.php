@@ -28,6 +28,7 @@ try{
            $_SESSION["img"]=$fila["cProfile"];
            $_SESSION['tiempo']=time();
            $_SESSION['acceso']=$fechaActual;
+           $_SESSION[ 'last_activity' ]= time();
           
            $tipo=$fila['fkidTipoUsuario'];
            

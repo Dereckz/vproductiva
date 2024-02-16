@@ -614,9 +614,10 @@
         echo $constancia;
         echo $examen;
         echo $mensaje;
+        
     
     ?>
-
+ 
 </html>
 
     
