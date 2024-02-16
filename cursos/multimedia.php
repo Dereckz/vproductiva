@@ -32,5 +32,3 @@ video::-webkit-media-controls-panel {
 		elem.requestFullscreen();
 		}
 	</script> 
-
-

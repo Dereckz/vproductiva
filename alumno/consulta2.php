@@ -6,7 +6,7 @@ function infoCurso2($idarea )
 {
     
     require("../dev/conectar.php");
-    
+    include "sesiontime.php";
     $inscrito = mysqli_query($conn, "SELECT c.iIdCurso 
         FROM curso c
         INNER JOIN inscripcion i ON i.fkiIdeCurso = c.iIdCurso

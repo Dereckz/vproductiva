@@ -1,30 +1,30 @@
 <?php
 
-//Comprobamos si esta definida la sesión 'tiempo'.
-if(isset($_SESSION['tiempo']) ) {
+// Definir máximo tiempo de poder estar inactivo (en horas)
+define( 'MAX_SESSION_TIME', 3600); // 3600 * 12=12 hora   
 
-    //Tiempo en segundos para dar vida a la sesión.
-    $inactivo =60000;//60min en este caso.
+if ( isset( $_SESSION[ 'last_activity' ] ) && 
+     ( time() - $_SESSION[ 'last_activity' ] ) > MAX_SESSION_TIME ) {
 
-    //Calculamos tiempo de vida inactivo.
-    $vida_session = time() - $_SESSION['tiempo'];
+    session_unset();
 
-        //Compraración para redirigir página, si la vida de sesión sea mayor a el tiempo insertado en inactivo.
-        if($vida_session > $inactivo)
-        {echo '<script type="text/JavaScript"> location.reload(); </script>';
-           
-            
-            header("Location: ../function/finacceso.php");
+    if ( ini_get( 'session.use_cookies' ) ) {
 
-            exit();
-        } else {  // si no ha caducado la sesion, actualizamos
-            $_SESSION['tiempo'] = time();
-        }
+        $params = session_get_cookie_params();
+        setcookie( session_name(), '',
+                   time() - MAX_SESSION_TIME,
+                   $params[ 'path' ],
+                   $params[ 'domain' ],
+                   $params[ 'secure' ],
+                   $params[ 'httponly' ] );
+    }
 
+    @session_destroy();     
 
-} else {
-    //Activamos sesion tiempo.
-    $_SESSION['tiempo'] = time();
+    // Redireccionar
+    header( "Location: https://valuacionproductiva.mx/" );
 }
+
+$_SESSION[ 'last_activity' ] = time();
 
 ?>
