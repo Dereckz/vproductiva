@@ -23,14 +23,14 @@
 	top: 0px;
 	margin: 0%;
 	width: 100%;
-	text-align: center;
+	/*text-align: center;*/
 }
 #tituloprincipal{
 	margin: 0%;
 	color: #000000;
 }
 #menu{
-	/*background-color: #40bff2;*/
+	background-color: white;
 	margin-top: 0%;
 	margin-left: 0%;
 	font-family: sans-serif;
@@ -41,7 +41,7 @@
 	display: inline-block;
 	font-size: 1.1em;
 	text-align: center;
-	width: 25%;
+	width: 20%;
 	vertical-align: top;
 	padding: 1em;
 }
@@ -50,6 +50,14 @@
 	font-size: 1.3em;
 	text-align: left;
 	width: 17%;
+}
+.menusvacio {
+    display: inline-block;
+    font-size: 1.1em;
+    text-align: center;
+    width: 40%;
+    vertical-align: top;
+    padding: 1em;
 }
 a{
 	color: #000000;
@@ -154,7 +162,8 @@ h2{
 }
 @media screen and (max-width:700px){
 	.logo {
-		display: none;
+		/*display: none;*/
+		width: 36%;
 	}
 	.menus {
 		display: inline-block;
@@ -209,6 +218,16 @@ h2{
 	}
 	#iconofinalizados{
 		width: 0.7em;
+	}
+	#menu {
+		text-align: right;
+	}
+	#tablaencuestas {
+		width: auto;
+		padding-left: 0;
+	}
+	#encuestarealizada {
+		width: auto;
 	}
 
 	/* footer*/

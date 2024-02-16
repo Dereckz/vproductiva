@@ -1,5 +1,7 @@
 <?php include 'consulta.php';?>
-<?php include 'sesiontime.php';?>
+<?php
+
+?>
 
 <!DOCTYPE html>
 <!-- saved from url=(0091)https://website529400.nicepage.io/es/1234.html?version=56a80d83-e130-4c50-b76e-7bfc4c0ea516 -->
@@ -24,12 +26,12 @@
   div#div_file{
     position: relative;
     padding: 0.5em;
-    width: 38%;
+    width: 9em;
     height: 2em;
-    background-color: #2499e3;
+    background-color: #00b0ff;
     -webkit-border-radius:5px;
-    -webkit-box-shadow:0px 3px 0px #1a71a9;
-    margin-left: 9em;
+    /*-webkit-box-shadow:0px 3px 0px #1a71a9;*/
+    margin-left: 37%;
   }
 
   input#file1{
@@ -41,17 +43,20 @@
     width: 100%;
     height: 100%;
     opacity: 0;
+
+
   }
     .u-section-2 {
   background-image: none;
-  padding-top: 2em;
+  padding-top: 2.8em;
+  margin-bottom: 5%;
 }
 @font-face {
     font-family: Acumin;
     src: url(AcuminVariableConcept.ttf);
 }
 .u-section-2 .u-sheet-1 {
-  min-height: 1108px;
+  min-height: 908px;
 }
 .u-section-2 .u-text-1 {
   text-transform: uppercase;
@@ -64,7 +69,7 @@
 }
 .u-section-2 .u-text-2 {
   font-size: 3.3rem;
-  font-family: 'Open Sans';
+  font-family: 'Montserrat';
   --animation-custom_in-translate_x: 0px;
   --animation-custom_in-translate_y: -300px;
   --animation-custom_in-opacity: 0;
@@ -97,11 +102,11 @@
   padding: 0;
 }
 .u-section-2 .u-list-1 {
-  /*margin-top: 2.8em;*/
+  margin-top: 2.8em;
   margin-bottom: 0;
 }
 .u-section-2 .u-repeater-1 {
-  grid-template-columns: repeat(4, calc(25% - 22.5px));
+  /*grid-template-columns: repeat(4, calc(25% - 22.5px));*/
   min-height: 273px;
   grid-gap: 30px;
 }
@@ -217,7 +222,7 @@
   padding: 0;
 }
 .u-section-2 .u-list-item-4 {
-  background-image: url(img/carpetablanca.png);
+  /*background-image: url(img/carpetablanca.png);*/
   --animation-custom_in-translate_x: 0px;
   --animation-custom_in-translate_y: 300px;
   --animation-custom_in-opacity: 0;
@@ -225,18 +230,15 @@
   --animation-custom_in-scale: 1;
   /*box-shadow: 5px 5px 29px 0 rgba(0,0,0,0.15);*/
   height: 15.4em;
-  text-align: center;
-  display: inline-flex;
-  width: 17em;
-  margin-top: 3em;
-  margin-right: 1.8em;
+  /*text-align: center;*/
+  background-color: #f6f6f6;
 }
 .u-section-2 .u-container-layout-4 {
-  padding: 50px 30px 30px;
+  padding: 30px 30px 30px;
 }
 .u-section-2 .u-icon-4 {
-  height: 59px;
-  width: 59px;
+  height: 100%;
+  /*width: 59px;*/
   background-image: none;
   --animation-custom_in-translate_x: 0px;
   --animation-custom_in-translate_y: 0px;
@@ -245,7 +247,7 @@
   --animation-custom_in-scale: 1;
   margin: 0 auto 0 0;
   padding: 0;
-  margin-left: 4.5em;
+  margin-left: 4em;
 }
 .u-section-2 .u-text-8 {
   font-size: 1.5rem;
@@ -290,6 +292,21 @@
   margin: 15px auto 0 0;
   padding: 14px 46px 16px 44px;
 }
+
+#titulocursoinscrito{
+margin-left: 3em;
+margin-bottom: 3em;
+font-weight: 550;
+}
+
+#btncontinuarcurso{
+  background-color: #00b0ff;
+  border-radius: 25em;
+  padding: 0.5em 2em;
+  color: white;
+  margin-left: 4em;
+}
+
 @media (max-width: 1199px) {
   .u-section-2 .u-text-1 {
     margin-right: 205px;
@@ -333,7 +350,7 @@
     margin-right: 83px;
   }
   .u-section-2 .u-repeater-1 {
-    grid-template-columns: repeat(2, calc(50% - 15px));
+    /*grid-template-columns: repeat(2, calc(50% - 15px));*/
     min-height: 557px;
   }
   .u-section-2 .u-container-layout-1 {
@@ -410,19 +427,23 @@
   }
 
   
-}</style>
+    }
+    </style>
 
-    <script type="application/ld+json">{
+    <script type="application/ld+json">
+      {
 		"@context": "http://schema.org",
 		"@type": "Organization",
 		"name": "",
 		"url": "https://website529400.nicepage.io/1234.html"
-}</script>
+}
+    </script>
     <meta name="theme-color" content="#0066ff">
     <meta property="og:title" content="1234">
     <meta property="og:type" content="website">
     <link rel="canonical" href="https://website529400.nicepage.io/1234.html">
     <link rel="stylesheet" href="estiloencabezado.css">
+    <link href="../img/LOGOVP.ico" rel="icon">
 
 </head>
   <body class="u-body u-xl-mode" data-lang="es">
@@ -430,11 +451,10 @@
     	
     
     	<ul id="menu">
-      <li class="logo"><img src="img/logob.png" id="logo"></li>
-      <li class="menus"></li>
-    	<li id="miperfilfondo" class="menus"><a href="index.php" id="miperfil" class="letramenus">Mi perfil</a></li>
-    	<!--<li class="menus"><a href="cursos.php">Catálogo de Cursos</a></li>-->
-      <li class="menus"><a href="../function/finacceso.php">Salir</a></li>
+      <li class="logo"><a href="index.php"><img src="img/logob.png" id="logo"></a></li>
+      <li class="menusvacio"></li>
+    	<li id="miperfilfondo" class="menus"><a href="index.php" id="miperfil" class="letramenus">MI PERFIL</a></li>
+      <li class="menus"><a href="../function/finacceso.php">SALIR</a></li>
     	</ul>
   </header>
 
