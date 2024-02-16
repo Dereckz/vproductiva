@@ -461,8 +461,8 @@ font-weight: 550;
         
         <?=informacion();?>
         <div class="u-expanded-width u-list u-list-1">
-        <div class="u-repeater u-repeater-1">
         <h1 class="section-title" id="titulomiscursos"> <span>Mis cursos:</span></h1>
+        <div class="u-repeater u-repeater-1" id="divcursosins">
         
         <?=miCurso();?>
         </div>

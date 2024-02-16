@@ -377,7 +377,7 @@ text-decoration: none;
 	}
 	#logopie {
 		width: 22%;
-		padding: 2% 2%;
+		padding: 2% 0%;
 		padding-left: 0;
 	}
 	#imglogopie {
@@ -395,10 +395,10 @@ text-decoration: none;
 	}
 	#texto2pie {
 		width: 32%;
-		padding: 1% 1%;
+		padding: 1% 0%;
 	}
 	#divfooter{
-		height: 13em;
+		height: 15em;
 	}
 	/*end footer*/
 

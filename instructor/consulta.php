@@ -65,18 +65,18 @@ function informacion()
         <table class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;">
         <tr>        
         <form action="subir.php" method="POST" enctype="multipart/form-data">
-            <td rowspan=6 style="text-align: center; font-size: 0.8em;"><img id=fotoperfil src="'.$consulta['cProfile'].'" width="42%"><div id="div_file"><input type="file" name="file1" id="file1"> 
+            <td rowspan=6 id="tdfotoperfil"><img id=fotoperfil src="'.$consulta['cProfile'].'" width="42%"><div id="div_file"><input type="file" name="file1" id="file1"> 
             <p id="texto">Subir foto</p>
             </div>
             <br>
-            <button type="submit" style="border:transparent; background-color: white;">Guardar</button>
+            <button id="guardarfotoperfil" type="submit" style="border:transparent; background-color: white;">Guardar</button>
             </td>
             <td width="65%" colspan=2><h3 class="u-text u-text-2 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;">' . $consulta['cNombreLargo'] . '</h3></td>
             </tr>
 
         </form>
         <tr><td colspan=2><p class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;"> Correo: ' . $consulta['cCorreo'] . '</p></td></tr>
-        <tr><td width="3%"><img src="img/docusin.png" width="90%"></td><td><p class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms; margin-bottom: 0.06em;"> Encuestas asignadas: '.$nSurvey.'</p></td></tr>
+        <tr><td width="3%"><img src="img/docusin.png" id="iconoinscritos"></td><td><p class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms; margin-bottom: 0.06em;"> Encuestas asignadas: '.$nSurvey.'</p></td></tr>
         <!--<tr><td width="3%"><img src="img/docu.png" width="90%"></td><td><p class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms; margin-bottom: 0em;">Encuestas Finalizadas: '.$final.'</p></td></tr> -->   
     </table>
         ';

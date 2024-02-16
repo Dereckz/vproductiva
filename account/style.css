@@ -68,9 +68,9 @@ img {
 #header .nav-list ul.active {
 	left: 0%;
 }
-#header .nav-list ul a {
-	font-size: 2.5rem;
-	font-weight: 500;
+.headermenu{
+	font-size: 1.7rem;
+	font-weight: 600;
 	letter-spacing: 0.2rem;
 	text-decoration: none;
 	/*color: white;*/
@@ -153,7 +153,6 @@ img {
 	top: 0;
 }
 /* End Header section */
-
 
 /* Footer */
 #footer {
@@ -266,7 +265,6 @@ img {
 
 #logoinicio{
 	width: 19em;
-    margin-left: 2em;
 }
 
 /* checkboxregistro */
@@ -282,9 +280,9 @@ img {
 	/*#logoinicio{
 		width: 30%;
 	}*/
+	
 	#header .nav-bar{
-		width: 100%;
-    	margin-right: 11.5em;
+		width: auto;
 	}
 	#header .nav-list{
 		display: flex;
@@ -295,7 +293,7 @@ img {
     	flex-direction: row;
 		background-color: white;
 	}
-	#header .nav-list ul a {
+	.headermenu{
 		font-size: 1.2rem;
 		font-weight: 550;
 		letter-spacing: 0.05rem;
@@ -312,7 +310,7 @@ img {
 		background-color: white;
 	}
 	#logoinicio {
-		width: 9em;
+		width: 30%;
 	}
 	#fondoinicio{
 		background-color: #872362;
@@ -320,6 +318,7 @@ img {
 	#ingresarblanco{
 		color: white;
 	}
+
 	/*login*/
 	.login-register {
 		width: auto;
@@ -328,5 +327,19 @@ img {
 		min-height: 10%;
 		display: flex;
 	}
-	
+	#main-container{
+		width: auto;
+	}
+	#formulario{
+		width: auto;
+	}
+	#loginBtn, #registerBtn{
+		font-size: 2.4em;
+	}
+	#footer {
+		width: auto;
+	}
+	.containerh {
+		width: auto;
+	}	
 }

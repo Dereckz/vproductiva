@@ -181,6 +181,9 @@ h2{
 #iconofinalizados{
 	width: 90%;
 }
+#divbotonescontinuar{
+	flex-shrink: initial;
+}
 
 @media screen and (max-width:700px){
 	.logo {
@@ -188,7 +191,7 @@ h2{
 	}
 	.menus {
 		display: inline-block;
-		font-size: 90%;
+		font-size: 80%;
 		text-align: center;
 		width: 25%;
 		vertical-align: top;
@@ -203,14 +206,15 @@ h2{
     	display: inline;
 	}
 	#tdfotoperfil{
-		text-align: left;
+		text-align: center;
     	font-size: 0.7em;
 	}
 	#fotoperfil{
-		margin-left: 28%;
+		margin-left: 0%;
+		width: 10em;
 	}
 	#guardarfotoperfil{
-		margin-left: 28%;
+		margin-left: 0%;
 	}
 
 	div#div_file {
@@ -225,20 +229,24 @@ h2{
     	height: 70%;
 	}
 	#titulocursoinscrito {
-		margin-left: 2em;
+		margin-left: 0em;
 		margin-bottom: 5%;
 		font-weight: 500;
 		font-size: 1.3em;
+		text-align: center;
 	}
 	#btncontinuarcurso {
-		margin-left: 1em;
-		padding: 2% 9%;
+		margin-left: 3em;
+		/*padding: 2% 9%;*/
 	}
 	#iconoinscritos{
 		width: 0.7em;
 	}
 	#iconofinalizados{
 		width: 0.7em;
+	}
+	#divcursosins{
+		width: auto;
 	}
 
 	/* footer*/
@@ -252,8 +260,11 @@ h2{
 		margin-top: 50%;
 	}
 	#texto1pie {
-		width: 50%;
-		padding: 3% 0%;
+		width: 55%;
+		padding: 3% 1%;
+	}
+	#footer{
+		margin-top: 2.5em;
 	}
 	#footer p {
 		font-size: 70%;
@@ -262,18 +273,34 @@ h2{
 	}
 	#texto2pie {
 		width: 32%;
-		padding: 1% 1%;
+		padding: 1% 0%;
 	}
 	#divfooter{
 		height: 10em;
 	}
+	#footer{
+	    margin-top: 2.5em;
+	    width: auto;
+    }
 	/*end footer*/
+	/*
 	#divbotonescontinuar{
 		text-align: center;
 	}
+	
 	.u-section-2 .u-icon-4 {
 		margin-left: 30%;
+	}*/
+	#divinscritosmargin{
+		margin-bottom: 1em;
+		height: auto;
 	}
+	.menuster {
+		display: inline-table;
+		font-size: 1.5em;
+		width: 30%;
+		vertical-align: middle;
+	  }
 }
 @media (min-width: 1370px){
 	.imagenxarea{

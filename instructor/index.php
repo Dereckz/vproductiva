@@ -439,7 +439,7 @@
   </header>
 
     <section class="u-align-left u-clearfix u-grey-5 u-section-2" id="carousel_0852">
-      <div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
+      <div id="divperfil" class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
         
         <?=informacion();?>
 

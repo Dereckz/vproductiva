@@ -307,9 +307,9 @@ input[type=number] { -moz-appearance:textfield; }
 		width: 30%;
 	}
 	#header .nav-bar{
-		width: 120%;
-		margin-right: 1em;
-		margin-left: 1.5em;
+		width: auto;
+		/*margin-right: 1em;
+		margin-left: 1.5em;*/
 	}
 	#header .nav-list{
 		display: flex;
