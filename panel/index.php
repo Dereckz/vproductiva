@@ -73,7 +73,7 @@
           <div class="row" style="padding-left: 50px;">
             
             
-           <?php  $resultado = mysqli_query($conn, "SELECT * FROM curso"); ?>
+           <?php  $resultado = mysqli_query($conn, "SELECT * FROM areacurso"); ?>
 
           
               <?php  while ($consulta = mysqli_fetch_array($resultado)) {
