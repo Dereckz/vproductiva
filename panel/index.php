@@ -73,17 +73,24 @@
           <div class="row" style="padding-left: 50px;">
             
             
-           <?php  $resultado = mysqli_query($conn, "SELECT * FROM areacurso"); ?>
+           <?php  $resultado = mysqli_query($conn, "SELECT * FROM areacursos"); ?>
 
           
               <?php  while ($consulta = mysqli_fetch_array($resultado)) {
-                    $IdCurso=$consulta["iIdCurso"]; ?>
-
+                    $IdCurso=$consulta["iIdAreaCursos"];
+                    /* if($IdCurso % 2==0){
+                      $matrisimg=explode('/',$consulta["imagen2"]);
+                    }else{ */
+                      $matrisimg=explode('/',$consulta["imagen"]);
+                    //}
+                   
+                    $nameimg=$matrisimg[1];
+                    ?>
               <div class="card" style="width: 15rem; padding-right: 1%">
-                <img width="300" height="200"  src="<?php echo $consulta["ricono"]?>"class="card-img-top" alt="...">
+                <img width="300" height="200"  src="<?php echo '../images/'.$nameimg?>"class="card-img-top" alt="...">
                 <div class="card-body">
-                  <h5 class="card-title"><?php echo $consulta["cNombreCurso"]?></h5>
-                 <!--  <p class="card-text"><?php echo $consulta["cDescripcion"]?></p> -->
+                  <h5 class="card-title"><?php echo $consulta["NombreArea"]?></h5>
+            
                 
                 </div>
               </div>
@@ -101,7 +108,7 @@
                       <thead>
                         <tr>
                           <th scope="col">Nombre</th>
-                          <th scope="col">Email</th>
+                          <th scope="col">Curso</th>
                           <th scope="col">Estatus</th>
                           <th scope="col">Telefono</th>
                           <th scope="col">Genero</th>

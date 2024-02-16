@@ -147,9 +147,11 @@ th, td {
                               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editChildresn<?php echo $dataCliente['iIdUsuario']; ?>">
                                 Modificar
                               </button>
-                              <button type="button" class="btn btn-warning" data-toggle="modal"  data-target="#cursomodal<?php echo $dataCliente['iIdUsuario']; ?>">
+                               
+                              <button type="button" class="btn btn-info" data-toggle="modal"  data-target="#cursomodal<?php echo $dataCliente['iIdUsuario']; ?>">
                                 Agregar Curso
                               </button>
+                             
                               <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalsurvey<?php echo $dataCliente['iIdUsuario']; ?>">
                                 Agregar Encuesta
                               </button>
