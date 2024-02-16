@@ -1,4 +1,7 @@
 <?php include 'consulta.php';?>
+<?php
+
+?>
 
 <!DOCTYPE html>
 <!-- saved from url=(0091)https://website529400.nicepage.io/es/1234.html?version=56a80d83-e130-4c50-b76e-7bfc4c0ea516 -->
@@ -347,7 +350,7 @@ font-weight: 550;
     margin-right: 83px;
   }
   .u-section-2 .u-repeater-1 {
-    grid-template-columns: repeat(2, calc(50% - 15px));
+    /*grid-template-columns: repeat(2, calc(50% - 15px));*/
     min-height: 557px;
   }
   .u-section-2 .u-container-layout-1 {

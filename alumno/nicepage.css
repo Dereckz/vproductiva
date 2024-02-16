@@ -6036,7 +6036,7 @@ section.u-image:not(.u-hover-box),
 }
 @media (min-width: 1200px) {
   .u-xl-mode .u-sheet {
-    /*width: var(--theme-sheet-width-xl) !important;*/
+    width: var(--theme-sheet-width-xl) !important;
   }
 }
 @media (min-width: 1200px) and (max-width: 1399px) {
