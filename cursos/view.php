@@ -2,7 +2,8 @@
 <?PHP $irc=$_GET["irc"];?>
 <?PHP 
  require("../dev/conectar.php");
- 
+
+
 $recurse= mysqli_query($conn, "SELECT * FROM recurso
 								WHERE iIdRecurso=".$irc);
 								
@@ -42,29 +43,40 @@ body { min-height: 100vh; }
 <!DOCTYPE html>
 <html>
     <head>
+	<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'><link rel="stylesheet" href="./style.css">
+
+	</head>
 	<body>
 
 	
 
 		<?php if($formato=="pdf"){ 
-
+ require('../fpdf/fpdf.php');
 			$archivoconextension= explode('/',$datarec['cRuta']);
-			$pdf=$archivoconextension[3];
+			$pdf2=$archivoconextension[3];
 
 			$file = $archivoconextension[2].'/'.$archivoconextension[3];
 			$filename = $archivoconextension[3];
 			
 			
-			/* header('Content-type: application/pdf');
-			header('Content-Disposition: inline; filename="' . $filename . '"');
+			 //header('Content-type: application/pdf');
+			/*header('Content-Disposition: inline; filename="' . $filename . '"');
 			header('Content-Transfer-Encoding: binary');
-			header('Accept-Ranges: bytes');
-			@readfile($file); */
+			header('Accept-Ranges: bytes');*/
+			//@readfile($file); 
+			
+			
 		?>
-		 <div id="pdf" style="border:0;">
+	
+		  <!-- <div id="pdf" style="border:0;">
+			<object data="mypdf.pdf" type="application/pdf" frameborder="0" width="100%" height="600px" style="padding: 20px;">
 			<embed src=<?php echo $file ?> width="100%" height="100%" >
-
-		</div> 
+		</object>
+		</div>   -->
+		 <div class="container">
+   			<iframe style="float:right;" src = "ViewerJS/#"<?php echo $file ?> width='100%' height='100%' allowfullscreen webkitallowfullscreen></iframe>
+		</div>
+		 
 		<?PHP
 
 		}elseif ($formato=="mp4"){?>
@@ -74,7 +86,7 @@ body { min-height: 100vh; }
 			
 		<?php } ?>
 </body>		
-	</head>
+	
 </html>
 	<script src="https://cdn.plyr.io/3.6.3/plyr.polyfilled.js"></script>
 	<script  type= text/javascript>

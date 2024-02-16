@@ -1,7 +1,7 @@
 <?php
 
 // Definir máximo tiempo de poder estar inactivo (en horas)
-define( 'MAX_SESSION_TIME', 3600); // 3600 * 12=12 hora   
+define( 'MAX_SESSION_TIME', 3600 * 12); // 3600 * 12=12 hora   
 
 if ( isset( $_SESSION[ 'last_activity' ] ) && 
      ( time() - $_SESSION[ 'last_activity' ] ) > MAX_SESSION_TIME ) {
