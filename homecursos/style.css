@@ -389,7 +389,7 @@ p {
 }
 #projects .project-item {
 	display: flex;
-	align-items: center;
+	align-items: initial;
 	justify-content: center;
 	flex-direction: column;
 	width: 80%;
@@ -661,6 +661,7 @@ p {
 		flex-direction: row-reverse;
 	}*/
 	#projects .project-item {
+		align-items: initial;
 		height: auto;
 		margin: 2em;
 		width: 100%;
@@ -778,7 +779,7 @@ p {
 
 
 #logoinicio{
-	width: 220px;
+	width: 21em;
 }
 
 /* Inicia estilo para slider de videos de capactiroes*/
@@ -1335,6 +1336,20 @@ p {
     width: 65%;
 }
 
+.headermenu {
+    font-size: 1.7rem;
+    font-weight: 600;
+    letter-spacing: 0.2rem;
+    text-decoration: none;
+    color: #000000;
+    text-transform: uppercase;
+    padding: 15px 30px;
+    display: block;
+}
+#fondoinicio {
+    background-color: #872362;
+}
+
 @media screen and (max-width:700px){
 	#projects .project-info {
 		padding: 0;
@@ -1375,5 +1390,35 @@ p {
 	#imgcategoria{
 		border-radius: 0%;
   		text-align: center;
+	}
+}
+@media screen and (max-width:790px){
+	#logoinicio{
+		width: 30%;
+	}
+	#header .nav-bar{
+		width: auto;
+		/*margin-right: 1.3em;
+		margin-left: 1.5em;*/
+	}
+	#header .nav-list{
+		display: flex;
+		margin-left: 4em;
+		margin-right: 1em;
+	}
+	#header .nav-list ul {
+		display: contents;
+    	flex-direction: row;
+	}
+	.headermenu{
+		font-size: 1.2rem;
+		font-weight: 550;
+		letter-spacing: 0.05rem;
+		text-decoration: none;
+		color: #000000;
+		text-transform: uppercase;
+		padding: 10px 8px;
+		display: block;
+		text-align: center;
 	}
 }
