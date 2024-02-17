@@ -233,10 +233,9 @@ h2{
 		margin-bottom: 5%;
 		font-weight: 500;
 		font-size: 1.3em;
-		text-align: center;
 	}
 	#btncontinuarcurso {
-		margin-left: 3em;
+		margin-left: 0em;
 		/*padding: 2% 9%;*/
 	}
 	#iconoinscritos{
@@ -247,6 +246,10 @@ h2{
 	}
 	#divcursosins{
 		width: auto;
+	}
+	.filacentrada {
+		display: flex;
+		flex-direction: column;
 	}
 
 	/* footer*/
@@ -300,7 +303,10 @@ h2{
 		font-size: 1.5em;
 		width: 30%;
 		vertical-align: middle;
-	  }
+	}
+	.u-section-2 .u-icon-4 {
+	margin-left: 0;
+	}
 }
 @media (min-width: 1370px){
 	.imagenxarea{

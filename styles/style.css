@@ -1556,7 +1556,6 @@ p {
 		background-color: #872362;
 		padding: 0em 1em;
 		margin: 0;
-		border-radius: 0em; /*estaba en 4*/
 	}
 	#filagrid{
 		display: grid;
@@ -1627,6 +1626,9 @@ p {
 	    height: 10em;
 		padding-left: 0;
 	}
+	#imgmision img{
+		width: auto;
+	}
     #imgvision {
         height: 10em;
     }
@@ -1666,10 +1668,13 @@ p {
 		width: 50em;
 	}
 	#logopie{
-		height: 5em;
+		height: 4em;
         padding: 1% 2%;
-		margin-top: 8%;
+		margin-top: 10%;
 		padding-left: 0;
+	}
+	#imgpie{
+		width: auto;
 	}
 	#footer p {
 		font-size: 100%;
@@ -1677,7 +1682,7 @@ p {
     	line-height: 120%;
 	}
 	#texto1pie {
-		width: 30em;
+		/*width: 30em;*/
     	padding: 3% 0%;
 	}
 	#texto2pie {
