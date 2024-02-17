@@ -19,7 +19,7 @@ $ruta="../cursos/recurso/".$recurso;
     padding: 0;
     box-sizing: border-box;
 }
-body { min-height: 100vh; }
+	body { min-height: 100vh; }
 
 	video{
 		width: 100%;
@@ -51,7 +51,7 @@ body { min-height: 100vh; }
 	
 
 		<?php if($formato=="pdf"){ 
- require('../fpdf/fpdf.php');
+			
 			$archivoconextension= explode('/',$datarec['cRuta']);
 			$pdf2=$archivoconextension[3];
 
@@ -59,11 +59,12 @@ body { min-height: 100vh; }
 			$filename = $archivoconextension[3];
 			
 			
-			 //header('Content-type: application/pdf');
-			/*header('Content-Disposition: inline; filename="' . $filename . '"');
+		
+			 header('Content-type: application/pdf');
+			header('Content-Disposition: inline; filename="'.$filename	.'"');
 			header('Content-Transfer-Encoding: binary');
-			header('Accept-Ranges: bytes');*/
-			//@readfile($file); 
+			header('Accept-Ranges: bytes');
+			@readfile($file); 
 			
 			
 		?>
@@ -73,9 +74,9 @@ body { min-height: 100vh; }
 			<embed src=<?php echo $file ?> width="100%" height="100%" >
 		</object>
 		</div>   -->
-		 <div class="container">
-   			<iframe style="float:right;" src = "ViewerJS/#"<?php echo $file ?> width='100%' height='100%' allowfullscreen webkitallowfullscreen></iframe>
-		</div>
+		  <!-- <div class="container"> -->
+   			<!-- <iframe style="float:right;" src = "ViewerJS/#"<?php echo $file ?> width='100%' height='100%' allowfullscreen webkitallowfullscreen></iframe>	
+		    	</div>  -->
 		 
 		<?PHP
 

@@ -32,8 +32,8 @@ if($result->num_rows>0){
         $mail->Password   = '@vproductivam24';
         $mail->Port       = 587;  
 
-       // $mail->Host='mail.desetecnologias.net';
-       //$mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for Gmail 
+        // $mail->Host='mail.desetecnologias.net';
+        //$mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for Gmail 
         //$mail->Username   = 'contacto@desetecnologias.net';                     
         //$mail->Password   = '@safa2017';                      
         //$mail->Port       = 465;  
