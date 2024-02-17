@@ -1445,7 +1445,7 @@ p {
     padding: 3% 5%;
 }
 #divtablacursos{
-	width: 93%;
+	width: auto;
 }
 
 .headermenu{
@@ -1789,5 +1789,42 @@ p {
 	}
 	.imgcursosp1 {
 		height: auto;
+	}
+}
+
+@media screen and (min-width: 2000px) {
+    /* Estilos CSS que se aplicarán en pantallas con una anchura de más de 2000px */
+	#header .nav-bar {
+		max-width: 2500px;
+	}
+	#logoinicio {
+		width: 35em;
+	}
+	.menu>li {
+		margin-left: 30px;
+		margin-right: 30px;
+	}
+	.headermenu {
+		font-size: 3rem;
+	}
+	#services .services {
+		max-width: 2500px;
+	}
+}
+
+@media screen and (min-width: 3500px) {
+    /* Estilos CSS que se aplicarán en pantallas con una anchura de más de 3500px */
+	#header .nav-bar {
+		max-width: 3500px;
+	}
+	#logoinicio {
+		width: 55em;
+	}
+	.menu>li {
+		margin-left: 30px;
+		margin-right: 30px;
+	}
+	.headermenu {
+		font-size: 6rem;
 	}
 }

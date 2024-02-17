@@ -34,7 +34,7 @@ img {
 	height: auto;
 }
 #header .header {
-	min-height: 15vh;
+	min-height: auto;
     background-color: white;
     transition: 0.3s ease background-color;
     display: block;
