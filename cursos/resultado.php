@@ -140,7 +140,7 @@
                 <th>Preguntas</th>
                 <th>Respuestas Correctas</th>
                 <th>Respuestas Incorrectas</th>
-                <!-- <th>Puntuación</th> -->
+                 <th>Resultado</th> 
                 <th>Intentos</th>
             </tr>
             <tr>
@@ -150,7 +150,7 @@
                 <td><?php echo $numpreguntas?></td>
                 <td><?php echo ($numCorrecta/$numpreguntas)?></td>
                 <td><?php echo ($numIncorrecta/$numpreguntas)?></td>
-               <!--  <td></td> -->
+                <td><?php if($numCorrecta/$numpreguntas>6){echo 'APROBADO';}else{echo 'NO APROBADO';}?></td> 
                 <td><?php echo $intentost ?></td>
             </tr>
             
