@@ -71,6 +71,7 @@
                 align-items: stretch;
                 align-content: space-between;
                 font-family: 'Aldrich', sans-serif;
+                font-size: larger;
                 }
 
                 #survey-form #about-you{
@@ -182,6 +183,9 @@
                     display: flex;
                     flex-direction: column;
                 }
+                #anchoevalucion{
+                    width: auto;
+                }
                 }
 
                 @media only screen and (max-width: 365px) {
@@ -256,7 +260,7 @@
                 ?>
    
             <section class="u-align-left u-clearfix u-grey-5 u-section-2" id="carousel_0852">
-                <div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
+                <div id="anchoevalucion" class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
                    
                    
                     

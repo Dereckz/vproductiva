@@ -186,8 +186,9 @@ h2{
 }
 
 @media screen and (max-width:700px){
-	.logo {
-		display: none;
+	/*menu*/
+	#encabezado {
+		text-align: right;
 	}
 	.menus {
 		display: inline-block;
@@ -200,7 +201,17 @@ h2{
 	.menusvacio {
 		display: inline-block;
 		width: 0%;
+		padding: 0;
 	}
+	#logo {
+		position: relative;
+		width: 100%;
+		padding-top: 11%;
+	}
+	#menucatalogo{
+		padding-top: 2%;
+	}
+	/* termina menu*/
 	#divperfil{
 		margin: 0;
     	display: inline;
