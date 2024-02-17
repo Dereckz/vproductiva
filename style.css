@@ -379,12 +379,16 @@ input[type=number] { -moz-appearance:textfield; }
 		width: 50em;
 	}
 	#logopie{
-		height: 9em;
+		height: 7em;
     	padding: 5% 2%;
-    	margin-top: 4%;
+    	margin-top: 8%;
+		padding-left: 0;
+	}
+	#imgpie{
+		width: auto;
 	}
 	#footer p {
-		font-size: 105%;
+		font-size: 100%;
     	margin-bottom: 3.3%;
     	line-height: 120%;
 	}
