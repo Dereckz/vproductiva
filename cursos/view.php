@@ -41,7 +41,12 @@ $ruta="../cursos/recurso/".$recurso;
 					/* 	echo '<object data="mypdf.pdf" type="application/pdf" frameborder="0" width="100%" height="600px" style="padding: 20px;">
 						<embed src='.$file.' width="100%" height="100%" >'; */
 						
-
+			?>
+			<!-- <iframe ?wmode="transparent" type="application/pdf" id="iframe" 
+			src="ViewerJS/#cs.pdf" width="100%" height="100%" allowfullscreen webkitallowfullscreen></iframe> -->
+			<iframe id="pdf-js-viewer" src="pdfjs/web/viewer.html?cs.pdf" title="webviewer" frameborder="0" width="500" height="600"></iframe>
+			<!--<iframe src = "/ViewerJS/#../demo/ohm2013.odp" width='400' height='300' allowfullscreen webkitallowfullscreen></iframe>	-->		
+			<?php
 
 				}else{
 					header('Content-type: application/pdf');
@@ -78,10 +83,6 @@ $ruta="../cursos/recurso/".$recurso;
 				
 			<!-- cel-->
 			
-			<!--  <iframe width="100%" height="100%" src=<?PHP echo ($datarec["cRuta"])."#toolbar=0";?>
-				frameborder="0" allowfullscreen="allowfullscreen" allow="autoplay" controlsList="nodownload">
-			
-			</iframe>  -->
 			<style>
 			.video-responsive {
 			position: relative;
