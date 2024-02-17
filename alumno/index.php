@@ -454,7 +454,7 @@ font-weight: 550;
       <li class="logo"><a href="index.php"><img src="img/logob.png" id="logo"></a></li>
       <li class="menusvacio"></li>
     	<li id="miperfilfondo" class="menus"><a href="index.php" id="miperfil" class="letramenus">MI PERFIL</a></li>
-    	<li class="menus"><a href="cursos.php">CATÁLOGO DE CURSOS</a></li>
+    	<li class="menus" id="menucatalogo"><a href="cursos.php" >CATÁLOGO DE CURSOS</a></li>
       <li class="menus"><a href="../function/finacceso.php">SALIR</a></li>
     	</ul>
   </header>
