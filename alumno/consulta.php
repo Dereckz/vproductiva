@@ -14,8 +14,10 @@ function informacion()
     $cursos= mysqli_query($conn, "SELECT * FROM curso");
     $totalcursos= mysqli_num_rows($cursos);
     $final=0;
-    for ($i=1; $i<=$totalcursos; $i++){
-        
+    try{
+       
+        for ($i=1; $i<=$totalcursos; $i++){
+            
 
             $terminado = mysqli_query($conn, "SELECT r.iIdRecurso,c.cNombreCurso, m.cNombreModulo,r.cRuta 
             FROM usuarios u
@@ -33,61 +35,67 @@ function informacion()
             INNER JOIN recurso r ON  m.iIdModulo = r.fkiIdModulo
             INNER JOIN visto v ON r.iIdRecurso = v.idRecurso
             WHERE c.iIdCurso=".$i." and v.idAlumno=" . $_SESSION["id"]." GROUP BY iIdRecurso");
-             $numMudulo= mysqli_num_rows($terminado);
-             $numTerminado = mysqli_num_rows($nterminado);
-      
+            $numMudulo= mysqli_num_rows($terminado);
+            $numTerminado = mysqli_num_rows($nterminado);
+    
 
 
-   
-        if ($numMudulo==$numTerminado && $numMudulo>0 && $numTerminado>0){
-            $final=$final+1;
+    
+            if ($numMudulo==$numTerminado && $numMudulo>0 && $numTerminado>0){
+                $final=$final+1;
+            }
         }
-    }
-   
-        $cInscrito= mysqli_query($conn,"SELECT * FROM curso c
-        INNER JOIN inscripcion i ON i.fkiIdeCurso = c.iIdCurso
-        INNER JOIN usuarios u ON u.iIdUsuario = i.fkiIdUsuario
-        WHERE i.finalizado !=2 AND i.fkiIdUsuario=". $_SESSION["id"]);
+    
+            $cInscrito= mysqli_query($conn,"SELECT * FROM curso c
+            INNER JOIN inscripcion i ON i.fkiIdeCurso = c.iIdCurso
+            INNER JOIN usuarios u ON u.iIdUsuario = i.fkiIdUsuario
+            WHERE i.finalizado !=2 AND i.fkiIdUsuario=". $_SESSION["id"]);
+            
+            $nInscrito= mysqli_num_rows($cInscrito);
+            
         
-        $nInscrito= mysqli_num_rows($cInscrito);
-        
-       
-   
-    $resultado = mysqli_query($conn, "SELECT * FROM usuarios WHERE iIdUsuario=" . $_SESSION["id"]);
-    while ($consulta = mysqli_fetch_array($resultado)) {
+    
+        $resultado = mysqli_query($conn, "SELECT * FROM usuarios WHERE iIdUsuario=" . $_SESSION["id"]);
+        while ($consulta = mysqli_fetch_array($resultado)) {
 
-        echo '
-        
-                    <table class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;">
-                        <tr>        
-                        <form action="subir.php" method="POST" enctype="multipart/form-data">
-                            <td rowspan=6 id="tdfotoperfil">
-                                <img id=fotoperfil src="'.$consulta['cProfile'].'" width="42%">
-                                <div id="div_file">
-                                    <input type="file" name="file1" id="file1"> 
-                                    <p id="texto">Examinar</p>
-                                 </div>
-                                <br>
-                                <button type="submit" id="guardarfotoperfil"style="border:transparent; background-color: white;">
-                                    Guardar
-                                </button>
-                            </td>
-                                <td width="65%" colspan=2><h3 class="u-text u-text-2 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;">
-                                    ' . $consulta['cNombreLargo'] . '
-                                    </h3>
+            echo '
+            
+                        <table class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;">
+                            <tr>        
+                            <form action="subir.php" method="POST" enctype="multipart/form-data">
+                                <td rowspan=6 id="tdfotoperfil">
+                                    <img id=fotoperfil src="'.$consulta['cProfile'].'" width="42%">
+                                    <div id="div_file">
+                                        <input type="file" name="file1" id="file1"> 
+                                        <p id="texto">Examinar</p>
+                                    </div>
+                                    <br>
+                                    <button type="submit" id="guardarfotoperfil"style="border:transparent; background-color: white;">
+                                        Guardar
+                                    </button>
                                 </td>
-                            </tr>
+                                    <td width="65%" colspan=2><h3 class="u-text u-text-2 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;">
+                                        ' . $consulta['cNombreLargo'] . '
+                                        </h3>
+                                    </td>
+                                </tr>
 
-                        </form>
+                            </form>
 
-                        <tr><td colspan=2><p class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;"> Correo: ' . $consulta['cCorreo'] . '</p></td></tr>
-                        <tr><td width="3%"><img src="img/docusin.png" id="iconoinscritos"></td><td><p class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms; margin-bottom: 0.06em;"> Cursos Inscritos: '.$nInscrito.'</p></td></tr>
-                        <tr><td width="3%"><img src="img/docu.png" id="iconofinalizados"></td><td><p class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms; margin-bottom: 0em;">Cursos Finalizados: '.$final.'</p></td></tr>    
-                    </table>
-                    ';
+                            <tr><td colspan=2><p class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;"> Correo: ' . $consulta['cCorreo'] . '</p></td></tr>
+                            <tr><td width="3%"><img src="img/docusin.png" id="iconoinscritos"></td><td><p class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms; margin-bottom: 0.06em;"> Cursos Inscritos: '.$nInscrito.'</p></td></tr>
+                            <tr><td width="3%"><img src="img/docu.png" id="iconofinalizados"></td><td><p class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms; margin-bottom: 0em;">Cursos Finalizados: '.$final.'</p></td></tr>    
+                        </table>
+                        ';
 
 
+        }
+    
+
+    }catch(ex){
+        header( "Location: https://valuacionproductiva.mx/" );
     }
+    
 
 }
 

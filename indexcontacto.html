@@ -74,7 +74,8 @@
                   <tr><td class="textoscontacto"><label for="username">Nombre:</label></td><td class="textoscontacto"><label for="apellidos">Apellido:</label></td></tr>
                   <tr><td class="entradacontacto"><input type="text" id="name" name="name"></td><td class="entradacontacto"><input type="text" id="apellido" name="apellido"></td></tr>
                   <tr><td class="textoscontacto"><label for="email">Email:</label></td><td class="textoscontacto"><label for="numero">Número de telefono:</label></td></tr>
-                  <tr><td class="entradacontacto"><input type="email" id="email" name="email"></td><td class="entradacontacto"><input type="number" id="numero" name="numero" min="10" max="10"></td></tr>
+                  <tr><td class="entradacontacto"><input type="email" id="email" name="email"></td><td class="entradacontacto"><input type="number" id="numero" name="numero" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                    maxlength="10" ></td></tr>
                   <tr><td colspan="2" id="centrobtncontactar"><input type="submit" value="ENVÍAR" class="submit" id="btncontactar"></td></tr>
                 </table>                  
               </form>

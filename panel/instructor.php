@@ -15,13 +15,14 @@
   
 table{
     table-layout: fixed;
-    width: 250px;
+    width: 100%;
 }
 
 th, td {
     width: 100px;
     word-wrap: break-word;
 }
+
   :root {
     --color-green: #00a878;
     --color-red: #fe5e41;
@@ -134,11 +135,12 @@ th, td {
                             <td><b><?php echo $dataCliente['cNombreLargo']; ?><b></td>
 
                             <td><?php echo $dataCliente['cCorreo']; ?></td>
+
                             <?php if($dataCliente['iEstatus']==1) {?> 
-                              <td style="width: 150px;"><span  class="badge badge-success" > <a class="text-white" href="func/actualizarStatus.php?id='<?php echo $dataCliente['iIdUsuario']; ?>'&status=1">Activo<a></span></td> 
+                              <td class="estatus"><span  class="badge badge-success" > <a class="text-white" href="func/actualizarStatus.php?id='<?php echo $dataCliente['iIdUsuario']; ?>'&status=1">Activo<a></span></td> 
                             <?php }?> 
                             <?php if($dataCliente['iEstatus']==0) {?> 
-                              <td style="width: 150px;"><span  class="badge badge-danger"><a class="text-white" href="func/actualizarStatus.php?id='<?php echo $dataCliente['iIdUsuario']; ?>'&status=0">Inactivo</a></span></td> 
+                              <td class="estatus"><span  class="badge badge-danger"><a class="text-white" href="func/actualizarStatus.php?id='<?php echo $dataCliente['iIdUsuario']; ?>'&status=0">Inactivo</a></span></td> 
                             <?php }?> 
                             <td>
                               <!-- <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteChildresn<?php echo $dataCliente['iIdUsuario']; ?>">
@@ -147,7 +149,7 @@ th, td {
                               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editChildresn<?php echo $dataCliente['iIdUsuario']; ?>">
                                 Modificar
                               </button>
-                               
+                              
                               <button type="button" class="btn btn-info" data-toggle="modal"  data-target="#cursomodal<?php echo $dataCliente['iIdUsuario']; ?>">
                                 Agregar Curso
                               </button>
