@@ -23,7 +23,7 @@ $ruta="../cursos/recurso/".$recurso;
 
 	video{
 		width: 100%;
-		height: 100%;
+		height: 90%;
 	}
 	video::-internal-media-controls-download-button {
 		display:none;
