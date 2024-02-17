@@ -58,15 +58,18 @@ $ruta="../cursos/recurso/".$recurso;
 		$ipod=strpos($_SERVER['HTTP_USER_AGENT'],'Ipod');
 
 		if($formato=="pdf"){ 
-			
+			require('../fpdf/fpdf.php');
 			$archivoconextension= explode('/',$datarec['cRuta']);
 			$pdf2=$archivoconextension[3];
 
 			$file = $archivoconextension[2].'/'.$archivoconextension[3];
 			$filename = $archivoconextension[3];
 				if($iphone || $android || $ipod){
-						echo '<object data="mypdf.pdf" type="application/pdf" frameborder="0" width="100%" height="600px" style="padding: 20px;">
-						<embed src='.$file.' width="100%" height="100%" >';
+					/* 	echo '<object data="mypdf.pdf" type="application/pdf" frameborder="0" width="100%" height="600px" style="padding: 20px;">
+						<embed src='.$file.' width="100%" height="100%" >'; */
+						
+
+
 				}else{
 					header('Content-type: application/pdf');
 					header('Content-Disposition: inline; filename="'.$filename	.'"');
