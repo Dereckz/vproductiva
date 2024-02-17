@@ -361,5 +361,11 @@ h4{
 	    width: auto;
     }
 	/*end footer*/
+	#regresarCurso {
+		margin: 2% 0%;
+	}
+	.my-button {
+		width: 15em;
+	}
 	
 }
