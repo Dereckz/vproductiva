@@ -9,7 +9,7 @@ $consulta = mysqli_query($conn, "SELECT * FROM visto WHERE idAlumno=$idAlumno AN
 $num = mysqli_num_rows($consulta);
 
 if ($num > 0) {
-    echo "Visto";
+    //echo "Visto";
 } else {
     $sql = "INSERT INTO visto(idRecurso, idAlumno, estatus)
 VALUES ($idrecurso,$idAlumno,1)";
