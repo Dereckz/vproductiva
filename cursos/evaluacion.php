@@ -258,9 +258,9 @@
                 $contadorpreguntas=0;
                
                 $letrarespuesta;
-                if(!isset($_SESSION["1"])){
+                if(!isset($_SESSION["id"])){
                     header( "Location: https://valuacionproductiva.mx/" );
-                }else{
+                }else{ 
                 ?>
             
                         <section class="u-align-left u-clearfix u-grey-5 u-section-2" id="carousel_0852">
@@ -335,7 +335,8 @@
                         </section>
                         
                 <?php }
-                }?>
+                }
+                ?>
 
 
 

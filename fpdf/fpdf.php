@@ -993,15 +993,15 @@ function Output($dest='', $name='', $isUTF8=false)
 	if($dest=='')
 		$dest = 'I';
 	if($name=='')
-	if(!isset($_SESSION["id"])){
+	/* if(!isset($_SESSION["id"])){
 		header("Location:https://valuacionproductiva.mx/");
-	}else{
-		$resultado = mysqli_query($conn, "SELECT * FROM usuarios WHERE iIdUsuario=" . $_SESSION["id"]);
-		$consulta = mysqli_fetch_array($resultado);
+	}else{ */
+		//$resultado = mysqli_query($conn, "SELECT * FROM usuarios WHERE iIdUsuario=" . $_SESSION["id"]);
+		//$consulta = mysqli_fetch_array($resultado);
 		//$detallecurso = mysqli_query($conn, "SELECT * FROM curso WHERE iIdCurso=" .$idCur);
 		//$infocurso = mysqli_fetch_array($detallecurso);
-		$name = iconv('UTF-8', 'windows-1252', str_replace(" ", "_",$consulta['cNombreLargo'])).'_'.date("d_m_Y").'.pdf';
-	}
+		$name = "Valoracion_Productiva.pdf";// str_replace(" ", "_",$consulta['cNombre']).'_'.date("d_m_Y").'.pdf';
+	//}
 	
 	switch(strtoupper($dest))
 	{

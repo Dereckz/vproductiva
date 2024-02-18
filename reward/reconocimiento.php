@@ -61,5 +61,18 @@ $pdf->SetY(154);
 $pdf->SetX(130);
 $pdf->Cell(50,15,mb_convert_encoding(date("d/m/Y",strtotime($fecha['cDescripcion'])), 'UTF-8', mb_list_encodings()),0,0,'C');
 
-$pdf->Output('',iconv('UTF-8', 'windows-1252', str_replace(" ", "_",$consulta['cNombreLargo']).'_'.$infocurso["cNombreCurso"]).'_'.date("d-m-Y"),'');
+
+$downloaded=iconv('UTF-8', 'windows-1252', str_replace(" ", "_",$consulta['cNombreLargo']).'_'.$infocurso["cNombreCurso"]).'_'.date("d_m_Y");
+
+        $android=strpos($_SERVER['HTTP_USER_AGENT'],'Android');
+		$ipod=strpos($_SERVER['HTTP_USER_AGENT'],'Ipod');
+        $iphone=strpos($_SERVER['HTTP_USER_AGENT'],'iphone');
+
+        if($iphone || $ipod){
+            $pdf->Output('D',iconv('UTF-8', 'windows-1252', str_replace(" ", "_",$consulta['cNombreLargo']).'_'.$infocurso["cNombreCurso"]).'_'.date("d-m-Y"),'');
+        }else{
+            $pdf->Output('',iconv('UTF-8', 'windows-1252', str_replace(" ", "_",$consulta['cNombreLargo']).'_'.$infocurso["cNombreCurso"]).'_'.date("d-m-Y"),'');
+      
+        }
+
 ?>
