@@ -15,6 +15,9 @@
  $idCliente="";
  try{
   //hacer consulta, con el id y la fecha de acces, para obtener informacion relacionada
+  if(!isset($_SESSION["ID"])){
+   header("Location:  https://valuacionproductiva.mx/");
+  }else{
    $sqlCliente   = ("SELECT MAX(idAccesos) as id 
    FROM accesos WHERE idusuario=".$_SESSION["id"]."
       and dfechaacceso like '%" . $fecha ."%';");
@@ -39,6 +42,8 @@
    //Redirigimos pagina.
    header("Location:  https://valuacionproductiva.mx/");
 }
+  }
+   
  }catch(ex){
 
  }
