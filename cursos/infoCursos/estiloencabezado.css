@@ -330,26 +330,48 @@ text-decoration: none;
 	text-decoration: underline;
 }
 /*end footer*/
-@media screen and (max-width:700px){
-	.logo {
-		display: none;
+@media screen and (min-width:700px){
+	/*menu*/
+	#encabezado {
+		text-align: right;
 	}
 	.menus {
 		display: inline-block;
-		font-size: 1em;
+		font-size: 80%;
 		text-align: center;
+		width: 25%;
 		vertical-align: top;
 		padding: 1em;
 	}
 	.menusvacio {
 		display: inline-block;
 		width: 0%;
+		padding: 0;
 	}
+	#logo {
+		position: relative;
+		height: 1.6em;
+    	width: auto;
+		padding-top: 0%;
+	}
+	#menucatalogo{
+		padding-top: 2%;
+	}
+	/* termina menu*/
 	#tituloprincipal {
 		margin-left: 0.8em;
 		margin-right: 0.8em;
-		font-size: 1.6rem;		
+		font-size: 4.5rem;		
 		text-align: center;
+	}
+	#tablacontenido {
+		width: 100%;
+	}
+	#celdavaciainfocursos{
+		width: 0;
+	}
+	#titulocurso {
+		font-size: 320%;
 	}
 	#tablarecursos {
 		margin-left: 0%;
@@ -366,47 +388,51 @@ text-decoration: none;
 	}
 	#descricpiontemario {
 		line-height: 1.2em;
-		font-size: 0.7em;
+		font-size: 0.9em;
 	}
 	.celdatop {
 		width: 95%;
 		margin-right: 5%;
 	}
 	.titulostemario2 {
-		font-size: 1em;
+		font-size: 3.1em;
 	}
 	.btnInscribirsebtn {
-		font-size:0.8em;
+		font-size:2.8em;
 	}
 	.btnInscribirse {
-		height: 1.7em;
-		padding-left: 3%;
+		height: 4em;
 		padding-top: 0.3em;
 	}
 	#menu {
 		display: flex;
-		font-size: 95%;
-		width: 100%;
+		font-size: 250%;
+    	width: auto;
+    	height: auto;
+	}
+	.logo {
+		display: inline-block;
+		font-size: 1.3em;
+		text-align: left;
+		width: auto;
 	}
 	/* footer*/
 	#logopie {
-		width: 22%;
 		padding: 2% 2%;
 		padding-left: 0;
 	}
 	#imglogopie {
-		height: 22%;
-		margin-top: 50%;
+		height: 44%;
 	}
 	#texto1pie {
 		width: 55%;
-		padding: 3% 1%;
+		padding: 2% 1%;
 	}
 	#footer{
 		margin-top: 2.5em;
 	}
 	#footer p {
-		font-size: 70%;
+		font-size: 110%;
 		margin-bottom: 3.3%;
 		line-height: 120%;
 	}
@@ -414,9 +440,9 @@ text-decoration: none;
 		width: 32%;
 		padding: 1% 0%;
 	}
-	#divfooter{
-		height: 10em;
-	}
+	/*#divfooter{
+		height: auto;
+	}*/
 	#footer{
 	    margin-top: 2.5em;
 	    width: auto;
