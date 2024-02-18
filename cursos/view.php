@@ -38,13 +38,13 @@ $ruta="../cursos/recurso/".$recurso;
 			$file = $archivoconextension[2].'/'.$archivoconextension[3];
 			$filename = $archivoconextension[3];
 				if($iphone || $android || $ipod){
-					/* 	echo '<object data="mypdf.pdf" type="application/pdf" frameborder="0" width="100%" height="600px" style="padding: 20px;">
-						<embed src='.$file.' width="100%" height="100%" >'; */
-						header('Content-type: application/pdf');
-						header('Content-Disposition: inline; filename="'.$filename	.'"');
-						header('Content-Transfer-Encoding: binary');
-						header('Accept-Ranges: bytes');
-						@readfile($file);  	
+					
+					
+						 header('Content-type: application/pdf');
+						 header('Content-Disposition: inline; filename="'.$filename	.'"');
+						 header('Content-Transfer-Encoding: binary');
+						 header('Accept-Ranges: bytes');
+						 @readfile($file);  	
 			?>
 
 			<!-- <iframe ?wmode="transparent" type="application/pdf" id="iframe" 
