@@ -354,4 +354,32 @@ h2{
 		height: 15em;
 	}
 }
-
+/*
+@media screen and (max-width:850px){
+	#logo {
+		width: 100%;
+	}
+	div#div_file {
+		margin-left: 27%;
+	}
+	.u-section-2 .u-icon-4 {
+		margin-left: 0em;
+	}
+	/*start footer*/
+/*	#logopie {
+		width: 25%;
+		padding: 2% 3%;
+	}
+	#imgpie{
+		height: 40%;
+    	margin-top: 20%;
+	}
+	#texto1pie {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	#texto2pie {
+		padding: 2% 4%;
+	}
+	/*end footer*/
+/*}*/
