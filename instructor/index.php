@@ -334,7 +334,7 @@ font-weight: 550;
 }
 @media (max-width: 991px) {
   .u-section-2 .u-sheet-1 {
-    min-height: 1439px;
+    /*min-height: 1439px;*/
   }
   .u-section-2 .u-text-1 {
     margin-top: 60px;
@@ -345,6 +345,7 @@ font-weight: 550;
   }
   .u-section-2 .u-text-3 {
     margin-right: 0;
+    font-size: 100%;
   }
   .u-section-2 .u-text-4 {
     margin-right: 83px;
@@ -404,7 +405,7 @@ font-weight: 550;
 }
 @media (max-width: 575px) {
   .u-section-2 .u-text-2 {
-    font-size: 2.25rem;
+    font-size: 2rem;
   }
   .u-section-2 .u-repeater-1 {
     grid-template-columns: 100%;

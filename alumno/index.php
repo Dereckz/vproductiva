@@ -369,6 +369,13 @@ font-weight: 550;
     min-height: 302px;
   }
 }
+
+@media screen and (max-width:850px){
+	.u-section-2 .u-icon-4 {
+	margin-left: 0;
+	}
+}
+
 @media (max-width: 767px) {
   .u-section-2 .u-text-4 {
     margin-right: 0;

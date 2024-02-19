@@ -71,7 +71,7 @@
 .u-section-2 .u-repeater-1 {
   grid-template-columns: repeat(4, calc(23%));
   min-height: 553px;
-  grid-gap: 2%;
+  grid-gap: 1.7%;
 }
 .u-section-2 .u-list-item-1 {
   /*background-image: url(img/carpetablanca.png);*/

@@ -300,6 +300,7 @@ h4{
 	text-decoration: underline;
 }
 
+
 @media screen and (min-width: 768px) {
 	/*menu*/
 	#encabezado {
@@ -391,5 +392,24 @@ h4{
 		width: 30%;
 		vertical-align: top;
 		padding: 1em;
+	}
+}
+@media screen and (orientation: landscape) {
+	.menusvacio {
+		display: inline-block;
+		font-size: 1.1em;
+		text-align: center;
+		width: 20%;
+		vertical-align: top;
+		padding: 1em;
+	}
+	.menus {
+		display: inline-block;
+		font-size: 1.22em;
+		text-align: center;
+		width: 20%;
+		vertical-align: top;
+		padding: 1em;
+		padding-right: 0;
 	}
 }

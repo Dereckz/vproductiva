@@ -455,6 +455,29 @@ text-decoration: none;
 	/*end footer*/
 }
 
+@media screen and (orientation: landscape) {
+	.menusvacio {
+		display: inline-block;
+		font-size: 1.1em;
+		text-align: center;
+		width: 20%;
+		vertical-align: top;
+		padding: 1em;
+	}
+	.menus {
+		display: inline-block;
+		font-size: 1.5em;
+		text-align: center;
+		width: 25%;
+		vertical-align: top;
+		padding: 1em;
+	}
+	#logo {
+		height: 2em;
+	}
+	
+}
+
 /*
 @media (min-width:700px){
 	/*menu*-/
