@@ -331,10 +331,10 @@ h4{
 	}
 	/* termina menu*/
 	#filatitulo{
-		font-size: 1.4em;
+		font-size: 1.9em;
 	}
 	.fondotemario {
-		font-size: 160%;
+		font-size: 180%;
 	}
 	/* footer*/
 	#logopie {
@@ -343,7 +343,7 @@ h4{
 		padding-left: 0;
 	}
 	#imglogopie {
-		height: 18%;
+		height: 20%;
 		margin-top: 50%;
 	}
 	#texto1pie {
@@ -364,10 +364,10 @@ h4{
 		padding-top: 2%;
 	}
 	#divfooter{
-		height: 18em;
+		height: 20em;
 	}
 	#footer{
-	    margin-top: 7em;
+	    margin-top: 12em;
 	    width: auto;
     }
 	/*end footer*/

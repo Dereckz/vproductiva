@@ -1459,6 +1459,78 @@ p {
   	display: block;
 }
 
+
+@media screen and (max-width:850px){
+	
+	.headermenu {
+		font-size: 1.5rem;
+		padding: 15px 10px;
+	}
+	.text2 {
+		bottom: 60px;
+	}
+	.text3 {
+		bottom: 38px;
+	}
+	.text1 {
+		bottom: 48px;
+	}
+	#parrafo4bienvenida {
+		padding: 0em 3em;
+	}
+	/*start footer*/
+	#divfooter {
+		height: auto;
+	}
+	#logopie {
+		width: 25%;
+		padding: 2% 3%;
+		margin-top: 2em;
+	}
+	#imgpie{
+		height: auto;
+	}
+	#texto1pie {
+		padding-left: 10px;
+		padding-right: 10px;
+		padding-top: 1%;
+	}
+	#texto2pie {
+		padding: 2% 4%;
+	}
+	/*end footer*/
+	.imgcursosp1 {
+		height: auto;
+	}
+	.celdacategoria {
+		height: auto;
+	}
+	.titulocategoriascursos {
+		width: 95%;
+	}
+	.cuadroazul {
+		height: auto;
+	}
+	#texto1nosotros {
+		font-size: 280%;
+		padding: 6% 10%;
+		padding-bottom: 0;
+	}
+	.texto2nosotros {
+		font-size: 150%;
+		padding: 5% 7%;
+		padding-top: 0;
+	}
+	#valores {
+		font-size: 210%;
+	}
+	#izquierdacontacto2 {
+		width: 60% !important;
+		margin-top: 0 !important;
+		height: auto !important;
+	}
+}
+
 @media screen and (max-width:790px){
 	#logoinicio{
 		width: 30%;
@@ -1659,7 +1731,7 @@ p {
 		left: 0;
 	}
 	#izquierdacontacto2 {
-		width: 100%;
+		width: 100% !important;
 		margin-top: 15%;
         height: 22em;
 	}
@@ -1671,12 +1743,12 @@ p {
 	#logopie{
 		height: 4em;
         padding: 1% 2%;
-		margin-top: 10%;
+		margin-top: 1.3em;
 		padding-left: 0;
 	}
-	#imgpie{
+	/*#imgpie{
 		width: auto;
-	}
+	}*/
 	#footer p {
 		font-size: 100%;
     	margin-bottom: 3.3%;
@@ -1845,69 +1917,3 @@ p {
 		font-size: 6rem;
 	}
 }
-/*
-@media screen and (max-width:850px){
-	
-	.headermenu {
-		font-size: 1.5rem;
-		padding: 15px 10px;
-	}
-	.text2 {
-		bottom: 60px !important;
-	}
-	.text3 {
-		bottom: 38px !important;
-	}
-	.text1 {
-		bottom: 48px !important;
-	}
-	#parrafo4bienvenida {
-		padding: 0em 3em;
-	}
-	/*start footer*/
-/*	#divfooter {
-		height: auto;
-	}
-	#logopie {
-		width: 25%;
-		padding: 2% 3%;
-		margin-top: 2em;
-	}
-	#imgpie{
-		height: auto;
-	}
-	#texto1pie {
-		padding-left: 10px;
-		padding-right: 10px;
-		padding-top: 1%;
-	}
-	#texto2pie {
-		padding: 2% 4%;
-	}
-	/*end footer*/
-/*	.imgcursosp1 {
-		height: auto;
-	}
-	.celdacategoria {
-		height: auto;
-	}
-	.titulocategoriascursos {
-		width: 95%;
-	}
-	.cuadroazul {
-		height: auto;
-	}
-	#texto1nosotros {
-		font-size: 280%;
-		padding: 6% 10%;
-		padding-bottom: 0;
-	}
-	.texto2nosotros {
-		font-size: 150%;
-		padding: 5% 7%;
-		padding-top: 0;
-	}
-	#valores {
-		font-size: 210%;
-	}
-}*/

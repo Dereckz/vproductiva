@@ -331,17 +331,15 @@ text-decoration: none;
 }
 
 /*end footer*/
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) {
 	#encabezado {
 		text-align: right;
 	}
 	.menus {
 		display: inline-block;
-		font-size: 80%;
-		text-align: center;
+		font-size: 190%;
 		width: 25%;
-		vertical-align: top;
-		padding: 1em;
+		padding-bottom: 3%;
 	}
 	.menusvacio {
 		display: inline-block;
@@ -350,18 +348,23 @@ text-decoration: none;
 	}
 	#logo {
 		position: relative;
-		height: 1.6em;
-    	width: auto;
 		padding-top: 0%;
+		height: 4.5em;
+    	width: auto;
 	}
 	#menucatalogo{
 		padding-top: 2%;
+	}
+	#menu {
+		padding-left: 0;
+		width: auto;
+    	display: flex;
 	}
 	/* termina menu*/
 	#tituloprincipal {
 		margin-left: 0.8em;
 		margin-right: 0.8em;
-		font-size: 2rem;		
+		font-size: 4rem;		
 		text-align: center;
 	}
 	#tablacontenido {
@@ -392,6 +395,7 @@ text-decoration: none;
 	.celdatop {
 		width: 95%;
 		margin-right: 5%;
+		font-size: 210%;
 	}
 	/*.titulostemario2 {
 		font-size: 3.1em;
@@ -416,37 +420,36 @@ text-decoration: none;
 	}
 	/* footer*/
 	#logopie {
+		width: 20%;
 		padding: 2% 2%;
-    	padding-left: 0;
-    	width: 22%;
+		padding-left: 0;
 	}
 	#imglogopie {
-		height: 35%;
-    	margin-top: 30%;
+		height: 20%;
+		margin-top: 50%;
 	}
 	#texto1pie {
-		width: 48%;
-    	padding: 2% 1%;
-    	height: 30%;
+		width: 55%;
+		padding: 3% 1%;
 	}
 	#footer{
 		margin-top: 2.5em;
 	}
 	#footer p {
-		font-size: 50%;
-    	margin-bottom: 3.3%;
-    	line-height: 120%;
+		font-size: 130%;
+		margin-bottom: 3.3%;
+		line-height: 120%;
 	}
 	#texto2pie {
 		width: 32%;
-    	padding: 1% 0%;
-    	height: fit-content;
+		padding: 1% 0%;
+		padding-top: 2%;
 	}
 	#divfooter{
-		height: 7em;
+		height: 20em;
 	}
 	#footer{
-	    margin-top: 2.5em;
+	    margin-top: 9em;
 	    width: auto;
     }
 	/*end footer*/
