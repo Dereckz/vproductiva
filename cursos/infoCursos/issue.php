@@ -11,7 +11,7 @@
         
         <title><?php echo $namec ?></title>
     </head>
-    <body>
+    <body   style=" overflow-x: hidden;" >
     <header id="encabezado">
     	<!--<div id="logotipo">
     	<img src="img/logovproductiva2.png" id="logo"> 
@@ -45,7 +45,7 @@
             </td>
             <td class="celdatop">
             <table id=tablacontenido>
-                <tr><td></td><td> <h3 id="titulocurso">
+                <tr><td id="celdavaciainfocursos"></td><td> <h3 id="titulocurso">
                 <?php echo $namec?>
                 </h3> </td></tr>
                 <tr> <td></td><td> <h3 id="descricpiontemario">

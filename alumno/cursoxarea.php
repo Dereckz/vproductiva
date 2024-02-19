@@ -82,8 +82,10 @@
   --animation-custom_in-scale: 1;
   /*box-shadow: 5px 5px 29px 0 rgba(0,0,0,0.15);*/
   background-color: #f6f6f6;
-  height: 23.2em;
-  margin: 5%;
+  height: auto;
+  padding-bottom: 7%;
+  width: auto;
+  margin-bottom: 5%;
 }
 .u-section-2 .u-container-layout-1 {
   /*padding: 50px 30px 30px;*/
