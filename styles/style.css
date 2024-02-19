@@ -1634,6 +1634,7 @@ p {
     }
 	#valores {
 		font-size: 100%;
+		margin-left: 10%;
 	}
 	#texto1nosotros {
 		font-size: 2em;
@@ -1735,6 +1736,10 @@ p {
 		height: 2em;
 	}
 
+	.divvercursos {
+		padding-top: 1.8%;
+	}
+
 	/* nosotros*/
 	.banernosotros {
 		margin-top: 15%;
@@ -1771,12 +1776,19 @@ p {
 	#imgvalores {
 		height: auto;
 		width: 52%;
+		margin-left: 10%;
 	}
 	#divtablacursos{
 		width: auto;
 	}
 	#services .services {
-	    margin-top: 7em;
+	    margin-top: 4em;
+	}
+	#about {
+		padding-top: 6em;
+	  }
+	.misionvision {
+		margin-top: 0em;
 	}
 }
 @media screen and (min-width: 1401px) {

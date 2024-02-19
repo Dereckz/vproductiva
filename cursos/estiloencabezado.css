@@ -300,23 +300,16 @@ h4{
 	text-decoration: underline;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) {
 	/*menu*/
-	#menu {
-		display: flex;
-    	width: auto;
-    	height: auto;
-	}
 	#encabezado {
 		text-align: right;
 	}
 	.menus {
 		display: inline-block;
-		font-size: 80%;
-		text-align: center;
+		font-size: 190%;
 		width: 25%;
-		vertical-align: top;
-		padding: 1em;
+		padding-bottom: 0%;
 	}
 	.menusvacio {
 		display: inline-block;
@@ -325,30 +318,32 @@ h4{
 	}
 	#logo {
 		position: relative;
-		height: 1.6em;
-    	width: auto;
-		padding-top: 0%;
+		width: 100%;
+		padding-top: 11%;
 	}
 	#menucatalogo{
 		padding-top: 2%;
 	}
-	.logo {
-		display: inline-block;
-		font-size: 1.3em;
-		text-align: left;
+	#menu {
+		padding-left: 0;
 		width: auto;
+    	display: flex;
 	}
 	/* termina menu*/
-	.titulostemario{
-		font-size: 125%;
+	#filatitulo{
+		font-size: 1.4em;
 	}
+	.fondotemario {
+		font-size: 160%;
+	}
+	/* footer*/
 	#logopie {
-		width: 22%;
+		width: 20%;
 		padding: 2% 2%;
 		padding-left: 0;
 	}
 	#imglogopie {
-		height: 22%;
+		height: 18%;
 		margin-top: 50%;
 	}
 	#texto1pie {
@@ -359,19 +354,20 @@ h4{
 		margin-top: 2.5em;
 	}
 	#footer p {
-		font-size: 70%;
+		font-size: 130%;
 		margin-bottom: 3.3%;
 		line-height: 120%;
 	}
 	#texto2pie {
 		width: 32%;
 		padding: 1% 0%;
+		padding-top: 2%;
 	}
 	#divfooter{
-		height: 10em;
+		height: 18em;
 	}
 	#footer{
-	    margin-top: 2.5em;
+	    margin-top: 7em;
 	    width: auto;
     }
 	/*end footer*/
@@ -383,9 +379,12 @@ h4{
 	}
 	#tablarecursos {
 		width: auto;
+		margin-left: 3em;
+    	margin-right: 3em;
 	}
 	#texconstancia {
-		font-size: 90%;
+		font-size: 140%;
+		padding: 2% 0%;
 	}
 	.menusevaluacion {
 		font-size: 0.8em;
