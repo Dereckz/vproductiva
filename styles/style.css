@@ -1143,13 +1143,11 @@ p {
 	font-size: 1.6em;
 	text-align: justify;
     font-weight: 500;
+	padding-left: 5%;
 }
 .celdasbienvenida1{
 	width: 47%;
     border-right: solid white;
-}
-.celdasbienvenida2{
-    padding-left: 3%;
 }
 #parrafo4bienvenida{
 	text-align: center;
