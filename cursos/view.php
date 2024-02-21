@@ -22,6 +22,7 @@ $ruta="../cursos/recurso/".$recurso;
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/boostrap.bundle.min.js"></script>
 	<script src="pdfjs/pdf.js"></script>
+	
 	</head>
 	
 
@@ -66,31 +67,70 @@ $ruta="../cursos/recurso/".$recurso;
 					$file = $archivoconextension[2].'/'.$archivoconextension[3];
 					//$filename = $archivoconextension[3];
 					//header("Location:".$datarec["cRuta"]);
-					
+
 				
 		?>
 					<!-- //Dispo. Movil-->
 					<style>
-					.video-responsive {
-					position: relative;
-					padding-bottom: 56.25%; /* 16/9 ratio */
-					padding-top: 0px; /* IE6 workaround*/
-					height: 0;
-					overflow: hidden;
-					}
+						
+						
+							/* .video-responsive {
+							position: relative;
+							padding-bottom: 56.25%; 
+							padding-top: 0px; 
+							height: 0;
+							overflow: hidden;
+							} */
 
-					.video-responsive iframe,
-					.video-responsive object,
-					.video-responsive embed {
-					position: absolute;
-					top: 0;
-					left: 0;
-					width: 100%;
-					height: 100%;
-					}
-					</style>
-							<body  style="background-color:black;" >
-								<video id="myvideo" style=" margin-top:50em; " width="100%" height="50%"  playsinline controls controlsList="nodownload" autoplay >
+						/* 	.video-responsive iframe,
+							.video-responsive object,
+							.video-responsive embed {
+							position: absolute;
+							top: 0;
+							left: 0;
+							width: 100%;
+							height: 100%;
+							} */
+									
+							/*Vertical*/
+							@media all and (orientation:portrait) {
+								body{
+									background-color:black;
+								}
+								#myvideo{
+									margin-top:50em;
+									width: 100% ;
+									height: 50% ;
+								}
+
+							/*horizontal*/
+							@media all and (orientation:landscape) {
+								.body{
+									background-color:black;
+									/* Fijar la imagen de fondo este vertical y
+										horizontalmente y centrado */
+									background-position: center center;
+
+									/* Esta imagen no debe de repetirse */
+									background-repeat: no-repeat;
+
+									/* COn esta regla fijamos la imagen en la pantalla. */
+									background-attachment: fixed;
+
+									/* La imagen ocupa el 100% y se reescala */
+									background-size: cover;
+								}
+								
+								#myvideo{
+									width: 60%;
+									
+								} 
+							}
+
+						}
+						</style>
+							<body   >
+								<video id="myvideo" playsinline controls controlsList="nodownload" autoplay >
 									<source src=<?PHP echo ($datarec["cRuta"]);?> type="video/mp4" />
 								</video>
 							</body>
@@ -103,7 +143,10 @@ $ruta="../cursos/recurso/".$recurso;
 					padding: 0;
 					box-sizing: border-box;
 				}
-					body { min-height: 100vh; }
+					body {
+						background-color:black;
+						 min-height: 100vh;
+						 }
 
 					video{
 						width: 100%;
