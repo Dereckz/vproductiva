@@ -1,129 +1,17 @@
-
 <!DOCTYPE html>
 <html lang="en" class="htmltotal">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="stylesheet" href="styles/style.css">
   <link rel="stylesheet" href="styles/stylemenu.css">
+  <!-- <link rel="stylesheet" href="styles/style.css"> -->
+  <link rel="stylesheet" href="styles/style-rs.css">
   <link rel="icon" href="img/LOGOVP.ico">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
   <title>Valuación Productiva</title>
 </head>
-  <!-- End Header -->
-  
-  <style>
-    /* Slideshow container */
-.slideshow-container {
-  max-width: 100%;
-  position: relative;
-  margin: auto;
-  
-}
-
-/* Next & previous buttons */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 0;
-  top: 50%;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 1s ease;
-  border-radius: 0 3px 3px 0;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-}
-
-/* Caption text */
-.text1{
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 118px;
-  width: 100%;
-  text-align: start;
-}
-.text2{
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 118px;
-  right: 20%;
-  width: 100%;
-  text-align: end;
-}
-.text3{
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 118px;
-  width: 100%;
-  text-align: start;
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
-/* The dots/bullets/indicators */
-.dot {
-  cursor:pointer;
-  height: 13px;
-  width: 13px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-.active, .dot:hover {
-  background-color: #2E49C1;
-}
-
-/* Fading animation */
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@-webkit-keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-
-@keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-  </style>
-
+<!-- End Header -->
 <body>
   <!-- Header -->
   <section id="header">
@@ -132,8 +20,8 @@
         <div class="brand">
           <a href="index.html">
 
-           <img src="img/logob.png" id="logoinicio" alt="VProductiva Logo">
-           <!-- <h1>Valuación Productiva</h1>-->
+            <img src="img/logob.png" id="logoinicio" alt="VProductiva Logo">
+            <!-- <h1>Valuación Productiva</h1>-->
           </a>
         </div>
         <div class="navbar" class="nav-list">
@@ -141,7 +29,7 @@
           <ul class="menu">
             <li id="fondoinicio" class="fondoinicio"><a href="index.html" data-after="Home" class="headermenu" style="color: white;">INICIO</a></li>
 
-           <!-- <li><a href="#services" data-after="Service">Servicios</a></li>-->
+            <!-- <li><a href="#services" data-after="Service">Servicios</a></li>-->
             <li class="fondoinicio"><a href="indexcursos.html" data-after="Projects" class="headermenu">CURSOS</a></li>
             <li><a href="indexacerca.html" data-after="About" class="headermenu">NOSOTROS</a></li>
             <li class="fondoinicio"><a href="indexcontacto.html" data-after="Contact" class="headermenu">CONTACTO</a></li>
@@ -162,149 +50,130 @@
     <br>
     <br>
     <div class="slideshow-container">
-     
+
       <div class="mySlides fade">
-        <!-- <div class="numbertext">1 / 3</div> -->
         <img src="img/slider1.jpg" style="width:100%">
-        <div class="text1" id="text1"><a href="indexcontacto.html"><button id="btncontactanos">CONTÁCTANOS</button></a></div>
+        <div class="text1" id="text1">
+          <a href="indexcontacto.html">
+            <button id="btncontactanos">CONTÁCTANOS</button>
+          </a>
+        </div>
       </div>
-    
+
       <div class="mySlides fade">
         <!-- <div class="numbertext">2 / 3</div> -->
         <img src="img/slider2.jpg" style="width:100%">
-        <div class="text2" id="text2"><a href="indexcursos.html"><button id="btncursos">VER CURSOS</button></div>
+        <div class="text2" id="text2">
+          <a href="indexcursos.html">
+            <button id="btncursos">VER CURSOS</button>
+          </a>
+        </div>
       </div>
-    
+
       <div class="mySlides fade">
-        <!-- <div class="numbertext">3 / 3</div> -->
+          <!-- <div class="numbertext">3 / 3</div> -->
         <img src="img/slider3.jpg" style="width:100%">
-        <div class="text3" id="text3"><a href="indexcontacto.html"><button id="btncontactanos2">CONTÁCTANOS</button></div>
+        <div class="text3" id="text3">
+          <a href="indexcontacto.html">
+            <button id="btncontactanos2">CONTÁCTANOS</button>
+        </div>
+        
       </div>
       <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<<<<<<< HEAD
   <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
 <br>
      
+=======
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+>>>>>>> origin/master
     </div>
     <div style="text-align:center">
       <span class="dot" onclick="currentSlide(1)"></span> 
       <span class="dot" onclick="currentSlide(2)"></span> 
       <span class="dot" onclick="currentSlide(3)"></span> 
     </div>
-  
     <br>
-    
-      <div class="bienvenida" id="bienvenida">
-        <table id="tabla1index">
-          <tr id="filagrid">
-            <td class="celdasbienvenida1">
+
+    <div class="bienvenida" id="bienvenida">
+      <!-- <table id="tabla1index">
+        <tr id="filagrid">
+          <td class="celdasbienvenida1">
+            <h2 id="parrafo1bienvenida">BIENVENIDO A UNA PLATAFORMA QUE IMPULSA <br/>TU CRECIMIENTO PROFESIONAL.</h2>
+            <h2 id="parrafo2bienvenida">“Entra a un mundo de <br/> conocimiento ilimitado”.</h2>
+          </td>
+          <td class="celdasbienvenida2">
+            <p id="parrafo3bienvenida">Nuestra plataforma es una puerta de entrada al conocimiento,
+              optimizador del desarrollo personal y profesional. Ofrecemos una
+              amplia gama de cursos diseñados para satisfacer las necesidades
+              de toda una Organización. Con acceso a expertos en diferentes
+              áreas, contenido de alta calidad y una experiencia de aprendizaje
+            única, sencilla y muy interactiva.</p>
+          </td>
+        </tr>
+      </table> -->
+      <div class="container-rs">
+        <div class="bv-row-rs">
+          <div class="col-rs col-rs1">
+            <div class="content-rs ctrs-1">
               <h2 id="parrafo1bienvenida">BIENVENIDO A UNA PLATAFORMA QUE IMPULSA <br/>TU CRECIMIENTO PROFESIONAL.</h2>
               <h2 id="parrafo2bienvenida">“Entra a un mundo de <br/> conocimiento ilimitado”.</h2>
-            </td>
-            <td class="celdasbienvenida2">
+            </div>        
+          </div>
+          <div class="col-rs col-rs1">
+            <div class="content-rs ctrs-2">
               <p id="parrafo3bienvenida">Nuestra plataforma es una puerta de entrada al conocimiento,
-                optimizador del desarrollo personal y profesional. Ofrecemos una
-                amplia gama de cursos diseñados para satisfacer las necesidades
-                de toda una Organización. Con acceso a expertos en diferentes
-                áreas, contenido de alta calidad y una experiencia de aprendizaje
-                única, sencilla y muy interactiva.</p>
-            </td>
-          </tr>
-        </table>
+              optimizador del desarrollo personal y profesional. Ofrecemos una
+              amplia gama de cursos diseñados para satisfacer las necesidades
+              de toda una Organización. Con acceso a expertos en diferentes
+              áreas, contenido de alta calidad y una experiencia de aprendizaje
+            única, sencilla y muy interactiva.</p>
+            </div>        
+          </div>
+        </div>
       </div>
-      <h2 id="parrafo4bienvenida">La plataforma que centraliza el conocimiento y crecimiento profesional</h2>
-      <div class="divvercursos"><a href="indexcursos.html" type="button" class="btnvercursos">VER CURSOS</a></div>
-      <div class="banersinicio">
-        <img src="img/banerazul.jpg">
-      </div>
-      <div class="banersinicio">
-        <img src="img/banerazul2.jpg" id="imgbienvenida">
-      </div>
+    </div>
+
+    <h2 id="parrafo4bienvenida">La plataforma que centraliza el conocimiento y crecimiento profesional</h2>
+    <div class="divvercursos">
+      <a href="indexcursos.html" type="button" class="btnvercursos">VER CURSOS</a>
+    </div>
+    <div class="banersinicio">
+      <img src="img/banerazul.jpg">
+    </div>
+    <div class="banersinicio">
+      <img src="img/banerazul2.jpg" id="imgbienvenida">
+    </div>
   </section>
   <!-- End Hero Section  -->
 
   <!-- Start Footer -->
   <section id="footer">
     <div id="divfooter">
-      <div id="logopie">
+      <div id="logopie" class="pie-rs1">
         <img src="img/logob2.png" id="imgpie">
       </div>
-      <div id="texto1pie">
+      <div id="texto1pie" class="pie-rs2">
         <p id="parrafodireccion" class="parrafosfooter">Dirección: Av. Paseo de las Palmas 830, Int. 102-1.
           Lomas de Chapultepec V Sección. Miguel Hidalgo.
-          Ciudad de México. C.P. 11000. México.</p>
-          <p class="parrafosfooter">Teléfono: 55-104-680-95</p>
-          <p class="parrafosfooter">Correo electrónico: valuacionproductiva9@gmail.com</p>
+        Ciudad de México. C.P. 11000. México.</p>
+        <p class="parrafosfooter">Teléfono: 55-104-680-95</p>
+        <p class="parrafosfooter">Correo electrónico: valuacionproductiva9@gmail.com</p>
       </div>
-      <div id="texto2pie">
+      <div id="texto2pie" class="pie-rs1">
         <p class="parrafosfooter"><a href="indexterminos.html" class="parrafosfooter" id="terminosycon">Terminos y Condiciones</a></p>
-          <p id="parrafoter" class="parrafosfooter">© 2024 VALUACIÓN PRODUCTIVA Y
-            COMPETITIVA EN MATERIA LABORAL A.C.</p>
+        <p id="parrafoter" class="parrafosfooter">© 2024 VALUACIÓN PRODUCTIVA Y
+        COMPETITIVA EN MATERIA LABORAL A.C.</p>
       </div>
     </div>
   </section>
   <!-- End Footer  -->
-  
+
   <script src="./app.js"></script>
-  
-  <script type="text/javascript">
- 
+  <script src="styles/slider-rs.js"></script>
 
-    let slideIndex = 0;
-    let timeout;
-  
-    showSlides();
-  
-    function showSlides() {
-      let i;
-      let slides = document.getElementsByClassName("mySlides");
-      let dots = document.getElementsByClassName("dot");
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
-      }
-      slideIndex++;
-      if (slideIndex > slides.length) {slideIndex = 1}    
-      for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-      }
-      slides[slideIndex-1].style.display = "block";  
-      dots[slideIndex-1].className += " active";
-      timeout = setTimeout(showSlides, 5000); // Change image every 2 seconds
-    }
-  
-    function showSlidesD(n) {
-      let i;
-      let slides = document.getElementsByClassName("mySlides");
-      let dots = document.getElementsByClassName("dot");
-      if (n > slides.length) {slideIndex = 1}    
-      if (n < 1) {slideIndex = slides.length}
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
-      }
-      for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-      }
-      slides[slideIndex-1].style.display = "block";  
-      dots[slideIndex-1].className += " active";
-    }
-  
-    function parar(){
-      window.clearTimeout(timeout)
-    }
-  
-    function plusSlides(n) {
-      parar()
-      showSlidesD(slideIndex += n);
-      timeout = setTimeout(showSlides, 2500);
-    }
-  
-    function currentSlide(n) {
-      parar()
-      showSlidesD(slideIndex = n);
-      timeout = setTimeout(showSlides, 2500);
-    }
-  
-    </script>
+
 </body>
-
 </html>

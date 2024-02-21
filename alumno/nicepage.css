@@ -6335,7 +6335,7 @@ section.u-image:not(.u-hover-box),
 }
 @media (max-width: 575px) {
   .u-valign-middle-xs {
-    justify-content: center;
+    justify-content: flex-start;
   }
 }
 .u-valign-top {

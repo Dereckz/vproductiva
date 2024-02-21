@@ -54,3 +54,12 @@
         display: flex;
     }
 }
+
+@media screen and (max-width: 430px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        margin-left: 5%;
+    }
+
+}

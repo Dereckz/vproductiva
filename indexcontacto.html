@@ -6,12 +6,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="stylesheet" href="styles/style.css">
+  <!-- <link rel="stylesheet" href="styles/style.css"> -->
+  <link rel="stylesheet" href="styles/style-rs.css">
   <link rel="stylesheet" href="styles/stylemenu.css">
   <link rel="icon" href="img/LOGOVP.ico">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
   <link rel="stylesheet" href="main.css">
-  <link rel="stylesheet" href="style.css">
   <title>Valuación Productiva</title>
 </head>
 
@@ -23,8 +23,8 @@
         <div class="brand">
           <a href="index.html">
 
-           <img src="img/logob.png" id="logoinicio" alt="VProductiva Logo">
-           <!-- <h1>Valuación Productiva</h1>-->
+            <img src="img/logob.png" id="logoinicio" alt="VProductiva Logo">
+            <!-- <h1>Valuación Productiva</h1>-->
           </a>
         </div>
         <div class="navbar" class="nav-list">
@@ -32,10 +32,10 @@
           <ul class="menu">
             <li class="fondoinicio"><a href="index.html" data-after="Home" class="headermenu" >INICIO</a></li>
 
-           <!-- <li><a href="#services" data-after="Service">Servicios</a></li>-->
-            <li class="fondoinicio" ><a href="indexcursos.html" data-after="Projects" class="headermenu">CURSOS</a></li>
-            <li class="fondoinicio"><a href="indexacerca.html" data-after="About" class="headermenu">NOSOTROS</a></li>
-            <li class="fondoinicio" id="fondoinicio"><a href="indexcontacto.html" data-after="Contact" class="headermenu" style="color: white;">CONTACTO</a></li>
+            <!-- <li><a href="#services" data-after="Service">Servicios</a></li>-->
+            <li class="fondoinicio"><a href="indexcursos.html" data-after="Projects" class="headermenu">CURSOS</a></li>
+            <li><a href="indexacerca.html" data-after="About" class="headermenu">NOSOTROS</a></li>
+            <li id="fondoinicio" class="fondoinicio"><a href="indexcontacto.html" data-after="Contact" class="headermenu" style="color: white;">CONTACTO</a></li>
             <!--<li><a href="account/register.html" data-after="Login">Login</a></li> -->
             <li class="fondoinicio"><a href="account/login.html" data-after="Login" class="headermenu" id="menuingresar">INGRESAR</a></li>
           </ul>
@@ -47,76 +47,77 @@
   <!-- End Header -->
 
   <!-- Contact Section -->
-  <!--<section id="contact">
-    <div >
-      <div class="projects-header" id="contactanos">
-        <h1 class="section-title" id="contactanostitle">Contacto</h1>
-      </div>
-    </div>
-  </section>-->
-
+<!--<section id="contact">
+<div >
+<div class="projects-header" id="contactanos">
+<h1 class="section-title" id="contactanostitle">Contacto</h1>
+</div>
+</div>
+</section>-->
+<section id="hero">
   <section id="formulariocontacto">
     <div id="izquierdacontacto">
       <div id="izquierdacontacto2">
         <h3 id="texto1contacto">Fortalece a tu equipo y apertura nuevas propuestas.</h3>
         <p id="texto2contacto">Estamos aquí para aclarar todas tus dudas y
-          guíarte de la mejor manera, somos tu equipo</p>
+        guíarte de la mejor manera, somos tu equipo</p>
       </div>
       <div class="login-register" id="login-register">
-        
-          <!--<div class="nav-buttons">
-              <button id="loginBtn" class='active' >Iniciar sesión </button>
-              <button id="registerBtn" >Registrarse</button>
-          </div>-->
-          <div class="form-group" id="contactoform">
-              <form method="post" action="contacto.php" id="contacto">
-                <table>
-                  <tr><td class="textoscontacto"><label for="username">Nombre:</label>
-                  </td><td class="textoscontacto"><label for="apellidos">Apellido:</label></td></tr>
-                  <tr><td class="entradacontacto"><input type="text" id="name" name="name" required></td>
-                    <td class="entradacontacto"><input type="text" id="apellido" name="apellido" required></td></tr>
-                  <tr><td class="textoscontacto"><label for="email">Email:</label>
-                  </td><td class="textoscontacto"><label for="numero">Número de telefono:</label></td></tr>
-                  <tr><td class="entradacontacto"><input type="email" id="email" name="email" required></td>
-                    <td class="entradacontacto"><input type="text" id="numero" name="numero" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(10, this.maxLength);"
-                    maxlength="10"  pattern="[0-9]{10}"  required></td></tr>
-                  <tr><td colspan="2" id="centrobtncontactar"><input type="submit" value="ENVÍAR" class="submit" id="btncontactar"></td></tr>
-                </table>                  
-              </form>
-          </div>
+
+  <!--<div class="nav-buttons">
+  <button id="loginBtn" class='active' >Iniciar sesión </button>
+  <button id="registerBtn" >Registrarse</button>
+  </div>-->
+  <div class="form-group" id="contactoform">
+    <form method="post" action="contacto.php" id="contacto">
+      <table class="tablecontact">
+        <tr><td class="textoscontacto"><label for="username">Nombre:</label>
+        </td><td class="textoscontacto"><label for="apellidos">Apellido:</label></td></tr>
+        <tr><td class="entradacontacto"><input type="text" id="name" name="name" required></td>
+          <td class="entradacontacto"><input type="text" id="apellido" name="apellido" required></td></tr>
+          <tr><td class="textoscontacto"><label for="email">Email:</label>
+          </td><td class="textoscontacto"><label for="numero">Número de telefono:</label></td></tr>
+          <tr><td class="entradacontacto"><input type="email" id="email" name="email" required></td>
+            <td class="entradacontacto"><input type="text" id="numero" name="numero" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(10, this.maxLength);"
+              maxlength="10"  pattern="[0-9]{10}"  required></td></tr>
+              <tr><td colspan="2" id="centrobtncontactar"><input type="submit" value="ENVÍAR" class="submit" id="btncontactar"></td></tr>
+            </table>                  
+          </form>
+        </div>
       </div>
     </div>
   </section>
-  
-  <!-- Start Footer -->
+</section>
+
+<!-- Start Footer -->
   <section id="footer">
     <div id="divfooter">
-      <div id="logopie">
+      <div id="logopie" class="pie-rs1">
         <img src="img/logob2.png" id="imgpie">
       </div>
-      <div id="texto1pie">
+      <div id="texto1pie" class="pie-rs2">
         <p id="parrafodireccion" class="parrafosfooter">Dirección: Av. Paseo de las Palmas 830, Int. 102-1.
           Lomas de Chapultepec V Sección. Miguel Hidalgo.
-          Ciudad de México. C.P. 11000. México.</p>
-          <p class="parrafosfooter">Teléfono: 55-104-680-95</p>
-          <p class="parrafosfooter">Correo electrónico: valuacionproductiva9@gmail.com</p>
+        Ciudad de México. C.P. 11000. México.</p>
+        <p class="parrafosfooter">Teléfono: 55-104-680-95</p>
+        <p class="parrafosfooter">Correo electrónico: valuacionproductiva9@gmail.com</p>
       </div>
-      <div id="texto2pie">
+      <div id="texto2pie" class="pie-rs1">
         <p class="parrafosfooter"><a href="indexterminos.html" class="parrafosfooter" id="terminosycon">Terminos y Condiciones</a></p>
-          <p id="parrafoter" class="parrafosfooter">© 2024 VALUACIÓN PRODUCTIVA Y
-            COMPETITIVA EN MATERIA LABORAL A.C.</p>
+        <p id="parrafoter" class="parrafosfooter">© 2024 VALUACIÓN PRODUCTIVA Y
+        COMPETITIVA EN MATERIA LABORAL A.C.</p>
       </div>
     </div>
   </section>
-  <!-- End Footer -->
-  <script src="./app.js"></script>
-  <script>
-    telefono = document.getElementById('numero').value;
-    var expresion = /^3[\d]{9}$/;
-    if (isNaN(valor) || !expresion.test(valor)){
-        alert("Debe ingresar un número con el formato correcto");
-    }
-  </script>
+  <!-- End Footer  -->
+<script src="./app.js"></script>
+<script>
+  telefono = document.getElementById('numero').value;
+  var expresion = /^3[\d]{9}$/;
+  if (isNaN(valor) || !expresion.test(valor)){
+    alert("Debe ingresar un número con el formato correcto");
+  }
+</script>
 </body>
 
 </html>

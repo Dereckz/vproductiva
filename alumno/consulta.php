@@ -67,6 +67,7 @@ function informacion()
                                 <form action="subir.php" method="POST" enctype="multipart/form-data">
                                     <td rowspan=6 id="tdfotoperfil">
                                         <img id=fotoperfil src="'.$consulta['cProfile'].'" width="42%">
+                                        <div id="divguardarfoto">
                                         <div id="div_file">
                                             <input type="file" name="file1" id="file1"> 
                                             <p id="texto">Examinar</p>
@@ -75,6 +76,7 @@ function informacion()
                                         <button type="submit" id="guardarfotoperfil"style="border:transparent; background-color: white;">
                                             Guardar
                                         </button>
+                                        </div>
                                     </td>
                                         <td width="65%" colspan=2><h3 class="u-text u-text-2 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;">
                                             ' . $consulta['cNombreLargo'] . '

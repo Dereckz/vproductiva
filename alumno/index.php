@@ -229,7 +229,7 @@
   --animation-custom_in-rotate: 0deg;
   --animation-custom_in-scale: 1;
   /*box-shadow: 5px 5px 29px 0 rgba(0,0,0,0.15);*/
-  height: 15.4em;
+  height: auto;
   /*text-align: center;*/
   background-color: #f6f6f6;
 }
