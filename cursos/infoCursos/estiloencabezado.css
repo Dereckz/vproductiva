@@ -17,8 +17,7 @@ body{
 #logo{
 	position: relative;
 	/*width: 98%;*/
-	padding-top: 1%;
-	height: 3em;
+	width: 60%;
 }
 
 #encabezado{
@@ -27,7 +26,7 @@ body{
 	top: 0px;
 	margin: 0%;
 	width: 100%;
-	text-align: center;
+	/*text-align: center;*/
 }
 #tituloprincipal{
 	/* margin: 0%; */
@@ -47,21 +46,22 @@ body{
 	margin-left: 0%;
 	font-family: sans-serif;
 	margin-bottom: 0%;
+	padding-left: 10px;
 	/*height: 6.5em;*/
 }
 .menus{
 	display: inline-block;
-	font-size: 1.1em;
-	text-align: center;
-	width: 18%;
-	vertical-align: top;
-	padding: 1em;
+    font-size: 1.093em;
+    text-align: center;
+    width: 17%;
+    vertical-align: top;
+    padding: 1em;
 }
 .logo{
 	display: inline-block;
 	font-size: 1.3em;
 	text-align: left;
-	width: 7.5%;
+	width: 17%;
 }
 .enlacemenu{
 	color: #000000;
@@ -271,11 +271,11 @@ text-decoration: none;
 }
 .menusvacio{
 	display: inline-block;
-	font-size: 1.1em;
-	text-align: center;
-	width: 20%;
-	vertical-align: top;
-	padding: 1em;
+    font-size: 1.1em;
+    text-align: center;
+    width: 18%;
+    vertical-align: top;
+    padding: 1em;
 }
 
 #titulocurso{
@@ -331,15 +331,17 @@ text-decoration: none;
 }
 
 /*end footer*/
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 768px) {
 	#encabezado {
 		text-align: right;
 	}
 	.menus {
 		display: inline-block;
-		font-size: 190%;
-		width: 25%;
-		padding-bottom: 3%;
+    	font-size: 75.8%;
+    	text-align: center;
+    	width: 25%;
+    	vertical-align: top;
+    	padding: 1em;
 	}
 	.menusvacio {
 		display: inline-block;
@@ -348,23 +350,28 @@ text-decoration: none;
 	}
 	#logo {
 		position: relative;
-		padding-top: 0%;
-		height: 4.5em;
-    	width: auto;
+    	width: 114%;
 	}
 	#menucatalogo{
 		padding-top: 2%;
 	}
 	#menu {
-		padding-left: 0;
-		width: auto;
-    	display: flex;
+		display: flex;
+    	width: auto;
+    	height: auto;
+    	padding-left: 20px;
+	}
+	.logo {
+		display: inline-block;
+    	font-size: 1.3em;
+    	text-align: left;
+    	width: 29%;
 	}
 	/* termina menu*/
 	#tituloprincipal {
 		margin-left: 0.8em;
 		margin-right: 0.8em;
-		font-size: 4rem;		
+		font-size: 2.4rem;		
 		text-align: center;
 	}
 	#tablacontenido {
@@ -386,16 +393,20 @@ text-decoration: none;
 		width: auto;
 	}
 	#imagentemario {
-		width: 90%;
-		margin: 0 5%;
+		width: auto;
 	}
 	#descricpiontemario {
 		line-height: 1.2em;
 	}
 	.celdatop {
-		width: 95%;
-		margin-right: 5%;
-		font-size: 210%;
+		width: auto;
+    	margin-right: 12%;
+    	font-size: 130%;
+	}
+	.btnInscribirse {
+		width: auto;
+		padding-left: 0;
+		text-align: center;
 	}
 	/*.titulostemario2 {
 		font-size: 3.1em;
@@ -407,26 +418,16 @@ text-decoration: none;
 		height: 4em;
 		padding-top: 0.3em;
 	}*/
-	#menu {
-		display: flex;
-    	width: auto;
-    	height: auto;
-		padding-left: 50px;
-	}
-	.logo {
-		display: inline-block;
-		font-size: 1.3em;
-		text-align: left;
-		width: 29%;
-	}
+	
+	
 	/* footer*/
 	#logopie {
-		width: 20%;
-		padding: 2% 2%;
-		padding-left: 0;
+		width: 18%;
+    	padding: 2% 2%;
+    	padding-left: 0;
 	}
 	#imglogopie {
-		height: 20%;
+		height: 15%;
 	}
 	#texto1pie {
 		width: 55%;
@@ -436,7 +437,7 @@ text-decoration: none;
 		margin-top: 2.5em;
 	}
 	#footer p {
-		font-size: 148%;
+		font-size: 65%;
 		margin-bottom: 3.3%;
 		line-height: 120%;		
 		font-weight: 400;
@@ -447,7 +448,7 @@ text-decoration: none;
 		padding-top: 2%;
 	}
 	#divfooter{
-		height: 20em;
+		height: 10em;
 	}
 	#footer{
 	    margin-top: 9em;
@@ -455,7 +456,7 @@ text-decoration: none;
     }
 	/*end footer*/
 }
-
+/*
 @media screen and (orientation: landscape) {
 	.menusvacio {
 		display: inline-block;
@@ -477,7 +478,7 @@ text-decoration: none;
 		height: 2em;
 	}
 	
-}
+}*/
 
 /*
 @media (min-width:700px){
