@@ -24,8 +24,8 @@
             
             <ul id="menu">
                 <li class="logo"><a href="../alumno/index.php"><img src="img/logob.png" id="logo"></a></li>
-                <li class="menus"></li>
-                <li class="menus" style="background-color: #872362;"><a href="../alumno/index.php" class="enlacemenu" style="color: white;" >MI PERFIL</a></li>
+                <li class="menusvacio"></li>
+                <li class="menus"><a href="../alumno/index.php" class="enlacemenu" >MI PERFIL</a></li>
                 <li class="menus"><a href="../alumno/cursos.php" class="enlacemenu">CATÁLOGO DE CURSOS</a></li>
                 <li class="menus"><a href="../account/login.html" class="enlacemenu">SALIR</a></li>
             </ul>

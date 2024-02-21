@@ -185,6 +185,27 @@ h2{
 	flex-shrink: initial;
 }
 
+@media screen and (max-width:850px){
+	#logopie {
+		padding: 0% 3%;
+	}
+	#imglogopie {
+		height: 30%;
+		margin-top: 11%;
+	}
+	#texto1pie {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	#texto2pie {
+		padding: 0% 3%;
+	}
+	#carousel_0852 {
+		padding-top: 0;
+	}
+	
+}
+
 @media screen and (max-width:700px){
 	/*menu*/
 	#encabezado {
@@ -317,6 +338,21 @@ h2{
 	}
 	.u-section-2 .u-icon-4 {
 	margin-left: 0;
+	}
+	#menu {
+		padding-left: 0;
+	}
+	#menuterminos {
+		padding-left: 0;
+		display: flex;
+		height: 10em;
+    	background-color: white;
+	}
+	#logoterminos {
+		position: relative;
+    	width: auto;
+    	padding-top: 11%;
+    	height: 36%;
 	}
 }
 @media (min-width: 1370px){

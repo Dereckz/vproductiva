@@ -160,6 +160,28 @@ h2{
     text-align: center;
     font-size: 0.8em;
 }
+
+@media screen and (max-width:850px){
+	#logopie {
+		padding: 0% 3%;
+	}
+	#imglogopie {
+		height: 30%;
+		margin-top: 11%;
+	}
+	#texto1pie {
+		padding-left: 0;
+		padding-right: 0;
+	}
+	#texto2pie {
+		padding: 0% 3%;
+	}
+	#carousel_0852 {
+		padding-top: 0;
+	}
+	
+}
+
 @media screen and (max-width:700px){
 	.logo {
 		/*display: none;*/
