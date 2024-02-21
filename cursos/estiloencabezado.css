@@ -27,7 +27,8 @@ body{
 	display: inline-block;
     font-size: 1.3em;
     text-align: left;
-    width: 78%;
+    width: 60%;
+    margin-left: 5px;
 }
 
 #encabezado{
@@ -36,7 +37,7 @@ body{
     /*top: 1em;*/
     margin: 0%;
     width: 100%;
-    text-align: center;
+    /*text-align: center;*/
 	height: 4.5em;
 }
 #tituloprincipal{
@@ -48,6 +49,7 @@ body{
     margin-left: 0%;
     font-family: sans-serif;
     margin-bottom: 0%;
+	padding-left: 0%;
 }
 .menus{
 	display: inline-block;
@@ -61,7 +63,15 @@ body{
     display: inline-block;
     font-size: 1.1em;
     text-align: center;
-    width: 16%;
+    width: 19.3%;
+    vertical-align: top;
+    padding: 1em;
+}
+.menusvacioevaluacion {
+    display: inline-block;
+    font-size: 1.1em;
+    text-align: center;
+    width: 21.3%;
     vertical-align: top;
     padding: 1em;
 }
@@ -384,6 +394,7 @@ h4{
 	}
 	#fecha{
 		font-size: 80%;
+		margin-right: 4%;
 	}
 	#regresarCurso {
 		margin: 2% 0%;
@@ -402,10 +413,15 @@ h4{
 		padding: 2% 0%;
 	}
 	.menusevaluacion {
-		font-size: 190%;
-		width: 27%;
-		vertical-align: top;
-		padding: 1em;
+		display: inline-block;
+    	font-size: 82%;
+    	width: 29%;
+    	padding: 1em 1em;
+	}
+	.menusvacioevaluacion{
+		display: inline-block;
+    	width: 0%;
+    	padding: 0;
 	}
 }
 /*

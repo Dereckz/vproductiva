@@ -202,10 +202,10 @@
     	
     	<ul id="menu">
             <li class="logo"><img src="img/logob.png" id="logo"></li>
-            <li class="menusvacio"></li>
-    	    <li class="menus"><a href="../alumno/index.php" class="enlacemenu">MI PERFIL</a></li>
-    	    <li class="menus"><a href="../alumno/cursos.php" class="enlacemenu">CATÁLOGO DE CURSOS</a></li>
-            <li class="menus"><a href="../account/login.html" class="enlacemenu">SALIR</a></li>
+            <li class="menusvacioevaluacion"></li>
+    	    <li class="menusevaluacion"><a href="../alumno/index.php" class="enlacemenu">MI PERFIL</a></li>
+    	    <li class="menusevaluacion"><a href="../alumno/cursos.php" class="enlacemenu">CATÁLOGO DE CURSOS</a></li>
+            <li class="menusevaluacion"><a href="../account/login.html" class="enlacemenu">SALIR</a></li>
     	</ul>
     </header>
     <!--<div>
