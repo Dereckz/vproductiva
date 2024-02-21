@@ -66,6 +66,7 @@ $ruta="../cursos/recurso/".$recurso;
 					$file = $archivoconextension[2].'/'.$archivoconextension[3];
 					//$filename = $archivoconextension[3];
 					//header("Location:".$datarec["cRuta"]);
+					
 				
 		?>
 					<!-- //Dispo. Movil-->
