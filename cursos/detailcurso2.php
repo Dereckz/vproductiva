@@ -86,39 +86,30 @@
                     $info = mysqli_fetch_array($check);
         
                     if ($info['num'] > 0) {
-                        $visto = 
-                        '<td class=temario>
+                        
+                        $visto='<td class=temario>
                             <img src="img/checkcompleto.png" style="width: 2.4em; margin-left: 0.6em;">
                         </td>';
                     } else {
-                        $visto = 
-                        '<td class=temario>
+                        $visto='<td class=temario>
                             <img src="img/checkvacio.png" style="width: 2.4em;">
                         </td>';
-                    }
-        
-                  
-                   
-                    //if(  $consulta['cFormato']=="mp4"){
-        
+                    } ?>
+
+
+                    <?php
+                
                         $archivoconextension= explode('/',$consulta['cRuta']);
                         $url='r='.$archivoconextension[3];
                         $recursourl=str_replace($archivoconextension[3],$consulta['cNombreCurso'],$url);
-                       
                         $rutarrecuso='view.php?irc='.$consulta["iIdRecurso"].'&'.$recursourl;
-                  //  }else{
-        
-                        
-                    //    $rutarrecuso= $consulta['cRuta'];
-                    //}
-                         
-                    echo 
-                    '<tr> 
-                        <td class=iconorecursocelda> '.$visto.'</td> 
+                       ?>  
+                    <tr> 
+                        <td class=iconorecursocelda> <?php echo $visto?>'</td> 
                         <td class=fondotemario>
                             <a class=titulostemario  href="'.$rutarrecuso.'" id="'.$consulta['iIdRecurso'].'" target="_blank" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">
         
-                            Módulo '.$modulo.'.<br><span id="titulotema"> '.$consulta['cNombreModulo'].'</span>
+                            Módulo <?php echo $modulo?><br><span id="titulotema"> <?php echo $consulta['cNombreModulo'] ?></span>
                             </a></td> 
                         </tr>
                      <tr>
@@ -134,8 +125,6 @@
                 
                         idRecurso = "' . $consulta['iIdRecurso'] . '";
                         idAlumno = "' . $_SESSION["id"] . '";
-                        //alert("Hey me tocaste");
-                
                        //Convertimos las variables de javascript en variables de PHP
                             $( document ).ready(function() {
                         // Definimos las variables de javascrpt
@@ -151,7 +140,8 @@
                     
                         </script>
                 
-                    ';           
+                    ';  
+                    <?php        
             }//fin while
         
             $examen ="";
