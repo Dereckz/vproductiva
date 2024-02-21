@@ -229,7 +229,7 @@
   --animation-custom_in-rotate: 0deg;
   --animation-custom_in-scale: 1;
   /*box-shadow: 5px 5px 29px 0 rgba(0,0,0,0.15);*/
-  height: auto;
+  height: 15em;
   /*text-align: center;*/
   background-color: #f6f6f6;
 }
@@ -431,6 +431,9 @@ font-weight: 550;
   }
   .u-section-2 .u-text-9 {
     font-size: 1.875rem;
+  }
+  .u-section-2 .u-list-item-4 {
+    height: auto;
   }
 
   
