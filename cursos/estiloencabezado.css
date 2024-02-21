@@ -383,7 +383,7 @@ h4{
 		padding-top: 2%;
 	}
 	#divfooter{
-		height: 15em;
+		height: 10em;
 	}
 	#footer{
 	    width: auto;
@@ -404,13 +404,14 @@ h4{
 	}
 	#tablarecursos {
 		width: auto;
-		margin-left: 3em;
-    	margin-right: 3em;
+		margin-left: 0;
+		margin-right: 0;
 		margin-top: 2%;
 	}
 	#texconstancia {
-		font-size: 140%;
-		padding: 2% 0%;
+		font-size: 90%;
+    	padding: 2% 2%;
+    	margin-right: 165px;
 	}
 	.menusevaluacion {
 		display: inline-block;

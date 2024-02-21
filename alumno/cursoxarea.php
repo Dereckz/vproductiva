@@ -70,7 +70,7 @@
 }
 .u-section-2 .u-repeater-1 {
   grid-template-columns: repeat(4, calc(23%));
-  min-height: 553px;
+  /*min-height: 553px;*/
   grid-gap: 1.7%;
 }
 .u-section-2 .u-list-item-1 {
@@ -301,7 +301,7 @@
   }
   .u-section-2 .u-repeater-1 {
     grid-template-columns: repeat(2, calc(50% - 15px));
-    min-height: 557px;
+    /*min-height: 557px;*/
   }
   .u-section-2 .u-container-layout-1 {
     padding-top: 30px;

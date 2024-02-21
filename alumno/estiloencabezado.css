@@ -298,7 +298,7 @@ h2{
 		padding-left: 0;
 	}
 	#imglogopie {
-		height: 17.8%;
+		height: 22%;
 		margin-top: 0;
 	}
 	#texto1pie {
@@ -320,9 +320,10 @@ h2{
 	}
 	.parrafosfooter {
 		font-weight: 400;
-	/*#divfooter{
-		height: 10em;
-	}*/
+	}
+	#divfooter{
+		height: 8em;
+	}
 	#footer{
 	    margin-top: 2.5em;
 	    width: auto;
