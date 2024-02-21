@@ -13,6 +13,7 @@
 body{
 	margin: 0;
 	background-color: #ffffff;
+
 }
 #planmarketing{
 	margin-left: 20px;
@@ -260,10 +261,12 @@ h4{
 
 #footer{
 	background-color: #872362;
+	
 }
 #divfooter{
 	display: flex;
 	height: 13em;
+	bottom: 0;  
 }
 #logopie{
 	/*width: 20%;*/
