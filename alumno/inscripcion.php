@@ -38,9 +38,9 @@ else {
     VALUES ($idUsuario,$idCurso,1)";
 
 if (mysqli_query($conn, $sql)) {
-     echo "....";
+     echo "";
 
-
+     header("Location: index.php");
      
     
 } else {

@@ -107,7 +107,7 @@
                     <tr> 
                         <td class=iconorecursocelda> <?php echo $visto?>'</td> 
                         <td class=fondotemario>
-                            <a class=titulostemario  href="'.$rutarrecuso.'" id="'.$consulta['iIdRecurso'].'" target="_blank" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">
+                            <a class=titulostemario  href=<?php echo $rutarrecuso?>  id=<?php echo $consulta['iIdRecurso']?> target="_blank" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">
         
                             Módulo <?php echo $modulo?><br><span id="titulotema"> <?php echo $consulta['cNombreModulo'] ?></span>
                             </a></td> 
@@ -207,13 +207,12 @@
         
                                             case 1:
                                                 if($aciertos>11){
-                                                    $examen="";
-                                                    $constancia=
-                                                    '<tr>
+                                                  ?>
+                                                    <tr>
                                                         <td></td>
                                                         <td></td>
                                                             <td class=constancia>
-                                                                <a href="../reward/reconocimiento.php?idCurso='.$idcursoseleccionado.'" id="texconstancia2" target="_blank" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">
+                                                                <a href="../reward/reconocimiento.php?idCurso='<?php echo $idcursoseleccionado?>'" id="texconstancia2" target="_blank" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">
                                                                 DESCARGA TU CONSTANCIA<br>
                                                                 </a>
                                                             </td>
@@ -221,7 +220,9 @@
                                                      <tr>
                                                         <td colspan=3 class=celdasvacias>
                                                         </td>
-                                                    </tr>';   
+                                                    </tr>
+
+                                                    <?php 
                                                     $consCur = mysqli_query($conn, "SELECT * FROM  inscripcion 
                                                     WHERE fkiIdeCurso = ".$idcursoseleccionado.
                                                     " AND fkiIdUsuario =".$_SESSION["id"]);
@@ -246,36 +247,36 @@
                                                     }
                                             
                                                     if($masDedos==3){
-                                                        $mensaje= '<tr><td></td><td></td><td class=notacurso>Nota: Este curso ya fue tomado anteriormente.</td></tr>';
+                                                       // $mensaje= '<tr><td></td><td></td><td class=notacurso>Nota: Este curso ya fue tomado anteriormente.</td></tr>';
                                                     }
                                                     else{
                                                         $mensaje='';
                                                     }
                                                 }else{
-                                                    $constancia="";
-                                                    $examen=
-                                                    '<tr>
+                                                    ?>
+                                                    <tr>
                                                         <td></td>
                                                         <td></td>
                                                         <td class=constancia>
-                                                            <a href="../cursos/evaluacion.php?idC='.$idcursoseleccionado.'" 
+                                                            <a href="../cursos/evaluacion.php?idC='<?php echo $idcursoseleccionado?>'" 
                                                             id="texconstancia"class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">    
                                                             EVALÚA TUS CONOCIMIENTOS<br>
                                                             </a>
                                                         </td>
                                                     </tr>
-                                                <tr><td colspan=3 class=celdasvacias></td></tr>'; 
+                                                <tr><td colspan=3 class=celdasvacias></td></tr>
+                                                <?php 
                                                 }
                                             break;
                                             case 2:
                                                     if($aciertos>11){
-                                                        $examen="";
-                                                        $constancia=
-                                                        '<tr>
+                                                      ?>
+
+                                                        <tr>
                                                             <td></td>
                                                             <td></td>
                                                                 <td class=constancia>
-                                                                    <a href="../reward/reconocimiento.php?idCurso='.$idcursoseleccionado.'" id="texconstancia2" target="_blank" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">
+                                                                    <a href="../reward/reconocimiento.php?idCurso='<?php echo $idcursoseleccionado?>'" id="texconstancia2" target="_blank" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">
                                                                     DESCARGA TU CONSTANCIA<br>
                                                                     </a>
                                                                 </td>
@@ -283,8 +284,8 @@
                                                          <tr>
                                                             <td colspan=3 class=celdasvacias>
                                                             </td>
-                                                        </tr>';   
-        
+                                                        </tr>
+                                                        <?php
                                                         $consCur = mysqli_query($conn, "SELECT * FROM  inscripcion 
                                                         WHERE fkiIdeCurso = ".$idcursoseleccionado.
                                                         " AND fkiIdUsuario =".$_SESSION["id"]);
@@ -309,7 +310,7 @@
                                                         }
                                                 
                                                         if($masDedos==3){
-                                                            $mensaje= '<tr><td></td><td></td><td class=notacurso>Nota: Este curso ya fue tomado anteriormente.</td></tr>';
+                                                          // $mensaje= '<tr><td></td><td></td><td class=notacurso>Nota: Este curso ya fue tomado anteriormente.</td></tr>';
                                                         }
                                                         else{
                                                             $mensaje='';
@@ -383,22 +384,21 @@
                                         switch ($intentosresultados["intento"]) {
                                             case 1:
                                                 if($aciertos>6){
-                                                    $examen="";
-                                                    $constancia=
-                                                    '<tr>
+                                                    ?>
+                                                    <tr>
                                                         <td></td>
                                                         <td></td>
                                                             <td class=constancia>
-                                                                <a href="../reward/reconocimiento.php?idCurso='.$idcursoseleccionado.'"   id="texconstancia2" target="_blank" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">
-                                                                DESCARGA TU CONSTANCIA<br>
-                                                                </a>
+                                                            <a href="../reward/reconocimiento.php?idCurso='<?php echo $idcursoseleccionado?>'" id="texconstancia2" target="_blank" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">
+                                                                    DESCARGA TU CONSTANCIA<br>
+                                                                    </a>
                                                             </td>
                                                         </tr>
                                                      <tr>
                                                         <td colspan=3 class=celdasvacias>
                                                         </td>
-                                                    </tr>';   
-        
+                                                    </tr>
+                                                    <?php
                                                     $consCur = mysqli_query($conn, "SELECT * FROM  inscripcion 
                                                     WHERE fkiIdeCurso = ".$idcursoseleccionado.
                                                     " AND fkiIdUsuario =".$_SESSION["id"]);
@@ -423,15 +423,14 @@
                                                     }
                                             
                                                     if($masDedos==3){
-                                                        $mensaje= '<tr><td></td><td></td><td class=notacurso>Nota: Este curso ya fue tomado anteriormente.</td></tr>';
+                                                        //$mensaje= '<tr><td></td><td></td><td class=notacurso>Nota: Este curso ya fue tomado anteriormente.</td></tr>';
                                                     }
                                                     else{
                                                         $mensaje='';
                                                     }
                                                 }else{
-                                                    $constancia="";
-                                                    $examen=
-                                                    '<tr>
+                                                   ?>
+                                                   <tr>
                                                         <td></td>
                                                         <td></td>
                                                         <td class=constancia>
@@ -442,13 +441,14 @@
                                                         </td>
                                                     </tr>
                                                 <tr><td colspan=3 class=celdasvacias></td></tr>'; 
+                                              <?php
                                                 }
                                                break;
                                             case 2:
                                                     if($aciertos>6){
-                                                        $examen="";
-                                                        $constancia=
-                                                        '<tr>
+                                                        ?>
+                                                        
+                                                        <tr>
                                                             <td></td>
                                                             <td></td>
                                                                 <td class=constancia>
@@ -460,7 +460,8 @@
                                                          <tr>
                                                             <td colspan=3 class=celdasvacias>
                                                             </td>
-                                                        </tr>';   
+                                                        </tr>
+                                                        <?php  
                                                         $consCur = mysqli_query($conn, "SELECT * FROM  inscripcion 
                                                         WHERE fkiIdeCurso = ".$idcursoseleccionado.
                                                         " AND fkiIdUsuario =".$_SESSION["id"]);
@@ -552,7 +553,7 @@
                                            
                                         }
                                     }else if($totalpreguntas==0){
-                                        $examen='
+                                       ?>
                                             <tr>
                                             <td></td>
                                             <td></td>
@@ -565,7 +566,9 @@
                                                     </a>
                                                 </td>
                                             </tr>
-                                            <tr><td     colspan=3 class=celdasvacias></td></tr>';
+                                            <tr><td     colspan=3 class=celdasvacias></td></tr>
+
+                                            <?php
                                     }else{
                                         $examen=".";
         
@@ -573,7 +576,7 @@
                                     
                                }else{
                                     if($numVisto>0){
-                                        $examen='
+                                       ?>
                                         <tr>
                                         <td></td>
                                         <td></td>
@@ -586,7 +589,8 @@
                                                 </a>
                                             </td>
                                         </tr>
-                                        <tr><td     colspan=3 class=celdasvacias></td></tr>';  
+                                        <tr><td     colspan=3 class=celdasvacias></td></tr>
+                                        <?php
                                     }else{
                                         $examen=""
                                     ;
@@ -606,9 +610,9 @@
         
             }
         
-                echo $constancia;
+               /*  echo $constancia;
                 echo $examen;
-                echo $mensaje;
+                echo $mensaje; */
         }
 
     }catch(ex){
