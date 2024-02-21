@@ -411,12 +411,13 @@ text-decoration: none;
 		display: flex;
     	width: auto;
     	height: auto;
+		padding-left: 50px;
 	}
 	.logo {
 		display: inline-block;
 		font-size: 1.3em;
 		text-align: left;
-		width: auto;
+		width: 29%;
 	}
 	/* footer*/
 	#logopie {
@@ -426,7 +427,6 @@ text-decoration: none;
 	}
 	#imglogopie {
 		height: 20%;
-		margin-top: 50%;
 	}
 	#texto1pie {
 		width: 55%;
@@ -436,9 +436,10 @@ text-decoration: none;
 		margin-top: 2.5em;
 	}
 	#footer p {
-		font-size: 130%;
+		font-size: 148%;
 		margin-bottom: 3.3%;
-		line-height: 120%;
+		line-height: 120%;		
+		font-weight: 400;
 	}
 	#texto2pie {
 		width: 32%;

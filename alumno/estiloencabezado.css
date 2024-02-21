@@ -128,7 +128,7 @@ h2{
 }
 #divfooter{
 	display: flex;
-	height: 13em;
+	height: 10em;
 }
 #logopie{
 	/*width: 20%;*/
@@ -213,7 +213,7 @@ h2{
 	}
 	.menus {
 		display: inline-block;
-		font-size: 80%;
+		font-size: 75%;
 		text-align: center;
 		width: 25%;
 		vertical-align: top;
@@ -233,6 +233,7 @@ h2{
 		padding-top: 2%;
 	}
 	/* termina menu*/
+	/*perfil usuario*/
 	#divperfil{
 		margin: 0;
     	display: inline;
@@ -245,16 +246,22 @@ h2{
 		margin-left: 0%;
 		width: 10em;
 	}
+	#divguardarfoto{
+		width: auto;
+    	text-align: -webkit-center;
+	}
 	#guardarfotoperfil{
-		margin-left: 0%;
+   		margin-left: 0;
 	}
 
 	div#div_file {
 		width: 8em;
-		margin-left: 1.8em;
+    	margin-left: 0;
 	}
 	#titulomiscursos {
 		font-size: 1.6em;
+		margin-bottom: 3%;
+    	margin-left: 20px;
 	}
 	#divcursosinscritos{
 		flex-direction: column;
@@ -287,12 +294,12 @@ h2{
 	/* footer*/
 	#logopie {
 		width: 22%;
-		padding: 2% 2%;
+		padding: 3% 2%;
 		padding-left: 0;
 	}
 	#imglogopie {
-		height: 22%;
-		margin-top: 50%;
+		height: 17.8%;
+		margin-top: 0;
 	}
 	#texto1pie {
 		width: 55%;
@@ -302,17 +309,20 @@ h2{
 		margin-top: 2.5em;
 	}
 	#footer p {
-		font-size: 70%;
+		font-size: 60%;
 		margin-bottom: 3.3%;
-		line-height: 120%;
+		line-height: 120%;		
+		font-weight: 400;
 	}
 	#texto2pie {
 		width: 32%;
 		padding: 1% 0%;
 	}
-	#divfooter{
+	.parrafosfooter {
+		font-weight: 400;
+	/*#divfooter{
 		height: 10em;
-	}
+	}*/
 	#footer{
 	    margin-top: 2.5em;
 	    width: auto;
