@@ -17,8 +17,6 @@ VALUES ($idrecurso,$idAlumno,1)";
     
     if (mysqli_query($conn, $sql)) {
         //echo "Se inserto correctamente el registro";
-    } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     }
 }
 ?>

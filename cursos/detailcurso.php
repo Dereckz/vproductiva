@@ -135,7 +135,7 @@
                 
                         idRecurso = "' . $consulta['iIdRecurso'] . '";
                         idAlumno = "' . $_SESSION["id"] . '";
-                        //alert("Hey me tocaste");
+                        
                 
                        //Convertimos las variables de javascript en variables de PHP
                             $( document ).ready(function() {
@@ -144,7 +144,7 @@
                             var alumno = idAlumno;
                         // Ejecutamos AJAX
                         $.post("visto.php",{"recurso":recurso,"alumno": alumno},function(respuesta){
-                                alert(respuesta);
+                               
                                 location.reload();
                             });
                             });
