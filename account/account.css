@@ -93,6 +93,7 @@ section#hero {
 }
 #imgpie {
     width: 90%;
+    max-width: 300px;
 }
 #footer p {
     color: white;

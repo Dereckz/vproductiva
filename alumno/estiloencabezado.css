@@ -184,6 +184,26 @@ h2{
 #divbotonescontinuar{
 	flex-shrink: initial;
 }
+#menuterminos{
+	background-color: white;
+}
+#logoterminos{
+	position: relative;
+    width: 60%;
+    padding-top: 2%;
+    padding-left: 9%;
+}
+.menusvacioter{
+	display: inline-block;
+    font-size: 1.1em;
+    text-align: center;
+    width: 21%;
+    vertical-align: top;
+    padding: 1em;
+}
+#services .services {
+	margin-top: 0;
+}
 
 @media screen and (max-width:850px){
 	#logopie {

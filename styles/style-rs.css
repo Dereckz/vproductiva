@@ -226,12 +226,15 @@ section#hero {
 }
 #parrafo1bienvenida {
     color: white;
-    font-size: 170%;
+    font-size: 150%;
+	text-align: left;
 }
 #parrafo2bienvenida {
     color: white;
-    font-size: 4em;
+    font-size: 3.2em;
+	padding-top: 4%;
     font-family: 'MonserratBold';
+	text-align: left;
 }
 #parrafo3bienvenida {
     color: white;
@@ -294,11 +297,12 @@ section#hero {
     font-family: MonserratBold;
     margin: 2.2% 0%;
 }
-#hero h2 {
+/*#hero h2 {
     font-size: 190%;
     padding: 0.8em 9em;
-    margin-bottom: 1%;
-}
+    margin-bottom: 5%;
+    text-align: left;
+} */
 .titulocategoriascursos {
     width: 90%;
     margin-bottom: 3%;
@@ -615,6 +619,7 @@ section#hero {
 }
 #imgpie {
     width: 90%;
+	max-width: 300px;
 }
 #footer p {
     color: white;
@@ -823,11 +828,16 @@ section#hero {
 	#hero h2 {
 	    font-size: 1.5em;
 	    padding: 0.8em 2em;
-	    margin-top: 0%;
+	    /*margin-top: 0%;*/
+		text-align: center;
 	}
 	#titulocategorias {
 	    text-align: center;
 	    font-size: 250%;
+	}
+	#imgmision {
+		width: auto;
+		padding-left: 0em;
 	}
 
 }
