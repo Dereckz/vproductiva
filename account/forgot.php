@@ -16,24 +16,25 @@
       <div class="nav-bar">
         <div class="brand">
           <a href="#hero">
-           <img src="../img/logovproductiva2.png" id="logoinicio" alt="VProductiva Logo">
+           <img src="logob.png" id="logoinicio" alt="VProductiva Logo">
            <!-- <h1>Valuación Productiva</h1>-->
           </a>
         </div>
+        <!--
         <div class="nav-list">
           <div class="hamburger">
             <div class="bar"></div>
           </div>
           <ul>
             <li><a href="../index.html" data-after="Home">Inicio</a></li>
-           <!-- <li><a href="#services" data-after="Service">Servicios</a></li>-->
+           <!- <li><a href="#services" data-after="Service">Servicios</a></li>->
             <li><a href="../index.html#projects" data-after="Projects">Cursos</a></li>
             <li><a href="../index.html#about" data-after="About">Acerca de nosotros</a></li>
             <li><a href="../index.html#contact" data-after="Contact">Contacto</a></li>
-            <!--<li><a href="account/register.html" data-after="Login">Login</a></li> -->
+            <!-<li><a href="account/register.html" data-after="Login">Login</a></li> ->
             <li><a href="login.html" data-after="Login">Login</a></li>
           </ul>
-        </div>
+        </div>-->
       </div>
     </div>
   </section>
@@ -58,7 +59,7 @@
                 </form>
                
               
-             <div id="regresar">
+             <div id="olvideregresar">
                 <a href="login.html">Regresar</a>
             </div>
         </div>

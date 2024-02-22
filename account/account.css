@@ -157,6 +157,10 @@ section#hero {
     #imgpie {
         width: 70%;
     }
+    #footer {
+        position: absolute;
+        bottom: 0;
+    }
 
 }
 @media(max-width: 1400px){
