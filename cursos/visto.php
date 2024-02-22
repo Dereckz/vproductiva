@@ -22,4 +22,3 @@ VALUES ($idrecurso,$idAlumno,1)";
     }
 }
 ?>
-|
