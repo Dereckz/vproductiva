@@ -244,7 +244,7 @@
                     }
                 }
             </script>
-            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>;
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
             
 
 <?php
@@ -270,7 +270,7 @@
                             
                                 
                                 <form id="survey-form" action="exam_aswer.php" method="get" >
-                                <H2 > <span><?php echo $consulta['nombre'] ?> </span></H2>
+                                <H2 id="tituloexamen"> <span><?php echo $consulta['nombre'] ?> </span></H2>
 
                                 <input id="idcurso" type="hidden" name="idC" value= <?php echo $idCurso ?>>
                                 <input id="idusuario" type="hidden" name="idU" value= <?php  echo $_SESSION["id"] ?>>
