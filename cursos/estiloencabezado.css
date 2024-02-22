@@ -299,8 +299,9 @@ h4{
 	line-height: 110%;
 }
 .parrafosfooter{
-	font-weight: 550;
+	font-weight: 600;
 	color: white;
+	margin-top: 0;
 }
 #texto2pie{
 	width: 32%;
@@ -460,6 +461,47 @@ h4{
 		padding-top: 0;
 	}
 }
+
+@media (max-width: 860px) {
+	.menusvacio {
+		display: inline-block;
+		font-size: 1.1em;
+		text-align: center;
+		width: 16%;
+		vertical-align: top;
+		padding: 1em;
+	}
+	.menus {
+		display: inline-block;
+		font-size: 1.1em;
+		text-align: center;
+		width: 18%;
+		vertical-align: top;
+		padding: 1em;
+		padding-right: 0;
+	}
+	#logo {
+		position: relative;
+		text-align: left;
+		width: 68%;
+		margin-left: 5px;
+	}
+	/* pie de pagina*/
+	#logopie {
+		padding: 0% 3%;
+	}
+	#imglogopie {
+		height: 30%;
+		margin-top: 11%;
+	}
+	#texto1pie {
+		width: 60%;
+		padding-left: 0;
+		padding-right: 0;
+	}
+	
+}
+
 /*
 @media screen and (min-width: 768px) {
 	/*menu*-/

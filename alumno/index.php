@@ -372,8 +372,11 @@ font-weight: 550;
 
 @media screen and (max-width:850px){
 	.u-section-2 .u-icon-4 {
-	margin-left: 0;
+	  margin-left: 0;
 	}
+  div#div_file {
+    margin-left: 25%;
+  }
 }
 
 @media (max-width: 767px) {
