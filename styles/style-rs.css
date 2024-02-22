@@ -701,6 +701,13 @@ section#hero {
 	#divfooter {
 		max-width: 1550px;
 	}
+	#projects {
+		text-align: -webkit-center;
+	}
+    #projects .projects {
+        max-width: 1550px;
+        text-align: left;
+    }
 
 }
 @media(max-width: 1400px){
