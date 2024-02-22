@@ -15,8 +15,8 @@
     	
     	<ul id="menu">
             <li class="logo"><img src="img/logob.png" id="logo"></li>
-            <li class="menus"></li>
-    	    <li class="menus" style="background-color: #872362;"><a href="../alumno/index.php" class="enlacemenu" style="color: white;" >MI PERFIL</a></li>
+            <li class="menusvacio"></li>
+    	    <li class="menus"><a href="../alumno/index.php" class="enlacemenu">MI PERFIL</a></li>
     	    <li class="menus"><a href="../alumno/cursos.php" class="enlacemenu">CATÁLOGO DE CURSOS</a></li>
             <li class="menus"><a href="../account/login.html" class="enlacemenu">SALIR</a></li>
     	</ul>
@@ -128,14 +128,15 @@
 
 <body onload="deshabilitaRetroceso()">
 
-<div style="padding-top: 4.5em;" >
+<div style="padding-top: 3em;" >
 
 
-<div style="padding-top: 5em; text-align: -webkit-center;" >
+<div id="margintopresul">
 
     <h1 id="tituloeva" style="text-align: center;">Resultados</h1>
             <table id="customers" >
-            <tr>
+            <tbody id="flexresult">
+            <tr id="coldatos">
                 <th>Usuario</th>
                 <th>Curso</th>
                 <th>Preguntas</th>
@@ -144,7 +145,7 @@
                  <th>Resultado</th> 
                 <th>Intentos</th>
             </tr>
-            <tr>
+            <tr id="colresultados">
                 <td><?php echo $_SESSION['NombreLargo'] ?></td>
                 <td><?php echo mb_strtoupper($examendecurso)?></td>
 
@@ -154,7 +155,7 @@
                 <td><?php if($numCorrecta/$numpreguntas>6){echo 'APROBADO';}else{echo 'NO APROBADO';}?></td> 
                 <td><?php echo $intentost ?></td>
             </tr>
-            
+            </tbody>
             
             </table>
            <?php 
