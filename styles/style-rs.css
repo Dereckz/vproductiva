@@ -692,6 +692,15 @@ section#hero {
 	#imgpie {
 	    width: 70%;
 	}
+	#header {
+		text-align: -webkit-center;
+	}
+	.header.container {
+		max-width: 1550px;
+	}
+	#divfooter {
+		max-width: 1550px;
+	}
 
 }
 @media(max-width: 1400px){

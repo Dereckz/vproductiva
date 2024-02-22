@@ -151,6 +151,15 @@ section#hero {
         position: absolute;
         bottom: 0;
     }
+    #header {
+		text-align: -webkit-center;
+	}
+	.header.container-l {
+		max-width: 1550px;
+	}
+	#divfooter {
+		max-width: 1550px;
+	}
 
 }
 @media(max-width: 1400px){
