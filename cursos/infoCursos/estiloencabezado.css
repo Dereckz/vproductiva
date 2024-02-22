@@ -331,6 +331,61 @@ text-decoration: none;
 }
 
 /*end footer*/
+
+
+@media (max-width: 860px) {
+	#menu {
+		padding-left: 0;
+	}
+	.menusvacio {
+		display: inline-block;
+    	font-size: 1.05em;
+    	text-align: center;
+    	width: 16.7%;
+    	vertical-align: top;
+    	padding: 1em;
+	}
+	.menus {
+		display: inline-block;
+    	font-size: 1.07em;
+    	text-align: center;
+    	width: 15.7%;
+    	vertical-align: top;
+    	padding: 1em;
+	}
+	#logo {
+		position: relative;
+		text-align: left;
+		width: 68%;
+		margin-left: 5px;
+	}
+	/* pie de pagina*/
+	#logopie {
+		padding: 0% 3%;
+	}
+	#imglogopie {
+		height: 30%;
+		margin-top: 11%;
+	}
+	#texto1pie {
+		width: 60%;
+		padding-left: 0;
+		padding-right: 0;
+		padding-top: 1%;
+	}
+	#texto2pie {
+		width: 32%;
+		padding: 1% 2%;
+		margin-top: 0%;
+	}
+	.btnInscribirse {
+		width: 55%;
+		text-align: center;
+		padding-left: 0;
+	}
+	
+}
+
 @media screen and (max-width: 768px) {
 	#encabezado {
 		text-align: right;
@@ -359,7 +414,7 @@ text-decoration: none;
 		display: flex;
     	width: auto;
     	height: auto;
-    	padding-left: 20px;
+    	/*padding-left: 20px;*/
 	}
 	.logo {
 		display: inline-block;
@@ -455,59 +510,6 @@ text-decoration: none;
 	    width: auto;
     }
 	/*end footer*/
-}
-
-@media (max-width: 860px) {
-	#menu {
-		padding-left: 0;
-	}
-	.menusvacio {
-		display: inline-block;
-    	font-size: 1.05em;
-    	text-align: center;
-    	width: 16.7%;
-    	vertical-align: top;
-    	padding: 1em;
-	}
-	.menus {
-		display: inline-block;
-    	font-size: 1.07em;
-    	text-align: center;
-    	width: 15.7%;
-    	vertical-align: top;
-    	padding: 1em;
-	}
-	#logo {
-		position: relative;
-		text-align: left;
-		width: 68%;
-		margin-left: 5px;
-	}
-	/* pie de pagina*/
-	#logopie {
-		padding: 0% 3%;
-	}
-	#imglogopie {
-		height: 30%;
-		margin-top: 11%;
-	}
-	#texto1pie {
-		width: 60%;
-		padding-left: 0;
-		padding-right: 0;
-		padding-top: 1%;
-	}
-	#texto2pie {
-		width: 32%;
-		padding: 1% 2%;
-		margin-top: 0%;
-	}
-	.btnInscribirse {
-		width: 55%;
-		text-align: center;
-		padding-left: 0;
-	}
-	
 }
 
 /*

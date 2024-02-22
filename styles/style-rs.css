@@ -95,11 +95,11 @@ section#hero {
 .text2{
 	text-align: right;
 	left: initial !important;
-	right: 20%;
+	right: 15%;
 	bottom: 25% !important;
 }
 #btncontactanos {
-    width: 170px;
+    width: 270px;
     height: 45px;
     background-color: #001c9bed;
     border-radius: 4em;
@@ -113,7 +113,7 @@ section#hero {
 	background-color: #0d4ee7;
 }
 #btncontactanos2 {
-    width: 170px;
+    width: 270px;
     height: 45px;
     background-color: #001c9bed;
     border-radius: 4em;
@@ -127,7 +127,7 @@ section#hero {
 	background-color: #0d4ee7;
 }
 #btncursos {
-    width: 170px;
+    width: 270px;
     height: 45px;
     background-color: #001c9bed;
     border-radius: 4em;

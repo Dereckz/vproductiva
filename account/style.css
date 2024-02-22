@@ -192,6 +192,11 @@ img {
 
 /* End Footer */
 
+#olvideregresar{
+	font-size: 150%;
+    text-align: center;
+}
+
 /* Keyframes */
 @keyframes hamburger_puls {
 	0% {
