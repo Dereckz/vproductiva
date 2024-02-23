@@ -161,6 +161,19 @@ h2{
     font-size: 0.8em;
 }
 
+@media(min-width: 2000px){
+	body{
+		max-width: 1550px;
+	}
+	html{
+		text-align: -webkit-center;
+	}
+	#footer {
+        position: absolute;
+        bottom: 0;
+    }
+}
+
 @media screen and (max-width:850px){
 	#logopie {
 		padding: 0% 3%;

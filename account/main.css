@@ -3,7 +3,7 @@
 	font-family: Acumin;
 	src: url(AcuminVariableConcept.ttf);
 }
-/*  html,body, body * { 
+html,body, body * { 
     box-sizing: border-box; 
     font-family: 'Montserrat' 
     margin:0;
@@ -11,20 +11,15 @@
     color:inherit;
     background-color:inherit;
     box-sizing: border-box;
- }  */
+ }
  body {
-   
     background-image: url(fondologin.png);
-    background-size:  cover;
+    background-size:  contain;
     background-position:center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    max-width: 100%;
-     margin: 0;
+    display: block;
     margin: 0;
-   
-                             
-
+    /*background-color: #CDCBCE;*/
+	/*opacity: 0.7;*/
   }
   .container {
       width: auto;
@@ -218,5 +213,3 @@
     }
 
 }
-    
-
