@@ -692,6 +692,13 @@ section#hero {
 	#imgpie {
 	    width: 70%;
 	}
+	#footer {
+        position: absolute;
+        /*bottom: 0;*/
+    }
+	.footershort {
+        bottom: 0;
+    }
 	#header {
 		text-align: -webkit-center;
 	}
@@ -708,6 +715,16 @@ section#hero {
         max-width: 1550px;
         text-align: left;
     }
+	#izquierdacontacto {
+		min-height: 10vh;
+	}
+	#services{
+		text-align: -webkit-center;
+	}
+	.services.container {
+		max-width: 1550px;
+	}
+
 
 }
 @media(max-width: 1400px){
