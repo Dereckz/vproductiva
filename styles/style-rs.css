@@ -559,7 +559,10 @@ section#hero {
     color: white;
     padding: 3% 20%;
 }
-
+#texto2cursos{
+	font-size: 2em;
+    padding: 2em 11em;
+}
 
 #login-register {
     width: 50%;
@@ -862,6 +865,7 @@ section#hero {
 	    font-size: 1.5em;
 	    padding: 0.8em 2em;
 	    /*margin-top: 0%;*/
+		padding-top: 0;
 		text-align: center;
 	}
 	#titulocategorias {

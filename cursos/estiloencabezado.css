@@ -321,6 +321,26 @@ h4{
 }
 
 
+@media(min-width: 2000px){
+	body{
+		max-width: 1550px;
+	}
+	html{
+		text-align: -webkit-center;
+	}
+	#footer {
+        position: absolute;
+        bottom: 0;
+    }
+	#divfooter {
+		max-width: 1550px;
+		text-align: left;
+	}
+	#zoomleft{
+		text-align: left;
+	}
+}
+
 @media (max-width: 900px) {
 	.menusvacio {
 		display: inline-block;
@@ -477,9 +497,12 @@ h4{
 		font-size: 1.5em;
 	}
 	#texconstancia2{
-		font-size: 80%;
-    	margin-right: 90px;
+		font-size: 75%;
+    	/* margin-right: 90px; */
     	padding: 2% 3%;
+	}
+	.constancia {
+		text-align: left;
 	}
 	/*resultados columna*/
 	#flexresult{

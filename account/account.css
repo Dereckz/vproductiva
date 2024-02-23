@@ -160,13 +160,7 @@ section#hero {
 	#divfooter {
 		max-width: 1550px;
 	}
-    #projects {
-		text-align: -webkit-center;
-	}
-    #projects .projects {
-        max-width: 1550px;
-        text-align: left;
-    }
+    
 
 }
 @media(max-width: 1400px){
@@ -370,7 +364,7 @@ section#hero {
     }
 
     img#logoinicio {
-        width: 180px;
+        width: 150px;
     }
     .parrafomision {
         font-size: 13px;

@@ -205,6 +205,22 @@ h2{
 	margin-top: 0;
 }
 
+
+@media(min-width: 2000px){
+	body{
+		max-width: 1550px;
+	}
+	html{
+		text-align: -webkit-center;
+	}
+	#footer {
+        position: absolute;
+        bottom: 0;
+    }
+}
+
+
+
 @media screen and (max-width:850px){
 	#logopie {
 		padding: 0% 3%;
@@ -235,9 +251,9 @@ h2{
 		display: inline-block;
 		font-size: 75%;
 		text-align: center;
-		width: 25%;
+		width: 26%;
 		vertical-align: top;
-		padding: 1em;
+		padding: 0.9em;
 	}
 	.menusvacio {
 		display: inline-block;
@@ -386,6 +402,7 @@ h2{
     	height: 36%;
 	}
 }
+
 @media (min-width: 1370px){
 	.imagenxarea{
 		width: auto;
@@ -396,14 +413,10 @@ h2{
 	#titulocategorias{
 		margin-left: 5.5%;
 	}
+	
 }
-/*
-@media (min-width: 1450px){
-	.imagenxarea{
-		width: 27%;
-	}
-}*/
-@media (min-width: 1371px){
+
+@media (min-width: 1540px){
 	.imagenxarea{
 		width: auto;
 	}
@@ -421,6 +434,7 @@ h2{
 		height: 15em;
 	}
 }
+
 /*
 @media screen and (max-width:850px){
 	#logo {

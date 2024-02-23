@@ -332,6 +332,25 @@ text-decoration: none;
 
 /*end footer*/
 
+@media(min-width: 2000px){
+	body{
+		max-width: 1550px;
+	}
+	html{
+		text-align: -webkit-center;
+	}
+	#footer {
+        position: absolute;
+        bottom: 0;
+    }
+	#divfooter {
+		max-width: 1550px;
+		text-align: left;
+	}
+	#fondotemario{
+		text-align: left;
+	}
+}
 
 @media (max-width: 860px) {
 	#menu {

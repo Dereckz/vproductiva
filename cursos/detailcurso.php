@@ -31,7 +31,7 @@
                 <li class="menus"><a href="../account/login.html" class="enlacemenu">SALIR</a></li>
             </ul>
         </header>
-    <div>
+    <div id="zoomleft">
    
         <!--<img class="tituloscursos" src="img/PLaboral.png" >-->
         <table id=tablarecursos>
