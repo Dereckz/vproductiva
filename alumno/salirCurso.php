@@ -1,3 +1,4 @@
+
 <?php
 require("../dev/conectar.php");
 
@@ -12,8 +13,13 @@ $sql = "UPDATE inscripcion SET finalizado = 2 WHERE fkiIdeCurso = ".$idCurso." a
         
 if (mysqli_query($conn, $sql)) {
     echo "Se elimino correctamente el registro";
+   
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+   
+    
 }
-    echo "El curso se elimino";
+   //echo "El curso se elimino";
+
+  
 ?>
