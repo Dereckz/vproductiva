@@ -457,6 +457,8 @@ font-weight: 550;
     <link rel="canonical" href="https://website529400.nicepage.io/1234.html">
     <link rel="stylesheet" href="estiloencabezado.css">
     <link href="../img/LOGOVP.ico" rel="icon">
+    <script src="sweetalert2.all.min.js"></script>
+    <link href="sweetalert2.min.css" rel="stylesheet">
 
 </head>
   <body class="u-body u-xl-mode" data-lang="es">
@@ -480,7 +482,72 @@ font-weight: 550;
           <h1 class="section-title" id="titulomiscursos"> <span>Mis cursos:</span></h1>
           <div class="u-repeater u-repeater-1" id="divcursosins">
           
-          <?=miCurso();?>
+          <?php 
+          echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>';
+           require("../dev/conectar.php");
+           $resultado = mysqli_query($conn, 
+        "SELECT c.iIdCurso, c.cNombreCurso, c.ruta2, c.ricono, c.fkidAreaCurso  
+        FROM curso c
+        INNER JOIN inscripcion i ON i.fkiIdeCurso = c.iIdCurso
+        INNER JOIN usuarios u ON u.iIdUsuario = i.fkiIdUsuario
+        WHERE i.finalizado !=2 AND i.fkiIdUsuario=" . $_SESSION["id"]);
+       
+       while ($consulta = mysqli_fetch_array($resultado)) {
+        $datacurso = mysqli_query($conn, "SELECT * FROM areacursos where iIdAreaCursos=". $consulta['fkidAreaCurso'] );
+        $detallearea = mysqli_fetch_array($datacurso);
+          ?>
+        <div id="divinscritosmargin" class="u-align-left u-border-10 u-border-no-left u-border-no-right u-border-no-top u-border-palette-3-base u-container-style u-custom-item u-list-item u-repeater-item u-shape-rectangle u-video-cover u-white u-list-item-4 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="250" style="will-change: transform, opacity; animation-duration: 1500ms;">
+                <div id="divcursosinscritos" class="u-container-layout u-similar-container u-valign-top u-container-layout-4">
+                    <span class="u-custom-item u-file-icon u-icon u-text-palette-3-base u-icon-4 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="750" 
+                      style="will-change: transform, opacity; animation-duration: 1500ms;">
+                      <img src="<?php echo $consulta['ricono'] ?>" alt=""></span>
+                <div id="divbotonescontinuar">  
+                  <h4 id="titulocursoinscrito" class="u-text u-text-8" style="color: black"> 
+                    <?php echo $consulta['cNombreCurso'] ?> 
+                  </h4>
+                  <span id="btncontinuarcurso">
+          
+                        <a href="../cursos/detailcurso.php?pidc=<?php echo $consulta['iIdCurso']?>&areacurso=<?php echo $detallearea["NombreArea"]?>&curso=<?php echo $consulta['cNombreCurso']?>" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-3-base u-text-body-color u-text-hover-palette-3-base u-top-left-radius-0 u-top-right-radius-0 u-btn-5">
+                            Continuar
+                        </a>
+                  </span>
+                    <a href="#" id="'<?php echo $consulta["iIdCurso"]?>'" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-3-base u-text-body-color u-text-hover-palette-3-base u-top-left-radius-0 u-top-right-radius-0 u-btn-5">
+
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Eliminar
+                    </a>
+                </div>
+                  </div>
+              </div>
+    <?php } ?>
+              <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+              <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
+              <script>
+                document.getElementById(alert(<?php echo $consulta['iIdCurso']; ?>);).onclick = function() {
+                  
+             if (confirm("Favor de confirmar que desea salir del curso")) {
+
+                /*  idfCurso =<?php echo $consulta['iIdCurso']; ?>;
+                  idfUsuario = <?php echo $_SESSION["id"]; ?>;
+                  
+                  //Convertimos las variables de javascript en variables de PHP
+                  $( document ).ready(function() {
+                    // Definimos las variables de javascrpt
+                      var curso = idfCurso;
+                      var alumn = idfUsuario;
+                    // Ejecutamos AJAX
+                      $.post("salirCurso.php",{"curso":curso,"usuario": alumn},function(respuesta){
+                              alert(respuesta);
+                              location.reload();
+                          });
+                          });
+
+                  } else {
+                  urlNuevo = "#";*/
+                } 
+              }
+              </script>
+
           </div>
         </div>
       </div>

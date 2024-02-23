@@ -162,199 +162,31 @@ function miCurso()
 
     <script>
 
-    document.getElementById("1").onclick = function() {
-      if (confirm("Favor de confirmar que desea salir del curso")) {
+        document.getElementById("'. $consulta['iIdCurso'] .'").onclick = function() {
+        if (confirm("¿Esta seguro que dese eliminar el curso?")) {
 
-        idfCurso = "'. $consulta['iIdCurso'] . '";
-        idfUsuario = "' . $_SESSION["id"] . '";
+            idfCurso = "'. $consulta['iIdCurso'] .'";
+            idfUsuario = "' . $_SESSION["id"] .'";
 
-    //Convertimos las variables de javascript en variables de PHP
-        $( document ).ready(function() {
-    // Definimos las variables de javascrpt
-        var curso = idfCurso;
-        var alumn = idfUsuario;
+        //Convertimos las variables de javascript en variables de PHP
+            $( document ).ready(function() {
+        // Definimos las variables de javascrpt
+            var curso = idfCurso;
+            var alumn = idfUsuario;
 
-    // Ejecutamos AJAX
-    $.post("salirCurso.php",{"curso":curso,"usuario": alumn},function(respuesta){
-            alert(respuesta);
-            location.reload();
-        });
-        });
+        // Ejecutamos AJAX
+        $.post("salirCurso.php",{"curso":curso,"usuario": alumn},function(respuesta){
+                alert(respuesta);
+                location.reload();
+            });
+            });
 
-        } else {
-        urlNuevo = "#";
-    }
-    }
+            } else {
+            urlNuevo = "#";
+            }
+        }
     </script>
-
-    <script>
-
-    document.getElementById("2").onclick = function() {
-      if (confirm("Favor de confirmar que desea salir del curso")) {
-
-        idfCurso = "2";
-        idfUsuario = "' . $_SESSION["id"] . '";
-
-    //Convertimos las variables de javascript en variables de PHP
-        $( document ).ready(function() {
-    // Definimos las variables de javascrpt
-        var curso = idfCurso;
-        var alumn = idfUsuario;
-
-    // Ejecutamos AJAX
-    $.post("salirCurso.php",{"curso":curso,"usuario": alumn},function(respuesta){
-            alert(respuesta);
-            location.reload();
-        });
-        });
-
-        } else {
-        urlNuevo = "#";
-    }
-    }
-
-    </script>
-
-    <script>
-
-    document.getElementById("3").onclick = function() {
-      if (confirm("Favor de confirmar que desea salir del curso")) {
-
-        idfCurso = "3";
-        idfUsuario = "' . $_SESSION["id"] . '";
-
-    //Convertimos las variables de javascript en variables de PHP
-        $( document ).ready(function() {
-    // Definimos las variables de javascrpt
-        var curso = idfCurso;
-        var alumn = idfUsuario;
-
-    // Ejecutamos AJAX
-    $.post("salirCurso.php",{"curso":curso,"usuario": alumn},function(respuesta){
-            alert(respuesta);
-            location.reload();
-        });
-        });
-
-        } else {
-        urlNuevo = "#";
-    }
-    }
-
-    </script>
-
-    <script>
-
-    document.getElementById("4").onclick = function() {
-      if (confirm("Favor de confirmar que desea salir del curso")) {
-
-        idfCurso = "4";
-        idfUsuario = "' . $_SESSION["id"] . '";
-
-    //Convertimos las variables de javascript en variables de PHP
-        $( document ).ready(function() {
-    // Definimos las variables de javascrpt
-        var curso = idfCurso;
-        var alumn = idfUsuario;
-
-    // Ejecutamos AJAX
-    $.post("salirCurso.php",{"curso":curso,"usuario": alumn},function(respuesta){
-            alert(respuesta);
-            location.reload();
-        });
-        });
-
-        } else {
-        urlNuevo = "#";
-    }
-    }
-
-    </script>
-
-    <script>
-
-    document.getElementById("5").onclick = function() {
-      if (confirm("Favor de confirmar que desea salir del curso")) {
-
-        idfCurso = "5";
-        idfUsuario = "' . $_SESSION["id"] . '";
-
-    //Convertimos las variables de javascript en variables de PHP
-        $( document ).ready(function() {
-    // Definimos las variables de javascrpt
-        var curso = idfCurso;
-        var alumn = idfUsuario;
-
-    // Ejecutamos AJAX
-    $.post("salirCurso.php",{"curso":curso,"usuario": alumn},function(respuesta){
-            alert(respuesta);
-            location.reload();
-        });
-        });
-
-        } else {
-        urlNuevo = "#";
-    }
-    }
-
-    </script>
-
-    <script>
-
-    document.getElementById("6").onclick = function() {
-      if (confirm("Favor de confirmar que desea salir del curso")) {
-
-        idfCurso = "6";
-        idfUsuario = "' . $_SESSION["id"] . '";
-
-    //Convertimos las variables de javascript en variables de PHP
-        $( document ).ready(function() {
-    // Definimos las variables de javascrpt
-        var curso = idfCurso;
-        var alumn = idfUsuario;
-
-    // Ejecutamos AJAX
-    $.post("salirCurso.php",{"curso":curso,"usuario": alumn},function(respuesta){
-            alert(respuesta);
-            location.reload();
-        });
-        });
-
-        } else {
-        urlNuevo = "#";
-    }
-
-    }
-
-    </script>
-
-    <script>
-
-    document.getElementById("7").onclick = function() {
-      if (confirm("Favor de confirmar que desea salir del curso")) {
-
-        idfCurso = "7";
-        idfUsuario = "' . $_SESSION["id"] . '";
-
-    //Convertimos las variables de javascript en variables de PHP
-        $( document ).ready(function() {
-    // Definimos las variables de javascrpt
-        var curso = idfCurso;
-        var alumn = idfUsuario;
-
-    // Ejecutamos AJAX
-    $.post("salirCurso.php",{"curso":curso,"usuario": alumn},function(respuesta){
-            alert(respuesta);
-            location.reload();
-        });
-        });
-
-        } else {
-        urlNuevo = "#";
-    }
-    }
-
-    </script>
+   
           ';
 
         if ($contador == 1) {
