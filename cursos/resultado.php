@@ -24,7 +24,7 @@
     <style>
               
     #customers {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: MonserratBold;
     border-collapse: collapse;
     /*width: 100%;*/
     text-align: center;
@@ -32,24 +32,13 @@
     
     }
 
-    #customers td, #customers th {
-    border: 1px solid #ddd;
-    padding: 6px;
     
-    }
 
     #customers tr:nth-child(even){background-color: #f2f2f2;}
 
     #customers tr:hover {background-color: #ddd;}
 
-    #customers th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: center;
-    background-color: #872362;
-    color: white;
-    /*padding-left: 100px;*/
-    }
+    
     .my-button {
     padding: 1em 3em;
     background-color: #2E49E1;
@@ -138,16 +127,16 @@
             <tbody id="flexresult">
             <tr id="coldatos">
                 <th>Usuario</th>
-                <th>Curso</th>
+                <!--<th>Curso</th>-->
                 <th>Preguntas</th>
-                <th>Respuestas Correctas</th>
-                <th>Respuestas Incorrectas</th>
-                 <th>Resultado</th> 
+                <th id="respcorrec">Respuestas Correctas</th>
+                <th id="respincorrec">Respuestas Incorrectas</th>
+                <th>Resultado</th> 
                 <th>Intentos</th>
             </tr>
             <tr id="colresultados">
                 <td><?php echo $_SESSION['NombreLargo'] ?></td>
-                <td><?php echo mb_strtoupper($examendecurso)?></td>
+                <!-- <td><-?php echo mb_strtoupper($examendecurso)?></td>-->
 
                 <td><?php echo $numpreguntas?></td>
                 <td><?php echo ($numCorrecta/$numpreguntas)?></td>

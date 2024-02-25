@@ -319,7 +319,19 @@ h4{
 	padding-top: 5em; 
 	text-align: -webkit-center;
 }
-
+#customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 6px;
+    
+}
+#customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #872362;
+    color: white;
+    /*padding-left: 100px;*/
+    }
 
 @media(min-width: 2000px){
 	body{
@@ -512,10 +524,12 @@ h4{
 	#coldatos{
 		display: grid;
 		width: 35%;
+		font-size: 0.8em;
 	}
 	#colresultados{
 		display: grid;
 		width: 65%;
+		font-size: 0.8em;
 	}
 	#customers {
 		margin-bottom: 20%;
@@ -523,6 +537,22 @@ h4{
 	#margintopresul{
 		padding-top: 0;
 	}
+	#respcorrec{
+		padding-top: 14px;
+    	padding-bottom: 19px;
+	}
+	#respincorrec{
+		padding-top: 14px;
+    	padding-bottom: 19px;
+	}
+	#colresultados td {
+		padding-top: 16px;
+	}
+	#coldatos th {
+		padding-top: 16px;
+		height: 2em;
+	}
+	
 }
 
 /*
