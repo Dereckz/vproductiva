@@ -122,28 +122,30 @@
 
 <div id="margintopresul">
 
-    <h1 id="tituloeva" style="text-align: center;">Resultados</h1>
+    <h1 id="tituloeva" style="text-align: center;">Resultados de:</h1>
+    <h1 id="tituloeva" > <?php echo ($examendecurso)?></h1>
             <table id="customers" >
             <tbody id="flexresult">
-            <tr id="coldatos">
-                <th>Usuario</th>
-                <!--<th>Curso</th>-->
-                <th>Preguntas</th>
-                <th id="respcorrec">Respuestas Correctas</th>
-                <th id="respincorrec">Respuestas Incorrectas</th>
-                <th>Resultado</th> 
-                <th>Intentos</th>
-            </tr>
-            <tr id="colresultados">
-                <td><?php echo $_SESSION['NombreLargo'] ?></td>
-                <!-- <td><-?php echo mb_strtoupper($examendecurso)?></td>-->
+              <tr id="coldatos">
+                  <th>Usuario</th>
+                 <!-- <th >Curso</th> -->
+                  <th>Preguntas</th>
+                  <th id="respcorrec">Respuestas Correctas</th>
+                  <th id="respincorrec">Respuestas Incorrectas</th>
+                  <th>Resultado</th> 
+                  <th>Intentos</th>
+              </tr>
+              <tr id="colresultados">
+                  <td><?php echo $_SESSION['NombreLargo'] ?></td>
+               <!-- <td  rowspan="2"><?php echo mb_strtoupper($examendecurso)?></td> -->
 
-                <td><?php echo $numpreguntas?></td>
-                <td><?php echo ($numCorrecta/$numpreguntas)?></td>
-                <td><?php echo ($numIncorrecta/$numpreguntas)?></td>
-                <td><?php if($numCorrecta/$numpreguntas>6){echo 'APROBADO';}else{echo 'NO APROBADO';}?></td> 
-                <td><?php echo $intentost ?></td>
-            </tr>
+                  <td><?php echo $numpreguntas?></td>
+                  <td><?php echo ($numCorrecta/$numpreguntas)?></td>
+                  <td><?php echo ($numIncorrecta/$numpreguntas)?></td>
+                  <td><?php if($numCorrecta/$numpreguntas>6){echo 'APROBADO';}else{echo 'NO APROBADO';}?></td> 
+                  <td><?php echo $intentost ?></td>
+                  
+              </tr>
             </tbody>
             
             </table>
