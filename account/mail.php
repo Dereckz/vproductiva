@@ -3,14 +3,14 @@ require("../dev/conectar.php");
 
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\Exception;
-    use PHPMailer\PHPMailer\SMTP;
-    use PHPMailer\PHPMailer\POP3;
+   
 
     require 'PHPMailer/src/Exception.php';
     require 'PHPMailer/src/PHPMailer.php';
     require 'PHPMailer/src/SMTP.php';
     require 'PHPMailer/src/POP3.php';
     include "mcript.php";
+
     echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>';
 
 $correo =(($_POST["correo"]));
@@ -24,24 +24,25 @@ if($result->num_rows>0){
     $mail = new PHPMailer(true);
     try {
 
-        $mail->isSMTP();   
+        /* $mail->isSMTP();   
         
         $mail->SMTPAuth = true; // authentication enabled
         $mail->Host       = 'smtp-mail.outlook.com';                     //Set the SMTP server to send through
         $mail->Username   = 'soporte.valuacion.productiva@outlook.com';    
-        $mail->Password   = '@vproductivam24';
-        $mail->Port       = 587;  
+        $mail->Password   = '**********;
+        $mail->Port       = 587;   */
 
-        // $mail->Host='mail.desetecnologias.net';
-        //$mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for Gmail 
-        //$mail->Username   = 'contacto@desetecnologias.net';                     
-        //$mail->Password   = '@safa2017';                      
-        //$mail->Port       = 465;  
-       
+        $mail->SMTPDebug = 0;                      //Enable verbose debug output
+        $mail->isSMTP();                                            //Send using SMTP
+        $mail->Host       = 'smtp.titan.email';                     //Set the SMTP server to send through
+        $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+        $mail->Username   = 'soporte@valuacionproductiva.mx';                     //SMTP username
+        $mail->Password   = 'vproduct2424@';                               //SMTP password
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+        $mail->Port       = 465;            
 
-        //Recipients
-       $mail->setFrom('soporte.valuacion.productiva@outlook.com', 'SOPORTE');
-       //$mail->AddAddress("soporte.valuacion.productiva@outlook.com", "SOPORTE VALUACIÓN PRODUCTIVA");
+      //Recipients
+       $mail->setFrom('soporte@valuacionproductiva.mx', 'SOPORTE');
        $mail->AddAddress($correo, $nombreusuario); 
       
         //Content
@@ -70,11 +71,11 @@ if($result->num_rows>0){
           </div>
         </div>
         <div class="firma" style="text-align:center; max-width:630px; padding-top: 30px">
-          <p style="margin:0">--</p>
-          <p style="margin:0">--</p>
+          <p style="margin:0"></p>
+          <p style="margin:0"></p>
           <div style="font-family: Helvetica; color: gray;">
             <p style="margin: 10px 0">Contactanos</p>
-            <a style="color: #003272;text-decoration:none" href="http://valuacionproductiva.mx/" target="_blank">http://valuacionproductiva.mx</a>
+            <a style="color: #003272;text-decoration:none" href="https://www.valuacionproductiva.mx/" target="_blank">https://www.valuacionproductiva.mx</a>
             <p style="margin: 10px 0">.</p>
           </div>
         </div>';                               //Set email format to HTML
@@ -84,6 +85,7 @@ if($result->num_rows>0){
         $mail->AltBody = 'Aquí tienes el enlace para recuperarla.';
 
         $mail->send();
+
         echo '.';
         echo '<script>
         Swal.fire({
@@ -98,6 +100,7 @@ if($result->num_rows>0){
 
     } catch (Exception $e) {
         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        header("Location: login.html");
     }    
 
 }else{
