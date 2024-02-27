@@ -3,7 +3,8 @@ require("../dev/conectar.php");
 
 $idCurso = $_GET['curso'];
 $idUsuario = $_GET['usuario'];
-
+date_default_timezone_set('America/Mexico_City');
+$fechaActual = date("d-m-Y h:i:s");
 //Se manejaran 3 valores para saber si ya estuvo inscrito en el curso se salio y nuevamente se volvio a inscribir
 //1 inscrito, 2 salir, 3 inscrito por segunda ves.
 echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>';
@@ -38,8 +39,8 @@ if ($idIns>1 || $final==2 ){
     
 }
 else {
-    $sql = "INSERT INTO inscripcion(fkiIdUsuario, fkiIdeCurso,finalizado)
-VALUES ($idUsuario,$idCurso,1)";
+    $sql = "INSERT INTO inscripcion(fkiIdUsuario, fkiIdeCurso,cDescripcion,finalizado)
+VALUES ($idUsuario,$idCurso,$fechaActual,1)";
 
 if (mysqli_query($conn, $sql)) {
      echo ".";
