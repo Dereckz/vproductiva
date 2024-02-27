@@ -94,30 +94,38 @@ section#hero {
     width: 98%;
     margin: auto;
     padding: 30px 0;
-    align-items: center;
-    height: auto;
+    /*align-items: center; */
+    height: 20.7em;
 }
 #logopie {
-    padding: 0 20px;
-    height: auto;
+    padding: 0 90px;
+    padding-left: 2%;
 }
 #imgpie {
-    width: 90%;
+    width: 99%;
+    margin-top: 17%;
     max-width: 300px;
 }
 #footer p {
     color: white;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 16px;
+    margin-top: 0;
 }
 #texto1pie {
-    padding: 0 90px;
+    padding-left: 85px;
+    padding-right: 115px;
+    padding-top: 0;
 }
 #texto2pie {
-    padding: 0 20px;
+    padding: 0% 6%;
 }
 #terminosycon {
     color: #fff;
     text-decoration: underline;
+    font-weight: 600;
 }
 #parrafoter, #parrafodireccion {
     line-height: 1.4;
@@ -163,6 +171,7 @@ section#hero {
     }
     #header {
 		text-align: -webkit-center;
+        text-align: -moz-center;
 	}
 	.header.container-l {
 		max-width: 1550px;
@@ -196,6 +205,9 @@ section#hero {
     }
     #texto1nosotros {
         padding: 7% 6.2%;
+    }
+    #divfooter {
+        height: auto;
     }
 
 }
@@ -246,6 +258,15 @@ section#hero {
         margin-top: 8%;
         height: auto;
     }
+    #divfooter {
+        height: auto;
+    }
+    #texto2pie {
+        padding: 0;
+    }
+    #logopie {
+        padding: 0;
+    }
 
 }
 @media(max-width: 768px){
@@ -259,6 +280,7 @@ section#hero {
     }
     #imgpie {
         width: 100%;
+        margin: 0;
     }
     #izquierdacontacto {
         display: block;
@@ -308,6 +330,16 @@ section#hero {
         text-align: center;
         font-size: 250%;
     }
+    #divfooter {
+        height: auto;
+    }
+    #texto2pie {
+        padding: 0;
+    }
+    #logopie {
+        padding: 0;
+    }
+
 
 }
 @media(max-width: 580px){
@@ -330,16 +362,19 @@ section#hero {
     #divfooter {
         display: inline-block;
         text-align: center;
+        height: auto;
+        width: auto;
     }
     .pie-rs1, .pie-rs2, .pie-rs3 {
         width: 100% !important;
     }
     #texto2pie {
-        padding: 15px 20px 10px;
+        padding: 0 20px;
     }
     #imgpie {
         width: 160px;
         padding-bottom: 10px;
+        margin-top: 0;
     }
     #parrafo4bienvenida {
         padding: 1em 0.4em 0;
@@ -398,10 +433,18 @@ section#hero {
         font-size: 14px;
     }
     #footer p {
-		line-height: 150%;
+		line-height: 120%;
+        font-weight: 500;
+        font-size: 1.2em;
 	}
     #logopie {
         margin-top: 0;
+        padding: 0;
+        padding-left: 0;
+        height: auto;
+    }
+    #terminosycon {
+        font-weight: normal;
     }
 
 }
