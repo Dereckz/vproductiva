@@ -26,6 +26,14 @@ html,body, body * {
       padding-top: 120px;
       padding-bottom: 280px;
   }
+  .swal2-title {
+	font-family: 'Montserrat', sans-serif;
+	
+  }
+  .swal2-html-container{
+	font-family: 'Montserrat', sans-serif;
+	
+  }
 
   .login-register {
     height: 560px;

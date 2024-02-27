@@ -6,6 +6,16 @@
 require("../dev/conectar.php");
 date_default_timezone_set('America/Mexico_City');
 echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>';
+echo "   <style>
+.swal2-title {
+font-family: 'Montserrat', sans-serif;
+
+}
+.swal2-html-container{
+font-family: 'Montserrat', sans-serif;
+
+}
+</style>";
 $fechaActual = date("d-m-Y h:i:s");
 
 $fullname = ($_POST["fullname"]);
@@ -40,6 +50,7 @@ $tyc=$_POST["chkbxtyc"];
                 Swal.fire({
                 title: "Ya se encuentra registrado, verificalo",
                 timer: 1800,
+                confirmButtonColor: "#872362",
                 icon: "warning"
                 }).then(function() {
                     window.location = "login.html";
@@ -67,6 +78,7 @@ $tyc=$_POST["chkbxtyc"];
                                 Swal.fire({
                                 title: "No se pudo regustra el Alumno",
                                 timer: 1500,
+                                confirmButtonColor: "#872362",
                                 icon: "error"
                                 }).then(function() {
                                     window.location = "login.html";
@@ -82,6 +94,7 @@ $tyc=$_POST["chkbxtyc"];
                         Swal.fire({
                         title: "Las contraseña  no coiciden.",
                         timer: 1500,
+                        confirmButtonColor: "#872362",
                         icon: "warning"
                         }).then(function() {
                             window.location = "login.html";
@@ -96,6 +109,7 @@ $tyc=$_POST["chkbxtyc"];
                         Swal.fire({
                         title: "Ingrese su nombre para continuar.",
                         timer: 1500,
+                        confirmButtonColor: "#872362",
                         icon: "warning"
                         }).then(function() {
                             window.location = "login.html";

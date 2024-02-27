@@ -7,7 +7,16 @@ $idUsuario = $_GET['usuario'];
 //Se manejaran 3 valores para saber si ya estuvo inscrito en el curso se salio y nuevamente se volvio a inscribir
 //1 inscrito, 2 salir, 3 inscrito por segunda ves.
 echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>';
+echo "   <style>
+.swal2-title {
+font-family: 'Montserrat', sans-serif;
 
+}
+.swal2-html-container{
+font-family: 'Montserrat', sans-serif;
+
+}
+</style>";
 $consCur = mysqli_query($conn, "SELECT * FROM  inscripcion 
                                 WHERE fkiIdeCurso = ".$idCurso.
                                 " AND fkiIdUsuario =".$idUsuario);
@@ -38,10 +47,18 @@ else {
     VALUES ($idUsuario,$idCurso,1)";
 
 if (mysqli_query($conn, $sql)) {
-     echo "";
-
-     header("Location: index.php");
-     
+    echo '...';
+    echo '<script>
+        Swal.fire({
+        title: "Se inscribio correctamente al curso",
+        timer: 1500,
+        confirmButtonColor: "#872362",
+        icon: "succes"
+        }).then(function() {
+            window.location = "index.php";
+        });
+    
+    </script>'; 
     
 } else {
     
@@ -49,15 +66,18 @@ if (mysqli_query($conn, $sql)) {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
     header("Location: index.php");
 }
+/* echo '...';
 echo '<script>
-        Swal.fire({
-        title: "Inscripción realizada",
-        icon: "success"
+    Swal.fire({
+    title: "Se inscribio correctamente al curso",
+    timer: 1500,
+    confirmButtonColor: "#872362",
+    icon: "succes"
     }).then(function() {
         window.location = "index.php";
     });
-       
-    </script>';
+
+</script>';  */
 
 // echo "<script>
 // alert('Se inscribio correctamente al curso');
@@ -67,5 +87,3 @@ echo '<script>
 
 }
 
-
-?>

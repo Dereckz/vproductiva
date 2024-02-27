@@ -12,6 +12,16 @@ require("../dev/conectar.php");
     include "mcript.php";
 
     echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>';
+    echo "   <style>
+    .swal2-title {
+    font-family: 'Montserrat', sans-serif;
+    
+    }
+    .swal2-html-container{
+    font-family: 'Montserrat', sans-serif;
+    
+    }
+    </style>";
 
 $correo =(($_POST["correo"]));
 $query="SELECT * FROM usuarios where cCorreo='$correo' and iEstatus=1";
@@ -91,6 +101,7 @@ if($result->num_rows>0){
         Swal.fire({
         title: "Se envio un correo de recuperación, verifiquelo porfavor",
         timer: 1500,
+        confirmButtonColor: "#872362",
         icon: "sucess"
         }).then(function() {
             window.location = "login.html";
@@ -109,6 +120,7 @@ if($result->num_rows>0){
     Swal.fire({
     title: "No esta asociado el correo.",
     timer: 1500,
+    confirmButtonColor: "#872362",
     icon: "error"
     }).then(function() {
         window.location = "login.html";

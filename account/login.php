@@ -4,7 +4,16 @@
  $fechaActual = date("d-m-Y h:i:s");
 session_start();
 echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>';
+echo "   <style>
+.swal2-title {
+font-family: 'Montserrat', sans-serif;
 
+}
+.swal2-html-container{
+font-family: 'Montserrat', sans-serif;
+
+}
+</style>";
 require("../dev/conectar.php");
 require("../function/sesion.php");
 $nombre =$_POST["username"];
@@ -52,6 +61,7 @@ try{
                        Swal.fire({
                        title: "Hubo un error al tratar de logearse, intente mas tarde",
                        timer: 1500,
+                       confirmButtonColor: "#872362",
                        icon: "error"
                        }).then(function() {
                            window.location = "login.html";
@@ -68,6 +78,7 @@ try{
                 Swal.fire({
                 title: "Las contraseña o el usuario no son correctos, verfique.",
                 timer: 1800,
+                confirmButtonColor: "#872362",
                 icon: "warning"
                 }).then(function() {
                     window.location = "login.html";
@@ -85,6 +96,7 @@ try{
            Swal.fire({
            title: "Hubo un error al tratar de logearse, intente mas tarde",
            timer: 1500,
+           confirmButtonColor: "#872362",
            icon: "error"
            }).then(function() {
                window.location = "login.html";
@@ -97,5 +109,3 @@ try{
     header("Location: 404.html");
 }
 
- 
-?>
