@@ -178,7 +178,33 @@
                                           <a>
                                   </button>
                                   </td>
-                          <?php }else{?> 
+                          <?php
+                           $consCur = mysqli_query($conn, "SELECT * FROM  inscripcion 
+                           WHERE fkiIdeCurso = ".$idcursoseleccionado.
+                           " AND fkiIdUsuario =".$_SESSION["id"]);
+                           $idIns= mysqli_fetch_array($consCur);
+                           $numins=mysqli_num_rows($consCur);
+                                       
+                           $masDedos=$idIns["finalizado"];
+   
+
+                           date_default_timezone_set('America/Mexico_City');
+                           $fecha = date("Y-m-d");
+                           $fechafor = strval($fecha);
+
+                           if(($idIns['cDescripcion'])== null){
+                           
+                           $act = "UPDATE inscripcion SET cDescripcion = '$fechafor' WHERE iIdInscripcion =".$idIns['iIdInscripcion'];
+                               if (mysqli_query($conn, $act)) {
+                                   //echo "Se actualizo correctamente el registro";
+                               } else {
+                                   echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+                               }
+                           }
+                   
+                        
+                        
+                        }else{?> 
                             <td class=regresarCurso>
                               <button class="my-button" >
 
