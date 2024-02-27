@@ -157,17 +157,43 @@
             $detallearea = mysqli_fetch_array($dataareacurso);
            ?> 
                 <table id="regresarCurso">
-                    <tr>
+                    <!-- <tr>
                     <td class=regresarCurso>
                         <button class="my-button" >
 
-                                <a class="text-white" href="../cursos/detailcurso.php?pidc=<?php echo $idcurso?> &areacurso=<?php echo $detallearea["NombreArea"]?>&curso=<?php echo $detallearea["cNombreCurso"]?>" id="btnRegresarCurso">
+                                <a class="text-white" href="../cursos/detailcurso.php?pidc=<?php echo $idcurso?>&areacurso=<?php echo $detallearea["NombreArea"]?>&curso=<?php echo $detallearea["cNombreCurso"]?>" id="btnRegresarCurso">
                                 Regresar al curso
                                 <a>
                         </button>
-                        </td>
-                    </tr>
+                     </td>
+                     </tr> -->
+                     <tr>
+                    
+                        <?php  if($numCorrecta/$numpreguntas>6){ ?>
+                          <td class=regresarCurso>
+                                  <button class="my-button" >
+
+                                          <a class="text-white"  href="../reward/reconocimiento.php?idCurso=<?php echo $idcurso?>" id="btnRegresarCurso">
+                                        Descargar Constancia
+                                          <a>
+                                  </button>
+                                  </td>
+                          <?php }else{?> 
+                            <td class=regresarCurso>
+                              <button class="my-button" >
+
+                                      <a class="text-white" href="../cursos/detailcurso.php?pidc=<?php echo $idcurso?>&areacurso=<?php echo $detallearea["NombreArea"]?>&curso=<?php echo $detallearea["cNombreCurso"]?>" id="btnRegresarCurso">
+                                      Regresar al curso
+                                      <a>
+                              </button>
+                           </td>
+                            <?php }?> 
+                   
+                  </tr>  
+
+                  
                 </table>
+               
 </div>
     <!-- Start Footer -->
 
