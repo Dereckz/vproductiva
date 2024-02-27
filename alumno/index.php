@@ -30,8 +30,8 @@
     height: 2em;
     background-color: #00b0ff;
     -webkit-border-radius:5px;
-    /*-webkit-box-shadow:0px 3px 0px #1a71a9;*/
-    margin-left: 37%;
+    /*-webkit-box-shadow:0px 3px 0px #1a71a9;
+    margin-left: 37%;*/
   }
 
   input#file1{
@@ -374,9 +374,9 @@ font-weight: 550;
 	.u-section-2 .u-icon-4 {
 	  margin-left: 0;
 	}
-  div#div_file {
+  /*div#div_file {
     margin-left: 25%;
-  }
+  }*/
 }
 
 @media (max-width: 767px) {

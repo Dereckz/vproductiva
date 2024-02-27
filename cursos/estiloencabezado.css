@@ -193,7 +193,7 @@ h4{
 .constancia{
     border-radius: 5em;
 	height: 3em;
-	text-align: center;
+	/*text-align: center;*/
 }
 
 #texconstancia{
@@ -204,6 +204,7 @@ h4{
     background-color: #1CC4EA;
     padding: 2% 8%;
     border-radius: 2em;
+	margin-left: 1em;
 }
 #texconstancia2{
 	color: #ffffff;
@@ -213,7 +214,8 @@ h4{
     background-color: #2E49C1;
     padding: 2% 8%;
     border-radius: 2em;
-	}
+	margin-left: 1em;
+}
 
 .notacurso{
 	text-align: center;
@@ -332,6 +334,21 @@ h4{
     color: white;
     /*padding-left: 100px;*/
     }
+
+@media(min-width: 1500px){
+
+
+	#texto1pie {
+		width: 25%;
+	}
+	#texto2pie {
+		width: 22%;
+	}
+	#logopie {
+		padding-left: 7%;
+	}
+	
+}
 
 @media(min-width: 2000px){
 	body{

@@ -131,7 +131,7 @@ h2{
 	height: 13em;
 }
 #logopie{
-	/*width: 20%;*/
+	width: 20%;
     padding: 2% 3%;
 }
 #imglogopie{
@@ -203,6 +203,10 @@ h2{
 }
 #services .services {
 	margin-top: 0;
+}
+
+#divguardarfoto{
+	text-align: -webkit-center;
 }
 
 
@@ -432,6 +436,7 @@ h2{
 	#divfooter {
 		display: flex;
 		height: 15em;
+		text-align: left;
 	}
 }
 
