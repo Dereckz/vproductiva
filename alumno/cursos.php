@@ -246,6 +246,14 @@
   margin: 15px auto 0 0;
   padding: 14px 46px 16px 44px;
 }
+
+
+@media(min-width: 1800px){ 
+  .u-section-2 {
+    min-height: 1250px;
+  }
+}
+
 @media (max-width: 1199px) {
   .u-section-2 .u-text-1 {
     margin-right: 205px;
@@ -309,6 +317,7 @@
     min-height: 302px;
   }
 }
+
 @media (max-width: 767px) {
   .u-section-2 .u-text-4 {
     margin-right: 0;
