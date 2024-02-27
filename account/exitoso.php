@@ -40,39 +40,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Register Form</title>
+    <script type="text/javascript" src="script.js"></script>
     <link href="../img/LOGOVP.ico" rel="icon">
     <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="../styles/stylemenu.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="account.css">
 </head>
 <body onload="deshabilitaRetroceso()" style="background-image: url(fondoexitoso.png);
     ">
-    <!-- Header -->
+  <!-- Header -->
   <section id="header">
-    <link rel="stylesheet" href="style.css">
-    <div class="header containerh">
+    <div class="header container-l">
       <div class="nav-bar">
-        <div class="brand" style="background-color: transparent;">
+        <div class="brand">
           <a href="../index.html">
-           <img src="logo.png" id="logoinicio" alt="VProductiva Logo">
-           <!-- <h1>Valuación Productiva</h1>-->
+
+            <img src="logob.png" id="logoinicio" alt="VProductiva Logo">
+            <!-- <h1>Valuación Productiva</h1>-->
           </a>
         </div>
-        <div class="nav-list">
-          <div class="hamburger">
-            <div class="bar"></div>
-          </div>
-          <ul>
-            <li><a href="../index.html" data-after="Home">Inicio</a></li>
-           <!-- <li><a href="#services" data-after="Service">Servicios</a></li>-->
-            <li><a href="../index.html#projects" data-after="Projects">Cursos</a></li>
-            <li><a href="../index.html#about" data-after="About">Nosotros</a></li>
-            <li><a href="../index.html#contact" data-after="Contact">Contacto</a></li>
+        <div class="navbar" class="nav-list">
+          <div class="menu-toggle">&#9776;</div>
+          <ul class="menu">
+            <li  class="fondoinicio"><a href="../index.html" data-after="Home" class="headermenu" >INICIO</a></li>
+
+            <!-- <li><a href="#services" data-after="Service">Servicios</a></li>-->
+            <li class="fondoinicio"><a href="../indexcursos.html" data-after="Projects" class="headermenu">CURSOS</a></li>
+            <li><a href="../indexacerca.html" data-after="About" class="headermenu">NOSOTROS</a></li>
+            <li class="fondoinicio"><a href="../indexcontacto.html" data-after="Contact" class="headermenu">CONTACTO</a></li>
             <!--<li><a href="account/register.html" data-after="Login">Login</a></li> -->
-            <li><a href="login.html" data-after="Login">Ingresar</a></li>
+            <li  id="fondoinicio" class="fondoinicio"><a href="login.html" data-after="Login" class="headermenu" id="menuingresar" style="color: white;">INGRESAR</a></li>
           </ul>
         </div>
       </div>
     </div>
   </section>
+  <script src="../styles/menu.js"></script>
   <!-- End Header -->
 
    <!-- Formulario -->
@@ -127,5 +131,27 @@
 <!-- End formulario -->
 
     
+<!-- Start Footer -->
+<section id="footer">
+    <div id="divfooter">
+      <div id="logopie" class="pie-rs1">
+        <img src="logob2.png" id="imgpie">
+      </div>
+      <div id="texto1pie" class="pie-rs2">
+        <p id="parrafodireccion" class="parrafosfooter">Dirección: Av. Paseo de las Palmas 830, Int. 102-1.
+          Lomas de Chapultepec V Sección. Miguel Hidalgo.
+        Ciudad de México. C.P. 11000. México.</p>
+        <p class="parrafosfooter">Teléfono: 55-104-680-95</p>
+        <p class="parrafosfooter">Correo electrónico: valuacionproductiva9@gmail.com</p>
+      </div>
+      <div id="texto2pie" class="pie-rs1">
+        <p class="parrafosfooter"><a href="../indexterminos.html" class="parrafosfooter" id="terminosycon">Terminos y Condiciones</a></p>
+        <p id="parrafoter" class="parrafosfooter">© 2024 VALUACIÓN PRODUCTIVA Y
+        COMPETITIVA EN MATERIA LABORAL A.C.</p>
+      </div>
+    </div>
+  </section> 
+  <!-- End Footer  -->
+
 </body>
 </html>
