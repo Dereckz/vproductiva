@@ -846,6 +846,16 @@ section#hero {
     #logopie {
         padding: 0;
     }
+	#divfooter {
+		height: 21em;
+	}
+	#imgpie {
+        margin-top: 0;
+    }
+	#texto1pie {
+		padding-right: 4%;
+		padding-left: 0;
+	}
 
 }
 @media(max-width: 768px){
