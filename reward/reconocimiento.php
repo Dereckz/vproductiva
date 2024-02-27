@@ -4,7 +4,7 @@ include "../panel/func/profile.php";
 require("../dev/conectar.php");
 
 date_default_timezone_set('America/Mexico_City');
-
+$fechaActual = date("d-m-Y h:i:s");
 header("Content-Type: text/html; charset=iso-8859-1 ");
 
 if (!isset($_SESSION)) {
@@ -59,7 +59,7 @@ $pdf->Cell(160,15,html_entity_decode($infocurso["cNombreCurso"]),0,0,'C');
 $pdf->SetFont('Times','I',15);
 $pdf->SetY(154);
 $pdf->SetX(130);
-$pdf->Cell(50,15,mb_convert_encoding(date("d/m/Y",strtotime($fecha['cDescripcion'])), 'UTF-8', mb_list_encodings()),0,0,'C');
+$pdf->Cell(50,15,mb_convert_encoding(date("d/m/Y",strtotime($fechaActual)), 'UTF-8', mb_list_encodings()),0,0,'C');
 
 
 $downloaded=iconv('UTF-8', 'windows-1252', str_replace(" ", "_",$consulta['cNombreLargo']).'_'.$infocurso["cNombreCurso"]).'_'.date("d_m_Y");

@@ -260,13 +260,22 @@ section#hero {
         height: auto;
     }
     #divfooter {
-        height: auto;
+        height: 22em;
     }
     #texto2pie {
         padding: 0;
+        padding-left: 3%;
     }
     #logopie {
         padding: 0;
+    }
+    #texto1pie {
+        padding-left: 3%;
+        padding-right: 0;
+        padding-top: 0;
+    }
+    #imgpie {
+        margin-top: 0;
     }
 
 }
