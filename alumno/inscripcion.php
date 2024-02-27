@@ -39,8 +39,8 @@ if ($idIns>1 || $final==2 ){
     
 }
 else {
-    $sql = "INSERT INTO inscripcion(fkiIdUsuario, fkiIdeCurso,cDescripcion,finalizado)
-VALUES ($idUsuario,$idCurso,'$fechaActual',1)";
+    $sql = "INSERT INTO inscripcion(fkiIdUsuario, fkiIdeCurso,finalizado)
+VALUES ($idUsuario,$idCurso,1)";
 
 if (mysqli_query($conn, $sql)) {
      echo ".";
