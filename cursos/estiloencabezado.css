@@ -275,7 +275,9 @@ h4{
 
 #footer{
 	background-color: #872362;
-	
+}
+#footerev{
+	background-color: #872362;
 }
 #divfooter{
 	display: flex;
@@ -347,7 +349,23 @@ h4{
 	#logopie {
 		padding-left: 7%;
 	}
+	.classtexto1pie{
+		width: 55% !important;
+	}
+	.classtexto2pie{
+		width: 32% !important;
+	}
 	
+}
+
+@media(min-width: 1800px){ 
+	.u-section-2 {
+	  min-height: 1250px;
+	  text-align: left;
+	}
+	#divfooter {
+		text-align: left;
+	}
 }
 
 @media(min-width: 2000px){
@@ -357,18 +375,27 @@ h4{
 	html{
 		text-align: -webkit-center;
 	}
+	#zoomleft{
+		text-align: left;
+		min-height: 1250px;
+	}
+
+}
+
+@media(min-width: 2200px){
 	#footer {
         position: absolute;
-        bottom: 0;
+		bottom: 0;
+    }
+	#footerev{
+        position: absolute;
     }
 	#divfooter {
 		max-width: 1550px;
 		text-align: left;
 	}
-	#zoomleft{
-		text-align: left;
-	}
 }
+
 
 @media (max-width: 900px) {
 	.menusvacio {
@@ -406,6 +433,12 @@ h4{
 		width: 60%;
 		padding-left: 0;
 		padding-right: 0;
+	}
+	#tituloeva {
+		font-size: 1.6em;
+	}
+	.my-button {
+		width: max-content;
 	}
 	
 }
@@ -467,7 +500,16 @@ h4{
 	#footer{
 		margin-top: 2.5em;
 	}
+	#footerev{
+		margin-top: 2.5em;
+	}
 	#footer p {
+		font-size: 65%;
+		margin-bottom: 3.3%;
+		line-height: 120%;		
+		font-weight: 400;
+	}
+	#footerev p {
 		font-size: 65%;
 		margin-bottom: 3.3%;
 		line-height: 120%;		
@@ -482,6 +524,9 @@ h4{
 		height: 10em;
 	}
 	#footer{
+	    width: auto;
+    }
+	#footerev{
 	    width: auto;
     }
 	/*end footer*/
@@ -568,6 +613,9 @@ h4{
 	#coldatos th {
 		padding-top: 16px;
 		height: 2em;
+	}
+	#tituloeva {
+		font-size: 1.3em;
 	}
 	
 }

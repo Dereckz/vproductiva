@@ -342,19 +342,19 @@
 
 
         <!-- Start Footer -->
-  <section id="footer">
+  <section id="footerev">
     <div id="divfooter">
       <div id="logopie">
         <img src="../img/logob2.png" id="imglogopie">
       </div>
-      <div id="texto1pie">
+      <div id="texto1pie" class="classtexto1pie">
         <p id="parrafodireccion" class="parrafosfooter">Dirección: Av. Paseo de las Palmas 830, Int. 102-1.
           Lomas de Chapultepec V Sección. Miguel Hidalgo.
           Ciudad de México. C.P. 11000. México.</p>
           <p class="parrafosfooter">Teléfono: 55-104-680-95</p>
           <p class="parrafosfooter">Correo electrónico: valuacionproductiva9@gmail.com</p>
       </div>
-      <div id="texto2pie">
+      <div id="texto2pie" class="classtexto2pie">
         <p class="parrafosfooter"><a href="../alumno/indexterminos.html" class="parrafosfooter" id="terminosycon">Terminos y Condiciones</a></p>
           <p id="parrafoter" class="parrafosfooter">© 2024 VALUACIÓN PRODUCTIVA Y
             COMPETITIVA EN MATERIA LABORAL A.C.</p>

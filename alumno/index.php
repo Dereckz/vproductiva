@@ -307,6 +307,12 @@ font-weight: 550;
   margin-left: 4em;
 }
 
+@media(min-width: 1800px){ 
+  .u-section-2 {
+    min-height: 1950px;
+  }
+}
+
 @media (max-width: 1199px) {
   .u-section-2 .u-text-1 {
     margin-right: 205px;

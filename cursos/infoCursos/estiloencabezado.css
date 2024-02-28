@@ -332,6 +332,18 @@ text-decoration: none;
 
 /*end footer*/
 
+@media(min-width: 1800px){ 
+	.u-section-2 {
+	  min-height: 1250px;
+	}
+}
+/*
+@media(min-width: 1900px){ 
+	.u-section-2 {
+	  min-height: 1450px;
+	}
+}*/
+
 @media(min-width: 2000px){
 	body{
 		max-width: 1550px;
@@ -339,15 +351,20 @@ text-decoration: none;
 	html{
 		text-align: -webkit-center;
 	}
+	#fondotemario{
+		text-align: left;
+	}
+	.u-section-2 {
+		min-height: 1550px;
+	  }
+}
+@media(min-width: 2200px){
 	#footer {
         position: absolute;
         bottom: 0;
     }
 	#divfooter {
 		max-width: 1550px;
-		text-align: left;
-	}
-	#fondotemario{
 		text-align: left;
 	}
 }
