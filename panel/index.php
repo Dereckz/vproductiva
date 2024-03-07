@@ -27,9 +27,9 @@
 </style>
 <script src="sweetalert2.all.min.js"></script>
 <script src="sweetalert2.min.js"></script>
+
 <link rel="stylesheet" href="sweetalert2.min.css">
 
-  
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
   <?php include 'topbar.php' ?>
@@ -104,7 +104,7 @@
                 <div class="col-md-12 p-2">
          
                 <div class="table-responsive">
-                    <table class="table table-bordered table-striped table-hover">
+                    <table id="users" class="table table-bordered table-striped table-hover">
                       <thead>
                         <tr>
                           <th scope="col">Nombre</th>

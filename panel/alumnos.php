@@ -21,6 +21,7 @@ th, td {
     word-wrap: break-word;
 }
 </style>
+
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
   <?php include 'topbar.php' ?>
@@ -54,7 +55,10 @@ th, td {
   <?php
   require("../dev/conectar.php");
 
-    $sqlCliente   = ("SELECT * FROM usuarios where usuarios.fkidTipoUsuario=3; ");
+    $sqlCliente   = ("SELECT * FROM usuarios u
+                      INNER JOIN empresa e on
+                      u.fkidempresa=e.idempresa
+                      where u.fkidTipoUsuario=3; ");
     $queryCliente = mysqli_query($conn, $sqlCliente);
     $cantidad     = mysqli_num_rows($queryCliente);
     ?>
@@ -77,15 +81,23 @@ th, td {
             Agregar Nuevo
           </button>
           </div>
-         
+          <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet"/>
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+          <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+          <script>
+          $(document).ready(function() {
+              $('#users').DataTable();
+          } );
+    </script>
           <div class="row">
                 <div class="table-responsive">
-                    <table class="table table-bordered table-striped table-hover">
+                    <table id="users" class="display" style="width:100%" >
                       <thead>
                         <tr>
                           <th scope="col">Nombre</th>
                           <th scope="col">Email</th>
                           <th scope="col">Estatus</th>
+                          <th scope="col">Empresas</th>
                           <th scope="col">Acción</th>
                           <th scope="col">Tiempo de Conexión</th>
                           <th scope="col">Ultima de Conexión</th>
@@ -104,7 +116,10 @@ th, td {
                             <?php }?> 
                             <?php if($dataCliente['iEstatus']==0) {?> 
                               <td><span  class="badge badge-danger"><a class="text-white" href="func/updatestatus.php?id='<?php echo $dataCliente['iIdUsuario']; ?>'&status=0">Inactivo</a></span></td> 
-                            <?php }?> 
+                            <?php }?>
+                           <td>
+                           <?php echo $dataCliente['nombre']; ?>
+                           </td>  
                             <td>
                           <!--    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteChildresn<?php echo $dataCliente['iIdUsuario']; ?>">
                                 Eliminar

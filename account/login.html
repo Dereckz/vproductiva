@@ -81,8 +81,18 @@
                   <label for="confirmpassword">Confirmar contraseña</label>
                   <input type="password" id="confirmpassword" name="confirmpassword" 
                         pattern="^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{8,16}$">
-                        
-
+                    <label for="cars">Seleccione su empresa asociada:</label> 
+                  
+                    <select name="cars" id="cars">
+                    <?php
+                      $query = $mysqli -> query ("SELECT * FROM empresas where iestatus=1");
+                      while ($valores = mysqli_fetch_array($query)) {?>
+                        <option value= <?php echo $valores['idempresa']?>> <?php echo $valores['nombre']?></option>
+                      
+                      <?php
+                      }
+                      ?>
+                    </select>
                         <li id="checkterminos" style="list-style: none;">
                           <input id="chkbxtyc" type="checkbox" required>
                           <label for="c1"><a href="../indexterminos.html">Aceptar Términos y Condiciones</a> </label>
