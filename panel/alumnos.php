@@ -6,6 +6,9 @@
 <link href="../img/LOGOVP.ico" rel="icon">
 <?php session_start() ?>
 <?php 
+
+  require("../dev/conectar.php");
+
 	if(!isset($_SESSION['id']))
   header('location:../account/login.php');
 	include 'header.php' 
@@ -53,7 +56,7 @@ th, td {
   <?php include 'func/cursosa.php';?>
   <?php include 'func/surveyset.php';?>
   <?php
-  require("../dev/conectar.php");
+  
 
     $sqlCliente   = ("SELECT * FROM usuarios u
                       INNER JOIN empresa e on
@@ -61,6 +64,7 @@ th, td {
                       where u.fkidTipoUsuario=3; ");
     $queryCliente = mysqli_query($conn, $sqlCliente);
     $cantidad     = mysqli_num_rows($queryCliente);
+    $usuariosal= array();
     ?>
 
     <div class="container-fluid" id="container-wrapper">
@@ -94,7 +98,7 @@ th, td {
                           <th scope="col">Email</th>
                           <th scope="col">Estatus</th>
                           <th scope="col">Empresas</th>
-                          <th scope="col">Acción</th>
+                          <!-- <th scope="col">Acción</th> -->
                           <th scope="col">Tiempo de Conexión</th>
                           <th scope="col">Ultima de Conexión</th>
                         </tr>
@@ -102,6 +106,8 @@ th, td {
                       <tbody>
                         <?php
                         while ($dataCliente = mysqli_fetch_array($queryCliente)) { ?>
+                        <?php $usuariosal[]=$dataCliente?>
+                      
                           <tr>
 
                             <td><?php echo strtoupper($dataCliente['cNombreLargo']); ?></td>
@@ -117,19 +123,18 @@ th, td {
                            <?php echo $dataCliente['nombre']; ?>
                            </td>  
                             <td>
-                          <!--    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteChildresn<?php echo $dataCliente['iIdUsuario']; ?>">
+                            <!--  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteChildresn<?php echo $dataCliente['iIdUsuario']; ?>">
                                 Eliminar
-                              </button> -->
+                              </button>  -->
                               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editChildresn<?php echo $dataCliente['iIdUsuario']; ?>">
                                 Modificar
-                              </button>
-                              <button type="button" class="btn btn-warning" data-toggle="modal"  data-target="#cursomodal<?php echo $dataCliente['iIdUsuario']; ?>">
+                              </button> 
+                           <button type="button" class="btn btn-warning" data-toggle="modal"  data-target="#cursomodal<?php echo $dataCliente['iIdUsuario']; ?>">
                                 Agregar Curso
-                              </button>
+                              </button> 
                               
-                            </td>
-                          
-                            <?php 
+                       </td> 
+                        <?php 
                             $sqlacceso   = ("SELECT * FROM accesos where idUsuario=".$dataCliente['iIdUsuario']." ORDER BY dFechaAcceso DESC LIMIT 1;");
                             $queryacceso = mysqli_query($conn, $sqlacceso);
                             while ($dataacceso = mysqli_fetch_array($queryacceso)) {
@@ -153,8 +158,6 @@ th, td {
                               <!--Ventana Modal para Agregar Curso--->
                               <?php include('ModalCurso.php'); ?>
 
-                         
-
                         <?php } ?>
 
                     </table>
@@ -165,11 +168,12 @@ th, td {
             
                   
           <input type="button" name="imprimir" value="Imprimir P&aacute;gina" onclick="window.print();">
-          <form method="POST" action="excel.php">
-          <input type="button" name="Exportar" value="Exportar">
-          </form>
+       
+          
+           <button onclick="exportTableToExcel('users', 'Reporte_Usuarios_Alumnos')">Export to excel</button>
          
-            </div>
+         
+        </div>
           
 
           <!-- Modal Logout -->
@@ -311,6 +315,39 @@ th, td {
 
 
       });
+    </script>
+
+    <script>
+    function exportTableToExcel(tableID, filename = ''){
+    var downloadLink;
+    var dataType = 'application/vnd.ms-excel';
+    var tableSelect = document.getElementById(tableID);
+    var tableHTML = tableSelect.outerHTML.replace(/ /g, '%20');
+    
+    // Specify file name
+    filename = filename?filename+'.xls':'excel_data.xls';
+    
+    // Create download link element
+    downloadLink = document.createElement("a");
+    
+    document.body.appendChild(downloadLink);
+    
+    if(navigator.msSaveOrOpenBlob){
+        var blob = new Blob(['ufeff', tableHTML], {
+            type: dataType
+        });
+        navigator.msSaveOrOpenBlob( blob, filename);
+    }else{
+        // Create a link to the file
+        downloadLink.href = 'data:' + dataType + ', ' + tableHTML;
+    
+        // Setting the file name
+        downloadLink.download = filename;
+        
+        //triggering the function
+        downloadLink.click();
+    }
+}
     </script>
 
 <!-- Bootstrap -->
