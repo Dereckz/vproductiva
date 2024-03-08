@@ -1,111 +1,183 @@
-<?php
- date_default_timezone_set('America/Mexico_City');
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar sesión</title>
+    <script type="text/javascript" src="script.js"></script>
+    <link href="../img/LOGOVP.ico" rel="icon">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="../styles/stylemenu.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="account.css">
  
- $fechaActual = date("d-m-Y h:i:s");
-session_start();
-echo '<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>';
-echo "   <style>
-.swal2-title {
-font-family: 'Montserrat', sans-serif;
+</head>
+<body onLoad="myOnLoad()">
+  <!-- Header -->
+  <section id="header">
+    <div class="header container-l">
+      <div class="nav-bar">
+        <div class="brand">
+          <a href="../index.html">
 
-}
-.swal2-html-container{
-font-family: 'Montserrat', sans-serif;
+            <img src="logob.png" id="logoinicio" alt="VProductiva Logo">
+            <!-- <h1>Valuación Productiva</h1>-->
+          </a>
+        </div>
+        <div class="navbar" class="nav-list">
+          <div class="menu-toggle">&#9776;</div>
+          <ul class="menu">
+            <li  class="fondoinicio"><a href="../index.html" data-after="Home" class="headermenu" >INICIO</a></li>
 
-}
-</style>";
-require("../dev/conectar.php");
-require("../function/sesion.php");
-$nombre =$_POST["username"];
-$pass = $_POST["password"];
-try{
-    if ($stmt = $conn->prepare("SELECT iIdUsuario, cUsuario, cPassword, cNombre, cApellidoP, cnombrelargo, fkidTipoUsuario,iGenero, cProfile FROM usuarios WHERE cUsuario= ? LIMIT 1")) {
+            <!-- <li><a href="#services" data-after="Service">Servicios</a></li>-->
+            <li class="fondoinicio"><a href="../indexcursos.html" data-after="Projects" class="headermenu">CURSOS</a></li>
+            <li><a href="../indexacerca.html" data-after="About" class="headermenu">NOSOTROS</a></li>
+            <li class="fondoinicio"><a href="../indexcontacto.html" data-after="Contact" class="headermenu">CONTACTO</a></li>
+            <!--<li><a href="account/register.html" data-after="Login">Login</a></li> -->
+            <li  id="fondoinicio" class="fondoinicio"><a href="login.html" data-after="Login" class="headermenu" id="menuingresar" style="color: white;">INGRESAR</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="../styles/menu.js"></script>
+  <!-- End Header -->
 
-        $stmt->bind_Param("s", $nombre);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        $fila = $result->fetch_assoc();
-        if ($fila && password_verify($pass, $fila['cPassword'])) {
+   <!-- Formulario -->
+  <section id="hero">
+
+ 
+    <div class="container">
+      <div id="main-container">
+
+  
+        <div class="login-register" id="login-register">
+            <div class="nav-buttons">
+                <button id="loginBtn" class='active' >Iniciar sesión </button>
+                <button id="registerBtn" >Registrarse</button>
+            </div>
+            <div class="form-group">
+
+                <form method="post" action="loginp.php" id="loginform">
+                    <label for="username">Correo Electrónico</label>
+                    <input type="text" id="username" name="username" required>
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" name="password" required>
+                    <input type="submit" value="Iniciar sesión" class="submit">
+                </form>
+                <form method="post" action="daralta.php" id="registerform">
+                  <label for="fullname">Nombre </label>
+                  <input type="text" id="fullname" name="fullname">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email">
+                  <label for="password">Contraseña</label>
+                  <input type="password" id="password" name="password" 
+                        pattern="^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{8,16}$" 
+                        onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Debe contener entre 8 y 16 caracteres:(Dígitos,Mayusculas,  Minúsculas y simbolos)':'');
+                        if(this.checkValidity()) form.confirm_password.pattern=this.value; ">
+                  <label for="confirmpassword">Confirmar contraseña</label>
+                  <input type="password" id="confirmpassword" name="confirmpassword" 
+                        pattern="^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{8,16}$">
+                  
+                  
+                    <select name="empresa" id="empresa">
+                      <option>Seleccione una Empresa...</option>
+                      <?php
+                      $query = $mysqli -> query ("SELECT * FROM empresa");
+                      while ($valores = mysqli_fetch_array($query)) {
+                        echo '<option value="'.$valores['id'].'">'.$valores['nombre'].'</option>';
+                      }
+                    ?>
+                    </select>
+                        <li id="checkterminos" style="list-style: none;">
+                          <input id="chkbxtyc" type="checkbox" required>
+                          <label for="c1"><a href="../indexterminos.html">Aceptar Términos y Condiciones</a> </label>
+                        </li>
+                       
+                        
+                  <!-- <label for="codigomaestro">Matricula</label>
+                  <input type="text" id="codigomaestro" name ="codigomaestro"> -->
    
-           $_SESSION["id"] =$fila["iIdUsuario"];
-           $_SESSION["usuario"] = $fila["cUsuario"];
-           $_SESSION["Tipo"]=$fila["fkidTipoUsuario"];
-           $_SESSION["Nombre"]=$fila['cNombre'];
-           $_SESSION["ApellidoP"]=$fila['cApellidoP'];
-           $_SESSION["NombreLargo"]=$fila["cnombrelargo"];
-           $_SESSION["iGenero"]=$fila["iGenero"];
-           $_SESSION["img"]=$fila["cProfile"];
-           $_SESSION['tiempo']=time();
-           $_SESSION['acceso']=$fechaActual;
-           $_SESSION[ 'last_activity' ]= time();
-          
-           $tipo=$fila['fkidTipoUsuario'];
-           
-           
-   
-           if ($fila['fkidTipoUsuario']==1){
-            
-                 header("Location:../panel/index.php");
-               
-           }else if ($fila['fkidTipoUsuario']==2){
-               
-            header("Location: ../instructor/index.php");
-   
-           }else  if ($fila['fkidTipoUsuario']==3){
-           
-             acceso($fila["iIdUsuario"]);         
-           } else{
-            //echo "<script> alert('Hubo un error al tratar de logearse, intente mas tard!');window.location= '../account/login.html' </script>";
-               echo '.';
-                   echo '<script>
-                       Swal.fire({
-                       title: "Hubo un error al tratar de logearse, intente mas tarde",
-                       timer: 1500,
-                       confirmButtonColor: "#872362",
-                       icon: "error"
-                       }).then(function() {
-                           window.location = "login.html";
-                       });
                    
-                   </script>'; 
-           }        
-        } else {
-          //header("Location: login.html");
-          //echo 'La contraseña no es válida!' ;
-          //echo "<script> alert('La contraseña no es válida!');window.location= '../account/login.html' </script>";
-             echo '.';
-            echo '<script>
-                Swal.fire({
-                title: "Las contraseña o el usuario no son correctos, verfique.",
-                timer: 1800,
-                confirmButtonColor: "#872362",
-                icon: "warning"
-                }).then(function() {
-                    window.location = "login.html";
-                });
-            
-            </script>'; 
-             
-        }
-   
-    } else {
-       // echo "<script> alert('Error al logarse');window.location= '../index.html' </script>";
-       //header("Location:  ../index.html");
-       echo '.';
-       echo '<script>
-           Swal.fire({
-           title: "Hubo un error al tratar de logearse, intente mas tarde",
-           timer: 1500,
-           confirmButtonColor: "#872362",
-           icon: "error"
-           }).then(function() {
-               window.location = "login.html";
-           });
-       
-       </script>';
-   }
-}catch (Exception $e) {
-    //echo 'Excepción capturada: ',  $e->getMessage(), "\n";
-    header("Location: 404.html");
-}
+                  <input type="submit" value="Registrar" class="submit">
+                  
+              </form>
+              <div id="forgot">
+                <a href="forgot.php" >¿Olvidaste tu contraseña?</a>
+            </div>
+        </div>
+      </div>
+    </div>
+</section>
+<!-- Start Footer -->
+   <section id="footer">
+    <div id="divfooter">
+      <div id="logopie" class="pie-rs1">
+        <img src="logob2.png" id="imgpie">
+      </div>
+      <div id="texto1pie" class="pie-rs2">
+        <p id="parrafodireccion" class="parrafosfooter">Dirección: Av. Paseo de las Palmas 830, Int. 102-1.
+          Lomas de Chapultepec V Sección. Miguel Hidalgo.
+        Ciudad de México. C.P. 11000. México.</p>
+        <p class="parrafosfooter">Teléfono: 55-104-680-95</p>
+        <p class="parrafosfooter">Correo electrónico: valuacionproductiva9@gmail.com</p>
+      </div>
+      <div id="texto2pie" class="pie-rs1">
+        <p class="parrafosfooter"><a href="../indexterminos.html" class="parrafosfooter" id="terminosycon">Terminos y Condiciones</a></p>
+        <p id="parrafoter" class="parrafosfooter">© 2024 VALUACIÓN PRODUCTIVA Y
+        COMPETITIVA EN MATERIA LABORAL A.C.</p>
+      </div>
+    </div>
+  </section> 
+  <!-- End Footer  -->
 
+
+<!-- End formulario -->
+ 
+
+
+    <?php  echo "
+    <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+    </script>
+
+     <script src='jquery.js'></script>
+     <script src'password.js'></script>
+    <script type='text/javascript'>
+      
+        var loginBtn = document.getElementById('loginBtn');
+        var registerBtn = document.getElementById('registerBtn');
+        var loginform = document.getElementById('loginform');
+        var registerform = document.getElementById('registerform');
+        var loginregister = document.getElementById('login-register');
+      
+        registerBtn.onclick= function() {
+            registerform.style.left='0px';
+            registerform.style.opacity='1';
+            loginform.style.left='-500px';
+            loginform.style.opacity='0';
+            forgot.style.left='-500px';
+            forgot.style.opacity='0';
+            registerBtn.classList.add('active');
+            loginBtn.classList.remove('active');
+            loginregister.style.backgroundColor='#2E49C1';
+
+        }
+
+        loginBtn.onclick= function() {
+            loginform.style.left='0px';
+            loginform.style.opacity='1';
+            forgot.style.left='0px';
+            forgot.style.opacity='1';
+            registerform.style='500px';
+            loginBtn.classList.add('active');
+            registerBtn.classList.remove('active');
+            registerform.style.opacity='0';            
+            loginregister.style.backgroundColor='#872362';
+        }
+
+    </script>"?>
+</body>
+</html>

@@ -16,8 +16,7 @@
    php_value session.save_path "/var/cpanel/php/sessions/ea-php82"
    php_value upload_max_filesize 512M
    php_flag zlib.output_compression On
-   AddHandler fcgid-script .html
-   FcgidWrapper "/dh/cgi-system/php82.cgi" .html
+  
 </IfModule>
 <IfModule lsapi_module>
    php_flag display_errors On
