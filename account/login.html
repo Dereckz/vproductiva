@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="account.css">
  
 </head>
-<body>
+<body onLoad="myOnLoad()">
   <!-- Header -->
   <section id="header">
     <div class="header container-l">
@@ -61,7 +61,7 @@
             </div>
             <div class="form-group">
 
-                <form method="post" action="login.php" id="loginform">
+                <form method="post" action="loginp.php" id="loginform">
                     <label for="username">Correo Electrónico</label>
                     <input type="text" id="username" name="username" required>
                     <label for="password">Contraseña</label>
@@ -81,17 +81,10 @@
                   <label for="confirmpassword">Confirmar contraseña</label>
                   <input type="password" id="confirmpassword" name="confirmpassword" 
                         pattern="^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{8,16}$">
-                    <label for="cars">Seleccione su empresa asociada:</label> 
                   
-                    <select name="cars" id="cars">
-                    <?php
-                      $query = $mysqli -> query ("SELECT * FROM empresas where iestatus=1");
-                      while ($valores = mysqli_fetch_array($query)) {?>
-                        <option value= <?php echo $valores['idempresa']?>> <?php echo $valores['nombre']?></option>
-                      
-                      <?php
-                      }
-                      ?>
+                  
+                    <select name="empresa" id="cars">
+                      <option>Seleccione una Empresa...</option>
                     </select>
                         <li id="checkterminos" style="list-style: none;">
                           <input id="chkbxtyc" type="checkbox" required>
@@ -141,13 +134,14 @@
   <script src="jquery.js"></script>
 	<script src="password.js"></script>
 
-    <script >
+
+    <script type='text/javascript'>
       
-        var loginBtn = document.getElementById("loginBtn");
-        var registerBtn = document.getElementById("registerBtn");
-        var loginform = document.getElementById("loginform");
-        var registerform = document.getElementById("registerform");
-        var loginregister = document.getElementById("login-register");
+        var loginBtn = document.getElementById('loginBtn');
+        var registerBtn = document.getElementById('registerBtn');
+        var loginform = document.getElementById('loginform');
+        var registerform = document.getElementById('registerform');
+        var loginregister = document.getElementById('login-register');
       
         registerBtn.onclick= function() {
             registerform.style.left='0px';
@@ -175,7 +169,36 @@
         }
 
         
-        
+         //Codigo a Ejecutar al Cargar la Pagina
+          function myOnLoad() {
+          cargar_provincias()
+          }
+
+          // funcion para Cargar Provincias al campo <select>
+          function cargar_provincias() {
+            $<post('include "db_connect.php";');
+            $.post('<?php echo $query = $mysqli -> query ("SELECT * FROM empresas"); ?>' );
+            $.post('while ($valores = mysqli_fetch_array($query)) {')
+            var array = [$.post('$valores["nombre"]')];
+            $.post('<?php echo } ?>')
+            
+          
+          // Ordena el Array Alfabeticamente, es muy facil ;)):
+          array.sort();
+
+          addOptions("empresa", array);
+          }
+
+          // Rutina para agregar opciones a un <select>
+          function addOptions(domElement, array) {
+          var select = document.getElementsByName(domElement)[0];
+
+            for (value in array) {
+              var option = document.createElement("option");
+              option.text = array[value];
+              select.add(option);
+            }
+          }
         
     </script>
 </body>

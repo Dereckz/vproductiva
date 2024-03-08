@@ -71,8 +71,8 @@ try{
            }        
         } else {
           //header("Location: login.html");
-            //echo 'La contraseña no es válida!' ;
-           //echo "<script> alert('La contraseña no es válida!');window.location= '../account/login.html' </script>";
+          //echo 'La contraseña no es válida!' ;
+          //echo "<script> alert('La contraseña no es válida!');window.location= '../account/login.html' </script>";
              echo '.';
             echo '<script>
                 Swal.fire({
