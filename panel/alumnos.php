@@ -153,8 +153,6 @@ th, td {
                               <!--Ventana Modal para Agregar Curso--->
                               <?php include('ModalCurso.php'); ?>
 
-                         
-
                         <?php } ?>
 
                     </table>
@@ -165,8 +163,11 @@ th, td {
             
                   
           <input type="button" name="imprimir" value="Imprimir P&aacute;gina" onclick="window.print();">
-          <form method="POST" action="excel.php">
-          <input type="button" name="Exportar" value="Exportar">
+        
+          <form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="post">
+           <button type="submit" id="export_data" name='export_data' value="Export to excel" class="btn btn-info">Export to excel</button>
+         
+         
           </form>
          
             </div>
@@ -188,7 +189,7 @@ th, td {
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancelar</button>
-                        <a href="../account/login.html" class="btn btn-primary">Cerrar Sesión</a>
+                        <a href="../account/login.php" class="btn btn-primary">Cerrar Sesión</a>
                       </div>
                     </div>
                   </div>
