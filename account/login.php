@@ -37,7 +37,7 @@
             <li><a href="../indexacerca.html" data-after="About" class="headermenu">NOSOTROS</a></li>
             <li class="fondoinicio"><a href="../indexcontacto.html" data-after="Contact" class="headermenu">CONTACTO</a></li>
             <!--<li><a href="account/register.html" data-after="Login">Login</a></li> -->
-            <li  id="fondoinicio" class="fondoinicio"><a href="login.html" data-after="Login" class="headermenu" id="menuingresar" style="color: white;">INGRESAR</a></li>
+            <li  id="fondoinicio" class="fondoinicio"><a href="login.php" data-after="Login" class="headermenu" id="menuingresar" style="color: white;">INGRESAR</a></li>
           </ul>
         </div>
       </div>
@@ -83,7 +83,7 @@
                   <input type="password" id="confirmpassword" name="confirmpassword" 
                         pattern="^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{8,16}$">
                       <select name="empresa" id="empresa">
-                          <option>Seleccione una Empresa...</option>
+                          <option>Empresa procedente</option>
                             <?php
                                 require("../dev/conectar.php");
                                 $dataempresa = mysqli_query($conn,"SELECT * FROM empresa");
