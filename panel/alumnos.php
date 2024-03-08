@@ -84,11 +84,7 @@ th, td {
           <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet"/>
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
           <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-          <script type="text/javascript">
-          $(document).ready(function() {
-              $('#users').DataTable();
-          } );
-    </script>
+          
           <div class="row">
                 <div class="table-responsive">
                     <table id="users" class="display" style="width:100%" >
@@ -169,7 +165,10 @@ th, td {
             
                   
           <input type="button" name="imprimir" value="Imprimir P&aacute;gina" onclick="window.print();">
-          
+          <form method="POST" action="excel.php">
+          <input type="button" name="Exportar" value="Exportar">
+          </form>
+         
             </div>
           
 
@@ -278,7 +277,11 @@ th, td {
 <script src="js/jquery.min.js"></script>
 <script src="js/popper.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-
+<script type="text/javascript">
+          $(document).ready(function() {
+              $('#users').DataTable();
+          } );
+    </script>
 <script type="text/javascript">
       $(document).ready(function() {
         //Ocultar mensaje

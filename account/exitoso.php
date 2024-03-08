@@ -105,9 +105,9 @@
                     <label  style="text-align: center"><h2>Tu registro ha sido exitoso.</h2></label>
                     <br><br>
                     <button class="my-button">
-                        <a class="text-white" href="../account/login.html">
+                        <a class="text-white" href="../account/login.php">
                           Haz clic aquí</a>
-                          <p class="text-white2"><a href="../account/login.html">Para explorar el catalogo de cursos</a></p>
+                          <p class="text-white2"><a href="../account/login.php">Para explorar el catalogo de cursos</a></p>
                     </button>
                                     
                 </form>

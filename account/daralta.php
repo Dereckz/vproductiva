@@ -24,6 +24,7 @@ $contrasena = password_hash(($_POST["password"]), PASSWORD_DEFAULT);
 $confirmcontrasena =password_hash(($_POST["confirmpassword"]), PASSWORD_DEFAULT);  
 //$codigomaestro=$_POST["codigomaestro"];
 $tyc=$_POST["chkbxtyc"];
+$idempresa=$_POST["empresa"];
     
     if (strpos($fullname, " ")){
         $nombres=namess::getNombreSplit($fullname)["Nombres"];
@@ -53,7 +54,7 @@ $tyc=$_POST["chkbxtyc"];
                 confirmButtonColor: "#872362",
                 icon: "warning"
                 }).then(function() {
-                    window.location = "login.html";
+                    window.location = "login.php";
                 });
             
             </script>';
@@ -64,8 +65,8 @@ $tyc=$_POST["chkbxtyc"];
 
                 if ($_POST["password"] == $_POST["confirmpassword"]) 
                 {
-                    $queryA = mysqli_query($conn,"INSERT INTO `usuarios`(`iIdUsuario`, `fkidTipoUsuario`, `cNombre`, `cApellidoP`, `cApellidoM`, `cNombreLargo`, `cCorreo`, `cUsuario`, `cPassword`, `cTelefono`, `cCodigo`, `dFechaAlta`, `iGenero`,`iEstatus`)
-                                                VALUES ('0','3','$nombres','$paternos','$maternos','$fullname','$correo','$correo','$contrasena','','','$fecha_actual','1','1')");
+                    $queryA = mysqli_query($conn,"INSERT INTO `usuarios`(`iIdUsuario`, `fkidTipoUsuario`, `cNombre`, `cApellidoP`, `cApellidoM`, `cNombreLargo`, `cCorreo`, `cUsuario`, `cPassword`, `cTelefono`, `cCodigo`, `dFechaAlta`, `iGenero`,`fkidempresa`,`iEstatus`)
+                                                VALUES ('0','3','$nombres','$paternos','$maternos','$fullname','$correo','$correo','$contrasena','','','$fecha_actual','0','$idempresa','1')");
                         if($queryA){
                                 
                         header("Location: ../account/exitoso.php");                          
@@ -81,7 +82,7 @@ $tyc=$_POST["chkbxtyc"];
                                 confirmButtonColor: "#872362",
                                 icon: "error"
                                 }).then(function() {
-                                    window.location = "login.html";
+                                    window.location = "login.php";
                                 });
                             
                             </script>';
@@ -97,7 +98,7 @@ $tyc=$_POST["chkbxtyc"];
                         confirmButtonColor: "#872362",
                         icon: "warning"
                         }).then(function() {
-                            window.location = "login.html";
+                            window.location = "login.php";
                         });
                     
                     </script>';
@@ -112,7 +113,7 @@ $tyc=$_POST["chkbxtyc"];
                         confirmButtonColor: "#872362",
                         icon: "warning"
                         }).then(function() {
-                            window.location = "login.html";
+                            window.location = "login.php";
                         });
                     
                     </script>';             

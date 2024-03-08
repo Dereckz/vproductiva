@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="account.css">
  
 </head>
-<body onLoad="myOnLoad()">
+<body >
   <!-- Header -->
   <section id="header">
     <div class="header container-l">
@@ -67,6 +67,7 @@
                     <label for="password">Contraseña</label>
                     <input type="password" id="password" name="password" required>
                     <input type="submit" value="Iniciar sesión" class="submit">
+                   
                 </form>
                 <form method="post" action="daralta.php" id="registerform">
                   <label for="fullname">Nombre </label>
@@ -81,17 +82,16 @@
                   <label for="confirmpassword">Confirmar contraseña</label>
                   <input type="password" id="confirmpassword" name="confirmpassword" 
                         pattern="^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{8,16}$">
-                  
-                  
-                    <select name="empresa" id="empresa">
-                      <option>Seleccione una Empresa...</option>
-                      <?php
-                      $query = $mysqli -> query ("SELECT * FROM empresa");
-                      while ($valores = mysqli_fetch_array($query)) {
-                        echo '<option value="'.$valores['id'].'">'.$valores['nombre'].'</option>';
-                      }
-                    ?>
-                    </select>
+                      <select name="empresa" id="empresa">
+                          <option>Seleccione una Empresa...</option>
+                            <?php
+                                require("../dev/conectar.php");
+                                $dataempresa = mysqli_query($conn,"SELECT * FROM empresa");
+                                while ($empresa = mysqli_fetch_array($dataempresa)) { 
+                                  echo '<option value="'.$empresa['idempresa'].'">'.$empresa['nombre'].'</option>';
+                                }
+                            ?>
+                      </select>
                         <li id="checkterminos" style="list-style: none;">
                           <input id="chkbxtyc" type="checkbox" required>
                           <label for="c1"><a href="../indexterminos.html">Aceptar Términos y Condiciones</a> </label>
@@ -139,12 +139,12 @@
  
 
 
-    <?php  echo "
+   
     <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
     </script>
 
-     <script src='jquery.js'></script>
-     <script src'password.js'></script>
+     <script src="jquery.js"></script>
+     <script src2="password.js"></script>
     <script type='text/javascript'>
       
         var loginBtn = document.getElementById('loginBtn');
@@ -178,6 +178,6 @@
             loginregister.style.backgroundColor='#872362';
         }
 
-    </script>"?>
+    </script>
 </body>
 </html>

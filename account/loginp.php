@@ -64,7 +64,7 @@ try{
                        confirmButtonColor: "#872362",
                        icon: "error"
                        }).then(function() {
-                           window.location = "login.html";
+                           window.location = "login.php";
                        });
                    
                    </script>'; 
@@ -81,7 +81,7 @@ try{
                 confirmButtonColor: "#872362",
                 icon: "warning"
                 }).then(function() {
-                    window.location = "login.html";
+                    window.location = "login.php";
                 });
             
             </script>'; 
@@ -99,7 +99,7 @@ try{
            confirmButtonColor: "#872362",
            icon: "error"
            }).then(function() {
-               window.location = "login.html";
+               window.location = "login.php";
            });
        
        </script>';
