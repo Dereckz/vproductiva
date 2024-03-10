@@ -70,7 +70,7 @@
             <li><a href="../indexacerca.html" data-after="About" class="headermenu">NOSOTROS</a></li>
             <li class="fondoinicio"><a href="../indexcontacto.html" data-after="Contact" class="headermenu">CONTACTO</a></li>
             <!--<li><a href="account/register.html" data-after="Login">Login</a></li> -->
-            <li  id="fondoinicio" class="fondoinicio"><a href="login.html" data-after="Login" class="headermenu" id="menuingresar" style="color: white;">INGRESAR</a></li>
+            <li  id="fondoinicio" class="fondoinicio"><a href="login.php" data-after="Login" class="headermenu" id="menuingresar" style="color: white;">INGRESAR</a></li>
           </ul>
         </div>
       </div>

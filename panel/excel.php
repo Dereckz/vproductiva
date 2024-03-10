@@ -20,4 +20,3 @@ if(isset($_POST["export_data"])) {
     }
     exit;
     }
-?>

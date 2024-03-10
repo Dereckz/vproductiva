@@ -420,7 +420,7 @@
       <li class="menusvacio"></li>
     	<li class="menus"><a href="index.php">MI PERFIL</a></li>
     	<li id="miperfilfondo" class="menus"><a href="cursos.php" id="miperfil">CATÁLOGO DE CURSOS</a></li>
-      <li class="menus"><a href="../account/login.html">SALIR</a></li>
+      <li class="menus"><a href="../account/login.php">SALIR</a></li>
     	</ul>
   </header>
 

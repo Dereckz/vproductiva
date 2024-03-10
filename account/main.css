@@ -173,6 +173,9 @@ html,body, body * {
 	font-size: 1.3rem;
     /*padding: 1% 0;*/
 }
+#empresa{
+	margin-bottom: 3%;
+}
 @media screen and (max-width:700px){
     /*inicia pie de pagina*/
 	#footer .footer {

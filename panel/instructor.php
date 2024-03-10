@@ -7,7 +7,7 @@
 <?php session_start() ?>
 <?php 
 	if(!isset($_SESSION['id']))
-  header('location:../account/login.html');
+  header('location:../account/login.php');
 	include 'header.php' 
 ?>
 
@@ -207,7 +207,7 @@ th, td {
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Cancelar</button>
-                        <a href="../account/login.html" class="btn btn-primary">Cerrar Sesión</a>
+                        <a href="../account/login.php" class="btn btn-primary">Cerrar Sesión</a>
                       </div>
                     </div>
                   </div>

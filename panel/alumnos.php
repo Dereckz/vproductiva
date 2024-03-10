@@ -5,22 +5,19 @@
 <html lang="en">
 <link href="../img/LOGOVP.ico" rel="icon">
 
-  <!-- links para exportar a excel -->
-    <script src="https://unpkg.com/xlsx@0.16.9/dist/xlsx.full.min.js"></script>
-    <script src="https://unpkg.com/file-saverjs@latest/FileSaver.min.js"></script>
-    <script src="https://unpkg.com/tableexport@latest/dist/js/tableexport.min.js"></script>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-
+  
 <?php session_start() ?>
 <?php 
 
   require("../dev/conectar.php");
 
 	if(!isset($_SESSION['id']))
-  header('location:../account/login.html');
+  header('location:../account/login.php');
 	include 'header.php' 
 ?>
+ <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet"/>
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+          <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 <style>
   table{
     table-layout: fixed;
@@ -37,6 +34,8 @@ th, td {
 <div class="wrapper">
   <?php include 'topbar.php' ?>
   <?php include 'sidebar.php' ?>
+   
+
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -86,33 +85,44 @@ th, td {
               <li class="breadcrumb-item active" aria-current="page">Administrar</li>
             </ol>
           </div>
-
+    <!-- links para exportar a excel -->
+          <script src="https://unpkg.com/xlsx@0.16.9/dist/xlsx.full.min.js"></script>
+            <script src="https://unpkg.com/file-saverjs@latest/FileSaver.min.js"></script>
+            <script src="https://unpkg.com/tableexport@latest/dist/js/tableexport.min.js"></script>
           <div>
           <?php $tipousuario =3?>
           <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#addInstructor<?php echo $tipousuario ?>">
-            Agregar Nuevo
+              Agregar Nuevo
           </button>
+            <button id="btnImprimir" class="btn btn-primary" onclick="window.print();">
+                <i class="fa-print  "></i> Imprimir P&aacute;gina
+            </button>
+         
+            <button id="btnExportar" class="btn btn-success">
+                <i class="fas fa-file-excel"></i> Exportar datos a Excel
+            </button>
           </div>
-          <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet"/>
-          <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-          <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+         
+          
           
           <div class="row">
-                <div class="table-responsive">
-                    <table id="users" class="display" style="width:100%" >
-                      <thead>
+            
+                <div >
+                <table id="tabla" class="table table-border table-hover">
+                   <thead>
                         <tr>
                           <th scope="col">Nombre</th>
                           <th scope="col">Email</th>
                           <th scope="col">Estatus</th>
                           <th scope="col">Empresas</th>
-                          <!-- <th scope="col">Acción</th> -->
+                         <th scope="col">Acción</th> 
                           <th scope="col">Tiempo de Conexión</th>
                           <th scope="col">Ultima de Conexión</th>
                         </tr>
                       </thead>
-                      <tbody>
-                        <?php
+                <tbody>
+                
+                <?php
                         while ($dataCliente = mysqli_fetch_array($queryCliente)) { ?>
                         <?php $usuariosal[]=$dataCliente?>
                       
@@ -156,8 +166,6 @@ th, td {
                            <?php }?>
                            
                           </tr>
-           
-                          <!--Ventana Modal para Actualizar--->
                               <?php include('ModalAgregar.php'); ?>
                               <!--Ventana Modal para Actualizar--->
                               <?php include('ModalEditar.php'); ?>
@@ -165,20 +173,17 @@ th, td {
                               <?php include('ModalEliminar.php'); ?>
                               <!--Ventana Modal para Agregar Curso--->
                               <?php include('ModalCurso.php'); ?>
-
-                        <?php } ?>
-
-                    </table>
+                          <?php } ?>
+                </tbody>
+            </table>
                   </div>
                 <div class="card-footer"></div>
               </div>
             </div>
             
                   
-          <input type="button" name="imprimir" value="Imprimir P&aacute;gina" onclick="window.print();">
-       
-          
-          <button id="btnExportar" class="btn btn-success">Export to excel</button>
+         
+        
          
          
         </div>
@@ -289,11 +294,7 @@ th, td {
 <script src="js/jquery.min.js"></script>
 <script src="js/popper.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<script type="text/javascript">
-          $(document).ready(function() {
-              $('#users').DataTable();
-          } );
-    </script>
+
 <script type="text/javascript">
       $(document).ready(function() {
         //Ocultar mensaje
@@ -325,9 +326,10 @@ th, td {
       });
     </script>
 
+<!-- script para exportar a excel -->
 <script>
     const $btnExportar = document.querySelector("#btnExportar"),
-        $tabla = document.querySelector("#users");
+        $tabla = document.querySelector("#tabla");
 
     $btnExportar.addEventListener("click", function() {
         let tableExport = new TableExport($tabla, {
