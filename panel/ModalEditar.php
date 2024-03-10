@@ -69,6 +69,18 @@
                     
                     ?>
                     </div>
+                   <div>
+                   <select name="empresa" id="empresa">
+                          <option>Empresa procedente</option>
+                            <?php
+                                require("../dev/conectar.php");
+                                $dataempresa = mysqli_query($conn,"SELECT * FROM empresa");
+                                while ($empresa = mysqli_fetch_array($dataempresa)) { 
+                                  echo '<option value="'.$empresa['idempresa'].'">'.$empresa['nombre'].'</option>';
+                                }
+                            ?>
+                      </select>
+                   </div> 
                     <div class="form-group">
                       <label class="col-form-label" for="">Fecha de alta</label>
                           <?php

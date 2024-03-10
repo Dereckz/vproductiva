@@ -49,11 +49,23 @@
                       <input type="radio" name="radio" value="1" > Masculino<br>
                       <input type="radio" name="radio" value="2"> No especificar<br>
                  
-                    </div>
-                    <div class="form-group">
-                      <label class="col-form-label" for="">Fecha de alta</label>
-                           <input type="date" name="fechaalta" class="form-control" value="">
-                    </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-form-label" for="">Fecha de alta</label>
+                        <input type="date" name="fechaalta" class="form-control" value="">
+                </div>
+                <div>
+                <select name="empresa" id="empresa">
+                          <option>Empresa procedente</option>
+                            <?php
+                                require("../dev/conectar.php");
+                                $dataempresa = mysqli_query($conn,"SELECT * FROM empresa");
+                                while ($empresa = mysqli_fetch_array($dataempresa)) { 
+                                  echo '<option value="'.$empresa['idempresa'].'">'.$empresa['nombre'].'</option>';
+                                }
+                            ?>
+                      </select>
+                </div>
                 
             </div>
             <div class="modal-footer">
