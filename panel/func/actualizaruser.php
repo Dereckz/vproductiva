@@ -10,6 +10,7 @@ $apellidomaterno=$_POST["apm"];
 $genero=$_POST["radio"];
 $telefono=$_POST["celular"];
 $fechaalta=$_POST["fechaalta"];
+$idempresa=$_POST["empresa"];
 
 if (($_POST["password"])==""){
     $consulta="UPDATE usuarios
@@ -21,6 +22,7 @@ if (($_POST["password"])==""){
         ", iGenero='".$genero."'".
         ", cTelefono='".$telefono."'" .
         ", dFechaAlta='".$fechaalta."'" .
+        ", fkidempresa='".$idempresa."'" .
         " where iIdUsuario=".$idusuario;
 }elseif(($_POST["password"])<>""){
         $pass=password_hash(($_POST["password"]), PASSWORD_DEFAULT); 
@@ -34,6 +36,7 @@ if (($_POST["password"])==""){
                 ", dFechaAlta='".$fechaalta."'" .
                 ", cTelefono='".$telefono."'" .
                 ", cPassword='".$pass."'" .
+                ", fkidempresa='".$idempresa."'" .
                  " where iIdUsuario=".$idusuario;
 }
     $query = mysqli_query($conn,$consulta);

@@ -115,6 +115,7 @@ th, td {
                 <table id="tabla"  class="display"  style="width:100%">
                    <thead>
                         <tr>
+                        
                           <th scope="col">Nombre</th>
                           <th scope="col">Email</th>
                           <th scope="col">Estatus</th>
@@ -122,16 +123,16 @@ th, td {
                          <th scope="col">Acción</th> 
                           <th scope="col">Tiempo de Conexión</th>
                           <th scope="col">Ultima de Conexión</th>
+                          <th scope="col" hidden>tipo</th>
                         </tr>
                       </thead>
                 <tbody>
                 
                 <?php
                         while ($dataCliente = mysqli_fetch_array($queryCliente)) { ?>
-                        <?php $usuariosal[]=$dataCliente?>
-                      
+                     
                           <tr>
-
+                          
                             <td><?php echo strtoupper($dataCliente['cNombreLargo']); ?></td>
 
                             <td><?php echo $dataCliente['cCorreo']; ?></td>
@@ -167,6 +168,7 @@ th, td {
 
                             <td><?php echo $intervalo->h . " horas, " . $intervalo->i . " minutos y " . $intervalo->s . " segundos"; ?></td>
                             <td><?php echo $dataacceso['dFechaAcceso']; ?></td>
+                            <td hidden><?php echo $tipousuario; ?><td>
                            <?php }?>
                            
                           </tr>
