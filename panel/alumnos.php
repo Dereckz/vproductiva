@@ -89,6 +89,10 @@ th, td {
           <script src="https://unpkg.com/xlsx@0.16.9/dist/xlsx.full.min.js"></script>
             <script src="https://unpkg.com/file-saverjs@latest/FileSaver.min.js"></script>
             <script src="https://unpkg.com/tableexport@latest/dist/js/tableexport.min.js"></script>
+            <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet"/>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+            <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+
           <div>
           <?php $tipousuario =3?>
           <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#addInstructor<?php echo $tipousuario ?>">
@@ -108,7 +112,7 @@ th, td {
           <div class="row">
             
                 <div >
-                <table id="tabla" class="table table-border table-hover">
+                <table id="tabla"  class="display"  >
                    <thead>
                         <tr>
                           <th scope="col">Nombre</th>
@@ -328,6 +332,9 @@ th, td {
 
 <!-- script para exportar a excel -->
 <script>
+  $(document).ready(function() {
+    $('#tabla').DataTable();
+} );
     const $btnExportar = document.querySelector("#btnExportar"),
     $tabla = document.querySelector("#tabla");
     const fechaDeHoy = new Date();
