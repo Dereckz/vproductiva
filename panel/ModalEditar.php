@@ -69,14 +69,24 @@
                     
                     ?>
                     </div>
+                    <br>
                    <div>
                    <select name="empresa" id="empresa">
                           <option>Empresa procedente</option>
                             <?php
                                 require("../dev/conectar.php");
                                 $dataempresa = mysqli_query($conn,"SELECT * FROM empresa");
+                                $empresaasignada=mysqli_query($conn, "SELECT * FROM empresa e
+                                inner join usuarios u
+                                on e.idempresa=u.fkidempresa
+                                where u.iIdUsuario=".$dataCliente['iIdUsuario']);
+                                $infoempresa = mysqli_fetch_array($empresaasignada);
                                 while ($empresa = mysqli_fetch_array($dataempresa)) { 
+                                  if($infoempresa["idempresa"]==$empresa['idempresa']){
+                                    echo '<option selected="true" value="'.$empresa['idempresa'].'">'.$empresa['nombre'].'</option>';
+                                  }else{
                                   echo '<option value="'.$empresa['idempresa'].'">'.$empresa['nombre'].'</option>';
+                                }
                                 }
                             ?>
                       </select>
