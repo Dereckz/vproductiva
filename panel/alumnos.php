@@ -112,7 +112,7 @@ th, td {
           <div class="row">
             
                 <div >
-                <table id="tabla"  class="display"  >
+                <table id="tabla"  class="display"  style="width:100%">
                    <thead>
                         <tr>
                           <th scope="col">Nombre</th>
@@ -333,8 +333,14 @@ th, td {
 <!-- script para exportar a excel -->
 <script>
   $(document).ready(function() {
-    $('#tabla').DataTable();
+    $('#tabla').DataTable({
+           
+            language: {
+                url: 'https://cdn.datatables.net/plug-ins/1.13.7/i18n/es-ES.json'
+            }
+        });
 } );
+
     const $btnExportar = document.querySelector("#btnExportar"),
     $tabla = document.querySelector("#tabla");
     const fechaDeHoy = new Date();
