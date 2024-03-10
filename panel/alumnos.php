@@ -4,6 +4,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <link href="../img/LOGOVP.ico" rel="icon">
+
+  <!-- links para exportar a excel -->
+    <script src="https://unpkg.com/xlsx@0.16.9/dist/xlsx.full.min.js"></script>
+    <script src="https://unpkg.com/file-saverjs@latest/FileSaver.min.js"></script>
+    <script src="https://unpkg.com/tableexport@latest/dist/js/tableexport.min.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
 <?php session_start() ?>
 <?php 
 
@@ -170,7 +178,7 @@ th, td {
           <input type="button" name="imprimir" value="Imprimir P&aacute;gina" onclick="window.print();">
        
           
-           <button onclick="exportTableToExcel('users', 'Reporte_Usuarios_Alumnos')">Export to excel</button>
+          <button id="btnExportar" class="btn btn-success">Export to excel</button>
          
          
         </div>
@@ -317,38 +325,21 @@ th, td {
       });
     </script>
 
-    <script>
-    function exportTableToExcel(tableID, filename = ''){
-    var downloadLink;
-    var dataType = 'application/vnd.ms-excel';
-    var tableSelect = document.getElementById(tableID);
-    var tableHTML = tableSelect.outerHTML.replace(/ /g, '%20');
-    
-    // Specify file name
-    filename = filename?filename+'.xls':'excel_data.xls';
-    
-    // Create download link element
-    downloadLink = document.createElement("a");
-    
-    document.body.appendChild(downloadLink);
-    
-    if(navigator.msSaveOrOpenBlob){
-        var blob = new Blob(['ufeff', tableHTML], {
-            type: dataType
+<script>
+    const $btnExportar = document.querySelector("#btnExportar"),
+        $tabla = document.querySelector("#users");
+
+    $btnExportar.addEventListener("click", function() {
+        let tableExport = new TableExport($tabla, {
+            exportButtons: false, // No queremos botones
+            filename: "Reporte de prueba", //Nombre del archivo de Excel
+            sheetname: "Reporte de prueba", //Título de la hoja
         });
-        navigator.msSaveOrOpenBlob( blob, filename);
-    }else{
-        // Create a link to the file
-        downloadLink.href = 'data:' + dataType + ', ' + tableHTML;
-    
-        // Setting the file name
-        downloadLink.download = filename;
-        
-        //triggering the function
-        downloadLink.click();
-    }
-}
-    </script>
+        let datos = tableExport.getExportData();
+        let preferenciasDocumento = datos.tabla.xlsx;
+        tableExport.export2file(preferenciasDocumento.data, preferenciasDocumento.mimeType, preferenciasDocumento.filename, preferenciasDocumento.fileExtension, preferenciasDocumento.merges, preferenciasDocumento.RTL, preferenciasDocumento.sheetname);
+    });
+</script>
 
 <!-- Bootstrap -->
 <?php include 'footer.php' ?>
