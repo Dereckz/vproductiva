@@ -86,7 +86,6 @@ th, td {
        require("../dev/conectar.php");
    
 
-
     $sqlCliente   = ("SELECT * FROM contacto");
     $queryCliente = mysqli_query($conn, $sqlCliente);
     $cantidad     = mysqli_num_rows($queryCliente);
@@ -107,18 +106,14 @@ th, td {
             </ol>
           </div>
           <div>
-            <?php $tipousuario =2?>
-<!--           <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#addInstructor
-            <?php echo $tipousuario ?>">
-            Agregar Nuevo
-          </button> -->
+          
           </div>
           <div class="row">
             
                 <div class="col-md-12 p-2">
               
-                <div class="table-responsive">
-                    <table class="table table-bordered table-striped table-hover">
+                <div>
+                  <table id="tabla" class="table table-border table-hover">
                       <thead>
                         <tr>
                           <th scope="col">Nombre</th>
@@ -143,11 +138,7 @@ th, td {
                             </td>
                         
 
-                          </tr>
-           
-                       
-                         
-
+                          </tr>        
                         <?php } ?>
 
                     </table>
@@ -247,21 +238,43 @@ th, td {
   <!-- /.control-sidebar -->
 
   <!-- Main Footer -->
-  <!-- <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>copyright &copy; <script> document.write(new Date().getFullYear()); </script> - developed by
-              <b><a href="https://desetecnologias.net/" target="_blank">Dese Tecnologias</a></b>
-            </span>
-          </div>
-        </div>
-    </footer> -->
+
+
 </div>
 <!-- ./wrapper -->
 
 <!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->
+<script type="text/javascript">
+      $(document).ready(function() {
+        //Ocultar mensaje
+        setTimeout(function() {
+          $("#contenMsjs").fadeOut(1000);
+        }, 3000);
 
+        $('.btnBorrar').click(function(e) {
+          e.preventDefault();
+          var id = $(this).attr("id");
+
+          var dataString = 'id=' + id;
+          url = "func/deleteusers.php";
+          $.ajax({
+            type: "POST",
+            url: url,
+            data: dataString,
+            success: function(data) {
+              window.location.href = "alumnos.php";
+             $('#respuesta').html(data);
+             alert (‘ mensaje de texto‘)
+            }
+          });
+          return false;
+
+        });
+
+
+      });
+</script>
 <!-- Bootstrap -->
 <?php include 'footer.php' ?>
 </body>

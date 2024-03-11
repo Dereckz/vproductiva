@@ -85,8 +85,8 @@ th, td {
               <li class="breadcrumb-item active" aria-current="page">Administrar</li>
             </ol>
           </div>
-    <!-- links para exportar a excel -->
-          <script src="https://unpkg.com/xlsx@0.16.9/dist/xlsx.full.min.js"></script>
+            <!-- links para exportar a excel -->
+            <script src="https://unpkg.com/xlsx@0.16.9/dist/xlsx.full.min.js"></script>
             <script src="https://unpkg.com/file-saverjs@latest/FileSaver.min.js"></script>
             <script src="https://unpkg.com/tableexport@latest/dist/js/tableexport.min.js"></script>
             <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet"/>
@@ -207,7 +207,7 @@ th, td {
                       </div>
                     </div>
                   </div>
-                </div> 
+          </div> 
        
         </div>
        
@@ -312,7 +312,7 @@ th, td {
 
 
       });
-    </script>
+</script>
 
 <!-- script para exportar a excel -->
 <script>

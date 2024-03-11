@@ -75,7 +75,7 @@
 
           <li class="nav-item">
           <a href="#" class="nav-link nav-edit_user">
-              <i class="nav-icon fas fa-users"></i>
+              <i class="nav-icon fas fa-address-book"></i>
               <p>
                 Contacto
                 <i class="right fas fa-angle-left"></i>
