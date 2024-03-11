@@ -88,7 +88,10 @@ th, td {
    
 
 
-    $sqlCliente   = ("SELECT * FROM usuarios where usuarios.fkidTipoUsuario=2; ");
+    $sqlCliente   = ("SELECT * FROM usuarios u
+                      INNER JOIN empresa e on
+                      u.fkidempresa=e.idempresa
+                      where u.fkidTipoUsuario=2; ");
     $queryCliente = mysqli_query($conn, $sqlCliente);
     $cantidad     = mysqli_num_rows($queryCliente);
     ?>
@@ -115,6 +118,7 @@ th, td {
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
             <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 
+
           <div>
             
             <?php $tipousuario =2?>
@@ -133,8 +137,8 @@ th, td {
             
                 <div class="col-md-12 p-2">
               
-                <div class="table-responsive">
-                <table id="tabla"  class="display"  style="width:100%">
+                <div >
+                <table id="tabla" class="table table-border table-hover">
                       <thead>
                         <tr>
                           <th scope="col">Nombre</th>
@@ -142,6 +146,7 @@ th, td {
                           <th scope="col">Estatus</th>
                           <th scope="col">Empresas</th>
                           <th scope="col">Acción</th>
+                          <th scope="col" hidden>tipo</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -159,8 +164,12 @@ th, td {
                             <?php if($dataCliente['iEstatus']==0) {?> 
                               <td class="estatus"><span  class="badge badge-danger"><a class="text-white" href="func/actualizarStatus.php?id='<?php echo $dataCliente['iIdUsuario']; ?>'&status=0">Inactivo</a></span></td> 
                             <?php }?> 
-                            <td>
 
+                            <td>
+                           <?php echo $dataCliente['nombre']; ?>
+                           </td>     
+                            <td>
+                           
                               <!-- <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteChildresn<?php echo $dataCliente['iIdUsuario']; ?>">
                                 Eliminar
                               </button> -->
@@ -176,14 +185,14 @@ th, td {
                                 Agregar Encuesta
                               </button>
                             </td>
-                            
+                            <td hidden>2</td>
                            <tr>
                             <?php   echo ''.cursodeusuario($dataCliente["iIdUsuario"]).'';?>
                             </tr> 
                             <tr>
                             <?php   echo ''.surveyactive($dataCliente["iIdUsuario"]).'';?>
                             </tr> 
-
+                            
                           </tr>
            
                             <!--Ventana Modal para Actualizar--->
@@ -309,6 +318,7 @@ th, td {
     </footer> -->
 </div>
 <!-- ./wrapper -->
+<!-- script para exportar a excel -->
 <script>
   $(document).ready(function() {
     $('#tabla').DataTable({
@@ -319,7 +329,23 @@ th, td {
         });
 } );
 
-  </script>
+    const $btnExportar = document.querySelector("#btnExportar"),
+    $tabla = document.querySelector("#tabla");
+    const fechaDeHoy = new Date();
+   
+    $btnExportar.addEventListener("click", function() {
+        let tableExport = new TableExport($tabla, {
+            exportButtons: false, // No queremos botones
+            filename: "Reporte_Usuarios_Instructor" , //Nombre del archivo de Excel
+            sheetname: "Usuarios", //Título de la hoja
+        });
+        let datos = tableExport.getExportData();
+        let preferenciasDocumento = datos.tabla.xlsx;
+        tableExport.export2file(preferenciasDocumento.data, preferenciasDocumento.mimeType, preferenciasDocumento.filename, preferenciasDocumento.fileExtension, preferenciasDocumento.merges, preferenciasDocumento.RTL, preferenciasDocumento.sheetname);
+    });
+
+
+</script>
 
 <!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->
