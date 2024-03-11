@@ -110,7 +110,7 @@ th, td {
           <div class="row">
             
                 <div >
-                <table id="tabla" class="table table-border table-hover">
+                <table id="tabla"  class="display"  style="width:100%">
                    <thead>
                         <tr>
                         
@@ -166,7 +166,7 @@ th, td {
 
                             <td><?php echo $intervalo->h . " horas, " . $intervalo->i . " minutos y " . $intervalo->s . " segundos"; ?></td>
                             <td><?php echo $dataacceso['dFechaAcceso']; ?></td>
-                            <td hidden>3</td>
+                          
                            <?php }?>
                            
                           </tr>

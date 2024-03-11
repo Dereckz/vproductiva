@@ -74,7 +74,7 @@
                     ?>
                     </div>
                     <br>
-                   <div>f
+                   <div>
                    <select name="empresa" id="empresa">
                           <option>Empresa procedente</option>
                             <?php
