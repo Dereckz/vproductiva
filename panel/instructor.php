@@ -107,23 +107,40 @@ th, td {
               <li class="breadcrumb-item active" aria-current="page">Administrar</li>
             </ol>
           </div>
+          <!-- links para exportar a excel -->
+          <script src="https://unpkg.com/xlsx@0.16.9/dist/xlsx.full.min.js"></script>
+            <script src="https://unpkg.com/file-saverjs@latest/FileSaver.min.js"></script>
+            <script src="https://unpkg.com/tableexport@latest/dist/js/tableexport.min.js"></script>
+            <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet"/>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+            <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+
           <div>
+            
             <?php $tipousuario =2?>
           <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#addInstructor<?php echo $tipousuario ?>">
             Agregar Nuevo
           </button>
+          <button id="btnImprimir" class="btn btn-primary" onclick="window.print();">
+            <i class="fas fa-print"></i> Imprimir P&aacute;gina
+            </button>
+         
+            <button id="btnExportar" class="btn btn-success">
+                <i class="fas fa-file-excel"></i> Exportar datos a Excel
+            </button>
           </div>
           <div class="row">
             
                 <div class="col-md-12 p-2">
               
                 <div class="table-responsive">
-                    <table class="table table-bordered table-striped table-hover">
+                <table id="tabla"  class="display"  style="width:100%">
                       <thead>
                         <tr>
                           <th scope="col">Nombre</th>
                           <th scope="col">Email</th>
                           <th scope="col">Estatus</th>
+                          <th scope="col">Empresas</th>
                           <th scope="col">Acción</th>
                         </tr>
                       </thead>
@@ -143,6 +160,7 @@ th, td {
                               <td class="estatus"><span  class="badge badge-danger"><a class="text-white" href="func/actualizarStatus.php?id='<?php echo $dataCliente['iIdUsuario']; ?>'&status=0">Inactivo</a></span></td> 
                             <?php }?> 
                             <td>
+
                               <!-- <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteChildresn<?php echo $dataCliente['iIdUsuario']; ?>">
                                 Eliminar
                               </button> -->
@@ -158,6 +176,7 @@ th, td {
                                 Agregar Encuesta
                               </button>
                             </td>
+                            
                            <tr>
                             <?php   echo ''.cursodeusuario($dataCliente["iIdUsuario"]).'';?>
                             </tr> 
@@ -290,6 +309,17 @@ th, td {
     </footer> -->
 </div>
 <!-- ./wrapper -->
+<script>
+  $(document).ready(function() {
+    $('#tabla').DataTable({
+           
+            language: {
+                url: 'https://cdn.datatables.net/plug-ins/1.13.7/i18n/es-ES.json'
+            }
+        });
+} );
+
+  </script>
 
 <!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->

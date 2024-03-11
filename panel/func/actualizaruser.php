@@ -43,8 +43,14 @@ if (($_POST["password"])==""){
 
 
             if($query){
-     
-            header("Location: ../instructor.php");
+                $datausuario = mysqli_query($conn, "SELECT * FROM  usuarios WHERE iIdUsuario =".$idusuario);
+                $buscartipo = mysqli_fetch_array($datausuario);
+                if($buscartipo["fkidTipoUsuario"]==2){
+                        header("Location: ../instructor.php");
+                }elseif($buscartipo["fkidTipoUsuario"]==3){
+                        header("Location: ../alumnos.php");
+                }
+           
 
 
             }

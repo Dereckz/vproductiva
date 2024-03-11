@@ -44,6 +44,10 @@
                   <label for="recipient-name" class="col-form-label">Telefono:</label>
                   <input type="number" name="celular" class="form-control" value="<?php echo $dataCliente['cTelefono']; ?>" >
                 </div>
+                <div class="form-group" hidden>
+                  <label for="recipient-name" class="col-form-label">tipoususerio:</label>
+                  <input type="text" name="tipo" class="form-control" value="<?php echo $dataCliente['cTelefono']; ?>" >
+                </div>
                 <div>
        
                   <?php 
@@ -70,7 +74,7 @@
                     ?>
                     </div>
                     <br>
-                   <div>
+                   <div>f
                    <select name="empresa" id="empresa">
                           <option>Empresa procedente</option>
                             <?php

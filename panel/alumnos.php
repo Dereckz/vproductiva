@@ -125,7 +125,7 @@ th, td {
                           <th scope="col">Ultima de Conexión</th>
                           <th scope="col" hidden>tipo</th>
                         </tr>
-                      </thead>
+                      ++ss</thead>
                 <tbody>
                 
                 <?php
@@ -168,7 +168,7 @@ th, td {
 
                             <td><?php echo $intervalo->h . " horas, " . $intervalo->i . " minutos y " . $intervalo->s . " segundos"; ?></td>
                             <td><?php echo $dataacceso['dFechaAcceso']; ?></td>
-                            <td hidden><?php echo $tipousuario; ?><td>
+                          
                            <?php }?>
                            
                           </tr>
