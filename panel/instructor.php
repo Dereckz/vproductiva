@@ -186,12 +186,12 @@ th, td {
                               </button>
                             </td>
                             <td hidden>2</td>
-                           <tr>
+                          <!--  <tr>
                             <?php   echo ''.cursodeusuario($dataCliente["iIdUsuario"]).'';?>
                             </tr> 
                             <tr>
                             <?php   echo ''.surveyactive($dataCliente["iIdUsuario"]).'';?>
-                            </tr> 
+                            </tr>  -->
                             
                           </tr>
            
