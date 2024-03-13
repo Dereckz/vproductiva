@@ -127,7 +127,7 @@ th, td {
                 <tbody>
                 
                 <?php
-                        while ($dataCliente = mysqli_fetch_array($queryCliente)) { ?>
+                     while ($dataCliente = mysqli_fetch_array($queryCliente)) { ?>
                      
                           <tr>
                           
@@ -169,14 +169,13 @@ th, td {
                                 $tiempodecoenxion=$intervalo->h . " horas, " . $intervalo->i . " minutos y " . $intervalo->s . " segundos";                                       
                               ?>
                               <td><?php echo $tiempodecoenxion ;?></td>
-                              <td><?php echo $dataacceso['dFechaCierre']; ?></td>
-                        
-                            <td hidden>3</td>
+                              <td><?php echo $dataacceso['dFechaAcceso']; ?></td>
+                              <td hidden>3</td>
                            <?php }   
                           }else{?>
                               <td>0</td>
                               <td>0000-00-00</td>
-                        
+                              <td hidden>3</td>
                           <?php } ?>
                            
                           </tr>
@@ -187,7 +186,7 @@ th, td {
                               <?php include('ModalEliminar.php'); ?>
                               <!--Ventana Modal para Agregar Curso--->
                               <?php include('ModalCurso.php'); ?>
-                          <?php  }?>
+                <?php  }?>
                 </tbody>
             </table>
                   </div>

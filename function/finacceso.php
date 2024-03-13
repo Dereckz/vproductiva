@@ -8,12 +8,13 @@
  $horaActual = date("h:i:s");
  $idCliente="";
   //hacer consulta, con el id y la fecha de acces, para obtener informacion relacionada
-    $sqlCliente   = ("SELECT MAX(idAccesos) as id 
+    $sqlCliente   = ("SELECT *
                     FROM accesos WHERE idusuario=".$_SESSION["id"]."
                      and dfechaacceso like '%" . $fecha ."%';");
 
     $queryCliente = mysqli_query($conn, $sqlCliente);
     $cantidad     = mysqli_num_rows($queryCliente);
+    
     while ($dataCliente = mysqli_fetch_array($queryCliente)) { 
         $idCliente = $dataCliente["id"];
         $queryA = mysqli_query($conn,"UPDATE accesos SET dFechaCierre = NOW() 
