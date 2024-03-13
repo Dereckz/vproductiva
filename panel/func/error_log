@@ -1,0 +1,35 @@
+[25-Sep-2023 16:53:22 America/Mexico_City] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'desetec2_vproductivabd.Usuarios' doesn't exist in /home4/desetec2/public_html/panel/func/actualizaruser.php:37
+Stack trace:
+#0 /home4/desetec2/public_html/panel/func/actualizaruser.php(37): mysqli_query(Object(mysqli), 'UPDATE Usuarios...')
+#1 {main}
+  thrown in /home4/desetec2/public_html/panel/func/actualizaruser.php on line 37
+[25-Sep-2023 16:53:36 America/Mexico_City] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'desetec2_vproductivabd.Usuarios' doesn't exist in /home4/desetec2/public_html/panel/func/actualizaruser.php:37
+Stack trace:
+#0 /home4/desetec2/public_html/panel/func/actualizaruser.php(37): mysqli_query(Object(mysqli), 'UPDATE Usuarios...')
+#1 {main}
+  thrown in /home4/desetec2/public_html/panel/func/actualizaruser.php on line 37
+[25-Sep-2023 17:02:30 America/Mexico_City] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'desetec2_vproductivabd.Usuarios' doesn't exist in /home4/desetec2/public_html/panel/func/actualizaruser.php:37
+Stack trace:
+#0 /home4/desetec2/public_html/panel/func/actualizaruser.php(37): mysqli_query(Object(mysqli), 'UPDATE Usuarios...')
+#1 {main}
+  thrown in /home4/desetec2/public_html/panel/func/actualizaruser.php on line 37
+[25-Sep-2023 17:52:27 America/Mexico_City] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'desetec2_vproductivabd.Usuarios' doesn't exist in /home4/desetec2/public_html/panel/func/actualizaruser.php:37
+Stack trace:
+#0 /home4/desetec2/public_html/panel/func/actualizaruser.php(37): mysqli_query(Object(mysqli), 'UPDATE Usuarios...')
+#1 {main}
+  thrown in /home4/desetec2/public_html/panel/func/actualizaruser.php on line 37
+[25-Sep-2023 22:32:50 America/Mexico_City] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'desetec2_vproductivabd.Usuarios' doesn't exist in /home4/desetec2/public_html/panel/func/actualizaruser.php:37
+Stack trace:
+#0 /home4/desetec2/public_html/panel/func/actualizaruser.php(37): mysqli_query(Object(mysqli), 'UPDATE Usuarios...')
+#1 {main}
+  thrown in /home4/desetec2/public_html/panel/func/actualizaruser.php on line 37
+[25-Sep-2023 22:33:23 America/Mexico_City] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'desetec2_vproductivabd.Usuarios' doesn't exist in /home4/desetec2/public_html/panel/func/actualizaruser.php:37
+Stack trace:
+#0 /home4/desetec2/public_html/panel/func/actualizaruser.php(37): mysqli_query(Object(mysqli), 'UPDATE Usuarios...')
+#1 {main}
+  thrown in /home4/desetec2/public_html/panel/func/actualizaruser.php on line 37
+[25-Sep-2023 22:33:44 America/Mexico_City] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'desetec2_vproductivabd.Usuarios' doesn't exist in /home4/desetec2/public_html/panel/func/actualizaruser.php:37
+Stack trace:
+#0 /home4/desetec2/public_html/panel/func/actualizaruser.php(37): mysqli_query(Object(mysqli), 'UPDATE Usuarios...')
+#1 {main}
+  thrown in /home4/desetec2/public_html/panel/func/actualizaruser.php on line 37

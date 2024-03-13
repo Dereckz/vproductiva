@@ -1,0 +1,328 @@
+/* inicia el estilo para el encabezado*/
+@font-face {
+	font-family: Montserrat;
+	src: url(Montserrat.ttf);
+}
+body{
+	margin: 0;
+	background-color: #ffffff;
+}
+#planmarketing{
+	margin-left: 20px;
+}
+
+#logotipo{
+	text-align: left;
+}
+#logo{
+	position: relative;
+	/*width: 98%;*/
+	padding-top: 1%;
+	height: 3em;
+}
+
+#encabezado{
+	background-color: rgb(255, 255, 255);
+	position: sticky;
+	top: 0px;
+	margin: 0%;
+	width: 100%;
+	text-align: center;
+}
+#tituloprincipal{
+	/* margin: 0%; */
+	color: #872362;
+	/* font-weight: 550; */
+	font-size: 2.5rem;
+	/* line-height: 1.1; */
+	margin-top: 0.7em;
+	margin-bottom: 0.1em;
+	margin-left: 4.8em;
+	margin-right: 4.8em;
+	font-family: Montserrat;
+}
+#menu{
+	/*background-color: #40bff2;*/
+	margin-top: 0%;
+	margin-left: 0%;
+	font-family: sans-serif;
+	margin-bottom: 0%;
+	/*height: 6.5em;*/
+}
+.menus{
+	display: inline-block;
+	font-size: 1.4em;
+	text-align: center;
+	width: 18%;
+	vertical-align: top;
+	padding: 1em;
+}
+.logo{
+	display: inline-block;
+	font-size: 1.3em;
+	text-align: left;
+	width: 7.5%;
+}
+.enlacemenu{
+	color: #000000;
+	text-decoration: none;
+}
+#miperfil{
+	color: white;
+}
+#miperfilfondo{
+	background-color: #872362
+	;
+}
+a:hover {
+	color: #630ba3;
+	cursor: pointer;
+  }
+
+h1{
+	color: #000000;
+}
+
+.section-title {
+	font-size: 4rem;
+	font-weight: 300;
+	color: rgb(146, 26, 201);
+	margin-bottom: 10px;
+	text-transform: uppercase;
+	letter-spacing: 0.2rem;
+	text-align: center;
+}
+.section-title span {
+	color: #4720b7;
+}
+
+.iconorecurso{
+	width: 3.6em;
+	margin-top: 0.2em;
+	margin-left: 0.6em;
+}
+.iconorecursocelda{
+	background-color: #ebebec;
+	border-radius: 0.7em 0px 0px 0.7em;
+}
+
+#tablarecursos{
+	margin-left: 14%;
+	margin-bottom: 2em;
+	/*margin-top: 2em;*/
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	/*width: 45%;*/
+	margin-right: 9em;
+}
+
+.iconosrec{
+	text-align: center;
+	background-color: #ebebec;
+}
+
+#filatitulo{
+	/*background-color: #b77add;*/
+	padding-bottom: 0%;
+	text-align: left;
+}
+#filainstrucciones{
+	background-color: #79b3ce;
+	padding-top: 0%;
+}
+.temario{
+	background-color: #ebebec;
+    border-radius: 0px 0.7em 0.7em 0px;
+	width: 4em;
+}
+h2{
+	color: #0D1566;
+	/*text-indent: 8em;*/
+	font-size: 1.6em;
+	margin-top: 0.5em;
+	/*font-family: Acumin;*/
+	margin-bottom: 0.3em
+}
+h4{
+	color: #360cb5;
+	text-indent: 1.7em;
+}
+
+.tituloscursos{
+	width: 46em;
+
+}
+
+.titulostemario{
+	text-decoration:none; 
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-size: 1.25em;
+	width: 60%;
+	color: #000000;
+}
+
+.fondotemario{
+	background-color: #ebebec;
+	border: inset 0pt;
+	border-spacing: 0px;
+	padding: 1em;
+}
+
+.celdasvacias{
+	height: 1.5em;
+}
+
+.constancia{
+	background-color: #4720b7;
+    border-radius: 5em;
+	height: 3em;
+	text-align: center;
+}
+
+#texconstancia{
+color: #ffffff;
+font-family: Acumin;
+font-size: 1.2em;
+text-decoration: none;
+}
+
+.notacurso{
+	text-align: center;
+	font-family: Acumin;
+}
+
+.titulostemario2{
+	font-size: 1.25em;
+	/*color: #ffffff;
+	background-color: #cbc7ed;*/
+    border-radius: 1em 1em 1em 1em;
+	height: 2em;
+	padding-left: 0em;
+	width: 24em;
+	font-weight: 500;
+}
+.celdasvacias2{
+	height: 0.4em;
+}
+
+#fondotemario{
+	background-image: url(img/fondotemarios.gif)
+}
+
+#tablacontenido{
+	/* background-color: #2E49C1;
+    margin-right: 3em; 
+    padding-right: 3em;*/
+}
+
+.celdatop{
+	vertical-align: top;
+	/*background-color: #2E49C1;
+	color: white;*/
+	width: 50%;
+}
+
+.sangriavinetas{
+	padding-left: 2em;
+}
+
+#imagentemario{
+	width: 35%;
+	vertical-align: top;
+}
+
+#imagentemar{
+	width: 100%;
+	margin-top: 1.3em;
+}
+
+#descricpiontemario{
+	text-align: justify;
+	margin-bottom: 0;
+	font-family: 'Montserrat';
+    font-weight: 500;
+	line-height: 1.5em;
+	letter-spacing: -0.03em;
+	font-size: 0.9em;
+}
+
+.btnInscribirse{
+	background-color: #00b0ff;
+    border-radius: 25em;
+    color: white;
+    /* padding: 0em 1em; 
+    margin: 0em 6em;
+    text-decoration: none; */
+    height: 2em;
+    /* vertical-align: bottom; */
+    padding-left: 13%;
+    padding-top: 0.3em;
+	width: 35%;
+}
+
+.btnInscribirsebtn{
+	text-decoration: none;
+    color: white;
+    font-size: 1.2em;
+	font-weight: 600;
+}
+#nmodulo{
+	font-size: 0.88em;
+	font-weight: 400;
+}
+.menusvacio{
+	display: inline-block;
+	font-size: 1.1em;
+	text-align: center;
+	width: 20%;
+	vertical-align: top;
+	padding: 1em;
+}
+
+#titulocurso{
+	margin-bottom: 0;
+    margin-top: 3%;
+    font-family: 'Montserrat';
+    font-size: 150%;
+}
+@media screen and (max-width:700px){
+	.logo {
+		display: none;
+	}
+	.menus {
+		display: inline-block;
+		font-size: 1em;
+		text-align: center;
+		vertical-align: top;
+		padding: 1em;
+	}
+	.menusvacio {
+		display: inline-block;
+		width: 0%;
+	}
+	#tituloprincipal {
+		margin-left: 0.8em;
+		margin-right: 0.8em;
+		font-size: 1.6rem;
+	}
+	#tablarecursos {
+		margin-left: 0%;
+		margin-right: 1em;
+	}
+	#descricpiontemario {
+		line-height: 1.2em;
+		font-size: 0.7em;
+	}
+	.titulostemario2 {
+		font-size: 1em;
+	}
+	.btnInscribirsebtn {
+		font-size:0.8em;
+	}
+	.btnInscribirse {
+		height: 1.7em;
+		padding-left: 3%;
+		padding-top: 0.3em;
+	}
+
+}
+

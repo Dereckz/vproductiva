@@ -15,7 +15,7 @@
   header('location:../account/login.php');
 	include 'header.php' 
 ?>
- <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet"/>
+          <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet"/>
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
           <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 <style>
@@ -144,7 +144,7 @@ th, td {
                            <?php echo $dataCliente['nombre']; ?>
                            </td>  
                             <td>
-                            <!--  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteChildresn<?php echo $dataCliente['iIdUsuario']; ?>">
+                        <!--  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteChildresn<?php echo $dataCliente['iIdUsuario']; ?>">
                                 Eliminar
                               </button>  -->
                               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editChildresn<?php echo $dataCliente['iIdUsuario']; ?>">
@@ -156,18 +156,28 @@ th, td {
                               
                        </td> 
                         <?php 
+                        
                             $sqlacceso   = ("SELECT * FROM accesos where idUsuario=".$dataCliente['iIdUsuario']." ORDER BY dFechaAcceso DESC LIMIT 1;");
                             $queryacceso = mysqli_query($conn, $sqlacceso);
-                            while ($dataacceso = mysqli_fetch_array($queryacceso)) {
-                              $fechaInicio = new DateTime($dataacceso['dFechaAcceso']);
-                              $fechaFin = new DateTime($dataacceso['dFechaCierre']);
-                              $intervalo = $fechaInicio->diff($fechaFin);
-                              ?>
+                            $rowsa=mysqli_num_rows($queryacceso);
 
-                            <td><?php echo $intervalo->h . " horas, " . $intervalo->i . " minutos y " . $intervalo->s . " segundos"; ?></td>
-                            <td><?php echo $dataacceso['dFechaAcceso']; ?></td>
+                            if($rowsa>0){
+                              while ($dataacceso = mysqli_fetch_array($queryacceso)) {
+                                $fechaInicio = new DateTime($dataacceso['dFechaAcceso']);
+                                $fechaFin = new DateTime($dataacceso['dFechaCierre']);
+                                $intervalo = $fechaInicio->diff($fechaFin);  
+                                $tiempodecoenxion=$intervalo->h . " horas, " . $intervalo->i . " minutos y " . $intervalo->s . " segundos";                                       
+                              ?>
+                              <td><?php echo $tiempodecoenxion ;?></td>
+                              <td><?php echo $dataacceso['dFechaCierre']; ?></td>
+                        
                             <td hidden>3</td>
-                           <?php }?>
+                           <?php }   
+                          }else{?>
+                              <td>0</td>
+                              <td>0000-00-00</td>
+                        
+                          <?php } ?>
                            
                           </tr>
                               <?php include('ModalAgregar.php'); ?>
@@ -177,7 +187,7 @@ th, td {
                               <?php include('ModalEliminar.php'); ?>
                               <!--Ventana Modal para Agregar Curso--->
                               <?php include('ModalCurso.php'); ?>
-                          <?php } ?>
+                          <?php  }?>
                 </tbody>
             </table>
                   </div>

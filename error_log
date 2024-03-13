@@ -1,0 +1,4 @@
+[19-Feb-2024 09:34:08 America/Mexico_City] PHP Warning:  Undefined array key "name" in /home1/valuaci4/public_html/contacto.php on line 10
+[19-Feb-2024 09:34:08 America/Mexico_City] PHP Warning:  Undefined array key "apellido" in /home1/valuaci4/public_html/contacto.php on line 11
+[19-Feb-2024 09:34:08 America/Mexico_City] PHP Warning:  Undefined array key "email" in /home1/valuaci4/public_html/contacto.php on line 12
+[19-Feb-2024 09:34:08 America/Mexico_City] PHP Warning:  Undefined array key "numero" in /home1/valuaci4/public_html/contacto.php on line 13
