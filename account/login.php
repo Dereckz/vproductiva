@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +11,8 @@
     <link rel="stylesheet" href="../styles/stylemenu.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="account.css">
- 
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <script type="text/javascript" src="script.js"></script>
 </head>
 <body >
   <!-- Header -->
@@ -82,16 +81,24 @@
                   <label for="confirmpassword">Confirmar contraseña</label>
                   <input type="password" id="confirmpassword" name="confirmpassword" 
                         pattern="^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{8,16}$">
+
+              
+
                       <select name="empresa" id="empresa">
                           <option>Empresa procedente</option>
                             <?php
                                 require("../dev/conectar.php");
+                            
                                 $dataempresa = mysqli_query($conn,"SELECT * FROM empresa");
                                 while ($empresa = mysqli_fetch_array($dataempresa)) { 
+                        
+                                  $array=array($empresa['idempresa']=>$empresa['nombre']);
                                   echo '<option value="'.$empresa['idempresa'].'">'.$empresa['nombre'].'</option>';
                                 }
                             ?>
                       </select>
+                      <label for="empresa">Empresa: </label>
+                      <input type="text" id="search" placeholder="Search" />
                         <li id="checkterminos" style="list-style: none;">
                           <input id="chkbxtyc" type="checkbox" required>
                           <label for="c1"><a href="../indexterminos.html">Aceptar Términos y Condiciones</a> </label>
