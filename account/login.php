@@ -11,8 +11,49 @@
     <link rel="stylesheet" href="../styles/stylemenu.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="account.css">
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-  <script type="text/javascript" src="script.js"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+    $(document).ready(function(){
+
+        $('.search-box input[type="text"]').on('keydown', function(e) {
+        if(e.key == 'Enter' || e.key == 'Tab') {
+          
+            e.preventDefault();
+            var inputVal = $(this).val();
+            var resultDropdown = $(this).siblings(".result");
+            if(inputVal.length){
+                $.get("backend-search.php", {term: inputVal}).done(function(data){
+                    // Display the returned data in browser
+                    resultDropdown.html(data);
+                });
+            } else{
+                resultDropdown.empty();
+            }
+        }
+});
+
+        // $('.search-box input[type="text"]').on("keyup input", function(){
+        //     /* Get input value on change */
+        //     var inputVal = $(this).val();
+        //     var resultDropdown = $(this).siblings(".result");
+        //     if(inputVal.length){
+        //         $.get("backend-search.php", {term: inputVal}).done(function(data){
+        //             // Display the returned data in browser
+        //             resultDropdown.html(data);
+        //         });
+        //     } else{
+        //         resultDropdown.empty();
+        //     }
+        // });
+        
+        // // Set search input value on click of result item
+        // $(document).on("click", ".result p", function(){
+        //     $(this).parents(".search-box").find('input[type="text"]').val($(this).text());
+        //     $(this).parent(".result").empty();
+        // });
+    });
+    </script>
 </head>
 <body >
   <!-- Header -->
@@ -81,10 +122,13 @@
                   <label for="confirmpassword">Confirmar contraseña</label>
                   <input type="password" id="confirmpassword" name="confirmpassword" 
                         pattern="^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{8,16}$">
-
-              
-
-                      <select name="empresa" id="empresa">
+                        <div class="search-box">
+                          <label for="empresa">Empresa:</label>
+                          <input id="buscar" type="text" autocomplete="off"/>
+                        
+                          <div class="result"></div>
+                       </div>
+                      <!-- <select name="empresa" id="empresa">
                           <option>Empresa procedente</option>
                             <?php
                                 require("../dev/conectar.php");
@@ -96,9 +140,8 @@
                                   echo '<option value="'.$empresa['idempresa'].'">'.$empresa['nombre'].'</option>';
                                 }
                             ?>
-                      </select>
-                      <label for="empresa">Empresa: </label>
-                      <input type="text" id="search" placeholder="Search" />
+                      </select> -->
+                      
                         <li id="checkterminos" style="list-style: none;">
                           <input id="chkbxtyc" type="checkbox" required>
                           <label for="c1"><a href="../indexterminos.html">Aceptar Términos y Condiciones</a> </label>

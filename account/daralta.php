@@ -66,7 +66,7 @@ $idempresa=$_POST["empresa"];
                 if ($_POST["password"] == $_POST["confirmpassword"]) 
                 {
                     $queryA = mysqli_query($conn,"INSERT INTO `usuarios`(`iIdUsuario`, `fkidTipoUsuario`, `cNombre`, `cApellidoP`, `cApellidoM`, `cNombreLargo`, `cCorreo`, `cUsuario`, `cPassword`, `cTelefono`, `cCodigo`, `dFechaAlta`, `iGenero`,`fkidempresa`,`iEstatus`)
-                                                VALUES ('0','3','$nombres','$paternos','$maternos','$fullname','$correo','$correo','$contrasena','','','$fecha_actual','0','$idempresa','1')");
+                                                VALUES ('0','3','$nombres','$paternos','$maternos','$fullname','$correo','$correo','$contrasena','','',NOW(),'0','$idempresa','1')");
                         if($queryA){
                                 
                         header("Location: ../account/exitoso.php");                          
