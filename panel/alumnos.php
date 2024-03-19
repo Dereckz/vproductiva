@@ -141,7 +141,12 @@ th, td {
                               <td><span  class="badge badge-danger"><a class="text-white" href="func/updatestatus.php?id='<?php echo $dataCliente['iIdUsuario']; ?>'&status=0">Inactivo</a></span></td> 
                             <?php }?>
                            <td>
-                           <?php echo $dataCliente['nombre']; ?>
+                           <?php if ($dataCliente['idempresa']==0){
+                                echo "N/A"; 
+                           } else{
+                            echo $dataCliente['nombre']; 
+                           }
+                           ?>
                            </td>  
                             <td>
                         <!--  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteChildresn<?php echo $dataCliente['iIdUsuario']; ?>">
