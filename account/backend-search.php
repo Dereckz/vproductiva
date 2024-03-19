@@ -22,7 +22,7 @@ if(isset($_REQUEST["term"])){
             if(mysqli_num_rows($result) > 0){
                 // Fetch result rows as an associative array
                 while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
-                   // echo "<p>" . $row["nombre"] . "</p>";
+                    echo "<p>" . $row["nombre"] . "</p>";
                     echo '<input id="empresa" name ="empresa" type="hidden" value='. $row["idempresa"] .' />';
                 }
             } else{

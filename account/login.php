@@ -28,10 +28,27 @@
                     resultDropdown.html(data);
                 });
             } else{
+              
                 resultDropdown.empty();
             }
         }
+        $('#buscar').blur(function(){
+    //Capturar el id del elemento que pierde el foco
+    let idElemento = $(this).prop('id');
+   // alert ("Has dejado de escribir "+idElemento);
+    //Mostrar el id en consola
+    var inputVal = $(this).val();
+            var resultDropdown = $(this).siblings(".result");
+    $.get("backend-search.php", {term: inputVal}).done(function(data){
+                    // Display the returned data in browser
+                    resultDropdown.html(data);
+                });
 });
+
+       
+});
+
+
 
         // $('.search-box input[type="text"]').on("keyup input", function(){
         //     /* Get input value on change */
@@ -110,10 +127,17 @@
                    
                 </form>
                 <form method="post" action="daralta.php" id="registerform">
+                
+                  <div class="search-box">
                   <label for="fullname">Nombre </label>
-                  <input type="text" id="fullname" name="fullname">
+                  <input type="text" id="fullname" name="fullname" required>
+                  <label for="empresa">Empresa Asociada:</label>
+                  <input id="buscar" name="buscar" type="text" autocomplete="off" required oninvalid="setCustomValidity('Si no esta asociado a una, ingresa NA')" 
+                    oninput="setCustomValidity('')"/>
+                
+                  <div class="result"></div>
                   <label for="email">Email</label>
-                  <input type="email" id="email" name="email">
+                  <input type="email" id="email" name="email" required>
                   <label for="password">Contraseña</label>
                   <input type="password" id="password" name="password" 
                         pattern="^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{8,16}$" 
@@ -122,12 +146,14 @@
                   <label for="confirmpassword">Confirmar contraseña</label>
                   <input type="password" id="confirmpassword" name="confirmpassword" 
                         pattern="^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{8,16}$">
-                        <div class="search-box">
-                          <label for="empresa">Empresa:</label>
-                          <input id="buscar" type="text" autocomplete="off"/>
-                        
-                          <div class="result"></div>
-                       </div>
+                    
+
+                      <li id="checkterminos" style="list-style: none;">
+                          <input id="chkbxtyc" type="checkbox" required>
+                          <label for="c1"><a href="../indexterminos.html">Aceptar Términos y Condiciones</a> </label>
+                        </li>
+                       
+                  </div>  
                       <!-- <select name="empresa" id="empresa">
                           <option>Empresa procedente</option>
                             <?php
@@ -142,11 +168,7 @@
                             ?>
                       </select> -->
                       
-                        <li id="checkterminos" style="list-style: none;">
-                          <input id="chkbxtyc" type="checkbox" required>
-                          <label for="c1"><a href="../indexterminos.html">Aceptar Términos y Condiciones</a> </label>
-                        </li>
-                       
+                      
                         
                   <!-- <label for="codigomaestro">Matricula</label>
                   <input type="text" id="codigomaestro" name ="codigomaestro"> -->
