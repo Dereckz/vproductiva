@@ -1,8 +1,8 @@
 <?php
 
 require("../../dev/conectar.php");
-echo 'entro';
-/* $idusuario=$_POST["idusuario"];
+
+ $idusuario=$_POST["idusuario"];
 $email=$_POST["email"];  
 $nombre=$_POST["nombre"];
 $apellidoparterno=$_POST["app"];
@@ -29,11 +29,11 @@ $idempresa=$_POST["empresa"];
                 $datausuario = mysqli_query($conn, "SELECT * FROM  usuarios WHERE iIdUsuario =".$idusuario);
                 $buscartipo = mysqli_fetch_array($datausuario);
                 if($buscartipo["fkidTipoUsuario"]==2){
-                        header("Location: ../instructor.php");
+                        header("Location: ../index.php");
                 }elseif($buscartipo["fkidTipoUsuario"]==3){
-                        header("Location: ../alumnos.php");
+                        header("Location: ../index.php");
                 }
-            } */
+            } 
 
 
 ?>

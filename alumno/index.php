@@ -573,7 +573,7 @@ font-weight: 550;
                                         </td>
                                     </tr>
 
-                                    <?php include('ModalEditar.php'); ?>
+                                  
                                 </form>
     
                                 <tr>
@@ -603,7 +603,7 @@ font-weight: 550;
                                         </p>
                                     </td>
                                 </tr>
-                                
+                                <?php include('ModalEditar.php'); ?>
                             </table>
               <?php  
                         }
