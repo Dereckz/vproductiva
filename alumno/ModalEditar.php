@@ -2,7 +2,7 @@
 <script src="sweetalert2.min.js"></script>
 <link rel="stylesheet" href="sweetalert2.min.css">
 <!--ventana para Update--->
-<div class="modal fade" id="editChildresn<?php echo $dataCliente['iIdUsuario']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="editChildresn<?php echo $consulta['iIdUsuario']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header" style="background-color: #563d7c !important;">
@@ -16,50 +16,47 @@
 
 
       <form method="POST" action="func/actualizaruser.php">
-        <input type="hidden" name="idusuario" value="<?php echo $dataCliente['iIdUsuario']; ?>">
+        <input type="hidden" name="idusuario" value="<?php echo $consulta['iIdUsuario']; ?>">
 
             <div class="modal-body" id="cont_modal">
-
+            
                 <div class="form-group">
                   <label for="recipient-name" class="col-form-label">Nombre(s):</label>
-                  <input type="text" name="nombre" class="form-control" value="<?php echo $dataCliente['cNombre']; ?>" required="true">
+                  <input type="text" name="nombre" class="form-control" value="<?php echo $consulta['cNombre']; ?>" required="true">
                 </div>
                 <div class="form-group">
                   <label for="recipient-name" class="col-form-label">Apellido Paterno:</label>
-                  <input type="text" name="app" class="form-control" value="<?php echo $dataCliente['cApellidoP']; ?>" required="true">
+                  <input type="text" name="app" class="form-control" value="<?php echo $consulta['cApellidoP']; ?>" required="true">
                 </div>
                 <div class="form-group">
                   <label for="recipient-name" class="col-form-label">Apellido Materno:</label>
-                  <input type="text" name="apm" class="form-control" value="<?php echo $dataCliente['cApellidoM']; ?>" required="true">
+                  <input type="text" name="apm" class="form-control" value="<?php echo $consulta['cApellidoM']; ?>" required="true">
                 </div>
                 <div class="form-group">
                   <label for="recipient-name" class="col-form-label">Correo:</label>
-                  <input type="email" name="email" class="form-control" value="<?php echo $dataCliente['cCorreo']; ?>" required="true">
+                  <input type="email" name="email" class="form-control" value="<?php echo $consulta['cCorreo']; ?>" required="true">
                 </div>
-                <div class="form-group">
-                  <label for="recipient-name" class="col-form-label">Password:</label>
-                  <input type="password" name="password" class="form-control" value="" >
-                </div>
+                
                 <div class="form-group">
                   <label for="recipient-name" class="col-form-label">Telefono:</label>
-                  <input type="number" name="celular" class="form-control" value="<?php echo $dataCliente['cTelefono']; ?>" >
+                  <input type="number" name="celular" class="form-control" value="<?php echo $consulta['cTelefono']; ?>" >
                 </div>
                 <div class="form-group" hidden>
                   <label for="recipient-name" class="col-form-label">tipoususerio:</label>
-                  <input type="text" name="tipo" class="form-control" value="<?php echo $dataCliente['fkidTipoUsuario']; ?>" >
+                  <input type="text" name="tipo" class="form-control" value="<?php echo $consulta['fkidTipoUsuario']; ?>" >
                 </div>
                 <div>
        
                   <?php 
                     
-                    if ($dataCliente["iGenero"]==0){
+                    if ($consulta["iGenero"]==0){
                     
                       echo ' 
                       
                       <input type="radio" name="radio" value="0" checked=true> Femenino<br>
                       <input type="radio" name="radio" value="1" > Masculino<br>
                       <input type="radio" name="radio" value="2"> No especificar<br>';
-                    }elseif($dataCliente["iGenero"]==1){
+                    }elseif($consulta["iGenero"]==1){
                         echo ' 
                         <input type="radio" name="radio" value="0"> Femenino<br>
                         <input type="radio" name="radio" value="1" checked=true> Masculino<br>
@@ -83,7 +80,7 @@
                                 $empresaasignada=mysqli_query($conn, "SELECT * FROM empresa e
                                 inner join usuarios u
                                 on e.idempresa=u.fkidempresa
-                                where u.iIdUsuario=".$dataCliente['iIdUsuario']);
+                                where u.iIdUsuario=".$consulta['iIdUsuario']);
                                 $infoempresa = mysqli_fetch_array($empresaasignada);
                                 while ($empresa = mysqli_fetch_array($dataempresa)) { 
                                   if($infoempresa["idempresa"]==$empresa['idempresa']){
@@ -95,12 +92,7 @@
                             ?>
                       </select>
                    </div> 
-                    <div class="form-group">
-                      <label class="col-form-label" for="">Fecha de alta</label>
-                          <?php
-                          echo '  <input type="date" name="fechaalta" class="form-control" value="'.$dataCliente["dFechaAlta"].'">';
-                        ?>
-                    </div>
+                 
                 
             </div>
             <div class="modal-footer">
@@ -114,12 +106,12 @@
 </div>
 <!---fin ventana Update --->
 <script>
-  function guardado_correctamente() {
-    Swal.fire(
-  '¡Operación Exitosa!',
-  'Se a agregado correctamente.',
-  'success'
-)
-  }
+    function guardado_correctamente() {
+      Swal.fire(
+    '¡Operación Exitosa!',
+    'Se a agregado correctamente.',
+    'success'
+  )
+    }
 
   </script>
