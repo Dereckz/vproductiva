@@ -205,13 +205,15 @@ text-decoration: none;
 }
 
 #fondotemario{
-	background-image: url(img/fondotemarios.gif)
+	background-image: url(img/fondotemarios.gif);
+	margin-top: 9%;
 }
 
 #tablacontenido{
 	/* background-color: #2E49C1;
     margin-right: 3em; 
     padding-right: 3em;*/
+	margin-top: 1em;
 }
 
 .celdatop{
@@ -249,14 +251,12 @@ text-decoration: none;
 	background-color: #00b0ff;
     border-radius: 25em;
     color: white;
-    /* padding: 0em 1em; 
-    margin: 0em 6em;
-    text-decoration: none; */
     height: 2em;
     /* vertical-align: bottom; */
-    padding-left: 13%;
-    padding-top: 0.3em;
-	width: 35%;
+    /* padding-left: 13%; */
+    padding-top: 0.2em;
+    width: 35%;
+    text-align: center;
 }
 
 .btnInscribirsebtn{
@@ -300,7 +300,7 @@ text-decoration: none;
     padding: 2% 3%;
 }
 #imglogopie{
-	height: 50%;
+	height: 46%;
 	margin-top: 20%;
 }
 #texto1pie{
@@ -317,12 +317,13 @@ text-decoration: none;
 	font-weight: 550;
 	color: white;
 }
+/*
 #texto2pie{
 	width: 32%;
     padding: 2% 5%;
 	font-family: 'Montserrat';
     margin-top: 2.6%;
-}
+}*/
 #parrafoter{
 	line-height: 110%;
 }
@@ -332,9 +333,40 @@ text-decoration: none;
 
 /*end footer*/
 
+@media(min-width: 1450px){ 
+	#imglogopie {
+		height: 60%;
+		width: 84%;
+		margin-top: 10%;
+	}
+}
+@media(min-width: 1550px){ 
+	#imglogopie {
+		height: 70%;
+		width: 80%;
+		margin-top: 10%;
+	}
+}
+
 @media(min-width: 1800px){ 
 	.u-section-2 {
 	  min-height: 1250px;
+	}
+	#imglogopie {
+		height: 56%;
+		width: 60%;
+		margin-top: 10%;
+	}
+}
+
+@media(min-width: 1800px){ 
+	.u-section-2 {
+	  min-height: 1250px;
+	}
+	#imglogopie {
+		height: 56%;
+		width: 60%;
+		margin-top: 10%;
 	}
 }
 /*

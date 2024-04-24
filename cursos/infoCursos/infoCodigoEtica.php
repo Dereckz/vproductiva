@@ -6,23 +6,46 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="estiloencabezado.css">
-        
+        <link rel="stylesheet" href="stylemenu.css">
+        <link rel="stylesheet" href="style-rs.css">
+        <link rel="stylesheet" href="style2.css">
+        <!--<link rel="stylesheet" href="../../homecursos/nicepage.css" media="screen" class="u-static-style">
+        <link rel="stylesheet" href="../../homecursos/nicepage(1).css" media="screen">
+        <link rel="stylesheet" href="../../styles/stylemenu.css">
+        <link rel="stylesheet" href="../../styles/style-rs.css">
+        <link rel="stylesheet" href="../../homecursos/style2.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+        -->
         <title>Código de ética</title>
     </head>
     <body>
-    <header id="encabezado">
-    	<!--<div id="logotipo">
-    	<img src="img/logovproductiva2.png" id="logo"> 
-    	</div>-->
-    	<!--<h1 id="tituloprincipal">Valuacion Productiva</h1>-->
-    	<ul id="menu">
-            <li class="logo"><img src="../img/logob.png" id="logo"></li>
-            <li class="menus"></li>
-    	    <li class="menus"><a href="../../alumno/index.php" class="enlacemenu">Mi perfil</a></li>
-    	    <li id="miperfilfondo" class="menus"><a href="../../alumno/cursos.php" id="miperfil" class="enlacemenu">Catálogo de Cursos</a></li>
-            <li class="menus"><a href="../../account/login.html" class="enlacemenu">Salir</a></li>
-    	</ul>
-    </header>
+    <section id="header">
+    <div class="header container">
+      <div class="nav-bar">
+        <div class="brand">
+          <a href="../index.html">
+
+           <img src="../../img/logob.png" id="logoinicio" alt="VProductiva Logo">
+           <!-- <h1>Valuación Productiva</h1>-->
+          </a>
+        </div>
+        <div class="navbar" class="nav-list">
+          <div class="menu-toggle">&#9776;</div>
+          <ul class="menu">
+            <li class="fondoinicio"><a href="../../index.html" data-after="Home" class="headermenucursos" >INICIO</a></li>
+            <!-- <li><a href="#services" data-after="Service">Servicios</a></li>-->
+            <li class="fondoinicio" id="fondoinicio" ><a href="../../indexcursos.html" data-after="Projects" class="headermenucursos" style="color: white;">CURSOS</a></li>
+            <li class="fondoinicio"><a href="../../indexacerca.html" data-after="About" class="headermenucursos">NOSOTROS</a></li>
+            <li class="fondoinicio"><a href="../../indexcontacto.html" data-after="Contact" class="headermenucursos">CONTACTO</a></li>
+            <!--<li><a href="account/register.html" data-after="Login">Login</a></li> -->
+            <li class="fondoinicio"><a href="../../account/login.php" data-after="Login" class="headermenucursos" id="menuingresar">INGRESAR</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>  
+  <script src="../styles/menu.js"></script>
+  <!-- End Header -->
 
     <div id="fondotemario">
     
@@ -61,13 +84,18 @@
                          </tr>';
                 }
                 
-                ?>  
+                ?>
                 <tr> 
                     <td>
                     </td>
                     <td >
-                    <?php include('..\funct\btninscripcion.php?idc='.$idcurso); 
-                    ?>
+                    <!-- <-?php include('..\funct\btninscripcion.php?idc='.$idcurso); 
+                    ?>-->
+                    <div class="btnInscribirse">
+                    <a href="../../account/login.php" 
+                    class="btnInscribirsebtn" class="u-border-1 u-border-active-grey-70 u-border-black u-border-hover-grey-70 u-border-no-left u-border-no-right u-border-no-top u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-style u-custom-item u-none u-radius-0 u-text-active-palette-2-base u-text-body-color u-text-hover-palette-2-base u-top-left-radius-0 u-top-right-radius-0 u-btn-2">
+                    INSCRIBIRSE</a>
+                    </div>
                    
                     </td>
                 </tr>       
@@ -77,6 +105,27 @@
             </td>
         </tr>
     </table>
+    <!-- Start Footer -->
+  <section id="footer">
+    <div id="divfootercursos">
+      <div id="logopiecursos">
+        <img src="../../img/logob2.png" id="imglogopie">
+      </div>
+      <div id="texto1piecursos">
+        <p id="parrafodireccion" class="parrafosfooter">Dirección: Av. Paseo de las Palmas 830, Int. 102-1.
+          Lomas de Chapultepec V Sección. Miguel Hidalgo.
+          Ciudad de México. C.P. 11000. México.</p>
+          <p class="parrafosfooter">Teléfono: 55-104-680-95</p>
+          <p class="parrafosfooter">Correo electrónico: valuacionproductiva9@gmail.com</p>
+      </div>
+      <div id="texto2pie">
+        <p class="parrafosfooter"><a href="indexterminos.html" class="parrafosfooter" id="terminosycon">Terminos y Condiciones</a></p>
+          <p id="parrafoter" class="parrafosfooter">© 2024 VALUACIÓN PRODUCTIVA Y
+            COMPETITIVA EN MATERIA LABORAL A.C.</p>
+      </div>
+    </div>
+  </section>
+  <!-- End Footer  -->
                 
     </body>
 </html> 

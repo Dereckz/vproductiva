@@ -14,7 +14,7 @@
 }
 
 html {
-	font-size: 10px;
+	/*font-size: 10px;*/
 	font-family: 'Montserrat', sans-serif;
 	scroll-behavior: smooth;
 }
@@ -644,7 +644,7 @@ section#hero {
 #logopiecursos {
     padding-left: 2%;
     width: 39%;
-	margin-top: 2.6%;
+	/*margin-top: 2.6%;*/
 }
 #imgpie {
     width: 90%;
@@ -786,6 +786,7 @@ section#hero {
 	#footer {
         position: absolute;
         /*bottom: 0;*/
+		width: auto;
     }
 	.footershort {
         bottom: 0;
@@ -981,7 +982,7 @@ section#hero {
 	#logopiecursos {
 		padding: 0;
 	}
-	
+
 }
 @media(max-width: 580px){
 

@@ -15,7 +15,7 @@
   header('location:../account/login.php');
 	include 'header.php' 
 ?>
-          <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet"/>
+ <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet"/>
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
           <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 <style>
@@ -85,8 +85,8 @@ th, td {
               <li class="breadcrumb-item active" aria-current="page">Administrar</li>
             </ol>
           </div>
-            <!-- links para exportar a excel -->
-            <script src="https://unpkg.com/xlsx@0.16.9/dist/xlsx.full.min.js"></script>
+    <!-- links para exportar a excel -->
+          <script src="https://unpkg.com/xlsx@0.16.9/dist/xlsx.full.min.js"></script>
             <script src="https://unpkg.com/file-saverjs@latest/FileSaver.min.js"></script>
             <script src="https://unpkg.com/tableexport@latest/dist/js/tableexport.min.js"></script>
             <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet"/>
@@ -127,7 +127,7 @@ th, td {
                 <tbody>
                 
                 <?php
-                     while ($dataCliente = mysqli_fetch_array($queryCliente)) { ?>
+                        while ($dataCliente = mysqli_fetch_array($queryCliente)) { ?>
                      
                           <tr>
                           
@@ -141,47 +141,33 @@ th, td {
                               <td><span  class="badge badge-danger"><a class="text-white" href="func/updatestatus.php?id='<?php echo $dataCliente['iIdUsuario']; ?>'&status=0">Inactivo</a></span></td> 
                             <?php }?>
                            <td>
-                           <?php if ($dataCliente['idempresa']==0){
-                                echo "N/A"; 
-                           } else{
-                            echo $dataCliente['nombre']; 
-                           }
-                           ?>
+                           <?php echo $dataCliente['nombre']; ?>
                            </td>  
                             <td>
-                        <!--  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteChildresn<?php echo $dataCliente['iIdUsuario']; ?>">
+                            <!--  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteChildresn<?php echo $dataCliente['iIdUsuario']; ?>">
                                 Eliminar
                               </button>  -->
                               <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editChildresn<?php echo $dataCliente['iIdUsuario']; ?>">
                                 Modificar
                               </button> 
-                              <button type="button" class="btn btn-warning" data-toggle="modal"  data-target="#cursomodal<?php echo $dataCliente['iIdUsuario']; ?>">
+                              <button type="button" class="btn " data-toggle="modal"  data-target="#cursomodal<?php echo $dataCliente['iIdUsuario']; ?>">
                                 Agregar Curso
                               </button> 
                               
                        </td> 
                         <?php 
-                        
                             $sqlacceso   = ("SELECT * FROM accesos where idUsuario=".$dataCliente['iIdUsuario']." ORDER BY dFechaAcceso DESC LIMIT 1;");
                             $queryacceso = mysqli_query($conn, $sqlacceso);
-                            $rowsa=mysqli_num_rows($queryacceso);
-
-                            if($rowsa>0){
-                              while ($dataacceso = mysqli_fetch_array($queryacceso)) {
-                                $fechaInicio = new DateTime($dataacceso['dFechaAcceso']);
-                                $fechaFin = new DateTime($dataacceso['dFechaCierre']);
-                                $intervalo = $fechaInicio->diff($fechaFin);  
-                                $tiempodecoenxion=$intervalo->h . " horas, " . $intervalo->i . " minutos y " . $intervalo->s . " segundos";                                       
+                            while ($dataacceso = mysqli_fetch_array($queryacceso)) {
+                              $fechaInicio = new DateTime($dataacceso['dFechaAcceso']);
+                              $fechaFin = new DateTime($dataacceso['dFechaCierre']);
+                              $intervalo = $fechaInicio->diff($fechaFin);
                               ?>
-                              <td><?php echo $tiempodecoenxion ;?></td>
-                              <td><?php echo $dataacceso['dFechaAcceso']; ?></td>
-                              <td hidden>3</td>
-                           <?php }   
-                          }else{?>
-                              <td>0</td>
-                              <td>0000-00-00</td>
-                              <td hidden>3</td>
-                          <?php } ?>
+
+                            <td><?php echo $intervalo->h . " horas, " . $intervalo->i . " minutos y " . $intervalo->s . " segundos"; ?></td>
+                            <td><?php echo $dataacceso['dFechaAcceso']; ?></td>
+                            <td hidden>3</td>
+                           <?php }?>
                            
                           </tr>
                               <?php include('ModalAgregar.php'); ?>
@@ -191,7 +177,7 @@ th, td {
                               <?php include('ModalEliminar.php'); ?>
                               <!--Ventana Modal para Agregar Curso--->
                               <?php include('ModalCurso.php'); ?>
-                <?php  }?>
+                          <?php } ?>
                 </tbody>
             </table>
                   </div>
@@ -221,7 +207,7 @@ th, td {
                       </div>
                     </div>
                   </div>
-          </div> 
+                </div> 
        
         </div>
        
@@ -326,7 +312,7 @@ th, td {
 
 
       });
-</script>
+    </script>
 
 <!-- script para exportar a excel -->
 <script>

@@ -1,4 +1,7 @@
-<?php include ('consulta.php'); ?>
+
+<?php include ('consulta2.php'); ?>
+<?php $ida=$_GET["ida"]; ?>
+<?php $name=$_GET["name"]; ?>
 <!DOCTYPE html>
 <!-- saved from url=(0091)https://website529400.nicepage.io/es/1234.html?version=56a80d83-e130-4c50-b76e-7bfc4c0ea516 -->
 <html style="font-size: 16px;" lang="es" class="u-responsive-xl"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -7,14 +10,21 @@
     <meta name="keywords" content="​Hello!">
     <meta name="description" content="">
     <title>Catálogo de cursos</title>
-    <link rel="stylesheet" href="./nicepage.css" media="screen" class="u-static-style">
-    <link rel="stylesheet" href="./nicepage(1).css" media="screen">
+    <link rel="stylesheet" href="nicepage.css" media="screen" class="u-static-style">
+    <link rel="stylesheet" href="nicepage(1).css" media="screen">
+    <link rel="stylesheet" href="../styles/stylemenu.css">
+    <link rel="stylesheet" href="../styles/style-rs.css">
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <script class="u-script" type="text/javascript" src="./jquery-1.9.1.min.js.descarga" defer=""></script>
     <script class="u-script" type="text/javascript" src="./nicepage.js.descarga" defer=""></script>
     <meta name="generator" content="Nicepage 4.18.8, nicepage.com">
     <link id="u-theme-google-font" rel="stylesheet" href="./css">
-    <style class="u-style"> .u-section-2 {
+    <style 
+    class="u-style"> .u-section-2 {
   background-image: none;
+  margin-bottom: 4%;
+  margin-top: 5%;
 }
 .u-section-2 .u-sheet-1 {
   min-height: 50em;
@@ -60,30 +70,32 @@
   padding: 0;
 }
 .u-section-2 .u-list-1 {
-  margin-top: 52px;
+  margin-top: 2.3em;
   margin-bottom: 0;
 }
 .u-section-2 .u-repeater-1 {
-  grid-template-columns: repeat(4, calc(25% - 22.5px));
-  min-height: 273px;
-  grid-gap: 30px;
+  grid-template-columns: repeat(4, calc(23%));
+  /*min-height: 553px;*/
+  grid-gap: 1.7%;
 }
 .u-section-2 .u-list-item-1 {
-  background-image: url(img/carpetablanca.png);
+  /*background-image: url(img/carpetablanca.png);*/
   --animation-custom_in-translate_x: 0px;
   --animation-custom_in-translate_y: 300px;
   --animation-custom_in-opacity: 0;
   --animation-custom_in-rotate: 0deg;
   --animation-custom_in-scale: 1;
   /*box-shadow: 5px 5px 29px 0 rgba(0,0,0,0.15);*/
-  height: 15.4em;
+  background-color: #f6f6f6;
+  height: auto;
+  padding-bottom: 7%;
+  width: auto;
+  margin-bottom: 5%;
 }
 .u-section-2 .u-container-layout-1 {
-  padding: 50px 30px 30px;
+  /*padding: 50px 30px 30px;*/
 }
 .u-section-2 .u-icon-1 {
-  height: 59px;
-  width: 59px;
   background-image: none;
   --animation-custom_in-translate_x: 0px;
   --animation-custom_in-translate_y: 0px;
@@ -91,18 +103,22 @@
   --animation-custom_in-rotate: 180deg;
   --animation-custom_in-scale: 1;
   padding: 0;
-  margin-left: 4.5em;
+  /*margin-left: 4.5em;
+  height: 59px;
+  width: 59px;*/
 }
 .u-section-2 .u-text-5 {
-  font-size: 1.5rem;
-  font-weight: 400;
-  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 550;
+  height: 3.7em;
+  /*text-align: center;*/
+  padding: 0em 1em;
 }
 .u-section-2 .u-btn-2 {
   font-size: 0.875rem;
   background-image: none;
   letter-spacing: 1px;
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
   font-weight: 600;
   margin: 20px 0 0;
   padding: 0;
@@ -246,14 +262,11 @@
   margin: 15px auto 0 0;
   padding: 14px 46px 16px 44px;
 }
-
-
 @media(min-width: 1800px){ 
   .u-section-2 {
     min-height: 1250px;
   }
 }
-
 @media (max-width: 1199px) {
   .u-section-2 .u-text-1 {
     margin-right: 205px;
@@ -281,8 +294,7 @@
 }
 @media (max-width: 991px) {
   .u-section-2 .u-sheet-1 {
-    min-height: 439px;
-    /*margin-left: 0%;*/
+    min-height: 1439px;
   }
   .u-section-2 .u-text-1 {
     margin-top: 60px;
@@ -299,7 +311,7 @@
   }
   .u-section-2 .u-repeater-1 {
     grid-template-columns: repeat(2, calc(50% - 15px));
-    min-height: 557px;
+    /*min-height: 557px;*/
   }
   .u-section-2 .u-container-layout-1 {
     padding-top: 30px;
@@ -317,7 +329,6 @@
     min-height: 302px;
   }
 }
-
 @media (max-width: 767px) {
   .u-section-2 .u-text-4 {
     margin-right: 0;
@@ -350,6 +361,13 @@
   .u-section-2 .u-btn-6 {
     margin-top: 20px;
   }
+  .u-section-2 {
+  margin-bottom: 57%;
+  background-color: white;
+  }
+  .u-section-2 .u-list-item-1 {
+  margin: 0%;
+}
 }
 @media (max-width: 575px) {
   .u-section-2 .u-text-2 {
@@ -374,82 +392,78 @@
   .u-section-2 .u-text-9 {
     font-size: 1.875rem;
   }
-}</style>
+}
+@media screen and (max-width:700px){
+  .u-section-2 .u-list-item-1 {
+    height: 103%;
+  }
+}
+    </style>
     
     <script type="application/ld+json">{
 		"@context": "http://schema.org",
 		"@type": "Organization",
 		"name": "",
 		"url": "https://website529400.nicepage.io/1234.html"
-}</script>
+}
+</script>
     <meta name="theme-color" content="#0066ff">
     <meta property="og:title" content="1234">
     <meta property="og:type" content="website">
     <link rel="canonical" href="https://website529400.nicepage.io/1234.html">
     <link rel="stylesheet" href="estiloencabezado.css">
     <link href="../img/LOGOVP.ico" rel="icon">
-  
 </head>
   <body class="u-body u-xl-mode" data-lang="es">
-  <header id="encabezado">
-    	<!--<div id="logotipo">
-    	<img src="img/logovproductiva2.png" id="logo"> 
-    	</div>-->
-    	<!--<h1 id="tituloprincipal">Valuacion Productiva</h1>-->
-    	<ul id="menu">
-      <li class="logo"><a href="index.php"><img src="img/logob.png" id="logo"></a></li>
-      <li class="menusvacio"></li>
-    	<li class="menus"><a href="index.php">MI PERFIL</a></li>
-    	<li id="miperfilfondo" class="menus"><a href="cursos.php" id="miperfil">CATÁLOGO DE CURSOS</a></li>
-      <li class="menus"><a href="../account/login.php">SALIR</a></li>
-    	</ul>
-  </header>
+  <section id="header">
+    <div class="header container">
+      <div class="nav-bar">
+        <div class="brand">
+          <a href="../index.html">
+
+           <img src="img/logob.png" id="logoinicio" alt="VProductiva Logo">
+           <!-- <h1>Valuación Productiva</h1>-->
+          </a>
+        </div>
+        <div class="navbar" class="nav-list">
+          <div class="menu-toggle">&#9776;</div>
+          <ul class="menu">
+            <li class="fondoinicio"><a href="../index.html" data-after="Home" class="headermenucursos" >INICIO</a></li>
+
+           <!-- <li><a href="#services" data-after="Service">Servicios</a></li>-->
+            <li class="fondoinicio" id="fondoinicio" ><a href="../indexcursos.html" data-after="Projects" class="headermenucursos" style="color: white;">CURSOS</a></li>
+            <li class="fondoinicio"><a href="../indexacerca.html" data-after="About" class="headermenucursos">NOSOTROS</a></li>
+            <li class="fondoinicio"><a href="../indexcontacto.html" data-after="Contact" class="headermenucursos">CONTACTO</a></li>
+            <!--<li><a href="account/register.html" data-after="Login">Login</a></li> -->
+            <li class="fondoinicio"><a href="../account/login.php" data-after="Login" class="headermenucursos" id="menuingresar">INGRESAR</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>  
+  <script src="../styles/menu.js"></script>
+  <!-- End Header -->
 
     
     <section class="u-align-left u-clearfix u-grey-5 u-section-2" id="carousel_0852">
       <div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
         
-          <h1 class="section-title" id="titulocategorias"> <span>Categorías principales</span></h1>
-          <!--<div class="u-expanded-width u-list u-list-1">
-          <div class="u-repeater u-repeater-1">-->
-          <div id="divcategorias">
-            <table>
-              <tr class="filacentrada">
-                <td class="imagenxarea"><a href="cursoxarea.php?ida=1&name=Productividad Laboral"><img src="img/areaplaboral.png" class="imagenesareas" 
-                onmouseover="this.src='img/areaplaboral2.png'" onmouseout="this.src='img/areaplaboral.png'"></a></td>
-                <td class="imagenxarea"><a href="cursoxarea.php?ida=2&name=Habilidades Blandas"><img src="img/areahblandas2.png" class="imagenesareas" 
-                onmouseover="this.src='img/areahblandas.png'" onmouseout="this.src='img/areahblandas2.png'"></a></td>
-                <td class="imagenxarea"><a href="cursoxarea.php?ida=3&name=Psicologia"><img src="img/areapsicologia.png" class="imagenesareas" 
-                onmouseover="this.src='img/areapsicologia2.png'" onmouseout="this.src='img/areapsicologia.png'"></a></td>
-                <td class="imagenxarea"><a href="cursoxarea.php?ida=4&name=Salud, Higiene y Seguridad"><img src="img/areasalud2.png" class="imagenesareas" 
-                onmouseover="this.src='img/areasalud.png'" onmouseout="this.src='img/areasalud2.png'"></a></td>
-              </tr>
-            </table>
-            <table class="cursostres">
-              <tr class="filacentrada">
-                <td class="imagenxarea"><a href="cursoxarea.php?ida=5&name=Cultura Juridica"><img src="img/areacjuridica2.png" class="imagenesareas2" 
-                onmouseover="this.src='img/areacjuridica.png'" onmouseout="this.src='img/areacjuridica2.png'"></a></td>
-                <td class="imagenxarea"><a href="cursoxarea.php?ida=6&name=Finanzas"><img src="img/areafinanzas.png" class="imagenesareas2" 
-                onmouseover="this.src='img/areafinanzas2.png'" onmouseout="this.src='img/areafinanzas.png'"></a></td>
-                <td class="imagenxarea"><a href="cursoxarea.php?ida=7&name=Habilidades Digitales"><img src="img/areahdigitales2.png" class="imagenesareas2" 
-                onmouseover="this.src='img/areahdigitales.png'" onmouseout="this.src='img/areahdigitales2.png'"></a></td>
-                <!--<td class="imagenxarea"><a href=""><img src="img/areaotro.png" class="imagenesareas2" 
-                onmouseover="this.src='img/areaotro2.png'" onmouseout="this.src='img/areaotro.png'"></a></td>-->
-              </tr>
-            </table>
+          <h1 class="section-title"> <span><?php echo $name ?></span></h1>
+          <div class="u-expanded-width u-list u-list-1">
+          <div class="u-repeater u-repeater-1">
+          <?php infoCurso2($ida);?>
           </div>
-          <!--?=infoCurso();?>-->
-        <!--</div>-->
+          </div>
       </div>
     </section>
     
   <!-- Start Footer -->
   <section id="footer">
-    <div id="divfooter">
-      <div id="logopie">
+    <div id="divfootercursos">
+      <div id="logopiecursos">
         <img src="../img/logob2.png" id="imglogopie">
       </div>
-      <div id="texto1pie">
+      <div id="texto1piecursos">
         <p id="parrafodireccion" class="parrafosfooter">Dirección: Av. Paseo de las Palmas 830, Int. 102-1.
           Lomas de Chapultepec V Sección. Miguel Hidalgo.
           Ciudad de México. C.P. 11000. México.</p>

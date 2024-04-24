@@ -57,10 +57,6 @@
     .menu-toggle.active + .menu {
         display: flex;
     }
-    
-    #cursostres {
-		margin-left: 0;
-	}
 }
 
 @media screen and (max-width: 430px) {

@@ -209,6 +209,10 @@ h2{
 	text-align: -webkit-center;
 }
 
+.cursostres{
+	width: 75%;
+    margin-left: 12%;
+}
 
 @media(min-width: 2000px){
 	body{
