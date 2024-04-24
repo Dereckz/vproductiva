@@ -169,11 +169,7 @@
                       </select> -->
                       
                       
-                        
-                  <!-- <label for="codigomaestro">Matricula</label>
-                  <input type="text" id="codigomaestro" name ="codigomaestro"> -->
-   
-                   
+             
                   <input type="submit" value="Registrar" class="submit">
                   
               </form>

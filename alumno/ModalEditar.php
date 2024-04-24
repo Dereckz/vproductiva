@@ -1,6 +1,42 @@
 <script src="sweetalert2.all.min.js"></script>
 <script src="sweetalert2.min.js"></script>
 <link rel="stylesheet" href="sweetalert2.min.css">
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+        $(document).ready(function(){
+
+            $('.search-box input[type="text"]').on('keydown', function(e) {
+            if(e.key == 'Enter' || e.key == 'Tab') {
+              
+                e.preventDefault();
+                var inputVal = $(this).val();
+                var resultDropdown = $(this).siblings(".result");
+                if(inputVal.length){
+                    $.get("backend-search.php", {term: inputVal}).done(function(data){
+                        // Display the returned data in browser
+                        resultDropdown.html(data);
+                    });
+                } else{
+                  
+                    resultDropdown.empty();
+                }
+            }
+            $('#buscar').blur(function(){
+        //Capturar el id del elemento que pierde el foco
+        let idElemento = $(this).prop('id');
+      // alert ("Has dejado de escribir "+idElemento);
+        //Mostrar el id en consola
+        var inputVal = $(this).val();
+                var resultDropdown = $(this).siblings(".result");
+        $.get("backend-search.php", {term: inputVal}).done(function(data){
+                        // Display the returned data in browser
+                        resultDropdown.html(data);
+                    });
+    });
+    });
+        });
+</script>
 <!--ventana para Update--->
 <div class="modal fade" id="editChildresn<?php echo $consulta['iIdUsuario']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -16,10 +52,11 @@
 
 
       <form method="POST" action="func/actualizaruser.php">
+      <div class="search-box">
         <input type="hidden" name="idusuario" value="<?php echo $consulta['iIdUsuario']; ?>">
 
             <div class="modal-body" id="cont_modal">
-            
+           
                 <div class="form-group">
                   <label for="recipient-name" class="col-form-label">Nombre(s):</label>
                   <input type="text" name="nombre" class="form-control" value="<?php echo $consulta['cNombre']; ?>" required="true">
@@ -36,9 +73,15 @@
                   <label for="recipient-name" class="col-form-label">Correo:</label>
                   <input type="email" name="email" class="form-control" value="<?php echo $consulta['cCorreo']; ?>" required="true">
                 </div>
-                
                 <div class="form-group">
-                  <label for="recipient-name" class="col-form-label">Telefono:</label>
+                  <label class="col-form-label">Empresa Asociada:</label>
+                   <input for="recipient-name" id="buscar" name="buscar" class="form-control" type="text" autocomplete="off" value="<?php echo  $nameempresa['nombre'] ?>" required oninvalid="setCustomValidity('Si no esta asociado a una, ingresa NA')" 
+                    oninput="setCustomValidity('')"/>
+                <div class="result"></div>
+                <div>
+                 <br>
+                <div class="form-group">
+                  <label  class="col-form-label">Telefono:</label>
                   <input type="number" name="celular" class="form-control" value="<?php echo $consulta['cTelefono']; ?>" >
                 </div>
                 <div class="form-group" hidden>
@@ -48,11 +91,9 @@
                 <div>
        
                   <?php 
-                    
                     if ($consulta["iGenero"]==0){
                     
                       echo ' 
-                      
                       <input type="radio" name="radio" value="0" checked=true> Femenino<br>
                       <input type="radio" name="radio" value="1" > Masculino<br>
                       <input type="radio" name="radio" value="2"> No especificar<br>';
@@ -71,33 +112,12 @@
                     ?>
                     </div>
                     <br>
-                   <div>
-                   <select name="empresa" id="empresa">
-                          <option>Empresa procedente</option>
-                            <?php
-                                require("../dev/conectar.php");
-                                $dataempresa = mysqli_query($conn,"SELECT * FROM empresa");
-                                $empresaasignada=mysqli_query($conn, "SELECT * FROM empresa e
-                                inner join usuarios u
-                                on e.idempresa=u.fkidempresa
-                                where u.iIdUsuario=".$consulta['iIdUsuario']);
-                                $infoempresa = mysqli_fetch_array($empresaasignada);
-                                while ($empresa = mysqli_fetch_array($dataempresa)) { 
-                                  if($infoempresa["idempresa"]==$empresa['idempresa']){
-                                    echo '<option selected="true" value="'.$empresa['idempresa'].'">'.$empresa['nombre'].'</option>';
-                                  }else{
-                                  echo '<option value="'.$empresa['idempresa'].'">'.$empresa['nombre'].'</option>';
-                                }
-                                }
-                            ?>
-                      </select>
-                   </div> 
-                 
-                
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-              <button type="submit" class="btn btn-primary"   onclick="guardado_correctamente()">Guardar Cambios</button>
+                </div>  
+            
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-primary"   onclick="guardado_correctamente()">Guardar Cambios</button>
+              </div>
             </div>
        </form>
 

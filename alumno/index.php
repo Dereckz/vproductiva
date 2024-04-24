@@ -469,6 +469,7 @@ font-weight: 550;
 		"url": "https://website529400.nicepage.io/1234.html"
 }
     </script>
+
     <meta name="theme-color" content="#0066ff">
     <meta property="og:title" content="1234">
     <meta property="og:type" content="website">
@@ -539,6 +540,9 @@ font-weight: 550;
       
                 $resultado = mysqli_query($conn, "SELECT * FROM usuarios WHERE iIdUsuario=" . $_SESSION["id"]);
                 while ($consulta = mysqli_fetch_array($resultado)) {
+
+                  $queyempresa = mysqli_query($conn, "select * from empresa where idempresa=". $consulta['fkidempresa']);
+                  $nameempresa = mysqli_fetch_array($queyempresa);
             ?>
               <table class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;">
                   
@@ -580,6 +584,13 @@ font-weight: 550;
                                     <td colspan=2>
                                         <p class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;">
                                              Correo: <?php echo $consulta['cCorreo'] ?>
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan=2>
+                                        <p class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;">
+                                             Empresa : <?php echo  $nameempresa['nombre'] ?>
                                         </p>
                                     </td>
                                 </tr>

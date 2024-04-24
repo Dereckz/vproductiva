@@ -1,5 +1,6 @@
 <?php
 
+
 require("../../dev/conectar.php");
 
  $idusuario=$_POST["idusuario"];
@@ -9,9 +10,14 @@ $apellidoparterno=$_POST["app"];
 $apellidomaterno=$_POST["apm"];
 $genero=$_POST["radio"];
 $telefono=$_POST["celular"];
-$idempresa=$_POST["empresa"];
+$textempresa=$_POST["buscar"];
 
-                $consulta="UPDATE usuarios
+$queyempresa = mysqli_query($conn, "select * from empresa where nombre like '%". $textempresa."%'");
+$nameempresa = mysqli_fetch_array($queyempresa);
+
+
+
+                 $consulta="UPDATE usuarios
                         SET cNombre='".$nombre."'".
                         ", cApellidoP='".$apellidoparterno."'".
                         ", cApellidoM='".$apellidomaterno."'".
@@ -19,7 +25,7 @@ $idempresa=$_POST["empresa"];
                         ", cCorreo='".$email."'".
                         ", iGenero='".$genero."'".
                         ", cTelefono='".$telefono."'" .
-                        ", fkidempresa='".$idempresa."'" .
+                        ", fkidempresa='".$nameempresa["idempresa"]."'" .
                         " where iIdUsuario=".$idusuario;
 
                  $query = mysqli_query($conn,$consulta);
@@ -33,7 +39,7 @@ $idempresa=$_POST["empresa"];
                 }elseif($buscartipo["fkidTipoUsuario"]==3){
                         header("Location: ../index.php");
                 }
-            } 
-
+            }  
+ 
 
 ?>
