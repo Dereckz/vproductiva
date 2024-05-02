@@ -14,9 +14,12 @@ $textempresa=$_POST["buscar"];
 
 $queyempresa = mysqli_query($conn, "select * from empresa where nombre like '%". $textempresa."%'");
 $nameempresa = mysqli_fetch_array($queyempresa);
-
-
-
+$numEmpresa= mysqli_num_rows($queyempresa);
+        if($numEmpresa<1){
+                $idempresa=61;
+        }else{
+                $idempresa=$nameempresa["idempresa"];
+        }
                  $consulta="UPDATE usuarios
                         SET cNombre='".$nombre."'".
                         ", cApellidoP='".$apellidoparterno."'".
@@ -25,7 +28,7 @@ $nameempresa = mysqli_fetch_array($queyempresa);
                         ", cCorreo='".$email."'".
                         ", iGenero='".$genero."'".
                         ", cTelefono='".$telefono."'" .
-                        ", fkidempresa='".$nameempresa["idempresa"]."'" .
+                        ", fkidempresa='".$idempresa."'" .
                         " where iIdUsuario=".$idusuario;
 
                  $query = mysqli_query($conn,$consulta);
