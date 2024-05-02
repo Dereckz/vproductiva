@@ -15,6 +15,18 @@
     <link rel="stylesheet" href="./nicepage(1).css" media="screen">
     <script class="u-script" type="text/javascript" src="./jquery-1.9.1.min.js.descarga" defer=""></script>
     <script class="u-script" type="text/javascript" src="./nicepage.js.descarga" defer=""></script>
+    <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   
+    <script src="sweetalert2.all.min.js"></script>
+    <script src="sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="sweetalert2.min.css">
+
     <meta name="generator" content="Nicepage 4.18.8, nicepage.com">
     <link id="u-theme-google-font" rel="stylesheet" href="./css">
     <style class="u-style"> 
@@ -457,6 +469,7 @@ font-weight: 550;
 		"url": "https://website529400.nicepage.io/1234.html"
 }
     </script>
+
     <meta name="theme-color" content="#0066ff">
     <meta property="og:title" content="1234">
     <meta property="og:type" content="website">
@@ -477,11 +490,146 @@ font-weight: 550;
       <li class="menus"><a href="../function/finacceso.php">SALIR</a></li>
     	</ul>
   </header>
-
-    <section class="u-align-left u-clearfix u-grey-5 u-section-2" id="carousel_0852">
+    
+      <section class="u-align-left u-clearfix u-grey-5 u-section-2" id="carousel_0852">
       <div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1" id="divperfil">
         
-        <?=informacion();?>
+        <?php
+        require("../dev/conectar.php");
+
+        // para saber los cursos terminados
+        $cursos= mysqli_query($conn, "SELECT * FROM curso");
+        $totalcursos= mysqli_num_rows($cursos);
+        $final=0;
+        try{
+            if (!isset($_SESSION["id"])) {
+                header( "Location: https://valuacionproductiva.mx/" );
+            }else{
+                for ($i=1; $i<=$totalcursos; $i++){
+                    $terminado = mysqli_query($conn, "SELECT r.iIdRecurso,c.cNombreCurso, m.cNombreModulo,r.cRuta 
+                    FROM usuarios u
+                    INNER JOIN inscripcion i ON u.iIdUsuario = i.fkiIdUsuario
+                    INNER JOIN curso c ON i.fkiIdeCurso = c.iIdCurso
+                    INNER JOIN modulo m ON c.iIdCurso = m.fkiIdCurso
+                    INNER JOIN recurso r ON  m.iIdModulo = r.fkiIdModulo
+                    WHERE c.iIdCurso=".$i." and u.iIdUsuario=" . $_SESSION["id"]);
+                
+                    $nterminado = mysqli_query($conn, "SELECT r.iIdRecurso,c.cNombreCurso, m.cNombreModulo,r.cRuta 
+                    FROM usuarios u
+                    INNER JOIN inscripcion i ON u.iIdUsuario = i.fkiIdUsuario
+                    INNER JOIN curso c ON i.fkiIdeCurso = c.iIdCurso
+                    INNER JOIN modulo m ON c.iIdCurso = m.fkiIdCurso
+                    INNER JOIN recurso r ON  m.iIdModulo = r.fkiIdModulo
+                    INNER JOIN visto v ON r.iIdRecurso = v.idRecurso
+                    WHERE c.iIdCurso=".$i." and v.idAlumno=" . $_SESSION["id"]." GROUP BY iIdRecurso");
+                    $numMudulo= mysqli_num_rows($terminado);
+                    $numTerminado = mysqli_num_rows($nterminado);
+
+                    if ($numMudulo==$numTerminado && $numMudulo>0 && $numTerminado>0){
+                      $final=$final+1;
+                  }
+              }
+      
+                $cInscrito= mysqli_query($conn,"SELECT * FROM curso c
+                INNER JOIN inscripcion i ON i.fkiIdeCurso = c.iIdCurso
+                INNER JOIN usuarios u ON u.iIdUsuario = i.fkiIdUsuario
+                WHERE i.finalizado !=2 AND i.fkiIdUsuario=". $_SESSION["id"]);
+                
+                $nInscrito= mysqli_num_rows($cInscrito);
+              
+      
+                $resultado = mysqli_query($conn, "SELECT * FROM usuarios WHERE iIdUsuario=" . $_SESSION["id"]);
+                while ($consulta = mysqli_fetch_array($resultado)) {
+
+                  $queyempresa = mysqli_query($conn, "select * from empresa where idempresa=". $consulta['fkidempresa']);
+                  $nameempresa = mysqli_fetch_array($queyempresa);
+            ?>
+              <table class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;">
+                  
+                              <tr>        
+                                <form action="subir.php" method="POST" enctype="multipart/form-data">
+                                    <td rowspan=6 id="tdfotoperfil">
+                                        <img id=fotoperfil src=  <?php echo $consulta['cProfile']?> width="42%">
+                                        <br>
+                                        <br>
+                                        <div id="divguardarfoto">
+                                        <div id="div_file">
+                                            <input type="file" name="file1" id="file1"> 
+                                            <p id="texto">Examinar</p>
+                                        </div>
+                                        <br>
+                                        <button type="submit" id="guardarfotoperfil"style="border:transparent; background-color: white;">
+                                            Guardar
+                                        </button>
+                                        </div>
+                                    </td>
+                                        <td width="65%" colspan=2>
+                                            <h3 class="u-text u-text-2 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;"  data-toggle="modal" data-target="#modalEdit" >
+                                            <?php echo $consulta['cNombreLargo'] ?>
+                                                <a href="#" data-toggle="modal" data-target="#editChildresn<?php echo $consulta['iIdUsuario']; ?>">
+                                                    <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16" >
+                                                        <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325"/>
+                                                    </svg>
+                                                  </a>
+                                                </h3>
+                                                <div class="modal fade" id="exampleModal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"> .... </div>
+                                           
+                                        </td>
+                                    </tr>
+
+                                  
+                                </form>
+    
+                                <tr>
+                                    <td colspan=2>
+                                        <p class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;">
+                                             Correo: <?php echo $consulta['cCorreo'] ?>
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan=2>
+                                        <p class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;">
+                                             Empresa : <?php echo  $nameempresa['nombre'] ?>
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="3%">
+                                        <img src="img/docusin.png" id="iconoinscritos">
+                                    </td>
+                                    <td>
+                                        <p class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms; margin-bottom: 0.06em;"> 
+                                            Cursos Inscritos: <?php echo $nInscrito ?>
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="3%">
+                                        <img src="img/docu.png" id="iconofinalizados">
+                                    </td>
+                                    <td>
+                                        <p class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms; margin-bottom: 0em;">
+                                            Cursos Finalizados: <?php echo $final ?>
+                                        </p>
+                                    </td>
+                                </tr>
+                                <?php include('ModalEditar.php'); ?>
+                            </table>
+              <?php  
+                        }
+                      }
+              
+                  }catch(ex){
+                      header( "Location: https://valuacionproductiva.mx/" );
+                  }
+              ?>
+  
+              <!-- jQuery -->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+  
         <div class="u-expanded-width u-list u-list-1">
           <h1 class="section-title" id="titulomiscursos"> <span>Mis cursos:</span></h1>
           <div class="u-repeater u-repeater-1" id="divcursosins">

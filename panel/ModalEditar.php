@@ -46,7 +46,7 @@
                 </div>
                 <div class="form-group" hidden>
                   <label for="recipient-name" class="col-form-label">tipoususerio:</label>
-                  <input type="text" name="tipo" class="form-control" value="<?php echo $dataCliente['cTelefono']; ?>" >
+                  <input type="text" name="tipo" class="form-control" value="<?php echo $dataCliente['fkidTipoUsuario']; ?>" >
                 </div>
                 <div>
        

@@ -78,18 +78,55 @@ function informacion()
                                         </button>
                                         </div>
                                     </td>
-                                        <td width="65%" colspan=2><h3 class="u-text u-text-2 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;">
-                                            ' . $consulta['cNombreLargo'] . '
+                                        <td width="65%" colspan=2>
+                                            <h3 class="u-text u-text-2 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;">
+                                            ' . $consulta['cUsuario'] . '
+                                                <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16"  data-toggle="modal" data-target="#modalEdit" >
+                                                    <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325"/>
+                                                </svg>
                                             </h3>
+                                          
                                         </td>
                                     </tr>
     
                                 </form>
     
-                                <tr><td colspan=2><p class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;"> Correo: ' . $consulta['cCorreo'] . '</p></td></tr>
-                                <tr><td width="3%"><img src="img/docusin.png" id="iconoinscritos"></td><td><p class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms; margin-bottom: 0.06em;"> Cursos Inscritos: '.$nInscrito.'</p></td></tr>
-                                <tr><td width="3%"><img src="img/docu.png" id="iconofinalizados"></td><td><p class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms; margin-bottom: 0em;">Cursos Finalizados: '.$final.'</p></td></tr>    
+                                <tr>
+                                    <td colspan=2>
+                                        <p class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms;">
+                                             Correo: ' . $consulta['cCorreo'] . '
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="3%">
+                                        <img src="img/docusin.png" id="iconoinscritos">
+                                    </td>
+                                    <td>
+                                        <p class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms; margin-bottom: 0.06em;"> 
+                                            Cursos Inscritos: '.$nInscrito.'
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="3%">
+                                        <img src="img/docu.png" id="iconofinalizados">
+                                    </td>
+                                    <td>
+                                        <p class="u-text u-text-3 animated customAnimationIn-played" data-animation-name="customAnimationIn" data-animation-duration="1500" data-animation-delay="500" style="will-change: transform, opacity; animation-duration: 1500ms; margin-bottom: 0em;">
+                                            Cursos Finalizados: '.$final.'
+                                        </p>
+                                    </td>
+                                </tr>    
                             </table>
+                            <!--Ventana Modal para Actualizar--->
+                            <?php include("ModalEditar.php"); ?>
+                            
+                            <script language="javascript">
+                                function showLogIn() {
+                                    $("#modalEdit").modal();
+                                }
+                            </script>
                             ';
     
     
